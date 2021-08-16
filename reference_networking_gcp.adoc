@@ -302,7 +302,9 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 In GCP, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <<Firewall rules for Cloud Volumes ONTAP,listed above for Cloud Volumes ONTAP>>.
 
-Meanwhile, the predefined firewall policy that Cloud Manager creates for instances in VPC-1, VPC-2, and VPC-3 enables ingress communication over all protocols and ports. These rules enable communication between the HA nodes and the HA mediator.
+Meanwhile, the predefined firewall policy that Cloud Manager creates for instances in VPC-1, VPC-2, and VPC-3 enables ingress communication over _all_ protocols and ports. These rules enable communication between HA nodes.
+
+Communication from the HA nodes to the HA mediator takes place over port 3260 (iSCSI).
 
 == Firewall rules for the Connector
 

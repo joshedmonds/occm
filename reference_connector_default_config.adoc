@@ -20,9 +20,9 @@ If you need to troubleshoot the Connector, it might help to understand how it's 
 ** In AWS, the user name for the EC2 Linux instance is ec2-user.
 
 ** The operating system for the image is as follows:
-*** AWS: Red Hat Enterprise Linux 7.5 (HVM)
-*** Azure: Red Hat Enterprise Linux 7.6 (HVM)
-*** GCP: CentOS 7.6
+*** AWS: Red Hat Enterprise Linux 7.6 (HVM)
+*** Azure: CentOS 7.6
+*** GCP: CentOS 7.9
 +
 The operating system does not include a GUI. You must use a terminal to access the system.
 
