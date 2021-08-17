@@ -18,7 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Data Sense?
 
-Cloud Data Sense (Cloud Compliance) is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, on-prem ONTAP systems, non-NetApp file shares, generic S3 object storage, databases, and OneDrive accounts.
+Cloud Data Sense (Cloud Compliance) is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS/Azure/GCP, Amazon S3 buckets, on-prem ONTAP systems, non-NetApp file shares, generic S3 object storage, databases, and OneDrive accounts.
 
 Cloud Data Sense provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
@@ -48,7 +48,7 @@ link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
 
 == Which cloud providers are supported?
 
-Cloud Data Sense operates as part of Cloud Manager and currently supports AWS and Azure. This provides your organization with unified privacy visibility across different cloud providers.
+Cloud Data Sense operates as part of Cloud Manager and currently supports AWS, Azure, and GCP. This provides your organization with unified privacy visibility across different cloud providers.
 
 == How do I access Cloud Data Sense?
 
@@ -62,15 +62,13 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Data Sense works^]
 
 == How much does Cloud Data Sense cost?
 
-The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense#Pricing[pricing^] for details.
+The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. A subscription to the AWS, Azure, or GCP Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense#Pricing[pricing^] for details.
 
 == What type of instance or VM is required for Cloud Data Sense?
 
-* In Azure, Cloud Data Sense runs by default on a Standard_D16s_v3 VM with a 512 GB disk.
-
 * In AWS, Cloud Data Sense runs by default on an m5.4xlarge instance with a 500 GB GP2 disk.
-+
-In regions where m5.4xlarge isn't available, Data Sense runs on an m4.4xlarge instance instead.
+* In Azure, Cloud Data Sense runs by default on a Standard_D16s_v3 VM with a 512 GB disk.
+* In GCP, Cloud Data Sense runs by default on an n2-standard-16 VM with a 512 GB Standard persistent disk.
 
 You can also download and install Data Sense software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[Deploying Cloud Data Sense on premises^] for system requirements and installation details.
 
