@@ -184,7 +184,6 @@ Be sure to do the following:
               "s3:Get*",
               "s3:List*",
               "s3:PutObject",
-              "s3:HeadBucket"
           ],
           "Resource": "*"
       },

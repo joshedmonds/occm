@@ -60,6 +60,7 @@ You have the option to manually install the Connector software on your own Linux
 * \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 * \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 * \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+* *.blob.core.windows.net
 
 The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
 

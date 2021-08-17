@@ -94,8 +94,10 @@ Since Cloud Backup preserves the storage efficiencies of the source volume, you 
 +
 The instance runs only when browsing a backup file to locate the individual files you want to restore. The instance is turned off when not in use to save costs.
 +
-** In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
-** In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB memory, and a 32 GB disk.
+** In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB memory, and EBS Only instance storage. The operating system image is Amazon Linux 2.
++
+In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+** In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB memory, and a 32 GB disk. The operating system image is CentOS 7.5).
 +
 The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
 
