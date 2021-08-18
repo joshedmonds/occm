@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_highlights.html
-keywords: compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels, data sense
+keywords: compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels, tags, data sense
 summary: Cloud Data Sense provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.
 ---
 
@@ -17,7 +17,7 @@ Cloud Data Sense provides many ways for you to manage your private data. Some fu
 
 * Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
 * You can send email alerts to Cloud Manager users when certain critical Policies return results.
-* You can add a Status to files that you want to mark for some type of follow-up.
+* You can add Tags to files that you want to mark for organization or for some type of follow-up.
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
 * You can delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
 
@@ -88,75 +88,81 @@ You can delete any custom Policy that you created if you no longer need it. You 
 
 To delete a Policy, click the image:screenshot_gallery_options.gif[More button] button for a specific Policy, click *Delete Policy*, and then click *Delete Policy* again in the confirmation dialog.
 
-== Applying Status tags to manage your scanned files
+== Applying tags to manage your scanned files
 
-You can add a Status to files that you want to mark for some type of follow-up. For example, you may have found some duplicate files and you want to delete one of them, but you need to check to see which one should be deleted. You could add a status of "Check to delete" to the file so you know this file requires some research and some type of future action.
+You can add a tag to files that you want to mark for some type of follow-up. For example, you may have found some duplicate files and you want to delete one of them, but you need to check to see which one should be deleted. You could add a tag of "Check to delete" to the file so you know this file requires some research and some type of future action.
 
-Data Sense enables you to view the Statuses that are assigned to files, add or remove a Status from files, and change the name or delete an existing Status.
+Data Sense enables you to view the tags that are assigned to files, add or remove tags from files, and change the name or delete an existing tag.
 
-Note that the Status is not added to the file in the same way as AIP Labels are part of the file metadata. The Status is just seen by Cloud Manager users using Cloud Data Sense so you can see if a file needs to be deleted, or checked for some type of follow-up.
+Note that the tag is not added to the file in the same way as AIP Labels are part of the file metadata. The tag is just seen by Cloud Manager users using Cloud Data Sense so you can see if a file needs to be deleted or checked for some type of follow-up.
 
-=== Viewing Status tags assigned to your files
+TIP: Tags assigned to files in Cloud Data Sense are not related to the tags you can add to resources, such as volumes or virtual machine instances. Data Sense tags are applied at the file level.
 
-You can view all the files that have a specific Status assigned.
+=== Viewing tags assigned to your files
+
+You can view all the files that have specific tags assigned.
 
 . Click the *Investigation* tab from Cloud Data Sense.
 
-. In the Data Investigation page, click *Status* in the Filters pane and then select the required Status.
+. In the Data Investigation page, click *Tags* in the Filters pane and then select the required tags.
 +
-image:screenshot_compliance_filter_status.png[A screenshot showing how to select a particular Status from the Filters pane.]
+image:screenshot_compliance_filter_status.png[A screenshot showing how to select tags from the Filters pane.]
 +
-The Investigation Results pane lists all the files that have that Status assigned.
+The Investigation Results pane displays all the files that have those tags assigned.
 
-=== Assigning a Status tag to files
+=== Assigning tags to files
 
-You can add a Status tag to a single file or to a group of files.
+You can add tags to a single file or to a group of files.
 
-To add a Status tag to a single file:
+To add a tag to a single file:
 
 .Steps
 
 . In the Data Investigation results pane, click image:button_down_caret.png[down-caret] for the file to expand the file metadata details.
 
-. Click the *Status* field and assign a Status tag:
+. Click the *Tags* field and the currently assigned tags are displayed.
 
-* To assign an existing Status tag, click that tag. For example, "Action Required".
-* To create a new Status tag and assign it to the file, click *Add New Status*, enter the name of the new Status, and click *Done*.
+. Add the tag or tags:
+* To assign an existing tag, click in the *New Tag...* field and select the tag. For example, "Approved".
+* To create a new tag and assign it to the file, click in the *New Tag...* field, select "New Tag", and enter the name of the new tag.
 +
-image:screenshot_compliance_add_status_manually.png[A screenshot showing how to assign a Status tag to a file in the Data Investigation page.]
+image:screenshot_compliance_add_status_manually.png[A screenshot showing how to assign a tag to a file in the Data Investigation page.]
 +
-The Status tag appears in the file metadata.
+The tag appears in the file metadata.
 
-To add a Status tag to multiple files:
+To add a tag to multiple files:
 
 .Steps
 
 . In the Data Investigation results pane, select the file, or files, that you want to tag.
 +
-image:screenshot_compliance_tag_multi_files.png["A screenshot showing how to select the files you want to tag, and the Set Status button, from the Data Investigation page."]
+image:screenshot_compliance_tag_multi_files.png["A screenshot showing how to select the files you want to tag, and the Tags button, from the Data Investigation page."]
 
 +
 * To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]). (You can't select files from more than one page.)
 * To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
 
-. From the button bar, click *Set Status* and assign a Status tag:
+. From the button bar, click *Tags* and the currently assigned tags are displayed.
 
-* To assign an existing Status tag, click that tag.
-* To create a new Status tag and assign it to the files, click *Add New Status*, enter the name of the new Status, and click *Done*.
+. Add the tag or tags:
+* To assign an existing tag, click in the *New Tag...* field and select the tag.
+* To create a new tag and assign it to the files, click in the *New Tag...* field, select "New Tag", and enter the name of the new tag.
 +
-image:screenshot_compliance_select_tags_multi.png[A screenshot showing how to assign a Status tag to multiple files in the Data Investigation page.]
+image:screenshot_compliance_select_tags_multi.png[A screenshot showing how to assign a tag to multiple files in the Data Investigation page.]
 +
-The Status tag is added to the metadata for all selected files.
+The tags are added to the metadata for all selected files.
 
-=== Editing and deleting a Status tag
+=== Editing and deleting tags
 
-You can edit a Status tag to change the name, or you can delete a Status if you don't need to use it anymore. Click the image:button_3_vert_dots.png[] for an existing Status and click *Edit Status Name* or *Delete Status*.
+You can edit a tag to change the name, or you can delete a tag if you don't need to use it anymore. Click the image:button_3_vert_dots.png[] for an existing tag and click *Edit Tag Name* or *Delete Tag*.
 
-image:screenshot_compliance_edit_delete_status.png[A screenshot showing how to delete a Status tag or rename the tag.]
+image:screenshot_compliance_edit_delete_status.png[A screenshot showing how to delete a tag or rename a tag.]
 
-When you change a Status name, it is changed for all files that were using the old name.
+image:button_delete_datasense_file_tag.png[add this somewhere in this topic]
 
-When you delete a Status tag, it is cleared from all files that were using the Status.
+When you change a tag name, it is changed for all files that were using the old name.
+
+When you delete a tag, it is cleared from all files that were using the tag.
 
 == Assigning users to manage certain files
 
