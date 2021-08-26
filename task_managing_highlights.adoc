@@ -98,7 +98,7 @@ Note that the tag is not added to the file in the same way as AIP Labels are par
 
 TIP: Tags assigned to files in Cloud Data Sense are not related to the tags you can add to resources, such as volumes or virtual machine instances. Data Sense tags are applied at the file level.
 
-=== Viewing tags assigned to your files
+=== Viewing files that have certain tags applied
 
 You can view all the files that have specific tags assigned.
 
@@ -152,17 +152,13 @@ image:screenshot_compliance_select_tags_multi.png[A screenshot showing how to as
 +
 The tags are added to the metadata for all selected files.
 
-=== Editing and deleting tags
+=== Deleting tags from files
 
-You can edit a tag to change the name, or you can delete a tag if you don't need to use it anymore. Click the image:button_3_vert_dots.png[] for an existing tag and click *Edit Tag Name* or *Delete Tag*.
+You can delete a tag if you don't need to use it anymore.
 
-image:screenshot_compliance_edit_delete_status.png[A screenshot showing how to delete a tag or rename a tag.]
+Just click the *x* for an existing tag.
 
 image:button_delete_datasense_file_tag.png[add this somewhere in this topic]
-
-When you change a tag name, it is changed for all files that were using the old name.
-
-When you delete a tag, it is cleared from all files that were using the tag.
 
 == Assigning users to manage certain files
 
