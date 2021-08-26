@@ -19,6 +19,10 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.9 build 2 (18 Aug 2021)
+
+This patch update includes bug fixes.
+
 == Cloud Manager 3.9.9 update (8 Aug 2021)
 
 * <<Application Template enhancements>>

@@ -49,7 +49,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 
 == Automate with APIs
 
-* link:api.html[API Developer Guide^]
+* link:api.html[Cloud Manager API documentation]
 * link:reference_infrastructure_as_code.html[Automation resources for infrastructure as code]
 
 == Connect with peers, get help, and find more information

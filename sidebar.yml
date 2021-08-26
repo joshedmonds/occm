@@ -498,10 +498,10 @@ entries:
             url: /reference_permissions.html
           - title: AWS Marketplace pages
             url: /reference_aws_marketplace.html
-  - title: Automate with the API and IaC tools
+  - title: Automate with the REST API
     entries:
-      - title: API Developer Guide
-        url: https://docs.netapp.com/us-en/occm/api.html
+      - title: Cloud Manager API documentation
+        url: /api.html
       - title: Automate using IaC tools
         url: /reference_infrastructure_as_code.html
   - title: Troubleshoot issues

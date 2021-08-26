@@ -17,7 +17,7 @@ Use the resources on this page to get help integrating Cloud Manager and Cloud V
 
 DevOps teams use a variety of tools to automate the setup of new environments, which allows them to treat infrastructure as code. One such tool is Terraform. We have developed a Terraform provider that DevOps teams can use with Cloud Manager to automate and integrate Cloud Volumes ONTAP with infrastructure as code.
 
-https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[View the netapp-cloudmmanager provider^].
+https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[View the netapp-cloudmanager provider^].
 
 *Related links*
 

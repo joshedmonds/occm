@@ -1,0 +1,18 @@
+---
+sidebar: sidebar
+permalink: api.html
+keywords: api, automation, rest api
+summary: In addition to the web browser interface, Cloud Manager has a REST API that provides software developers with direct access to the Cloud Manager functionality through the SaaS interface. The Cloud Manager service consists of several distinct components that collectively form an extensible development platform.
+---
+
+= Automation using the Cloud Manager REST API platform
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+In addition to the web browser interface, Cloud Manager has a REST API that provides software developers with direct access to the Cloud Manager functionality through the SaaS interface. The Cloud Manager service consists of several distinct components that collectively form an extensible development platform.
+
+To learn more, go to the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^].

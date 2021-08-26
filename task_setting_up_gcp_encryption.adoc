@@ -32,4 +32,4 @@ image:screenshot_gcp_key.gif[]
     "key": "projects/tlv-support/locations/us-east4/keyRings/Nikiskeys/cryptoKeys/generatedkey1"
   }
 
-Refer to the link:api.html#_creating_systems_in_gcp[API Developer Guide^] for more details about using the "GcpEncryption" parameter.
+Refer to the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for more details about using the "GcpEncryption" parameter.

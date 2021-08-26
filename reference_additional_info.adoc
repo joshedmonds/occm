@@ -27,7 +27,7 @@ Watch videos that show you how to deploy and manage Cloud Volumes ONTAP and how 
 +
 Download JSON files that include the permissions that Cloud Manager needs to perform actions in a cloud provider.
 
-* link:api.html[Cloud Manager API Developer Guide^]
+* link:api.html[Cloud Manager API documentation]
 +
 Read an overview of the APIs, examples of how to use them, and an API reference.
 
