@@ -59,11 +59,11 @@ If you don't already have a Connector, create a Connector in AWS, Azure, or GCP.
 
 There are some scenarios where you have to use a Connector that's deployed in a specific cloud provider:
 
-* When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
-* When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
-* When scanning data in Cloud Volumes ONTAP in GCP, you use a connector in GCP.
+* When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a Connector in AWS.
+* When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a Connector in Azure.
+* When scanning data in Cloud Volumes ONTAP in GCP, you use a Connector in GCP.
 
-On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using either Connector.
+On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using any of these cloud Connectors.
 
 Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
 
@@ -163,6 +163,15 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 
 Ensure that Cloud Manager has the required permissions::
 Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
+
+[NOTE]
+====
+If you created the Connector in GCP using Cloud Manager 3.9.10 or greater, then you’re all set. If you created the Connector using an earlier version, then you’ll need to add the following permissions to the GCP service account associated with the Connector to deploy Cloud Data Sense to GCP.
+
+* compute.subnetworks.use
+* compute.subnetworks.useExternalIp
+* compute.instances.addAccessConfig
+====
 
 Check your vCPU limits::
 When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running. link:concept_cloud_compliance.html#the-cloud-data-sense-instance[See the required instance types].
