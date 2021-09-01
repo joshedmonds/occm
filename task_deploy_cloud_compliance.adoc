@@ -164,14 +164,12 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 Ensure that Cloud Manager has the required permissions::
 Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
 
-[NOTE]
-====
-If you created the Connector in GCP using Cloud Manager 3.9.10 or greater, then you’re all set. If you created the Connector using an earlier version, then you’ll need to add the following permissions to the GCP service account associated with the Connector to deploy Cloud Data Sense to GCP.
+*Note:* If you created the Connector in GCP using Cloud Manager 3.9.10 or greater, then you’re all set. If you created the Connector using an earlier version, then you’ll need to add the following permissions to the GCP service account associated with the Connector to deploy Cloud Data Sense to GCP.
 
-* compute.subnetworks.use
-* compute.subnetworks.useExternalIp
-* compute.instances.addAccessConfig
-====
+[source,json]
+compute.instances.addAccessConfig
+compute.subnetworks.use
+compute.subnetworks.useExternalIp
 
 Check your vCPU limits::
 When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running. link:concept_cloud_compliance.html#the-cloud-data-sense-instance[See the required instance types].
