@@ -78,7 +78,7 @@ image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where yo
 You can create an on-demand backup at any time to capture the current state of the volume. This can be useful if very important changes have been made to a volume and you don't want to wait for the next scheduled backup to protect that data, or if the volume is not currently being backed up and you want to capture its current state.
 
 The backup name includes the timestamp so you can identify your on-demand backup from other scheduled backups.
-// A manual backup is always a full backup of the volume. 
+// A manual backup is always a full backup of the volume.
 
 .Steps
 
@@ -126,9 +126,9 @@ image:screenshot_backup_settings_button.png[A screenshot that shows the Backup S
 
 . Click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to delete all backups and select *Delete All Backups*.
 +
-image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All Backups button to delete all backup for a working environment.]
+image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All Backups button to delete all backups for a working environment.]
 
-. In the confirmation dialog box, click *Delete*.
+. In the confirmation dialog box, enter the name of the working environment and click *Delete*.
 
 === Deleting all backup files for a volume
 
@@ -186,4 +186,27 @@ image:screenshot_disable_backups.png[A screenshot of the Deactivate Backup butto
 
 . In the confirmation dialog box, click *Deactivate*.
 
-NOTE: The "Deactivate Backup" button changes to "Activate Backup" while backup is disabled on that working environment. You can click *Activate Backup* if you want to enable all backup functionality for that working environment.
+NOTE: An *Activate Backup* button appears for that working environment while backup is disabled. You can click this button if you want to re-enable backup functionality for that working environment.
+
+== Unregistering Cloud Backup for a working environment
+
+You can unregister Cloud Backup for a working environment if you no longer want to use backup functionality and you want to stop being charged for backups in that working environment. Typically this feature is used when you are planning to delete a working environment and you want to cancel the backup service.
+
+Before you can unregister Cloud Backup, you must perform the following steps in this order:
+
+* Deactivate Cloud Backup for the working environment
+* Delete all backups from that working environment
+
+The unregister option is not available until these two previous actions have been completed.
+
+.Steps
+
+. From the Backup Dashboard, select *Backup Settings*.
++
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
+
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to unregister the backup service and select *Unregister*.
++
+image:screenshot_backup_unregister.png[A screenshot of the Unregister backup button for a working environment.]
+
+. In the confirmation dialog box, click *Unregister*.

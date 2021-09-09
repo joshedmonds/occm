@@ -29,7 +29,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- it is included as part of the Premium Bundle or Data Protection Bundle.
-* The cluster must have the required network connections to S3 storage and to the Connector.
+** The cluster must have the required network connections to S3 storage and to the Connector.
 * The Connector must have the required network connections to S3 storage and to the cluster, and the required permissions.
 * You have a valid AWS subscription for the object storage space where your backups will be located.
 * You have an AWS Account with an access key and secret key, and the link:task_backup_onprem_to_aws.html#preparing-amazon-s3-for-backups[required permissions] so the ONTAP cluster can back up and restore data.
