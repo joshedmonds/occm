@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: get-started-snapcenter-service.html
+keywords: snapcenter service, getting started, azure connector, HDBSQL client, SAP HANA systems, protect SAP HANA systems
+summary: The tasks to deploy SnapCenter Service and protect your data.
+---
+
+= Get started
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You should perform the following tasks to get started with SnapCenter Service and protect your data.
+
+. Create an Azure Connector in your cloud account for your region.
+. Enable SnapCenter Service.
++
+SnapCenter Service will be enabled in the same subnet and same resource group as that of the Connector.
+. Install the HDBSQL client.
+. Add SAP HANA systems.
+. Protect SAP HANA systems using system-defined or custom policies.

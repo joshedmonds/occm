@@ -303,6 +303,20 @@ sidebar:
               url: /reference_backup_multi_account_aws.html
             - title: Configure Backup for multi-account access in Azure
               url: /reference_backup_multi_account_azure.html
+    - title: Protect data using SnapCenter Service
+      entries:
+        - title: Learn
+          entries:
+            - title: Overview
+              entries: /overview-snapcenter-service.html
+            - title: Architecture
+              entries: /architecture-snapcenter-service.html
+            - title: Supported functionalities
+              entries: /functionalities-supported.html
+            - title: Limitations
+              entries: /limitations-snapcenter-service.html
+        - title: Get started
+          entries: /get-started-snapcenter-service.html
     - title: Copy and synchronize data
       entries:
         - title: Learn about Cloud Sync

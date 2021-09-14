@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: architecture-snapcenter-service.html
+keywords: connector, azure kubernetes service, cloud manager UI, snapcenter service
+summary: The architecture of SnapCenter include several components.
+---
+
+= Architecture
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The architecture of SnapCenter Service  include the following components.
+
+* SnapCenter UI is integrated with Cloud Manager UI.
++
+The SnapCenter UI is served from the Cloud Manager SAAS framework managed by NetApp that offers multiple storage and data management capabilities.
+* Cloud Manager Connector is a component from Cloud Manager that manages the life cycle of the SnapCenter and several other services.
+* SnapCenter Service is a set of data protection services hosted on Azure Kubernetes Service(AKS) that orchestrates the data protection workflows.
+
+The following diagram shows the relationship between each component of SnapCenter Service:
+
+image:anf_architecture.png[The SnapCenter Service architecture.]
+
+The SnapCenter Service UI communicates with the Cloud Manager Connector for user-initiated request. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes ANF management APIs and HANA system commands to perform data protection operations.
+
+SnapCenter Service can be deployed in the same VNet as that of the HANA system, or in a different one. If SnapCenter Service and HANA systems are on different network, network connectivity  is required between them.
