@@ -262,7 +262,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 +
 The access key and secret key are for the user you created to give the ONTAP cluster access to the S3 bucket.
 .. The AWS region where the backups will be stored.
-.. Whether you'll use the default Amazon S3 encryption keys or choose your own customer-managed keys to manage encryption of your data. (link:task_setting_up_kms.html[See how to use your own keys]).
+.. Whether you'll use the default Amazon S3 encryption keys or choose your own customer-managed keys from your AWS account to manage encryption of your data. (link:task_setting_up_kms.html[See how to use your own keys]).
 +
 image:screenshot_backup_provider_settings_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an ONTAP system to AWS S3.]
 
@@ -271,7 +271,7 @@ image:screenshot_backup_provider_settings_aws.png[A screenshot that shows the cl
 . Enter the networking details and click *Next*.
 
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.
-.. Optionally, choose whether you'll use an AWS PrivateLink. https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html[See details about using an AWS PrivateLink].
+.. Optionally, choose whether you'll use an AWS PrivateLink that you have previously configured. https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html[See details about using an AWS PrivateLink].
 +
 image:screenshot_backup_onprem_aws_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to AWS S3.]
 
