@@ -308,15 +308,15 @@ sidebar:
         - title: Learn
           entries:
             - title: Overview
-              entries: /overview-snapcenter-service.html
+              url: /overview-snapcenter-service.html
             - title: Architecture
-              entries: /architecture-snapcenter-service.html
+              url: /architecture-snapcenter-service.html
             - title: Supported functionalities
-              entries: /functionalities-supported.html
+              url: /functionalities-supported.html
             - title: Limitations
-              entries: /limitations-snapcenter-service.html
+              url: /limitations-snapcenter-service.html
         - title: Get started
-          entries: /get-started-snapcenter-service.html
+          url: /get-started-snapcenter-service.html
     - title: Copy and synchronize data
       entries:
         - title: Learn about Cloud Sync
