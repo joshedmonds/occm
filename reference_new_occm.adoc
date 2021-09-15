@@ -1083,7 +1083,7 @@ Cloud Backup is now supported on Cloud Volumes ONTAP in Google Cloud. Click link
 
 Cloud Volumes ONTAP 9.8 is available in AWS, Azure, and Google Cloud Platform. This release includes support for link:concept_ha_google_cloud.html[HA pairs in GCP].
 
-TIP: The GCP service account associated with the Connector link:https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[needs the latest permissions^] to deploy an HA pair in GCP.
+TIP: The GCP service account associated with the Connector link:https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[needs the latest permissions^] to deploy an HA pair in GCP.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[Learn what else is new in Cloud Volumes ONTAP 9.8^].
 
