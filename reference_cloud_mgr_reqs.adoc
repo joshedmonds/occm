@@ -50,5 +50,7 @@ https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervis
 
 Disk space in /opt:: 100 GB of space must be available
 
+Disk space in /var:: 20 GB of space must be available
+
 Outbound internet access::
 Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].

@@ -28,7 +28,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Respond to Data Subject Access Requests (DSAR)
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add a custom status to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
+* Add a custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
 * Move and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
@@ -46,6 +46,7 @@ Cloud Data Sense can scan data from the following types of working environments 
 
 * Cloud Volumes ONTAP in AWS
 * Cloud Volumes ONTAP in Azure
+// * Cloud Volumes ONTAP in GCP
 * On-premises ONTAP clusters
 * Azure NetApp Files
 * Amazon FSx for ONTAP
@@ -75,22 +76,27 @@ Data transfer costs depend on your setup. If the Cloud Data Sense instance and d
 
 * https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
+// * https://cloud.google.com/storage-transfer/pricing[Google Cloud: Storage Transfer Service pricing^]
 
 == The Cloud Data Sense instance
 
 When you deploy Data Sense in the cloud, Cloud Manager deploys the instance in the same subnet as the Connector. link:concept_connectors.html[Learn more about Connectors.^]
 
-NOTE: If the Connector is installed on-prem, it deploys the Cloud Data Sense instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
+NOTE: If the Connector is installed on-prem, it deploys the Cloud Data Sense instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request. You can install Data Sense on-prem as well.
 
 image:diagram_cloud_compliance_instance.png[A diagram that shows a Cloud Manager instance and a Cloud Data Sense instance running in your cloud provider.]
 
 Note the following about the default instance:
 
-* In Azure, Cloud Data Sense runs on a link:https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D16s_v3 VM] with a 512 GB disk.
-
-* In AWS, Cloud Data Sense runs on an link:https://aws.amazon.com/ec2/instance-types/m5/[m5.4xlarge instance] with a 500 GB GP2 disk.
+* In AWS, Cloud Data Sense runs on an link:https://aws.amazon.com/ec2/instance-types/m5/[m5.4xlarge instance] with a 500 GB GP2 disk. The operating system image is Amazon Linux 2 (Red Hat 7.3.1).
 +
 In regions where m5.4xlarge isn't available, Data Sense runs on an m4.4xlarge instance instead.
+
+* In Azure, Cloud Data Sense runs on a link:https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D16s_v3 VM] with a 512 GB disk. The operating system image is CentOS 7.8.
+//
+// * In GCP, Cloud Data Sense runs on an link:https://cloud.google.com/compute/docs/machine-types#recommendations_for_machine_types[n2-standard-16 VM] with a 512 GB Standard persistent disk. The operating system image is CentOS 7.9.
+// +
+// In regions where n2-standard-16 isn't available, Data Sense runs on an n2d-standard-16 or n1-standard-16 VM instead.
 
 * The instance is named _CloudCompliance_ with a generated hash (UUID) concatenated to it. For example: _CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7_
 

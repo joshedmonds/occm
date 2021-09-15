@@ -71,7 +71,7 @@ NOTE: Tiering data to object storage is not recommended when using Throughput Op
 
 * In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
 
-* In GCP, the performance tier can be either SSDs or HDDs (standard disks).
+* In GCP, the performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
 
 * Data tiering is supported with encryption technologies.
 

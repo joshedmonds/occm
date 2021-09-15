@@ -15,7 +15,7 @@ summary: Complete a few steps to deploy Cloud Data Sense in your Cloud Manager w
 [.lead]
 Complete a few steps to deploy Cloud Data Sense in your Cloud Manager workspace. You can deploy Data Sense in the cloud or on an on-premises system.
 
-The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Data Sense instance that's also located on premises -- but this is not a requirement. The software functions exactly the same way regardless of which installation method you choose.
+The on-prem installation may be a good option if you prefer to scan on-premises ONTAP systems using a Data Sense instance that's also located on premises -- but this is not a requirement. The software functions exactly the same way regardless of which installation method you choose.
 
 == Quick start
 
@@ -24,7 +24,8 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^].
+If you don't already have a Connector, create a Connector in AWS or Azure. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^].
+// If you don't already have a Connector, create a Connector in AWS, Azure or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
 
 [role="quick-margin-para"]
 You can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud.
@@ -52,17 +53,20 @@ image:screenshot_compliance_onprem_notprem.png[A screenshot indicating a Cloud D
 
 [role="quick-margin-para"]
 The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+// The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS, Azure, or GCP Marketplace is required to continue scanning data after that point.
 
 == Creating a Connector
 
-If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
+If you don't already have a Connector, create a Connector in AWS or Azure. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
+// If you don't already have a Connector, create a Connector in AWS, Azure, or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
 
-There are some scenarios where you have to use a Connector that's deployed in AWS or Azure:
+There are some scenarios where you have to use a Connector that's deployed in a specific cloud provider:
 
 * When scanning data in Cloud Volumes ONTAP in AWS, Amazon FSx for ONTAP, or in AWS S3 buckets, you use a connector in AWS.
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
+// * When scanning data in Cloud Volumes ONTAP in GCP, you use a Connector in GCP.
 
-On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using either Connector.
+On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using any of these cloud Connectors.
 
 Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
 
@@ -78,6 +82,7 @@ Enable outbound internet access from Cloud Data Sense::
 Cloud Data Sense requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Data Sense instance has outbound internet access to contact the following endpoints. When you deploy Data Sense in the cloud, it's located in the same subnet as the Connector.
 +
 Review the appropriate table below depending on whether you are deploying Cloud Data Sense in AWS, Azure, or on-premises.
+// Review the appropriate table below depending on whether you are deploying Cloud Data Sense in AWS, Azure, GCP, or on-premises.
 +
 *Required endpoints for AWS deployments:*
 +
@@ -117,6 +122,7 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 |===
 +
 *Required endpoints for Azure and On-Prem deployments:*
+// *Required endpoints for Azure, GCP, and On-Prem deployments:*
 +
 [cols="43,57",options="header"]
 |===
@@ -162,16 +168,22 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 
 Ensure that Cloud Manager has the required permissions::
 Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
+//
+// *Note:* If you created the Connector in GCP using Cloud Manager 3.9.10 or greater, then you’re all set. If you created the Connector using an earlier version, then you’ll need to add the following permissions to the GCP service account associated with the Connector to deploy Cloud Data Sense to GCP.
+//
+// [source,json]
+// compute.instances.addAccessConfig
+// compute.subnetworks.use
+// compute.subnetworks.useExternalIp
 
 Check your vCPU limits::
-When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
-+
-In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard Dsv3 Family_.
+When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running. link:concept_cloud_compliance.html#the-cloud-data-sense-instance[See the required instance types].
 +
 See the following links for more details on vCPU limits:
 +
-* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 service quotas^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
+// * https://cloud.google.com/compute/quotas[Google Cloud documentation: Resource quotas^]
 +
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
@@ -187,6 +199,7 @@ Ensure web browser connectivity to Cloud Data Sense::
 After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
+// or GCP
 
 == Deploying the Cloud Data Sense instance in the cloud
 
@@ -242,7 +255,7 @@ NOTE: Cloud Data Sense is currently unable to scan S3 buckets and Azure NetApp F
 +
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
-* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
+* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
 
 *	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 
@@ -319,7 +332,7 @@ If there is connectivity over port 8080 between the host machine and the Connect
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to either the AWS or Azure Marketplace can be used when you have deployed Data Sense on an on-premises system.
+You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to the AWS, Azure, or GCP Marketplace can be used when you have deployed Data Sense on an on-premises system.
 
 === Multi-host installation for large configurations
 
@@ -381,11 +394,12 @@ The Cloud Data Sense installer finishes installing packages, docker, and registe
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to either the AWS or Azure Marketplace can be used when you have deployed Data Sense on an on-premises system.
+You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to the AWS, Azure, or GCP Marketplace can be used when you have deployed Data Sense on an on-premises system.
 
 == Subscribing to the Cloud Data Sense service
 
 The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+// or GCP
 
 You can subscribe at any time and you will not be charged until the amount of data exceeds 1 TB. You can always see the total amount of data that is being scanned from the Data Sense Dashboard. And the _Subscribe Now_ button makes it easy to subscribe when you are ready.
 
@@ -402,10 +416,12 @@ These steps must be completed by a user who has the _Account Admin_ role.
 image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
 
 . Find the credentials for the AWS Instance Profile or Azure Managed Service Identity.
+// . Find the credentials for the AWS Instance Profile, Azure Managed Service Identity, or Google Project.
 +
 The subscription must be added to the Instance Profile or Managed Service Identity. Charging won't work otherwise.
+// The subscription must be added to the Instance Profile, Managed Service Identity, or Google Project. Charging won't work otherwise.
 +
-If you already have a subscription, then you're all set--there's nothing else that you need to do.
+If you already have a subscription (shown below), then you're all set--there's nothing else that you need to do.
 +
 image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the Instance Profile with an active subscription.]
 
@@ -424,6 +440,10 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 The following video shows how to associate a Marketplace subscription to an Azure subscription:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
+// +
+// The following video shows how to associate a Marketplace subscription to a GCP subscription:
+// +
+// video::video_subscribing_gcp.mp4[width=848, height=480]
 
 == Changing to the new Cloud Manager plan in Azure
 

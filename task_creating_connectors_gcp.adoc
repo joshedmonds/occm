@@ -47,6 +47,51 @@ The permissions contained in this YAML file are different than the permissions i
 
 The GCP user now has the permissions required to create the Connector from Cloud Manager and the service account for the Connector VM is set up.
 
+=== Shared VPC Permissions
+
+If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
+
+[cols="10,10,10,20,20,30",width=100%,options="header"]
+|===
+
+| Service Account
+| Creator
+| Hosted in
+| Service project permissions
+| Host project permissions
+| Purpose
+
+| Cloud Manager service account | Custom | Service project a|
+* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[The permissions found in this .yaml file^]
+a|
+* compute.networkUser
+* deploymentmanager.editor
+| Deploying and maintaining Cloud Volumes ONTAP and services in the service project
+| Cloud Volumes ONTAP service account | Custom | Service project a|
+* storage.admin
+* member: Cloud Manager service account as serviceAccount.user
+| N/A | (Optional) For data tiering and Cloud Backup
+| Google APIs service agent | GCP | Service project a|
+* (Default) Editor
+a|
+* compute.networkUser
+| Interacts with GCP APIs on behalf of deployment. Allows Cloud Manager to use the shared network.
+| Google Compute Engine default service account | GCP | Service project a|
+* (Default) Editor
+a|
+* compute.networkUser
+| Deploys GCP instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.
+
+|===
+
+Notes:
+
+. deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you.
+
+. firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you.
+
+. For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.
+
 == Enabling Google Cloud APIs
 
 Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.
