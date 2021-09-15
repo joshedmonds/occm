@@ -1,0 +1,152 @@
+---
+sidebar: sidebar
+permalink: prerequisites-create-azure-connector.html
+keywords: azure connector, prerequisites, firewall, network requirements, subnet, VNet, network security group
+summary: Ensure that you meet the prerequisites before creating the Azure Connector.
+---
+
+= Prerequisites for creating an Azure Connector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Before you create a Connector in Azure from Cloud Manager, you should ensure certain things.
+
+* Ensure that the subnet chosen for the Connector should not overlap with the following IP address ranges reserved for Azure Kubernetes Service (AKS): 169.254.0.0/16, 172.30.0.0/16, 172.31.0.0/16, and 192.0.2.0/24.
+* Ensure that there are no AKS running in the chosen subnet.
+* Ensure that the chosen subnet has outbound network connectivity to the internet.
+* Ensure that the chosen subnet can access the SAP HANA systems on the respective ports.
+* If the VNet of the chosen subnet is different from the VNet of the SAP HANA systems, ensure that the VNets can communicate with each other through VPN gateway, peering, or other means.
+* Ensure that the VNet of the chosen subnet is configured with default (Azure provided) DNS Server.
++
+Custom DNS servers are not supported if you are planning to install the Connector without public IP.
+* If you want to enable SnapCenter Service behind Azure firewall, you should perform the actions mentioned in <<Network requirements>>.
++
+You should upfront decide whether you want to enable SnapCenter Service behind Azure firewall. After enabling SnapCenter Service, you cannot configure it to run behind Azure firewall. This is an AKS limitation.
+
+== Network requirements
+Set up your networking so the Connector can manage resources and processes within your cloud environment.
+
+=== Firewall configuration
+If you want to enable SnapCenter Service behind Azure firewall, you should perform the actions.
+
+*Steps*
+
+. Add the below network rules to the firewall.
++
+[cols=4*,options="header,autowidth"]
+|===
+
+| Destination endpoint
+| Protocol
+| Port
+| Comments
+
+| https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags[Service tags^] - AzureCloud.<Region>:1194 | UDP | 1194 | Not required if you are planning to have a private Connector and private SnapCenter Service cluster.
+| https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags[Service tags^] - AzureCloud.<Region>:9000 | TCP | 9000 | Not required if you are planning to have a private Connector and private SnapCenter Service cluster.
+| FQDN - ntp.ubuntu.com:123 | UDP | 123 | Required for time synchronization in Azure virtual machines.
+| https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags[Service tags^] - AzureCloud.<Region>:443 | TCP | 443 | Not required if you are planning to have a private Connector and private SnapCenter Service cluster.
+
+|===
+
+. Add an application rule in the firewall with the following FQDN tag and port details:
++
+* FQDN Tag - AzureKubernetesService
+* HTTPS: 443
+
+. Add an Application rule with the below endpoints as target FQDNs with protocol and port as HTTPS:443.
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+|
+
+\https://management.azure.com
+\https://login.microsoftonline.com
+
+| Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in most Azure regions.
+
+|
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+| Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in the Azure Germany regions.
+
+|
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.com
+| Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in the Azure US Gov regions.
+
+| \https://api.services.cloud.netapp.com | API requests to NetApp Cloud Central.
+
+| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
+
+|
+\https://cognito-idp.us-east-1.amazonaws.com
+\https://cognito-identity.us-east-1.amazonaws.com
+\https://sts.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
+| Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+
+|
+\https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
+
+| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
+
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+
+| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+
+| \https://support.netapp.com | Communication with NetApp AutoSupport.
+
+| \https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com | Communication with NetApp for system licensing and support registration.
+
+|
+\https://client.infra.support.netapp.com.s3.us-west-1.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.us-west-1.amazonaws.com
+
+| Enables NetApp to collect information needed to troubleshoot support issues.
+
+| *.blob.core.windows.net | Required for HA pairs when using a proxy.
+
+| \https://auth0.com | Required for Auth0 authentication.
+
+|
+\https://registry-1.docker.io
+\https://auth.docker.io
+\https://production.cloudflare.docker.com
+| Retrieves the dependencies of SnapCenter Service workflow engine.
+
+| \https://exteranl-log.cloudmanager.netapp.com | Allows communication to transfer the logs to the Cloud Manager log repository.
+|===
+
+. Select the subnet where you are planning to install SnapCenter Service.
+. Create a route table with routes:
++
+*	to forward the traffic from the subnet to the firewall internal IP address
+*	to forward the traffic from firewall public IP address to the internet.
+. Attach the route table to the subnet.
+
+For information on the networking requirements for Cloud Manager Connector, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].
+
+For information on the outbound rules and FQDNs accessed by the AKS cluster for its regular operation, see https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#required-outbound-network-rules-and-fqdns-for-aks-clusters[Required outbound network rules and FQDNs for AKS clusters^].
+
+=== Connectivity to HANA Systems
+SnapCenter Service cluster needs to communicate with HANA systems in the user’s network using HDBSQL command. The communication channel between SnapCenter cluster and HANA systems need to be allowed using various network architecture such as:
+
+* Connector and SnapCenter Service cluster deployed in the same VNet as that of HANA systems
+* Connector and SnapCenter Service cluster deployed in a different VNet as that of HANA systems, with communication established using VNet peering between the 2 VNets.
+* Connector and SnapCenter Service cluster deployed in a different VNet as that of HANA systems, with communication established using VPN gateway between the 2 VNets.
+
+
+=== Security Group configuration
+If network security group (NSG) is configured in the HANA Systems, it should allow inbound communication from SnapCenter port to the port of HANA System as specified in User Store Key.
+
+* Protocol: All TCP
+*	Subnet: SnapCenter AKS cluster subnet
+*	Purpose: To execute HDBSQL command
+
+The HANA services running in the SnapCenter AKS cluster supports SSL communication with HANA systems which have SSL enabled.

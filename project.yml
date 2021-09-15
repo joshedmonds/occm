@@ -308,15 +308,23 @@ sidebar:
         - title: Learn
           entries:
             - title: Overview
-              url: /overview-snapcenter-service.html
-            - title: Architecture
-              url: /architecture-snapcenter-service.html
+              url: /overview-architecture-snapcenter-service.html
             - title: Supported functionalities
               url: /functionalities-supported.html
             - title: Limitations
               url: /limitations-snapcenter-service.html
         - title: Get started
           url: /get-started-snapcenter-service.html
+        - title: Deploy SnapCenter Services
+          entries:
+            - title: Create an Azure Connector in Cloud manager
+              entries:
+                - title: Prerequisites for creating an Azure Connector
+                  url: /prerequisites-create-azure-connector.html
+                - title: Get started with creating Azure Connector
+                  url: /get-start-create-azure-connector.html
+                - title: Create a Connector
+                  url: /create-azure-connector-snapcenter-service.html
     - title: Copy and synchronize data
       entries:
         - title: Learn about Cloud Sync

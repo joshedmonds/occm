@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: functionalities-supported.html
 keywords: snapcenter service, backup, restore
-summary: The SnapCenter Service supports adding and protecting SAP HANA systems.
+summary: SnapCenter Service supports adding and protecting SAP HANA systems.
 ---
 
 = Supported functionalities
@@ -13,7 +13,7 @@ summary: The SnapCenter Service supports adding and protecting SAP HANA systems.
 :imagesdir: ./media/
 
 [.lead]
-The SnapCenter Service supports the following functionalities.
+SnapCenter Service supports the following functionalities.
 
 * Adding SAP HANA systems
 * Creating on-demand backup of SAP HANA systems

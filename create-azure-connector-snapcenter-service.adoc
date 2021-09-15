@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: create-azure-connector-snapcenter-service.html
+keywords: azure, connector, cloud central, snapcenter service
+summary: Create an Azure Connector for SnapCenter Service.
+---
+
+= Create a Connector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: limitations-snapcenter-service.html
 keywords: limitations, snapcenter service
-summary: The SnapCenter Service 1.0 release has certain limitations.
+summary: SnapCenter Service 1.0 release has certain limitations.
 ---
 
 = Limitations
@@ -13,8 +13,8 @@ summary: The SnapCenter Service 1.0 release has certain limitations.
 :imagesdir: ./media/
 
 [.lead]
-The SnapCenter Service 1.0 has the following limitations.
+SnapCenter Service 1.0 has the following limitations.
 
-*	Internationalization is not supported, ensure to use English browsers.
+*	Internationalization is not supported, you should use English browsers.
 *	Only a Cloud Manager user with “Account Admin” role can enable the SnapCenter Service.
 *	High availability cluster configuration is not supported.
