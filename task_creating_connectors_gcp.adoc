@@ -35,7 +35,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 +
 You'll associate this service account with the Connector VM when you create it from Cloud Manager.
 
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
 +
 The permissions contained in this YAML file are different than the permissions in step 1.
 
@@ -62,7 +62,7 @@ If you are using a shared VPC to deploy resources into a service project, then t
 | Purpose
 
 | Cloud Manager service account | Custom | Service project a|
-* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[The permissions found in this .yaml file^]
+* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[The permissions found in this .yaml file^]
 a|
 * compute.networkUser
 * deploymentmanager.editor
