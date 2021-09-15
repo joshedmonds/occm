@@ -15,7 +15,7 @@ summary: The tasks to deploy SnapCenter Service and protect your data.
 [.lead]
 Get started with SnapCenter Service to protect your data in a few steps.
 
-==== image:number1.png[Number 1] link:get-start-create-azure-connector.html[Create an Azure Connector in Cloud Manager]
+==== image:number1.png[Number 1] Create an Azure Connector in Cloud Manager
 
 ==== image:number2.png[Number 2] Enable SnapCenter Service
 

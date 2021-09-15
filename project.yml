@@ -315,16 +315,14 @@ sidebar:
               url: /limitations-snapcenter-service.html
         - title: Get started
           url: /get-started-snapcenter-service.html
-        - title: Deploy SnapCenter Services
+        - title: Create an Azure Connector in Cloud manager
           entries:
-            - title: Create an Azure Connector in Cloud manager
-              entries:
-                - title: Prerequisites for creating an Azure Connector
-                  url: /prerequisites-create-azure-connector.html
-                - title: Get started with creating Azure Connector
-                  url: /get-start-create-azure-connector.html
-                - title: Create a Connector
-                  url: /create-azure-connector-snapcenter-service.html
+            - title: Prerequisites for creating an Azure Connector
+              url: /prerequisites-create-azure-connector.html
+            - title: Get started with creating Azure Connector
+              url: /get-start-create-azure-connector.html
+            - title: Create a Connector
+              url: /create-azure-connector-snapcenter-service.html
     - title: Copy and synchronize data
       entries:
         - title: Learn about Cloud Sync
