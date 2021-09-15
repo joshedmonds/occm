@@ -73,7 +73,8 @@ Cloud Data Sense can be deployed in the cloud or in an on-premises location when
 
 == Enabling Cloud Data Sense in your working environments
 
-You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS, Azure, and GCP) and on on-premises ONTAP clusters.
+You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS or Azure) and on on-premises ONTAP clusters.
+// You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS, Azure, and GCP) and on on-premises ONTAP clusters.
 
 NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
 
@@ -160,11 +161,7 @@ If you don't want Cloud Data Sense to scan volumes directly on your on-prem ONTA
 
 The Compliance scans you run on backup files are *free* - no Cloud Data Sense subscription or license is needed.
 
-[NOTE]
-====
-* When Data Sense scans backup files it uses permissions granted through the Cloud Restore instance to access the backup files. Typically the Restore instance powers down when not actively restoring files, but it remains *On* when scanning backup files. See link:task_restore_backups.html#file-restore-process[more information about the Restore instance^].
-* Since there is no current support for restoring single files when using GCP, Cloud Data Sense can't scan backup files in GCP.
-====
+*Note:* When Data Sense scans backup files it uses permissions granted through the Cloud Restore instance to access the backup files. Typically the Restore instance powers down when not actively restoring files, but it remains *On* when scanning backup files. See link:task_restore_backups.html#file-restore-process[more information about the Restore instance^].
 
 .Steps
 

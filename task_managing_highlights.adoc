@@ -123,8 +123,8 @@ To add a tag to a single file:
 . Click the *Tags* field and the currently assigned tags are displayed.
 
 . Add the tag or tags:
-* To assign an existing tag, click in the *New Tag...* field and select the tag. For example, "Approved".
-* To create a new tag and assign it to the file, click in the *New Tag...* field, select "New Tag", and enter the name of the new tag.
+* To assign an existing tag, click in the *New Tag...* field and start typing the name of the tag. When the tag you are looking for appears, select it and press *Enter*.
+* To create a new tag and assign it to the file, click in the *New Tag...* field, enter the name of the new tag, and press *Enter*.
 +
 image:screenshot_compliance_add_status_manually.png[A screenshot showing how to assign a tag to a file in the Data Investigation page.]
 +
@@ -145,12 +145,12 @@ image:screenshot_compliance_tag_multi_files.png["A screenshot showing how to sel
 . From the button bar, click *Tags* and the currently assigned tags are displayed.
 
 . Add the tag or tags:
-* To assign an existing tag, click in the *New Tag...* field and select the tag.
-* To create a new tag and assign it to the files, click in the *New Tag...* field, select "New Tag", and enter the name of the new tag.
+* To assign an existing tag, click in the *New Tag...* field and start typing the name of the tag. When the tag you are looking for appears, select it and press *Enter*.
+* To create a new tag and assign it to the file, click in the *New Tag...* field, enter the name of the new tag, and press *Enter*.
 +
 image:screenshot_compliance_select_tags_multi.png[A screenshot showing how to assign a tag to multiple files in the Data Investigation page.]
-+
-The tags are added to the metadata for all selected files.
+
+. Approve adding the tags in the confirmation dialog and the tags are added to the metadata for all selected files.
 
 === Deleting tags from files
 
@@ -159,6 +159,8 @@ You can delete a tag if you don't need to use it anymore.
 Just click the *x* for an existing tag.
 
 image:button_delete_datasense_file_tag.png[add this somewhere in this topic]
+
+If you had selected multiple files, the tag is removed from all the files.
 
 == Assigning users to manage certain files
 
