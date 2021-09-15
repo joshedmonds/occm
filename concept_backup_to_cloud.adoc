@@ -92,7 +92,7 @@ Since Cloud Backup preserves the storage efficiencies of the source volume, you 
 
 * For File Restore, you pay your cloud provider for compute costs only when the Restore instance is running.
 +
-The instance runs only when browsing a backup file to locate the individual files you want to restore. The instance is turned off when not in use to save costs.
+The instance resides in the same subnet as the Connector, and it runs only when browsing a backup file to locate the individual files you want to restore. The instance is turned off when not in use to save costs.
 +
 ** In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB memory, and EBS Only instance storage. The operating system image is Amazon Linux 2.
 +
@@ -159,7 +159,7 @@ NOTE: Backup to StorageGRID does require a BYOL license, but there is no cost fo
 
 You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
 
-link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
+link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[Learn how to manage your BYOL licenses].
 
 ==== BYOL license considerations
 
@@ -175,7 +175,7 @@ Two things can happen when your license expires:
 * If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
 * If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to see the warnings.
 
-Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#add-or-update-a-cloud-backup-license[how to update a Cloud Backup license].
+Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license[how to update a Cloud Backup license].
 
 Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backup activity that occurred while the license was expired.
 
@@ -244,6 +244,8 @@ You can choose a combination of hourly, daily, weekly, and monthly backups of al
 |===
 
 Backup protection policies that you have created on the system using ONTAP System Manager or the ONTAP CLI are also available as selections.
+
+You can also link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[create an on-demand backup of a volume] from the Backup Dashboard in addition to those backup files created from the scheduled backups.
 
 Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you always have the most current backups.
 
@@ -314,5 +316,5 @@ There are certain things you need to be aware of when the volume you are backing
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
 * Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
-
-* Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.
+//
+// * Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.

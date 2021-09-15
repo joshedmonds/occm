@@ -194,6 +194,18 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 | Cloud Manager uses the permission as part of Cloud Data Sense deployment to choose which instance type to use.
 
 |
+"ec2:CreateTags",
+"ec2:DeleteTags",
+"ec2:DescribeTags",
+"tag:getResources",
+"tag:getTagKeys",
+"tag:getTagValues",
+"tag:TagResources",
+"tag:UntagResources"
+
+| Enables you to manage tags on your AWS resources using the Cloud Manager Tagging service.
+
+|
 "s3:DeleteBucket",
 "s3:GetLifecycleConfiguration",
 "s3:PutLifecycleConfiguration",
@@ -399,16 +411,29 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Enables you to use Global File Cache.
 
-| "Microsoft.Compute/diskEncryptionSets/read"
-
-| Enables Cloud Manager to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
-
 |
 "Microsoft.Network/privateEndpoints/delete",
 "Microsoft.Compute/availabilitySets/delete",
 
 | Enables Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion.
- 
+
+|
+"Microsoft.Compute/diskEncryptionSets/read"
+"Microsoft.Compute/diskEncryptionSets/write",
+"Microsoft.Compute/diskEncryptionSets/delete"
+"Microsoft.KeyVault/vaults/deploy/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write"
+
+| Enables use of customer-managed encryption keys with Cloud Volumes ONTAP. This feature is supported using APIs.
+
+|
+"Microsoft.Resources/tags/read",
+"Microsoft.Resources/tags/write",
+"Microsoft.Resources/tags/delete"
+
+| Enables you to manage tags on your Azure resources using the Cloud Manager Tagging service.
+
 |===
 
 == What Cloud Manager does with GCP permissions
@@ -612,5 +637,12 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 - compute.regionBackendServices.list
 
 | To deploy HA pairs.
+
+|
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.instances.addAccessConfig
+
+| To enable Cloud Data Sense.
 
 |===

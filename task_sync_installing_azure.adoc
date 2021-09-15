@@ -97,3 +97,22 @@ In Azure, go to *Admin Centers > Azure AD > Users and Groups > User Settings* an
 +
 As shown in the URL, our app URL is \https://cloudsync.netapp.com and the application client ID is 8ee4ca3a-bafa-4831-97cc-5a38923cab85.
 ****
+
+== Details about the data broker VM
+
+Cloud Sync creates a data broker in Azure using the following configuration.
+
+VM type::
+Standard DS4 v2
+
+vCPUs::
+8
+
+RAM::
+28 GB
+
+Operating system::
+CentOS 7.7
+
+Disk size and type::
+64 GB Premium SSD

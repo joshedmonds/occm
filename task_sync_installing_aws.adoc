@@ -95,3 +95,22 @@ image:screenshot_created_instance.gif[This screenshot shows a successfully deplo
 .Result
 
 You have deployed a data broker in AWS and created a new sync relationship. You can use this data broker with additional sync relationships.
+
+== Details about the data broker instance
+
+Cloud Sync creates a data broker in AWS using the following configuration.
+
+Instance type::
+m5n.xlarge when available in the region, otherwise m5.xlarge
+
+vCPUs::
+4
+
+RAM::
+16 GB
+
+Operating system::
+Amazon Linux 2
+
+Disk size and type::
+10 GB GP2 SSD

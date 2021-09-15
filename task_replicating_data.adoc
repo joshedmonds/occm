@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_replicating_data.html
-keywords: ontap, cluster, discover, manage, cloud manager, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, schedule, relationship, max transfer, maximum transfer rate, rate, transfer rate, intercluster lif, replication requirement, requirements, disaster recovery, DR, archive, archiving, retention
+keywords: ontap, cluster, discover, manage, cloud manager, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, schedule, relationship, max transfer, maximum transfer rate, rate, transfer rate, intercluster lif, replication requirement, requirements, disaster recovery, DR, archive, archiving, retention, amazon fsx for ontap, fsx for ontap
 summary: You can replicate data between Cloud Manager working environments. You can choose a one-time data replication to move data to and from the cloud, or a recurring schedule for disaster recovery or long-term retention.
 ---
 
@@ -13,11 +13,21 @@ summary: You can replicate data between Cloud Manager working environments. You 
 :imagesdir: ./media/
 
 [.lead]
-You can replicate data between working environments by choosing a one-time data replication for data transfer, or a recurring schedule for disaster recovery or long-term retention. For example, you can set up data replication from an on-prem ONTAP system to Cloud Volumes ONTAP for disaster recovery.
+You can replicate data between ONTAP working environments by choosing a one-time data replication for data transfer, or a recurring schedule for disaster recovery or long-term retention. For example, you can set up data replication from an on-prem ONTAP system to Cloud Volumes ONTAP for disaster recovery.
 
 == Data replication requirements
 
-Before you can replicate data, you should confirm that specific requirements are met for both Cloud Volumes ONTAP and ONTAP clusters.
+Before you can replicate data, you should confirm that specific requirements are met for Cloud Volumes ONTAP, on-prem ONTAP clusters, or Amazon FSx for ONTAP.
+
+Working environments::
+If you haven't done so already, you need to create the working environments for the source and target in the data replication relationship.
++
+* link:task_manage_fsx_aws.html[Create an Amazon FSx for ONTAP working environment]
+* link:task_deploying_otc_aws.html[Launch Cloud Volumes ONTAP in AWS]
+* link:task_deploying_otc_azure.html[Launch Cloud Volumes ONTAP in Azure]
+* link:task_deploying_gcp.html[Launch Cloud Volumes ONTAP in GCP]
+* link:task_adding_ontap_cloud.html[Add existing Cloud Volumes ONTAP systems]
+* link:task_discovering_ontap.html[Discover ONTAP clusters]
 
 Version requirements::
 You should verify that the source and destination volumes are running compatible ONTAP versions before replicating data. For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/GUID-0810D764-4CEA-4683-8280-032433B1886B.html[Data Protection Power Guide^].
@@ -40,13 +50,22 @@ Requirements specific to ONTAP clusters::
 +
 For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html[Cluster and SVM Peering Express Guide^].
 
+Requirements specific to Amazon FSx for ONTAP::
+* An Amazon FSx for ONTAP working environment must be the target in the data replication relationship.
++
+The source can be Cloud Volumes ONTAP or an on-prem ONTAP cluster.
+
+* If Cloud Volumes ONTAP is the source, ensure connectivity between VPCs by enabling VPC peering or by using a Transit Gateway.
+
+* If an on-prem ONTAP cluster is the source, ensure connectivity between your on-premises network and the AWS VPC by using a Direct Connect or VPN connection.
+
 == Setting up data replication between systems
 
-You can replicate data between Cloud Volumes ONTAP systems and on-prem ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
+You can replicate data by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
 
 .Steps
 
-. On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume:
+. On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
 +
 image:screenshot_drag_and_drop.gif[Screen shot: Shows a working environment being placed on top of another working environment to start the data replication process.]
 

@@ -73,7 +73,11 @@ One Virtual Private Cloud for single node systems::
 One VPC is required for a single node system.
 
 Shared VPCs::
-Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs. For HA pairs, all VPCs can be either shared or non-shared VPCs.
+Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.
++
+For a single node system, the VPC can be either a shared VPC or a standalone VPC.
++
+For an HA pair, four VPCs are required. Each of those VPCs can be either shared or standalone. For example, VPC-0 could be a shared VPC, while VPC-1, VPC-2, and VPC-3 could be standalone VPCs.
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
@@ -188,7 +192,9 @@ If you're deploying an HA configuration, these are the firewall rules for Cloud 
 
 === Inbound rules
 
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
+The source for inbound rules in the predefined firewall is 0.0.0.0/0.
+
+To create your own firewall, ensure that you add all networks that need to communicate with Cloud Volumes ONTAP, but also ensure to add both address ranges to allow the internal Google Load Balancer to function correctly. These addresses are 130.211.0.0/22 and 35.191.0.0/16. For more information, refer to https://cloud.google.com/load-balancing/docs/tcp#firewall_rules[Google Cloud documentation: Load Balancer Firewall Rules^].
 
 [cols="10,10,80",width=100%,options="header"]
 |===

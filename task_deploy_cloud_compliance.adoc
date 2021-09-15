@@ -59,9 +59,8 @@ If you don't already have a Connector, create a Connector in AWS, Azure, or GCP.
 
 There are some scenarios where you have to use a Connector that's deployed in a specific cloud provider:
 
-* When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a Connector in AWS.
-* When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a Connector in Azure.
-* When scanning data in Cloud Volumes ONTAP in GCP, you use a Connector in GCP.
+* When scanning data in Cloud Volumes ONTAP in AWS, Amazon FSx for ONTAP, or in AWS S3 buckets, you use a connector in AWS.
+* When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
 
 On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using any of these cloud Connectors.
 

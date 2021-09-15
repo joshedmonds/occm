@@ -70,11 +70,11 @@ The following sections provide more details about each of these options.
 * A new offering that provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
 * No license or contract is needed.
 * Support is not included.
-* You're limited to 500 GB of allocated capacity per Cloud Volumes ONTAP system.
+* You're limited to 500 GB of provisioned capacity per Cloud Volumes ONTAP system.
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account.
-* If the allocated capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager converts the system to the Essentials package (which is a capacity-based license) and charging starts.
+* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GB, Cloud Manager converts the system to the Essentials package (which is a capacity-based license) and charging starts.
 +
-Any other systems that have less than 500 GB of allocated capacity stay on the Freemium offering (as long as they were deployed using the Freemium offering).
+Any other systems that have less than 500 GB of provisioned capacity stay on the Freemium offering (as long as they were deployed using the Freemium offering).
 
 To get started with the Freemium offering, create a new Cloud Volumes ONTAP working environment and select *Freemium* when prompted to choose a charging method.
 
@@ -90,7 +90,7 @@ Capacity-based licensing is available in the form of a _package_. When you deplo
 
 This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
 
-NOTE: For each package, there is a minimum allocated capacity charge of 4 TB. Any Cloud Volumes ONTAP instance that has less than 4 TB of allocated capacity will be charged at a rate of 4 TB.
+NOTE: For each package, there is a minimum 4 TB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TB of capacity will be charged at a rate of 4 TB.
 
 Essentials package::
 

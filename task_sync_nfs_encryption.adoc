@@ -77,14 +77,6 @@ Create a new sync relationship between two NFS servers or between Azure NetApp F
 . Click *Create New Sync*.
 
 . Drag and drop *NFS Server* to the source and target locations or *Azure NetApp Files* to the source and target locations and select *Yes* to enable data-in-flight encryption.
-+
-The following image shows what you'd select to sync data between two NFS servers:
-+
-image:screenshot_nfs_encryption.gif["A screenshot that shows an NFS to NFS sync relationship with data-in-flight encryption enabled."]
-+
-The following image shows what you'd select to sync data between Azure NetApp Files:
-+
-image:screenshot_anf_encryption.gif["A screenshot that shows an Azure NetApp Files to Azure NetApp Files sync relationship with data-in-flight encryption enabled."]
 
 . Follow the prompts to create the relationship:
 

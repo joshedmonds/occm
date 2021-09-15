@@ -116,6 +116,8 @@ All the files are restored to the same destination volume that you choose. If yo
 
 * Restoring individual files from a backup file uses a separate Restore instance/virtual machine. See the link:task_backup_to_s3.html#requirements[AWS Requirements] or link:task_backup_to_azure.html#requirements[Azure Requirements] to make sure your environment is ready.
 
+* Restoring files also requires that specific EC2 permissions are added to the user role that provides Cloud Manager with permissions.  link:task_backup_onprem_to_aws.html#preparing-amazon-s3-for-backups[Make sure all the permissions are configured correctly].
+
 * AWS cross-account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
 === File Restore process

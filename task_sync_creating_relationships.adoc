@@ -15,19 +15,27 @@ summary: When you create a sync relationship, the Cloud Sync service copies file
 [.lead]
 When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
 
-== Create sync relationships for Cloud Volumes ONTAP, Azure NetApp Files, or on-prem clusters
+Before you can create some types of sync relationships, you'll first need to create a working environment in Cloud Manager.
 
-If you want to create sync relationships for Cloud Volumes ONTAP, Azure NetApp Files, or an on-prem ONTAP cluster, then you first need to create or discover the working environment.
+== Create sync relationships for specific types of working environment
+
+If you want to create sync relationships for any of the following, then you first need to create or discover the working environment:
+
+* Amazon FSx for ONTAP
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* On-prem ONTAP clusters
 
 .Steps
 
 . Create or discover the working environment.
 +
+* link:task_manage_fsx_aws.html[Create an Amazon FSx for ONTAP working environment]
+* link:task_manage_anf.html[Setting up and discovering Azure NetApp Files]
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
 * link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
 * link:task_adding_ontap_cloud.html[Adding existing Cloud Volumes ONTAP systems]
-* link:task_manage_anf.html[Setting up and discovering Azure NetApp Files]
 * link:task_discovering_ontap.html[Discovering ONTAP clusters]
 
 . Click *Canvas*.
@@ -42,7 +50,7 @@ image:screenshot_sync_we.gif[A screenshot that shows the actions available from 
 
 == Create other types of sync relationships
 
-Use these steps to sync data to or from a supported storage type other than Cloud Volumes ONTAP, Azure NetApp Files, or on-prem ONTAP clusters. The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
+Use these steps to sync data to or from a supported storage type other than Amazon FSx for ONTAP, Azure NetApp Files, Cloud Volumes ONTAP, or on-prem ONTAP clusters. The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
 
 . In Cloud Manager, click *Sync*.
 
@@ -50,7 +58,7 @@ Use these steps to sync data to or from a supported storage type other than Clou
 +
 The following steps provide an example of how to create a sync relationship from an NFS server to an S3 bucket.
 +
-image:screenshot_nfs_to_s3.gif[A screenshot that shows NFS as a source and S3 as a target in a new sync relationship.]
+image:screenshot_nfs_to_s3.png[A screenshot that shows NFS as a source and S3 as a target in a new sync relationship.]
 
 . On the *NFS Server* page, enter the IP address or fully qualified domain name of the NFS server that you want to sync to AWS.
 

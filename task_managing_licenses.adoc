@@ -5,7 +5,7 @@ keywords: license, licensing, install, updating license, system license, add sys
 summary: The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 ---
 
-= Manage licenses
+= Manage licenses for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,35 +17,39 @@ The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP f
 
 You can manage the following types of licenses for Cloud Volumes ONTAP:
 
-* Capacity-based licenses, which enable you to pay for Cloud Volumes ONTAP per TiB of capacity.
+* _Capacity-based licenses_, which enable you to pay for Cloud Volumes ONTAP per TiB of capacity.
 +
 https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a capacity-based license.
 
-* Pay as you go (PAYGO) licenses, which enable you to pay by the hour through a marketplace subscription from your cloud provider.
+* _Node-based licenses_, which are any of the following:
+** BYOL licenses purchased from NetApp.
++
+This includes Eval licenses that you can later convert to BYOL licenses.
++
+To get started with a node-based BYOL, https://cloud.netapp.com/contact-cds[contact NetApp Sales^].
+** Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace.
++
+This includes 30-day free trials.
 +
 To get started with PAYGO, create a Cloud Volumes ONTAP working environment and subscribe to your cloud provider's marketplace when prompted.
 
-* Node-based licenses, which are BYOL licenses purchased from NetApp. This includes Eval licenses that you can later convert to the node-based BYOL licensing model.
-+
-https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a node-based license.
-
 link:concept_licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
-== Manage capacity-based licenses for Cloud Volumes ONTAP
+== Manage capacity-based licenses
 
 Manage your capacity-based licenses to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
 
-=== View your account's licensed capacity and allocated capacity
+=== View your account's capacity
 
-View the licensed capacity and allocated capacity by package to ensure that you have enough room for your data volumes.
+View the licensed capacity and provisioned capacity by package to ensure that you have enough room for your data volumes.
 
 .Steps
 
 . Click *All Services > Digital Wallet > Capacity-Based Licenses*.
 
-. View the licensed capacity and allocated capacity for each package.
+. View the licensed capacity and provisioned capacity for each package.
 +
-image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of allocated capacity versus licensed capacity for the professional package and essentials package.]
+image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of provisioned capacity versus licensed capacity for the professional package and essentials package.]
 
 . If needed, purchase additional licensed capacity and then add the license to your account.
 
@@ -53,21 +57,61 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount 
 
 After you purchase licenses for your NetApp account, you need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
 
+.What you'll need
+
+* You need to provide Cloud Manager the serial number of the license or the license file.
+
+* If you want to enter the serial number, you first need to link:task_adding_nss_accounts[add your NetApp Support Site account to Cloud Manager]. This is the NetApp Support Site account that's authorized to access the serial number.
+
 .Steps
 
 . Click *All Services > Digital Wallet > Capacity-Based Licenses*.
 
 . Click *Add License*.
 
-. Enter the serial number for your capacity-based license and then click *Add License*.
+. Enter the serial number for your capacity-based license or upload the license file.
++
+If you entered a serial number, you also need to select the NetApp Support Site account that's authorized to access the serial number.
 
-== Manage PAYGO licenses for Cloud Volumes ONTAP
+. Click *Add License*.
+
+=== Update a capacity-based license
+
+If you purchased additional capacity or extended the term of your license, then you'll need to update the license in Cloud Manager.
+
+.What you'll need
+
+The license file (or _files_ if you have an HA pair).
+
+.Steps
+
+. Click *All Services > Digital Wallet > Capacity-Based Licenses*.
+
+. Click the action menu next to the license and select *Update License*.
+
+. Upload the license file.
+
+. Click *Upload License*.
+
+=== Remove a capacity-based license
+
+If a capacity-based license expired and is no longer in use, then you can remove it at any time.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Capacity-Based Licenses*.
+
+. Click the action menu next to the license and select *Remove License*.
+
+. Click *Remove* to confirm.
+
+== Manage node-based PAYGO licenses
 
 The Digital Wallet page enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP Licenses*.
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
 
 . Click *PAYGO*.
 
@@ -77,7 +121,7 @@ image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digi
 
 . If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
 
-== Manage node-based licenses for Cloud Volumes ONTAP
+== Manage node-based BYOL licenses
 
 Manage your node-based licenses to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
 
@@ -105,7 +149,7 @@ If Cloud Manager can't access the license file over the secure internet connecti
 
 .Steps
 
-. Click *All Services > Digital Wallet*.
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -131,7 +175,7 @@ Purchase an extra capacity license by contacting us through the chat icon in the
 
 .Steps
 
-. Click *All Services > Digital Wallet*.
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -147,7 +191,7 @@ If you extended the term of an extra capacity license, you'll need to update the
 
 .Steps
 
-. Click *All Services > Digital Wallet*.
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -163,7 +207,7 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 .Steps
 
-. Click *All Services > Digital Wallet*.
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -179,7 +223,7 @@ link:concept_evaluating.html[Learn more about Evaluation licenses].
 
 .Steps
 
-. Click *All Services > Digital Wallet*.
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
 
 . Click *Eval*.
 

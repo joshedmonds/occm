@@ -1,6 +1,8 @@
 ---
+layout: astra
 sidebar: sidebar
 permalink: index.html
+lead: Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
 summary: Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
 ---
 
@@ -10,50 +12,3 @@ summary: Cloud Manager enables IT experts and cloud architects to centrally mana
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
-
-Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
-
-== Discover what's new
-
-* link:reference_key_changes.html[Important changes in Cloud Manager]
-* link:reference_new_occm.html[What's new in Cloud Manager]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[What's new in Cloud Volumes ONTAP^]
-
-== Get started
-
-* link:concept_overview.html[Cloud Manager overview]
-* link:concept_cloud_central_accounts.html[Account settings]
-
-*Resources*
-
-* link:task_getting_started_aws.html[Cloud Volumes ONTAP for AWS]
-* link:task_getting_started_azure.html[Cloud Volumes ONTAP for Azure]
-* link:task_getting_started_gcp.html[Cloud Volumes ONTAP for Google Cloud]
-* link:task_manage_anf.html[Azure NetApp Files]
-* link:task_manage_cvs_aws.html[Cloud Volumes Service for AWS]
-* link:task_manage_cvs_gcp.html[Cloud Volumes Service for Google Cloud]
-
-*Services*
-
-* link:task_managing_ontap.html[Active IQ]
-* link:concept_compute.html[Compute]
-* link:concept_backup_to_cloud.html[Cloud Backup and Restore]
-* link:task_getting_started_compliance.html[Cloud Data Sense (Cloud Compliance)]
-* link:concept_cloud_sync.html[Cloud Sync]
-* link:concept_cloud_tiering.html[Cloud Tiering]
-* link:task_gfc_getting_started.html[Global File Cache]
-* link:task_connecting_kubernetes.html[K8s]
-* link:task_getting_started_monitoring.html[Monitoring]
-* link:task_replicating_data.html[Replication]
-* link:concept_resource_templates.html[Application Templates]
-
-== Automate with APIs
-
-* link:api.html[Cloud Manager API documentation]
-* link:reference_infrastructure_as_code.html[Automation resources for infrastructure as code]
-
-== Connect with peers, get help, and find more information
-
-* https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS[NetApp Community: Cloud Data Services^]
-* https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^]
-* link:reference_additional_info.html[Where to get help and find more information]

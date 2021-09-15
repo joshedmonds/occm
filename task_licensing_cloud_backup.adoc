@@ -35,57 +35,82 @@ Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^
 +
 If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials^]. Note that you’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
-* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup service by using an annual contract for 1, 2, or 3 years. Payment is per TiB. This option doesn’t enable you to back up on-prem data.
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup service by using an annual contract for 1, 2, or 3 years. Payment is per TiB. This option doesn’t enable you to back up on-premises ONTAP data.
 +
 Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
 +
 If you want to use this option, you can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager prompts you to subscribe to the AWS Marketplace.
 
-== Use Cloud Backup BYOL licenses
+== Use a Cloud Backup BYOL license
 
-Bring-your-own licenses also provide 1-, 2-, or 3-year term licenses from NetApp. You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Backup license file
 
-When you add your license to Cloud Manager, you can enter the serial number or upload the NLF license file.
+After you have purchased your Cloud Backup license, you activate the license in Cloud Manager by entering the Cloud Backup serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
 
 .Steps
 
-. Go to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
+. Sign in to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
 
-. Enter your Cloud Backup serial number.
+. Enter your Cloud Backup license serial number.
 +
 image:screenshot_cloud_backup_license_step1.gif[A screenshot that shows a table of licenses after searching by serial number.]
 
 . Under *License Key*, click *Get NetApp License File*.
 
-. Enter your Cloud Manager Account ID (this is called a Tenant ID on the support site) and click *Submit*.
+. Enter your Cloud Manager Account ID (this is called a Tenant ID on the support site) and click *Submit* to download the license file.
 +
 image:screenshot_cloud_backup_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
 +
-You can find your Account ID by selecting the *Account* drop-down from the top of Cloud Manager, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
+You can find your Cloud Manager Account ID by selecting the *Account* drop-down from the top of Cloud Manager, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
 
-=== Add or update a Cloud Backup license
+=== Add Cloud Backup BYOL licenses to your account
 
-Add or update your Cloud Backup license to Cloud Manager so that the Cloud Backup service is active.
+After you purchase a Cloud Backup license for your NetApp account, you need to add the license to Cloud Manager to use the Cloud Backup service.
 
 .Steps
 
-. Click *All Services > Digital Wallet*.
+. Click *All Services > Digital Wallet > Cloud Backup Licenses*.
 
-. Click *Cloud Backup Licenses*.
+. Click *Add Backup License*.
 
-. If you don't have an existing license, click *Add Backup License*.
-
-. Click *Add Backup License* or *Update Backup License* depending on whether you are adding a new license or updating an existing license.
-
-. Enter the license information and click *Add Backup License* or *Update Backup License*:
+. In the _Add Cloud Backup License_ dialog, enter the license information and click *Add Backup License*:
 +
-* If you have the serial number, select the *Enter Backup BYOL Serial Number* option and enter the serial number.
-* If you have the backup license file, select the *Upload Backup BYOL License* option and follow the prompts to attach the file.
+* If you have the backup license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
-image:screenshot_backup_byol_license_add.png[A screenshot that shows the page to add the Backup BYOL license.]
+If your NetApp Support Site account isn't available from the drop-down list, link:task_adding_nss_accounts.html[add the NSS account to Cloud Manager].
+* If you have the backup license file, select the *Upload License File* option and follow the prompts to attach the file.
++
+image:screenshot_services_license_add2.png[A screenshot that shows the page to add the Cloud Backup BYOL license.]
 
 .Result
 
-Cloud Manager adds or updates the license so that your Cloud Backup service is active.
+Cloud Manager adds the license so that your Cloud Backup service is active.
+
+=== Update a Cloud Backup BYOL license
+
+If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified. This status also appears in the Digital Wallet page.
+//
+//image:screenshot_services_license_expire.png[A screenshot that shows an expiring license in the Digital Wallet page.]
+
+You can update your Cloud Backup license before it expires so that there is no interruption in your ability to back up and restore your data.
+
+.Steps
+
+. Click the chat icon in the lower-right of Cloud Manager to request an extension or capacity add-on to your Cloud Backup license for the particular serial number.
++
+After you pay for the license and it is registered with the NetApp Support Site, in most cases, Cloud Manager can automatically obtain your updated license file and the Cloud Backup Licenses page will reflect the change in 5 to 10 minutes.
+
+. If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
+.. You can <<Obtain your Cloud Backup license file,obtain the license file from the NetApp Support Site>>.
+.. On the _Cloud Backup Licenses_ page, click *Update Backup License*.
+.. In the _Update Cloud Backup License_ dialog, enter the license information and click *Update Backup License*.
+//.. On the _Cloud Backup Licenses_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
+//+
+//image:screenshot_services_license_update1.png[A screenshot of selecting the Update License button for a particular service.]
+//.. In the _Update License_ page, upload the license file and click *Update License*.
+
+.Result
+
+Cloud Manager updates the license so that your Cloud Backup service continues to be active.

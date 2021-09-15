@@ -19,7 +19,7 @@ If you need assistance with your proof of concept, contact https://cloud.netapp.
 
 == Freemium offering
 
-The Freemium offering enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per node and there's no support contract. You can have up to 10 Freemium systems.
+The Freemium offering enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of provisioned capacity per node and there's no support contract. You can have up to 10 Freemium systems.
 
 link:concept_licensing.html[Learn more about the Freemium offering].
 

@@ -56,8 +56,27 @@ You can find the latest list of permissions on the https://mysupport.netapp.com/
 
 === AWS
 
-Starting with the 3.8.1 release, the following permissions are required to use Cloud Backup with Cloud Volumes ONTAP. link:task_backup_to_s3.html[Learn more].
+* Starting with the 3.9.9 release, the following permissions are required for the tagging service:
++
+[source,json]
+{
+                                  "Action": [
+                                    "ec2:CreateTags",
+                                    "ec2:DeleteTags",
+                                    "ec2:DescribeTags",
+                                    "tag:getResources",
+                                    "tag:getTagKeys",
+                                    "tag:getTagValues",
+                                    "tag:TagResources",
+                                    "tag:UntagResources"
+                                  ],
+                                  "Resource": "*",
+                                  "Effect": "Allow",
+                                  "Sid": "tagServicePolicy"
+                                },
 
+* Starting with the 3.8.1 release, the following permissions are required to use Cloud Backup with Cloud Volumes ONTAP. link:task_backup_to_s3.html[Learn more].
++
 [source,json]
 {
             "Sid": "backupPolicy",
@@ -85,6 +104,20 @@ Starting with the 3.8.1 release, the following permissions are required to use C
         },
 
 === Azure
+
+* Starting with the 3.9.10 release, you can use customer-managed encryption keys with Cloud Volumes ONTAP. A Connector requires these new permissions to set up an encryption key with a single node Cloud Volumes ONTAP system:
++
+[source,json]
+"Microsoft.Compute/diskEncryptionSets/write",
+"Microsoft.KeyVault/vaults/deploy/action",
+"Microsoft.Compute/diskEncryptionSets/delete"
+
+* Starting with the 3.9.10 release, you can manage tags on your Azure resources using the Cloud Manager Tagging service. A Connector requires these new permissions for this service:
++
+[source,json]
+"Microsoft.Resources/tags/read",
+"Microsoft.Resources/tags/write",
+"Microsoft.Resources/tags/delete"
 
 * Starting with the 3.9.8 release, Cloud Manager can remove Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion. Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager:
 +
@@ -121,6 +154,15 @@ Starting with the 3.8.1 release, the following permissions are required to use C
 "Microsoft.Resources/deployments/delete",
 
 === GCP
+
+==== New permissions to deploy Cloud Data Sense in Google Cloud
+
+Starting with the 3.9.10 release, the following permissions are required to deploy Cloud Data Sense in Google Cloud:
+
+[source,yaml]
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.instances.addAccessConfig
 
 ==== New permission for changing machine type
 

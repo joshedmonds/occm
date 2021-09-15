@@ -1,0 +1,223 @@
+---
+sidebar: sidebar
+permalink: task_manage_fsx_volumes.html
+keywords: fsx for ontap, fsx, aws, create volumes, delete volumes, create nfs volumes, delete nfs volumes, cifs volumes, tiering policy, mount path, get mount path, iscsi, mount volume, delete working environment
+summary: After you set up your working environment, you can create and manage Amazon FSx for ONTAP volumes, clones and snapshots, change tiering policies, and remove or delete FSx for ONTAP.
+---
+
+= Create and manage volumes for Amazon FSx for ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you set up your working environment, you can create and manage FSx for ONTAP volumes, clones, and snapshots, change tiering policies, and remove or delete FSx for ONTAP.
+
+== Creating volumes
+
+You can create NFS volumes in a new or existing FSx for ONTAP working environment. If CIFS volumes were created using ONTAP CLI, they will be visible in your FSx for ONTAP working environment.
+
+At this time, you cannot edit FSx for ONTAP volumes from Cloud Manager.
+
+.Before you begin
+
+You need:
+
+* An active link:task_creating_connectors_aws.html[Connector in AWS].
+
+NOTE: You do not need a Connector in AWS to remove or delete a working environment.
+
+* If you want to use SMB, you must have set up DNS and Active Directory.
+
+.Steps
+
+. Open the FSx for ONTAP working environment.
+
+. If you don't have a Connector enabled, you'll be prompted to add one.
++
+image:screenshot_fsx_connector_prompt.png[A screenshot of the FSx for ONTAP Connector prompt.]
+
+. Click the *Volumes* tab
+
+. Click *Add Volume*.
++
+image:screenshot_fsx_volume_new.png[A screenshot of the FSx for ONTAP volume tab.]
+
+. *Volume Details and Protection*:
+
+.. Enter a name for your new volume.
+.. Enter the volume size. Note that the volume size will grow with usage.
+.. Select a snapshot policy. By default, a snapshot is taken every hour (keeping the last six copies), every day (keeping the last two copies), and every week (keeping the last two copies).
+
+.. Click *Next*.
++
+image:screenshot_fsx_volume_details.png[A screenshot of the volume details and protection fields for FSx for ONTAP volume creation.]
+
+. *Protocol*: Select the NFS versions and Access Control policy. Optionally, specify a custom export policy. Click *Next*.
++
+image:screenshot_fsx_volume_nfs_only.png[A screenshot of volume protocol fields for NFS.]
+
+. *Usage Profile and Tiering*:
+
+.. By default, *Storage Efficiency* is disabled. You can change this setting to enable deduplication and compression.
+.. By default, *Tiering Policy* is set to *Snapshot Only*. You can select a different tiering policy based on your needs.
+.. Click *Next*.
++
+image:screenshot_fsx_volume_usage_tiering.png[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
+
+. *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
+// . *Protocol*: Select the an NFS or CIFS volume protocol.
+// .. For NFS:
+// * Select an Access Control policy.
+// * Select the NFS versions.
+// * Select a Custom Export Policy. Click the information icon for valid value criteria.
+// +
+// image:screenshot_fsx_volume_protocol_nfs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
+// .. For CIFS:
+// * Enter a Share Name.
+// * Enter users or groups separated by a semicolon.
+// * Select the permission level for the volume.
+// +
+// image:screenshot_fsx_volume_protocol_cifs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
+//
+// .. Click *Next*.
+
+// TIP: If the CIFS server was not already configured in the working environment, you will be prompted to configure CIFS connectivity.
+
+.Result
+
+The new volume is added to the working environment.
+
+== Mounting volumes
+
+Access mounting instructions from within Cloud Manager so you can mount the volume to a host.
+
+.Steps
+
+. Open the working environment.
+
+. Open the volume menu and select *Mount the volume*.
++
+image:screenshot_fsx_volume_actions.png[A screenshot of available operations available when you open the volume menu.]
+
+. Follow the instructions to mount the volume.
+// == Edit a volume's size and tags
+//
+// After you create a volume, you can modify its size and tags at any time.
+//
+// .Steps
+//
+// . Open the working environment.
+//
+// . Hover over the volume and select *Edit*.
+//
+// . Modify the size and tags as needed.
+//
+// . Click *Apply*.
+
+== Cloning the volume
+
+After you create a volume, you can create a new read-write volume from a new Snapshot.
+
+.Steps
+
+. Open the working environment.
+
+. Open the volume menu and select *Clone*.
+
+. Enter a name for the cloned volume.
+
+. Click *Clone*.
+
+== Managing Snapshot copies
+
+Snapshot copies provide a point-in-time copy of your volume. Create Snapshot copies and restore the data to a new volume.
+
+.Steps
+
+. Open the working environment.
+
+. Open the volume menu and choose one of the available options to manage Snapshot copies:
+
+* *Create a Snapshot copy*
+* *Restore from a Snapshot copy*
+
+. Follow the prompts to complete the selected action.
+
+== Changing the tiering policy
+
+Change the tiering policy for the volume.
+
+.Steps
+
+. Open the working environment.
+
+. Open the volume menu and select *Change Tiering policy*.
+
+. Select a new volume tiering policy and click *Change*.
+
+== Replicating data
+
+You can replicate data between storage environments using Cloud Manager. To configure FSx for ONTAP replication, see link:https://docs.netapp.com/us-en/occm/task_replicating_data.html[replicating data between systems^]
+
+== Syncing data
+
+You can create sync relationships using Cloud Sync in Cloud Manager. To configure sync relationships, see link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[create sync relationships.^]
+
+//TIP: Drag-and-drop sync is not available in FSx for ONTAP at this time. You can manually configure sync relationships using the *Sync* menu.
+
+== Deleting volumes
+
+Delete the volumes that you no longer need.
+
+.Before you begin
+
+You cannot delete a volume that was previously part of a SnapMirror relationship using Cloud Manager. SnapMirror volumes must be deleted using the AWS Management Console or CLI.
+
+.Steps
+
+. Open the working environment.
+
+. Open the volume menu and select *Delete*.
+
+. Enter the working environment name and confirm that you want to delete the volume. It can take up to an hour before the volume is completely removed from Cloud Manager.
+
+NOTE: If you try to delete a cloned volume, you will receive an error.
+
+== Removing FSx for ONTAP from the workspace
+
+You can remove FSx for ONTAP from Cloud Manager without deleting your FSx for ONTAP account or volumes. You can add the FSx for ONTAP working environment back to Cloud Manager at any time.
+
+.Steps
+
+. Open the working environment. If you don't have a Connector in AWS, you will see the prompt screen. You can ignore this and proceed with removing the working environment.
+
+. At the top right of the page, select the actions menu and click *Remove from workspace*.
++
+image:screenshot_fsx_working_environment_remove.png[A screenshot of remove option for FSx for ONTAP from the Cloud Manager interface.]
+
+. Click *Remove* to remove FSx for ONTAP from Cloud Manager.
+
+== Deleting the FSx for ONTAP working environment
+
+You can delete the FSx for ONTAP from Cloud Manager.
+
+.Before you begin
+
+* You must delete all volumes associated with the file system.
+
+* You cannot delete a working environment that contains failed volumes. Failed volumes must be deleted using the AWS Management Console or CLI prior to deleting FSx for ONTAP files system.
+
+WARNING: This action will delete all resources associated with the working environment. This action cannot be undone.
+
+.Steps
+
+. Open the working environment. If you don't have a Connector in AWS, you will see the prompt screen. You can ignore this and proceed to deleting the working environment.
+
+. At the top right of the page, select the actions menu and click *Delete*.
++
+image:screenshot_fsx_working_environment_delete.png[A screenshot of delete option for FSx for ONTAP from the Cloud Manager interface.]
+
+. Enter the name of the working environment and click *Delete*.

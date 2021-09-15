@@ -39,8 +39,9 @@ Cloud Sync supports the following storage types:
 
 * Any NFS server
 * Any SMB server
-* AWS EFS
-* AWS S3
+* Amazon EFS
+* Amazon FSx for ONTAP
+* Amazon S3
 * Azure Blob
 * Azure NetApp Files
 * Cloud Volumes Service

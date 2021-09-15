@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_tagging.html
-keywords: tags, overview, conceptual, resource tags, volume tags
+keywords: tags, overview, conceptual, resource tags, volume tags, AWS tags, Azure tags
 summary: Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags are metadata that you can use to group resources to identify applications, environments, regions, billing codes, cloud providers, and more.
 ---
 
@@ -15,9 +15,11 @@ summary: Cloud Manager enables you to apply tags to your _existing_ resources to
 [.lead]
 Cloud Manager enables you to apply tags to your _existing_ resources to help organize and manage those resources. Tags are metadata that you can use to group resources to identify applications, environments, regions, billing codes, cloud providers, and more.
 
-Tags consists of a *tag key* and a *tag value*. For example, you can create a tag key called "Environment" and then tag values of "Production" and "Test". After they are applied to your resources, you can quickly search for and view resources that match the key/value pair.
+Tags consists of a *tag key* and a *tag value*. For example, you can create a tag key called "Environment" and then add tag values of "Production" and "Test". After they are applied to your resources, you can quickly search for and view resources that match the key/value pair.
 
-You can add tag key/value pairs to _new_ resources when you create a new Azure NetApp Files volume. You can change or delete those tags using the tagging service, or add new tags.
+You can add tag key/value pairs to _new_ resources when you create a working environment or an Azure NetApp Files volume. You can also define tag key/value pairs in link:task_define_templates.html[Cloud Manager templates that you build] for your storage admins and DevOps engineers.
+
+You can add new tags using the Tagging service, and you can change or delete existing tags.
 
 == Features
 
@@ -26,42 +28,59 @@ The Tagging service offers the following features and benefits:
 * Create tag keys and tag values that match the terms you use in your environment
 * Organize the resources in your environment for easier monitoring and management
 * Add, remove, and edit tag keys and tag values by resource type
+* Tag ONTAP resources and resources in your environment from AWS and Azure.
 
 == Pricing and licenses
 
-The ability to tag your resources requires no licensing and is free to use by all Cloud Manager users.
+The ability to tag your resources requires no licensing and is free to use by all Cloud Manager users with the Account Admin or Workspace Admin role.
 
 == Resources that you can tag
 
 You can apply tags to the following resources.
 
-[cols=2*,options="header",cols="50,40",width="75%"]
+[cols=3*,options="header",cols="25,35,40",width="85%"]
 
 |===
-| Container
+| Provider
+| Service
 | Resource
 
-| Cloud Volumes ONTAP | Storage VM
-Aggregate
+| ONTAP | Cloud Volumes ONTAP | Aggregate
+Storage VM
 Volume
 
-| On-premise ONTAP | Storage VM
-Aggregate
+| ONTAP | On-premise ONTAP | Aggregate
+Storage VM
 Volume
 
-| Azure NetApp Files | Volume
+| ONTAP | Azure NetApp Files | Volume
 
-| AWS | EC2 Instance
+| AWS | EC2 | Instance
+Security Group
+Subnet
+Volume
+VPC
+
+| Azure | Compute | Snapshot
+Virtual Machine
+| | Network | Security Group
+Virtual Network
+| | Resource | Resource Group
+| | Storage | Storage Account
 
 |===
 
-NOTE: At this time you can't view or manage tags assigned to resources though Azure, or labels assigned to resources though Google Cloud.
+NOTE: At this time you can't view or manage labels (tags) assigned to resources though Google Cloud.
 
 For information about AWS EC2 tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
 
+For information about Azure tags, refer to https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json[Azure Documentation: Tagging your Azure resources^].
+
+== Prerequisites
+
 === Verify your AWS Connector permissions
 
-If you just created the Connector using Cloud Manager version 3.9.9 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some newly required permissions for the Cloud Manager IAM role to tag AWS EC2 instances:
+If you created the Connector using Cloud Manager version 3.9.10 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some required permissions for the Cloud Manager IAM role to tag AWS EC2 instances:
 
 [source,json]
 {
@@ -76,7 +95,37 @@ If you just created the Connector using Cloud Manager version 3.9.9 or greater, 
     "tag:UntagResources"
   ],
   "Resource": "*",
-  "Effect": "Allow"
+  "Effect": "Allow",
+  "Sid": "tagServicePolicy"
+}
+
+=== Verify your Azure Connector permissions
+
+If you created the Connector using Cloud Manager version 3.9.10 or greater, then you're all set. If you created the Connector using an earlier version of Cloud Manager, then you'll need to add some required permissions for the Cloud Manager Operator IAM role to tag Azure resources:
+
+[source,json]
+{
+  "id": "<ID>",
+  "properties": {
+    "roleName": "Cloud Manager Operator-<ID>",
+    "description": "Cloud Manager Operator",
+    "assignableScopes": [
+      "/subscriptions/<SUBSCRIPTION-ID>"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Resources/tags/read",
+          "Microsoft.Resources/tags/write",
+          "Microsoft.Resources/tags/delete",
+          "Microsoft.ClassicCompute/virtualMachines/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
 }
 
 == Tag rules and restrictions

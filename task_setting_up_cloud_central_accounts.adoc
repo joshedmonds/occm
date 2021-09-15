@@ -25,7 +25,7 @@ In Cloud Manager, workspaces enable you to isolate a set of working environments
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
+. From the top of https://cloudmanager.netapp.com[Cloud Manager^], click the *Account* drop-down.
 +
 image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
 
@@ -51,7 +51,7 @@ Associate Cloud Central users with the Cloud Central account so those users can 
 
 . If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of https://cloudmanager.netapp.com[Cloud Manager^], click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -84,9 +84,9 @@ You can associate Workspace Admins with additional workspaces at any time. Assoc
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
-. From the Users tab, click the action menu in the row that corresponds to the user.
+. From the Members tab, click the action menu in the row that corresponds to the user.
 +
-image:screenshot_associate_user_workspace.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+image:screenshot_associate_user_workspace.png[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
 
 . Click *Manage Workspaces*.
 

@@ -13,7 +13,7 @@ summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP sy
 :imagesdir: ./media/
 
 [.lead]
-You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
+You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, creating an on-demand backup, deleting backups, and more.
 
 CAUTION: Do not manage or change backup files directly from your cloud provider environment. This may corrupt the files and will result in an unsupported configuration.
 
@@ -72,6 +72,21 @@ image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where yo
 . Click *Save* to commit your changes.
 
 *Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<Deleting backups,delete the backups>>.
+
+== Creating a manual volume backup at any time
+
+You can create an on-demand backup at any time to capture the current state of the volume. This can be useful if very important changes have been made to a volume and you don't want to wait for the next scheduled backup to protect that data, or if the volume is not currently being backed up and you want to capture its current state.
+
+The backup name includes the timestamp so you can identify your on-demand backup from other scheduled backups.
+// A manual backup is always a full backup of the volume. 
+
+.Steps
+
+. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
++
+image:screenshot_backup_now_button.png[A screenshot that shows the Backup Now button which is available after you select a volume.]
+
+The Backup Status column for that volume displays "In Progress" until the backup is created.
 
 == Viewing the list of backups for each volume
 
@@ -170,3 +185,5 @@ image:screenshot_backup_settings_button.png[A screenshot that shows the Backup S
 image:screenshot_disable_backups.png[A screenshot of the Deactivate Backup button for a working environment.]
 
 . In the confirmation dialog box, click *Deactivate*.
+
+NOTE: The "Deactivate Backup" button changes to "Activate Backup" while backup is disabled on that working environment. You can click *Activate Backup* if you want to enable all backup functionality for that working environment.

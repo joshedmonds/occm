@@ -19,7 +19,7 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 Cloud Manager is an enterprise-class, SaaS-based management platform that keeps you in control of your data no matter where it is.
 
 * Set up and use https://cloud.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
-* Set up and use file-storage services: https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^], https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^], and https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^].
+* Set up and use file-storage services: https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^], https://cloud.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP], https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^], and https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^].
 * Discover and manage your on-prem ONTAP clusters by creating volumes, backing up to the cloud, replicating data across your hybrid cloud, and tiering cold data to the cloud.
 * Enable integrated cloud services and software like https://cloud.netapp.com/cloud-compliance[Cloud Data Sense^], https://cloud.netapp.com/cloud-insights[Cloud Insights^], https://cloud.netapp.com/cloud-backup-service[Cloud Backup service^], https://netapp.io/persistent-storage-provisioner-for-kubernetes/[Trident^], and more.
 

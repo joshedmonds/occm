@@ -13,7 +13,7 @@ summary: Adding your NetApp Support Site account to Cloud Manager is required to
 :imagesdir: ./media/
 
 [.lead]
-Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
+Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system or to enter the serial number for a capacity-based license. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
 
 .Steps
 

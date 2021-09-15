@@ -19,6 +19,114 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.10 build 2 (12 September 2021)
+
+We fixed a Cloud Backup bug where a volume restore operation failed when the language code for the volume was different than the language code for the storage VM.
+
+== Cloud Manager 3.9.10 (2 September 2021)
+
+* <<Support for Amazon FSx for ONTAP>>
+* <<Cloud Volumes ONTAP enhancement>>
+* <<Cloud Data Sense enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Replication enhancements>>
+* <<Cloud Backup enhancements>>
+* <<Resource Tagging enhancements>>
+* <<A new Notification Service has been added>>
+
+=== Support for Amazon FSx for ONTAP
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP] is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises, with the simplicity, agility, security, and scalability of a native AWS service.
++
+link:concept_fsx_aws.html[Learn about Amazon FSx for ONTAP].
+
+* You can configure an FSx for ONTAP working environment in Cloud Manager.
++
+link:task_creating_fsx_working_environment.html[Create an Amazon FSx for ONTAP working environment].
+
+* Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
++
+link:task_scanning_fsx.html#quick-start[Get started with Cloud Data Sense for Amazon FSx for ONTAP].
+
+=== Cloud Volumes ONTAP enhancement
+
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
+
+. From Azure, create a key vault and then generate a key in that vault.
+
+. From Cloud Manager, use the API to create a Cloud Volumes ONTAP working environment that uses the key.
+
+link:task_set_up_azure_encryption.html[Learn more about these steps].
+
+=== Cloud Data Sense enhancements
+
+//* Support for the Google Cloud Platform.
+//+
+//Now Cloud Data Sense can scan data from your Cloud Volumes ONTAP systems that are deployed on GCP. Data Sense must be deployed on GCP, and the Connector must be deployed on GCP or on-premises.
+//+
+//The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
+
+* Added support for scanning data on NFS volumes on Amazon FSx for ONTAP systems. link:task_scanning_fsx.html[See how to configure scanning for your FSx for ONTAP systems].
+
+* The capability to add "Status" information to your files using Data Sense has changed terminology to use "Tags". These are file level tags - not to be confused with resource level tagging that can be applied to volumes, EC2 instances, virtual machines, etc.
+
+=== Cloud Sync enhancements
+
+You can now sync data to or from an Amazon FSx for ONTAP file system.
+
+* link:concept_fsx_aws.html[Learn about Amazon FSx for ONTAP]
+* link:reference_sync_requirements.html[View supported sync relationships]
+* link:task_sync_creating_relationships.html[Learn how to create a sync relationship for Amazon FSx for ONTAP]
+
+=== Cloud Tiering enhancements
+
+* New Cloud Tiering BYOL license replaces FabricPool license
++
+A new *Cloud Tiering* license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.
++
+link:task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
+
+* Now you can tier inactive data from your on-prem ONTAP clusters to any Object Storage service which uses the Simple Storage Service (S3) protocol.
++
+link:task_tiering_onprem_s3_compat.html[See how to tier data to S3-compatible object storage].
+
+=== Replication enhancements
+
+You can now replicate data from a Cloud Volumes ONTAP system or an on-premises ONTAP cluster to an Amazon FSx for ONTAP file system.
+
+link:concept_replication.html[Learn about the Replication service].
+
+=== Cloud Backup enhancements
+
+* Now you can create an on-demand backup at any time to capture the current state of a volume. This is useful if important changes have been made to a volume and you don’t want to wait for the next scheduled backup to protect that data.
++
+link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[See how to create an on-demand backup].
+
+* When configuring backups to Amazon S3 from an on-premises ONTAP system, now you can define a connection to a Private Interface Endpoint in the activation wizard. This allows you to use a network interface that connects your on-prem system privately and securely to a service powered by AWS PrivateLink. link:task_backup_onprem_to_aws.html#preparing-amazon-s3-for-backups[See details about this option].
+
+* For additional security and control, you can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys.
++
+This is available when configuring backups from an on-premises ONTAP system or from a Cloud Volumes ONTAP system in AWS.
+
+* The restriction of being able to browse a single directory with flat files up to a maximum of 30,000 files has been removed. Now you can restore files from directories that have a larger number of files.
+
+=== Resource Tagging enhancements
+
+* Now you can manage tags on your Azure resources using the Cloud Manager Tagging service. You can view Azure tags and tag values that have been applied to resources, and you can apply those tags to other Azure resources that you are managing.
++
+link:concept_tagging.html#resources-that-you-can-tag[See the Azure resources that you can tag].
++
+The Cloud Manager Operator IAM role associated with the Connector needs the latest permissions to tag Azure resources. link:concept_tagging.html#verify-your-azure-connector-permissions[See the new permissions that are required].
+
+* Some additional AWS EC2 resources can now be tagged. link:concept_tagging.html#resources-that-you-can-tag[See the AWS resources that you can tag].
++
+The Cloud Manager IAM role associated with the Connector needs the latest permissions to tag AWS EC2 instances. link:concept_tagging.html#verify-your-aws-connector-permissions[See the new permissions that are required].
+
+=== A new Notification Service has been added
+
+The Notification service has been introduced so you can view the status of Cloud Manager operations that you have initiated during your current login session. You can verify whether the operation was successful, or if it failed. link:task_monitor_cm_operations.html[See how to monitor operations in your account].
+
 == Cloud Manager 3.9.9 build 2 (18 Aug 2021)
 
 This patch update includes bug fixes.
@@ -146,7 +254,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 ** *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as multiple Cloud Volumes ONTAP systems, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essentials_ or _Professional_.
 
-** *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of allocated capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
+** *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of provisioned capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
 +
 link:concept_licensing.html[Learn more about these licensing options].
 +

@@ -80,7 +80,7 @@ Cloud Volumes ONTAP 9.7 and later.
 License requirements::
 For Cloud Backup PAYGO licensing, a subscription through the Azure Marketplace is required before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard^].
 +
-For Cloud Backup BYOL licensing, you do not need an Azure Cloud Backup subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
+For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 +
 And you need to have a Microsoft Azure subscription for the storage space where your backups will be located.
 
@@ -163,7 +163,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 If you want to use a different Azure subscription for your backups, you must link:reference_backup_multi_account_azure.html[log in to the Azure portal and link the two subscriptions].
 .. The region where the backups will be stored. This can be a different region than where the Cloud Volumes ONTAP system resides.
 .. The resource group that manages the Blob container - you can create a new resource group or select an existing resource group.
-.. Whether you will use the default Microsoft-managed encryption key or choose your own customer-managed keys to manage encryption of your data. (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys]).
+.. Whether you'll use the default Microsoft-managed encryption key or choose your own customer-managed keys to manage encryption of your data. (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys]).
 +
 image:screenshot_backup_provider_settings_azure.png[A screenshot that shows the cloud provider details when backing up volumes from a Cloud Volumes ONTAP system to an Azure Blob tier.]
 

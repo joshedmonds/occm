@@ -1,0 +1,51 @@
+---
+sidebar: sidebar
+permalink: task_setting_up_permissions_fsx.html
+keywords: fsx for ontap, iam, user role, permissions
+summary: In order to create or manage your Amazon FSx for ONTAP working environment, you need to have an AWS access key and secret key for an IAM user role with FSx for ONTAP permissions.
+---
+
+= Set up permissions for FSx for ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+To create or manage your Amazon FSx for ONTAP working environment, you need an AWS access key and secret key for an IAM user role with FSx for ONTAP permissions. These permissions are different from the permissions required to create a Connector in AWS.
+
+NOTE: You can create a new IAM user role with FSx for ONTAP permissions or edit an existing IAM user role to include the additional FSx for ONTAP permissions. We recommend the latter to avoid having to use multiple keys for your Connector and for FSx for ONTAP access.
+
+.Steps
+
+To grant FSx for ONTAP permissions to an IAM user role:
+
+. From the AWS IAM console, create a new policy or edit an existing policy to include the following actions for FSx for ONTAP:
++
+[source,json]
+"ec2:Describe*"
+"kms:Describe*"
+"kms:List*"
+"fsx:*"
+"iam:CreateServiceLinkedRole"
+"ec2:CreateTags"
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
+
+. Attach the policy you created in the previous step to the IAM user role.
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
+
+.Result
+
+The AWS user now has permissions required for FSx for ONTAP in Cloud Manager.
+
+== Related links
+
+* link:concept_accounts_aws.html[AWS credentials and permissions]
+* link:task_creating_connectors_aws.html[Create a Connecter in AWS]
+* link:task_adding_aws_accounts.html[Managing AWS credentials for Cloud Manager]
+* link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]

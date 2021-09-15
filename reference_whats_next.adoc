@@ -19,6 +19,7 @@ Now that you've logged in and set up Cloud Manager, users can start creating and
 * link:task_getting_started_azure.html[Get started with Cloud Volumes ONTAP for Azure]
 * link:task_getting_started_gcp.html[Get started with Cloud Volumes ONTAP for Google Cloud]
 * link:task_manage_anf.html[Set up Azure NetApp Files]
+* link:task_getting_started_fsx.html[Set up Amazon FSx for ONTAP]
 * link:task_manage_cvs_aws.html[Set up Cloud Volumes Service for AWS]
 * link:task_discovering_ontap.html[Discover an on-premises ONTAP cluster]
 * link:task_viewing_amazon_s3.html[Discover your Amazon S3 buckets]

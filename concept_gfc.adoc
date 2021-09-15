@@ -64,7 +64,7 @@ This configuration lets you deploy and manage the entire Global File Cache serve
 
 === Manual deployment options
 
-Global File Cache configurations are also supported with Cloud Volumes ONTAP, Cloud Volumes Service, or Azure NetApp Files installed on Microsoft Azure, Google Cloud Platform, or Amazon Web Services public cloud storage infrastructure. On-premises solutions are also available on NetApp AFF and FAS platforms. In these installations the Global File Cache server-side components must be configured and deployed manually, not using Cloud Manager.
+Global File Cache configurations are also supported with Cloud Volumes ONTAP, Cloud Volumes Service, Azure NetApp Files, and Amazon FSx for ONTAP systems installed on public cloud storage infrastructure. On-premises solutions are also available on NetApp AFF and FAS platforms. In these installations the Global File Cache server-side components must be configured and deployed manually, not using Cloud Manager.
 
 See the https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.1.0.pdf[NetApp Global File Cache User Guide^] for details.
 

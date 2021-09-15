@@ -28,6 +28,7 @@ A Connector is required to use any of the following features within Cloud Manage
 * Tiering on-prem data
 * Global File Cache
 * Amazon S3 bucket discovery
+* Amazon FSx for ONTAP advanced management features
 
 A Connector is *_not_* required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync.
 

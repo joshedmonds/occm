@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_tiering.html
-keywords: cloud tiering, overview, conceptual, value, features, cost, charging, service connector
+keywords: cloud tiering, overview, conceptual, value, features, cost, charging, tiering policies, cooling period, fabricpool
 summary: NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 ---
 
@@ -15,7 +15,7 @@ summary: NetApp's Cloud Tiering service extends your data center to the cloud by
 [.lead]
 NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 
-The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active data remains on high-performance SSDs, while inactive data is tiered to low-cost object storage while preserving ONTAP data efficiencies.
+The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active data remains on high-performance SSDs (an AFF system or a FAS system with all-SSD aggregates), while inactive data is tiered to low-cost object storage while preserving ONTAP data efficiencies.
 
 == Features
 
@@ -39,26 +39,24 @@ You can tier inactive data from an on-premises ONTAP cluster to the following ob
 * Amazon S3
 * Microsoft Azure Blob
 * Google Cloud Storage
+* S3-compatible object storage
 * NetApp StorageGRID
-// * S3-compatible object storage
 
 === Object storage tiers
 
 Each ONTAP cluster tiers inactive data to a single object store. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
 
-* link:reference_aws_support.html[Learn about supported S3 storage classes]
+* link:reference_aws_support.html[Learn about supported AWS S3 storage classes]
 * link:reference_azure_support.html[Learn about supported Azure Blob access tiers]
 * link:reference_google_support.html[Learn about supported Google Cloud storage classes]
 
 Cloud Tiering uses the cloud provider default storage class/access tier for your inactive data. However, you can apply a lifecycle rule so that the data automatically transitions from the default storage class to another storage class after a certain number of days. This can help keep your costs down by moving very cold data to less expensive storage.
 
-NOTE: You can't select lifecycle rules for data tiered to StorageGRID.
-
-// You can't select lifecycle rules for data tiered to StorageGRID or S3-compatible storage.
+NOTE: You can't select lifecycle rules for data tiered to StorageGRID or S3-compatible storage.
 
 == Pricing and licenses
 
-Pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license called _FabricPool_, or a combination of both. A 30-day free trial is available for your first cluster if you don’t have a license.
+Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-your-own Cloud Tiering license, or a combination of both. A 30-day free trial is available for your first cluster if you don’t have a license.
 
 There are no charges when tiering data to StorageGRID. Neither a BYOL license or PAYGO registration is required.
 
@@ -66,7 +64,7 @@ https://cloud.netapp.com/cloud-tiering[View pricing details^].
 
 === 30-day free trial
 
-If you don't have a FabricPool license, a 30-day free trial of Cloud Tiering starts when you set up tiering to your first cluster. After that 30-day free trial ends, you'll need to pay for Cloud Tiering through a pay-as-you-go subscription, a FabricPool license, or a combination of both.
+If you don't have a Cloud Tiering license, a 30-day free trial of Cloud Tiering starts when you set up tiering to your first cluster. After that 30-day free trial ends, you'll need to pay for Cloud Tiering through a pay-as-you-go subscription, a BYOL license, or a combination of both.
 
 If your free trial ends and you haven't subscribed or added a license, then ONTAP no longer tiers cold data to object storage, but existing data is still available for access.
 
@@ -80,25 +78,23 @@ You should subscribe even if you have a free trial or if you bring your own lice
 +
 When the trial ends, you’ll be charged hourly according to the amount of data that you tier.
 
-* If you tier more data than allowed by your FabricPool license, then data tiering continues through your pay-as-you-go subscription.
+* If you tier more data than allowed by your BYOL license, then data tiering continues through your pay-as-you-go subscription.
 +
 For example, if you have a 10 TB license, all capacity beyond the 10 TB is charged through the pay-as-you-go subscription.
 
-You won't be charged from your pay-as-you-go subscription during your free trial or if you haven't exceeded your FabricPool license.
+You won't be charged from your pay-as-you-go subscription during your free trial or if you haven't exceeded your Cloud Tiering BYOL license.
 
-link:task_licensing_cloud_tiering.html[Learn how to set up a pay-as-you-go subscription].
+link:task_licensing_cloud_tiering.html#Use-a-cloud-tiering-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
 
 === Bring your own license
 
-Bring your own license by purchasing an ONTAP FabricPool license from NetApp. You can purchase term-based or perpetual licenses.
+Bring your own license by purchasing a *Cloud Tiering* license from NetApp. You can purchase 2-, 12-, 24-, or 36-month term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
 
-After you purchase a FabricPool license, you'll need to add it to the cluster, link:task_licensing_cloud_tiering.html#adding-a-tiering-license-to-ontap[which you can do directly from Cloud Tiering].
+After you purchase a Cloud Tiering license, you'll need use the Digital Wallet page in Cloud Manager to add the license.  link:task_licensing_cloud_tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
 
-After you activate the license through Cloud Tiering, if you purchase additional add-on capacity at a later time, the license on the cluster is automatically updated with the new capacity. There's no need to apply a new NetApp License File (NLF) to the cluster.
+As noted above, we recommend that you set up a pay-as-you-go subscription, even if you have purchased a BYOL license.
 
-As noted above, we recommend that you set up a pay-as-you-go subscription, even if your cluster has a BYOL license.
-
-mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Contact us to purchase a license].
+NOTE: Starting August 21, 2021 the old *FabricPool* license is being replaced by the *Cloud Tiering* license. link:task_licensing_cloud_tiering.html#new-cloud-tiering-byol-licensing-starting-august-21-2021[Read more about how the Cloud Tiering license is different than the FabricPool license].
 
 == How Cloud Tiering works
 
@@ -106,7 +102,7 @@ Cloud Tiering is a NetApp-managed service that uses FabricPool technology to aut
 
 The following image shows the relationship between each component:
 
-image:diagram_cloud_tiering.png["An architecture image that shows the Cloud Tiering service with a connection to the Service Connector in your cloud provider, the Service Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides in the ONTAP cluster, while inactive data resides in object storage."]
+image:diagram_cloud_tiering.png["An architecture image that shows the Cloud Tiering service with a connection to the Connector in your cloud provider, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides in the ONTAP cluster, while inactive data resides in object storage."]
 
 At a high level, Cloud Tiering works like this:
 

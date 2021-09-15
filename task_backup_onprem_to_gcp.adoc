@@ -29,9 +29,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- it is included as part of the Premium Bundle or Data Protection Bundle.
-* You have subscribed to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
-* You have a valid cloud provider subscription for the object storage space where your backups will be located.
-* You need to have an account that has an access key and the required permissions so the ONTAP cluster can back up and restore data.
+* The cluster must have the required network connections to Google storage and to the Connector.
+* The Connector must have the required network connections to Google storage and to the cluster.
+* You have a valid Google subscription for the object storage space where your backups will be located.
+* You have a Google account with an access key and secret key so the ONTAP cluster can back up and restore data.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
 
@@ -94,25 +95,24 @@ ONTAP requirements::
 +
 *Note:* The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-76A429CC-56CF-4DC1-9DC5-A3E222892684.html[manage your cluster licenses].
+See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-76A429CC-56CF-4DC1-9DC5-A3E222892684.html[manage your cluster licenses^].
 *	Time and time zone are set correctly.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-644CED2B-ABC9-4FC5-BEB2-1BE6A867919E.html[configure your cluster time].
+See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-644CED2B-ABC9-4FC5-BEB2-1BE6A867919E.html[configure your cluster time^].
 
 Cluster networking requirements::
-* The ONTAP cluster initiates an HTTPS connection over port 443 to Google Cloud storage.
+* The ONTAP cluster initiates an HTTPS connection over port 443 from the intercluster LIF to Google Cloud storage for backup and restore operations.
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 +
-* An inbound connection is required from the Connector, which can reside in a Google Cloud Platform VPC.
+* ONTAP requires an inbound connection from the Connector to the cluster management LIF. The Connector can reside in a Google Cloud Platform VPC.
 
-* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
+* An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[Learn more about IPspaces^].
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
-* Node and intercluster LIFs are able to access the internet.
-*	DNS servers have been configured for the storage VM where the volumes are located.
-+
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-D4A9F825-77F0-407F-BFBD-D94372D6AAC1.html[configure DNS services for the SVM].
+* The nodes' intercluster LIFs are able to access the internet.
+*	DNS servers have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
+* Note that if you use are using a different IPspace than the Default, then you might need to create a static route to get access to the object storage.
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
 
 === Creating or switching Connectors
@@ -145,11 +145,14 @@ You can create backups from on-premises systems to Google Cloud storage in all r
 
 === License requirements
 
-For Cloud Backup PAYGO licensing, you'll need a subscription to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
+Before your 30-day free trial of the Cloud Backup service expires, you need to subscribe to a pay-as-you-go (PAYGO) Cloud Manager Marketplace offering from Google, or purchase and activate a Cloud Backup BYOL license from NetApp. These licenses are for the account and can be used across multiple systems.
 
-For Cloud Backup BYOL licensing, you do not need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
+* For Cloud Backup PAYGO licensing, you'll need a subscription to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace offering to continue using Cloud Backup. Billing for Cloud Backup is done through this subscription.
+* For Cloud Backup BYOL licensing, you don't need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 
-And you need to have a subscription from your cloud provider for the object storage space where your backups will be located.
+You need to have a Google subscription for the object storage space where your backups will be located.
+
+A SnapMirror license is required on the cluster. Note that the "Hybrid Cloud Bundle" is not required when using Cloud Backup.
 
 === Preparing Google Cloud Storage for backups
 
@@ -184,7 +187,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 .. The Google Cloud Project where you want the Google Cloud Storage bucket to be created for backups. (The Project must have a Service Account that has the predefined Storage Admin role.)
 .. The Google Access Key and Secret Key used to store the backups.
 .. The Google region where the backups will be stored.
-.. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.
 +
 image:screenshot_backup_onprem_to_google.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Google Cloud Storage.]
 

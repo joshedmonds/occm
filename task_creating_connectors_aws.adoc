@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_creating_connectors_aws.html
-keywords: create connector in aws, launch connector in aws, deploy connector in aws, aws connector, connector aws, connector permissions
+keywords: fsx for ontap, iam, user role, create connector in aws, launch connector in aws, deploy connector in aws, aws connector, connector aws, connector permissions
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
@@ -30,10 +30,14 @@ Before you can deploy a Connector from Cloud Manager, you need to ensure that yo
 . Download the Connector IAM policy from the following location:
 +
 https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
++
+TIP: For IAM user permissions for Amazon FSx for ONTAP, see link:task_manage_fsx_aws.html[Create an FSx for ONTAP working environment^].
 
 . From the AWS IAM console, create your own policy by copying and pasting the text from the Connector IAM policy.
 
 . Attach the policy that you created in the previous step to the IAM user who will create the Connector from Cloud Manager.
+
+
 
 .Result
 

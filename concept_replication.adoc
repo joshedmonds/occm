@@ -17,7 +17,7 @@ NetApp SnapMirror replicates data at high speeds over LAN or WAN, so you get hig
 
 == Features
 
-* Replicate data between storage systems to support backup and disaster recovery to the cloud or between clouds.
+* Replicate data between ONTAP storage systems to support backup and disaster recovery to the cloud or between clouds.
 
 * Ensure the reliability of your DR environment with high availability.
 
@@ -29,17 +29,32 @@ NetApp doesn't charge you for using the Replication service, but you'll need to 
 
 == Supported working environments
 
-Cloud Manager enables data replication between the following types of working environments:
+Cloud Manager enables data replication between the following types of working environments.
 
-* From a Cloud Volumes ONTAP system to another Cloud Volumes ONTAP system
+[cols=2*,options="header",cols="30,30"]
+|===
+| Source working environment
+| Supported target working environments
 
-* Between a Cloud Volumes ONTAP system and an on-prem ONTAP cluster
+| Cloud Volumes ONTAP a|
 
-* From an on-prem ONTAP cluster to another on-prem ONTAP cluster
+* Amazon FSx for ONTAP
+* Cloud Volumes ONTAP
+* On-prem ONTAP cluster
+
+| On-prem ONTAP cluster a|
+
+* Amazon FSx for ONTAP
+* Cloud Volumes ONTAP
+* On-prem ONTAP cluster
+
+|===
 
 == How data replication works
 
-Cloud Manager simplifies data replication between volumes on separate systems using SnapMirror and SnapVault technologies. You simply need to identify the source volume and the destination volume, and then choose a replication policy and schedule. Cloud Manager purchases the required disks for Cloud Volumes ONTAP, configures relationships, applies the replication policy, and then initiates the baseline transfer between volumes.
+Cloud Manager simplifies data replication between volumes on separate ONTAP systems using SnapMirror and SnapVault technologies. You simply need to identify the source volume and the destination volume, and then choose a replication policy and schedule.
+
+For Cloud Volumes ONTAP, Cloud Manager purchases the required disks, configures relationships, applies the replication policy, and then initiates the baseline transfer between volumes.
 
 NOTE: The baseline transfer includes a full copy of the source data. Subsequent transfers contain differential copies of the source data.
 

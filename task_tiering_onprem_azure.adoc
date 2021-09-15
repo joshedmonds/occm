@@ -17,7 +17,7 @@ Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[number 1] Prepare to tier data to Azure Blob storage
 
@@ -25,23 +25,23 @@ Get started quickly by following these steps or scroll down to the remaining sec
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An AFF, or FAS system with all-SSD aggregates, that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * A Connector installed in an Azure VNet or on your premises.
 * Networking for a Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure storage, and to the Cloud Tiering service.
 
 ==== image:number2.png[number2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to Azure Blob storage.
+In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Azure Blob storage.
 
 ==== image:number3.png[number 3] Set up licensing
 
 [role="quick-margin-para"]
-After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license, or a combination of both:
+After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP Cloud Tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
-* To subscribe from the Azure Marketplace, click *Tiering > Licensing*, click *Subscribe*, and then follow the prompts.
-* To add a tiering license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html[add it to your cluster from Cloud Tiering].
+* To subscribe from the Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
+* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
 == Requirements
 
@@ -58,7 +58,7 @@ NOTE: Communication between the Connector and Blob storage is for object storage
 Your ONTAP clusters must meet the following requirements when tiering data to Azure Blob storage.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and all-SSD aggregates on FAS systems.
+Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.4 or later
@@ -68,7 +68,7 @@ Cluster networking requirements::
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 +
-Although ExpressRoute provides better performance and lower data transfer charges, it's not required between the ONTAP cluster and Azure Blob storage. Because performance is significantly better when using ExpressRoute, doing so is the recommended best practice.
+Although ExpressRoute provides better performance and lower data transfer charges, it's not required between the ONTAP cluster and Azure Blob storage. But doing so is the recommended best practice.
 
 * An inbound connection is required from the Connector, which can reside in an Azure VNet or on your premises.
 +
@@ -100,9 +100,9 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 
 === Verify that you have the necessary Connector permissions
 
-If you just created the Connector using Cloud Manager version 3.9.7 or greater, then you're all set.
+If you created the Connector using Cloud Manager version 3.9.7 or greater, then you're all set.
 
-If you created the Connector using an earlier version of Cloud Manager, then you'll need to edit the permission list to add 2 newly required permissions:
+If you created the Connector using an earlier version of Cloud Manager, then you'll need to edit the permission list to add 2 required permissions:
 
 [source,json]
 Microsoft.Storage/storageAccounts/managementPolicies/read
@@ -183,7 +183,7 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
@@ -196,6 +196,6 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 You've successfully set up data tiering from volumes on the cluster to Azure Blob object storage.
 
 .What's next?
-link:task_licensing_cloud_tiering.html[Be sure to subscribe from the Cloud Tiering service].
+link:task_licensing_cloud_tiering.html[Be sure to subscribe to the Cloud Tiering service].
 
 You can also add additional clusters or review information about the active and inactive data on the cluster. For details, see link:task_managing_tiering.html[Managing data tiering from your clusters].

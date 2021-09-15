@@ -74,7 +74,7 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 
 . From the Members tab, click the action menu in the row that corresponds to the user.
 +
-image:screenshot_associate_user_workspace.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+image:screenshot_associate_user_workspace.png[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
 
 . Click *Disassociate User* and click *Disassociate* to confirm.
 
@@ -94,7 +94,7 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 
 . From the Members tab, click the action menu in the row that corresponds to the user.
 +
-image:screenshot_associate_user_workspace.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+image:screenshot_associate_user_workspace.png[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
 
 . Click *Manage Workspaces*.
 
@@ -255,20 +255,6 @@ You'll only see the subscriptions that are associated with the account that you'
 image:screenshot_subscription_menu.gif[A screenshot of the action menu for a subscription.]
 
 . Choose to rename the subscription or to manage the accounts that are associated with the subscription.
-
-== Auditing user activity in your account
-
-The Timeline in Cloud Manager shows the actions that users completed to manage your account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
-
-.Steps
-
-. Click *All Services > Timeline*.
-
-. Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
-
-.Result
-
-The Timeline updates to show you account management actions.
 
 == Changing your account name
 

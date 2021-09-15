@@ -64,6 +64,8 @@ image:screenshot_tags_search_and.png[]
 
 You can apply tags to a single resource or to multiple resources. The resources could have existing tags or have no current tags.
 
+link:concept_tagging.html#resources-that-you-can-tag[See the list of resources that you can tag at this time.]
+
 .Steps
 
 . From the *Tags* tab, create your search criteria and click *Search*.

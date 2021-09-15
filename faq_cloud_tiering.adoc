@@ -27,7 +27,7 @@ It depends on where you tier the cold data. Refer to the following:
 * link:task_tiering_onprem_azure.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
 * link:task_tiering_onprem_gcp.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
 * link:task_tiering_onprem_storagegrid.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to StorageGRID]
-// * link:task_tiering_onprem_s3_compat.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to S3 object storage]
+* link:task_tiering_onprem_s3_compat.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to S3 object storage]
 
 === Does Cloud Tiering enable inactive data reporting?
 
@@ -53,8 +53,7 @@ The following questions relate to object storage.
 
 === Which object storage providers are supported?
 
-Amazon S3, Azure Blob storage, Google Cloud Storage, and NetApp StorageGRID object storage providers are supported.
-// Amazon S3, Azure Blob storage, Google Cloud Storage, NetApp StorageGRID, and S3-compatible object storage providers are supported.
+Amazon S3, Azure Blob storage, Google Cloud Storage, NetApp StorageGRID, and S3-compatible object storage providers are supported.
 
 === Can I use my own bucket/container?
 
@@ -97,8 +96,7 @@ The following questions relate to Connectors.
 * When tiering data to S3, the Connector can reside in an AWS VPC or on your premises.
 * When tiering data to Blob storage, the Connector can reside in an Azure VNet or on your premises.
 * When tiering data to Google Cloud Storage, the Connector must reside in a Google Cloud Platform VPC.
-* When tiering data to StorageGRID, the Connector must reside on your premises.
-// * When tiering data to StorageGRID or other S3-Compatible storage providers, the Connector must reside on your premises.
+* When tiering data to StorageGRID or other S3-Compatible storage providers, the Connector must reside on your premises.
 
 == Networking
 
@@ -120,7 +118,7 @@ For more details, see:
 * link:task_tiering_onprem_azure.html[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
 * link:task_tiering_onprem_gcp.html[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
 * link:task_tiering_onprem_storagegrid.html[Tiering data from on-premises ONTAP clusters to StorageGRID]
-// * link:task_tiering_onprem_s3_compat.html[Tiering data from on-premises ONTAP clusters to S3 object storage]
+* link:task_tiering_onprem_s3_compat.html[Tiering data from on-premises ONTAP clusters to S3 object storage]
 
 == Permissions
 
@@ -142,6 +140,6 @@ Storage Admin permissions are needed for a link:task_tiering_onprem_gcp.html#pre
 
 link:task_tiering_onprem_storagegrid.html#preparing-storagegrid[S3 permissions are needed].
 
-// === What permissions are required for S3-compatible object storage?
-//
-// link:task_tiering_onprem_s3_compat.html#preparing-s3-compatible-object-storage[S3 permissions are needed].
+=== What permissions are required for S3-compatible object storage?
+
+link:task_tiering_onprem_s3_compat.html#preparing-s3-compatible-object-storage[S3 permissions are needed].

@@ -53,7 +53,7 @@ You can enter your NSS account on the *Charging Methods and NSS Account* page.
 | Capacity-based BYOL
 | A Marketplace subscription or NetApp Support Site (NSS) account is required.
 
-A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn't have a valid capacity-based license, or in the event that your allocated capacity exceeds the licensed capacity.
+A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn't have a valid capacity-based license, or in the event that your provisioned capacity exceeds the licensed capacity.
 | You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.

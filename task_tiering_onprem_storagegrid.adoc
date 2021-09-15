@@ -17,7 +17,7 @@ Free space on your on-prem ONTAP clusters by tiering inactive data to StorageGRI
 
 == Quick start
 
-Get started quickly by following these steps or scroll down to the remaining sections for full details.
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
 ==== image:number1.png[number 1] Prepare to tier data to StorageGRID
 
@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An AFF, or FAS system with all-SSD aggregates, that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * StorageGRID 10.3 or later with AWS access keys that have S3 permissions.
 * A Connector installed on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to StorageGRID, and to the Cloud Tiering service.
@@ -33,7 +33,7 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable*, and follow the prompts to tier data to StorageGRID.
+In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to StorageGRID.
 
 == Requirements
 
@@ -41,7 +41,7 @@ Verify support for your ONTAP cluster, set up your networking, and prepare your 
 
 The following image shows each component and the connections that you need to prepare between them:
 
-image:diagram_cloud_tiering_storagegrid.png["An architecture image that shows the Cloud Tiering service with a connection to the Service Connector on your premises, the Service Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
+image:diagram_cloud_tiering_storagegrid.png["An architecture image that shows the Cloud Tiering service with a connection to the Connector on your premises, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
 
 NOTE: Communication between the Connector and StorageGRID is for object storage setup only.
 
@@ -50,13 +50,13 @@ NOTE: Communication between the Connector and StorageGRID is for object storage 
 Your ONTAP clusters must meet the following requirements when tiering data to StorageGRID.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and all-SSD aggregates on FAS systems.
+Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.4 or later
 
 Licensing::
-A FabricPool license isn’t required on the ONTAP cluster when tiering data to StorageGRID.
+A Cloud Tiering (or FabricPool) license isn’t required in your Cloud Manager account (or on the ONTAP cluster) when tiering data to StorageGRID.
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to StorageGRID (the port is configurable during tiering setup).
@@ -77,7 +77,7 @@ NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup w
 
 === Discovering an ONTAP cluster
 
-You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
+You need to create an on-prem ONTAP working environment in the Cloud Manager Canvas before you can start tiering cold data.
 
 link:task_discovering_ontap.html[Learn how to discover a cluster].
 
@@ -86,7 +86,7 @@ link:task_discovering_ontap.html[Learn how to discover a cluster].
 StorageGRID must meet the following requirements.
 
 Supported StorageGRID versions::
-StorageGRID 10.3 and later are supported.
+StorageGRID 10.3 and later is supported.
 
 S3 credentials::
 When you set up tiering to StorageGRID, you need to provide Cloud Tiering with an S3 access key and secret key. Cloud Tiering uses the keys to access your buckets.
@@ -123,7 +123,7 @@ Ensure that the Connector has the required networking connections.
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to StorageGRID
-* An HTTPS connection over port 443 to your ONTAP clusters
+* An HTTPS connection over port 443 to your ONTAP cluster
 
 == Tiering inactive data from your first cluster to StorageGRID
 
@@ -131,6 +131,7 @@ After you prepare your environment, start tiering inactive data from your first 
 
 .What you'll need
 * link:task_discovering_ontap.html[An on-premises working environment].
+* The FQDN of the StorageGRID server and the port that will be used for HTTPS communications.
 * An AWS access key that has the required S3 permissions.
 
 .Steps
@@ -162,7 +163,7 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +

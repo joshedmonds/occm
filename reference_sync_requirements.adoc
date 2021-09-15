@@ -27,6 +27,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Amazon EFS a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -39,9 +40,26 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * SMB server
 * StorageGRID
 
+| Amazon FSx for ONTAP a|
+
+* Amazon EFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS server
+* On-premises ONTAP cluster
+* SMB Server
+* StorageGRID
+
 | Amazon S3 a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -57,6 +75,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Azure Blob a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -72,6 +91,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Azure NetApp Files a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -93,6 +113,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Cloud Volumes ONTAP a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -108,6 +129,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Cloud Volumes Service a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -123,6 +145,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | Google Cloud Storage a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -139,6 +162,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | IBM Cloud Object Storage a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -154,6 +178,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | NFS server a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -169,6 +194,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | On-prem ONTAP cluster a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -193,6 +219,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | SMB server a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -209,6 +236,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 | StorageGRID a|
 
 * Amazon EFS
+* Amazon FSx for ONTAP
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
@@ -411,6 +439,11 @@ When you set up a sync relationship that includes http://docs.netapp.com/ontap-9
 === SMB server requirements
 
 * The SMB server can be a NetApp system or a non-NetApp system.
+*	You need to provide Cloud Sync with credentials that have permissions on the SMB server.
+** For a source SMB server, the following permissions are required: list and read.
++
+Members of the Backup Operators group are supported with a source SMB server.
+** For a target SMB server, the following permissions are required: list, read, and write.
 * The file server must allow the data broker host to access the exports.
 * SMB versions 1.0, 2.0, 2.1, 3.0 and 3.11 are supported.
 * Grant the "Administrators" group with "Full Control" permissions to the source and target folders.
