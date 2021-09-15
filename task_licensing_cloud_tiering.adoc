@@ -17,7 +17,7 @@ Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-your-own Clo
 
 A few notes before you read any further:
 
-* If you've already subscribed to the Cloud Manager subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You won't need to subscribe again.
+* If you've already subscribed to the Cloud Manager subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You’ll see an active subscription in the Cloud Tiering *Licensing* tab. You won’t need to subscribe again.
 // You'll see an active subscription in the Digital Wallet.
 
 * The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
@@ -36,11 +36,11 @@ Subscribe to Cloud Tiering from the AWS Marketplace to set up a pay-as-you-go su
 
 .Steps
 [[subscribe-aws]]
-. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering^].
+. In Cloud Manager, click *Tiering > Licensing*.
 
 . Click *Subscribe* under AWS Marketplace and then click *Continue*.
 
-. Subscribe from the AWS Marketplace, and then log back in to Cloud Central to complete the registration.
+. Subscribe from the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^], and then log back in to Cloud Central to complete the registration.
 +
 The following video shows the process:
 +
@@ -52,11 +52,11 @@ Subscribe to Cloud Tiering from the Azure Marketplace to set up a pay-as-you-go 
 
 .Steps
 [[subscribe-azure]]
-. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering^].
+. In Cloud Manager, click *Tiering > Licensing*.
 
 . Click *Subscribe* under Azure Marketplace and then click *Continue*.
 
-. Subscribe from the Azure Marketplace, and then log back in to Cloud Central to complete the registration.
+. Subscribe from the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], and then log back in to Cloud Central to complete the registration.
 +
 The following video shows the process:
 +
@@ -67,14 +67,14 @@ video::video_subscribing_azure_tiering.mp4[width=848, height=480]
 Subscribe to Cloud Tiering from the GCP Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Google Cloud storage.
 
 .Steps
-
-. https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering^].
+[[subscribe-gcp]]
+. In Cloud Manager, click *Tiering > Licensing*.
 
 . Click *Subscribe* under GCP Marketplace and then click *Continue*.
 
-. Subscribe from the GCP Marketplace, and then log back in to Cloud Central to complete the registration.
+. Subscribe from the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], and then log back in to Cloud Central to complete the registration.
 +
-[[subscribe-gcp]]The following video shows the process:
+The following video shows the process:
 +
 video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
 
@@ -167,7 +167,11 @@ Cloud Manager adds the license so that your Cloud Tiering service is active.
 
 === Update a Cloud Tiering BYOL license
 
-If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified. This status also appears in the Digital Wallet page.
+If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in Cloud Tiering.
+
+image:screenshot_services_license_expire2.png[A screenshot that shows an expiring license in the Cloud Tiering page.]
+
+This status also appears in the Digital Wallet page.
 
 image:screenshot_services_license_expire1.png[A screenshot that shows an expiring license in the Digital Wallet page.]
 
@@ -181,7 +185,7 @@ After you pay for the license and it is registered with the NetApp Support Site,
 
 . If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Tiering license file,obtain the license file from the NetApp Support Site>>.
-.. On the _Data Services Licenses_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
+.. On the Digital Wallet page in the _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
 +
 image:screenshot_services_license_update.png[A screenshot of selecting the Update License button for a particular service.]
 .. In the _Update License_ page, upload the license file and click *Update License*.

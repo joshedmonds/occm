@@ -18,4 +18,3 @@ An Account Admin needs to deploy a _Connector_ before you can use most Cloud Man
 * link:task_creating_connectors_aws.html[Creating a Connector in AWS from Cloud Manager]
 * link:task_creating_connectors_azure.html[Creating a Connector in Azure from Cloud Manager]
 * link:task_creating_connectors_gcp.html[Creating a Connector in GCP from Cloud Manager]
-* link:task_creating_connectors_fsx.html[Creating a Connector in AWS for FSx for ONTAP]

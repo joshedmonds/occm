@@ -29,8 +29,9 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- it is included as part of the Premium Bundle or Data Protection Bundle.
-* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] Cloud Manager Marketplace Backup offering, or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
-* You have a valid cloud provider subscription for the object storage space where your backups will be located.
+* The cluster must have the required network connections to Blob storage and to the Connector.
+* The Connector must have the required network connections to Blob storage and to the cluster, and the required permissions.
+* You have a valid Azure subscription for the object storage space where your backups will be located.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
 
@@ -43,7 +44,7 @@ image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Ba
 ==== image:number3.png[Number 3] Select the cloud provider and enter the provider details
 
 [role="quick-margin-para"]
-Select Microsoft Azure as your provider and then enter the provider details. You'll need to select the Azure Subscription and the region where you want to create the backups. You can also choose your own customer-managed key for data encryption instead of using the default Microsoft-managed encryption keys.
+Select Microsoft Azure as your provider and then enter the provider details. You'll need to select the Azure Subscription and the region where you want to create the backups. You can also choose your own customer-managed key for data encryption instead of using the default Microsoft-managed encryption key.
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
@@ -51,7 +52,7 @@ image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud pr
 ==== image:number4.png[Number 4] Select the cluster IPspace and optional use of a private VNet endpoint
 
 [role="quick-margin-para"]
-Select the IPspace in the ONTAP cluster where the volumes reside. You can also choose to use an existing Azure Private Endpoint.
+Select the IPspace in the ONTAP cluster where the volumes reside. You can also choose to use an existing Azure Private Endpoint for a more secure connection to the VNet from your on-prem data center.
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
@@ -110,19 +111,18 @@ See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-7
 See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-644CED2B-ABC9-4FC5-BEB2-1BE6A867919E.html[configure your cluster time^].
 
 Cluster networking requirements::
-* The ONTAP cluster initiates an HTTPS connection over port 443 to Azure Blob storage.
+* The ONTAP cluster initiates an HTTPS connection over port 443 from the intercluster LIF to Azure Blob storage for backup and restore operations.
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 +
-* An inbound connection is required from the Connector, which can reside in an Azure VNet.
+* ONTAP requires an inbound connection from the Connector to the cluster management LIF. The Connector can reside in an Azure VNet.
 
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[Learn more about IPspaces^].
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
-* Node and intercluster LIFs are able to access the internet.
-*	DNS servers have been configured for the storage VM where the volumes are located.
-+
-See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
+* The nodes' and intercluster LIFs are able to access the internet.
+*	DNS servers have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
+* Note that if you use are using a different IPspace than the Default, then you might need to create a static route to get access to the object storage.
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
 
 === Creating or switching Connectors
@@ -153,15 +153,18 @@ You can create backups from on-premises systems to Azure Blob in all regions htt
 
 === License requirements
 
-For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
+Before your 30-day free trial of the Cloud Backup service expires, you need to subscribe to a pay-as-you-go (PAYGO) Cloud Manager Marketplace offering from Azure, or purchase and activate a Cloud Backup BYOL license from NetApp. These licenses are for the account and can be used across multiple systems.
 
-For Cloud Backup BYOL licensing, you do not need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
+* For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] Cloud Manager Marketplace offering to continue using Cloud Backup. Billing for Cloud Backup is done through this subscription.
+ * For Cloud Backup BYOL licensing, you don't need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 
-And you need to have a subscription from your cloud provider for the object storage space where your backups will be located.
+You need to have an Azure subscription for the object storage space where your backups will be located.
+
+A SnapMirror license is required on the cluster. Note that the "Hybrid Cloud Bundle" is not required when using Cloud Backup.
 
 === Preparing Azure Blob storage for backups
 
-. The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
+. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Restore virtual machine has outbound internet access to contact the following endpoints.
 +
 [cols="43,57",options="header"]
 |===
@@ -182,9 +185,9 @@ And you need to have a subscription from your cloud provider for the object stor
 
 |===
 
-. If you want to have more secure connectivity on public internet from your on-prem data center to the VNet, there is an option to configure an Azure Private Endpoint in the activation wizard. In this case you will need to know the VNet and Subnet for this connection. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[See details about using a Private Endpoint].
+. You use choose your own custom-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys. In this case you will need to have the Azure Subscription, Key Vault name, and the Key. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys].
 
-. Additionally, you use choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Microsoft-managed encryption keys. In this case you will need to have the Azure Subscription, Key Vault name, and the Key. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys].
+. If you want to have a more secure connection over the public internet from your on-prem data center to the VNet, there is an option to configure an Azure Private Endpoint in the activation wizard. In this case you will need to know the VNet and Subnet for this connection. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[See details about using a Private Endpoint].
 
 == Enabling Cloud Backup
 
@@ -211,7 +214,7 @@ image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud pr
 . Enter the networking details and click *Next*.
 
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.
-.. Whether you will configure an Azure Private Endpoint (https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[see details about using a Private Endpoint]).
+.. Optionally, choose whether you will configure an Azure Private Endpoint. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview[See details about using a Private Endpoint].
 +
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
 

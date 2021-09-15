@@ -34,7 +34,7 @@ This table provides a comparison of the Notification Center and the Timeline so 
 
 == Monitoring operations status using the Notification Center
 
-Notifications are like events where they track the progress of operations that you have initiated in Cloud Manager so you can verify whether the operation was successful, or if it failed. They enable you to view the status for Cloud Manager operations (and cloud services operations in the future) that have been initiated during your current login session.
+Notifications are like events where they track the progress of operations that you've initiated in Cloud Manager so you can verify whether the operation was successful, or if it failed. They enable you to view the status for Cloud Manager operations (and cloud services operations in the future) that you initiated during your current login session.
 // Notifications can even prompt you to retry a failed operation.
 
 At this time, only notifications for creating and deleting the following Cloud Volumes ONTAP objects are supported:
@@ -46,15 +46,16 @@ At this time, only notifications for creating and deleting the following Cloud V
 You display the notifications by clicking the notification bell (image:icon_bell.png[notification bell]) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there's an important notification that you should look at.
 
 image:screenshot_notification_full.png[A screenshot showing the a list of current notifications in the Notification Center.]
-//
-//=== Filtering notifications
-//
-//By default you'll see all notifications. You can filter the notifications that you see in the Notification Center to show only those notifications that are important to you. You can filter by Cloud Manager "Service" and by notification "Type".
-//
-//image:screenshot_notification_filters.png[A screenshot showing the two types of filters available in the Notification Center.]
-//
-//For example, if you want to see only "Failed" and "Warning" notifications for Cloud Manager operations, select those entries and you'll see only those types of notifications.
-//
+
+=== Filtering notifications
+
+By default you'll see all notifications. You can filter the notifications that you see in the Notification Center to show only those notifications that are important to you. You can filter by Cloud Manager "Service" and by notification "Type".
+
+image:screenshot_notification_filters.png[A screenshot showing the two types of filters available in the Notification Center.]
+//Get screenshot from drive for more filters
+
+For example, if you want to see only "Error" and "Warning" notifications for Cloud Manager operations, select those entries and you'll see only those types of notifications.
+
 // === Selecting which account and which user notifications you will see
 //
 // By default, you'll see only your notification in the current account. You can choose to view notifications for the current account or all accounts, and you can choose to view notifications for your actions or all user actions.
