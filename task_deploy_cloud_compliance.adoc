@@ -332,7 +332,8 @@ If there is connectivity over port 8080 between the host machine and the Connect
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to the AWS, Azure, or GCP Marketplace can be used when you have deployed Data Sense on an on-premises system.
+You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to the AWS or Azure Marketplace can be used when you have deployed Data Sense on an on-premises system.
+// GCP
 
 === Multi-host installation for large configurations
 
@@ -394,7 +395,8 @@ The Cloud Data Sense installer finishes installing packages, docker, and registe
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to the AWS, Azure, or GCP Marketplace can be used when you have deployed Data Sense on an on-premises system.
+You can also <<Subscribing to the Cloud Data Sense service,subscribe to the Cloud Data Sense service>> at this time. You will not be charged until the amount of data exceeds 1 TB. A subscription to the AWS or Azure Marketplace can be used when you have deployed Data Sense on an on-premises system.
+// GCP
 
 == Subscribing to the Cloud Data Sense service
 
