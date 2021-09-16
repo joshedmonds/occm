@@ -14,3 +14,41 @@ summary: Create an Azure Connector for SnapCenter Service.
 
 [.lead]
 An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+
+You should have an understanding of https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent?tabs=azure-portal#user-consent-settings[user consent^]. Depending on whether the user consent is enabled or disabled in your Azure active directory, you can create the Connector accordingly.
+
+== User consent is enabled
+
+If the user consent is enabled in your Azure active directory, link:https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html[create the Connector from Cloud Manager].
+
+== User consent is disabled
+
+=== Can get consent from the tenant admin
+
+. Perform one of the following:
+* If the admin consent workflow is configured in your active directory, you should https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-admin-consent-workflow#how-users-request-admin-consent[request for admin consent^].
+* If the admin consent workflow is not configured, you should:
+** https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/grant-admin-consent#construct-the-url-for-granting-tenant-wide-admin-consent[Construct the URL for granting tenant-wide admin consent^].
++
+[NOTE]
+Specify the clientID as _989efff4-9a9e-46fa-9f17-de39e15714f9_. This is the Cloud Manager Azure application ID named in the Cloud Manager wizard.
+
+** Ask your tenant admin to run the URL in a browser and provide his consent.
++
+The displayed errors can be ignored by your Admin.
+
+. link:https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html[Create the Connector from Cloud Manager].
+
+=== Cannot get consent from the tenant admin
+
+When you cannot get consent from the tenant admin, link:https://docs.netapp.com/us-en/occm/task_launching_azure_mktp.html#creating-a-connector-in-azure[create the Connector from Azure Marketplace].
+
+[NOTE]
+====
+* Wherever Cloud Manager for Cloud Volumes ONTAP is specified, the same can be leveraged for SnapCenter Service.
+* For the Cloud Manager Name specify your Connector VM name for better identification. This will be shown as connector name in the Cloud Manager UI.
+* If you have configured firewall and created a route table for the subnet, to access the Connector machine you should configure a jump host or create a DNAT rule in firewall to translate from the firewall public IP to the Connector private IP.
+====
+
+[IMPORTANT]
+The username and password or the key that was provided while creating the Connector would be required to connect to the machine
