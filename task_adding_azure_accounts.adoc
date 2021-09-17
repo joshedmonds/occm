@@ -187,7 +187,7 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you add an Azure account.
 
-=== Adding Azure credentials to Cloud Manager
+=== Adding the credentials to Cloud Manager
 
 After you provide an Azure account with the required permissions, you can add the credentials for that account to Cloud Manager. Completing this step enables you to launch Cloud Volumes ONTAP using different Azure credentials.
 
