@@ -57,8 +57,8 @@ a|
 * Premium: 368 TB
 
 | Node-based license a|
-* Single node or HA license with term-based options
-* Available by bringing your own license (BYOL) purchased from NetApp
+*	The previous generation BYOL for Cloud Volumes ONTAP
+*	A node-based license is available for license renewals only
 | Included | 368 TB per license
 
 |===
@@ -138,11 +138,9 @@ To get started with PAYGO, create a Cloud Volumes ONTAP working environment and 
 
 == Node-based licenses
 
-* Single node or HA license with term-based subscription options like 12 months, 24 months, and more.
-* Available by bringing your own license (BYOL) purchased from NetApp.
+*	The previous generation BYOL for Cloud Volumes ONTAP.
+*	A node-based license is available for license renewals only.
 * Each Cloud Volumes ONTAP system supports up to 368 TB of capacity per license.
 * Conversions to another licensing option isn't supported.
 
 If you want to transition to capacity-based licensing, you can purchase a license, deploy a new Cloud Volumes ONTAP system, and then replicate the data to that new system.
-
-To get started with a node-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licenses.html[add your license to Cloud Manager].
