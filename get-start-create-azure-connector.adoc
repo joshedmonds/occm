@@ -26,15 +26,12 @@ Sign up to NetApp Cloud Central so you can access NetApp’s cloud services. lin
 A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager. link:https://docs.netapp.com/us-en/occm/task_setting_up_cloud_central_accounts.html[Learn more]
 
 [role="quick-margin-para"]
-If you are using Cloud Manager, you can ask your existing Cloud Manager admin to associate you as an Account Admin.
+If you are using Cloud Manager, you can ask your existing Cloud Manager admin to associate you as an Account Admin. You can use the default workspace created by the Cloud Manager.
 
 [role="quick-margin-para"]
 Only an Account Admin can deploy the SnapCenter Service. However, both Account Admin and SnapCenter Admin can perform different operations. link:https://docs.netapp.com/us-en/occm/reference_user_roles.html[Learn more]
 
-[role="quick-margin-para"]
-NOTE: You can use the default workspace created by the Cloud Manager.
-
-==== image:number3.png[Number 3] Create a Connector
+=== image:number3.png[Number 3] Create a Connector
 
 [role="quick-margin-para"]
 If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:create-azure-connector-snapcenter-service.html[Create a Connector]

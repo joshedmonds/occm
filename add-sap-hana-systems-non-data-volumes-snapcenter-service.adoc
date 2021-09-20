@@ -1,0 +1,55 @@
+---
+sidebar: sidebar
+permalink: add-sap-hana-systems-non-data-volumes-snapcenter-service.html
+keywords: add, snapcenter service, SAP HANA, add, auto discovery, HDB user store keys, HDBSQL client, non-data volumes
+summary: Add SAP HANA systems and then add the non-data volumes.
+---
+
+= Add SAP HANA systems
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Manually add the SAP HANA systems. Auto discovery of SAP HANA system is not supported.
+
+While adding the SAP HANA systems, you should add the HDB user store keys. The HDB secure user store key is used to store the connection information of SAP HANA systems securely on the client and HDBSQL client uses the secure user store key to connect to SAP HANA systems.
+
+*Steps*
+
+. On the SnapCenter Service page, click *SAP HANA Systems* > *Add*.
+. On the System Details page, perform the following actions:
+.. Select the system type.
+.. Specify the SID of the SAP HANA system.
+.. Specify the SAP HANA system name.
+.. Click HDB Secure User Store Keys text box to add user store keys details.
++
+Specify the key name, system details, username, and password.
+.. Click *Add*.
++
+NOTE: You should add user store keys for each host if you are adding a multi-host SAP HANA system.
+
+. Click *Continue*.
+. On the Storage Footprint page, perform the following:
+.. Select the working environment and specify the NetApp account.
+.. Select the required volumes.
+.. Click *Add Storage*.
+. Click *Continue*.
+. Review all the details and click *Add*.
+
+You can also edit or remove the SAP HANA systems that were added to the SnapCenter Service.
+When you remove the SAP HANA system, all the associated backups will be deleted and no longer be protected.
+
+== Add non-data volumes
+After adding the multitenant database container or single container type SAP HANA system, you can add the non-data volumes of the HANA system.
+
+*Steps*
+
+.	On the SnapCenter Service page, click SAP HANA Systems.
++
+All the systems added to the SnapCenter Service are displayed.
+. Click	image:screenshot-anf-view-system.png[A screenshot of the icon to view details] corresponding to the multitenant database container or single container type system to which you want to add the non-data volumes.
+. Click *Add Non-Data Volumes*.
+. Click *Add New Storage*.

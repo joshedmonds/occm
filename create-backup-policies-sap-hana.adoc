@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: create-backup-policies-sap-hana.html
+keywords: create, policies, backup policies, snapcenter service, SAP HANA, backup type, backup frequency, retention count, system-defined policies
+summary: Create policies to back up SAP HANA systems.
+---
+
+= Create backup policies
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Policies specify the backup type, backup frequency, schedules, retention type, retention count, and other characteristics of data protection operations. You can create policies using the Cloud Manager UI.
+
+By default, two system-defined policies, one each for snapshot-based and file-based backup operations are available.
+
+*Steps*
+
+.	On the SnapCenter Service page, click *Policies* > *Add*.
+.	On the Create Backup Policy page, perform the following actions:
+.. Specify a policy name.
+.. Select the type of backup you want to create using this policy.
+.. Specify the backup name.
++
+The suffix timestamp is added by default. You can select the other suffixes that should be included in the backup name and define the order in which the suffixes should appear.
+.. Specify the schedule frequency and the start and end time for the scheduled backups.
+.. Specify the number of snapshot copies to be retained or specify the days for which the snapshot copies should be retained.
+. Click *Add*.
+
+You can view, edit, or delete policies by clicking image:screenshot-anf-view-system.png[A screenshot of the icon to view details]	corresponding to the policy.

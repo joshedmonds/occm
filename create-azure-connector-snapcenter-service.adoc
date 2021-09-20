@@ -28,12 +28,12 @@ If the user consent is enabled in your Azure active directory, link:https://docs
 . Perform one of the following:
 * If the admin consent workflow is configured in your active directory, you should https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-admin-consent-workflow#how-users-request-admin-consent[request for admin consent^].
 * If the admin consent workflow is not configured, you should:
-** https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/grant-admin-consent#construct-the-url-for-granting-tenant-wide-admin-consent[Construct the URL for granting tenant-wide admin consent^].
+.. https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/grant-admin-consent#construct-the-url-for-granting-tenant-wide-admin-consent[Construct the URL for granting tenant-wide admin consent^].
 +
 [NOTE]
 Specify the clientID as _989efff4-9a9e-46fa-9f17-de39e15714f9_. This is the Cloud Manager Azure application ID named in the Cloud Manager wizard.
 
-** Ask your tenant admin to run the URL in a browser and provide his consent.
+.. Ask your tenant admin to run the URL in a browser and provide his consent.
 +
 The displayed errors can be ignored by your Admin.
 

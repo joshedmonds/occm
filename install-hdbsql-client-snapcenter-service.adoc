@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: install-hdbsql-client-snapcenter-service.html
+keywords: HDBSQL client, snapcenter service, SAP HANA, protect, SAPCAR utility
+summary: Install the HDBSQL client to perform data protection operations on SAP HANA databases.
+---
+
+= Install the HDBSQL client
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After enabling the SnapCenter Service, install the HDBSQL client to perform data protection operations on SAP HANA databases. The HDBSQL client is used to communicate with the SAP HANA systems.
+
+*Steps*
+
+. Download HDB Client software from your SAP account.
++
+It is an archive file with (.SAR) extension. Example: IMDB_CLIENT20_008_20-80002082.SAR
++
+NOTE: The HDB Client software version should be 2.4.202.1590784230 or later.
+
+. Download the latest SAPCAR utility from your SAP account. Example: _SAPCAR_1010-70006178.EXE_
+. On the Cloud Manager UI, click *Connector* to obtain the connector name.
+. Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
+. Click *Virtual machines*.
+. Search for the Cloud Manager Connector and copy the public IP address assigned to the Connector.
++
+If the Connector does not have public IP  enabled, you should use a jump host.
+. Copy the SAPCAR utility and HDB Client archive (.SAR) file to the Connector machine.
++
+To copy the file to the Connector path, you need the credentials, or the key provided while creating the Connector.
++
+* `scp <SAPCAR_utility> <usersername>@<IP_ADDRESS>:/home/<username>`
+* `scp <HDB_Client_archive> <username>@<IP_ADDRESS>:/home/<username>`
++
+The file are copied to _/home/<username>_.
+
+. Log into the Connector VM with the ssh credentials or key.
+. Run the following commands in the Connector VM.
+.. `sudo cp /home/<username>/<SAPCAR_utility> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/`
+.. `sudo cp /home/<username>/< HDB_Client_archive> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/`
+.. `sudo docker exec -it cloudmanager_snapcenter /bin/bash /opt/netapp/hdbclient/hdbclient.sh --archivefile <HDB_Client_archive> --archiveutil <SAPCAR_utility>`
+
+*Find more information*
+
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/copy-files-to-linux-vm-using-scp[How to move files using SCP^]
