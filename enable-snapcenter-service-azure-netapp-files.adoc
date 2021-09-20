@@ -18,9 +18,7 @@ You can enable the SnapCenter Service using the Cloud Manager UI. When the SnapC
 
 *What you will need*
 
-You should register the "Microsoft.ContainerService" resource provider in your Azure subscription.
-
-For information, see https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider[Register resource provider^].
+You should register the "Microsoft.ContainerService" resource provider in your Azure subscription. For information, see https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider[how to register resource provider^].
 
 *About this task*
 
@@ -31,3 +29,92 @@ A user assigned managed identity with necessary permissions is required to creat
 *Steps*
 
 . Log into Cloud Manager.
+. Select the Azure Connector that was created in the Cloud Manager.
++
+Ensure that the Connector has the network connectivity to the SAP HANA systems to be protected.
+. Click *All Services* > *SnapCenter* > *Enable*.
+. Perform one of the following:
+* If you have created the Connector from Cloud Manager UI and if you have permissions to create and assign roles, the user assigned managed identity will be created automatically by SnapCenter Service.
++
+However, you should ensure that the Azure login account has the sufficient permissions. For information on the permissions and how to assign the permissions, see <<Create roles with permissions for Azure login account>>.
++
+.. On the Get Ready page, click *Continue*.
+.. Specify the Azure credentials.
+* If you have created the Connector from Azure marketplace or if you do not have permissions to create and assign roles, you should run the *prerequisite_azure.sh* script to create the user assigned managed identity.
+.. Contact your admin to assign the permissions to Azure login account.
++
+For information on the permissions and how to assign the permissions, see <<Create roles with permissions for Azure login account>>.
+.. Download the https://docs.netapp.com/us-en/occm/media/prerequisite_azure.sh[prerequisite_azure.sh] script to your local system.
+.. Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
+.. Click image:screenshot-azure-cloud-shell.png[A screenshot of the Azure cloud shell] to open the cloud shell and select the Bash console.
+.. Upload the script to Azure cloud shell.
+.. Assign the permission to run the script.
++
+`chmod +x ./prerequisite_azure.sh`
+.. Run the script.
++
+`./prerequisite_azure.sh -s <subscription_ID> -g <connector_resourcegroup_name> -c <connector_VM_name>`
++
+The script displays the name of user assigned managed identity in the following format: _SnapCenter- MSI-<connector_VM_Name>_.
+.. After creating the user assigned managed identity, perform the following steps in Cloud Manager UI.
++
+... On the Get Ready page, click *specify*.
+... Specify the name of the user-assigned managed identity that was created by the script.
+... Click *Save*.
+... Click *Continue*.
+. On the Cluster Configuration page, perform the following:
+.. Select the cluster configuration.
+* If you select *High Availability*, an Azure Kubernetes Service (AKS) cluster with 3 worker nodes will be created across available zones.
+* If you select *Non-High Availability*, an AKS cluster with single node will be created.
+.. Specify the Kubernetes Pod address range.
++
+Ensure that the Kubernetes Pod address range does not overlap with IP ranges of your virtual network, peered virtual networks, and on-premises networks that are connected. Also, the range should not overlap with the Service address range and Docker bridge address.
+.. Specify the Kubernetes Service address.
++
+Ensure that the Kubernetes service address range does not overlap with the IP ranges of your virtual network, peered virtual networks, and on-premise networks that are connected. Also, the range should not overlap with the Pod address range and Docker bridge address.
+.. Specify the Docker bridge network.
++
+Ensure that the Docker Bridge address does not overlap with the IP ranges of your virtual network, peered virtual networks, and on-premise networks that are connected. Also, the range should not overlap with the Pod address range and Service address range.
+.. On the Review page, review the details and click *Continue*.
+. After enabling the SnapCenter Service successfully, click *Finish*.
+
+*Results*
+After creating the user assigned managed identity, it will be assigned to a custom role.
+
+* The user assigned managed identity will be assigned to a custom role with the below permissions at the scope of Connector resource group:
+** "Microsoft.Resources/subscriptions/resourceGroups/read",
+** "Microsoft.ContainerService/managedClusters/write",
+** "Microsoft.ContainerService/managedClusters/read",
+** "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+** "Microsoft.ManagedIdentity/userAssignedIdentities/read",
+** "Microsoft.Network/networkInterfaces/read",
+** "Microsoft.ContainerService/managedClusters/listClusterUserCredential/action"
+* The user assigned managed identity will be assigned to a custom role with the below permissions at the scope of Connector’s VNet:
+** "Microsoft.Authorization/roleAssignments/read",
+** "Microsoft.Network/virtualNetworks/subnets/join/action",
+** "Microsoft.Network/virtualNetworks/subnets/read",
+** "Microsoft.Network/virtualNetworks/read"
+* If route table is configured on the subnet for routing to firewall, then the user assigned managed identity will be assigned to a custom role with the below permissions at the scope of the route table.
+** "Microsoft.Network/routeTables/*",
+** "Microsoft.Network/networkInterfaces/effectiveRouteTable/action",
+** "Microsoft.Network/networkWatchers/nextHop/action"
+
+After successfully enabling the SnapCenter Service, the AKS cluster will be created. You can view the AKS cluster details by clicking image:screenshot-cluster-details.png[A screenshot of the icon to view cluster details].
+
+NOTE: If you failed to enable the SnapCenter Service, you can fix the issue and click *Retry*.
+
+== Create roles with permissions for Azure login account
+Azure login account is used to create the user assigned managed identity, required roles, and assigning the identity to the Connector VM.
+
+IMPORTANT: The credentials of the login account is not stored anywhere in the SnapCenter Service and are not used to call APIs. The credentials are used only in the UI.
+
+*Steps*
+
+. Create a custom role using the https://docs.netapp.com/us-en/occm/media/SnapCenter_Deployment_Role1.json[SnapCenter_Deployment_Role1.json] file.
++
+You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role1.json file with your Azure subscription ID.
+. Assign the role to the login account at the scope of Connector’s resource group.
+. Create a custom role using the https://docs.netapp.com/us-en/occm/media/SnapCenter_Deployment_Role2.json[SnapCenter_Deployment_Role2.json] file.
++
+You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role2.json file with your Azure subscription ID.
+. Assign the role to the login account at the scope of Connector's VNet or higher.

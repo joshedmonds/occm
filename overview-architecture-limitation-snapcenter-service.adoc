@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: overview-architecture-snapcenter-service.html
-keywords: snapcenter service, data protection, SAP HANA, Azure NetApp Files, cloud manager, azure kubernetes service
+permalink: overview-architecture-limitation-snapcenter-service.html
+keywords: snapcenter service, data protection, SAP HANA, Azure NetApp Files, cloud manager, azure kubernetes service, limitation
 summary: SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage.
 ---
 
@@ -15,6 +15,7 @@ summary: SnapCenter Service provides data protection capabilities for applicatio
 [.lead]
 SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage. SnapCenter Service enabled within NetApp Cloud Manager offers efficient, application consistent, policy-based backup and restore of SAP HANA® Systems residing on Azure NetApp Files (ANF).
 
+== Architecture
 The architecture of SnapCenter Service include the following components.
 
 * SnapCenter Service UI is integrated with Cloud Manager UI.
@@ -30,3 +31,9 @@ image:anf-architecture.png[The SnapCenter Service architecture.]
 The SnapCenter Service UI communicates with the Cloud Manager Connector for user-initiated request. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes ANF management APIs and HANA system commands to perform data protection operations.
 
 SnapCenter Service can be deployed in the same VNet as that of the HANA system, or in a different one. If SnapCenter Service and HANA systems are on different network, network connectivity  is required between them.
+
+== Limitations
+SnapCenter Service 1.0 has the following limitations.
+
+*	Internationalization is not supported, you should use English browsers.
+*	Only a Cloud Manager user with “Account Admin” role can enable the SnapCenter Service.

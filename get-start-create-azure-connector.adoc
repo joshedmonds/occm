@@ -39,4 +39,4 @@ If you don't have a link:concept_connectors.html[Connector] yet, an Account Admi
 ==== image:number4.png[Number 4] Create an Azure NetApp Files working environment
 
 [role="quick-margin-para"]
-Set up an Azure NetApp Files working environment in Cloud Manager so you can start creating volumes. link:https://docs.netapp.com/us-en/occm/task_manage_anf.html#creating-an-azure-netapp-files-working-environment[Learn more]
+Set up an Azure NetApp Files working environment in Cloud Manager so that you can start creating volumes. link:https://docs.netapp.com/us-en/occm/task_manage_anf.html#creating-an-azure-netapp-files-working-environment[Learn more]

@@ -308,11 +308,9 @@ sidebar:
         - title: Learn
           entries:
             - title: Overview
-              url: /overview-architecture-snapcenter-service.html
+              url: /overview-architecture-limitation-snapcenter-service.html
             - title: Supported functionalities
               url: /functionalities-supported.html
-            - title: Limitations
-              url: /limitations-snapcenter-service.html
         - title: Get started
           url: /get-started-snapcenter-service.html
         - title: Create an Azure Connector in Cloud manager
