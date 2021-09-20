@@ -323,21 +323,28 @@ sidebar:
               url: /get-start-create-azure-connector.html
             - title: Create a Connector
               url: /create-azure-connector-snapcenter-service.html
-        - title: Enable SnapCenter Service
+        - title: Enable SnapCenter Service for Azure NetApp Files
+          url: \enable-snapcenter-service-azure-netapp-files.html
         - title: Protect SAP HANA systems
           entries:
             - title: Install the HDBSQL client
               url: /install-hdbsql-client-snapcenter-service.html
             - title: Add SAP HANA systems
               url: /add-sap-hana-systems-non-data-volumes-snapcenter-service.html
-        - title: Back up SAP HANA systems
-          entries:
-            - title: Create backup policies
-              url: /create-backup-policies-sap-hana.html
-            - title: Create on-demand backups
-              url: /create-ondemand-backups-sap-hana.html
-            - title: Create scheduled backups
-              url: /create-scheduled-backups-sap-hana.html
+            - title: Back up SAP HANA systems
+              entries:
+                - title: Create backup policies
+                  url: /create-backup-policies-sap-hana.html
+                - title: Create on-demand backups
+                  url: /create-ondemand-backups-sap-hana.html
+                - title: Create scheduled backups
+                  url: /create-scheduled-backups-sap-hana.html
+            - title: Restore SAP HANA systems
+              url: /restore-sap-hana-systems.html
+        - title: Manage operations
+          url: /manage_dashboard_monitor_notification_snapcenter_service.html
+        - title: Troubleshoot issues
+          url: /troubleshoot_solution_issue.html
     - title: Copy and synchronize data
       entries:
         - title: Learn about Cloud Sync

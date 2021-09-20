@@ -25,7 +25,7 @@ The SnapCenter UI is served from the Cloud Manager SAAS framework managed by Net
 
 The following diagram shows the relationship between each component of SnapCenter Service:
 
-image:anf_architecture.png[The SnapCenter Service architecture.]
+image:anf-architecture.png[The SnapCenter Service architecture.]
 
 The SnapCenter Service UI communicates with the Cloud Manager Connector for user-initiated request. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes ANF management APIs and HANA system commands to perform data protection operations.
 

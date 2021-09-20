@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: enable-snapcenter-service-azure-netapp-files.html
+keywords: enable snapcenter service, SAP HANA, azure netapp files, azure kubernetes service, AKS, connector, user assigned managed identity, permission, non-high availability, AKS cluster
+summary: Enable the SnapCenter Service using the Cloud Manager UI.
+---
+
+= Enable SnapCenter Service for Azure NetApp Files
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+
+You can enable the SnapCenter Service using the Cloud Manager UI. When the SnapCenter Service is enabled, Azure Kubernetes Service (AKS) cluster is created that will host the SnapCenter Service.
+
+*What you will need*
+
+You should register the "Microsoft.ContainerService" resource provider in your Azure subscription.
+
+For information, see https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider[Register resource provider^].
+
+*About this task*
+
+The AKS cluster will be created in the same resource group and the same subnet that was chosen while creating the Connector. If your Connector is created without public IP address, then the AKS cluster will be created in private mode.
+
+A user assigned managed identity with necessary permissions is required to create and manage AKS cluster. The user assigned managed identity should be assigned to the Connector VM.
+
+*Steps*
+
+. Log into Cloud Manager.

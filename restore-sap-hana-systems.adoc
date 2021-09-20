@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: restore-sap-hana-systems.html
+keywords: restore, snapcenter service, SAP HANA, backups
+summary: restore the SAP HANA system from one of the backups of that system.
+---
+
+= Restore SAP HANA systems
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+In the event of data loss, restore the SAP HANA system from one of the backups of that system.
+
+Only storage restore is supported. You should put the HANA system in recovery mode using SAP HANA Studio or SAP HANA Cockpit before restoring because recovery of HANA system is not supported.
+
+*Steps*
+
+. On the SnapCenter Service page, click *SAP HANA Systems*.
++
+The systems added to the SnapCenter Service are displayed.
+. Click	image:screenshot-anf-view-system.png[A screenshot of the icon to view details] corresponding to the system that you want to restore.
+. Click *View Backups*.
+. In the Backups section, click	image:screenshot-anf-view-system.png[A screenshot of the icon to view details] corresponding to the backup that you want to use to restore the system.
+. Click *Restore*.
+. Review the message and select *Yes, Restore* to confirm.
