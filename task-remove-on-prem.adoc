@@ -1,0 +1,27 @@
+---
+sidebar: sidebar
+permalink: task-remove-on-prem.html
+keywords: ontap, cluster, remove, delete, remove ontap cluster, remove onprem
+summary: Remove an on-premises ONTAP working environment if you no longer want to manage it from Cloud Manager.
+---
+
+= Remove an on-prem ONTAP working environment
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Remove an on-premises ONTAP working environment if you no longer want to manage it from Cloud Manager.
+
+Removing the working environment doesn't affect the ONTAP cluster. You can rediscover it from Cloud Manager at any time.
+
+.Steps
+
+. On the Canvas page, double-click the name of the on-premises ONTAP working environment.
+
+. Click the menu icon and select *Remove*.
++
+image:screenshot_remove_onprem.png[A screenshot that shows the menu in the top-right of the page and the Remove option.]
+
+. Click *Remove* to confirm.
