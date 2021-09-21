@@ -18,7 +18,6 @@ The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace 
 A few notes before you read any further:
 
 * If you've already subscribed to the Cloud Manager pay-as-you-go (PAYGO) subscription in your cloud provider's marketplace, then you're automatically subscribed to Cloud Data Sense as well. You won’t need to subscribe again.
-// You’ll see an active subscription in the Cloud Data Sense *Licensing* tab.
 // You'll see an active subscription in the Digital Wallet.
 
 * The Cloud Data Sense bring-your-own-license (BYOL) is a _floating_ license that you can use across all the working environments and data sources in the workspace that you plan to scan.
@@ -35,7 +34,7 @@ You can subscribe at any time and you will not be charged until the amount of da
 
 image:screenshot_compliance_subscribe.png[A screenshot showing how much data is being scanned and the Subscribe button to subscribe to the service.]
 
-*Note:* If you are prompted by Cloud Data Sense to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See <<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
+*Note:* If you are prompted by Cloud Data Sense to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See <<Change to the new Cloud Manager plan in Azure,how to change to the new NetApp Cloud Manager plan in Azure>>.
 
 .Steps
 
@@ -71,7 +70,7 @@ The following video shows how to associate a https://console.cloud.google.com/ma
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
-== Changing to the new Cloud Manager plan in Azure
+=== Change to the new Cloud Manager plan in Azure
 
 Cloud Data Sense (Cloud Compliance) was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Data Sense.
 
