@@ -143,7 +143,7 @@ TIP: If your network uses a proxy server for all communication to the internet, 
 
 === Connection to target networks
 
-A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you're deploying an HA pair, then the Connector needs a connection to all four VPCs.
+A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you're deploying an HA pair, then the Connector needs a connection to VPC-0 only.
 
 === Outbound internet access
 
