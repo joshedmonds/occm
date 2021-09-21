@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_licensing_datasense.html
 keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, data sense, cloud data sense
-summary: Pay for Cloud Data Sense through a pay-as-you-go subscription, a bring-your-own Cloud Data Sense license, or a combination of both. If you want to pay as you go, then you need to subscribe from one cloud provider marketplace. There's no need to subscribe from every marketplace.
+summary: The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A BYOL license from NetApp, or a Cloud Manager subscription from your cloud provider Marketplace, is required to continue scanning data after that point.
 ---
 
 = Set up licensing for Cloud Data Sense
@@ -13,19 +13,17 @@ summary: Pay for Cloud Data Sense through a pay-as-you-go subscription, a bring-
 :imagesdir: ./media/
 
 [.lead]
-Pay for Cloud Data Sense through a pay-as-you-go subscription, a bring-your-own Cloud Data Sense license, or a combination of both. If you want to pay as you go, then you need to subscribe from one cloud provider marketplace. There's no need to subscribe from every marketplace.
+The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A BYOL license from NetApp, or a Cloud Manager subscription from your cloud provider's marketplace, is required to continue scanning data after that point.
 
 A few notes before you read any further:
 
-* The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A BYOL license from NetApp, or a Cloud Manager subscription to the AWS, Azure, or GCP Marketplace, is required to continue scanning data after that point.
-
-* If you've already subscribed to the Cloud Manager subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Data Sense as well. You won’t need to subscribe again.
+* If you've already subscribed to the Cloud Manager pay-as-you-go (PAYGO) subscription in your cloud provider's marketplace, then you're automatically subscribed to Cloud Data Sense as well. You won’t need to subscribe again.
 // You’ll see an active subscription in the Cloud Data Sense *Licensing* tab.
 // You'll see an active subscription in the Digital Wallet.
 
-* The BYOL Cloud Data Sense license is a _floating_ license that you can use across all the working environments and data sources in the workspace that you plan to scan for governance and compliance.
+* The Cloud Data Sense bring-your-own-license (BYOL) is a _floating_ license that you can use across all the working environments and data sources in the workspace that you plan to scan.
 
-* There are no charges for scanning the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup]). This data doesn't count against the capacity purchased in your license.
+* There is no charge for scanning backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup]). This data doesn't count against the capacity purchased in your license.
 
 link:concept_cloud_compliance.html#cost[Learn more about the licensing and costs related to Cloud Data Sense].
 
@@ -51,17 +49,15 @@ image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right ban
 +
 The subscription must be added to the Instance Profile, Managed Service Identity, or Google Project. Charging won't work otherwise.
 +
-If you already have a subscription (shown below), then you're all set--there's nothing else that you need to do.
+If you already have a subscription (shown below for AWS), then you're all set--there's nothing else that you need to do.
 +
 image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the Instance Profile with an active subscription.]
 
-. If you don't have a subscription yet, hover over the credentials and click the action menu.
-
-. Click *Add Subscription*.
+. If you don't have a subscription yet, hover over the credentials, click the action menu, and click *Associate Subscription*.
 +
-image:screenshot_add_subscription.gif["A screenshot of the menu in the Credentials page. It shows a button to add a subscription to the credentials."]
+image:screenshot_add_subscription.gif["A screenshot of the menu in the Credentials page. It shows a button to associate a subscription to the credentials."]
 
-. Click *Add Subscription*, click *Continue*, and follow the steps.
+. Select an existing subscription and click *Associate*, or click *Add Subscription* and follow the steps.
 +
 The following video shows how to associate an https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^] subscription to an AWS subscription:
 +
@@ -160,11 +156,11 @@ Cloud Manager adds the license so that your Cloud Data Sense service is active.
 
 If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in Cloud Data Sense.
 
-image:screenshot_services_license_expire2.png[A screenshot that shows an expiring license in the Cloud Data Sense page.]
+image:screenshot_services_license_expire_cc1.png[A screenshot that shows an expiring license in the Cloud Data Sense page.]
 
 This status also appears in the Digital Wallet page.
 
-image:screenshot_services_license_expire1.png[A screenshot that shows an expiring license in the Digital Wallet page.]
+image:screenshot_services_license_expire_cc2.png[A screenshot that shows an expiring license in the Digital Wallet page.]
 
 You can update your Cloud Data Sense license before it expires so that there is no interruption in your ability to scan your data.
 
