@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF, or FAS system with all-SSD aggregates, that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * StorageGRID 10.3 or later with AWS access keys that have S3 permissions.
 * A Connector installed on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to StorageGRID, and to the Cloud Tiering service.
@@ -50,13 +50,14 @@ NOTE: Communication between the Connector and StorageGRID is for object storage 
 Your ONTAP clusters must meet the following requirements when tiering data to StorageGRID.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
+* When using ONTAP 9.8 and later: You can tier data from AFF systems, or FAS systems with all-SSD aggregates or all-HDD aggregates.
+* When using ONTAP 9.7 and earlier: You can tier data from AFF systems, or FAS systems with all-SSD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.4 or later
 
 Licensing::
-A Cloud Tiering (or FabricPool) license isn’t required in your Cloud Manager account (or on the ONTAP cluster) when tiering data to StorageGRID.
+A Cloud Tiering license isn’t required in your Cloud Manager account, nor is a FabricPool license required on the ONTAP cluster, when tiering data to StorageGRID.
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to StorageGRID (the port is configurable during tiering setup).
