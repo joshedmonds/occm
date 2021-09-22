@@ -217,7 +217,12 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 === Convert an Eval license to BYOL
 
-An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade (this requires a restart of single node systems).
+An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade.
+
+Converting an Eval license to BYOL requires a restart of the system.
+
+* For a single-node system, the restart results in I/O interruption during the reboot process.
+* For an HA pair, the restart initiates takeover and giveback to continue serving I/O to clients.
 
 link:concept_evaluating.html[Learn more about Evaluation licenses].
 
