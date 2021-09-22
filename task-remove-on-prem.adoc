@@ -12,6 +12,7 @@ summary: Remove an on-premises ONTAP working environment if you no longer want t
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
 Remove an on-premises ONTAP working environment if you no longer want to manage it from Cloud Manager.
 
 Removing the working environment doesn't affect the ONTAP cluster. You can rediscover it from Cloud Manager at any time.
