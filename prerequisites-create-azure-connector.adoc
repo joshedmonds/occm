@@ -30,6 +30,7 @@ Set up your networking so the Connector can manage resources and processes withi
 If you want to enable SnapCenter Service behind Azure firewall, you should perform the following actions.
 
 *What you will need*
+
 * You should have created the firewall (classic mode).
 * You should have created the VNet and subnet for SnapCenter Service.
 * If your firewall resource and VNet of the SnapCenter Service are in different tenants, you should log into both the tenants in the Azure shell.
@@ -37,7 +38,7 @@ If you want to enable SnapCenter Service behind Azure firewall, you should perfo
 
 *Steps*
 
-. Download the https://docs.netapp.com/us-en/occm/media/scs_azure_firewall_config.sh[scs_azure_firewall_config.sh] script to your local system.
+. Download the link:../media/scs_azure_firewall_config.sh[scs_azure_firewall_config.sh] script to your local system.
 . Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
 . Click image:screenshot-azure-cloud-shell.png[A screenshot of the Azure cloud shell] to open the cloud shell and select the Bash console.
 .. Upload the script to Azure cloud shell.

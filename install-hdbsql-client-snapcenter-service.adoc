@@ -47,4 +47,4 @@ The file are copied to _/home/<username>_.
 
 *Find more information*
 
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/copy-files-to-linux-vm-using-scp[How to move files using SCP^]
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/copy-files-to-linux-vm-using-scp[How to move files using SCP^]
