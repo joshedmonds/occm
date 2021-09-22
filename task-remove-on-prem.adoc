@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-remove-on-prem.html
-keywords: ontap, cluster, remove, delete, remove ontap cluster, remove onprem
+keywords: ontap, cluster, remove, delete, remove ontap cluster, remove onprem, delete cluster, delete working environment, remove working environment
 summary: Remove an on-premises ONTAP working environment if you no longer want to manage it from Cloud Manager.
 ---
 
