@@ -13,3 +13,45 @@ summary: Troubleshoot SnapCenter Service issues.
 :imagesdir: ./media/
 
 [.lead]
+
+== Issue 1: All the Redis Pods are stuck in a CrashLoopBackOff state
+
+*Description*
+In a high availability configuration, the AKS cluster does not come back to working state if all the nodes of the cluster are down. When you restart all the nodes, you might find all the Redis Pods to be in CrashLoopBackOff state.
+
+*Solution*
+You should run the following commands to restore the system.
+
+. Log into the Connector.
+. Delete all the Redis Pods.
+* `docker exec -it cloudmanager_snapcenter --sh`
+* `kubectl scale --replicas=0 sts sc-dependencies-redis-node -n snapcenter`
+. Verify if all the Redis Pods are deleted.
+`kubectl get pods -n snapcenter`
+. If the Redis Pods are not deleted, run the following commands:
+* `kubectl delete pod sc-dependencies-redis-node-0 -n snapcenter`
+* `kubectl delete pod sc-dependencies-redis-node-1 -n snapcenter`
+* `kubectl delete pod sc-dependencies-redis-node-2 -n snapcenter`
+. After all the Redis Pods are deleted, run:
+`kubectl scale --replicas=3 sts sc-dependencies-redis-node -n snapcenter`
+
+== Issue 2: Jobs are failing
+
+*Description*
+In a high availability configuration, the AKS cluster does not come back to working state if all the nodes of the cluster are down. When you restart all the nodes, you might see jobs are failing with granular tasks either greyed out or timed out.
+
+*Solution*
+You should run the following commands:
+
+. Log into the Connector.
+. Identify the RabbitMQ pod.
+* `docker exec -it cloudmanager_snapcenter --sh`
+* `kubectl get sts rabbitmq -o yaml -n snapcenter > rabbitmq_sts.yaml`
+. Identify the persistent volumes (PVs) attached to RabbitMQ pods.
+`kubectl get pv | grep rabbitmq`
+. Delete the persistent volume claims (PVCs) attached to RabbitMQ pods.
+ `kubectl get pvc -n snapcenter| grep rabbitmq | awk {'print $1'} | xargs kubectl delete pvc -n snapcenter`
+. Delete each of the PVs that you identified earlier.
+`kubectl delete pv 'pvname'`
+. Create a RabbitMQ sts.
+`kubectl create -f rabbitmq_sts.yaml -n snapcenter`
