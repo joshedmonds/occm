@@ -47,7 +47,7 @@ When you cannot get consent from the tenant admin, link:https://docs.netapp.com/
 ====
 * Wherever Cloud Manager for Cloud Volumes ONTAP is specified, the same can be leveraged for SnapCenter Service.
 * For the Cloud Manager Name specify your Connector VM name for better identification. This will be shown as connector name in the Cloud Manager UI.
-* If you have configured firewall and created a route table for the subnet, to access the Connector machine you should configure a jump host or create a DNAT rule in firewall to translate from the firewall public IP to the Connector private IP.
+* If you have configured the Connector without public IP or configured a firewall, you should have a jump host to connect to the Connector machine.
 ====
 
 [IMPORTANT]
