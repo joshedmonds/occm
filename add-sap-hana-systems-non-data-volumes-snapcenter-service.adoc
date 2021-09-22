@@ -16,6 +16,8 @@ summary: Add SAP HANA systems and then add the non-data volumes.
 Manually add the SAP HANA systems. Auto discovery of SAP HANA system is not supported.
 
 While adding the SAP HANA systems, you should add the HDB user store keys. The HDB secure user store key is used to store the connection information of SAP HANA systems securely on the client and HDBSQL client uses the secure user store key to connect to SAP HANA systems.
+// Included this note for JIRA:AMS-7748 - Limitation 5
+NOTE: You cannot add or modify SAP HANA systems if a node in the AKS cluster is down.
 
 *Steps*
 

@@ -322,7 +322,7 @@ sidebar:
             - title: Create a Connector
               url: /create-azure-connector-snapcenter-service.html
         - title: Enable SnapCenter Service for Azure NetApp Files
-          url: \enable-snapcenter-service-azure-netapp-files.html
+          url: /enable-snapcenter-service-azure-netapp-files.html
         - title: Protect SAP HANA systems
           entries:
             - title: Install the HDBSQL client
