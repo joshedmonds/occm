@@ -1,0 +1,113 @@
+---
+sidebar: sidebar
+permalink: task_discovering_ontap.html
+keywords: ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster, active iq
+summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-prem clusters to the Cloud Manager Canvas enables you to manage these clusters using the same tools as your Cloud Volumes ONTAP and other cloud storage solutions.
+---
+
+= Discovering ONTAP clusters
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-prem clusters to the Cloud Manager Canvas enables you to manage these clusters using the same tools as your Cloud Volumes ONTAP and other cloud storage solutions.
+
+In addition to being able to provision storage on those systems, adding these systems to Cloud Manager also makes it easy to configure critical cloud-based services for those clusters. This includes replicating data to the cloud, backing up data to the cloud, tiering cold data to the cloud, and running compliance scans on that data.
+
+.What you'll need
+
+* A Connector installed in a cloud provider or on your premises.
++
+If you want to tier cold data to the cloud, then you should review requirements for the Connector based on where you plan to tier cold data.
++
+** link:concept_connectors.html[Learn about Connectors^]
+** link:task_managing_connectors.html[Switching between Connectors^]
+** link:concept_cloud_tiering.html[Learn about Cloud Tiering^]
+
+* The cluster management IP address and the password for the admin user account to add the cluster to Cloud Manager.
++
+Cloud Manager discovers ONTAP clusters using HTTPS. If you use custom firewall policies, they must meet the following requirements:
+
+** The Connector host must allow outbound HTTPS access through port 443.
++
+If the Connector is in the cloud, all outbound communication is allowed by the predefined security group.
+
+** The ONTAP cluster must allow inbound HTTPS access through port 443.
++
+The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modified this default policy, or if you created your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Connector host.
+
+* A valid set of NetApp Support Site credentials for accessing the Active IQ page. See how to link:task_adding_nss_accounts.html[add NetApp Support Site accounts to Cloud Manager].
+
+== Checking for on-premises clusters that have not been added to Cloud Manager
+
+You can use the Active IQ service in Cloud Manager to discover, view, and manage your on-prem ONTAP clusters that are under a support contract.
+
+NOTE: If your support contract expires, the systems are removed from the Active IQ page. However, you can continue to manage these systems in their working environment. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^].
+
+.Steps
+
+. From Cloud Manager, click the *Active IQ* tab.
+
+. Select the Active IQ login associated with your NSS account if necessary.
++
+image:screenshot_aiq_main_page.png[A screenshot of the main Active IQ page in Cloud Manager.]
++
+Your ONTAP clusters that have a valid support contract are displayed with a status of whether they have been discovered in Cloud Manager.
+
+. If you want to manage the clusters that are listed as "Undiscovered" using Cloud Manager, click *Discover* and follow the prompts to add them.
+
+== Discovering clusters from the Active IQ page
+
+You can discover your ONTAP clusters and add them to a working environment from the Active IQ page.
+
+.Steps
+
+. From the *Active IQ* page, click the *Cluster Inventory* tab.
++
+image:screenshot_aiq_clusters.png[A screenshot of the Active IQ page showing all clusters found in your NSS account.]
+
+. Click *Discover* for the cluster that you want to manage through Cloud Manager.
+
+. On the _Choose a Location_ page *On-Premises ONTAP* is pre-selected, so just click *Continue*.
+
+. On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
++
+image:screenshot_discover_ontap.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
++
+Note that the cluster management IP address is populated based on information from Active IQ.
+
+. On the _Details & Credentials_ page the cluster name is added as the Working Environment Name, so just click *Go*.
+
+.Result
+
+Cloud Manager discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.
+
+image:screenshot_onprem_cluster.png[A screenshot of an on-prem ONTAP cluster in the Canvas.]
+
+You can enable services for this cluster in the right panel to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, or run compliance scans on the volumes. You can also create new volumes or launch System Manager to perform advanced tasks.
+
+== Discovering clusters from the Canvas page
+
+You can discover your ONTAP clusters and add them to a working environment from the Canvas page. These steps can be used in cases where the cluster is not listed in the Active IQ page because it currently has no support contract.
+
+.Steps
+
+. On the Canvas page, click *Add Working Environment* and select *On-Premises ONTAP*.
+
+. If you're prompted, create a Connector.
++
+Refer to the links above for more details.
+
+. On the _ONTAP Cluster Details_ page, enter the cluster management IP address, the password for the admin user account, and click *Add*.
++
+image:screenshot_discover_ontap.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
+
+. On the _Details & Credentials_ page, enter a name and description for the working environment, and then click *Go*.
+
+.Result
+
+Cloud Manager discovers the cluster and adds it to a working environment in the Canvas.
+
+You can enable services for this cluster in the right panel to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, or run compliance scans on the volumes. You can also create new volumes or launch System Manager to perform advanced tasks.
