@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.8 or later, and a connection over a user-specified port to the S3-compatible object storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.8 or later, and a connection over a user-specified port to the S3-compatible object storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * The FQDN, Access Key, and Secret Key for the object storage server so that the ONTAP cluster can access the bucket.
 * A Connector installed on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to the S3-compatible object storage, and to the Cloud Tiering service.
@@ -60,7 +60,7 @@ NOTE: Communication between the Connector and the S3-compatible object storage s
 Your ONTAP clusters must meet the following requirements when tiering data to S3-compatible object storage.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
+You can tier data from AFF systems, or FAS systems with all-SSD aggregates or all-HDD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.8 or later

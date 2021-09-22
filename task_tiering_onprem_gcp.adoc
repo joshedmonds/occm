@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF, or FAS system with all-SSD aggregates, that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * A service account that has the predefined Storage Admin role and storage access keys.
 * A Connector installed in a Google Cloud Platform VPC.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Google Cloud Storage, and to the Cloud Tiering service.
@@ -59,7 +59,8 @@ NOTE: Communication between the Connector and Google Cloud Storage is for object
 Your ONTAP clusters must meet the following requirements when tiering data to Google Cloud Storage.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
+* When using ONTAP 9.8 and later: You can tier data from AFF systems, or FAS systems with all-SSD aggregates or all-HDD aggregates.
+* When using ONTAP 9.7 and earlier: You can tier data from AFF systems, or FAS systems with all-SSD aggregates.
 
 Supported ONTAP versions::
 ONTAP 9.6 or later
