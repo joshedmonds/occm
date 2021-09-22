@@ -48,7 +48,7 @@ IMPORTANT: You should ensure that the Azure login account has the sufficient per
 For information on the permissions and how to assign the permissions, see <<Create roles with permissions for Azure login account>>.
 .. Download the https://docs.netapp.com/us-en/occm/media/prerequisite_azure.sh[prerequisite_azure.sh] script to your local system.
 +
-link:./media/prerequisite_azure.sh[prerequisite_azure.sh]
+link:../media/prerequisite_azure.sh[prerequisite_azure.sh]
 .. Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
 .. Click image:screenshot-azure-cloud-shell.png[A screenshot of the Azure cloud shell] to open the cloud shell and select the Bash console.
 .. Upload the script to Azure cloud shell.
