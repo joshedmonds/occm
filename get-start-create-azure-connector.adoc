@@ -18,25 +18,25 @@ Get started with creating Azure Connector in a few steps.
 ==== image:number1.png[Number 1] Sign up to Netapp Cloud Central
 
 [role="quick-margin-para"]
-Sign up to NetApp Cloud Central so you can access NetApp’s cloud services. link:https://docs.netapp.com/us-en/occm/task_signing_up.html[Learn more]
+Sign up to NetApp Cloud Central so you can access NetApp’s cloud services. link:task_signing_up.html[Learn more]
 
 ==== image:number2.png[Number 2] Set up a Cloud Central account
 
 [role="quick-margin-para"]
-A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager. link:https://docs.netapp.com/us-en/occm/task_setting_up_cloud_central_accounts.html[Learn more]
+A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager. link:task_setting_up_cloud_central_accounts.html[Learn more]
 
 [role="quick-margin-para"]
 If you are using Cloud Manager, you can ask your existing Cloud Manager admin to associate you as an Account Admin. You can use the default workspace created by the Cloud Manager.
 
 [role="quick-margin-para"]
-Only an Account Admin can deploy the SnapCenter Service. However, both Account Admin and SnapCenter Admin can perform different operations. link:https://docs.netapp.com/us-en/occm/reference_user_roles.html[Learn more]
+Only an Account Admin can deploy the SnapCenter Service. However, both Account Admin and SnapCenter Admin can perform different operations. link:reference_user_roles.html[Learn more]
 
 === image:number3.png[Number 3] Create a Connector
 
 [role="quick-margin-para"]
-If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:create-azure-connector-snapcenter-service.html[Create a Connector]
+If you do not have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:create-azure-connector-snapcenter-service.html[Create a Connector]
 
 ==== image:number4.png[Number 4] Create an Azure NetApp Files working environment
 
 [role="quick-margin-para"]
-Set up an Azure NetApp Files working environment in Cloud Manager so that you can start creating volumes. link:https://docs.netapp.com/us-en/occm/task_manage_anf.html#creating-an-azure-netapp-files-working-environment[Learn more]
+Set up an Azure NetApp Files working environment in Cloud Manager so that you can start creating volumes. link:task_manage_anf.html#creating-an-azure-netapp-files-working-environment[Learn more]

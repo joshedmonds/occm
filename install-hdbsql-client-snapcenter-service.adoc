@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: install-hdbsql-client-snapcenter-service.html
-keywords: HDBSQL client, snapcenter service, SAP HANA, protect, SAPCAR utility
+keywords: HDBSQL client, snapcenter service, SAP HANA, protect, SAPCAR utility, scp, jump host
 summary: Install the HDBSQL client to perform data protection operations on SAP HANA databases.
 ---
 
@@ -38,7 +38,6 @@ To copy the file to the Connector path, you need the credentials, or the key pro
 * `scp <HDB_Client_archive> <username>@<IP_ADDRESS>:/home/<username>`
 +
 The file are copied to _/home/<username>_.
-
 . Log into the Connector VM with the ssh credentials or key.
 . Run the following commands in the Connector VM.
 .. `sudo cp /home/<username>/<SAPCAR_utility> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/`

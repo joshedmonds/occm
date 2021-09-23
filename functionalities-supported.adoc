@@ -17,7 +17,7 @@ SnapCenter Service supports the following functionalities.
 
 * Adding SAP HANA systems
 * Creating on-demand backup of SAP HANA systems
-*	Protecting SAP HANA systems using system-defined policies or create a custom policy for scheduled backups
+*	Protecting SAP HANA systems using system-defined policies or custom policies
 *	Retaining backups based on the policy
 *	Restoring SAP HANA systems
 *	Monitoring jobs

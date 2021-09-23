@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: restore-sap-hana-systems.html
-keywords: restore, snapcenter service, SAP HANA, backups
+keywords: restore, snapcenter service, SAP HANA, backups, HANA studio, recovery, point-in-time
 summary: restore the SAP HANA system from one of the backups of that system.
 ---
 
@@ -27,3 +27,7 @@ The systems added to the SnapCenter Service are displayed.
 . In the Backups section, click	image:screenshot-anf-view-system.png[A screenshot of the icon to view details] corresponding to the backup that you want to use to restore the system.
 . Click *Restore*.
 . Review the message and select *Yes, Restore* to confirm.
+// Included the below info for JIRA:AMS-7521
+IMPORTANT: After restoring the database, if you do a point-in-time recovery of the SAP HANA system using HANA Studio then the data backup catalog entries which were deleted by SnapCenter Service as per the retention setting, might be restored.
+If the deleted data backup catalog entries are restored because of the recovery operation, SnapCenter Service will not be able to detect and delete them. This could result in SnapCenter Service not cleaning the log catalog properly.
+You can verify the backup entries in SnapCenter Service to find out which all data backup catalog entries are newly restored and manually delete those entries.

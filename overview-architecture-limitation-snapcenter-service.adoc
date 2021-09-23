@@ -37,6 +37,9 @@ SnapCenter Service 1.0 has the following limitations.
 
 *	Internationalization is not supported, you should use English browsers.
 *	Only a Cloud Manager user with “Account Admin” role can enable the SnapCenter Service.
-// Included the below 2 points for JIRA:AMS-7748 - Limitation 3 & 4
+// Included the below 3 points for JIRA:AMS-7748 - Limitation 3 & 4
 * In the Azure Kubernetes Service (AKS) cluster if one of the node is stopped, the inflight jobs might fail.
-* In the AKS cluster if the node on which the vault server is running goes down, the credentials of new Azure NetApp Files will not be injected and SAP HANA systems can be added only after the node is brought up.
+* In the AKS cluster if the node on which the vault server pod _sc-dependencies-vault-0_ is running goes down, the credentials of new Azure NetApp Files will not be persisted in the vault server and SAP HANA systems can be added only after the node is brought up.
+* MySQL high availability configuration is not supported.
++
+If the MySQL node is down, the schedules will not work until the MySQL node is up.

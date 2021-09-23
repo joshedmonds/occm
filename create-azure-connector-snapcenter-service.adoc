@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: create-azure-connector-snapcenter-service.html
-keywords: azure, connector, cloud central, snapcenter service
+keywords: azure, connector, cloud central, snapcenter service, user consent, tenant admin, create connector, enable, disable, azure marketplace
 summary: Create an Azure Connector for SnapCenter Service.
 ---
 
@@ -19,9 +19,11 @@ You should have an understanding of https://docs.microsoft.com/en-us/azure/activ
 
 == User consent is enabled
 
-If the user consent is enabled in your Azure active directory, link:https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html[create the Connector from Cloud Manager].
+If the user consent is enabled in your Azure active directory, link:task_creating_connectors_azure.html[create the Connector from Cloud Manager].
 
 == User consent is disabled
+
+If the user consent is disabled and depending on whether you can get a consent or cannot get a consent from the tenant admin, you should create the Connector accordingly.
 
 === Can get consent from the tenant admin
 
@@ -37,11 +39,11 @@ Specify the clientID as _989efff4-9a9e-46fa-9f17-de39e15714f9_. This is the Clou
 +
 The displayed errors can be ignored by your Admin.
 
-. link:https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html[Create the Connector from Cloud Manager].
+. link:/task_creating_connectors_azure.html[Create the Connector from Cloud Manager].
 
 === Cannot get consent from the tenant admin
 
-When you cannot get consent from the tenant admin, link:https://docs.netapp.com/us-en/occm/task_launching_azure_mktp.html#creating-a-connector-in-azure[create the Connector from Azure Marketplace].
+When you cannot get consent from the tenant admin, link:task_launching_azure_mktp.html#creating-a-connector-in-azure[create the Connector from Azure Marketplace].
 
 [NOTE]
 ====

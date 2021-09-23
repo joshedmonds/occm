@@ -47,8 +47,6 @@ IMPORTANT: You should ensure that the Azure login account has the sufficient per
 +
 For information on the permissions and how to assign the permissions, see <<Create roles with permissions for Azure login account>>.
 .. Download the https://docs.netapp.com/us-en/occm/media/prerequisite_azure.sh[prerequisite_azure.sh] script to your local system.
-+
-link:../media/prerequisite_azure.sh[prerequisite_azure.sh]
 .. Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
 .. Click image:screenshot-azure-cloud-shell.png[A screenshot of the Azure cloud shell] to open the cloud shell and select the Bash console.
 .. Upload the script to Azure cloud shell.
@@ -112,15 +110,15 @@ IMPORTANT: The credentials of the login account is not stored anywhere in the Sn
 
 *Steps*
 
-. Create a custom role using the link:../media/SnapCenter_Deployment_Role1.json[SnapCenter_Deployment_Role1.json] file.
+. Create a custom role using the https://docs.netapp.com/us-en/occm/media/SnapCenter_Deployment_Role1.json[SnapCenter_Deployment_Role1.json] file.
 +
 You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role1.json file with your Azure subscription ID.
 . Assign the role to the login account at the scope of Connector’s resource group.
-. Create a custom role using the link:../media/SnapCenter_Deployment_Role2.json[SnapCenter_Deployment_Role2.json] file.
+. Create a custom role using the https://docs.netapp.com/us-en/occm/media/SnapCenter_Deployment_Role2.json[SnapCenter_Deployment_Role2.json] file.
 +
 You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role2.json file with your Azure subscription ID.
 . Assign the role to the login account at the scope of Connector's VNet or higher.
-. If you have link:prerequisites-create-azure-connector.html#firewall-configuration[configured firewall], create a custom role using the link:../media/SnapCenter_Deployment_Role3.json[SnapCenter_Deployment_Role3.json] file.
+. If you have link:prerequisites-create-azure-connector.html#firewall-configuration[configured firewall], create a custom role using the https://docs.netapp.com/us-en/occm/media/SnapCenter_Deployment_Role3.json[SnapCenter_Deployment_Role3.json] file.
 +
 You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role3.json file with your Azure subscription ID.
 . Assign the role to the login account at the scope of route table which is attached to the SnapCenter subnet.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: troubleshoot_solution_issue.html
-keywords: troubleshoot, solution, issues, snapcenter service, SAP HANA
+keywords: troubleshoot, solution, issues, snapcenter service, SAP HANA, Redis Pods, crashloopbackoff state, backup fails, tenant database
 summary: Troubleshoot SnapCenter Service issues.
 ---
 
@@ -14,8 +14,8 @@ summary: Troubleshoot SnapCenter Service issues.
 
 [.lead]
 
-== Issue 1: All the Redis Pods are stuck in a CrashLoopBackOff state
-
+== Issue: Redis Pods get stuck in a CrashLoopBackOff state
+// Included this issue for JIRA:AMS-7748 - Limitation 1
 *Description*
 In a high availability configuration, the AKS cluster does not come back to working state if all the nodes of the cluster are down. When you restart all the nodes, you might find all the Redis Pods to be in CrashLoopBackOff state.
 
@@ -34,9 +34,11 @@ You should run the following commands to restore the system.
 * `kubectl delete pod sc-dependencies-redis-node-2 -n snapcenter`
 . After all the Redis Pods are deleted, run:
 `kubectl scale --replicas=3 sts sc-dependencies-redis-node -n snapcenter`
+. Verify if all the deleted pods are up and running.
+`Kubectl get pods -n snapcenter`
 
-== Issue 2: Jobs are failing
-
+== Issue: Jobs are failing after restarting the cluster nodes
+// Included this issue for JIRA:AMS-7748 - Limitation 2
 *Description*
 In a high availability configuration, the AKS cluster does not come back to working state if all the nodes of the cluster are down. When you restart all the nodes, you might see jobs are failing with granular tasks either greyed out or timed out.
 
@@ -51,7 +53,19 @@ You should run the following commands:
 `kubectl get pv | grep rabbitmq`
 . Delete the persistent volume claims (PVCs) attached to RabbitMQ pods.
  `kubectl get pvc -n snapcenter| grep rabbitmq | awk {'print $1'} | xargs kubectl delete pvc -n snapcenter`
-. Delete each of the PVs that you identified earlier.
+. Delete each of the PVs that you identified earlier in step 3.
 `kubectl delete pv 'pvname'`
 . Create a RabbitMQ sts.
 `kubectl create -f rabbitmq_sts.yaml -n snapcenter`
+
+== Issue: Backup operation fails during tenant database creation
+// Included this issue for JIRA:AMS-6752
+*Description*
+While creating a tenant database if an on-demand or a scheduled backup is initiated, the backup operation fails.
+
+*Solution*
+Creating a tenant database is a maintenance operation on the SAP HANA system.
+
+You should put the SAP HANA system in the maintenance mode using SnapCenter Service before creating the tenant database. After putting the SAP HANA system in maintenance mode no operations can be initiated.
+
+After creating the tenant database, you should bring back the SAP HANA system to production mode.
