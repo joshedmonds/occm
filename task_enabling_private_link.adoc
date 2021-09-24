@@ -43,8 +43,8 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
 +
  "user-private-dns-zone-settings": {
     "use-existing": true,
-    "resource-group": "<resource group name of the DNS zone>"
-    "subscription": "<subscription ID>",
+    "resource-group": "<resource group name of the DNS zone>",
+    "subscription": "<subscription ID>"
    }
 +
 The subscription parameter is required only if the Private DNS Zone exists in a different subscription than the Connector.

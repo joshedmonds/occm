@@ -19,7 +19,7 @@ Known limitations identify platforms, devices, or functions that are not support
 
 Cloud Manager doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in Cloud Manager and the Connector instance displays as inactive.
 
-For enhanced security, you have the option to https://docs.netapp.com/us-en/occm/task_installing_https_cert.html[install an HTTPS certificate signed by a certificate authority (CA)^].
+For enhanced security, you have the option to https://docs.netapp.com/us-en/occm/task_installing_https_cert.html[install an HTTPS certificate signed by a certificate authority (CA)].
 
 == Blank page when loading the local UI
 
