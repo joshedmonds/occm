@@ -395,6 +395,40 @@ sidebar:
           url: /task_managing_compliance.html
         - title: FAQ
           url: /faq_cloud_compliance.html
+    - title: Tier on-premises data to the cloud
+      entries:
+        - title: Learn about Cloud Tiering
+          url: /concept_cloud_tiering.html
+        - title: Get started
+          entries:
+            - title: Tier data to Amazon S3
+              url: /task_tiering_onprem_aws.html
+            - title: Tier data to Azure Blob storage
+              url: /task_tiering_onprem_azure.html
+            - title: Tier data to Google Cloud Storage
+              url: /task_tiering_onprem_gcp.html
+            - title: Tier data to StorageGRID
+              url: /task_tiering_onprem_storagegrid.html
+            - title: Tier data to S3 object storage
+              url: /task_tiering_onprem_s3_compat.html
+        - title: Set up licensing
+          url: /task_licensing_cloud_tiering.html
+        - title: Test cloud performance
+          url: /task_tiering_test.html
+        - title: Manage data tiering
+          url: /task_managing_tiering.html
+        - title: View tiering overview for all clusters
+          url: /task_tiering_onprem_overview.html
+        - title: FAQ
+          url: /faq_cloud_tiering.html
+        - title: Reference
+          entries:
+            - title: Supported Amazon S3 storage classes and regions
+              url: /reference_aws_support.html
+            - title: Supported Azure access tiers and regions
+              url: /reference_azure_support.html
+            - title: Supported Google Cloud storage classes and regions
+              url: /reference_google_support.html
     - title: Organize your resources using tags
       entries:
         - title: Learn about tagging
@@ -423,40 +457,6 @@ sidebar:
           url: /concept_compute.html
         - title: Get started
           url: /task_getting_started_compute.html
-    - title: Tier on-premises data to the cloud
-      entries:
-        - title: Learn about Cloud Tiering
-          url: /concept_cloud_tiering.html
-        - title: Get started
-          entries:
-            - title: Tier data to Amazon S3
-              url: /task_tiering_onprem_aws.html
-            - title: Tier data to Azure Blob storage
-              url: /task_tiering_onprem_azure.html
-            - title: Tier data to Google Cloud Storage
-              url: /task_tiering_onprem_gcp.html
-            - title: Tier data to StorageGRID
-              url: /task_tiering_onprem_storagegrid.html
-            - title: Tier data to S3 object storage
-              url: /task_tiering_onprem_s3_compat.html
-        - title: Set up licensing
-          url: /task_licensing_cloud_tiering.html
-        - title: Test cloud performance
-          url: /task_tiering_test.html
-        - title: Manage data tiering
-          url: /task_managing_tiering.html
-        - title: Get an overview of tiering
-          url: /task_tiering_onprem_overview.html
-        - title: FAQ
-          url: /faq_cloud_tiering.html
-        - title: Reference
-          entries:
-            - title: Supported Amazon S3 storage classes and regions
-              url: /reference_aws_support.html
-            - title: Supported Azure access tiers and regions
-              url: /reference_azure_support.html
-            - title: Supported Google Cloud storage classes and regions
-              url: /reference_google_support.html
     - title: View Amazon S3 buckets
       url: /task_viewing_amazon_s3.html
     - title: Administer Cloud Manager
