@@ -15,6 +15,12 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== SSL decryption isn't supported
+
+Cloud Manager doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in Cloud Manager and the Connector instance displays as inactive.
+
+For enhanced security, you have the option to https://docs.netapp.com/us-en/occm/task_installing_https_cert.html[install an HTTPS certificate signed by a certificate authority (CA)^].
+
 == Blank page when loading the local UI
 
 If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
