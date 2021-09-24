@@ -39,12 +39,15 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
 
 . Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
 
-. Edit app.conf by modifying the following parameter as shown:
+. Edit app.conf by modifying the following parameters as shown:
 +
  "user-private-dns-zone-settings": {
     "use-existing": true,
     "resource-group": "<resource group name of the DNS zone>"
+    "subscription": "<subscription ID>",
    }
++
+The subscription parameter is required only if the Private DNS Zone exists in a different subscription than the Connector.
 
 . Save the file and log off the Connector.
 +
