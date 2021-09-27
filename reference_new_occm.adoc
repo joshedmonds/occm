@@ -19,6 +19,45 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.11 (3 Oct 2021)
+
+* <<Amazon FSx for ONTAP enhancements>>
+* <<Cloud Backup enhancements>>
+* <<Cloud Data Sense enhancements>>
+* <<Cloud Volumes ONTAP enhancement>>
+
+=== Amazon FSx for ONTAP enhancements
+
+* Now you can create CIFS volumes in FSx for ONTAP using Cloud Manager.
++
+link:task_manage_fsx_volumes.html#creating-volumes[Create FSx for ONTAP CIFS volumes using Cloud Manager]
+
+* Now you can edit FSx for ONTAP volumes using Cloud Manager.
++
+link:task_manage_fsx_volumes.html#editing-volumes[Edit FSx for ONTAP volumes using Cloud Manager]
+
+=== Cloud Backup enhancements
+
+* Now you can easily link:task_managing_backups.html#unregistering-cloud-backup-for-a-working-environment[unregister Cloud Backup for a working environment] if you no longer want to use backup functionality (or be charged) for that working environment.
+
+=== Cloud Data Sense enhancements
+
+* Data Sense can now scan FSx for ONTAP CIFS and Data Protection (DP) volumes. link:task_scanning_fsx.html[Learn how how to scan Amazon FSx for ONTAP volumes].
+
+* Now you can choose to scan or map individual volumes in your working environments and data sources.
++
+In the past you could either map or scan all volumes in each data source. Now you can choose to map _or_ scan individual volumes in each data source. This option is available for Cloud Volumes ONTAP volumes, ANF volumes, on-prem ONTAP volumes, FSx for ONTAP volumes, and volume backups.
+
+* Support for BYOL licensing from NetApp.
++
+In addition to subscribing to use Data Sense through your cloud provider marketplace, now you can purchase a bring-your-own-license (BYOL) from NetApp that you can use across all your working environments and data sources in your account.
++
+link:task-licensing-cloud-data-sense.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Data Sense BYOL license].
+
+=== Cloud Volumes ONTAP enhancement
+
+We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
+
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
 We fixed a Cloud Backup bug where a volume restore operation failed when the language code for the volume was different than the language code for the storage VM.
