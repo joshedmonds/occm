@@ -13,12 +13,12 @@ summary: Amazon FSx for ONTAP is a fully managed service allowing customers to l
 :imagesdir: ./media/
 
 [.lead]
-link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP] is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises, with the simplicity, agility, security, and scalability of a native AWS service.
+link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP^] is a fully managed service allowing customers to launch and run file systems powered by NetApp’s ONTAP storage operating system. FSx for ONTAP provides the same features, performance, and administrative capabilities NetApp customers use on premises, with the simplicity, agility, security, and scalability of a native AWS service.
 
 == Features
 
 * No need to configure or manage storage devices, software, or backups.
-* Support for NFSv3, NFSv4.0, NFSv4.1, and SMB v2.0 - v3.1.1 protocols.
+* Support for CIFS, NFSv3, NFSv4.0, NFSv4.1, and SMB v2.0 - v3.1.1 protocols.
 * Low cost, virtually unlimited data storage capacity using available Infrequently Accessed (IA) storage tier.
 * Certified to run on latency-sensitive applications including SAP HANA and Oracle RAC.
 * Choice of bundled and pay-as-you-go pricing.
@@ -26,7 +26,6 @@ link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Am
 == Additional features in Cloud Manager
 
 * Using a Connector in AWS and Cloud Manager, you can create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
-//* Migrate NFS or SMB data to FSx for ONTAP directly from Cloud Manager. Data migrations are powered by NetApp's Cloud Sync service. link:concept_cloud_sync.html[Learn more].
 
 * Using Artificial Intelligence (AI) driven technology, Cloud Data Sense can help you understand data context and identify sensitive data that resides in your FSx for ONTAP accounts. link:concept_cloud_compliance.html[Learn more^].
 
@@ -41,11 +40,6 @@ There is an additional cost associated with using the Connector in AWS and the o
 == Supported regions
 
 https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[View supported Amazon regions.^]
-//== Before you get started
-
-//* Cloud Manager can discover existing Cloud Volumes Service for AWS subscriptions and volumes. See the https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup Guide^] if you haven't set up your subscription yet. You must follow this setup process for each region before you can add the AWS subscriptions and volumes in Cloud Manager.
-
-//* You need to obtain the Cloud Volumes API key and secret key so you can provide them to Cloud Manager. https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[For instructions, refer to Cloud Volumes Service for AWS documentation^].
 
 == Getting help
 
@@ -59,9 +53,4 @@ For technical support issues specific to Cloud Manager or micro-services within,
 
 * Cloud Manager can replicate data only from on-premises or Cloud Volumes ONTAP to FSx for ONTAP.
 
-* Currently, you cannot edit volumes on FSx for ONTAP using Cloud Manager.
-
-* At this time:
-** NFS volumes can be created using Cloud Manager.
-** CIFS volumes can be created using the ONTAP CLI or ONTAP API.
-** iSCSI volumes can be created using the ONTAP CLI or ONTAP API.
+* At this time iSCSI volumes can be created using the ONTAP CLI or ONTAP API.
