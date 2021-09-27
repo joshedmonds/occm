@@ -19,6 +19,18 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager <build_number> (15 October 2021)
+
+=== Support for SnapCenter Service
+
+SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage. SnapCenter Service enabled within NetApp Cloud Manager offers efficient, application consistent, policy-based backup and restore of SAP HANA® Systems residing on Azure NetApp Files (ANF).
++
+link:overview-architecture-limitation-snapcenter-service.html[Learn about SnapCenter Service]
+
+You should create an Azure Connector in Cloud Manager, enable SnapCenter Service, add SAP HANA systems, and then perform backup and restore operations.
++
+link:get-started-snapcenter-service.html[Get started]
+
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
 We fixed a Cloud Backup bug where a volume restore operation failed when the language code for the volume was different than the language code for the storage VM.
