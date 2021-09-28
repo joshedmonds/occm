@@ -15,7 +15,7 @@ summary: Create an Azure Connector for SnapCenter Service.
 [.lead]
 An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-You should have an understanding of https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent?tabs=azure-portal#user-consent-settings[user consent^]. Depending on whether the user consent is enabled or disabled in your Azure active directory, you can create the Connector accordingly.
+You should have https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent?tabs=azure-portal#user-consent-settings[user consent^] enabled in your Azure Active Directory or your tenant admin should provide the consent for you to create the Connector from Cloud Manager UI.
 
 == User consent is enabled
 

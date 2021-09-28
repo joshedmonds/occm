@@ -17,12 +17,30 @@ Get started with SnapCenter Service to protect your data in a few steps.
 
 ==== image:number1.png[Number 1] Create an Azure Connector in Cloud Manager
 
+[role="quick-margin-para"]
+The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+
 ==== image:number2.png[Number 2] Create an Azure NetApp Files working environment
+
+[role="quick-margin-para"]
+Create an Azure NetApp Files working environment in Cloud Manager for ANF to create and manage NetApp accounts, capacity pools, volumes, and snapshots.
 
 ==== image:number3.png[Number 3] Enable SnapCenter Service
 
+[role="quick-margin-para"]
+Enable the SnapCenter Service using the Cloud Manager UI. When the SnapCenter Service is enabled, Azure Kubernetes Service (AKS) cluster is created that will host the SnapCenter Service.
+
 ==== image:number4.png[Number 4] Install the HDBSQL client
+
+[role="quick-margin-para"]
+Install the HDBSQL client to perform data protection operations on SAP HANA databases. The HDBSQL client is used to communicate with the SAP HANA systems.
 
 ==== image:number5.png[Number 5] Add SAP HANA systems
 
+[role="quick-margin-para"]
+Manually add the SAP HANA systems. Auto discovery of SAP HANA system is not supported.
+
 ==== image:number6.png[Number 6] Protect SAP HANA systems using system-defined or custom policies
+
+[role="quick-margin-para"]
+Back up your SAP HANA system using system-defined or custom policies. When required you can use the backups to restore the SAP HANA system.

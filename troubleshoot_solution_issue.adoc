@@ -46,7 +46,7 @@ In a high availability configuration, the AKS cluster does not come back to work
 You should run the following commands:
 
 . Log into the Connector.
-. Identify the RabbitMQ pod.
+. Save the RabbitMQ statefulset (sts) deployment.
 * `docker exec -it cloudmanager_snapcenter -- sh`
 * `kubectl get sts rabbitmq -o yaml -n snapcenter > rabbitmq_sts.yaml`
 . Identify the persistent volumes (PVs) attached to RabbitMQ pods.

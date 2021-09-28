@@ -35,13 +35,6 @@ For any user initiated request, the SnapCenter Service UI communicates with the 
 SnapCenter Service can be deployed in the same VNet as that of the HANA system, or in a different one. If SnapCenter Service and HANA systems are on different network, network connectivity  is required between them.
 
 == Supported functionalities
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: ./media/
-
-[.lead]
 SnapCenter Service supports the following functionalities.
 
 * Adding SAP HANA systems
@@ -54,7 +47,7 @@ You can specify different scheduling frequencies such as hourly, daily, weekly, 
 ** Supports backing up of both non-data volumes and global non-data volumes
 * Retaining backups based on the policy
 *	Restoring SAP HANA systems from user specified backup
-*	Monitoring backup and other jobs
+*	Monitoring backups and other jobs
 *	Displaying the protection summary, configuration details, and job status on the Dashboard
 *	Sending alerts through email
 

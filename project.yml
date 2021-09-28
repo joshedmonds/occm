@@ -328,13 +328,7 @@ sidebar:
             - title: Add SAP HANA systems
               url: /add-sap-hana-systems-non-data-volumes-snapcenter-service.html
             - title: Back up SAP HANA systems
-              entries:
-                - title: Create backup policies
-                  url: /create-backup-policies-sap-hana.html
-                - title: Create on-demand backups
-                  url: /create-ondemand-backups-sap-hana.html
-                - title: Create scheduled backups
-                  url: /create-scheduled-backups-sap-hana.html
+              url: /create-backup-ondemand-policies-schedule-sap-hana.html
             - title: Restore SAP HANA systems
               url: /restore-sap-hana-systems.html
         - title: Manage operations

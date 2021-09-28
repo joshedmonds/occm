@@ -1,0 +1,69 @@
+---
+sidebar: sidebar
+permalink: create-backup-ondemand-policies-schedule-sap-hana.html
+keywords: create, policies, backup policies, snapcenter service, SAP HANA, backup type, backup frequency, retention count, system-defined policies, on-demand backups, schedule backups
+summary: Create on-demand backup or schedule backups of your SAP HANA system using system-defined or custom policies.
+---
+
+= Back up SAP HANA systems
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can either perform an on-demand backup or schedule backups of your SAP HANA system using system-defined or custom policies. SnapCenter Service supports both snapshot-based and file-based backups.
+
+== Create backup policies
+Policies specify the backup type, backup frequency, schedules, retention type, retention count, and other characteristics of data protection operations. You can create policies using the Cloud Manager UI.
+
+By default, two system-defined policies, one each for snapshot-based and file-based backup operations are available.
+
+*Steps*
+
+.	On the SnapCenter Service page, click *Policies* > *Add*.
+.	On the Create Backup Policy page, perform the following actions:
+.. Specify a policy name.
+.. Select the type of backup you want to create using this policy.
+.. Specify the backup name.
++
+The suffix timestamp is added by default. You can select the other suffixes that should be included in the backup name and define the order in which the suffixes should appear.
+.. Specify the schedule frequency and the start and end time for the scheduled backups.
+.. Specify the number of snapshot copies to be retained or specify the days for which the snapshot copies should be retained.
+. Click *Add*.
+
+You can view, edit, or delete policies by clicking image:screenshot-anf-view-system.png[A screenshot of the icon to view details]	corresponding to the policy.
+
+== Create on-demand backups
+Create on-demand backups of SAP HANA systems either by associating a policy or by not associating any policy.
+
+*Steps*
+
+.	On the SnapCenter Service page, click *SAP HANA Systems*.
++
+All the systems added to the SnapCenter Service are displayed.
+. Click	image:screenshot-anf-view-system.png[A screenshot of the icon to view details] corresponding to the system that you want to protect.
+. Click *On-Demand Backup*.
+. On the On-Demand Backup page, perform one of the following actions:
+* If you want to associate the backup to a policy, select the policy and click *Create Backup*.
+* If you do not want to associate the backup to a policy, perform the following actions:
+.. In the Policy field, select *None*.
+.. Select the backup type.
++
+If you are backing up a non-data volume, you can only select *Snapshot Based* as the backup type.
+.. Specify the retention period.
+.. Click *Create Backup*.
+
+== Create scheduled backups
+Create scheduled backups by associating policies with the SAP HANA system.
+
+*Steps*
+
+. On the SnapCenter Service page, click *SAP HANA Systems*.
++
+All the systems added to the SnapCenter Service are displayed.
+. Click	image:screenshot-anf-view-system.png[A screenshot of the icon to view details] corresponding to the system that you want to protect.
+. Click *Protect*.
+. Select the policies that you want to use to protect the SAP HANA system.
+. Click *Protect*.
