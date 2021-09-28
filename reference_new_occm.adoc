@@ -28,13 +28,9 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Amazon FSx for ONTAP enhancements
 
-* Now you can create CIFS volumes in FSx for ONTAP using Cloud Manager.
-+
-link:task_manage_fsx_volumes.html#creating-volumes[Create FSx for ONTAP CIFS volumes using Cloud Manager]
+* Now you can link:task_manage_fsx_volumes.html#creating-volumes[create CIFS volumes in FSx for ONTAP using Cloud Manager].
 
-* Now you can edit FSx for ONTAP volumes using Cloud Manager.
-+
-link:task_manage_fsx_volumes.html#editing-volumes[Edit FSx for ONTAP volumes using Cloud Manager]
+* Now you can link:task_manage_fsx_volumes.html#editing-volumes[edit FSx for ONTAP volumes using Cloud Manager].
 
 === Cloud Backup enhancements
 
