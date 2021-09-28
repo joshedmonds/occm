@@ -17,10 +17,12 @@ Get started with SnapCenter Service to protect your data in a few steps.
 
 ==== image:number1.png[Number 1] Create an Azure Connector in Cloud Manager
 
-==== image:number2.png[Number 2] Enable SnapCenter Service
+==== image:number2.png[Number 2] Create an Azure NetApp Files working environment
 
-==== image:number3.png[Number 3] Install the HDBSQL client
+==== image:number3.png[Number 3] Enable SnapCenter Service
 
-==== image:number4.png[Number 4] Add SAP HANA systems
+==== image:number4.png[Number 4] Install the HDBSQL client
 
-==== image:number5.png[Number 5] Protect SAP HANA systems using system-defined or custom policies
+==== image:number5.png[Number 5] Add SAP HANA systems
+
+==== image:number6.png[Number 6] Protect SAP HANA systems using system-defined or custom policies

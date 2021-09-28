@@ -305,12 +305,8 @@ sidebar:
               url: /reference_backup_multi_account_azure.html
     - title: Protect data using SnapCenter Service
       entries:
-        - title: Learn
-          entries:
-            - title: Overview
-              url: /overview-architecture-limitation-snapcenter-service.html
-            - title: Supported functionalities
-              url: /functionalities-supported.html
+        - title: Learn about SnapCenter Service
+          url: /overview-architecture-limitation-functionalities-snapcenter-service.html
         - title: Get started
           url: /get-started-snapcenter-service.html
         - title: Create an Azure Connector in Cloud manager
@@ -321,6 +317,8 @@ sidebar:
               url: /get-start-create-azure-connector.html
             - title: Create a Connector
               url: /create-azure-connector-snapcenter-service.html
+        - title: Create an Azure NetApp Files working environment
+          url: /create-azure-netapp-files-working-environment.html
         - title: Enable SnapCenter Service for Azure NetApp Files
           url: /enable-snapcenter-service-azure-netapp-files.html
         - title: Protect SAP HANA systems

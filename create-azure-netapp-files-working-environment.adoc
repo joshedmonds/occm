@@ -1,0 +1,32 @@
+---
+sidebar: sidebar
+permalink: create-azure-netapp-files-working-environment.html
+keywords: azure, azure netapp files, working environment, cloud manager, snapcenter service
+summary: Create an Azure NetApp Files working environment.
+---
+
+= Create an Azure NetApp Files working environment
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Set up an Azure NetApp Files working environment in Cloud Manager so you can start creating volumes.
+
+. From the Canvas page, click *Add Working Environment*.
+
+. Select *Microsoft Azure* and then *Azure NetApp Files*.
+
+. Provide details about the AD application that you previously set up.
++
+image:screenshot_anf_details.gif["A screenshot of the fields that are required to create an Azure NetApp Files working environment, which includes a name, application ID, client secret, and directory ID."]
+
+. Click *Add*.
+
+*Result*
+
+You should now have an Azure NetApp Files working environment.
+
+image:screenshot_anf_we.gif[A screenshot of an Azure NetApp Files working environment.]

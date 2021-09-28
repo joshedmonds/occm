@@ -24,7 +24,7 @@ You should run the following commands to restore the system.
 
 . Log into the Connector.
 . Delete all the Redis Pods.
-* `docker exec -it cloudmanager_snapcenter --sh`
+* `docker exec -it cloudmanager_snapcenter -- sh`
 * `kubectl scale --replicas=0 sts sc-dependencies-redis-node -n snapcenter`
 . Verify if all the Redis Pods are deleted.
 `kubectl get pods -n snapcenter`
@@ -47,7 +47,7 @@ You should run the following commands:
 
 . Log into the Connector.
 . Identify the RabbitMQ pod.
-* `docker exec -it cloudmanager_snapcenter --sh`
+* `docker exec -it cloudmanager_snapcenter -- sh`
 * `kubectl get sts rabbitmq -o yaml -n snapcenter > rabbitmq_sts.yaml`
 . Identify the persistent volumes (PVs) attached to RabbitMQ pods.
 `kubectl get pv | grep rabbitmq`

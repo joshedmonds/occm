@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: overview-architecture-limitation-snapcenter-service.html
-keywords: snapcenter service, data protection, SAP HANA, Azure NetApp Files, cloud manager, azure kubernetes service, limitation
+permalink: overview-architecture-limitation-functionalities-snapcenter-service.html
+keywords: snapcenter service, data protection, SAP HANA, Azure NetApp Files, cloud manager, azure kubernetes service, limitation, functionalities
 summary: SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage.
 ---
 
-= Overview
+= Learn about SnapCenter Service
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -24,13 +24,39 @@ The SnapCenter UI is served from the Cloud Manager SAAS framework managed by Net
 * Cloud Manager Connector is a component from Cloud Manager that manages the life cycle of the SnapCenter and several other services.
 * SnapCenter Service is a set of data protection services hosted on Azure Kubernetes Service(AKS) that orchestrates the data protection workflows.
 
+NOTE: The Cloud Manager Connector and SnapCenter Service are deployed in your Cloud network.
+
 The following diagram shows the relationship between each component of SnapCenter Service:
 
 image:anf-architecture.png[The SnapCenter Service architecture.]
 
-The SnapCenter Service UI communicates with the Cloud Manager Connector for user-initiated request. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes ANF management APIs and HANA system commands to perform data protection operations.
+For any user initiated request, the SnapCenter Service UI communicates with the Cloud Manager SaaS which upon validating the request forwards the call to the Cloud Manager Connector. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes ANF management APIs and HANA system commands to perform data protection operations.
 
 SnapCenter Service can be deployed in the same VNet as that of the HANA system, or in a different one. If SnapCenter Service and HANA systems are on different network, network connectivity  is required between them.
+
+== Supported functionalities
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+SnapCenter Service supports the following functionalities.
+
+* Adding SAP HANA systems
+* Backing up SAP HANA systems
+** Supports both snapshot-based and file-based backups
+** Supports on-demand backup of SAP HANA systems
+** Supports scheduled backup of SAP HANA systems using system-defined policies or custom policies
++
+You can specify different scheduling frequencies such as hourly, daily, weekly, and monthly in the policy.
+** Supports backing up of both non-data volumes and global non-data volumes
+* Retaining backups based on the policy
+*	Restoring SAP HANA systems from user specified backup
+*	Monitoring backup and other jobs
+*	Displaying the protection summary, configuration details, and job status on the Dashboard
+*	Sending alerts through email
 
 == Limitations
 SnapCenter Service 1.0 has the following limitations.
@@ -40,6 +66,6 @@ SnapCenter Service 1.0 has the following limitations.
 // Included the below 3 points for JIRA:AMS-7748 - Limitation 3 & 4
 * In the Azure Kubernetes Service (AKS) cluster if one of the node is stopped, the inflight jobs might fail.
 * In the AKS cluster if the node on which the vault server pod _sc-dependencies-vault-0_ is running goes down, the credentials of new Azure NetApp Files will not be persisted in the vault server and SAP HANA systems can be added only after the node is brought up.
-* MySQL high availability configuration is not supported.
+* High-availability of a scheduler is not supported.
 +
-If the MySQL node is down, the schedules will not work until the MySQL node is up.
+If the MySQL node which is used by the scheduler goes down, the schedules will not work until the MySQL node is brought up.
