@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Backup enhancements>>
 * <<Cloud Data Sense enhancements>>
 * <<Cloud Volumes ONTAP enhancement>>
+* <<Cloud Sync enhancements>>
 
 === Amazon FSx for ONTAP enhancements
 
@@ -53,6 +54,19 @@ link:task-licensing-cloud-data-sense.html#use-a-cloud-tiering-byol-license[Learn
 === Cloud Volumes ONTAP enhancement
 
 We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now supports additional sync relationships for https://www.box.com/home[Box^] when using the Cloud Sync API:
+
+** Amazon S3 to Box
+** Box to an NFS server
+** Box to an SMB server
+
++
+link:api_sync.html[Learn how to set up a sync relationship using the API].
+
+* You can now link:task_sync_managing_reports.html[create a report] for SFTP paths.
 
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
@@ -95,12 +109,6 @@ Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://az
 link:task_set_up_azure_encryption.html[Learn more about these steps].
 
 === Cloud Data Sense enhancements
-
-//* Support for the Google Cloud Platform.
-//+
-//Now Cloud Data Sense can scan data from your Cloud Volumes ONTAP systems that are deployed on GCP. Data Sense must be deployed on GCP, and the Connector must be deployed on GCP or on-premises.
-//+
-//The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
 
 * Added support for scanning data on NFS volumes on Amazon FSx for ONTAP systems. link:task_scanning_fsx.html[See how to configure scanning for your FSx for ONTAP systems].
 
