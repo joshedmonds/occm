@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: get-start-create-azure-connector.html
-keywords: azure, connector, NetApp cloud central, cloud central account, connector, azure netapp files, working environment
-summary: Get started with creating an Azure Connector in Cloud Manager.
+permalink: access-cloud-manager.html
+keywords: access, cloud manager, sign up, cloud central, log into, cloud manager, cloud central account
+summary: Sign up to NetApp Cloud Central, log in to Cloud Manager, and then set up a Cloud Central account.
 ---
 
-= Get started with creating Azure Connector
+= Access Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,14 +13,20 @@ summary: Get started with creating an Azure Connector in Cloud Manager.
 :imagesdir: ./media/
 
 [.lead]
-Get started with creating Azure Connector in a few steps.
+You should sign up to NetApp Cloud Central, login in to Cloud Manager, and then set up a Cloud Central account.
+
 
 ==== image:number1.png[Number 1] Sign up to NetApp Cloud Central
 
 [role="quick-margin-para"]
-Sign up to NetApp Cloud Central so you can access NetApp’s cloud services. link:task_signing_up.html[Learn more]
+Sign up to NetApp Cloud Central so that you can access NetApp’s cloud services. link:task_signing_up.html[Learn more]
 
-==== image:number2.png[Number 2] Set up a Cloud Central account
+==== image:number2.png[Number 2] Log into Cloud Manager
+
+[role="quick-margin-para"]
+The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com. link:task_logging_in.html[Learn more]
+
+==== image:number3.png[Number 3] Set up a Cloud Central account
 
 [role="quick-margin-para"]
 A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager. link:task_setting_up_cloud_central_accounts.html[Learn more]
@@ -30,8 +36,3 @@ If you are using Cloud Manager, you can ask your existing Cloud Manager admin to
 
 [role="quick-margin-para"]
 Only an Account Admin can deploy the SnapCenter Service. However, both Account Admin and SnapCenter Admin can perform different operations. link:reference_user_roles.html[Learn more]
-
-==== image:number3.png[Number 3] Create a Connector
-
-[role="quick-margin-para"]
-If you do not have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:create-azure-connector-snapcenter-service.html[Create a Connector]

@@ -54,3 +54,7 @@ When you cannot get consent from the tenant admin, link:task_launching_azure_mkt
 
 [IMPORTANT]
 The username and password or the key that was provided while creating the Connector would be required to connect to the machine
+
+*What's next?*
+
+Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots. link:task_manage_anf.html[Learn more]
