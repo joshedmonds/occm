@@ -35,7 +35,14 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Cloud Backup enhancements
 
-* Now you can easily link:task_managing_backups.html#unregistering-cloud-backup-for-a-working-environment[unregister Cloud Backup for a working environment] if you no longer want to use backup functionality (or be charged) for that working environment.
+* The size of each backup file is now displayed in the Backup List page and when performing a volume or file restore operation.
++
+This is useful if you want to delete large backup files that are unnecessary, or so you can compare backup file sizes to identify any abnormal backup files that could be the result of a malicious software attack.
+
+* A new TCO calculator is available to help you understand the total cost of ownership for Cloud Backup, and to compare these costs to traditional backup solutions and estimate potential savings. Check it out
+https://cloud.netapp.com/cloud-backup-service-tco-calculator[here^].
+
+* Now you can easily unregister Cloud Backup for a working environment if you no longer want to use backup functionality (or be charged) for that working environment.
 
 === Cloud Data Sense enhancements
 
