@@ -24,7 +24,7 @@ Sign up to NetApp Cloud Central so that you can access NetApp’s cloud services
 ==== image:number2.png[Number 2] Log into Cloud Manager
 
 [role="quick-margin-para"]
-The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com. link:task_logging_in.html[Learn more]
+The Cloud Manager UI is accessible through a SaaS-based user interface. link:task_logging_in.html[Learn more]
 
 ==== image:number3.png[Number 3] Set up a Cloud Central account
 
