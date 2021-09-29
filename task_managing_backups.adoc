@@ -89,7 +89,7 @@ The Backup Status column for that volume displays "In Progress" until the backup
 
 == Viewing the list of backups for each volume
 
-You can view the list of all backup files that exist for each volume. This page displays details about the source volume, destination location, and backup details such as last backup taken, the current backup policy, and more.
+You can view the list of all backup files that exist for each volume. This page displays details about the source volume, destination location, and backup details such as last backup taken, the current backup policy, backup file size, and more.
 
 This page also enables you perform the following tasks:
 
