@@ -15,7 +15,7 @@ summary: Get started with creating an Azure Connector in Cloud Manager.
 [.lead]
 Get started with creating Azure Connector in a few steps.
 
-==== image:number1.png[Number 1] Sign up to Netapp Cloud Central
+==== image:number1.png[Number 1] Sign up to NetApp Cloud Central
 
 [role="quick-margin-para"]
 Sign up to NetApp Cloud Central so you can access NetApp’s cloud services. link:task_signing_up.html[Learn more]

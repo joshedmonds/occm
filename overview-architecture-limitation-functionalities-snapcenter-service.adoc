@@ -57,9 +57,12 @@ SnapCenter Service 1.0 has the following limitations.
 
 *	Internationalization is not supported, you should use English browsers.
 *	Only a Cloud Manager user with “Account Admin” role can enable the SnapCenter Service.
-// Included the below 3 points for JIRA:AMS-7748 - Limitation 3 & 4
-* In the Azure Kubernetes Service (AKS) cluster if one of the nodes goes offline, the inflight jobs might fail but subsequent jobs will be executed.
-* In the AKS cluster if one of the node goes down, you cannot add SAP HANA systems and but other operations will run without any issue. Bring up the node to add HANA systems.
-* Scheduler does not support high-availability configuration.
+// Included the below points for JIRA:AMS-7748 - Limitation 3 & 4
+* Limitations related to Azure Kubernetes Service (AKS) cluster node failure
+** In the AKS cluster if one of the nodes goes offline, the inflight jobs might fail but subsequent jobs will be executed.
+** In the AKS cluster if one of the node goes down, you cannot add SAP HANA systems and but other operations will run without any issue.
 +
-If the MySQL node which is used by the scheduler goes down, the node needs to be brought up for scheduled operations to continue.
+You should bring up the node to add HANA systems.
+** Scheduler does not support high-availability configuration.
++
+If the MySQL node which is used by the scheduler goes down, you should bring up the node for scheduled operations to continue.

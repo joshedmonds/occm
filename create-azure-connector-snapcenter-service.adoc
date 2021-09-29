@@ -39,7 +39,7 @@ Specify the clientID as _989efff4-9a9e-46fa-9f17-de39e15714f9_. This is the Clou
 +
 The displayed errors can be ignored by your Admin.
 
-. link:/task_creating_connectors_azure.html[Create the Connector from Cloud Manager].
+. link:task_creating_connectors_azure.html[Create the Connector from Cloud Manager].
 
 === Cannot get consent from the tenant admin
 
