@@ -48,6 +48,7 @@ You can specify different scheduling frequencies such as hourly, daily, weekly, 
 * Retaining backups based on the policy
 *	Restoring SAP HANA systems from user specified backup
 *	Monitoring backups and other jobs
+* Housekeeping of data and log backup catalogs on the HANA systems
 *	Displaying the protection summary, configuration details, and job status on the Dashboard
 *	Sending alerts through email
 
@@ -57,8 +58,8 @@ SnapCenter Service 1.0 has the following limitations.
 *	Internationalization is not supported, you should use English browsers.
 *	Only a Cloud Manager user with “Account Admin” role can enable the SnapCenter Service.
 // Included the below 3 points for JIRA:AMS-7748 - Limitation 3 & 4
-* In the Azure Kubernetes Service (AKS) cluster if one of the node is stopped, the inflight jobs might fail.
-* In the AKS cluster if the node on which the vault server pod _sc-dependencies-vault-0_ is running goes down, the credentials of new Azure NetApp Files will not be persisted in the vault server and SAP HANA systems can be added only after the node is brought up.
-* High-availability of a scheduler is not supported.
+* In the Azure Kubernetes Service (AKS) cluster if one of the nodes goes offline, the inflight jobs might fail but subsequent jobs will be executed.
+* In the AKS cluster if one of the node goes down, you cannot add SAP HANA systems and but other operations will run without any issue. Bring up the node to add HANA systems.
+* Scheduler does not support high-availability configuration.
 +
-If the MySQL node which is used by the scheduler goes down, the schedules will not work until the MySQL node is brought up.
+If the MySQL node which is used by the scheduler goes down, the node needs to be brought up for scheduled operations to continue.
