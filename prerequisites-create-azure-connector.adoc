@@ -142,7 +142,7 @@ If you want to enable SnapCenter Service behind Azure firewall, you should perfo
 
 *Steps*
 
-. link:/media/scs_azure_firewall_config.sh[Download the scs_azure_firewall_config.sh] script to your local system.
+. link:media/scs_azure_firewall_config.sh[Download the scs_azure_firewall_config.sh] script to your local system.
 . Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
 . Click image:screenshot-azure-cloud-shell.png[A screenshot of the Azure cloud shell] to open the cloud shell and select the Bash console.
 .. Upload the script to Azure cloud shell.
