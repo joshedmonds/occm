@@ -60,11 +60,11 @@ NOTE: A Beta feature released in January 2021 allows you to run compliance scans
 
 == Cost
 
-* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
+* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
 +
-link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-data-sense-service[Learn how to subscribe^].
+link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
 +
-*Note:* This subscription is not needed to scan backup files created from your on-prem ONTAP systems.
+*Note:* A PAYGO subscription or BYOL license is not needed to scan backup files created from your on-prem ONTAP systems.
 
 * Installing Cloud Data Sense in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See <<The Cloud Data Sense instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Data Sense on an on-premises system.
 

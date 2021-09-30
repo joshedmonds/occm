@@ -44,9 +44,11 @@ These steps must be completed by a user who has the _Account Admin_ role.
 +
 image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
 
-. Find the credentials for the AWS Instance Profile, Azure Managed Service Identity, or Google Project.
+// . Find the credentials for the AWS Instance Profile, Azure Managed Service Identity, or Google Project.
+. Find the credentials for the AWS Instance Profile or Azure Managed Service Identity.
 +
-The subscription must be added to the Instance Profile, Managed Service Identity, or Google Project. Charging won't work otherwise.
+// The subscription must be added to the Instance Profile, Managed Service Identity, or Google Project. Charging won't work otherwise.
+The subscription must be added to the Instance Profile or Managed Service Identity. Charging won't work otherwise.
 +
 If you already have a subscription (shown below for AWS), then you're all set--there's nothing else that you need to do.
 +
@@ -65,10 +67,10 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 The following video shows how to associate an https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^] subscription to an Azure subscription:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
-+
-The following video shows how to associate a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^] subscription to a GCP subscription:
-+
-video::video_subscribing_gcp.mp4[width=848, height=480]
+// +
+// The following video shows how to associate a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^] subscription to a GCP subscription:
+// +
+// video::video_subscribing_gcp.mp4[width=848, height=480]
 
 === Change to the new Cloud Manager plan in Azure
 
