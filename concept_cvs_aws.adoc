@@ -15,7 +15,7 @@ summary: NetApp Cloud Volumes Service for AWS is a cloud native file service tha
 [.lead]
 NetApp Cloud Volumes Service for AWS is a cloud native file service that provides NAS volumes over NFS and SMB with all-flash performance. This service enables any workload, including legacy applications, to run in the AWS cloud.
 
-NOTE: With the launch of link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP^], you can continue to manage volumes in existing CVS for AWS working environments but can't create new CVS for AWS working environments.
+NOTE: With the launch of link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP^], you can no longer create new CVS for AWS working environments in Cloud Manager. However, if you had previously added CVS for AWS working environments to Cloud Manager, you can continue to create and manage volumes.
 
 == Benefits of using Cloud Volumes Service for AWS
 
@@ -39,12 +39,6 @@ Volumes created by the Cloud Volumes Service for AWS are charged based on your s
 
 There are no charges to discover a Cloud Volumes Service for AWS region or volume from Cloud Manager.
 
-== Before you get started
-
-* Cloud Manager can discover existing Cloud Volumes Service for AWS subscriptions and volumes. See the https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup Guide^] if you haven't set up your subscription yet. You must follow this setup process for each region before you can add the AWS subscriptions and volumes in Cloud Manager.
-
-* You need to obtain the Cloud Volumes API key and secret key so you can provide them to Cloud Manager. https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[For instructions, refer to Cloud Volumes Service for AWS documentation^].
-
 == Quick start
 
 Get started quickly by following these steps, or go to the next sections for full details.
@@ -52,7 +46,7 @@ Get started quickly by following these steps, or go to the next sections for ful
 ==== image:number1.png[Number 1] Verify support for your configuration
 
 [role="quick-margin-para"]
-You have set up AWS for Cloud Volumes Service and you must have subscribed to one of the https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=netapp+cloud+volumes+service[NetApp Cloud Volumes Service offerings on the AWS Marketplace^].
+You must have set up AWS for Cloud Volumes Service and subscribed to one of the https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=netapp+cloud+volumes+service[NetApp Cloud Volumes Service offerings on the AWS Marketplace^] and have an existing CVS for AWS working environment configured in Cloud Manager to create and manage volumes.
 
 // ==== image:number2.png[Number 2] Add your Cloud Volumes Service for AWS subscription
 //
