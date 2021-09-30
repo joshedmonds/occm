@@ -107,7 +107,7 @@ After you create a volume, you can modify its size and tags at any time.
 
 . Open the working environment.
 
-. Hover over the volume and select *Edit*.
+. Open the volume menu and select *Edit*.
 
 . Modify the size and tags as needed.
 

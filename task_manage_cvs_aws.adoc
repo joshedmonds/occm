@@ -15,7 +15,7 @@ summary: Cloud Manager enables you to create cloud volumes based on your Cloud V
 [.lead]
 Cloud Manager enables you to create cloud volumes based on your https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^] subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
 
-TIP: With the launch of link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP^], you can continue to manage volumes in existing CVS for AWS working environments but can't create new CVS for AWS working environments.
+NOTE: With the launch of link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP^], you can continue to manage volumes in existing CVS for AWS working environments but can't create new CVS for AWS working environments.
 
 // == Add your Cloud Volumes Service for AWS subscription
 //
@@ -81,7 +81,8 @@ For configurations where no volumes exist, you can create your first volume dire
 .Steps
 
 . Select a CVS for AWS working environment and click *Add New Volume*.
-+image:screenshot_cvs_aws_cloud.gif[A screenshot of Cloud Volumes Service for AWS on the working environments page.]
++
+image:screenshot_cvs_aws_cloud.gif[A screenshot of Cloud Volumes Service for AWS on the working environments page.]
 
 . If you are adding the first volume to the working environment in the region, you have to add AWS networking information.
 .. Enter the IPv4 range (CIDR) for the region.
