@@ -315,7 +315,7 @@ sidebar:
           entries:
             - title: Prerequisites for creating an Azure Connector
               url: /prerequisites-create-azure-connector.html
-            - title: Identify user content status and create a Connector
+            - title: Identify user consent status and create the Connector
               url: /create-azure-connector-user-consent-snapcenter-service.html
         - title: Enable SnapCenter Service for Azure NetApp Files
           url: /enable-snapcenter-service-azure-netapp-files.html

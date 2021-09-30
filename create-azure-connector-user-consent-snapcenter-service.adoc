@@ -5,7 +5,7 @@ keywords: azure, connector, cloud central, snapcenter service, user consent, ten
 summary: Create an Azure Connector for SnapCenter Service.
 ---
 
-= Identify user content status and create a Connector
+= Identify user consent status and create the Connector
 :hardbreaks:
 :nofooter:
 :icons: font
