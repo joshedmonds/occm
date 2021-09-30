@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_licensing_cloud_tiering.html
 keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, tiering, cloud tiering
-summary: Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-your-own Cloud Tiering license, or a combination of both. If you want to pay as you go, then you need to subscribe from the marketplace for the cloud provider to which you want to tier cold data. There's no need to subscribe from every marketplace.
+summary: A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
 ---
 
 = Set up licensing for Cloud Tiering
@@ -13,7 +13,7 @@ summary: Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-you
 :imagesdir: ./media/
 
 [.lead]
-Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-your-own Cloud Tiering license, or a combination of both. If you want to pay as you go, then you need to subscribe from the marketplace for the cloud provider to which you want to tier cold data. There's no need to subscribe from every marketplace.
+A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
 
 A few notes before you read any further:
 
@@ -22,7 +22,7 @@ A few notes before you read any further:
 
 * The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
 
-* There are no charges when tiering data to StorageGRID, so neither a BYOL license or PAYGO registration is required.
+* There are no charges when tiering data to StorageGRID, so neither a BYOL license or PAYGO registration is required. This tiered data doesn’t count against the capacity purchased in your license.
 
 link:concept_cloud_tiering.html#pricing-and-licenses[Learn more about how licensing works for Cloud Tiering].
 
