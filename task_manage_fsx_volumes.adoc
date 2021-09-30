@@ -68,7 +68,7 @@ image:screenshot_fsx_volume_protocol_nfs.png[A screenshot of the NFS configurati
 image:screenshot_fsx_volume_protocol_cifs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
 .. Click *Next*.
 +
-TIP: If the CIFS server was not already configured in the working environment, you will be prompted to configure CIFS connectivity.
+TIP: If this is the first CIFS volume for this working environment, you will be prompted to configure your CIFS connectivity.
 
 . *Usage Profile and Tiering*:
 
@@ -101,15 +101,15 @@ image:screenshot_fsx_volume_actions.png[A screenshot of available operations ava
 
 == Editing volumes
 
-After you create a volume, you can modify its size and tags at any time.
+After you create a volume, you can modify it at any time.
 
 .Steps
 
 . Open the working environment.
 
 . Open the volume menu and select *Edit*.
-
-. Modify the size and tags as needed.
+.. For NFS, you can modify the size and tags.
+.. For CIFS, you can modify the share name, users, permissions, and Snapshot policy as needed.
 
 . Click *Apply*.
 
