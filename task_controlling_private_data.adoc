@@ -79,7 +79,7 @@ Cloud Data Sense takes the data that it scanned and divides it into different ty
 
 Categories can help you understand what's happening with your data by showing you the types of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an insecure location. You can then correct that issue.
 
-NOTE: Only English is supported for categories. Support for more languages will be added later.
+NOTE: Only English, German, and Spanish are supported for categories. Support for more languages will be added later.
 
 .Steps
 

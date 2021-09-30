@@ -87,44 +87,47 @@ Sex Life or Orientation Reference::	Data concerning a natural person’s sex lif
 
 Cloud Data Sense categorizes your data as follows:
 
-Finance::
-*	Balance Sheets
-*	Purchase Orders
-*	Invoices
-*	Quarterly Reports
+[cols="25,25,15,15,15",width=90%,options="header"]
+|===
+| Category
+| Type
+| English
+| German
+| Spanish
 
-HR::
-*	Background Checks
-*	Compensation Plans
-*	Employee Contracts
-*	Employee Reviews
-*	Health
-*	Resumes
+.4+| Finance | Balance Sheets | icon:check[] | icon:check[] | icon:check[]
+| Purchase Orders | icon:check[] | icon:check[] | icon:check[]
+| Invoices | icon:check[] | icon:check[] | icon:check[]
+| Quarterly Reports | icon:check[] | icon:check[] | icon:check[]
 
-Legal::
-*	NDAs
-*	Vendor-Customer contracts
+.6+| HR | Background Checks | icon:check[] |  | icon:check[]
+| Compensation Plans | icon:check[] | icon:check[] | icon:check[]
+| Employee Contracts | icon:check[] |  | icon:check[]
+| Employee Reviews | icon:check[] |  | icon:check[]
+| Health | icon:check[] |  | icon:check[]
+| Resumes | icon:check[] | icon:check[] | icon:check[]
 
-Marketing::
-*	Campaigns
-*	Conferences
+.2+| Legal| NDAs | icon:check[] | icon:check[] | icon:check[]
+| Vendor-Customer contracts | icon:check[] | icon:check[] | icon:check[]
 
-Operations::
-*	Audit Reports
+.2+| Marketing| Campaigns | icon:check[] | icon:check[] | icon:check[]
+| Conferences | icon:check[] | icon:check[] | icon:check[]
 
-Sales::
-*	Sales Orders
+.1+| Operations| Audit Reports | icon:check[] | icon:check[] | icon:check[]
 
-Services::
-*	RFI
-*	RFP
-* SOW
-*	Training
+.1+| Sales | Sales Orders | icon:check[] | icon:check[] |
 
-Support::
-*	Complaints and Tickets
+.4+| Services | RFI | icon:check[] |  | icon:check[]
+| RFP | icon:check[] |  | icon:check[]
+| SOW | icon:check[] | icon:check[] | icon:check[]
+| Training | icon:check[] | icon:check[] | icon:check[]
 
-Metadata categories::
+.1+| Support | Complaints and Tickets | icon:check[] | icon:check[] | icon:check[]
+
+|===
+
+The following *Metadata categories* are supported only in English:
+
 * Application Data
 * Archive Files
 * Audio
