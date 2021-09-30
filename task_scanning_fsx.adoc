@@ -27,8 +27,6 @@ link:https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/security-group-rules
 +
 link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html[AWS elastic network interfaces (ENI)]
 
-NOTE: At this time, you can scan NFS volumes only.
-
 == Quick start
 
 Get started quickly by following these steps or scroll down for full details.
