@@ -95,34 +95,34 @@ Cloud Data Sense categorizes your data as follows:
 | German
 | Spanish
 
-.4+| Finance | Balance Sheets | icon:check[] | icon:check[] | icon:check[]
-| Purchase Orders | icon:check[] | icon:check[] | icon:check[]
-| Invoices | icon:check[] | icon:check[] | icon:check[]
-| Quarterly Reports | icon:check[] | icon:check[] | icon:check[]
+.4+| Finance | Balance Sheets | ✓ | ✓ | ✓
+| Purchase Orders | ✓ | ✓ | ✓
+| Invoices | ✓ | ✓ | ✓
+| Quarterly Reports | ✓ | ✓ | ✓
 
-.6+| HR | Background Checks | icon:check[] |  | icon:check[]
-| Compensation Plans | icon:check[] | icon:check[] | icon:check[]
-| Employee Contracts | icon:check[] |  | icon:check[]
-| Employee Reviews | icon:check[] |  | icon:check[]
-| Health | icon:check[] |  | icon:check[]
-| Resumes | icon:check[] | icon:check[] | icon:check[]
+.6+| HR | Background Checks | ✓ |  | ✓
+| Compensation Plans | ✓ | ✓ | ✓
+| Employee Contracts | ✓ |  | ✓
+| Employee Reviews | ✓ |  | ✓
+| Health | ✓ |  | ✓
+| Resumes | ✓ | ✓ | ✓
 
-.2+| Legal| NDAs | icon:check[] | icon:check[] | icon:check[]
-| Vendor-Customer contracts | icon:check[] | icon:check[] | icon:check[]
+.2+| Legal| NDAs | ✓ | ✓ | ✓
+| Vendor-Customer contracts | ✓ | ✓ | ✓
 
-.2+| Marketing| Campaigns | icon:check[] | icon:check[] | icon:check[]
-| Conferences | icon:check[] | icon:check[] | icon:check[]
+.2+| Marketing| Campaigns | ✓ | ✓ | ✓
+| Conferences | ✓ | ✓ | ✓
 
-.1+| Operations| Audit Reports | icon:check[] | icon:check[] | icon:check[]
+.1+| Operations| Audit Reports | ✓ | ✓ | ✓
 
-.1+| Sales | Sales Orders | icon:check[] | icon:check[] |
+.1+| Sales | Sales Orders | ✓ | ✓ |
 
-.4+| Services | RFI | icon:check[] |  | icon:check[]
-| RFP | icon:check[] |  | icon:check[]
-| SOW | icon:check[] | icon:check[] | icon:check[]
-| Training | icon:check[] | icon:check[] | icon:check[]
+.4+| Services | RFI | ✓ |  | ✓
+| RFP | ✓ |  | ✓
+| SOW | ✓ | ✓ | ✓
+| Training | ✓ | ✓ | ✓
 
-.1+| Support | Complaints and Tickets | icon:check[] | icon:check[] | icon:check[]
+.1+| Support | Complaints and Tickets | ✓ | ✓ | ✓
 
 |===
 
