@@ -13,7 +13,7 @@ summary: SnapCenter Service provides data protection capabilities for applicatio
 :imagesdir: ./media/
 
 [.lead]
-SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage. SnapCenter Service enabled within NetApp Cloud Manager offers efficient, application consistent, policy-based backup and restore of SAP HANA® Systems residing on Azure NetApp Files (ANF).
+SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage. SnapCenter Service enabled within NetApp Cloud Manager offers efficient, application consistent, policy-based backup and restore of SAP HANA® Systems residing on Azure NetApp Files.
 
 == Architecture
 The architecture of SnapCenter Service include the following components.
@@ -30,7 +30,7 @@ The following diagram shows the relationship between each component of SnapCente
 
 image:anf-architecture.png[The SnapCenter Service architecture.]
 
-For any user initiated request, the SnapCenter Service UI communicates with the Cloud Manager SaaS which upon validating the request forwards the call to the Cloud Manager Connector. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes ANF management APIs and HANA system commands to perform data protection operations.
+For any user initiated request, the SnapCenter Service UI communicates with the Cloud Manager SaaS which upon validating the request forwards the call to the Cloud Manager Connector. The Connector then communicates to SnapCenter Service and SnapCenter Service invokes Azure NetApp Files management APIs and HANA system commands to perform data protection operations.
 
 SnapCenter Service can be deployed in the same VNet as that of the HANA system, or in a different one. If SnapCenter Service and HANA systems are on different network, network connectivity  is required between them.
 

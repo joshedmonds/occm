@@ -55,7 +55,7 @@ NOTE: If you are using Azure firewall, you can perform these steps using a scrip
 * FQDN Tag - AzureKubernetesService
 * HTTPS: 443
 
-. Add an Application rule with the below endpoints as target FQDNs with protocol and port as HTTPS:443.
+. Add an Application rule with the below endpoints as target FQDNs with protocol and port as HTTPS: 443.
 +
 [cols="43,57",options="header"]
 |===

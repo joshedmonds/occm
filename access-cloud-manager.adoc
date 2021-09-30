@@ -13,7 +13,7 @@ summary: Sign up to NetApp Cloud Central, log in to Cloud Manager, and then set 
 :imagesdir: ./media/
 
 [.lead]
-You should sign up to NetApp Cloud Central, login in to Cloud Manager, and then set up a Cloud Central account.
+You should sign up to NetApp Cloud Central, log into Cloud Manager, and then set up a Cloud Central account.
 
 
 ==== image:number1.png[Number 1] Sign up to NetApp Cloud Central
