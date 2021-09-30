@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: create-azure-connector-snapcenter-service.html
+permalink: create-azure-connector-user-consent-snapcenter-service.html
 keywords: azure, connector, cloud central, snapcenter service, user consent, tenant admin, create connector, enable, disable, azure marketplace
 summary: Create an Azure Connector for SnapCenter Service.
 ---
 
-= Create a Connector
+= Identify user content status and create a Connector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,9 @@ summary: Create an Azure Connector for SnapCenter Service.
 :imagesdir: ./media/
 
 [.lead]
-An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
-
 You should have https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent?tabs=azure-portal#user-consent-settings[user consent^] enabled in your Azure Active Directory or your tenant admin should provide the consent for you to create the Connector from Cloud Manager UI.
+
+An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
 == User consent is enabled
 
@@ -54,7 +54,3 @@ When you cannot get consent from the tenant admin, link:task_launching_azure_mkt
 
 [IMPORTANT]
 The username and password or the key that was provided while creating the Connector would be required to connect to the machine
-
-*What's next*
-
-Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots. link:task_manage_anf.html[Learn more]

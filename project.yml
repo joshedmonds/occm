@@ -315,8 +315,8 @@ sidebar:
           entries:
             - title: Prerequisites for creating an Azure Connector
               url: /prerequisites-create-azure-connector.html
-            - title: Create a Connector
-              url: /create-azure-connector-snapcenter-service.html
+            - title: Identify user content status and create a Connector
+              url: /create-azure-connector-user-consent-snapcenter-service.html
         - title: Enable SnapCenter Service for Azure NetApp Files
           url: /enable-snapcenter-service-azure-netapp-files.html
         - title: Protect SAP HANA systems
