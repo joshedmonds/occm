@@ -17,7 +17,7 @@ Using Cloud Manager you can create an FSx for ONTAP working environment to add v
 
 == Create an Amazon FSx for ONTAP working environment
 
-The first step is to create an FSx for ONTAP working environment. If you already created an FSx for ONTAP file system in the AWS Management Console, you can link:task_manage_fsx_aws#discover_existing_fsx_ontap_file_system.html[discover it using Cloud Manager].
+The first step is to create an FSx for ONTAP working environment. If you already created an FSx for ONTAP file system in the AWS Management Console, you can link:task_creating_fsx_working_environment.html#discover-an-existing-fsx-for-ontap-file-system[discover it using Cloud Manager].
 
 .Before you begin
 
