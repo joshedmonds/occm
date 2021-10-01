@@ -19,19 +19,19 @@ When you deploy Cloud Volumes ONTAP in Azure, you can choose a preconfigured sys
 
 Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_991.html[Supported configurations for Cloud Volumes ONTAP 9.9.1 in Azure^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9100.html[Supported configurations for Cloud Volumes ONTAP in Azure^]
 
 == Supported VM types
 
 Cloud Volumes ONTAP supports several VM types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_991.html[Supported configurations for Cloud Volumes ONTAP 9.9.1 in Azure^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9100.html[Supported configurations for Cloud Volumes ONTAP in Azure^]
 
 == Understanding storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_991.html[Storage limits for Cloud Volumes ONTAP 9.9.1 in Azure^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_9100.html[Storage limits for Cloud Volumes ONTAP in Azure^]
 
 == Sizing your system in Azure
 

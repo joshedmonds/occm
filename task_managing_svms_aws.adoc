@@ -30,7 +30,7 @@ Each EC2 instance supports a maximum number of private IPv4 addresses per networ
 
 .Steps
 
-. Go the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_991.html[Storage limits section in the Cloud Volumes ONTAP Release Notes^].
+. Go the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_9100.html[Storage limits section in the Cloud Volumes ONTAP Release Notes^].
 
 . Identify the maximum number of IP addresses per interface for your instance type.
 
