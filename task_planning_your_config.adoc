@@ -75,7 +75,7 @@ You need to choose an initial disk size when you launch a Cloud Volumes ONTAP sy
 ** All disks in an aggregate must be the same size.
 ** The performance of EBS disks is tied to disk size. The size determines the baseline IOPS and maximum burst duration for SSD disks and the baseline and burst throughput for HDD disks.
 ** Ultimately, you should choose the disk size that gives you the _sustained performance_ that you need.
-** Even if you do choose larger disks (for example, six 4 TB disks), you might not get all of the IOPS because the EC2 instance can reach its bandwidth limit.
+** Even if you do choose larger disks (for example, six 4 TiB disks), you might not get all of the IOPS because the EC2 instance can reach its bandwidth limit.
 +
 For more details about EBS disk performance, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 

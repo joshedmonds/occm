@@ -50,9 +50,9 @@ For example, Cloud Manager might choose the following disk sizes for aggregates 
 | Disk size
 | Max aggregate capacity
 
-| 1 |	500 MB | 3 TB
-| 4 | 1 TB | 6 TB
-| 6 | 2 TB | 12 TB
+| 1 |	500 GiB | 3 TiB
+| 4 | 1 TiB | 6 TiB
+| 6 | 2 TiB | 12 TiB
 
 |===
 

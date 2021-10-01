@@ -59,8 +59,8 @@ An _Acquisition Unit_ collects performance data from Cloud Volumes ONTAP and sen
 
 Note the following about the Acquisition Unit instance:
 
-* In AWS, the Acquisition Unit runs on a t3.xlarge instance with a 100 GB GP2 volume.
-* In Azure, the Acquisition Unit runs on a D4_v3 virtual machine with a 30 GB Standard SSD.
+* In AWS, the Acquisition Unit runs on a t3.xlarge instance with a 100 GiB GP2 volume.
+* In Azure, the Acquisition Unit runs on a D4_v3 virtual machine with a 30 GiB Standard SSD.
 * The instance is named _CloudInsights-AU_ with a generated hash (UUID) concatenated to it. For example: _CloudInsights-AU-FAN7FqeH_
 * Only one Acquisition Unit is deployed per Connector.
 * The instance must be running to access performance information in the Monitoring tab.
