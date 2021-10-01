@@ -391,7 +391,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 === Box requirements
 
-Cloud Sync supports https://www.box.com/home[Box^] as the source in a sync relationship when using the Cloud Sync API.
+Cloud Sync supports https://www.box.com/home[Box^] in a sync relationship when using the Cloud Sync API.
 
 In order to copy from Box, you'll need to provide the following credentials:
 
