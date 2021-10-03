@@ -85,7 +85,7 @@ Sex Life or Orientation Reference::	Data concerning a natural person’s sex lif
 
 == Types of categories
 
-Cloud Data Sense categorizes your data as follows:
+Cloud Data Sense categorizes your data as follows. Most of these categories can be recognized in English, German, and Spanish.
 
 [cols="25,25,15,15,15",width=90%,options="header"]
 |===
@@ -126,26 +126,36 @@ Cloud Data Sense categorizes your data as follows:
 
 |===
 
-The following *Metadata categories* are supported only in English:
+The following Metadata categories are also supported:
 
-* Application Data
-* Archive Files
-* Audio
-* Business Application Data
-* CAD Files
-* Code
-* Database and index files
-* Design Files
-* Email Application Data
-* Executables
-* Financial Application Data
-* Health Application Data
-* Images
-* Logs
-* Miscellaneous Documents
-* Miscellaneous Presentations
-* Miscellaneous Spreadsheets
-* Videos
+[cols="25,15,15,15",width=90%,options="header"]
+|===
+| Category
+| English
+| German
+| Spanish
+
+| Application Data | ✓ |  |
+| Archive Files | ✓ |  |
+| Audio | ✓ |  |
+| Business Application Data | ✓ |  |
+| CAD Files | ✓ |  |
+
+| Database and index files | ✓ |  |
+| Design Files | ✓ |  |
+| Email Application Data | ✓ |  |
+| Executables | ✓ |  |
+| Financial Application Data | ✓ |  |
+| Health Application Data | ✓ |  |
+| Images | ✓ |  |
+| Logs | ✓ |  |
+| Miscellaneous Documents | ✓ | ✓ | ✓
+| Miscellaneous Presentations | ✓ | ✓ | ✓
+| Miscellaneous Spreadsheets | ✓ | ✓ | ✓
+| Miscellaneous "Unknown" | ✓ | ✓ | ✓
+| Videos | ✓ |  |
+
+|===
 
 == Types of files
 
