@@ -267,7 +267,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 ** *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as multiple Cloud Volumes ONTAP systems, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essentials_ or _Professional_.
 
-** *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GB of provisioned capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
+** *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GiB of provisioned capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
 +
 link:concept_licensing.html[Learn more about these licensing options].
 +
@@ -309,7 +309,7 @@ link:task_enabling_private_link.html[Learn more about using an Azure Private Lin
 
 * Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports Balanced persistent disks (pd-balanced).
 +
-These SSDs balance performance and cost by providing lower IOPS per GB.
+These SSDs balance performance and cost by providing lower IOPS per GiB.
 
 * The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems.
 +
