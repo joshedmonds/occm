@@ -19,6 +19,25 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.11 (4 Oct 2021)
+
+* <<Amazon FSx for ONTAP enhancements>>
+* <<Cloud Volumes ONTAP enhancements>>
+
+=== Amazon FSx for ONTAP enhancements
+
+* Now you can link:task_manage_fsx_volumes.html#creating-volumes[create CIFS volumes in FSx for ONTAP using Cloud Manager].
+
+* Now you can link:task_manage_fsx_volumes.html#editing-volumes[edit FSx for ONTAP volumes using Cloud Manager].
+
+=== Cloud Volumes ONTAP enhancements
+
+* Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.0.
++
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9100.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+* We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
+
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
 We fixed a Cloud Backup bug where a volume restore operation failed when the language code for the volume was different than the language code for the storage VM.
@@ -60,12 +79,6 @@ Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://az
 link:task_set_up_azure_encryption.html[Learn more about these steps].
 
 === Cloud Data Sense enhancements
-
-//* Support for the Google Cloud Platform.
-//+
-//Now Cloud Data Sense can scan data from your Cloud Volumes ONTAP systems that are deployed on GCP. Data Sense must be deployed on GCP, and the Connector must be deployed on GCP or on-premises.
-//+
-//The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
 
 * Added support for scanning data on NFS volumes on Amazon FSx for ONTAP systems. link:task_scanning_fsx.html[See how to configure scanning for your FSx for ONTAP systems].
 
