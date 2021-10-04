@@ -233,7 +233,7 @@ The sync relationship shows the throughput of the data broker's network adapter.
 
 === I'm experiencing performance issues. Can we limit the number of concurrent transfers?
 
-The data broker can sync 4 files at a time. If you have very large files (multiple TBs each), it can take a long time to complete the transfer process and performance might be impacted.
+The data broker can sync 4 files at a time. If you have very large files (multiple TiBs each), it can take a long time to complete the transfer process and performance might be impacted.
 
 Limiting the number of concurrent transfers can help. mailto:ng-cloudsync-support@netapp.com[Contact us for help].
 

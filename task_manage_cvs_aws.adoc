@@ -15,48 +15,50 @@ summary: Cloud Manager enables you to create cloud volumes based on your Cloud V
 [.lead]
 Cloud Manager enables you to create cloud volumes based on your https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^] subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
 
-== Add your Cloud Volumes Service for AWS subscription
+NOTE: With the launch of link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for ONTAP^], you can no longer create new CVS for AWS working environments in Cloud Manager. However, if you had previously added CVS for AWS working environments to Cloud Manager, you can continue to create and manage volumes.
 
-Regardless of whether you have already created volumes from the Cloud Volumes Service user interface, or if you just signed up for Cloud Volumes Service for AWS and have no volumes yet, the first step is to create a working environment for the volumes based on your AWS subscription.
-
-If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment. If you haven't added any cloud volumes yet for the AWS subscription, then you do that after you create the new working environment.
-
-TIP: If you have subscriptions and volumes in multiple AWS regions, you need to perform this task for each region.
-
-.Before you begin
-
-You must have the following information available when adding a subscription in each region:
-
-* Cloud Volumes API key and Secret key: https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[See the Cloud Volumes Service for AWS documentation to get this information^].
-
-* The AWS region where the subscription was created.
-
-.Steps
-
-. In Cloud Manager, add a new Working Environment, select the location *Amazon Web Services*, and click *Continue*.
-
-. Select *Cloud Volumes Service* and click *Continue*.
-+
-image:screenshot_add_cvs_aws_working_env.png[A screenshot of adding a working environment for a Cloud Volumes Service for AWS subscription]
-
-. Provide information about your Cloud Volumes Service subscription:
-
-.. Enter the Working Environment Name you want to use.
-.. Enter the Cloud Volumes Service API key and secret key.
-.. Select the AWS region where your cloud volumes reside, or where they will be deployed.
-.. Click *Add*.
-+
-image:screenshot_add_cvs_aws_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for AWS subscription]
-
-.Result
-
-Cloud Manager displays your Cloud Volumes Service for AWS configuration on the Canvas page.
-
-image:screenshot_cvs_aws_cloud.gif[A screenshot of Cloud Volumes Service for AWS on the working environments page.]
-
-If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
-
-If no cloud volumes exist for this subscription, then you can create them now.
+// == Add your Cloud Volumes Service for AWS subscription
+//
+// Regardless of whether you have already created volumes from the Cloud Volumes Service user interface, or if you just signed up for Cloud Volumes Service for AWS and have no volumes yet, the first step is to create a working environment for the volumes based on your AWS subscription.
+//
+// If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment. If you haven't added any cloud volumes yet for the AWS subscription, then you do that after you create the new working environment.
+//
+// TIP: If you have subscriptions and volumes in multiple AWS regions, you need to perform this task for each region.
+//
+// .Before you begin
+//
+// You must have the following information available when adding a subscription in each region:
+//
+// * Cloud Volumes API key and Secret key: https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[See the Cloud Volumes Service for AWS documentation to get this information^].
+//
+// * The AWS region where the subscription was created.
+//
+// .Steps
+//
+// . In Cloud Manager, add a new Working Environment, select the location *Amazon Web Services*, and click *Continue*.
+//
+// . Select *Cloud Volumes Service* and click *Continue*.
+// +
+// image:screenshot_add_cvs_aws_working_env.png[A screenshot of adding a working environment for a Cloud Volumes Service for AWS subscription]
+//
+// . Provide information about your Cloud Volumes Service subscription:
+//
+// .. Enter the Working Environment Name you want to use.
+// .. Enter the Cloud Volumes Service API key and secret key.
+// .. Select the AWS region where your cloud volumes reside, or where they will be deployed.
+// .. Click *Add*.
+// +
+// image:screenshot_add_cvs_aws_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for AWS subscription]
+//
+// .Result
+//
+// Cloud Manager displays your Cloud Volumes Service for AWS configuration on the Canvas page.
+//
+// image:screenshot_cvs_aws_cloud.gif[A screenshot of Cloud Volumes Service for AWS on the working environments page.]
+//
+// If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
+//
+// If no cloud volumes exist for this subscription, then you can create them now.
 
 == Create cloud volumes
 
@@ -78,7 +80,9 @@ For configurations where no volumes exist, you can create your first volume dire
 
 .Steps
 
-. Select the new working environment and click *Add New Volume*.
+. Select a CVS for AWS working environment and click *Add New Volume*.
++
+image:screenshot_cvs_aws_cloud.gif[A screenshot of Cloud Volumes Service for AWS on the working environments page.]
 
 . If you are adding the first volume to the working environment in the region, you have to add AWS networking information.
 .. Enter the IPv4 range (CIDR) for the region.
