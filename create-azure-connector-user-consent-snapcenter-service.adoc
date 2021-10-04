@@ -16,7 +16,7 @@ summary: Create an Azure Connector for SnapCenter Service.
 
 An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-By default, you can create an Azure Connector from Azure Marketplace. While performing the steps to link:task_launching_azure_mktp.html[create the connector from Azure marketplace], you should remember the following:
+By default, you can create an Azure Connector from Azure Marketplace. While performing the steps to link:task_launching_azure_mktp.html[create the connector from Azure Marketplace], you should remember the following:
 
 * Wherever Cloud Manager for Cloud Volumes ONTAP is specified, the same can be leveraged for SnapCenter Service.
 * For the Cloud Manager Name specify your Connector VM name for better identification. This will be shown as connector name in the Cloud Manager UI.

@@ -31,7 +31,7 @@ You should ensure that all the link:prerequisites-azure-connector-snapcenter-ser
 ==== image:number3.png[Number 3] Create an Azure Connector for SnapCenter Service
 
 [role="quick-margin-para"]
-link:create-azure-connector-user-consent-snapcenter-service.html[Create an Azure Connector] for SnapCenter Service.
+You should link:create-azure-connector-user-consent-snapcenter-service.html[create an Azure Connector for SnapCenter Service].
 
 [role="quick-margin-para"]
 If you have a connector that meets all the prerequisites, you can use that.
@@ -44,12 +44,12 @@ Create an Azure NetApp Files working environment in Cloud Manager to create and 
 ==== image:number5.png[Number 5] Enable SnapCenter Service
 
 [role="quick-margin-para"]
-link:enable-snapcenter-service-azure-netapp-files.html[Enable SnapCenter Service] using the Cloud Manager UI. When the SnapCenter Service is enabled, Azure Kubernetes Service (AKS) cluster is created that will host the SnapCenter Service.
+You should link:enable-snapcenter-service-azure-netapp-files.html[enable SnapCenter Service] using the Cloud Manager UI. When the SnapCenter Service is enabled, Azure Kubernetes Service (AKS) cluster is created that will host the SnapCenter Service.
 
 ==== image:number6.png[Number 6] Install the HDBSQL client
 
 [role="quick-margin-para"]
-link:install-hdbsql-client-snapcenter-service.html[Install the HDBSQL client] to perform data protection operations on SAP HANA databases. The HDBSQL client is used to communicate with the SAP HANA systems.
+You should link:install-hdbsql-client-snapcenter-service.html[install the HDBSQL client] to perform data protection operations on SAP HANA databases. The HDBSQL client is used to communicate with the SAP HANA systems.
 
 ==== image:number7.png[Number 7] Protect SAP HANA systems
 
