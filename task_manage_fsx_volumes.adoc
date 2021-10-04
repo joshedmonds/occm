@@ -66,9 +66,36 @@ image:screenshot_fsx_volume_protocol_nfs.png[A screenshot of the NFS configurati
 * Select the permission level for the volume.
 +
 image:screenshot_fsx_volume_protocol_cifs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
-.. Click *Next*.
 +
-TIP: If this is the first CIFS volume for this working environment, you will be prompted to configure your CIFS connectivity.
+TIP: If this is the first CIFS volume for this working environment, you will be prompted to configure CIFS connectivity using an _Active Directory_ or _Workgroup_ setup.
+
+* If you select an Active Directory setup, you'll need to provide the following configuration information.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary IP Address | The IP addresses of the DNS servers that provides name resolution for the CIFS server.
+The listed DNS server must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain the CIFS server will join.
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain you want the CIFS server to join.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+// If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+
+| DNS Domain | The DNS domain for the storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+| NTP Server | Select *Enable NTP Server Configuration* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+|===
+
+* If you select a Workgroup setup, enter the server and workgroup name for a workgroup configured for CIFS.
+
+.. Click *Next*.
 
 . *Usage Profile and Tiering*:
 
