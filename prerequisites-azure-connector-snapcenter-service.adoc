@@ -5,7 +5,7 @@ keywords: azure connector, prerequisites, firewall, network requirements, subnet
 summary: Ensure that you meet the prerequisites before creating the Azure Connector.
 ---
 
-= Prerequisites to create an Azure Connector and to enable SnapCenter Service
+= Prerequisites to create Connector and enable SnapCenter Service
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Ensure that you meet the prerequisites before creating the Azure Connec
 :imagesdir: ./media/
 
 [.lead]
-Before you create a Connector in Azure from Cloud Manager, you should ensure certain things.
+Before you create a Connector in Azure and enable SnapCenter Service, you should ensure certain things.
 
 * Ensure that the subnet chosen for the Connector should not overlap with the following IP address ranges reserved for Azure Kubernetes Service (AKS): 169.254.0.0/16, 172.30.0.0/16, 172.31.0.0/16, and 192.0.2.0/24.
 * Ensure that there are no AKS running in the chosen subnet.

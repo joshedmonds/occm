@@ -311,7 +311,7 @@ sidebar:
           url: /overview-architecture-limitation-functionalities-snapcenter-service.html
         - title: Get started
           url: /get-started-snapcenter-service.html
-        - title: Prerequisites to create an Azure Connector and to enable SnapCenter Service
+        - title: Prerequisites to create Connector and enable SnapCenter Service
           url: /prerequisites-azure-connector-snapcenter-service.html
         - title: Create an Azure Connector for SnapCenter Service
           url: /create-azure-connector-user-consent-snapcenter-service.html

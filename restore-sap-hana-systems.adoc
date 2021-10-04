@@ -32,3 +32,6 @@ The systems added to the SnapCenter Service are displayed.
 IMPORTANT: After restoring the database, if you do a point-in-time recovery of the SAP HANA system using HANA Studio then the data backup catalog entries which were deleted by SnapCenter Service as per the retention setting, might be restored.
 If the deleted data backup catalog entries are restored because of the recovery operation, SnapCenter Service will not be able to detect and delete them. This could result in SnapCenter Service not cleaning the log catalog properly.
 You can verify the backup entries in SnapCenter Service to find out which all data backup catalog entries are newly restored and manually delete those entries.
+
+*Find more information*
+https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-overview.html[SAP HANA backup and recovery on Azure NetApp Files with SnapCenter Service]

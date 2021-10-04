@@ -67,3 +67,6 @@ All the systems added to the SnapCenter Service are displayed.
 . Click *Protect*.
 . Select the policies that you want to use to protect the SAP HANA system.
 . Click *Protect*.
+
+*Find more information*
+https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-overview.html[SAP HANA backup and recovery on Azure NetApp Files with SnapCenter Service]
