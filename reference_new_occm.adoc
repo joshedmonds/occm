@@ -19,13 +19,10 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.11 (3 Oct 2021)
+== Cloud Manager 3.9.11 (4 Oct 2021)
 
 * <<Amazon FSx for ONTAP enhancements>>
-* <<Cloud Backup enhancements>>
-* <<Cloud Data Sense enhancements>>
-* <<Cloud Volumes ONTAP enhancement>>
-* <<Cloud Sync enhancements>>
+* <<Cloud Volumes ONTAP enhancements>>
 
 === Amazon FSx for ONTAP enhancements
 
@@ -33,47 +30,13 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * Now you can link:task_manage_fsx_volumes.html#editing-volumes[edit FSx for ONTAP volumes using Cloud Manager].
 
-=== Cloud Backup enhancements
+=== Cloud Volumes ONTAP enhancements
 
-* The size of each backup file is now displayed in the Backup List page and when performing a volume or file restore operation.
+* Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.0.
 +
-This is useful if you want to delete large backup files that are unnecessary, or so you can compare backup file sizes to identify any abnormal backup files that could be the result of a malicious software attack.
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9100.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-* A new TCO calculator is available to help you understand the total cost of ownership for Cloud Backup, and to compare these costs to traditional backup solutions and estimate potential savings. Check it out
-https://cloud.netapp.com/cloud-backup-service-tco-calculator[here^].
-
-* Now you can easily unregister Cloud Backup for a working environment if you no longer want to use backup functionality (or be charged) for that working environment.
-
-=== Cloud Data Sense enhancements
-
-* Data Sense can now scan FSx for ONTAP CIFS and Data Protection (DP) volumes. link:task_scanning_fsx.html[Learn how how to scan Amazon FSx for ONTAP volumes].
-
-* Now you can choose to scan or map individual volumes in your working environments and data sources.
-+
-In the past you could either map or scan all volumes in each data source. Now you can choose to map _or_ scan individual volumes in each data source. This option is available for Cloud Volumes ONTAP volumes, ANF volumes, on-prem ONTAP volumes, FSx for ONTAP volumes, and volume backups.
-
-* Support for BYOL licensing from NetApp.
-+
-In addition to subscribing to use Data Sense through your cloud provider marketplace, now you can purchase a bring-your-own-license (BYOL) from NetApp that you can use across all your working environments and data sources in your account.
-+
-link:task-licensing-cloud-data-sense.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Data Sense BYOL license].
-
-=== Cloud Volumes ONTAP enhancement
-
-We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
-
-=== Cloud Sync enhancements
-
-* Cloud Sync now supports additional sync relationships for https://www.box.com/home[Box^] when using the Cloud Sync API:
-
-** Amazon S3 to Box
-** Box to an NFS server
-** Box to an SMB server
-
-+
-link:api_sync.html[Learn how to set up a sync relationship using the API].
-
-* You can now link:task_sync_managing_reports.html[create a report] for SFTP paths.
+* We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
 
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
