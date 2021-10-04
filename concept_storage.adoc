@@ -25,14 +25,14 @@ image:diagram_storage.png["This illustration shows an aggregate that is comprise
 
 Several types of cloud disks are supported. You choose the disk type when you create a volume and the default disk size when you deploy Cloud Volumes ONTAP.
 
-TIP: The total amount of storage purchased from a cloud provider is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for Cloud Volumes ONTAP use. For example, if Cloud Manager creates a 500 GB aggregate, the usable capacity is 442.94 GB.
+TIP: The total amount of storage purchased from a cloud provider is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for Cloud Volumes ONTAP use. For example, if Cloud Manager creates a 500 GiB aggregate, the usable capacity is 442.94 GiB.
 
 == AWS storage
 
 In AWS, Cloud Volumes ONTAP uses EBS storage for user data and local NVMe storage as Flash Cache on some EC2 instance types.
 
 EBS storage::
-In AWS, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TB.
+In AWS, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TiB.
 +
 The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon S3 to link:concept_data_tiering.html[tier inactive data to low-cost object storage].
 +
@@ -47,9 +47,9 @@ Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP us
 
 * link:task_planning_your_config.html[Learn how to choose disk types and disk sizes for your systems in AWS]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_991.html[Review storage limits for Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_9100.html[Review storage limits for Cloud Volumes ONTAP in AWS^]
 
-* http://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Review supported configurations for Cloud Volumes ONTAP in AWS^]
+* http://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9100.html[Review supported configurations for Cloud Volumes ONTAP in AWS^]
 
 == Azure storage
 
@@ -64,12 +64,12 @@ Single node systems can use three types of Azure Managed Disks:
 
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
 +
-Each managed disk type has a maximum disk size of 32 TB.
+Each managed disk type has a maximum disk size of 32 TiB.
 +
 You can pair a managed disk with Azure Blob storage to link:concept_data_tiering.html[tier inactive data to low-cost object storage].
 
 HA pairs::
-HA pairs use Premium page blobs, which have a maximum disk size of 8 TB.
+HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
 
 *Related links*
 
@@ -77,11 +77,11 @@ HA pairs use Premium page blobs, which have a maximum disk size of 8 TB.
 
 * link:task_planning_your_config_azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_991.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_9100.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
 
 == GCP storage
 
-In GCP, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TB.
+In GCP, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TiB.
 
 The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept_data_tiering.html[tier inactive data to low-cost object storage].
 
@@ -89,7 +89,7 @@ The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persis
 
 * https://cloud.google.com/compute/docs/disks/[Google Cloud Platform documentation: Storage Options^]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_991.html[Review storage limits for Cloud Volumes ONTAP in GCP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_9100.html[Review storage limits for Cloud Volumes ONTAP in GCP^]
 
 == RAID type
 

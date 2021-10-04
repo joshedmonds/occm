@@ -27,8 +27,6 @@ link:https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/security-group-rules
 +
 link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html[AWS elastic network interfaces (ENI)]
 
-NOTE: At this time, you can scan NFS volumes only.
-
 == Quick start
 
 Get started quickly by following these steps or scroll down for full details.
@@ -55,13 +53,13 @@ Now that Cloud Data Sense is enabled, ensure that it can access all volumes.
 
 [role="quick-margin-list"]
 * The Cloud Data Sense instance needs a network connection to each FSx for ONTAP subnet.
-* Make sure NFS ports 111 and 2049 are open to the Data Sense instance.
-//** For NFS – ports 111 and 2049.
-//** For CIFS – ports 139 and 445.
+* Make sure the following ports are open to the Data Sense instance.
+** For NFS – ports 111 and 2049.
+** For CIFS – ports 139 and 445.
 * NFS volume export policies must allow access from the Data Sense instance.
-//* Data Sense needs Active Directory credentials to scan CIFS volumes.
-// +
-// Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the credentials.
+* Data Sense needs Active Directory credentials to scan CIFS volumes.
+ +
+Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the credentials.
 
 ==== image:number5.png[Number 5] Manage the volumes you want to scan
 
@@ -104,7 +102,7 @@ Cloud Data Sense starts scanning the volumes you selected in the working environ
 
 Make sure Cloud Data Sense can access volumes by checking your networking, security groups, and export policies.
 
-//You'll need to provide Data Sense with CIFS credentials so it can access CIFS volumes.
+You'll need to provide Data Sense with CIFS credentials so it can access CIFS volumes.
 
 .Steps
 
@@ -118,22 +116,23 @@ image:screenshot_fsx_scanning_no_network_error.png["A screenshot of the View Det
 +
 NOTE: For FSx for ONTAP, Cloud Data Sense can scan volumes only in the same region as Cloud Manager.
 
-. Ensure NFS ports 111 and 2049 are open to the Data Sense instance.
-// ** For NFS – ports 111 and 2049.
-// ** For CIFS – ports 139 and 445.
+. Ensure the following ports are open to the Data Sense instance.
+** For NFS – ports 111 and 2049.
+** For CIFS – ports 139 and 445.
 
 . Ensure NFS volume export policies include the IP address of the Data Sense instance so it can access the data on each volume.
-// . If you use CIFS, provide Data Sense with Active Directory credentials so it can scan CIFS volumes.
-//
-// .. At the top of Cloud Manager, click *Data Sense*.
-//
-// .. Click the *Configuration* tab.
-//
-// .. For each working environment, click *Edit CIFS Credentials* and enter the user name and password that Data Sense needs to access CIFS volumes on the system.
-// +
-// The credentials can be read-only, but providing admin credentials ensures that Data Sense can read any data that requires elevated permissions. The credentials are stored on the Cloud Data Sense instance.
-// +
-// After you enter the credentials, you should see a message that all CIFS volumes were authenticated successfully.
+
+. If you use CIFS, provide Data Sense with Active Directory credentials so it can scan CIFS volumes.
+
+.. At the top of Cloud Manager, click *Data Sense*.
+
+.. Click the *Configuration* tab.
+
+.. For each working environment, click *Edit CIFS Credentials* and enter the user name and password that Data Sense needs to access CIFS volumes on the system.
++
+The credentials can be read-only, but providing admin credentials ensures that Data Sense can read any data that requires elevated permissions. The credentials are stored on the Cloud Data Sense instance.
++
+After you enter the credentials, you should see a message that all CIFS volumes were authenticated successfully.
 
 == Enabling and disabling compliance scans on volumes
 

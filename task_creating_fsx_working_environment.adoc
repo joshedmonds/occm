@@ -13,11 +13,11 @@ summary: Cloud Manager enables you to create an FSx for ONTAP working environmen
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to create an FSx for ONTAP working environment to add volumes and manage additional data services.
+Using Cloud Manager you can create an FSx for ONTAP working environment to add volumes and manage additional data services.
 
 == Create an Amazon FSx for ONTAP working environment
 
-The first step is to create an FSx for ONTAP working environment. If you already created an FSx for ONTAP file system in the AWS Management Console, you can link:task_manage_fsx_aws#discover_existing_fsx_ontap_file_system.html[discover it using Cloud Manager].
+The first step is to create an FSx for ONTAP working environment. If you already created an FSx for ONTAP file system in the AWS Management Console, you can link:task_creating_fsx_working_environment.html#discover-an-existing-fsx-for-ontap-file-system[discover it using Cloud Manager].
 
 .Before you begin
 
@@ -93,7 +93,7 @@ Cloud Manager displays your FSx for ONTAP configuration on the Canvas page.
 
 image:screenshot_add_fsx_cloud.png[A screenshot of Amazon FSx for ONTAP on the working environments page.]
 
-You can now add volumes from to your FSx for ONTAP working environment using Cloud Manager.
+You can now add volumes to your FSx for ONTAP working environment using Cloud Manager.
 
 == Discover an existing FSx for ONTAP file system
 
