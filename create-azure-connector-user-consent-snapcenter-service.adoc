@@ -5,7 +5,7 @@ keywords: azure, connector, cloud central, snapcenter service, user consent, ten
 summary: Create an Azure Connector for SnapCenter Service.
 ---
 
-= Identify user consent status and create the Connector
+= Create an Azure Connector for SnapCenter Service
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,19 +13,22 @@ summary: Create an Azure Connector for SnapCenter Service.
 :imagesdir: ./media/
 
 [.lead]
-You should have https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent?tabs=azure-portal#user-consent-settings[user consent^] enabled in your Azure Active Directory or your tenant admin should provide the consent for you to create the Connector from Cloud Manager UI.
 
 An Account Admin should deploy a Connector before you can use the Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+
+By default, you can create an Azure Connector from Azure Marketplace. While link:task_launching_azure_mktp.html[creating the connector from Azure marketplace], you should remember the following:
+
+* Wherever Cloud Manager for Cloud Volumes ONTAP is specified, the same can be leveraged for SnapCenter Service.
+* For the Cloud Manager Name specify your Connector VM name for better identification. This will be shown as connector name in the Cloud Manager UI.
+* If you have configured the Connector without public IP or configured a firewall, you should have a jump host to connect to the Connector machine.
+
+If you have https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent?tabs=azure-portal#user-consent-settings[user consent^] enabled in your Azure Active Directory or if your tenant admin can provide the consent, you to create the Connector from Cloud Manager UI.
 
 == User consent is enabled
 
 If the user consent is enabled in your Azure active directory, link:task_creating_connectors_azure.html[create the Connector from Cloud Manager].
 
 == User consent is disabled
-
-If the user consent is disabled and depending on whether you can get a consent or cannot get a consent from the tenant admin, you should create the Connector accordingly.
-
-=== Can get consent from the tenant admin
 
 . Perform one of the following:
 * If the admin consent workflow is configured in your active directory, you should https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-admin-consent-workflow#how-users-request-admin-consent[request for admin consent^].
@@ -40,17 +43,6 @@ Specify the clientID as _989efff4-9a9e-46fa-9f17-de39e15714f9_. This is the Clou
 The displayed errors can be ignored by your Admin.
 
 . link:task_creating_connectors_azure.html[Create the Connector from Cloud Manager].
-
-=== Cannot get consent from the tenant admin
-
-When you cannot get consent from the tenant admin, link:task_launching_azure_mktp.html[create the Connector from Azure Marketplace].
-
-[NOTE]
-====
-* Wherever Cloud Manager for Cloud Volumes ONTAP is specified, the same can be leveraged for SnapCenter Service.
-* For the Cloud Manager Name specify your Connector VM name for better identification. This will be shown as connector name in the Cloud Manager UI.
-* If you have configured the Connector without public IP or configured a firewall, you should have a jump host to connect to the Connector machine.
-====
 
 [IMPORTANT]
 The username and password or the key that was provided while creating the Connector would be required to connect to the machine

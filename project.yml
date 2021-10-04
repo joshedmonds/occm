@@ -309,20 +309,16 @@ sidebar:
           url: /overview-architecture-limitation-functionalities-snapcenter-service.html
         - title: Get started
           url: /get-started-snapcenter-service.html
-        - title: Access Cloud Manager
-          url: /access-cloud-manager.html
+        - title: Prerequisites to create an Azure Connector and to enable SnapCenter Service
+          url: /prerequisites-azure-connector-snapcenter-service.html
         - title: Create an Azure Connector for SnapCenter Service
-          entries:
-            - title: Prerequisites for creating an Azure Connector
-              url: /prerequisites-create-azure-connector.html
-            - title: Identify user consent status and create the Connector
-              url: /create-azure-connector-user-consent-snapcenter-service.html
+          url: /create-azure-connector-user-consent-snapcenter-service.html
         - title: Enable SnapCenter Service for Azure NetApp Files
           url: /enable-snapcenter-service-azure-netapp-files.html
+        - title: Install the HDBSQL client
+          url: /install-hdbsql-client-snapcenter-service.html
         - title: Protect SAP HANA systems
           entries:
-            - title: Install the HDBSQL client
-              url: /install-hdbsql-client-snapcenter-service.html
             - title: Add SAP HANA systems
               url: /add-sap-hana-systems-non-data-volumes-snapcenter-service.html
             - title: Back up SAP HANA systems

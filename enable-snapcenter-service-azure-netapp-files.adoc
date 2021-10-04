@@ -18,9 +18,8 @@ You can enable the SnapCenter Service using the Cloud Manager UI. When the SnapC
 
 *What you will need*
 
-* You should have created an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots. link:task_manage_anf.html[Learn more]
 * You should register the "Microsoft.ContainerService" resource provider in your Azure subscription. For information, see https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider[how to register resource provider^].
-* You should ensure that all the link:prerequisites-create-azure-connector.html[prerequisites to create an Azure Connector] are met.
+* You should ensure that all the link:prerequisites-azure-connector-snapcenter-service.html[prerequisites] are met.
 
 *About this task*
 

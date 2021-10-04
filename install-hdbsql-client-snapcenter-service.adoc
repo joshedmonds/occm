@@ -39,7 +39,7 @@ To copy the file to the Connector path, you need the credentials, or the key pro
 +
 The file are copied to _/home/<username>_.
 . Log into the Connector VM with the ssh credentials or key.
-. Run the following commands in the Connector VM.
+. Run the following commands in the Connector VM to install the HDBSQL client in the AKS.
 .. `sudo cp /home/<username>/<SAPCAR_utility> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/`
 .. `sudo cp /home/<username>/< HDB_Client_archive> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/`
 .. `sudo docker exec -it cloudmanager_snapcenter /bin/bash /opt/netapp/hdbclient/hdbclient.sh --archivefile <HDB_Client_archive> --archiveutil <SAPCAR_utility>`
