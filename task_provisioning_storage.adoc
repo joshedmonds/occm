@@ -237,7 +237,7 @@ Cloud Manager does not provide management of FlexCache volumes at this time, but
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html[FlexCache Volumes for Faster Data Access Power Guide^]
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html[Creating FlexCache volumes in System Manager^]
 
-Starting with the 3.7.2 release, Cloud Manager generates a FlexCache license for all new Cloud Volumes ONTAP systems. The license includes a 500 GB usage limit.
+Starting with the 3.7.2 release, Cloud Manager generates a FlexCache license for all new Cloud Volumes ONTAP systems. The license includes a 500 GiB usage limit.
 
 NOTE: To generate the license, Cloud Manager needs to access \https://ipa-signer.cloudmanager.netapp.com. Make sure that this URL is accessible from your firewall.
 

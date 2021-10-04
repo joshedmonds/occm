@@ -22,9 +22,9 @@ If you want to deploy an HA pair, you should link:concept_ha_google_cloud.html[l
 The following requirements must be met in GCP.
 
 Internal load balancers::
-Cloud Manager automatically creates three Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. (Prior to 9.9.0, four load balancers were created.) No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
+Cloud Manager automatically creates four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
 +
-One load balancer is for cluster management, one is for NAS traffic to node 1, and the last is for NAS traffic to node 2.
+One load balancer is for cluster management, one is for storage VM (SVM) management, one is for NAS traffic to node 1, and the last is for NAS traffic to node 2.
 +
 The setup for each load balancer is as follows:
 +
@@ -143,7 +143,7 @@ TIP: If your network uses a proxy server for all communication to the internet, 
 
 === Connection to target networks
 
-A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you're deploying an HA pair, then the Connector needs a connection to all four VPCs.
+A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you're deploying an HA pair, then the Connector needs a connection to VPC-0 only.
 
 === Outbound internet access
 

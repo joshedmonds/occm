@@ -80,43 +80,43 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 === AWS
 
 * Two disks per node for boot and root data:
-**	9.7: 160 GB io1 disk for boot data and a 220 GB gp2 disk for root data
-**	9.6: 93 GB io1 disk for boot data and a 140 GB gp2 disk for root data
-**	9.5: 45 GB io1 disk for boot data and a 140 GB gp2 disk for root data
+**	9.7: 160 GiB io1 disk for boot data and a 220 GiB gp2 disk for root data
+**	9.6: 93 GiB io1 disk for boot data and a 140 GiB gp2 disk for root data
+**	9.5: 45 GiB io1 disk for boot data and a 140 GiB gp2 disk for root data
 
-* Starting with version 9.8, a 540 GB General Purpose SSD (gp2) for a core disk when using a C5, M5, or R5 instance type
+* Starting with version 9.8, a 540 GiB General Purpose SSD (gp2) for a core disk when using a C5, M5, or R5 instance type
 
 * One EBS snapshot for each boot disk and root disk
 
-* For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GB
+* For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GiB
 
 === Azure (single node)
 
 * Three Premium SSD disks:
-** One 10 GB disk for boot data
-** One 140 GB disk for root data
-** One 128 GB disk for NVRAM
+** One 10 GiB disk for boot data
+** One 140 GiB disk for root data
+** One 128 GiB disk for NVRAM
 +
 If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSDs, then the system uses an Ultra SSD for NVRAM, rather than a Premium SSD.
 
-* One 1024 GB Standard HDD disk for saving cores
+* One 1024 GiB Standard HDD disk for saving cores
 
 * One Azure snapshot for each boot disk and root disk
 
 === Azure (HA pairs)
 
-*	Two 10 GB Premium SSD disks for the boot volume (one per node)
-* Two 140 GB Premium Storage page blobs for the root volume (one per node)
-* Two 1024 GB Standard HDD disks for saving cores (one per node)
-* Two 128 GB Premium SSD disks for NVRAM (one per node)
+*	Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 140 GiB Premium Storage page blobs for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 128 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
 
 === GCP
 
-* One 10 GB Standard persistent disk for boot data
-* One 64 GB Standard persistent disk for root data
-* One 500 GB Standard persistent disk for NVRAM
-* One 315 GB Standard persistent disk for saving cores
+* One 10 GiB Standard persistent disk for boot data
+* One 64 GiB Standard persistent disk for root data
+* One 500 GiB Standard persistent disk for NVRAM
+* One 315 GiB Standard persistent disk for saving cores
 * One GCP snapshot each for the boot disk and root disk
 
 For an HA pair, there are two disks per node for root data.

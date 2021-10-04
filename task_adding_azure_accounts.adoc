@@ -13,13 +13,19 @@ summary: When you create a Cloud Volumes ONTAP system, you need to select the Az
 :imagesdir: ./media/
 
 [.lead]
-When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
+When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials to use with that system. You also need to choose a Marketplace subscription, if you're using pay-as-you-go licensing. Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.
 
-There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
+There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP using different Azure credentials, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 
-NOTE: When you deploy a Connector from Cloud Manager, Cloud Manager automatically adds the Azure account in which you deployed the Connector. An initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
+== Adding additional Azure credentials to Cloud Manager
 
-== Granting Azure permissions using a service principal
+When you deploy a Connector from Cloud Manager, Cloud Manager enables a system-assigned managed identity on the virtual machine that has the required permissions. Cloud Manager selects these Azure credentials by default when you create a new working environment for Cloud Volumes ONTAP.
+
+TIP: An initial set of credentials isn't added if you manually installed the Connector software on an existing system. link:concept_accounts_azure.html[Learn about Azure credentials and permissions].
+
+If you want to deploy Cloud Volumes ONTAP using _different_ Azure credentials, then you must grant the required permissions by creating and setting up a service principal in Azure Active Directory for each Azure account. You can then add the new credentials to Cloud Manager.
+
+=== Granting Azure permissions using a service principal
 
 Cloud Manager needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
 
@@ -41,7 +47,7 @@ image:diagram_azure_authentication.png["Conceptual image that shows Cloud Manage
 
 . <<Creating a client secret,Create a client secret>>.
 
-=== Creating an Azure Active Directory application
+==== Creating an Azure Active Directory application
 
 Create an Azure Active Directory (AD) application and service principal that Cloud Manager can use for role-based access control.
 
@@ -70,7 +76,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 You've created the AD application and service principal.
 
-=== Assigning the application to a role
+==== Assigning the application to a role
 
 You must bind the service principal to one or more Azure subscriptions and assign it the custom "OnCommand Cloud Manager Operator" role so Cloud Manager has permissions in Azure.
 
@@ -124,7 +130,7 @@ The service principal for Cloud Manager now has the required Azure permissions f
 +
 If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. Cloud Manager enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
 
-=== Adding Windows Azure Service Management API permissions
+==== Adding Windows Azure Service Management API permissions
 
 The service principal must have "Windows Azure Service Management API" permissions.
 
@@ -143,7 +149,7 @@ image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal th
 image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
 
 [[ids]]
-=== Getting the application ID and directory ID
+==== Getting the application ID and directory ID
 
 When you add the Azure account to Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
 
@@ -155,7 +161,7 @@ When you add the Azure account to Cloud Manager, you need to provide the applica
 +
 image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
 
-=== Creating a client secret
+==== Creating a client secret
 
 You need to create a client secret and then provide Cloud Manager with the value of the secret so Cloud Manager can use it to authenticate with Azure AD.
 
@@ -181,9 +187,9 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you add an Azure account.
 
-== Adding Azure credentials to Cloud Manager
+=== Adding the credentials to Cloud Manager
 
-After you provide an Azure account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
+After you provide an Azure account with the required permissions, you can add the credentials for that account to Cloud Manager. Completing this step enables you to launch Cloud Volumes ONTAP using different Azure credentials.
 
 .Before you get started
 

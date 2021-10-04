@@ -61,7 +61,7 @@ After you purchase licenses for your NetApp account, you need to add the license
 
 * You need to provide Cloud Manager the serial number of the license or the license file.
 
-* If you want to enter the serial number, you first need to link:task_adding_nss_accounts[add your NetApp Support Site account to Cloud Manager]. This is the NetApp Support Site account that's authorized to access the serial number.
+* If you want to enter the serial number, you first need to link:task_adding_nss_accounts.html[add your NetApp Support Site account to Cloud Manager]. This is the NetApp Support Site account that's authorized to access the serial number.
 
 .Steps
 
@@ -165,7 +165,7 @@ Cloud Manager updates the license on the Cloud Volumes ONTAP system.
 
 === Manage extra capacity licenses
 
-You can purchase extra capacity licenses for a Cloud Volumes ONTAP BYOL system to allocate more than the 368 TB of capacity that's provided with a BYOL system license. For example, you might purchase one extra license capacity to allocate up to 736 TB of capacity to Cloud Volumes ONTAP. Or you could purchase three extra capacity licenses to get up to 1.4 PB.
+You can purchase extra capacity licenses for a Cloud Volumes ONTAP BYOL system to allocate more than the 368 TiB of capacity that's provided with a BYOL system license. For example, you might purchase one extra license capacity to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could purchase three extra capacity licenses to get up to 1.4 PB.
 
 The number of licenses that you can purchase for a single node system or HA pair is unlimited.
 
@@ -215,9 +215,14 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 . Click *Remove*.
 
-=== Convert an Eval license to BYOL
+=== Convert an Eval license to a BYOL
 
-An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade (this requires a restart of single node systems).
+An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade.
+
+When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Volumes ONTAP system.
+
+* For a single-node system, the restart results in I/O interruption during the reboot process.
+* For an HA pair, the restart initiates takeover and giveback to continue serving I/O to clients.
 
 link:concept_evaluating.html[Learn more about Evaluation licenses].
 
@@ -232,3 +237,7 @@ link:concept_evaluating.html[Learn more about Evaluation licenses].
 . Enter the serial number or upload the license file.
 
 . Click *Convert License*.
+
+.Result
+
+Cloud Manager starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it's back up, the licensing information will reflect the new license.

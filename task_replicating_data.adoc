@@ -19,6 +19,16 @@ You can replicate data between ONTAP working environments by choosing a one-time
 
 Before you can replicate data, you should confirm that specific requirements are met for Cloud Volumes ONTAP, on-prem ONTAP clusters, or Amazon FSx for ONTAP.
 
+Working environments::
+If you haven't done so already, you need to create the working environments for the source and target in the data replication relationship.
++
+* link:task_manage_fsx_aws.html[Create an Amazon FSx for ONTAP working environment]
+* link:task_deploying_otc_aws.html[Launch Cloud Volumes ONTAP in AWS]
+* link:task_deploying_otc_azure.html[Launch Cloud Volumes ONTAP in Azure]
+* link:task_deploying_gcp.html[Launch Cloud Volumes ONTAP in GCP]
+* link:task_adding_ontap_cloud.html[Add existing Cloud Volumes ONTAP systems]
+* link:task_discovering_ontap.html[Discover ONTAP clusters]
+
 Version requirements::
 You should verify that the source and destination volumes are running compatible ONTAP versions before replicating data. For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/GUID-0810D764-4CEA-4683-8280-032433B1886B.html[Data Protection Power Guide^].
 

@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF, or FAS system with all-SSD aggregates, that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * An AWS account that has an access key and <<Preparing Amazon S3,the required permissions>> so the ONTAP cluster can tier inactive data in and out of S3.
 * A Connector installed in an AWS VPC or on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to S3 storage, and to the Cloud Tiering service.
@@ -59,7 +59,8 @@ NOTE: Communication between a Connector and S3 is for object storage setup only.
 Your ONTAP clusters must meet the following requirements when tiering data to Amazon S3.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
+* When using ONTAP 9.8 and later: You can tier data from AFF systems, or FAS systems with all-SSD aggregates or all-HDD aggregates.
+* When using ONTAP 9.7 and earlier: You can tier data from AFF systems, or FAS systems with all-SSD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.2 or later

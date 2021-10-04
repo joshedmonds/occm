@@ -15,6 +15,13 @@ summary: Free space on your on-prem ONTAP clusters by tiering inactive data to a
 [.lead]
 Free space on your on-prem ONTAP clusters by tiering inactive data to any object storage service which uses the Simple Storage Service (S3) protocol.
 
+[CAUTION]
+====
+Customers who want to use object stores that are not officially supported as a cloud tier can do so using these instructions. Customers must test and confirm that the object store meets their requirements.
+
+NetApp does not support nor is liable for any issues arising from any third-party Object Store Service, specifically where it does not have agreed support arrangements with the third party with whom the product originated. It is acknowledged and agreed that NetApp shall not be liable for any associated damage or otherwise be required to provide support on that third-party product.
+====
+
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
@@ -25,7 +32,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.8 or later, and a connection over a user-specified port to the S3-compatible object storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.8 or later, and a connection over a user-specified port to the S3-compatible object storage. link:task_discovering_ontap.html[Learn how to discover a cluster].
 * The FQDN, Access Key, and Secret Key for the object storage server so that the ONTAP cluster can access the bucket.
 * A Connector installed on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to the S3-compatible object storage, and to the Cloud Tiering service.
@@ -60,7 +67,7 @@ NOTE: Communication between the Connector and the S3-compatible object storage s
 Your ONTAP clusters must meet the following requirements when tiering data to S3-compatible object storage.
 
 Supported ONTAP platforms::
-Cloud Tiering supports AFF systems and FAS systems with all-SSD aggregates.
+You can tier data from AFF systems, or FAS systems with all-SSD aggregates or all-HDD aggregates.
 
 Supported ONTAP version::
 ONTAP 9.8 or later
@@ -149,9 +156,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Tiering op
 
 .. *Server*: Enter the FQDN of the S3-compatible object storage server, the port that ONTAP should use for HTTPS communication with the server, and the access key and secret key for an account that has the required S3 permissions.
 
-.. *Bucket*: Add a new bucket or select an existing bucket that starts with the prefix _fabric-pool_ and click *Continue*.
-+
-The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
+.. *Bucket*: Add a new bucket or select an existing bucket and click *Continue*.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage and click *Continue*.
 +

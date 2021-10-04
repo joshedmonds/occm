@@ -45,15 +45,13 @@ You can apply tags to the following resources.
 | Service
 | Resource
 
-| ONTAP | Cloud Volumes ONTAP | Aggregate
+.3+| ONTAP | Cloud Volumes ONTAP | Aggregate
 Storage VM
 Volume
-
-| ONTAP | On-premise ONTAP | Aggregate
+| On-premise ONTAP | Aggregate
 Storage VM
 Volume
-
-| ONTAP | Azure NetApp Files | Volume
+| Azure NetApp Files | Volume
 
 | AWS | EC2 | Instance
 Security Group
@@ -61,12 +59,12 @@ Subnet
 Volume
 VPC
 
-| Azure | Compute | Snapshot
+.4+| Azure | Compute | Snapshot
 Virtual Machine
-| | Network | Security Group
+| Network | Security Group
 Virtual Network
-| | Resource | Resource Group
-| | Storage | Storage Account
+| Resource | Resource Group
+| Storage | Storage Account
 
 |===
 
