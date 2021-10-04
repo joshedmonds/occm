@@ -15,6 +15,13 @@ summary: Free space on your on-prem ONTAP clusters by tiering inactive data to a
 [.lead]
 Free space on your on-prem ONTAP clusters by tiering inactive data to any object storage service which uses the Simple Storage Service (S3) protocol.
 
+[CAUTION]
+====
+Customers who want to use object stores that are not officially supported as a cloud tier can do so using these instructions. Customers must test and confirm that the object store meets their requirements.
+
+NetApp does not support nor is liable for any issues arising from any third-party Object Store Service, specifically where it does not have agreed support arrangements with the third party with whom the product originated. It is acknowledged and agreed that NetApp shall not be liable for any associated damage or otherwise be required to provide support on that third-party product.
+====
+
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
