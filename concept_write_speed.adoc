@@ -47,7 +47,7 @@ If you use a single node system, Cloud Volumes ONTAP supports high write speed w
 
 Starting with the 9.8 release, Cloud Volumes ONTAP supports high write speed with HA pairs when using almost all supported EC2 instance types, except for m5.xlarge and r5.xlarge.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9100.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports^].
 
 ==== Azure
 
@@ -60,7 +60,7 @@ If you use an HA pair, Cloud Volumes ONTAP supports high write speed with the fo
 * DS15_v2
 * E48s_v3
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_991.html[Learn more about the Azure VM types that Cloud Volumes ONTAP supports^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9100.html[Learn more about the Azure VM types that Cloud Volumes ONTAP supports^].
 
 ==== Google Cloud
 
@@ -68,7 +68,7 @@ If you use a single node system, Cloud Volumes ONTAP supports high write speed w
 
 Cloud Volumes ONTAP doesn’t support high write speed with HA pairs in Google Cloud.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_991.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9100.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].
 
 == How to select a write speed
 
