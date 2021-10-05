@@ -44,9 +44,7 @@ This is useful if you are planning to migrate data from on-premises locations to
 
 Cloud Data Sense can scan data from the following types of working environments and data sources:
 
-* Cloud Volumes ONTAP in AWS
-* Cloud Volumes ONTAP in Azure
-// * Cloud Volumes ONTAP in GCP
+* Cloud Volumes ONTAP (deployed in AWS, Azure, or GCP)
 * On-premises ONTAP clusters
 * Azure NetApp Files
 * Amazon FSx for ONTAP
@@ -60,6 +58,7 @@ NOTE: A Beta feature released in January 2021 allows you to run compliance scans
 
 == Cost
 
+// add GCP below
 * The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
 +
 link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
@@ -76,7 +75,7 @@ Data transfer costs depend on your setup. If the Cloud Data Sense instance and d
 
 * https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
-// * https://cloud.google.com/storage-transfer/pricing[Google Cloud: Storage Transfer Service pricing^]
+* https://cloud.google.com/storage-transfer/pricing[Google Cloud: Storage Transfer Service pricing^]
 
 == The Cloud Data Sense instance
 
@@ -93,10 +92,10 @@ Note the following about the default instance:
 In regions where m5.4xlarge isn't available, Data Sense runs on an m4.4xlarge instance instead.
 
 * In Azure, Cloud Data Sense runs on a link:https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D16s_v3 VM] with a 512 GB disk. The operating system image is CentOS 7.8.
-//
-// * In GCP, Cloud Data Sense runs on an link:https://cloud.google.com/compute/docs/machine-types#recommendations_for_machine_types[n2-standard-16 VM] with a 512 GB Standard persistent disk. The operating system image is CentOS 7.9.
-// +
-// In regions where n2-standard-16 isn't available, Data Sense runs on an n2d-standard-16 or n1-standard-16 VM instead.
+
+* In GCP, Cloud Data Sense runs on an link:https://cloud.google.com/compute/docs/machine-types#recommendations_for_machine_types[n2-standard-16 VM] with a 512 GB Standard persistent disk. The operating system image is CentOS 7.9.
++
+In regions where n2-standard-16 isn't available, Data Sense runs on an n2d-standard-16 or n1-standard-16 VM instead.
 
 * The instance is named _CloudCompliance_ with a generated hash (UUID) concatenated to it. For example: _CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7_
 
