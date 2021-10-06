@@ -197,6 +197,8 @@ We don't recommend changing the configuration on your own. You should consult wi
 . Click *Manage Data Brokers*.
 
 . Click the Settings icon for a data broker group.
++
+image:screenshot_sync_group_settings.png[A screenshot that shows the Settings icon for a data broker group.]
 
 . Change the settings as needed and then click *Unify Configuration*.
 +
