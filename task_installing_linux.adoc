@@ -113,4 +113,4 @@ Set up permissions so Cloud Manager can manage resources and processes within yo
 
 * Azure: link:task_adding_azure_accounts.html[Set up an Azure account and then add it to Cloud Manager].
 
-* Google: See step 7 above.
+* Google Cloud: See step 7 above.
