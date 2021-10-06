@@ -169,6 +169,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
+* Box ^1,2^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -243,6 +244,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
+* Box ^1,2^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
