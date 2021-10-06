@@ -17,7 +17,7 @@ The most common way to create a Connector is directly from Cloud Manager or from
 
 NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
 
-.Requirements
+.What you'll need
 
 * The host must meet link:reference_cloud_mgr_reqs.html[requirements for the Connector].
 
@@ -30,6 +30,8 @@ NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then y
 ** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 +
 The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+
+* After you install the Connector, you'll need to set up permissions so Cloud Manager can manage resources and processes within your public cloud environment. See the steps below for more details.
 
 .About this task
 
@@ -79,37 +81,17 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 +
 _port_ is required if you changed the default HTTP (80) or HTTPS (443) ports. For example, if the HTTPS port was changed to 8443, you would enter https://_ipaddress_:8443
 
-. Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
-+
-[role="tabbed-block"]
-====
-
-.AWS
---
-link:task_adding_aws_accounts.html[Set up an AWS account and then add it to Cloud Manager].
---
-
-.Azure
---
-link:task_adding_azure_accounts.html[Set up an Azure account and then add it to Cloud Manager].
---
-
-.Google Cloud
---
-Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
-+
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[Cloud Manager policy for GCP^].
-+
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
-+
-.. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate this service account with the Connector VM^].
-+
-.. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
---
-
-====
-
 . Sign up at NetApp Cloud Central or log in.
+
+. If you installed the Connector in Google Cloud, set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
+
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[Cloud Manager policy for GCP^].
+
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
+
+.. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate this service account with the Connector VM^].
+
+.. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 
 . After you log in, set up Cloud Manager:
 .. Specify the Cloud Central account to associate with the Connector.
@@ -122,3 +104,13 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up scr
 .Result
 
 The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
+
+.After you finish
+
+Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
+
+* AWS: link:task_adding_aws_accounts.html[Set up an AWS account and then add it to Cloud Manager].
+
+* Azure: link:task_adding_azure_accounts.html[Set up an Azure account and then add it to Cloud Manager].
+
+* Google: See step 7 above.
