@@ -17,7 +17,7 @@ While Google Cloud Storage always encrypts your data before it's written to disk
 
 .Steps
 
-. Ensure that the Cloud Manager Connector service account has the correct permissions in the project where the key is stored.
+. Ensure that the Cloud Manager Connector service account has the correct permissions at the project level, in the project where the key is stored.
 +
 The permissions are provided by the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager YAML file^] by default, but may not be applied if you use an alternate project for the Cloud Key Management Service.
 +
@@ -34,6 +34,16 @@ The permissions are as follows:
 The name of the service account uses the following format: "service-[service_project_number]@compute-system.iam.gserviceaccount.com".
 
 . Obtain the "id" of the key by invoking the get command for the `/gcp/vsa/metadata/gcp-encryption-keys` API call or by choosing "Copy Resource Name" on the key in the GCP console.
+
+. If using customer-managed encryption keys and tiering data into low cost object storage, Cloud Manager will attempt to utilize the same keys that are used to encrypt the persistent disks.
++
+To enable Google Cloud Storage buckets to use customer-managead keys, there are some steps that need to be followed:
+
+.. Find the Google Cloud Storage service agent by following the https://cloud.google.com/storage/docs/getting-service-agent[Google Cloud Documentation: Getting the Cloud Storage service agent^].
+.. Navigate to the encryption key that is being used and assign the Google Cloud Storage service agent Cloud KMS Encrypter/Decrypter permissions for the key.
+
++
+For more information, please read the https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys[Google Cloud Documentation: Cloud Storage, Using customer-managed encryption keys^]
 
 . Use the "GcpEncryption" parameter with your API request when creating a working environment.
 +
