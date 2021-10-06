@@ -17,9 +17,7 @@ After you set up your working environment, you can create and manage FSx for ONT
 
 == Creating volumes
 
-You can create NFS volumes in a new or existing FSx for ONTAP working environment. If CIFS volumes were created using ONTAP CLI, they will be visible in your FSx for ONTAP working environment.
-
-At this time, you cannot edit FSx for ONTAP volumes from Cloud Manager.
+You can create and edit NFS and CIFS volumes in a new or existing FSx for ONTAP working environment. Volumes created using ONTAP CLI will also be visible in your FSx for ONTAP working environment.
 
 .Before you begin
 
@@ -55,9 +53,49 @@ image:screenshot_fsx_volume_new.png[A screenshot of the FSx for ONTAP volume tab
 +
 image:screenshot_fsx_volume_details.png[A screenshot of the volume details and protection fields for FSx for ONTAP volume creation.]
 
-. *Protocol*: Select the NFS versions and Access Control policy. Optionally, specify a custom export policy. Click *Next*.
+. *Protocol*: Select the an NFS or CIFS volume protocol.
+.. For NFS:
+* Select an Access Control policy.
+* Select the NFS versions.
+* Select a Custom Export Policy. Click the information icon for valid value criteria.
 +
-image:screenshot_fsx_volume_nfs_only.png[A screenshot of volume protocol fields for NFS.]
+image:screenshot_fsx_volume_protocol_nfs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
+.. For CIFS:
+* Enter a Share Name.
+* Enter users or groups separated by a semicolon.
+* Select the permission level for the volume.
++
+image:screenshot_fsx_volume_protocol_cifs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
++
+TIP: If this is the first CIFS volume for this working environment, you will be prompted to configure CIFS connectivity using an _Active Directory_ or _Workgroup_ setup.
+
+* If you select an Active Directory setup, you'll need to provide the following configuration information.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary IP Address | The IP addresses of the DNS servers that provides name resolution for the CIFS server.
+The listed DNS server must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain the CIFS server will join.
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain you want the CIFS server to join.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+// If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+
+| DNS Domain | The DNS domain for the storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+| NTP Server | Select *Enable NTP Server Configuration* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+|===
+
+* If you select a Workgroup setup, enter the server and workgroup name for a workgroup configured for CIFS.
+
+.. Click *Next*.
 
 . *Usage Profile and Tiering*:
 
@@ -68,23 +106,7 @@ image:screenshot_fsx_volume_nfs_only.png[A screenshot of volume protocol fields 
 image:screenshot_fsx_volume_usage_tiering.png[A screenshot of the Usage Profile and Tiering Configuration for FSx for ONTAP volume creation.]
 
 . *Review*: Review your volume configuration. Click *Previous* to change settings or click *Add* to create the volume.
-// . *Protocol*: Select the an NFS or CIFS volume protocol.
-// .. For NFS:
-// * Select an Access Control policy.
-// * Select the NFS versions.
-// * Select a Custom Export Policy. Click the information icon for valid value criteria.
-// +
-// image:screenshot_fsx_volume_protocol_nfs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
-// .. For CIFS:
-// * Enter a Share Name.
-// * Enter users or groups separated by a semicolon.
-// * Select the permission level for the volume.
-// +
-// image:screenshot_fsx_volume_protocol_cifs.png[A screenshot of the NFS configuration FSx for ONTAP volume creation.]
-//
-// .. Click *Next*.
 
-// TIP: If the CIFS server was not already configured in the working environment, you will be prompted to configure CIFS connectivity.
 
 .Result
 
@@ -103,19 +125,20 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 image:screenshot_fsx_volume_actions.png[A screenshot of available operations available when you open the volume menu.]
 
 . Follow the instructions to mount the volume.
-// == Edit a volume's size and tags
-//
-// After you create a volume, you can modify its size and tags at any time.
-//
-// .Steps
-//
-// . Open the working environment.
-//
-// . Hover over the volume and select *Edit*.
-//
-// . Modify the size and tags as needed.
-//
-// . Click *Apply*.
+
+== Editing volumes
+
+After you create a volume, you can modify it at any time.
+
+.Steps
+
+. Open the working environment.
+
+. Open the volume menu and select *Edit*.
+.. For NFS, you can modify the size and tags.
+.. For CIFS, you can modify the share name, users, permissions, and Snapshot policy as needed.
+
+. Click *Apply*.
 
 == Cloning the volume
 
