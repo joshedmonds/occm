@@ -24,6 +24,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Cloud Backup enhancements>>
+* <<Cloud Sync enhancements>>
 
 === Amazon FSx for ONTAP enhancements
 
@@ -49,6 +50,21 @@ This is useful if you want to delete large backup files that are unnecessary, or
 https://cloud.netapp.com/cloud-backup-service-tco-calculator[here].
 
 * Now you can easily link:task_managing_backups.html#unregistering-cloud-backup-for-a-working-environment[unregister Cloud Backup for a working environment] if you no longer want to use backup functionality (or be charged) for that working environment.
+
+=== Cloud Sync enhancements
+
+* Cloud Sync now supports additional sync relationships for https://www.box.com/home[Box^] when using the Cloud Sync API:
+
+** Amazon S3 to Box
+** IBM Cloud Object Storage to Box
+** StorageGRID to Box
+** Box to an NFS server
+** Box to an SMB server
+
++
+link:api_sync.html[Learn how to set up a sync relationship using the API].
+
+* You can now link:task_sync_managing_reports.html[create a report] for SFTP paths.
 
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
