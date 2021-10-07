@@ -188,7 +188,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** File Owner
 ** Label
 ** Working Environment
-** Storage Repository
+** Storage Repository (For example, a volume or a schema)
 ** File Path
 ** Category
 ** Sensitivity Level
@@ -197,13 +197,13 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Data Subject
 ** File Type
 ** File Size
-** Created date
-** Last Modified date
-** Last Accessed date (For the link:reference_private_data_categories.html#types-of-files[types of files that we scan for content] this is the last time Data Sense scanned the file.)
-** Has Duplicates
-** Status
-** Assigned To
+** Created Time
+** Last Modified
+** Last Accessed (For the link:reference_private_data_categories.html#types-of-files[types of files that we scan for content] this is the last time Data Sense scanned the file.)
+** Duplicates
 ** File Hash
+** Tags
+** Assigned To
 
 * The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
 
@@ -218,14 +218,14 @@ The *Unstructured Data Report* includes the following information:
 * File name
 * Location type
 * Working environment
-* Storage repository
+* Storage repository (for example, a volume)
 * Protocol type
 * File path
 * File type
+* File size
 * Created time
 * Last modified
 * Last accessed
-* File size
 * File owner
 * Category
 * Personal information
@@ -239,7 +239,7 @@ The *Structured Data Report* includes the following information:
 * DB Table name
 * Location type
 * Working environment
-* Storage repository
+* Storage repository (for example, a schema)
 * Column count
 * Row count
 * Personal information
