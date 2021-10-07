@@ -106,9 +106,11 @@ The permissions are included in the latest https://mysupport.netapp.com/site/inf
 * You need a service account that meets the following requirements:
 ** It must have the predefined Storage Admin role.
 ** The Connector service account must be a _Service Account User_ of this tiering service account.
-** If encrypting the bucket with Custoemr Managed Encryption keys, please reference the document regarding https://docs.netapp.com/us-en/occm/task_setting_up_gcp_encryption.html[Using customer-managed encryption keys with Cloud Volumes ONTAP^].
 +
-link:task_creating_gcp_service_account.html[Read step-by-step instructions].
+link:task_creating_gcp_service_account.html[Learn how to set up a service account].
+** To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
++
+link:task_setting_up_gcp_encryption.html[Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP].
 
 === Enabling data tiering after implementing the requirements
 
