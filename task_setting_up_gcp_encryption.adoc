@@ -29,21 +29,22 @@ The permissions are as follows:
 - cloudkms.cryptoKeys.list
 - cloudkms.keyRings.list
 
-. Ensure that the service account for the https://cloud.google.com/iam/docs/service-agents[Google Compute Engine Service Agent^] has Cloud KMS Encrypter/Decrypter on the key.
+. Ensure that the service account for the https://cloud.google.com/iam/docs/service-agents[Google Compute Engine Service Agent^] has Cloud KMS Encrypter/Decrypter permissions on the key.
 +
 The name of the service account uses the following format: "service-[service_project_number]@compute-system.iam.gserviceaccount.com".
++
+https://cloud.google.com/kms/docs/iam#granting_roles_on_a_resource[Google Cloud Documentation: Using IAM with Cloud KMS - Granting roles on a resource]
 
 . Obtain the "id" of the key by invoking the get command for the `/gcp/vsa/metadata/gcp-encryption-keys` API call or by choosing "Copy Resource Name" on the key in the GCP console.
 
-. If using customer-managed encryption keys and tiering data into low cost object storage, Cloud Manager will attempt to utilize the same keys that are used to encrypt the persistent disks.
-+
-To enable Google Cloud Storage buckets to use customer-managead keys, there are some steps that need to be followed:
+. If using customer-managed encryption keys and tiering data to object storage, Cloud Manager attempts to utilize the same keys that are used to encrypt the persistent disks. But you'll first need to enable Google Cloud Storage buckets to use the keys:
 
 .. Find the Google Cloud Storage service agent by following the https://cloud.google.com/storage/docs/getting-service-agent[Google Cloud Documentation: Getting the Cloud Storage service agent^].
-.. Navigate to the encryption key that is being used and assign the Google Cloud Storage service agent Cloud KMS Encrypter/Decrypter permissions for the key.
+
+.. Navigate to the encryption key and assign the Google Cloud Storage service agent with Cloud KMS Encrypter/Decrypter permissions.
 
 +
-For more information, please read the https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys[Google Cloud Documentation: Cloud Storage, Using customer-managed encryption keys^]
+For more information, refer to https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys[Google Cloud Documentation: Using customer-managed encryption keys^]
 
 . Use the "GcpEncryption" parameter with your API request when creating a working environment.
 +
