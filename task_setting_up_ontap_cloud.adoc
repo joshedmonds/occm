@@ -39,13 +39,6 @@ If the Account Admin added a proxy server to Cloud Manager before you launched y
 
 You should test AutoSupport to ensure that it can send messages. For instructions, see the System Manager Help or the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[ONTAP 9 System Administration Reference^].
 
-| Optional: Configure the Cloud Manager Connector as the AutoSupport proxy
-a| If your environment requires a proxy server to send AutoSupport messages, you can configure the Connector to act as the proxy. No configuration for the Connector is required, other than internet access. You simply need to go to the CLI for Cloud Volumes ONTAP and run the following command:
-
-....
-system node autosupport modify -proxy-url <connector-ip-address>
-....
-
 | Optional: Configure EMS | The Event Management System (EMS) collects and displays information about events that occur on Cloud Volumes ONTAP systems. To receive event notifications, you can set event destinations (email addresses, SNMP trap hosts, or syslog servers) and event routes for a particular event severity.
 
 You can configure EMS using the CLI. For instructions, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-ems/home.html[ONTAP 9 EMS Configuration Express Guide^].
