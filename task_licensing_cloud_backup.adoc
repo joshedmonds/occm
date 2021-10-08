@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_licensing_cloud_backup.html
 keywords: license, licensing, install, updating license, byol license, nlf, license generator, backup license, add backup license, update backup license
-summary: As mentioned in the Licensing overview, you can pay for Cloud Backup using a pay-as-you-go subscription through your cloud provider, an annual contract through AWS, or a bring-your-own license from NetApp. If you want to pay as you go or use an annual contract, then you need to subscribe from the marketplace for the cloud provider to which you want to back up data. There’s no need to subscribe from every marketplace.
+summary: A 30-day free trial of Cloud Backup starts when you enable the Cloud Backup service. When the free trial ends, you’ll need to pay for Cloud Backup using a pay-as-you-go (PAYGO) subscription through your cloud provider, an annual contract through AWS, or a bring-your-own license (BYOL) from NetApp.
 ---
 
 = Set up licensing for Cloud Backup
@@ -13,9 +13,17 @@ summary: As mentioned in the Licensing overview, you can pay for Cloud Backup us
 :imagesdir: ./media/
 
 [.lead]
-As mentioned in the link:concept_backup_to_cloud.html#licensing[Licensing overview], you can pay for Cloud Backup using a pay-as-you-go (PAYGO) subscription through your cloud provider, an annual contract through AWS, or a bring-your-own license (BYOL) from NetApp. If you want to pay as you go or use an annual contract, then you need to subscribe from the marketplace for the cloud provider to which you want to back up data. There’s no need to subscribe from every marketplace.
+A 30-day free trial of Cloud Backup starts when you enable the Cloud Backup service. When the free trial ends, you’ll need to pay for Cloud Backup using a pay-as-you-go (PAYGO) subscription through your cloud provider, an annual contract through AWS, or a bring-your-own license (BYOL) from NetApp.
 
-== Set up a PAYGO subscription
+A few notes before you read any further:
+
+* If you’ve already subscribed to the Cloud Manager pay-as-you-go (PAYGO) subscription in your cloud provider’s marketplace, then you’re automatically subscribed to Cloud Backup as well. You won’t need to subscribe again.
+* The Cloud Backup bring-your-own-license (BYOL) is a floating license that you can use across all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your Cloud Manager account.
+* Backup to StorageGRID requires a BYOL license, but there's no cost for cloud provider storage space in this case.
+
+link:concept_backup_to_cloud.html#licensing[Learn more about the licensing and costs related to Cloud Backup.]
+
+== Use a Cloud Backup PAYGO subscription
 
 For pay-as-you-go you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (_before_ ONTAP storage efficiencies). Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
 
@@ -43,7 +51,11 @@ If you want to use this option, you can set up the annual contract when you crea
 
 == Use a Cloud Backup BYOL license
 
-Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL Cloud Backup license is a floating license where the total capacity is shared across all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your Cloud Manager account.
+
+If you don’t have a Cloud Backup license, click the chat icon in the lower-right of Cloud Manager to purchase one.
+
+You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Backup license file
 
@@ -57,7 +69,7 @@ After you have purchased your Cloud Backup license, you activate the license in 
 +
 image:screenshot_cloud_backup_license_step1.gif[A screenshot that shows a table of licenses after searching by serial number.]
 
-. Under *License Key*, click *Get NetApp License File*.
+. In the *License Key* column, click *Get NetApp License File*.
 
 . Enter your Cloud Manager Account ID (this is called a Tenant ID on the support site) and click *Submit* to download the license file.
 +
@@ -71,11 +83,11 @@ After you purchase a Cloud Backup license for your NetApp account, you need to a
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Backup Licenses*.
+. Click *All Services > Digital Wallet > Data Services Licenses*.
 
-. Click *Add Backup License*.
+. Click *Add License*.
 
-. In the _Add Cloud Backup License_ dialog, enter the license information and click *Add Backup License*:
+. In the _Add License_ dialog, enter the license information and click *Add License*:
 +
 * If you have the backup license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
@@ -91,8 +103,8 @@ Cloud Manager adds the license so that your Cloud Backup service is active.
 === Update a Cloud Backup BYOL license
 
 If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified. This status also appears in the Digital Wallet page.
-//
-//image:screenshot_services_license_expire.png[A screenshot that shows an expiring license in the Digital Wallet page.]
+
+image:screenshot_services_license_expire.png[A screenshot that shows an expiring license in the Digital Wallet page.]
 
 You can update your Cloud Backup license before it expires so that there is no interruption in your ability to back up and restore your data.
 
@@ -100,16 +112,14 @@ You can update your Cloud Backup license before it expires so that there is no i
 
 . Click the chat icon in the lower-right of Cloud Manager to request an extension or capacity add-on to your Cloud Backup license for the particular serial number.
 +
-After you pay for the license and it is registered with the NetApp Support Site, in most cases, Cloud Manager can automatically obtain your updated license file and the Cloud Backup Licenses page will reflect the change in 5 to 10 minutes.
+After you pay for the license and it is registered with the NetApp Support Site, in most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
 . If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Backup license file,obtain the license file from the NetApp Support Site>>.
-.. On the _Cloud Backup Licenses_ page, click *Update Backup License*.
-.. In the _Update Cloud Backup License_ dialog, enter the license information and click *Update Backup License*.
-//.. On the _Cloud Backup Licenses_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
-//+
-//image:screenshot_services_license_update1.png[A screenshot of selecting the Update License button for a particular service.]
-//.. In the _Update License_ page, upload the license file and click *Update License*.
+.. On the Digital Wallet page in _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
++
+image:screenshot_services_license_update1.png[A screenshot of selecting the Update License button for a particular service.]
+.. In the _Update License_ page, upload the license file and click *Update License*.
 
 .Result
 

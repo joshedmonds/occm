@@ -28,7 +28,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ** The cluster must have the required network connections to StorageGRID and to the Connector.
 * You have a Connector installed on your premises.
 ** Networking for the Connector enables an outbound HTTPS connection to the ONTAP cluster and to StorageGRID.
-* You have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
+* You have purchased link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 * Your StorageGRID has version 10.3 or later with access keys that have S3 permissions.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on the system
@@ -158,7 +158,7 @@ Ensure that the Connector has the required networking connections.
 
 Before your 30-day free trial of the Cloud Backup service expires, you need to purchase and activate a Cloud Backup BYOL license from NetApp. This license is for the account and can be used across multiple systems.
 
-You'll need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
+You'll need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[Learn how to manage your BYOL licenses].
 
 TIP:: PAYGO licensing is not currently supported when backing up files to StorageGRID.
 

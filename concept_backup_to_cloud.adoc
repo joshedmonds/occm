@@ -135,7 +135,7 @@ For example, if you have a 10 TB BYOL license, all capacity beyond the 10 TB is 
 
 You won’t be charged from your pay-as-you-go subscription during your free trial or if you haven’t exceeded your BYOL license.
 
-link:task_licensing_cloud_backup.html#set-up-a-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
+link:task_licensing_cloud_backup.html#use-a-cloud-backup-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
 
 === Annual contract (AWS only)
 
@@ -157,7 +157,7 @@ BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments, based on
 
 NOTE: Backup to StorageGRID does require a BYOL license, but there is no cost for cloud provider storage space in this case.
 
-You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Manager account^].
 
 link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[Learn how to manage your BYOL licenses].
 
