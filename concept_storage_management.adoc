@@ -73,6 +73,8 @@ The Capacity Management Mode is set to automatic by default. In this mode, Cloud
 The following examples illustrate how this mode works:
 
 * If an aggregate with 5 or fewer EBS disks reaches the capacity threshold, Cloud Manager automatically purchases new disks for that aggregate so volumes can continue to grow.
++
+Cloud Manager checks the free space ratio every 15 minutes to determine if it needs to purchase additional disks.
 
 * If an aggregate with 12 Azure disks reaches the capacity threshold, Cloud Manager automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.
 +
