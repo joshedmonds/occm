@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- it is included as part of the Premium Bundle or Data Protection Bundle.
-* The cluster must have the required network connections to StorageGRID and to the Connector.
+** The cluster must have the required network connections to StorageGRID and to the Connector.
 * You have a Connector installed on your premises.
 ** Networking for the Connector enables an outbound HTTPS connection to the ONTAP cluster and to StorageGRID.
 * You have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated^] a Cloud Backup BYOL license from NetApp.

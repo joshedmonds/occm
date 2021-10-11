@@ -63,6 +63,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
+* Box ^1,2^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -101,13 +102,15 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * IBM Cloud Object Storage
 * NFS server
 * On-premises ONTAP cluster
-* SMB Server
+* SMB server
 * StorageGRID
 
 | Box ^1^ a|
 
 * Amazon S3
 * IBM Cloud Object Storage
+* NFS server
+* SMB Server
 * StorageGRID
 
 | Cloud Volumes ONTAP a|
@@ -166,6 +169,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
+* Box ^1,2^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -240,6 +244,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
+* Box ^1,2^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -254,7 +259,17 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 
 Notes:
 
-. Sync relationships with this source are supported by using the Cloud Sync API only.
+. Sync relationships with this source/target are supported by using the Cloud Sync API only.
+
+. When you create a sync relationship from Amazon S3 to Box, you must use a data broker group that has a unified configuration where the following settings are set to 1:
++
+* Scanner Concurrency
+* Scanner Processes Limit
+* Transferrer Concurrency
+* Transferrer Processes Limit
+
++
+link:task_sync_managing_data_brokers.html#define-a-unified-configuration-for-a-data-broker-group[Learn how to define a unified configuration for a data broker group].
 
 . You can choose a specific Azure Blob storage tier when a Blob container is the target:
 +
@@ -378,7 +393,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 === Box requirements
 
-Cloud Sync supports https://www.box.com/home[Box^] as the source in a sync relationship when using the Cloud Sync API.
+Cloud Sync supports https://www.box.com/home[Box^] in a sync relationship when using the Cloud Sync API.
 
 In order to copy from Box, you'll need to provide the following credentials:
 
