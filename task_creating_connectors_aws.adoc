@@ -31,7 +31,7 @@ Before you can deploy a Connector from Cloud Manager, you need to ensure that yo
 +
 https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
 +
-TIP: For IAM user permissions for Amazon FSx for ONTAP, see link:task_manage_fsx_aws.html[Create an FSx for ONTAP working environment^].
+TIP: For IAM user permissions for Amazon FSx for ONTAP, see link:task_creating_fsx_working_environment.html[Create an FSx for ONTAP working environment^].
 
 . From the AWS IAM console, create your own policy by copying and pasting the text from the Connector IAM policy.
 

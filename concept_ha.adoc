@@ -23,7 +23,7 @@ In AWS, Cloud Volumes ONTAP HA configurations include the following components:
 
 * A mediator instance that provides a communication channel between the nodes to assist in storage takeover and giveback processes.
 
-NOTE: The mediator instance runs the Linux operating system on a t2.micro instance and uses one EBS magnetic disk that is approximately 8 GB.
+NOTE: The mediator instance runs the Linux operating system on a t2.micro instance and uses one EBS magnetic disk that is approximately 8 GiB.
 
 === Storage takeover and giveback
 
