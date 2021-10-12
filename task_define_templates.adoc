@@ -547,7 +547,7 @@ image:screenshot_template_replication_dest.png[A screenshot of the page to defin
 .. Select the working environment where the volume will be created.
 .. Select the storage VM on which the volume will reside.
 .. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the Destination Provider (AWS, Azure, or GCP).
-.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you can specify whether volume tiering is enabled on the destination volume.
+.. When replicating a volume to a Cloud Volumes ONTAP cluster, you can specify whether volume tiering is enabled on the destination volume.
 .. For the destination volume name, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 .. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the destination working environment.
 .. Select the aggregate on which the volume will reside.
@@ -577,3 +577,9 @@ You can modify a template if you need to change any of the parameters. After you
 You can also delete a template if you no longer need it. Deleting a template does not affect any of the resources that were created with the template. However, no Drift compliance checking can be done after the template is deleted.
 
 image:screenshot_template_edit_remove.png[A screenshot showing how to modify a template or delete a template.]
+
+== Make a copy of a template
+
+You can create a copy of an existing template. This can save a lot of time in case you want to create a new template that is very similar to an existing template. Just make the duplicate with a new name, and then you can edit the template to change the couple items that make the template unique.
+
+image:screenshot_template_duplicate.png[A screenshot showing how to duplicate a template.]
