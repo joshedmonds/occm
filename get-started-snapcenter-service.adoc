@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started-snapcenter-service.html
-keywords: snapcenter service, getting started, azure connector, HDBSQL client, SAP HANA systems, protect SAP HANA systems
+keywords: snapcenter service, getting started, connector, HDBSQL client, SAP HANA systems, protect SAP HANA systems
 summary: The tasks to deploy SnapCenter Service and protect your data.
 ---
 
@@ -26,12 +26,12 @@ Only an Account Admin can deploy the SnapCenter Service. However, both Account A
 ==== image:number2.png[Number 2] Ensure that the prerequisites are met
 
 [role="quick-margin-para"]
-You should ensure that all the link:prerequisites-azure-connector-snapcenter-service.html[prerequisites] to create an Azure Connector and enable SnapCenter Service are met.
+You should ensure that all the link:prerequisites-azure-connector-snapcenter-service.html[prerequisites] to create a Connector and enable SnapCenter Service are met.
 
-==== image:number3.png[Number 3] Create an Azure Connector for SnapCenter Service
+==== image:number3.png[Number 3] Create a Connector in Azure for SnapCenter Service
 
 [role="quick-margin-para"]
-You should link:create-azure-connector-user-consent-snapcenter-service.html[create an Azure Connector for SnapCenter Service].
+You should link:create-azure-connector-user-consent-snapcenter-service.html[create a Connector in Azure for SnapCenter Service].
 
 [role="quick-margin-para"]
 If you have a connector that meets all the prerequisites, you can use that.

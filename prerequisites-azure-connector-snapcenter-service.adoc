@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: prerequisites-azure-connector-snapcenter-service.html
-keywords: azure connector, prerequisites, firewall, network requirements, subnet, VNet, network security group, connectivity
-summary: Ensure that you meet the prerequisites before creating the Azure Connector.
+keywords: connector, prerequisites, firewall, network requirements, subnet, VNet, network security group, connectivity
+summary: Ensure that you meet the prerequisites before creating the Connector and enabling SnapCenter Service.
 ---
 
 = Prerequisites to create Connector and enable SnapCenter Service
@@ -153,7 +153,7 @@ If you want to enable SnapCenter Service behind Azure firewall, you should perfo
 +
 `./scs_azure_firewall_config.sh -fwsubid <Firewall_SubscriptionID> -fwname <Firewall_name> -fwrg <Firewall_Resource_group> -scssubid <SnapCenter_Service_SubscriptionID> -scsvnet <SnapCenter_Service_VNet_name> -scssubnet <SnapCenter_Service_Subnet_name> -scsvnetrg <SnapCenter_Service_VNet_Resource_Group> -scsrg <SnapCenter_Service_Resource_group>`
 +
-NOTE: If you have not created the resource group, the script creates the resource group. While creating the Azure Connector, you can use the same resource group so that all the SnapCenter Service related resources are in the same resource group.
+NOTE: If you have not created the resource group, the script creates the resource group. While creating the Connector, you can use the same resource group so that all the SnapCenter Service related resources are in the same resource group.
 
 *Results*
 

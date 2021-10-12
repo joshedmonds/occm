@@ -30,7 +30,7 @@ A user assigned managed identity with necessary permissions is required to creat
 *Steps*
 
 . Log into Cloud Manager.
-. Select the Azure Connector that was created in the Cloud Manager.
+. Select the Connector that was created in the Cloud Manager.
 +
 Ensure that the Connector has the network connectivity to the SAP HANA systems to be protected.
 . Click *All Services* > *SnapCenter* > *Enable*.

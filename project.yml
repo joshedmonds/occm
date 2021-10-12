@@ -313,7 +313,7 @@ sidebar:
           url: /get-started-snapcenter-service.html
         - title: Prerequisites to create Connector and enable SnapCenter Service
           url: /prerequisites-azure-connector-snapcenter-service.html
-        - title: Create an Azure Connector for SnapCenter Service
+        - title: Create a Connector in Azure for SnapCenter Service
           url: /create-azure-connector-user-consent-snapcenter-service.html
         - title: Enable SnapCenter Service for Azure NetApp Files
           url: /enable-snapcenter-service-azure-netapp-files.html
