@@ -19,17 +19,6 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.11 build2 (15 Oct 2021)
-
-=== Support for SnapCenter Service
-
-* SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage. SnapCenter Service enabled within NetApp Cloud Manager offers efficient, application consistent, policy-based backup and restore of SAP HANA® Systems residing on Azure NetApp Files (ANF).
-+
-link:overview-architecture-limitation-functionalities-snapcenter-service.html[Learn about SnapCenter Service]
-* You should create an Azure Connector, enable SnapCenter Service, add SAP HANA systems, and then perform backup and restore operations.
-+
-link:get-started-snapcenter-service.html[Get started]
-
 == Cloud Manager 3.9.11 (4 Oct 2021)
 
 * <<Amazon FSx for ONTAP enhancements>>
@@ -38,6 +27,7 @@ link:get-started-snapcenter-service.html[Get started]
 * <<Cloud Sync enhancements>>
 * <<Application Templates enhancements (11 Oct)>>
 * <<Resource Tagging enhancements (11 Oct)>>
+* <<Support for SnapCenter Service (13 Oct)>>
 
 === Amazon FSx for ONTAP enhancements
 
@@ -90,6 +80,15 @@ link:api_sync.html[Learn how to set up a sync relationship using the API].
 * Support has been added so you can label certain GCP resources.
 +
 Now you can manage labels on your GCP resources using the Cloud Manager Tagging service. You can view GCP labels and label values that have been applied to resources, and you can apply those labels to other GCP resources that you are managing. link:concept_tagging.html#resources-that-you-can-tag[See the GCP resources that you can label].
+
+=== Support for SnapCenter Service (13 Oct)
+
+* SnapCenter Service provides data protection capabilities for applications running on NetApp® Cloud Storage. SnapCenter Service enabled within NetApp Cloud Manager offers efficient, application consistent, policy-based backup and restore of SAP HANA® Systems residing on Azure NetApp Files (ANF).
++
+link:overview-architecture-limitation-functionalities-snapcenter-service.html[Learn about SnapCenter Service]
+* You should create an Azure Connector, enable SnapCenter Service, add SAP HANA systems, and then perform backup and restore operations.
++
+link:get-started-snapcenter-service.html[Get started]
 
 == Cloud Manager 3.9.10 build 2 (12 September 2021)
 
