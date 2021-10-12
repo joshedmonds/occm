@@ -73,10 +73,6 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html
 
 * For clusters running in Azure Kubernetes Service (AKS), those clusters must be assigned the _Azure Kubernetes Service RBAC Cluster Admin_ role. This is required so Cloud Manager can install Trident and configure storage classes on the cluster.
 
-* For clusters running in Google Kubernetes Engine (GKE), those clusters must not use the default Container Optimized OS. You should switch them to use Ubuntu.
-+
-GKE defaults to using the Google https://cloud.google.com/container-optimized-os[container-optimized image^], which doesn't have the utilities that Trident needs to mount volumes.
-
 === Connector requirements
 
 Ensure that the following permissions are in place for the Connector.
