@@ -494,15 +494,17 @@ Service templates enable you to activate Cloud Backup, Cloud Data Sense, or Repl
 
 === Add Backup functionality to a volume
 
-When creating a volume template, you can add in the template that you want to create backups of the volume periodically using the link:concept_backup_to_cloud.html[Cloud Backup] service. This action is not applicable for Azure NetApp Files volumes.
+When creating a volume template, you can add in the template that you want to create backups of the volume periodically using the link:concept_backup_to_cloud.html[Cloud Backup] service.
+
+TIP: This action is not applicable for Azure NetApp Files volumes.
 
 image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
 
-. *Context*: You can enter a working environment Name and storage VM name if you are using this action in a template without first creating a volume. Otherwise, leave these fields as "Editable."
+. *Policy*: Define the backup policy to create daily, weekly, or monthly backups, and specify the number of backup copies to retain.
 
-. *Policy*: Define the backup policy to create daily, weekly, or monthly backups with a specific number of backup copies to retain.
-
-. *Volume Name*: Typically the volume is the one created prior to the backup action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
+. *Context*: By default, the variables are filled out for the working environment, storage VM, and volume to indicate that you will be creating backups for the volume created previously in this same template. So if that's what you want to do, you're all set.
++
+If you want to create backups for a different volume, you can enter those details manually. See how to link:reference_template_building_blocks.html#pass-values-between-template-actions[complete the Context fields] to indicate a different volume.
 
 . Click *Apply* to save your changes.
 
@@ -512,15 +514,9 @@ When creating a volume template, you can add in the template that you want to sc
 
 image:screenshot_template_data_sense.png[A screenshot of the page to enable scanning functionality for your volumes.]
 
-. *Working Environment*: You can enter a working environment Name if you are using this action in a template without first creating a volume. Otherwise, leave this field as "Editable."
-
-. *Volume Name*: Typically the volume is the one created prior to the Data Sense action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the volume name to indicate that volume.
-
-. *Volume UUID*: Data Sense needs the UUID of the volume before it can scan the volume. See how to <<Pass values between template actions,complete the three fields>> below the volume name to indicate that volume.
-
-. *Volume Path*: Typically this is the mount point from the volume you are creating in the template. So you can get the "mountpoint" value from the output of that volume.
-
-. *Protocol*: Data Sense needs to know the protocol so it can scan the data. So you can get the "Protocol" value from the output of that volume.
+. *Context*: By default, the variables are filled out for the working environment, volume name, volume UUID, volume path, and protocol to indicate that you will be scanning data for the volume created previously in this same template. So if that's what you want to do, you're all set.
++
+If you want to scan data for a different volume, you can enter those details manually. See how to link:reference_template_building_blocks.html#pass-values-between-template-actions[complete the Context fields] to indicate a different volume.
 
 . Click *Apply* to save your changes.
 
@@ -536,9 +532,10 @@ Replication functionality consists of three parts: selecting the source volume, 
 +
 image:screenshot_template_replication_source.png[A screenshot of the page to define the replication source volume location.]
 +
-.. Select the working environment where the volume resides.
-.. Select the storage VM on which the volume resides.
-.. Typically the volume is the one created prior to the replication action in the same template. In this case, see how to <<Pass values between template actions,complete the fields>> within the Source Volume Name field to indicate that volume.
+.. By default, the first three variables are filled out for the working environment, storage VM, and volume to indicate that you will be replicating the volume created previously in this same template. So if that's what you want to do, you're all set.
++
+If you want to replicate a different volume, you can enter those details manually. See how to link:reference_template_building_blocks.html#pass-values-between-template-actions[complete the Context fields] to indicate a different volume.
++
 .. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the source working environment.
 +
 To get this information: double-click the working environment, click the menu icon, and click Information.
@@ -549,10 +546,12 @@ image:screenshot_template_replication_dest.png[A screenshot of the page to defin
 +
 .. Select the working environment where the volume will be created.
 .. Select the storage VM on which the volume will reside.
-.. Select the aggregate on which the volume will reside.
-.. For the destination volume, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
+.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the Destination Provider (AWS, Azure, or GCP).
+.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you can specify whether volume tiering is enabled on the destination volume.
+.. For the destination volume name, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
 .. Replication requires that the source and destination working environments are connected through their intercluster LIFs. Enter the intercluster LIF IP address for the destination working environment.
-.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the Destination Provider (AWS, Azure, or GCP) and the type of disk that will be used for the new volume.
+.. Select the aggregate on which the volume will reside.
+.. When replicating a volume to a Cloud Volumes ONTAP cluster (not to an on-prem ONTAP cluster), you need to specify the type of disk that will be used for the new volume.
 
 . *Replication Details*: Enter the details about the type and frequency of the replication operation:
 +
@@ -560,7 +559,7 @@ image:screenshot_template_replication_policy.png[A screenshot of the page to def
 +
 .. Select the link:concept_replication_policies.html#types-of-replication-policies[replication policy] that you want to use.
 .. Choose a one-time copy or a recurring replication schedule.
-.. Enable replication health monitoring if you want the drift report to include the replication health of the SnapMirror relationship along with the lag time, status, and last transfer time. link:task_check_template_compliance.html#replication-health-details-in-the-drift-report[See what this looks like in the drift report].
+.. Enable replication health status monitoring if you want the drift report to include the replication health of the SnapMirror relationship along with the lag time, status, and last transfer time. link:task_check_template_compliance.html#replication-health-details-in-the-drift-report[See what this looks like in the drift report].
 .. Select whether you want to set a transfer rate limit, and then enter the maximum rate (in kilobytes per second) at which data can be transferred. You can enter a fixed value, or you can provide a minimum and maximum and let the storage admin select a value in that range.
 
 . Click *Apply* to save your changes.
