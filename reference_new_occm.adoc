@@ -70,7 +70,9 @@ link:api_sync.html[Learn how to set up a sync relationship using the API].
 
 === Application Templates enhancements (11 Oct)
 
-* Now you can create a duplicate of an existing template. This can save a lot of time in case you want to create a new template that is very similar to an existing template. Just make the duplicate with a new name and change the couple items that make the template unique. link:task_define_templates.html[See more details about creating templates].
+* Now you can create a duplicate of an existing template. This can save a lot of time in case you want to create a new template that is very similar to an existing template. Just make the duplicate with a new name and change the couple items that make the template unique. link:task_define_templates.html#make-a-copy-of-a-template[See how to create a copy of a template].
+
+* Enabling services on volumes created with templates is much easier now. Before you needed to select variables to identify the working environment, storage VM, and volume name. Now the template adds this information for you. This simplifies adding services for Cloud Backup, Cloud Compliance, and Replication to newly created volumes.
 
 === Resource Tagging enhancements (11 Oct)
 
