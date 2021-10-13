@@ -76,7 +76,7 @@ link:api_sync.html[Learn how to set up a sync relationship using the API].
 +
 In addition to licensing Data Sense through your cloud provider marketplaces, now you can purchase a bring-your-own-license (BYOL) from NetApp that you can use across all your working environments and data sources in your Cloud Manager account.
 +
-link:task-licensing-cloud-data-sense.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Data Sense BYOL license].
+link:task-licensing-cloud-data-sense.html#use-a-cloud-data-sense-byol-license[Learn more about the new Cloud Data Sense BYOL license].
 
 * Support for the Google Cloud Platform.
 +
