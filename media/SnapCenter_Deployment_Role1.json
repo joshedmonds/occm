@@ -18,7 +18,10 @@
 					"Microsoft.Authorization/roleAssignments/write",
 					"Microsoft.Authorization/roleAssignments/delete",
 					"Microsoft.Compute/virtualMachines/read",
-					"Microsoft.Compute/virtualMachines/write"     
+					"Microsoft.Compute/virtualMachines/write",
+					"Microsoft.Network/privateDnsZones/read",
+					"Microsoft.Network/privateDnsZones/write",
+					"Microsoft.Network/privateDnsZones/delete"
                 ],
                 "notActions": [],
                 "dataActions": [],

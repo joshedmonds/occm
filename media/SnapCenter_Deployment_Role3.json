@@ -1,14 +1,13 @@
 {
     "properties": {
-        "roleName": "SnapCenter_Deployment_Role_2",
-        "description": "Role for SnapCenter Cluster deployment to be assigned at the scope of virtual network or higher",
+        "roleName": "SnapCenter_Deployment_Role_3",
+        "description": "Role for route table management, to be assigned at the scope of route table which is assgined to SnapCenter subnet for Firewall configuration",
         "assignableScopes": [
             "/subscriptions/<Subscription_ID>"
         ],
         "permissions": [
             {
                 "actions": [
-					"Microsoft.Network/virtualNetworks/subnets/read",
 					"Microsoft.Authorization/roleDefinitions/write",
 					"Microsoft.Authorization/roleDefinitions/delete",
 					"Microsoft.Authorization/roleAssignments/write",

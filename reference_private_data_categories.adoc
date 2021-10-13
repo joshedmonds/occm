@@ -85,64 +85,77 @@ Sex Life or Orientation Reference::	Data concerning a natural person’s sex lif
 
 == Types of categories
 
-Cloud Data Sense categorizes your data as follows:
+Cloud Data Sense categorizes your data as follows. Most of these categories can be recognized in English, German, and Spanish.
 
-Finance::
-*	Balance Sheets
-*	Purchase Orders
-*	Invoices
-*	Quarterly Reports
+[cols="25,25,15,15,15",width=90%,options="header"]
+|===
+| Category
+| Type
+| English
+| German
+| Spanish
 
-HR::
-*	Background Checks
-*	Compensation Plans
-*	Employee Contracts
-*	Employee Reviews
-*	Health
-*	Resumes
+.4+| Finance | Balance Sheets | ✓ | ✓ | ✓
+| Purchase Orders | ✓ | ✓ | ✓
+| Invoices | ✓ | ✓ | ✓
+| Quarterly Reports | ✓ | ✓ | ✓
 
-Legal::
-*	NDAs
-*	Vendor-Customer contracts
+.6+| HR | Background Checks | ✓ |  | ✓
+| Compensation Plans | ✓ | ✓ | ✓
+| Employee Contracts | ✓ |  | ✓
+| Employee Reviews | ✓ |  | ✓
+| Health | ✓ |  | ✓
+| Resumes | ✓ | ✓ | ✓
 
-Marketing::
-*	Campaigns
-*	Conferences
+.2+| Legal| NDAs | ✓ | ✓ | ✓
+| Vendor-Customer contracts | ✓ | ✓ | ✓
 
-Operations::
-*	Audit Reports
+.2+| Marketing| Campaigns | ✓ | ✓ | ✓
+| Conferences | ✓ | ✓ | ✓
 
-Sales::
-*	Sales Orders
+.1+| Operations| Audit Reports | ✓ | ✓ | ✓
 
-Services::
-*	RFI
-*	RFP
-* SOW
-*	Training
+.1+| Sales | Sales Orders | ✓ | ✓ |
 
-Support::
-*	Complaints and Tickets
+.4+| Services | RFI | ✓ |  | ✓
+| RFP | ✓ |  | ✓
+| SOW | ✓ | ✓ | ✓
+| Training | ✓ | ✓ | ✓
 
-Metadata categories::
-* Application Data
-* Archive Files
-* Audio
-* Business Application Data
-* CAD Files
-* Code
-* Database and index files
-* Design Files
-* Email Application Data
-* Executables
-* Financial Application Data
-* Health Application Data
-* Images
-* Logs
-* Miscellaneous Documents
-* Miscellaneous Presentations
-* Miscellaneous Spreadsheets
-* Videos
+.1+| Support | Complaints and Tickets | ✓ | ✓ | ✓
+
+|===
+
+The following Metadata categories are also supported:
+
+[cols="25,15,15,15",width=90%,options="header"]
+|===
+| Category
+| English
+| German
+| Spanish
+
+| Application Data | ✓ |  |
+| Archive Files | ✓ |  |
+| Audio | ✓ |  |
+| Business Application Data | ✓ |  |
+| CAD Files | ✓ |  |
+
+| Database and index files | ✓ |  |
+| Design Files | ✓ |  |
+| Email Application Data | ✓ |  |
+| Executables | ✓ |  |
+| Financial Application Data | ✓ |  |
+| Health Application Data | ✓ |  |
+| Images | ✓ |  |
+| Logs | ✓ |  |
+| Miscellaneous Documents | ✓ | ✓ | ✓
+| Miscellaneous Presentations | ✓ | ✓ | ✓
+| Miscellaneous Spreadsheets | ✓ | ✓ | ✓
+| Miscellaneous "Unknown" | ✓ | ✓ | ✓
+| Videos | ✓ |  |
+
+|===
 
 == Types of files
 
