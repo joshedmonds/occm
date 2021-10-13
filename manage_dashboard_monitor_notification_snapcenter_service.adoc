@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: manage_dashboard_monitor_notification_snapcenter_service.html
+keywords: view dashboard, monitor operations, email notification, snapcenter service, SAP HANA, jobs
+summary: You can monitor the status of the jobs executed, receive email notifications, and view dashboard.
+---
+
+= Manage operations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can monitor the status of the jobs executed, receive email notifications, and view dashboard.
+
+== Monitor jobs
+Click *Job Monitor* on the SnapCenter Service page to view the status of the jobs. The Job Monitor page displays an overall summary and lists all the jobs.
+
+You can then click image:screenshot-anf-view-system.png[A screenshot of the icon to view details]	corresponding to a particular job to view the details.
+
+image:screenshot-anf-job-monitor.png[A screenshot of the job monitor page]
+
+== Email notification
+The email notifications are sent by default for a failed on-demand backup, scheduled backup, and restore operations. Only a Cloud Manager user with “Account Admin” role will receive the email.
+
+== View dashboard
+Click *Overview* on the SnapCenter Service page to view the protection summary, configuration details, and job status.
+
+image:screenshot-anf-dashboard.png[A screenshot of the dashboard]
