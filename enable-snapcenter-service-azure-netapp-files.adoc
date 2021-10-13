@@ -1,0 +1,139 @@
+---
+sidebar: sidebar
+permalink: enable-snapcenter-service-azure-netapp-files.html
+keywords: enable snapcenter service, SAP HANA, azure netapp files, azure kubernetes service, AKS, connector, user assigned managed identity, permission, non-high availability, AKS cluster
+summary: Enable the SnapCenter Service using the Cloud Manager UI.
+---
+
+= Enable SnapCenter Service for Azure NetApp Files
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+
+You can enable the SnapCenter Service using the Cloud Manager UI. When the SnapCenter Service is enabled, Azure Kubernetes Service (AKS) cluster is created that will host the SnapCenter Service.
+
+*What you will need*
+
+* You should register the "Microsoft.ContainerService" resource provider in your Azure subscription. For information, see https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider[how to register resource provider^].
+* You should ensure that all the link:prerequisites-azure-connector-snapcenter-service.html[prerequisites] are met.
+
+*About this task*
+
+The AKS cluster will be created in the same resource group and the same subnet that was chosen while creating the Connector. If your Connector is created without public IP address, then the AKS cluster will be created in private mode.
+
+A user assigned managed identity with necessary permissions is required to create and manage AKS cluster. The user assigned managed identity will be created and should be assigned to the Connector VM.
+
+*Steps*
+
+. Log into Cloud Manager.
+. Select the Connector that was created in the Cloud Manager.
++
+Ensure that the Connector has the network connectivity to the SAP HANA systems to be protected.
+. Click *All Services* > *SnapCenter* > *Enable*.
+. Perform one of the following:
+* If you have created the Connector from Cloud Manager UI and if you have permissions to create and assign roles, the user assigned managed identity will be created automatically by SnapCenter Service installation.
+.. Select *Use Azure login*.
+.. On the Get Ready page, click *Continue*.
+.. Specify the Azure credentials.
++
+IMPORTANT: You should ensure that the Azure login account has the sufficient permissions. For information on the permissions and how to assign the permissions, see <<Permissions required for Azure login account>>.
+
+* If you have created the Connector from Azure marketplace or if you do not have permissions to create and assign roles, follow the below steps to create the user assigned managed identity.
+.. Select *Use Azure CLI script*.
+.. Contact your admin if you do not have sufficient permissions on your Azure account.
++
+For information on the permissions and how to assign the permissions, see <<Permissions required for Azure login account>>.
+.. Download the link:media/prerequisite_azure.sh[prerequisite_azure.sh] script to your local system.
+.. Log into https://azure.microsoft.com/en-in/features/azure-portal/[Microsoft Azure portal^].
+.. Click image:screenshot-azure-cloud-shell.png[A screenshot of the Azure cloud shell] to open the cloud shell and select the Bash console.
+.. Upload the script to Azure cloud shell.
+.. Assign the permission to run the script.
++
+`chmod +x ./prerequisite_azure.sh`
+.. Run the script.
++
+`./prerequisite_azure.sh -s <subscription_ID> -g <connector_resourcegroup_name> -c <connector_VM_name>`
+. On the Cluster Configuration page, perform the following:
+.. Select the cluster configuration.
+* If you select *High Availability*, an Azure Kubernetes Service (AKS) cluster with 3 worker nodes will be created across available zones.
+* If you select *Single Node*, an AKS cluster with single node will be created.
+.. Specify the Kubernetes Pod address range.
++
+Ensure that the Kubernetes Pod address range does not overlap with IP ranges of your virtual network, peered virtual networks, and on-premises networks that are connected. Also, the range should not overlap with the Service address range and Docker bridge address.
+.. Specify the Kubernetes Service address.
++
+Ensure that the Kubernetes service address range does not overlap with the IP ranges of your virtual network, peered virtual networks, and on-premise networks that are connected. Also, the range should not overlap with the Pod address range and Docker bridge address.
+.. Specify the Docker bridge network.
++
+Ensure that the Docker Bridge address does not overlap with the IP ranges of your virtual network, peered virtual networks, and on-premise networks that are connected. Also, the range should not overlap with the Pod address range and Service address range.
+.. If the Connector is created without a public IP and if you are using custom DNS servers on your VNet, select *Support Custom DNS servers*.
++
+IMPORTANT: You should create a virtual network link in the private DNS zone for the VNets where your custom DNS servers are hosted. The private DNS zone name and the resource group name are displayed on the UI.
+
+. On the Review page, review the details and click *Enable*.
+. After enabling the SnapCenter Service successfully, click *Finish*.
+
+*Results*
+
+* After successfully enabling the SnapCenter Service, the AKS cluster will be created. You can view the AKS cluster details by clicking image:screenshot-cluster-details.png[A screenshot of the icon to view cluster details].
++
+NOTE: If you have failed to enable the SnapCenter Service, you can fix the issue and click *Retry*.
+
+* After creating the user assigned managed identity, it will be assigned to a custom role.
+** The user assigned managed identity will be assigned to a custom role with the below permissions at the scope of Connector resource group:
++
+[source,json]
+"Microsoft.Resources/subscriptions/resourceGroups/read",
+"Microsoft.ContainerService/managedClusters/read",
+"Microsoft.ContainerService/managedClusters/write",
+"Microsoft.ContainerService/managedClusters/delete",
+"Microsoft.ContainerService/managedClusters/listClusterUserCredential/action",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+"Microsoft.ManagedIdentity/userAssignedIdentities/read",
+"Microsoft.Compute/virtualMachines/read",
+"Microsoft.Network/networkInterfaces/read"
+
+** The user assigned managed identity will be assigned to a custom role with the below permissions at the scope of Connector’s VNet:
++
+[source,json]
+"Microsoft.Authorization/roleAssignments/read",
+"Microsoft.Network/virtualNetworks/subnets/join/action",
+"Microsoft.Network/virtualNetworks/subnets/read",
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/virtualNetworks/join/action"
+
+** If route table is configured on the subnet for routing to firewall, then the user assigned managed identity will be assigned to a custom role with the below permissions at the scope of the route table.
++
+[source,json]
+"Microsoft.Network/routeTables/*",
+"Microsoft.Network/networkInterfaces/effectiveRouteTable/action",
+"Microsoft.Network/networkWatchers/nextHop/action"
+
+** If the Connector is installed without public IP, then the user assigned managed identity will be assigned to a custom role with the below permission at the scope of private DNS zone.
++
+[source,json]
+"Microsoft.Network/privateDnsZones/*"
+
+== Permissions required for Azure login account
+Azure login account is used to create the user assigned managed identity, required roles, and assigning the identity to the Connector VM.
+
+IMPORTANT: The credentials of the login account is not stored anywhere in the SnapCenter Service and are not used to call APIs. The credentials are used only in the UI.
+
+*Steps*
+
+. Create a custom role using the link:media/SnapCenter_Deployment_Role1.json[SnapCenter_Deployment_Role1.json] file.
++
+You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role1.json file with your Azure subscription ID.
+. Assign the role to the login account at the scope of Connector’s resource group.
+. Create a custom role using the link:media/SnapCenter_Deployment_Role2.json[SnapCenter_Deployment_Role2.json] file.
++
+You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role2.json file with your Azure subscription ID.
+. Assign the role to the login account at the scope of Connector's VNet or higher.
+. If you have link:prerequisites-azure-connector-snapcenter-service.html#firewall-configuration[configured firewall], create a custom role using the link:media/SnapCenter_Deployment_Role3.json[SnapCenter_Deployment_Role3.json] file.
++
+You should replace the <Subscription_ID> in the SnapCenter_Deployment_Role3.json file with your Azure subscription ID.
+. Assign the role to the login account at the scope of route table which is attached to the SnapCenter subnet.
