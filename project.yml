@@ -403,6 +403,8 @@ sidebar:
                   url: /task_scanning_file_shares.html
                 - title: Object storage
                   url: /task_scanning_object_storage.html
+        - title: Set up licensing
+          url: /task_licensing_datasense.html
         - title: View governance details about your data
           url: /task_controlling_governance_data.html
         - title: View compliance details about your data

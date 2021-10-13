@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Volumes ONTAP enhancements>>
 * <<Cloud Backup enhancements>>
 * <<Cloud Sync enhancements>>
+* <<Cloud Data Sense enhancements>>
 * <<Application Templates enhancements (11 Oct)>>
 * <<Resource Tagging enhancements (11 Oct)>>
 * <<Support for SnapCenter Service (13 Oct)>>
@@ -68,6 +69,22 @@ https://cloud.netapp.com/cloud-backup-service-tco-calculator[here].
 link:api_sync.html[Learn how to set up a sync relationship using the API].
 
 * You can now link:task_sync_managing_reports.html[create a report] for SFTP paths.
+
+=== Cloud Data Sense enhancements
+
+* Support for BYOL licensing from NetApp.
++
+In addition to licensing Data Sense through your cloud provider marketplaces, now you can purchase a bring-your-own-license (BYOL) from NetApp that you can use across all your working environments and data sources in your Cloud Manager account.
++
+link:task-licensing-cloud-data-sense.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Data Sense BYOL license].
+
+* Support for the Google Cloud Platform.
++
+Now Cloud Data Sense can scan data from your Cloud Volumes ONTAP systems that are deployed on GCP. Data Sense must be deployed on GCP, and the Connector must be deployed on GCP or on-premises.
++
+The GCP service account associated with the Connector needs the latest permissions to deploy Cloud Data Sense to GCP. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[See the 3 new permissions that are required].
+
+* Data Sense can now scan CIFS volumes from FSx for ONTAP systems. link:task_scanning_fsx.html[See how to scan Amazon FSx for ONTAP volumes].
 
 === Application Templates enhancements (11 Oct)
 

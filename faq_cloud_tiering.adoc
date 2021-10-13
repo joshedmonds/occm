@@ -37,7 +37,7 @@ NOTE: Cloud Tiering enables inactive data reporting on HDD aggregates if the clu
 
 === Can I tier data from NAS volumes and SAN volumes?
 
-You can use Cloud Tiering to tier data from NAS volumes to the public cloud and from SAN volumes to a private cloud using StorageGRID.
+You can tier data from NAS volumes to the public cloud or to private clouds, like StorageGRID. When tiering data that is accessed by SAN protocols, NetApp recommends using private clouds due to connectivity considerations.
 
 === What about Cloud Volumes ONTAP?
 
