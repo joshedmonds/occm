@@ -164,9 +164,9 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 
 Ensure that Cloud Manager has the required permissions::
 Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
-
++
 *Note:* If you created the Connector in GCP using Cloud Manager 3.9.10 or greater, then you’re all set. If you created the Connector using an earlier version, then you’ll need to add the following permissions to the GCP service account associated with the Connector to deploy Cloud Data Sense to GCP.
-
++
 [source,json]
 compute.instances.addAccessConfig
 compute.subnetworks.use
