@@ -44,6 +44,8 @@ You can tier inactive data from an on-premises ONTAP cluster to the following ob
 * S3-compatible object storage
 * NetApp StorageGRID
 
+NOTE: You can tier data from NAS volumes to the public cloud or to private clouds, like StorageGRID. When tiering data that is accessed by SAN protocols, NetApp recommends using private clouds due to connectivity considerations.
+
 === Object storage tiers
 
 Each ONTAP cluster tiers inactive data to a single object store. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
