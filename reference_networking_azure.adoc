@@ -374,7 +374,6 @@ NOTE: The source IP address is the Connector host.
 | 138 | UDP	| Active Directory forest | NetBIOS datagram service
 | 464 | UDP	| Active Directory forest | Kerberos key administration
 | API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, and sending AutoSupport messages to NetApp
-| API calls | 3000 | TCP	| ONTAP cluster management LIF | API calls to ONTAP
 | DNS | 53 | UDP	| DNS | Used for DNS resolve by Cloud Manager
 
 |===

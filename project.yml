@@ -305,6 +305,32 @@ sidebar:
               url: /reference_backup_multi_account_aws.html
             - title: Configure Backup for multi-account access in Azure
               url: /reference_backup_multi_account_azure.html
+    - title: Protect data using SnapCenter Service
+      entries:
+        - title: Learn about SnapCenter Service
+          url: /overview-architecture-limitation-functionalities-snapcenter-service.html
+        - title: Get started
+          url: /get-started-snapcenter-service.html
+        - title: Prerequisites to create Connector and enable SnapCenter Service
+          url: /prerequisites-azure-connector-snapcenter-service.html
+        - title: Create a Connector in Azure for SnapCenter Service
+          url: /create-azure-connector-user-consent-snapcenter-service.html
+        - title: Enable SnapCenter Service for Azure NetApp Files
+          url: /enable-snapcenter-service-azure-netapp-files.html
+        - title: Install the HDBSQL client
+          url: /install-hdbsql-client-snapcenter-service.html
+        - title: Protect SAP HANA systems
+          entries:
+            - title: Add SAP HANA systems
+              url: /add-sap-hana-systems-non-data-volumes-snapcenter-service.html
+            - title: Back up SAP HANA systems
+              url: /create-backup-ondemand-policies-schedule-sap-hana.html
+            - title: Restore SAP HANA systems
+              url: /restore-sap-hana-systems.html
+        - title: Manage operations
+          url: /manage_dashboard_monitor_notification_snapcenter_service.html
+        - title: Troubleshoot issues
+          url: /troubleshoot_solution_issue.html
     - title: Copy and synchronize data
       entries:
         - title: Learn about Cloud Sync
