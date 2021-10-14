@@ -101,7 +101,7 @@ image:screenshot_compliance_azure_change_plan.png[A screenshot of changing to th
 
 == Use a Cloud Data Sense BYOL license
 
-Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month terms. The BYOL *Cloud Data Sense* license is a _floating_ license where the total capacity is shared among *all* of your working environments and data sources, making initial licensing and renewal easy.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *Cloud Data Sense* license is a _floating_ license where the total capacity is shared among *all* of your working environments and data sources, making initial licensing and renewal easy.
 
 If you don't have a Cloud Data Sense license, contact us to purchase one:
 
