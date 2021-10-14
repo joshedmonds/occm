@@ -298,13 +298,19 @@ sidebar:
           url: /task_managing_backups.html
         - title: Restore from backups
           url: /task_restore_backups.html
-        - title: Cross-account and cross-region configurations
-          url: /reference_cross_account.html
+        - title: Reference
           entries:
-            - title: Configure Backup for multi-account access in AWS
-              url: /reference_backup_multi_account_aws.html
-            - title: Configure Backup for multi-account access in Azure
-              url: /reference_backup_multi_account_azure.html
+            - title: Supported AWS archive storage tiers
+              url: /reference-aws-backup-tiers.html
+            - title: Supported Azure archive access tiers
+              url: /reference-azure-backup-tiers.html
+            - title: Cross-account and cross-region configurations
+              url: /reference_cross_account.html
+              entries:
+                - title: Configure Backup for multi-account access in AWS
+                  url: /reference_backup_multi_account_aws.html
+                - title: Configure Backup for multi-account access in Azure
+                  url: /reference_backup_multi_account_azure.html
     - title: Protect data using SnapCenter Service
       entries:
         - title: Learn about SnapCenter Service

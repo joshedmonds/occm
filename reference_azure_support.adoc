@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_azure_support.html
 keywords: microsoft azure, azure, hot, access tier, cold, regions
-summary: Cloud Tiering supports the Hot access tier and most regions.
+summary: Cloud Tiering supports two access tiers and most regions.
 ---
 
 = Supported Azure Blob access tiers and regions

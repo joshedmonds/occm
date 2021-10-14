@@ -1,0 +1,81 @@
+---
+sidebar: sidebar
+permalink: reference-aws-backup-tiers.html
+keywords: aws, amazon, s3, support, regions, storage classes, archive
+summary: Cloud Backup supports two S3 archival storage classes and most regions.
+---
+
+= AWS S3 archival storage classes abd retrieval times
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup supports two S3 archival storage classes and most regions.
+
+== Supported S3 archival storage classes
+
+When backup files are initially created they are stored in S3 _Standard_ storage. After 30 days they transition to the _Standard-Infrequent Access_ storage class to save on costs.
+
+If your clusters are running ONTAP 9.10.1 and greater, you can choose to tier backups from S3 Standard to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization.
+
+When you configure Cloud Backup with these lifecycle rules, you must not configure any lifecycle rules when setting up the bucket in your AWS account.
+
+https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
+
+== Restoring data from archival storage
+
+How much does it cost to restore data from Amazon S3 Glacier?::
+There are three ways to retrieve data from Amazon S3 Glacier – High, Standard, and Low retrievals. Each has a different per-GB retrieval fee and per-request fee. For detailed S3 Glacier pricing by AWS Region, visit the https://aws.amazon.com/s3/pricing/[Amazon S3 pricing page].
+
+How long will it take to restore my objects archived in Amazon S3 Glacier?::
+X time = restore time
+X time +
+High: 3-5 mins.
+Standard: 3-5 hours.
+Low: 5-12 hours.
+(Y time)
+
+For more information about Amazon S3 Glacier retrieval options, refer to https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier
+
+How long will it take to restore my objects archived in Amazon S3 Glacier Deep Archive?::
+X time = restore time
+X time +
+Standard: 12 hours.
+Low: 48 hours.
+(Z time)
+
+== Supported AWS regions
+
+Cloud Tiering supports the following AWS regions.
+
+==== Asia Pacific
+
+* Mumbai
+* Seoul
+* Singapore
+* Sydney
+* Tokyo
+
+==== Europe
+
+* Frankfurt
+* Ireland
+* London
+* Paris
+* Stockholm
+
+==== North America
+
+* Canada Central
+* GovCloud (US-West)
+* US East (N. Virginia)
+* US East (Ohio)
+* US West (N. California)
+* US West (Oregon)
+
+==== South America
+
+* São Paulo

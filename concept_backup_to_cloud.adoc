@@ -97,7 +97,7 @@ The instance resides in the same subnet as the Connector, and it runs only when 
 ** In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB memory, and EBS Only instance storage. The operating system image is Amazon Linux 2.
 +
 In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
-** In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB memory, and a 32 GB disk. The operating system image is CentOS 7.5).
+** In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB memory, and a 32 GiB disk. The operating system image is CentOS 7.5).
 +
 The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
 
@@ -208,8 +208,12 @@ There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cl
 === Supported storage classes or access tiers
 
 * In AWS, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
++
+You can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization.
 
 * In Azure, backups are associated with the _Cool_ access tier.
++
+You can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization.
 
 * In GCP, backups are associated with the _Standard_ storage class by default.
 +
@@ -316,5 +320,3 @@ There are certain things you need to be aware of when the volume you are backing
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
 * Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
-//
-// * Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported when using the UI.

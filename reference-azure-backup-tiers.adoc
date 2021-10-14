@@ -1,0 +1,87 @@
+---
+sidebar: sidebar
+permalink: reference-azure-backup-tiers.html
+keywords: microsoft azure, azure, cool, access tier, regions, archive
+summary: Cloud Backup supports one Azure archival access tier and most regions.
+---
+
+= Azure archival tiers
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup supports one Azure archival access tier and most regions.
+
+== Supported Azure Blob access tiers
+
+When backup files are initially created they are stored in the _Cool_ access tier.
+
+If your clusters are running ONTAP 9.10.1 and greater, you can choose to tier backups from _Cool_ to _Azure Archive_ storage after a certain number of days for further cost optimization.
+
+When you configure Cloud Backup with these lifecycle rules, you must not configure any lifecycle rules when setting up the container in your Azure account.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview[Learn about Azure Blob access tiers^].
+
+== Restoring data from archival storage
+
+How much does it cost to restore data from Azure Archive?::
+There are two ways to retrieve data from Azure Archive – High and Standard. Each has a different per-GB retrieval fee and per-request fee. For detailed Azure Archive pricing by Azure Region, visit the https://azure.microsoft.com/en-us/pricing/details/storage/blobs/[Azure pricing page].
+
+How long will it take to restore my objects archived in Azure Archive?
+
+X time = restore time
+X time +
+High: < 1 hour
+Standard: < 15 hours.
+(Y time)
+
+For more information about Azure Archive retrieval options, refer to https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq
+
+== Supported Azure regions
+
+Cloud Tiering supports the following Azure regions.
+
+=== Africa
+
+* South Africa North
+
+=== Asia Pacific
+
+* Australia East
+* Australia Southeast
+* East Asia
+* Japan East
+* Japan West
+* Korea Central
+* Korea South
+* Southeast Asia
+
+=== Europe
+
+* France Central
+* Germany Central
+* Germany Northeast
+* North Europe
+* UK South
+* UK West
+* West Europe
+
+=== North America
+
+* Canada Central
+* Canada East
+* Central US
+* East US
+* East US 2
+* North Central US
+* South Central US
+* West US
+* West US 2
+* West Central US
+
+=== South America
+
+* Brazil South
