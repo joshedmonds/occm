@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_configuring_proxy.html
-keywords: proxy, proxy server, proxy, internet
-summary: If your corporate policies dictate that you use a proxy server for all HTTP communication to the internet, then you must configure Cloud Manager to use that proxy server. The proxy server can be in the cloud or in your network.
+keywords: proxy, proxy server, proxy, internet, HTTP, http, https
+summary: If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
 ---
 
-= Configuring a Connector to use a proxy server
+= Configuring a Connector to use an HTTP proxy server
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,9 @@ summary: If your corporate policies dictate that you use a proxy server for all 
 :imagesdir: ./media/
 
 [.lead]
-If your corporate policies dictate that you use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that proxy server. The proxy server can be in the cloud or in your network.
+If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
+
+Cloud Manager doesn't support using an HTTPS proxy with the Connector.
 
 == Enable a proxy on a Connector
 
