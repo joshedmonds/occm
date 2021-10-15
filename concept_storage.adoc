@@ -81,7 +81,7 @@ HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
 
 == GCP storage
 
-In GCP, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TiB.
+In GCP, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.
 
 The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept_data_tiering.html[tier inactive data to low-cost object storage].
 
