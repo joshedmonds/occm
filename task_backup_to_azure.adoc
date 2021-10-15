@@ -49,7 +49,7 @@ image:screenshot_backup_provider_settings_azure.png[A screenshot that shows the 
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
 
 [role="quick-margin-para"]
-By default, backups are stored in the Cool access tier. You can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization.
+By default, backups are stored in the Cool access tier. If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization.
 
 [role="quick-margin-para"]
 image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backup settings where you can select the backup policy and choose your backup retention]
@@ -174,7 +174,7 @@ image:screenshot_backup_provider_settings_azure.png[A screenshot that shows the 
 . Enter the backup policy details and click *Next*.
 
 .. Define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
-.. When using ONTAP 9.10.1 and greater, you can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization.
+.. When using ONTAP 9.10.1 and greater, you can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization. link:reference-azure-backup-tiers.html[Learn more about using archival tiers].
 +
 image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
