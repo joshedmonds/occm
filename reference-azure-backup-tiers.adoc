@@ -47,4 +47,4 @@ There are 2 parts that make up the restore time:
 * *Restore time*: The time to restore the data from the backup file in Cool storage. This time is no different than the typical restore operation directly from Cool storage - when not using an archival tier.
 
 +
-For more information about Azure Archive retrieval options, refer to https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq[this FAQ].
+For more information about Azure Archive retrieval options, refer to https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq[this Azure FAQ].

@@ -30,18 +30,19 @@ https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
 While storing older backup files in archival storage is much less expensive than Standard or Standard-IA storage, accessing data from a backup file in archive storage for restore operations will take a longer amount of time and will cost more money.
 
 How much does it cost to restore data from Amazon S3 Glacier and Amazon S3 Glacier Deep Archive?::
-There are 3 restore priorities you can choose when retrieving data from Amazon S3 Glacier:
-
-* *High*: Fastest retrieval, higher cost
-* *Standard*: Slower retrieval, lower cost
-* *Low*: Slowest retrieval, lowest cost
-
+There are 3 restore priorities you can choose when retrieving data from Amazon S3 Glacier, and 2 restore priorities when retrieving data from Amazon S3 Glacier Deep Archive. S3 Glacier Deep Archive costs less than S3 Glacier:
 +
-There are 2 restore priorities you can choose when retrieving data from Amazon S3 Glacier Deep Archive:
+[cols=4*,options="header",cols="25,25,25,25",width="95%"]
+|===
 
-* *Standard*: Faster retrieval, higher cost
-* *Low*: Slower retrieval, lowest cost
+| Archive Tier
+3+^| Restore Priority & Cost
 
+| | *High* | *Standard* | *Low*
+| *S3 Glacier* | Fastest retrieval, highest cost | Slower retrieval, lower cost | Slowest retrieval, lowest cost
+| *S3 Glacier Deep Archive* |  | Faster retrieval, higher cost | Slower retrieval, lowest cost
+
+|===
 +
 Each method has a different per-GB retrieval fee and per-request fee. For detailed S3 Glacier pricing by AWS Region, visit the https://aws.amazon.com/s3/pricing/[Amazon S3 pricing page].
 
@@ -65,4 +66,4 @@ There are 2 parts that make up the total restore time:
 * *Restore time*: The time to restore the data from the backup file in Standard storage. This time is no different than the typical restore operation directly from Standard storage - when not using an archival tier.
 
 +
-For more information about Amazon S3 Glacier retrieval options, refer to https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier
+For more information about Amazon S3 Glacier and S3 Glacier Deep Archive retrieval options, refer to https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier[the Amazon FAQ about these storage classes].

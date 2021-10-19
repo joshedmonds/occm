@@ -21,12 +21,17 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 
 == Features
 
+Backup features:
+
 * Back up independent copies of your data volumes to low-cost object storage.
 * Tier older backup files to archival storage to save costs (supported with AWS and Azure when using ONTAP 9.10.1+)
 * Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
 * Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
 * Support for up to 4,000 backups of a single volume.
+
+Restore features:
+
 * Restore data from a specific point in time.
 * Restore a volume, or individual files, to the source system or to a different system.
 * Restore data to a working environment using a different subscription/account or that is in a different region.
@@ -85,7 +90,7 @@ There are two types of costs associated with using Cloud Backup: resource charge
 
 *Resource charges*
 
-Resource charges are paid to the cloud provider for storage and for running a virtual machine/instance in the cloud.
+Resource charges are paid to the cloud provider for storage capacity and for running a virtual machine/instance in the cloud.
 
 * For Backup, you pay your cloud provider for object storage costs. (There are no storage costs when creating backups on your StorageGRID systems.)
 +
@@ -103,6 +108,8 @@ In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xl
 The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
 
 * For Volume Restore there is no cost because no separate instance or virtual machine is required.
+
+* If you need to restore volume data from a backup file that has been moved to archival storage (supported with AWS and Azure when using ONTAP 9.10.1+), then there is an additional per-GB retrieval fee and per-request fee.
 
 *Service charges*
 
