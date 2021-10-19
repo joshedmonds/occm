@@ -103,7 +103,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 
 * One Azure snapshot for each boot disk and root disk
 
-=== Azure (HA pairs)
+=== Azure (HA pair)
 
 *	Two 10 GiB Premium SSD disks for the boot volume (one per node)
 * Two 140 GiB Premium Storage page blobs for the root volume (one per node)
@@ -111,15 +111,22 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * Two 128 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
 
-=== GCP
+=== Google Cloud (single node)
 
-* One 10 GiB Standard persistent disk for boot data
-* One 64 GiB Standard persistent disk for root data
-* One 500 GiB Standard persistent disk for NVRAM
+* One 10 GiB SSD persistent disk for boot data
+* One 64 GiB SSD persistent disk for root data
+* One 500 GiB SSD persistent disk for NVRAM
 * One 315 GiB Standard persistent disk for saving cores
-* One GCP snapshot each for the boot disk and root disk
+* Snapshots for boot and root data
 
-For an HA pair, there are two disks per node for root data.
+=== Google Cloud (HA pair)
+
+* Two 10 GiB SSD persistent disks for boot data
+* Four 64 GiB SSD persistent disk for root data
+* Two 500 GiB SSD persistent disk for NVRAM
+* Two 315 GiB Standard persistent disk for saving cores
+* One 10 GiB Standard persistent disk for mediator data
+* Snapshots for boot and root data
 
 === Where the disks reside
 
