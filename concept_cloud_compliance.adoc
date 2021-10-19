@@ -29,7 +29,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
 * Add a custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
-* Move and delete files
+* Copy, move, and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
 
