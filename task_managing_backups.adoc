@@ -31,7 +31,7 @@ image:screenshot_backup_dashboard.png[A screenshot showing all the working envir
 
 If you are looking for specific volumes in certain working environments, you can refine the list by working environment and volume, or you can use the search filter.
 
-== Changing the schedule and backup retention
+== Changing the backup policy
 
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to a combination of hourly, daily, weekly, or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
 
@@ -51,9 +51,9 @@ image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Set
 +
 image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud Backup settings where you can modify the backup schedule and backup retention setting.]
 +
-If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure for your cloud storage, you will also have the option to tier backups to archival storage after a certain number of days.
-link:reference-azure-backup-tiers.html[Learn more about using Azure Archive storage].
-link:reference-aws-backup-tiers.html[Learn more about using S3 Glacier or S3 Glacier Deep Archive storage].
+If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure for your cloud storage, you also have the option to enable or disable tiering of backups to archival storage after a certain number of days.
+link:reference-azure-backup-tiers.html[Learn more about using Azure archival storage].
+link:reference-aws-backup-tiers.html[Learn more about using S3 archival storage].
 +
 image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tiering to archival storage settings for Cloud Backup.]
 

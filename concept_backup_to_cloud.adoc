@@ -22,6 +22,7 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 == Features
 
 * Back up independent copies of your data volumes to low-cost object storage.
+* Tier older backup files to archival storage to save costs (supported with AWS and Azure when using ONTAP 9.10.1+)
 * Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
 * Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
@@ -209,11 +210,11 @@ There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cl
 
 * In AWS, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 +
-You can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization.
+If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization.
 
 * In Azure, backups are associated with the _Cool_ access tier.
 +
-You can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization.
+If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization.
 
 * In GCP, backups are associated with the _Standard_ storage class by default.
 +
@@ -247,7 +248,7 @@ You can choose a combination of hourly, daily, weekly, and monthly backups of al
 
 |===
 
-Backup protection policies that you have created on the system using ONTAP System Manager or the ONTAP CLI are also available as selections.
+Backup protection policies that you have created on the cluster using ONTAP System Manager or the ONTAP CLI are also available as selections.
 
 You can also link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[create an on-demand backup of a volume] from the Backup Dashboard in addition to those backup files created from the scheduled backups.
 
