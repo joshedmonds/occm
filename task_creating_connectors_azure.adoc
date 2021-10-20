@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_creating_connectors_azure.html
-keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions
+keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions, create custom role, create azure custom role, azure custom role
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
