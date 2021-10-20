@@ -82,11 +82,11 @@ You must bind the service principal to one or more Azure subscriptions and assig
 
 .Steps
 
-. Create a custom role:
+. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Azure policy^].
++
+TIP: Right-click the link and click *Save link as...* to download the file.
 
-.. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Azure policy^].
-
-.. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
+. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
 You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
 +
@@ -98,11 +98,21 @@ You should add the ID for each Azure subscription from which users will create C
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
 "/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
 
-.. Use the JSON file to create a custom role in Azure.
+. Use the JSON file to create a custom role in Azure.
 +
-The following example shows how to create a custom role using the Azure CLI 2.0:
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
+
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
 +
-`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.9.8.json`
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_cloud_Manager_Azure_3.9.8.json
+
 +
 You should now have a custom role called _Cloud Manager Operator_.
 
