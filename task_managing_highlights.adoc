@@ -365,12 +365,82 @@ The first email is sent now if there are any results from the Policy - but only 
 
 == Copying source files
 
-You can copy any source files that Data Sense is scanning. There are two types of copy operation:
+You can copy any source files that Data Sense is scanning. There are two types of copy operations depending on what you are trying to accomplish:
 
-* d
-* d
+* Copy files from the same, or different, volumes or data sources to a destination NFS share.
++
+This is useful if you want to make a copy of certain data and move it to a different NFS location.
+* Clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume.
++
+This is useful for situations where you're migrating data but you want to exclude certain files from the original volume. Or you might want to create a copy of a volume for testing, or to provide access to the volume for additional users without giving them access to the production data. This action uses the NetApp FlexClone functionality to quickly duplicate the volume and then remove the files that you did not select.
 
-sdfdfg
+=== Copying source files to an NFS share
+
+You can copy source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
+
+TIP: You can't copy files that reside in databases.
+
+.Requirements
+
+* You must have the Account Admin or Workspace Admin role to copy files.
+* Copying files requires that the NFS share allows access from the Data Sense instance.
+* You can copy a maximum of 100,000 files at a time.
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to copy.
++
+image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
+
+. From the button bar, click *Copy*.
++
+image:screenshot_compliance_copy_files_dialog.png[A screenshot showing the Copy Files dialog so you can specify the name of the NFS share where all selected files will be copied.]
+
+. In the _Copy Files_ dialog, select the *Regular Copy* tab, enter the name of the NFS share where all selected files will be copied in the format `<host_name>:/<share_path>`, and click *Copy*.
++
+A dialog appears with the status of the copy operation.
+
+Note that you can also copy an individual file when viewing the metadata details for a file. Just click *Copy File*.
+
+image:screenshot_compliance_copy_file.png[A screenshot showing selection of the Copy File button from the metadata details for a file in the Data Investigation page.]
+
+=== Cloning volume data to a new volume
+
+You can clone an existing ONTAP volume that Data Sense is scanning using NetApp _FlexClone_ functionality. This allows you to quickly duplicate the volume while including only those files you selected. This is useful if you're migrating data but you want to exclude certain files from the original volume, or if you want to create a copy of a volume for testing.
+
+The new volume is created in the same aggregate as the source volume. Ensure that you have enough space for this new volume in the aggregate before you start this task. Contact your storage administrator if necessary.
+
+.Requirements
+
+* You must have the Account Admin or Workspace Admin role to copy files.
+* The volume must be from a Cloud Volumes ONTAP or on-premises ONTAP system. No other data sources are supported.
+* All selected files must be from the same volume.
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to copy.
++
+image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
+
+. From the button bar, click *Copy*.
++
+image:screenshot_compliance_clone_files_dialog.png[A screenshot showing the Copy Files dialog so you can specify the name of the new volume that will be cloned from the source volume.]
+
+. In the _Copy Files_ dialog, select the *FlexClone* tab. This page shows the total number of files that will be cloned from the volume (the files you selected), and the number of files that are not included (deleted) from the cloned volume.
+
+. Enter the name of the new volume, and click *FlexClone*.
++
+A dialog appears with the status of the clone operation.
 
 == Moving source files to an NFS share
 
@@ -401,7 +471,7 @@ image:screenshot_compliance_move_files_dialog.png[A screenshot showing the Move 
 
 . In the _Move Files_ dialog, enter the name of the NFS share where all selected files will be moved in the format `<host_name>:/<share_path>`, and click *Move Files*.
 
-Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move file*.
+Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move File*.
 
 image:screenshot_compliance_move_file.png[A screenshot showing selection of the Move File button from the metadata details for a file in the Data Investigation page.]
 
@@ -436,7 +506,7 @@ image:screenshot_compliance_delete_multi_files.png["A screenshot showing how to 
 
 . Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
 
-Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete this file*.
+Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete file*.
 
 image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
 
