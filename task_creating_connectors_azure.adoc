@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_creating_connectors_azure.html
-keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions
+keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions, create custom role, create azure custom role, azure custom role
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
@@ -27,13 +27,11 @@ Before you can deploy a Connector from Cloud Manager, you need to ensure that yo
 
 .Steps
 
-. Create a custom role using the Azure policy for the Connector:
-
-.. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Azure policy for the Connector^].
+. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Azure policy for the Connector^].
 +
 TIP: Right-click the link and click *Save link as...* to download the file.
 
-.. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
+. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
 +
 *Example*
 +
@@ -42,11 +40,21 @@ TIP: Right-click the link and click *Save link as...* to download the file.
 "/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz"
 ],
 
-.. Use the JSON file to create a custom role in Azure.
+. Use the JSON file to create a custom role in Azure.
 +
-The following example shows how to create a custom role using the Azure CLI 2.0:
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
+
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
 +
-`az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json`
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+
 +
 You should now have a custom role called _Azure SetupAsService_.
 
