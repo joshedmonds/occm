@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_checklist_cm.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: This checklist describes what's needed to get up and running with Cloud Manager.
+summary: Use this checklist to understand what's needed to get up and running with Cloud Manager.
 ---
 
 = Getting started checklist
@@ -13,7 +13,7 @@ summary: This checklist describes what's needed to get up and running with Cloud
 :imagesdir: ./media/
 
 [.lead]
-This checklist describes what's needed to get up and running with Cloud Manager.
+Use this checklist to understand what's needed to get up and running with Cloud Manager.
 
 A NetApp Cloud Central login::
 You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Cloud Manager and other cloud services.
@@ -60,7 +60,7 @@ HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in ra
 Cloud provider permissions::
 You need an account that has permissions to deploy the Connector in your cloud provider directly from Cloud Manager.
 +
-NOTE: There are alternative ways to create a Connector. You also have the option to create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], link:task_launching_azure_mktp.html[Azure Marketplace], or to link:task_installing_linux[manually install the software].
+NOTE: There are alternative ways to create a Connector. You also have the option to create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], link:task_launching_azure_mktp.html[Azure Marketplace], or to link:task_installing_linux.html[manually install the software].
 +
 [cols="15,55,30",options="header"]
 |===
