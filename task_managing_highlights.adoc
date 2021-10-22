@@ -383,7 +383,7 @@ TIP: You can't copy files that reside in databases.
 .Requirements
 
 * You must have the Account Admin or Workspace Admin role to copy files.
-* Copying files requires that the NFS share allows access from the Data Sense instance.
+* Copying files requires that the destination NFS share allows access from the Data Sense instance.
 * You can copy a maximum of 100,000 files at a time.
 
 .Steps
@@ -418,12 +418,15 @@ The new volume is created in the same aggregate as the source volume. Ensure tha
 .Requirements
 
 * You must have the Account Admin or Workspace Admin role to copy files.
-* The volume must be from a Cloud Volumes ONTAP or on-premises ONTAP system. No other data sources are supported.
-* All selected files must be from the same volume.
+* All selected files must be from the same volume, and the volume must be online.
+* The volume must be from a Cloud Volumes ONTAP or on-premises ONTAP system. No other data sources are currently supported.
+* The FlexClone license must be installed on the cluster. This license is installed by default on Cloud Volumes ONTAP systems.
 
 .Steps
 
-. In the Data Investigation results pane, select the file, or files, that you want to copy.
+. In the Data Investigation results pane, create a filter using the *Storage Repository* option to make sure all the files are from the same volume. Apply any other filters so that you are seeing only the files that you want to clone to the new volume.
+
+. Select the files that you want to copy.
 +
 image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
 
@@ -441,6 +444,10 @@ image:screenshot_compliance_clone_files_dialog.png[A screenshot showing the Copy
 . Enter the name of the new volume, and click *FlexClone*.
 +
 A dialog appears with the status of the clone operation.
+
+.Result
+
+The new volume is created in the same aggregate as the source volume. If you initially selected *Activate scan for all volumes* when you enabled Data Sense for the working environment where the source volume resides, then Data Sense will scan the new cloned volume automatically. If you didn't use this selection initially, then if you want to scan this new volume, you'll need to link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[enable scanning on the volume manually].
 
 == Moving source files to an NFS share
 

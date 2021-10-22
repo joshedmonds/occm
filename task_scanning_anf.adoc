@@ -74,13 +74,15 @@ You can enable Cloud Data Sense on your Azure NetApp Files volumes.
 +
 image:screenshot_cloud_compliance_anf_scan_config.png[A screenshot of the Configuration tab immediately after deploying the Cloud Data Sense instance.]
 
-. To scan all volumes in a working environment, click *Activate Scanning for All Volumes*.
-+
-When enabled in this manner, full "mapping and classification" scanning is performed on all volumes.
-+
-If you want to enable scanning only for certain volumes, or if you only want to perform "mapping-only" scanning, click *or select Volumes* and then choose the volumes you want to scan.
+. Select how you want to scan the volumes in each working environment. link:concept_cloud_compliance.html#whats-the-difference-between-mapping-and-classification-scans[Learn about mapping and classification scans]:
 
+* To map all volumes, click *Map all Volumes*.
+* To map and classify all volumes, click *Map & Classify all Volumes*.
+* To customize scanning for each volume, click *Or select scanning type for each volume*, and then choose the volumes you want to map and/or classify.
++
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
+
+. In the confirmation dialog box, click *Approve* to have Data Sense start scanning your volumes.
 
 .Result
 
@@ -120,7 +122,7 @@ image:screenshot_cifs_status.gif[A screenshot that shows the Configuration page 
 
 . On the _Configuration_ page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
-For example, the following image shows three volumes; one of which Cloud Data Sense can't scan due to network connectivity issues between the Data Sense instance and the volume.
+For example, the following image shows four volumes; one of which Cloud Data Sense can't scan due to network connectivity issues between the Data Sense instance and the volume.
 +
 image:screenshot_compliance_volume_details.gif["A screenshot of the View Details page in the scan configuration that shows three volumes; one of which isn't being scanned because of network connectivity between Data Sense and the volume."]
 

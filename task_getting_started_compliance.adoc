@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_getting_started_compliance.html
 keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, CVO, Cloud Volumes ONTAP, backup files, data sense
-summary: Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP systems.
+summary: Complete a few steps to start scanning your Cloud Volumes ONTAP and on-premises ONTAP volumes using Cloud Data Sense.
 ---
 
 = Getting started with Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started with Cloud Data Sense for Cloud Vol
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started with Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP systems.
+Complete a few steps to start scanning your Cloud Volumes ONTAP and on-premises ONTAP volumes using Cloud Data Sense.
 
 == Quick start
 
@@ -63,7 +63,7 @@ Select or deselect the volumes that you want to scan and Cloud Data Sense will s
 
 If the data sources you want to scan are not already in your Cloud Manager environment, you can add them to the canvas at this time.
 
-Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^].
+Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cloud Manager. For on-premises ONTAP systems, you'll need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^].
 
 == Deploying the Cloud Data Sense instance
 
@@ -75,19 +75,21 @@ Cloud Data Sense can be deployed in the cloud or in an on-premises location when
 
 You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS, Azure, and GCP) and on on-premises ONTAP clusters.
 
-NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can run compliance scans on the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> to scan the volumes by scanning the backup files.
+NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can scan the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> for details.
 
 . At the top of Cloud Manager, click *Data Sense* and then select the *Configuration* tab.
 +
 image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Configuration tab immediately after deploying the Cloud Data Sense instance.]
 
-. To scan all volumes in a working environment, click *Activate Scanning for All Volumes*.
-+
-When enabled in this manner, full "mapping and classification" scanning is performed on all volumes.
-+
-If you want to enable scanning only for certain volumes, or if you only want to perform "mapping-only" scanning, click *or select Volumes* and then choose the volumes you want to scan.
+. Select how you want to scan the volumes in each working environment. link:concept_cloud_compliance.html#whats-the-difference-between-mapping-and-classification-scans[Learn about mapping and classification scans]:
 
+* To map all volumes, click *Map all Volumes*.
+* To map and classify all volumes, click *Map & Classify all Volumes*.
+* To customize scanning for each volume, click *Or select scanning type for each volume*, and then choose the volumes you want to map and/or classify.
++
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
+
+. In the confirmation dialog box, click *Approve* to have Data Sense start scanning your volumes.
 
 .Result
 
@@ -129,7 +131,7 @@ image:screenshot_cifs_status.gif[A screenshot that shows the Configuration page 
 
 . On the _Configuration_ page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
-For example, the following image shows three volumes; one of which Cloud Data Sense can't scan due to network connectivity issues between the Data Sense instance and the volume.
+For example, the following image shows four volumes; one of which Cloud Data Sense can't scan due to network connectivity issues between the Data Sense instance and the volume.
 +
 image:screenshot_compliance_volume_details.gif["A screenshot of the View Details page in the scan configuration that shows three volumes; one of which isn't being scanned because of network connectivity between Data Sense and the volume."]
 
@@ -174,10 +176,12 @@ All the on-premises ONTAP working environments that have backup files are listed
 +
 image:screenshot_compliance_onprem_backups.png[A screenshot of the Data Sense page to select volumes you want to scan.]
 
-. To scan all backed up volumes in a working environment, click *Activate Compliance for all backed up Volumes*.
-+
-To scan only certain backed up volumes in a working environment, click *or select Volumes* and then choose the backup files (volumes) that you want to scan.
+. Select how you want to scan the backup volumes:
 
+* To map all volumes, click *Map all backed up Volumes*.
+* To map and classify all volumes, click *Map & Classify all backed up Volumes*.
+* To customize scanning for each backed up volume, click *Or select scanning type for each volume*, and then choose the volumes you want to map and/or classify.
++
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
 
 ==== Scanning on-prem volumes versus backups of those volumes
@@ -211,7 +215,7 @@ If you want to scan these data protection volumes:
 +
 image:screenshot_compliance_dp_cifs_volumes.png[A screenshot of the two options for enabling CIFS data protection volumes.]
 
-. Activate each DP volume that you want to scan <<Enabling and disabling compliance scans on volumes,the same way you enabled other volumes>>, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
+. Activate each DP volume that you want to scan <<Enabling and disabling compliance scans on volumes,the same way you enabled other volumes>>.
 
 .Result
 Once enabled, Cloud Data Sense creates an NFS share from each DP volume that was activated for scanning. The share export policies only allow access from the Data Sense instance.
