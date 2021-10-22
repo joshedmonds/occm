@@ -65,7 +65,7 @@ image:screenshot_restore_services_actions.png[A screenshot showing how to select
 
 When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. You can also restore volumes to an on-premises ONTAP system.
 
-If the backup file for the volume that you want to restore resides in archival storage (available starting with ONTAP 9.10.1), the restore operation will take a longer amount of time and will cost more.
+If the backup file for the volume that you want to restore resides in archival storage (available for AWS and Azure starting with ONTAP 9.10.1), the restore operation will take a longer amount of time and will cost more. Additionally, the destination cluster must also be running ONTAP 9.10.1 or greater.
 link:reference-azure-backup-tiers.html[Learn more about restoring from Azure archival storage].
 link:reference-aws-backup-tiers.html[Learn more about restoring from S3 archival storage].
 
