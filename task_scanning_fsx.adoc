@@ -86,13 +86,15 @@ You can enable Cloud Data Sense for FSx for ONTAP volumes.
 +
 image:screenshot_fsx_scanning_activate.png[A screenshot of the Configuration tab immediately after deploying the Cloud Data Sense instance.]
 
-. To scan all volumes in a working environment, click *Activate Scanning for All Volumes*.
-+
-When enabled in this manner, full "mapping and classification" scanning is performed on all volumes.
-+
-If you want to enable scanning only for certain volumes, or if you only want to perform "mapping-only" scanning, click *or select Volumes* and then choose the volumes you want to scan.
+. Select how you want to scan the volumes in each working environment. link:concept_cloud_compliance.html#whats-the-difference-between-mapping-and-classification-scans[Learn about mapping and classification scans]:
 
+* To map all volumes, click *Map all Volumes*.
+* To map and classify all volumes, click *Map & Classify all Volumes*.
+* To customize scanning for each volume, click *Or select scanning type for each volume*, and then choose the volumes you want to map and/or classify.
++
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
+
+. In the confirmation dialog box, click *Approve* to have Data Sense start scanning your volumes.
 
 .Result
 
@@ -136,7 +138,7 @@ After you enter the credentials, you should see a message that all CIFS volumes 
 
 == Enabling and disabling compliance scans on volumes
 
-You can stop or start mapping scans, or mapping and classification scans, in a working environment at any time from the Configuration page. We recommend that you scan all volumes.
+You can start or stop mapping-only scans, or mapping and classification scans, in a working environment at any time from the Configuration page. You can also change from mapping-only scans to mapping and classification scans, and vice-versa. We recommend that you scan all volumes.
 
 image:screenshot_volume_compliance_selection.png[A screenshot of the Configuration page where you can enable or disable scanning of individual volumes.]
 
@@ -145,12 +147,14 @@ image:screenshot_volume_compliance_selection.png[A screenshot of the Configurati
 | To:
 | Do this:
 
-| Enable mapping-only scans on a volume | Click *Map*
-| Enable full scanning on a volume | Click *Map & Classify*
-| Enable full scanning on all volumes | Move the *Map & Classify All* slider to the right
-| Disable scanning on a volume | Click *Off*
-| Disable scanning on all volumes | Move the *Map & Classify All* slider to the left
+| Enable mapping-only scans on a volume | In the volume area, click *Map*
+| Enable full scanning on a volume | In the volume area, click *Map & Classify*
+| Disable scanning on a volume | In the volume area, click *Off*
+| |
+| Enable mapping-only scans on all volumes | In the heading area, click *Map*
+| Enable full scanning on all volumes | In the heading area, click *Map & Classify*
+| Disable scanning on all volumes | In the heading area, click *Off*
 
 |===
 
-NOTE: New volumes added to the working environment are automatically scanned only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to activate scanning on each new volume you create in the working environment.
+NOTE: New volumes added to the working environment are automatically scanned only when you have set the *Map* or *Map & Classify* setting in the heading area. When set to *Custom* or *Off* in the heading area, you'll need to activate mapping and/or full scanning on each new volume you add in the working environment.
