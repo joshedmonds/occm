@@ -63,7 +63,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
-* Box ^1,2^
+* Box ^2,3^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -105,7 +105,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * SMB server
 * StorageGRID
 
-| Box ^1^ a|
+| Box ^2^ a|
 
 * Amazon S3
 * IBM Cloud Object Storage
@@ -169,7 +169,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
-* Box ^1,2^
+* Box ^2,3^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -244,7 +244,7 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
-* Box ^1,2^
+* Box ^2,3^
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
 * Google Cloud Storage
@@ -260,6 +260,8 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 Notes:
 
 . Sync relationships with this source/target are supported by using the Cloud Sync API only.
+
+. Box support is available as a preview.
 
 . When you create a sync relationship from Amazon S3 to Box, you must use a data broker group that has a unified configuration where the following settings are set to 1:
 +
@@ -393,18 +395,14 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 === Box requirements
 
-Cloud Sync supports https://www.box.com/home[Box^] in a sync relationship when using the Cloud Sync API.
+To create a sync relationship that includes Box, you'll need to provide the following credentials:
 
-In order to copy from Box, you'll need to provide the following credentials:
-
-*	clientId
-*	cliendSecret
-*	publicKeyId
-*	privateKey
-*	passphrase
-*	enterpriseId
-
-link:api_sync.html[Learn more about using the API to create a sync relationship from Box].
+* Client ID
+* Client secret
+* Private key
+* Public key ID
+* Passphrase
+* Enterprise ID
 
 === [[google]]Google Cloud Storage bucket requirements
 
