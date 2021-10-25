@@ -19,7 +19,7 @@ Cloud Data Sense provides many ways for you to manage your private data. Some fu
 * You can send email alerts to Cloud Manager users when certain critical Policies return results.
 * You can add Tags to files that you want to mark for organization or for some type of follow-up.
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
-* You can move or delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
+* You can copy, move, or delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
 
 NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
 
@@ -204,6 +204,188 @@ image:screenshot_compliance_select_user_multi.png[A screenshot showing how to as
 +
 The user is added to the metadata for all selected files.
 
+== Sending email alerts when non-compliant data is found
+
+Cloud Data Sense can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
+
+You can configure this setting when creating the Policy or when editing any Policy.
+
+Follow these steps to add email updates to an existing Policy.
+
+.Steps
+
+. From the Policies List page, click *Edit* for the Policy where you want to add (or change) the email setting.
++
+image:screenshot_compliance_add_email_alert_1.png[A screenshot showing how to edit an existing Policy.]
+
+. In the Edit Policy page, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent (for example, every *Week*).
++
+image:screenshot_compliance_add_email_alert_2.png[A screenshot showing how to choose the email criterial to be sent for the Policy.]
+
+. Click *Save Policy* and the interval at which the email is sent appears in the Policy description.
+
+.Result
+
+The first email is sent now if there are any results from the Policy - but only if any files meet the Policy criteria. No personal information is sent in the notification emails. The email indicates that there are files that match the Policy criteria, and it provides a link to the Policy results.
+
+== Copying source files
+
+You can copy any source files that Data Sense is scanning. There are two types of copy operations depending on what you are trying to accomplish:
+
+* Copy files from the same, or different, volumes or data sources to a destination NFS share.
++
+This is useful if you want to make a copy of certain data and move it to a different NFS location.
+* Clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume.
++
+This is useful for situations where you're migrating data and you want to exclude certain files from the original volume. Or you might want to create a copy of a volume for testing, or to provide access to the volume for additional users without giving them access to the production data. This action uses the NetApp FlexClone functionality to quickly duplicate the volume and then remove the files that you did not select.
+
+=== Copying source files to an NFS share
+
+You can copy source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
+
+TIP: You can't copy files that reside in databases.
+
+.Requirements
+
+* You must have the Account Admin or Workspace Admin role to copy files.
+* Copying files requires that the destination NFS share allows access from the Data Sense instance.
+* You can copy a maximum of 100,000 files at a time.
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to copy.
++
+image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
+
+. From the button bar, click *Copy*.
++
+image:screenshot_compliance_copy_files_dialog.png[A screenshot showing the Copy Files dialog so you can specify the name of the NFS share where all selected files will be copied.]
+
+. In the _Copy Files_ dialog, select the *Regular Copy* tab, enter the name of the NFS share where all selected files will be copied in the format `<host_name>:/<share_path>`, and click *Copy*.
++
+A dialog appears with the status of the copy operation.
+
+Note that you can also copy an individual file when viewing the metadata details for a file. Just click *Copy File*.
+
+image:screenshot_compliance_copy_file.png[A screenshot showing selection of the Copy File button from the metadata details for a file in the Data Investigation page.]
+
+=== Cloning volume data to a new volume
+
+You can clone an existing ONTAP volume that Data Sense is scanning using NetApp _FlexClone_ functionality. This allows you to quickly duplicate the volume while including only those files you selected. This is useful if you're migrating data and you want to exclude certain files from the original volume, or if you want to create a copy of a volume for testing.
+
+The new volume is created in the same aggregate as the source volume. Ensure that you have enough space for this new volume in the aggregate before you start this task. Contact your storage administrator if necessary.
+
+*Note:* FlexGroup volumes can't be cloned because they are not supported by FlexClone.
+
+.Requirements
+
+* You must have the Account Admin or Workspace Admin role to copy files.
+* All selected files must be from the same volume, and the volume must be online.
+* The volume must be from a Cloud Volumes ONTAP or on-premises ONTAP system. No other data sources are currently supported.
+* The FlexClone license must be installed on the cluster. This license is installed by default on Cloud Volumes ONTAP systems.
+
+.Steps
+
+. In the Data Investigation results pane, create a filter using the *Storage Repository* option to make sure all the files are from the same volume. Apply any other filters so that you are seeing only the files that you want to clone to the new volume.
+
+. Select the files that you want to copy.
++
+image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
+
+. From the button bar, click *Copy*.
++
+image:screenshot_compliance_clone_files_dialog.png[A screenshot showing the Copy Files dialog so you can specify the name of the new volume that will be cloned from the source volume.]
+
+. In the _Copy Files_ dialog, select the *FlexClone* tab. This page shows the total number of files that will be cloned from the volume (the files you selected), and the number of files that are not included/deleted (the files you didn't select) from the cloned volume.
+
+. Enter the name of the new volume, and click *FlexClone*.
++
+A dialog appears with the status of the clone operation.
+
+.Result
+
+The new volume is created in the same aggregate as the source volume.
+
+If you initially selected *Map all volumes* or *Map & Classify all volumes* when you enabled Data Sense for the working environment where the source volume resides, then Data Sense will scan the new cloned volume automatically. If you didn't use either of these selections initially, then if you want to scan this new volume, you'll need to link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[enable scanning on the volume manually].
+
+== Moving source files to an NFS share
+
+You can move source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
+
+TIP: You can't move files that reside in databases or files that reside in volume Backups.
+
+.Requirements
+
+You must have the Account Admin or Workspace Admin role to move files.
+
+Moving files requires that the NFS share allows access from the Data Sense instance.
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to move.
++
+image:screenshot_compliance_move_multi_files.png["A screenshot showing how to select the files to move, and the Move button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
+
+. From the button bar, click *Move*.
++
+image:screenshot_compliance_move_files_dialog.png[A screenshot showing the Move Files dialog so you can specify the name of the NFS share where all selected files will be moved.]
+
+. In the _Move Files_ dialog, enter the name of the NFS share where all selected files will be moved in the format `<host_name>:/<share_path>`, and click *Move Files*.
+
+Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move File*.
+
+image:screenshot_compliance_move_file.png[A screenshot showing selection of the Move File button from the metadata details for a file in the Data Investigation page.]
+
+== Deleting source files
+
+You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo.
+
+TIP: You can't delete files that reside in databases or files that reside in volume Backups.
+
+.Requirements
+
+You must have the Account Admin or Workspace Admin role to delete files.
+
+Deleting files requires the following permissions:
+
+*	For NFS data – the export policy needs to be defined with write permissions.
+*	For CIFS data – the CIFS credentials need to have write permissions.
+*	For S3 data - the IAM role must include the following permission: `s3:DeleteObject`.
+
+.Steps
+
+. In the Data Investigation results pane, select the file, or files, that you want to delete.
++
+image:screenshot_compliance_delete_multi_files.png["A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
+
+. From the button bar, click *Delete*.
+
+. Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
+
+Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete file*.
+
+image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
+
 == Categorizing your data using AIP labels
 
 You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. AIP enables you to classify and protect documents and files by applying labels to content. Data Sense enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
@@ -338,184 +520,6 @@ Note that no changes are made to the labels you have added using Data Sense. The
 image:screenshot_compliance_un_integrate_aip_labels.png[A screenshot showing how to remove AIP integrations with Cloud Data Sense.]
 
 . Click *Remove Integration* from the confirmation dialog.
-
-== Sending email alerts when non-compliant data is found
-
-Cloud Data Sense can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
-
-You can configure this setting when creating the Policy or when editing any Policy.
-
-Follow these steps to add email updates to an existing Policy.
-
-.Steps
-
-. From the Policies List page, click *Edit* for the Policy where you want to add (or change) the email setting.
-+
-image:screenshot_compliance_add_email_alert_1.png[A screenshot showing how to edit an existing Policy.]
-
-. In the Edit Policy page, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent (for example, every *Week*).
-+
-image:screenshot_compliance_add_email_alert_2.png[A screenshot showing how to choose the email criterial to be sent for the Policy.]
-
-. Click *Save Policy* and the interval at which the email is sent appears in the Policy description.
-
-.Result
-
-The first email is sent now if there are any results from the Policy - but only if any files meet the Policy criteria. No personal information is sent in the notification emails. The email indicates that there are files that match the Policy criteria, and it provides a link to the Policy results.
-
-== Copying source files
-
-You can copy any source files that Data Sense is scanning. There are two types of copy operations depending on what you are trying to accomplish:
-
-* Copy files from the same, or different, volumes or data sources to a destination NFS share.
-+
-This is useful if you want to make a copy of certain data and move it to a different NFS location.
-* Clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume.
-+
-This is useful for situations where you're migrating data but you want to exclude certain files from the original volume. Or you might want to create a copy of a volume for testing, or to provide access to the volume for additional users without giving them access to the production data. This action uses the NetApp FlexClone functionality to quickly duplicate the volume and then remove the files that you did not select.
-
-=== Copying source files to an NFS share
-
-You can copy source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
-
-TIP: You can't copy files that reside in databases.
-
-.Requirements
-
-* You must have the Account Admin or Workspace Admin role to copy files.
-* Copying files requires that the destination NFS share allows access from the Data Sense instance.
-* You can copy a maximum of 100,000 files at a time.
-
-.Steps
-
-. In the Data Investigation results pane, select the file, or files, that you want to copy.
-+
-image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
-
-+
-* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
-* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
-* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
-
-. From the button bar, click *Copy*.
-+
-image:screenshot_compliance_copy_files_dialog.png[A screenshot showing the Copy Files dialog so you can specify the name of the NFS share where all selected files will be copied.]
-
-. In the _Copy Files_ dialog, select the *Regular Copy* tab, enter the name of the NFS share where all selected files will be copied in the format `<host_name>:/<share_path>`, and click *Copy*.
-+
-A dialog appears with the status of the copy operation.
-
-Note that you can also copy an individual file when viewing the metadata details for a file. Just click *Copy File*.
-
-image:screenshot_compliance_copy_file.png[A screenshot showing selection of the Copy File button from the metadata details for a file in the Data Investigation page.]
-
-=== Cloning volume data to a new volume
-
-You can clone an existing ONTAP volume that Data Sense is scanning using NetApp _FlexClone_ functionality. This allows you to quickly duplicate the volume while including only those files you selected. This is useful if you're migrating data but you want to exclude certain files from the original volume, or if you want to create a copy of a volume for testing.
-
-The new volume is created in the same aggregate as the source volume. Ensure that you have enough space for this new volume in the aggregate before you start this task. Contact your storage administrator if necessary.
-
-.Requirements
-
-* You must have the Account Admin or Workspace Admin role to copy files.
-* All selected files must be from the same volume, and the volume must be online.
-* The volume must be from a Cloud Volumes ONTAP or on-premises ONTAP system. No other data sources are currently supported.
-* The FlexClone license must be installed on the cluster. This license is installed by default on Cloud Volumes ONTAP systems.
-
-.Steps
-
-. In the Data Investigation results pane, create a filter using the *Storage Repository* option to make sure all the files are from the same volume. Apply any other filters so that you are seeing only the files that you want to clone to the new volume.
-
-. Select the files that you want to copy.
-+
-image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
-
-+
-* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
-* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
-* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
-
-. From the button bar, click *Copy*.
-+
-image:screenshot_compliance_clone_files_dialog.png[A screenshot showing the Copy Files dialog so you can specify the name of the new volume that will be cloned from the source volume.]
-
-. In the _Copy Files_ dialog, select the *FlexClone* tab. This page shows the total number of files that will be cloned from the volume (the files you selected), and the number of files that are not included (deleted) from the cloned volume.
-
-. Enter the name of the new volume, and click *FlexClone*.
-+
-A dialog appears with the status of the clone operation.
-
-.Result
-
-The new volume is created in the same aggregate as the source volume. If you initially selected *Activate scan for all volumes* when you enabled Data Sense for the working environment where the source volume resides, then Data Sense will scan the new cloned volume automatically. If you didn't use this selection initially, then if you want to scan this new volume, you'll need to link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[enable scanning on the volume manually].
-
-== Moving source files to an NFS share
-
-You can move source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
-
-TIP: You can't move files that reside in databases or files that reside in volume Backups.
-
-.Requirements
-
-You must have the Account Admin or Workspace Admin role to move files.
-
-Moving files requires that the NFS share allows access from the Data Sense instance.
-
-.Steps
-
-. In the Data Investigation results pane, select the file, or files, that you want to move.
-+
-image:screenshot_compliance_move_multi_files.png["A screenshot showing how to select the files to move, and the Move button, from the Data Investigation page."]
-
-+
-* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
-* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
-* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
-
-. From the button bar, click *Move*.
-+
-image:screenshot_compliance_move_files_dialog.png[A screenshot showing the Move Files dialog so you can specify the name of the NFS share where all selected files will be moved.]
-
-. In the _Move Files_ dialog, enter the name of the NFS share where all selected files will be moved in the format `<host_name>:/<share_path>`, and click *Move Files*.
-
-Note that you can also move an individual file when viewing the metadata details for a file. Just click *Move File*.
-
-image:screenshot_compliance_move_file.png[A screenshot showing selection of the Move File button from the metadata details for a file in the Data Investigation page.]
-
-== Deleting source files
-
-You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo.
-
-TIP: You can't delete files that reside in databases or files that reside in volume Backups.
-
-.Requirements
-
-You must have the Account Admin or Workspace Admin role to delete files.
-
-Deleting files requires the following permissions:
-
-*	For NFS data – the export policy needs to be defined with write permissions.
-*	For CIFS data – the CIFS credentials need to have write permissions.
-*	For S3 data - the IAM role must include the following permission: `s3:DeleteObject`
-
-.Steps
-
-. In the Data Investigation results pane, select the file, or files, that you want to delete.
-+
-image:screenshot_compliance_delete_multi_files.png["A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page."]
-
-+
-* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
-* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
-* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (235 items)*.
-
-. From the button bar, click *Delete*.
-
-. Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
-
-Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete file*.
-
-image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
 
 === List of predefined Policies
 
