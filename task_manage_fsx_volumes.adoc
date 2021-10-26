@@ -13,7 +13,7 @@ summary: After you set up your working environment, you can create and manage Am
 :imagesdir: ./media/
 
 [.lead]
-After you set up your working environment, you can create and manage FSx for ONTAP volumes, clones, and snapshots, change tiering policies, and remove or delete FSx for ONTAP.
+After you set up your working environment, you can create and manage FSx for ONTAP volumes, clones, and snapshots, and change tiering policies for FSx for ONTAP.
 
 == Create volumes
 
@@ -26,8 +26,6 @@ You can create iSCSI volumes using ONTAP CLI, ONTAP API, or Cloud Manager API an
 You need:
 
 * An active link:task_creating_connectors_aws.html[Connector in AWS].
-
-NOTE: You do not need a Connector in AWS to remove or delete a working environment.
 
 * If you want to use SMB, you must have set up DNS and Active Directory.
 

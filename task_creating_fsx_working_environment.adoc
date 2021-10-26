@@ -13,7 +13,7 @@ summary: Cloud Manager enables you to create an FSx for ONTAP working environmen
 :imagesdir: ./media/
 
 [.lead]
-Using Cloud Manager you can create and manage FSx for ONTAP working environments, add and manage volumes, and manage additional data services.
+Using Cloud Manager you can create and manage FSx for ONTAP working environments to add and manage volumes and additional data services.
 
 == Create an Amazon FSx for ONTAP working environment
 
@@ -139,7 +139,9 @@ You can delete the FSx for ONTAP from Cloud Manager.
 
 .Before you begin
 
-* You must delete all volumes associated with the file system.
+* You must link:task_manage_fsx_volumes.html#delete-volumes[delete all volumes] associated with the file system.
+
+NOTE: You will need an active Connector in AWS to remove or delete volumes.
 
 * You cannot delete a working environment that contains failed volumes. Failed volumes must be deleted using the AWS Management Console or CLI prior to deleting FSx for ONTAP files system.
 

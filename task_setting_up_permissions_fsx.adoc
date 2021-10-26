@@ -79,10 +79,10 @@ image:screenshot_fsx_console_policy_edit.png[Screenshot of selecting a policy to
 
 After creating or editing a policy to enable FSx for ONTAP, attach it to an IAM user group or directly to a specific IAM user.
 
-For detailed insrcutions on creating and managing AWS users and groups, see:
+For detailed instructions on creating and managing AWS users and groups, see:
 
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html[Creating an IAM user in your AWS account^]
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html[Creating IAM user groups^]
+* AWS docs: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html[Creating an IAM user in your AWS account^]
+* AWS docs: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html[Creating IAM user groups^]
 
 
 == Related links
