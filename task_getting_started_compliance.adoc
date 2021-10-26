@@ -75,7 +75,7 @@ Cloud Data Sense can be deployed in the cloud or in an on-premises location when
 
 You can enable Cloud Data Sense on Cloud Volumes ONTAP systems (in AWS, Azure, and GCP) and on on-premises ONTAP clusters.
 
-NOTE: Following these steps for on-prem ONTAP systems scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can scan the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> for details.
+NOTE: Following these steps for on-prem ONTAP clusters scans the volumes directly on the on-prem ONTAP system. If you are already creating backup files from those on-prem systems using link:concept_backup_to_cloud.html[Cloud Backup^], you can scan the backup files in the cloud instead. Go to <<Scanning backup files from on-premises ONTAP systems,Scanning backup files from on-premises ONTAP systems>> for details.
 
 . At the top of Cloud Manager, click *Data Sense* and then select the *Configuration* tab.
 +
@@ -160,9 +160,9 @@ NOTE: New volumes added to the working environment are automatically scanned onl
 
 == Scanning backup files from on-premises ONTAP systems
 
-If you don't want Cloud Data Sense to scan volumes directly on your on-prem ONTAP systems, a Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this feature to run compliance scans on those backup files.
+If you don't want Cloud Data Sense to scan volumes directly on your on-prem ONTAP systems, a Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files to the cloud using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this feature to run compliance scans on those backup files.
 
-The Compliance scans you run on backup files are *free* - no Cloud Data Sense subscription or license is needed.
+When scanning backup files created from your on-prem ONTAP systems, the scanned data does not count against the capacity purchased in your PAYGO subscription or BYOL license.
 
 *Note:* When Data Sense scans backup files it uses permissions granted through the Cloud Restore instance to access the backup files. Typically the Restore instance powers down when not actively restoring files, but it remains *On* when scanning backup files. See link:task_restore_backups.html#file-restore-process[more information about the Restore instance^].
 
