@@ -21,8 +21,17 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.12 (31 Oct 2021)
 
+* <<Cloud Volumes ONTAP enhancement>>
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
+* <<Connector enhancements>>
+* <<Credentials enhancement>>
+
+=== Cloud Volumes ONTAP enhancement
+
+You can now disable S3 accelerated downloads of software updates for Cloud Volumes ONTAP in Google Cloud, which can resolve an issue where the Connector failed to download software updates when using a NAT Gateway in Google Cloud.
+
+Learn how to disable S3 accelerated downloads in Google Cloud (link coming soon).
 
 === Amazon FSx for ONTAP enhancements
 
@@ -40,6 +49,20 @@ Box can be the source or target in several types of sync relationships. link:ref
 * When an SMB server is the source, a new sync relationship setting called _Date Created_ enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
 +
 link:task_sync_managing_relationships.html[Learn more about Cloud Sync settings].
+
+=== Connector enhancements
+
+*	When you create a new Connector in Microsoft Azure, you can now authenticate with an Azure service principal, rather than with Azure account credentials.
++
+Learn how to authenticate with an Azure service principal (link coming soon).
+
+*	You can now install the Connector in an on-premises site that doesn't have internet access, and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense. Learn more in the Cloud Data Sense section below (link coming soon).
++
+Note that the installation must be completed by using a new on-prem Connector installer that's specifically for sites that don't have internet.
+
+=== Credentials enhancement
+
+We redesigned the Credentials page for ease of use and to match the current look and feel of the Cloud Manager interface.
 
 == Cloud Manager 3.9.11 (4 Oct 2021)
 
