@@ -314,7 +314,7 @@ A dialog appears with the status of the clone operation.
 
 .Result
 
-The new volume is created in the same aggregate as the source volume.
+The new, cloned volume is created in the same aggregate as the source volume.
 
 If you initially selected *Map all volumes* or *Map & Classify all volumes* when you enabled Data Sense for the working environment where the source volume resides, then Data Sense will scan the new cloned volume automatically. If you didn't use either of these selections initially, then if you want to scan this new volume, you'll need to link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[enable scanning on the volume manually].
 
