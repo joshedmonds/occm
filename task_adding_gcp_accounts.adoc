@@ -25,11 +25,9 @@ At any time, you can change the Marketplace subscription that's associated with 
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
-. Hover over a set of credentials and click the action menu.
-
-. From the menu, click *Associate Subscription*.
+. Click the action menu for a set of credentials and then select *Associate Subscription*.
 +
-image:screenshot_gcp_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to GCP credentials from the menu.]
+image:screenshot_gcp_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
 . Select a Google Cloud project and subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
 +
