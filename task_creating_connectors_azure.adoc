@@ -15,13 +15,26 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 [.lead]
 An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept_connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-This page describes how to create a Connector in Azure directly from Cloud Manager. You also have the option to link:task_launching_azure_mktp.html[create the Connector from the Azure Marketplace], or to link:task_installing_linux.html[download the software and install it on your own host].
+This page describes how to create a Connector in Azure directly from the Cloud Manager user interface. You also have the option to link:task_launching_azure_mktp.html[create the Connector from the Azure Marketplace], or to link:task_installing_linux.html[download the software and install it on your own host].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
 TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
-== Setting up Azure permissions to create a Connector
+== Overview
+
+To deploy a Connector, you need to provide Cloud Manager with a login that has the required permissions to create the Connector VM in Azure.
+
+You have two options:
+
+. Sign in with your Microsoft account when prompted. This account must have specific Azure permissions. This is the default option.
+. Provide details about an Azure AD service principal. This service principal also requires specific permissions.
+
+== Create a Connector using your Azure account
+
+The default way to create a Connector in Azure is by logging in with your Azure account when prompted. The login form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
+
+=== Set up permissions for your Azure account
 
 Before you can deploy a Connector from Cloud Manager, you need to ensure that your Azure account has the correct permissions.
 
@@ -80,13 +93,11 @@ NOTE: Azure SetupAsService is the default name provided in the https://mysupport
 
 The Azure user now has the permissions required to deploy the Connector from Cloud Manager.
 
-== Creating a Connector in Azure
+== Create the Connector by logging in to your Azure account
 
 Cloud Manager enables you to create a Connector in Azure directly from its user interface.
 
 .What you'll need
-
-* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Azure account.
 
 * An Azure subscription.
 
@@ -94,7 +105,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 * If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[using this policy^].
 +
-These permissions are for the Connector instance. It's a different set of permissions than what's provided in the first bullet above.
+These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
 
 .Steps
 
@@ -110,13 +121,231 @@ link:reference_networking_cloud_manager.html[Learn more about networking require
 
 . Follow the steps in the wizard to create the Connector:
 
-* *Get Ready*: Review what you'll need.
+* *Get Ready*: Review what you'll need and click *Next*.
 
 * If you're prompted, log in to your Microsoft account, which should have the required permissions to create the virtual machine.
 +
 The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
 +
 TIP: If you're already logged in to an Azure account, then Cloud Manager will automatically use that account. If you have multiple accounts, then you might need to log out first to ensure that you're using the right account.
+
+* *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
+
+* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[the required permissions^].
++
+Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
+
+* *Network*: Choose a VNet and subnet, whether to enable a public IP address, and optionally specify a proxy configuration.
+
+* *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
++
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+
+* *Review*: Review your selections to verify that your set up is correct.
+
+. Click *Add*.
++
+The virtual machine should be ready in about 7 minutes. You should stay on the page until the process is complete.
+
+.After you finish
+
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task_setting_up_cloud_central_accounts.html#associating-connectors-with-workspaces[Learn more].
+
+== Create a Connector using a service principal
+
+Rather than logging in with you Azure account, you also have the option to provide Cloud Manager with the credentials for an Azure service principal that has the required permissions.
+
+=== Granting Azure permissions using a service principal
+
+Grant the required permissions to deploy a Connector in Azure by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
+
+.Steps
+
+. <<Create an Azure Active Directory application>>.
+
+. <<Assign the application to a role>>.
+
+. <<Add Windows Azure Service Management API permissions>>.
+
+. <<Get the application ID and directory ID>>.
+
+. <<Create a client secret>>.
+
+==== Create an Azure Active Directory application
+
+Create an Azure Active Directory (AD) application and service principal that Cloud Manager can use to deploy the Connector.
+
+.Before you begin
+
+You must have the right permissions in Azure to create an Active Directory application and to assign the application to a role. For details, refer to https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/[Microsoft Azure Documentation: Required permissions^].
+
+.Steps
+. From the Azure portal, open the *Azure Active Directory* service.
++
+image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
+
+. In the menu, click *App registrations*.
+
+. Click *New registration*.
+
+. Specify details about the application:
+
+* *Name*: Enter a name for the application.
+* *Account type*: Select an account type (any will work with Cloud Manager).
+* *Redirect URI*: You can leave this field blank.
+
+. Click *Register*.
+
+.Result
+
+You've created the AD application and service principal.
+
+==== Assign the application to a role
+
+You must bind the service principal to the Azure subscription in which you plan to deploy the Connector and assign it the custom "Azure SetupAsService" role.
+
+.Steps
+
+. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure]^].
++
+TIP: Right-click the link and click *Save link as...* to download the file.
+
+. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
+
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+
++
+You should now have a custom role called _Azure SetupAsService_.
+
+. Assign the application to the role:
+
+.. From the Azure portal, open the *Subscriptions* service.
+
+.. Select the subscription.
+
+.. Click *Access control (IAM) > Add > Add role assignment*.
+
+.. Select the *Cloud Manager Operator* role.
+
+.. Keep *Azure AD user, group, or service principal* selected.
+
+.. Search for the name of the application (you can't find it in the list by scrolling).
++
+Here's an example:
++
+image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Add role assignment form in the Azure portal.]
+
+.. Select the application and click *Save*.
++
+The service principal now has the required Azure permissions to deploy the Connector.
+
+==== Add Windows Azure Service Management API permissions
+
+The service principal must have "Windows Azure Service Management API" permissions.
+
+.Steps
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Click *API permissions > Add a permission*.
+
+. Under *Microsoft APIs*, select *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal that shows the Azure Service Management API permissions.]
+
+. Click *Access Azure Service Management as organization users* and then click *Add permissions*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
+
+[[ids]]
+==== Get the application ID and directory ID
+
+When you create the Connector from Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
+
+.Steps
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
++
+image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
+
+==== Create a client secret
+
+You need to create a client secret and then provide Cloud Manager with the value of the secret so Cloud Manager can use it to authenticate with Azure AD.
+
+.Steps
+
+. Open the *Azure Active Directory* service.
+
+. Click *App registrations* and select your application.
+
+. Click *Certificates & secrets > New client secret*.
+
+. Provide a description of the secret and a duration.
+
+. Click *Add*.
+
+. Copy the value of the client secret.
++
+image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
+
+.Result
+
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you create the Connector.
+
+=== Create the Connector by logging in with the service principal
+
+Cloud Manager enables you to create a Connector in Azure directly from its user interface.
+
+.What you'll need
+
+* An Azure subscription.
+
+* A VNet and subnet in your Azure region of choice.
+
+* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[using this policy^].
++
+These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
+
+.Steps
+
+. If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
++
+image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
+
+. Choose *Microsoft Azure* as your cloud provider.
++
+Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
++
+link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
+
+. Follow the steps in the wizard to create the Connector:
+
+* *Get Ready*: Click *Azure AD service principal* and enter information about the Azure Active Directory service principal that grants the required permissions:
++
+* Application (client) ID: See <<Get the application ID and directory ID>>.
+* Directory (tenant) ID: See <<Get the application ID and directory ID>>.
+* Client Secret: See <<Create a client secret>>.
 
 * *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 
