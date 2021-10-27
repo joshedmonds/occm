@@ -28,6 +28,7 @@ Backup features:
 * Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
 * Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
+* You can use your own customer-managed keys for data encryption instead of using the default encryption keys from your cloud provider.
 * Support for up to 4,000 backups of a single volume.
 
 Restore features:
@@ -313,7 +314,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Cloud Backup and then enable it again.
 
-* ILM (tiering) from the object storage, or direct write to AWS Glacier or similar lower tier object storage, is not supported.
+* The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
 * SVM-DR and SM-BC configurations are not supported.
 
@@ -327,4 +328,6 @@ There are certain things you need to be aware of when the volume you are backing
 
 * The file being restored must be using the same language as the language on the destination volume. You will receive an error message if the languages are not the same.
 
-* Single file restore is not supported when using the same account with different Cloud Managers in different subnets.
+* File level restore is not supported when using the same account with different Cloud Managers in different subnets.
+
+*	File level restore is not supported from backup files that reside in archival storage.

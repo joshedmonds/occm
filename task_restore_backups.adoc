@@ -120,7 +120,7 @@ If you only need to restore a few files from a volume, you can choose to restore
 
 All the files are restored to the same destination volume that you choose. If you want to restore files to different volumes, you need run the restore process a second time.
 
-TIP: You can't restore individual files if the backup file resides in archival storage (available starting with ONTAP 9.10.1). You can either restore files from a backup file that has not been archived, or you can restore the entire volume from the archived backup.
+TIP: You can't restore individual files if the backup file resides in archival storage (available starting with ONTAP 9.10.1). In this case, you can either restore files from a backup file that has not been archived, or you can restore the entire volume from the archived backup.
 
 === Prerequisites
 
