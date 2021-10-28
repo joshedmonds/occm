@@ -67,9 +67,9 @@ Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cl
 
 == Deploying the Cloud Data Sense instance
 
-link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
+Deploy Cloud Data Sense if there isn't already an instance deployed.
 
-Cloud Data Sense can be deployed in the cloud or in an on-premises location when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
+You can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or in an link:task-deploy-compliance-onprem.html[on-premises location^] when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
 
 == Enabling Cloud Data Sense in your working environments
 

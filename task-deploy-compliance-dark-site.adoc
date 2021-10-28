@@ -15,6 +15,13 @@ summary: Complete a few steps to deploy Cloud Data Sense on a host in a dark sit
 [.lead]
 Complete a few steps to deploy Cloud Data Sense on a host in a dark site.
 
+When installed in a dark site, Data Sense can only scan data from data sources that are also local to the dark site. At this time this includes: 
+
+* On-premises ONTAP systems
+* Non-NetApp NFS or CIFS file shares
+* Database schemas
+* Object Storage that uses the Simple Storage Service (S3) protocol
+
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
@@ -22,7 +29,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector installed at your dark site, link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network.
+If you don't already have a Connector installed at your dark site, link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your dark site.
 
 ==== image:number2.png[Number 2] Review prerequisites
 
