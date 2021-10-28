@@ -67,7 +67,7 @@ When you restore a volume from a backup file, Cloud Manager creates a _new_ volu
 
 If the backup file for the volume that you want to restore resides in archival storage (available for AWS and Azure starting with ONTAP 9.10.1), the restore operation will take a longer amount of time and will cost more. Additionally, the destination cluster must also be running ONTAP 9.10.1 or greater.
 link:reference-azure-backup-tiers.html[Learn more about restoring from Azure archival storage].
-link:reference-aws-backup-tiers.html[Learn more about restoring from S3 archival storage].
+link:reference-aws-backup-tiers.html[Learn more about restoring from AWS archival storage].
 
 Before you start, you should know the name of the volume you want to restore and the date of the backup file you want to use to create the newly restored volume.
 
@@ -106,7 +106,7 @@ You can select the Aggregate that the volume will use for its' capacity only whe
 +
 And if you are restoring the volume from a backup file that resides in an archival storage tier (available starting with ONTAP 9.10.1), then you can select the Restore Priority.
 link:reference-azure-backup-tiers.html[Learn more about restoring from Azure archival storage].
-link:reference-aws-backup-tiers.html[Learn more about restoring from S3 archival storage].
+link:reference-aws-backup-tiers.html[Learn more about restoring from AWS archival storage].
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 

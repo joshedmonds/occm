@@ -53,7 +53,7 @@ image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud
 +
 If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure for your cloud storage, you also have the option to enable or disable tiering of backups to archival storage after a certain number of days.
 link:reference-azure-backup-tiers.html[Learn more about using Azure archival storage].
-link:reference-aws-backup-tiers.html[Learn more about using S3 archival storage].
+link:reference-aws-backup-tiers.html[Learn more about using AWS archival storage].
 +
 image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tiering to archival storage settings for Cloud Backup.]
 +

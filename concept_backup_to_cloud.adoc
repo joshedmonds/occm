@@ -218,11 +218,11 @@ There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cl
 
 * In AWS, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 +
-If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization.
+If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about AWS archival storage].
 
 * In Azure, backups are associated with the _Cool_ access tier.
 +
-If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization.
+If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization. link:reference-azure-backup-tiers.html[Learn more about Azure archival storage].
 
 * In GCP, backups are associated with the _Standard_ storage class by default.
 +
