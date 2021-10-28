@@ -395,7 +395,13 @@ sidebar:
         - title: Get started
           entries:
             - title: Deploy Cloud Data Sense
-              url: /task_deploy_cloud_compliance.html
+              entries:
+                - title: Deploy Data Sense in the cloud
+                  url: /task_deploy_cloud_compliance.html
+                - title: Deploy Data Sense on your premises
+                  url: /task-deploy-compliance-onprem.html
+                - title: Deploy Data Sense in a dark site
+                  url: /task-deploy-compliance-dark-site.html
             - title: Activate scanning on your data sources
               entries:
                 - title: Cloud Volumes ONTAP and on-prem ONTAP

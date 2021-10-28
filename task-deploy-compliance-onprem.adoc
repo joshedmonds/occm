@@ -1,0 +1,302 @@
+---
+sidebar: sidebar
+permalink: task-deploy-compliance-onprem.html
+keywords: cloud compliance, data sense, get started, deploy cloud data sense, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
+summary: Complete a few steps to deploy Cloud Data Sense on an on-premises system.
+---
+
+= Deploy Cloud Data Sense on your premises
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to deploy Cloud Data Sense on an on-premises system.
+
+Note that you can also link:task_deploy_cloud_compliance.html[deploy Data Sense in the cloud].
+
+The on-prem installation may be a good option if you prefer to scan on-premises ONTAP systems using a Data Sense instance that's also located on premises -- but this is not a requirement. The software functions exactly the same way regardless of which installation method you choose.
+
+== Quick start
+
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Create a Connector
+
+[role="quick-margin-para"]
+If you don't already have a Connector, create a Connector in AWS, Azure or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
+
+[role="quick-margin-para"]
+You can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud.
+
+==== image:number2.png[Number 2] Review prerequisites
+
+[role="quick-margin-para"]
+Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+
+[role="quick-margin-para"]
+You also need a Linux system that meets the <<Host requirements,following requirements>>.
+
+==== image:number3.png[Number 3] Deploy Cloud Data Sense
+
+[role="quick-margin-para"]
+Launch the installation wizard to deploy the Cloud Data Sense instance.
+
+==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
+
+[role="quick-margin-para"]
+The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
+// The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
+
+== Creating a Connector
+
+If you don't already have a Connector, create a Connector in AWS, Azure, or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
+
+There are some scenarios where you have to use a Connector that's deployed in a specific cloud provider:
+
+* When scanning data in Cloud Volumes ONTAP in AWS, Amazon FSx for ONTAP, or in AWS S3 buckets, you use a connector in AWS.
+* When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
+* When scanning data in Cloud Volumes ONTAP in GCP, you use a connector in GCP.
+
+On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using any of these cloud Connectors.
+
+Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
+
+As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
+
+NOTE: If you're planning on scanning Azure NetApp Files volumes, you need to make sure you're deploying in the same region as the volumes you wish to scan.
+
+== Reviewing prerequisites
+
+Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
+
+Enable outbound internet access from Cloud Data Sense::
+Cloud Data Sense requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Data Sense instance has outbound internet access to contact the following endpoints. When you deploy Data Sense in the cloud, it's located in the same subnet as the Connector.
++
+Review the endpoints in this table.
++
+*Required endpoints for On-Prem deployments:*
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+
+|
+\https://netapp-cloud-account.auth0.com
+\https://auth0.com
+
+| Communication with NetApp Cloud Central for centralized user authentication.
+
+|
+\https://support.compliance.cloudmanager.cloud.netapp.com/
+\https://hub.docker.com
+\https://auth.docker.io
+\https://registry-1.docker.io
+\https://index.docker.io/
+\https://dseasb33srnrn.cloudfront.net/
+\https://production.cloudflare.docker.com/
+
+| Provides access to software images, manifests, templates, and to send logs and metrics.
+
+| \https://support.compliance.cloudmanager.cloud.netapp.com/ | Enables NetApp to stream data from audit records.
+
+|
+\https://github.com/docker
+\https://download.docker.com
+\https://rhui3.us-west-2.aws.ce.redhat.com
+\https://github-production-release-asset-2e65be.s3.amazonaws.com
+\https://pypi.org
+\https://pypi.python.org
+\https://files.pythonhosted.org
+\http://mirror.centos.org
+\http://mirrorlist.centos.org
+\http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm
+
+| Provides prerequisite packages for installation.
+|===
+
+Ensure that Cloud Manager has the required permissions::
+Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
++
+*Note:* If you created the Connector in GCP using Cloud Manager 3.9.10 or greater, then you’re all set. If you created the Connector using an earlier version, then you’ll need to add the following permissions to the GCP service account associated with the Connector to deploy Cloud Data Sense to GCP.
++
+[source,json]
+compute.instances.addAccessConfig
+compute.subnetworks.use
+compute.subnetworks.useExternalIp
+
+Ensure that Cloud Manager can access Cloud Data Sense::
+Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
++
+This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
+
+Ensure that you can keep Cloud Data Sense running::
+The Cloud Data Sense instance needs to stay on to continuously scan your data.
+
+Ensure web browser connectivity to Cloud Data Sense::
+After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
++
+The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS, Azure, or GCP (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
+
+== Deploying Cloud Data Sense on premises
+
+For typical configurations you'll install the software on a single host system. For very large configurations where you'll be scanning petabytes of data, you can include additional hosts as _scanner nodes_ to provide additional processing power.
+
+NOTE: Cloud Data Sense is currently unable to scan S3 buckets, Azure NetApp Files, or FSx for ONTAP when the software is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Data Sense in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors^] for your different data sources.
+
+=== Host requirements
+
+* Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
+** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
+** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
+* RAM: 64 GB (swap memory must be disabled on the host)
+* CPU: 16 cores
+* Disk: 500 GB SSD
++
+Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
+
+* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
+
+*	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
+
+* Root privileges are required to install Cloud Data Sense.
+
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
+
+=== Single-host installation for typical configurations
+
+Follow these steps when installing Data Sense software on a single on-premises host.
+
+.Steps
+
+. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+
+. Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
+
+. In Cloud Manager, click *Data Sense*.
+
+. Click *Activate Cloud Data Sense*.
++
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
+
+. Click *Activate Data Sense* to start the on-prem deployment wizard.
++
+image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Data Sense on premises.]
+
+. In the _Deploy Cloud Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
++
+sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
+
+. Unzip the installer file on the host machine:
++
+`tar -xzf cc_onprem_installer.tar.gz`
+
+. When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
+
++
+[cols="50a,50",options="header"]
+|===
+| Enter parameters as prompted:
+| Enter the full command:
+
+|
+a. Paste the information you copied from step 6:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token>`
+b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
+c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
+d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
+| Alternatively, you can create the whole command in advance and enter it in the first prompt:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+|===
+
++
+Variable values:
+
+* _account_id_ = NetApp Account ID
+* _agent_id_ = Connector ID
+* _token_ = jwt user token
+* _ds_host_ = IP address or host name of the Data Sense Linux system.
+* _cm_host_ = IP address or host name of the Cloud Manager Connector system.
+* _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
+* _proxy_port_ = Port to connect to the proxy server (default 80).
+* _proxy_scheme_ = Connection scheme: https or http (default http).
+* _proxy_user_ = Authenticated user to connect to the proxy server, if basic authentication is required.
+* _proxy_password_ = Password for the user name that you specified.
+
+.Result
+
+The Cloud Data Sense installer installs packages, installs docker, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
+
+If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Data Sense tab in Cloud Manager.
+
+.What's Next
+From the Configuration page you can select the data sources that you want to scan.
+
+You can also link:task_licensing_datasense.html[set up licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
+
+=== Multi-host installation for large configurations
+
+Follow these steps when installing Data Sense software on multiple on-premises hosts.
+
+When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are call _Scanner nodes_.
+
+.Requirements
+
+* See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
+
+* The host requirements are the same for Scanner nodes as they are for Manager nodes. See <<Host requirements,Host requirements>> for details.
+
+* You must have the IP addresses of the scanner node hosts that you plan to use.
+
+* The following ports and protocols must be enabled on all hosts:
++
+[cols="15,20,55",options="header"]
+|===
+| Port
+| Protocols
+| Description
+
+|2377 | TCP | Cluster management communications
+|7946 | TCP, UDP | Inter-node communication
+|4789 | UDP | Overlay network traffic
+|50 | ESP | Encrypted IPsec overlay network (ESP) traffic
+|111 | TCP, UDP | NFS Server for sharing files between the hosts (needed from each scanner node to manager node)
+|2049 | TCP, UDP | NFS Server for sharing files between the hosts (needed from each scanner node to manager node)
+
+|===
+
+.Steps
+
+. Follow steps 1 through 7 from the <<Single-host installation for typical configurations,Single-host installation>> on the manager node.
+
+. As shown in step 8, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
++
+In addition to the variables available for a single-host installation, a new option *-n <node_ip>* is used to specify the IP addresses of the scanner nodes. Multiple node IPs are separated by a comma.
++
+For example, this command adds 3 scanner nodes:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> *-n <node_ip1>,<node_ip2>,<node_ip3>* --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+
+. Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
++
+sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212
+
+. On *each* scanner node host:
+.. Copy the Data Sense installer file (_cc_onprem_installer.tar.gz_) to the host machine (using `scp` or some other method).
+.. Unzip the installer file.
+.. Paste and execute the command that you copied in step 3.
++
+When the installation finishes on all scanner nodes and they have been joined to the manager node, the manager node installation finishes as well.
+
+.Result
+
+The Cloud Data Sense installer finishes installing packages, docker, and registers the installation. Installation can take 10 to 20 minutes.
+
+.What's Next
+From the Configuration page you can select the data sources that you want to scan.
+
+You can also link:task_licensing_datasense.html[set up licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
