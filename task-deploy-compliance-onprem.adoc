@@ -42,7 +42,7 @@ You also need a Linux system that meets the <<Host requirements,following requir
 ==== image:number3.png[Number 3] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Data Sense instance.
+Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
 
@@ -73,9 +73,7 @@ NOTE: If you're planning on scanning Azure NetApp Files volumes, you need to mak
 Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
 
 Enable outbound internet access from Cloud Data Sense::
-Cloud Data Sense requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Data Sense instance has outbound internet access to contact the following endpoints. When you deploy Data Sense in the cloud, it's located in the same subnet as the Connector.
-+
-Review the endpoints in this table.
+Cloud Data Sense requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Data Sense instance has outbound internet access to contact the following endpoints.
 +
 *Required endpoints for On-Prem deployments:*
 +

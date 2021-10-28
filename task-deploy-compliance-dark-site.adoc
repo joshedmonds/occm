@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-deploy-compliance-onprem.html
+permalink: task-deploy-compliance-dark-site.html
 keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site
 summary: Complete a few steps to deploy Cloud Data Sense on a host in a dark site.
 ---
@@ -35,7 +35,7 @@ You also need a Linux system that meets the <<Host requirements,following requir
 ==== image:number3.png[Number 3] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Data Sense instance.
+Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
 

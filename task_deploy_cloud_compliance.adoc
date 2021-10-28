@@ -24,7 +24,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector, create a Connector in AWS, Azure or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
+If you don't already have a Connector, create a Connector in AWS, Azure, or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
 
 [role="quick-margin-para"]
 You can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud.
@@ -34,7 +34,7 @@ You can also link:task_installing_linux.html[deploy the Connector on-premises^] 
 [role="quick-margin-para"]
 Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
 
-[role="quick-margin-list"]
+[role="quick-margin-para"]
 The default configuration requires 16 vCPUs for the Cloud Data Sense instance. See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[more details about the instance type^].
 
 ==== image:number3.png[Number 3] Deploy Cloud Data Sense
