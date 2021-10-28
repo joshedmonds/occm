@@ -15,7 +15,7 @@ summary: Complete a few steps to deploy Cloud Data Sense on a host in a dark sit
 [.lead]
 Complete a few steps to deploy Cloud Data Sense on a host in a dark site.
 
-When installed in a dark site, Data Sense can only scan data from data sources that are also local to the dark site. At this time this includes: 
+When installed in a dark site, Data Sense can only scan data from data sources that are also local to the dark site. At this time this includes:
 
 * On-premises ONTAP systems
 * Non-NetApp NFS or CIFS file shares
@@ -102,9 +102,9 @@ Follow these steps when installing Data Sense software on a single on-premises h
 
 .Steps
 
-. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
 
-. Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
+. Copy the installer file to the Linux host you plan to use in the dark site.
 
 . In Cloud Manager, click *Data Sense*.
 
@@ -165,7 +165,7 @@ If there is connectivity over port 8080 between the host machine and the Connect
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also link:task_licensing_datasense.html[set up BYOL licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
+You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
 
 === Multi-host installation for large configurations
 
@@ -227,4 +227,4 @@ The Cloud Data Sense installer finishes installing packages, docker, and registe
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
 
-You can also link:task_licensing_datasense.html[set up BYOL licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
+You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
