@@ -1,4 +1,5 @@
 ---
+redirect: task-install-connector-onprem-no-internet.html
 sidebar: sidebar
 permalink: reference_cloud_mgr_reqs.html
 keywords: configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space, 3306

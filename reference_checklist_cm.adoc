@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_checklist_cm.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: Use this checklist to understand what's needed to get up and running with Cloud Manager.
+summary: Use this checklist to understand what's needed to get up and running with Cloud Manager in a typical deployment where the Connector has outbound internet access.
 ---
 
 = Getting started checklist
@@ -13,7 +13,7 @@ summary: Use this checklist to understand what's needed to get up and running wi
 :imagesdir: ./media/
 
 [.lead]
-Use this checklist to understand what's needed to get up and running with Cloud Manager.
+Use this checklist to understand what's needed to get up and running with Cloud Manager in a typical deployment where the Connector has outbound internet access.
 
 A NetApp Cloud Central login::
 You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Cloud Manager and other cloud services.

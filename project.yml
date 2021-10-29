@@ -508,8 +508,6 @@ sidebar:
               url: /task_managing_connectors.html
             - title: More ways to create Connectors
               entries:
-                - title: Connector host requirements
-                  url: /reference_cloud_mgr_reqs.html
                 - title: Create from the AWS Marketplace
                   url: /task_launching_aws_mktp.html
                 - title: Create from the Azure Marketplace

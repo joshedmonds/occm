@@ -5,7 +5,7 @@ keywords: install connector, manually install connector, install connector softw
 summary: The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
 ---
 
-= Installing the Connector software on an existing Linux host
+= Install the Connector on an existing Linux host that has internet access
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,25 +13,59 @@ summary: The most common way to create a Connector is directly from Cloud Manage
 :imagesdir: ./media/
 
 [.lead]
-The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
+The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud. These steps are specific to hosts that have internet access.
+
+link:concept_connectors.html[Learn about other ways to deploy a Connector].
 
 NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
 
-.What you'll need
+== Verify host requirements
 
-* The host must meet link:reference_cloud_mgr_reqs.html[requirements for the Connector].
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
-* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
+A dedicated host is required::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
 
-* The Connector installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to these endpoints:
+CPU:: 4 cores or 4 vCPUs
 
-** \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+RAM:: 14 GB
+
+AWS EC2 instance type::
+An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge and use that instance type when you deploy the Connector directly from Cloud Manager.
+
+Azure VM size::
+An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2 and use that VM size when you deploy the Connector directly from Cloud Manager.
+
+GCP machine type::
+An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4  and use that machine type when you deploy the Connector directly from Cloud Manager.
+
+Supported operating systems::
+* CentOS 7.6
+* CentOS 7.7
+* CentOS 7.8
+* CentOS 7.9
+* Red Hat Enterprise Linux 7.6
+* Red Hat Enterprise Linux 7.7
+* Red Hat Enterprise Linux 7.8
+* Red Hat Enterprise Linux 7.9
 +
-The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
 
-* After you install the Connector, you'll need to set up permissions so Cloud Manager can manage resources and processes within your public cloud environment. See the steps below for more details.
+Hypervisor::  A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
+https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Outbound internet access::
+Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].
+
+== Install the Connector
+
+After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
 .About this task
 

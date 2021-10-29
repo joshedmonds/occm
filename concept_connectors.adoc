@@ -42,6 +42,7 @@ A Connector is supported in the following locations:
 * Microsoft Azure
 * Google Cloud
 * On your premises
+* On your premises, without internet access
 
 NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
 
@@ -64,6 +65,7 @@ An Account Admin can create a Connector in a number of ways:
 * link:task_launching_aws_mktp.html[From the AWS Marketplace]
 * link:task_launching_azure_mktp.html[From the Azure Marketplace]
 * link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]
+* link:task-install-connector-onprem-no-internet.html[By downloading and installing the software on an on-premises Linux host that doesn't have internet access]
 
 When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
@@ -120,7 +122,7 @@ link:task_managing_connectors.html#switch-between-connectors[Learn how to switch
 
 == The local user interface
 
-While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
+While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
 * link:task_configuring_proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
