@@ -514,8 +514,10 @@ sidebar:
                   url: /task_launching_aws_mktp.html
                 - title: Create from the Azure Marketplace
                   url: /task_launching_azure_mktp.html
-                - title: Manually install the software
+                - title: Manually install the Connector with internet access
                   url: /task_installing_linux.html
+                - title: Manually install the Connector on-prem without internet access
+                  url: /task-install-connector-onprem-no-internet.html
             - title: Default configuration
               url: /reference_connector_default_config.html
         - title: Manage cloud provider credentials
