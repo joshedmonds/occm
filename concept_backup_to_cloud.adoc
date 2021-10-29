@@ -195,7 +195,7 @@ image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup commun
 
 Backup copies are stored in an object store that Cloud Manager creates in your cloud account. You identify the region when you enable the service.
 
-There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: "netapp-backup-_clusteruuid_". Be sure not to delete this object store.
+There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: "netapp-backup-_clusteruuid_". Be sure not to delete this object store. Currently the relationship between a source cluster and a destination backup store is 1:1. If you wish to change the destination object store, you would have to go through the process of https://docs.netapp.com/us-en/occm/task_managing_backups.html#disabling-cloud-backup-for-a-working-environment[Disabling and Unregistering backups for that source cluster^].
 
 * In AWS, Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket.
 
