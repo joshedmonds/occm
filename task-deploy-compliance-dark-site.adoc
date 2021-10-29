@@ -5,7 +5,7 @@ keywords: cloud compliance, data sense, get started, deploy cloud data sense, we
 summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
 ---
 
-= Deploy Cloud Data Sense without internet access
+= Deploy Cloud Data Sense on premises without internet access
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-prem
 [.lead]
 Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
 
-When installed in this manner (some call this a "dark site"), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
+When installed in this manner (sometimes called a "dark site"), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
 
 * On-premises ONTAP systems
 * Non-NetApp NFS or CIFS file shares
@@ -42,7 +42,12 @@ You also need a Linux system that meets the <<Host requirements,following requir
 ==== image:number3.png[Number 3] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
-Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
+Download the Cloud Data Sense software packages (OVF and tar files) from NetApp and copy the files to the dark site location. Then deploy the	OVF template that builds the required host system, and copy the Data Sense installer file to that host.
+
+[role="quick-margin-para"]
+Activate Data Sense from the Cloud Manager UI, and then follow the prompts to deploy the Cloud Data Sense instance.
+// [role="quick-margin-para"]
+// Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
 
@@ -100,11 +105,19 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 Follow these steps when installing Data Sense software on a single on-premises host.
 
+Before you begin, mailto:ng-contact-data-sense@netapp.com[send email to NetApp get the location of the software packages].
+
 .Steps
 
-. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+. On an internet-configured system, download the Cloud Data Sense software packages (OVF and tar files) from NetApp and copy the files to the dark site location.
 
-. Copy the installer file to the Linux host you plan to use in the dark site.
+. Deploy the OVF template that builds the required host system.
+
+. Copy the Data Sense installer file to that host.
+//
+// . On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+//
+// . Copy the installer file to the Linux host you plan to use in the dark site.
 
 . In Cloud Manager, click *Data Sense*.
 
@@ -158,7 +171,7 @@ Variable values:
 
 .Result
 
-The Cloud Data Sense installer installs packages, installs docker, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
+The Cloud Data Sense installer installs packages, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
 
 If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Data Sense tab in Cloud Manager.
 
@@ -174,6 +187,8 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are call _Scanner nodes_.
 
 .Requirements
+
+* mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
 
 * See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
 
@@ -200,9 +215,9 @@ When using multiple host systems, the primary system is called the _Manager node
 
 .Steps
 
-. Follow steps 1 through 7 from the <<Single-host installation for typical configurations,Single-host installation>> on the manager node.
+. Follow steps 1 through 8 from the <<Single-host installation for typical configurations,Single-host installation>> on the manager node.
 
-. As shown in step 8, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
+. As shown in step 9, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
 +
 In addition to the variables available for a single-host installation, a new option *-n <node_ip>* is used to specify the IP addresses of the scanner nodes. Multiple node IPs are separated by a comma.
 +
@@ -222,7 +237,7 @@ When the installation finishes on all scanner nodes and they have been joined to
 
 .Result
 
-The Cloud Data Sense installer finishes installing packages, docker, and registers the installation. Installation can take 10 to 20 minutes.
+The Cloud Data Sense installer finishes installing packages, and registers the installation. Installation can take 10 to 20 minutes.
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
