@@ -27,7 +27,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 If you don't already have a Connector, create a Connector in AWS, Azure, or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
 
 [role="quick-margin-para"]
-You can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud.
+You can also link:task_installing_linux.html[deploy the Connector on-premises^] on a Linux host in your network or in the cloud.
 
 ==== image:number2.png[Number 2] Review prerequisites
 
@@ -40,7 +40,7 @@ The default configuration requires 16 vCPUs for the Cloud Data Sense instance. S
 ==== image:number3.png[Number 3] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Data Sense instance.
+Launch the installation wizard to deploy the Cloud Data Sense instance in the cloud.
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
 
@@ -60,7 +60,7 @@ There are some scenarios where you have to use a Connector that's deployed in a 
 
 On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using any of these cloud Connectors.
 
-Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
+Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on a Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
@@ -68,7 +68,7 @@ NOTE: If you're planning on scanning Azure NetApp Files volumes, you need to mak
 
 == Reviewing prerequisites
 
-Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
+Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense in the cloud.
 
 Enable outbound internet access from Cloud Data Sense::
 Cloud Data Sense requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Data Sense instance has outbound internet access to contact the following endpoints. When you deploy Data Sense in the cloud, it's located in the same subnet as the Connector.
@@ -153,7 +153,7 @@ compute.subnetworks.use
 compute.subnetworks.useExternalIp
 
 Check your vCPU limits::
-When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running. link:concept_cloud_compliance.html#the-cloud-data-sense-instance[See the required instance types].
+Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running. link:concept_cloud_compliance.html#the-cloud-data-sense-instance[See the required instance types].
 +
 See the following links for more details on vCPU limits:
 +
@@ -163,7 +163,7 @@ See the following links for more details on vCPU limits:
 +
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
-Ensure that Cloud Manager can access Cloud Data Sense::
+Ensure that the Cloud Manager Connector can access Cloud Data Sense::
 Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
 +
 This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
@@ -174,7 +174,7 @@ The Cloud Data Sense instance needs to stay on to continuously scan your data.
 Ensure web browser connectivity to Cloud Data Sense::
 After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
 +
-The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS, Azure, or GCP (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
+The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to your cloud provider (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
 
 == Deploying the Cloud Data Sense instance in the cloud
 

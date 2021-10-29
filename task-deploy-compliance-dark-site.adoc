@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-deploy-compliance-dark-site.html
 keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site
-summary: Complete a few steps to deploy Cloud Data Sense on a host in a dark site.
+summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
 ---
 
-= Deploy Cloud Data Sense in a dark site
+= Deploy Cloud Data Sense without internet access
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,9 @@ summary: Complete a few steps to deploy Cloud Data Sense on a host in a dark sit
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to deploy Cloud Data Sense on a host in a dark site.
+Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
 
-When installed in a dark site, Data Sense can only scan data from data sources that are also local to the dark site. At this time this includes:
+When installed in this manner (some call this a "dark site"), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
 
 * On-premises ONTAP systems
 * Non-NetApp NFS or CIFS file shares
@@ -29,7 +29,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector installed at your dark site, link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your dark site.
+If you don't already have a Connector installed at your on-premises site, link:task_installing_linux.html[deploy the Connector^] on a Linux host in the dark site.
 
 ==== image:number2.png[Number 2] Review prerequisites
 
@@ -51,16 +51,16 @@ The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A B
 
 == Creating a Connector
 
-If you don't already have a Connector, link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network.
+If you don't already have a Connector, link:task_installing_linux.html[deploy the Connector^] on an existing Linux host in your dark site.
 
 == Reviewing prerequisites
 
 Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
 
 Ensure that Cloud Manager has the required permissions::
-Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
+Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance.
 
-Ensure that Cloud Manager can access Cloud Data Sense::
+Ensure that the Cloud Manager Connector can access Cloud Data Sense::
 Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
 +
 This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
@@ -73,7 +73,7 @@ After Cloud Data Sense is enabled, ensure that users access the Cloud Manager in
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
 
-== Deploying Cloud Data Sense on premises
+== Deploying Cloud Data Sense on premises without internet access
 
 For typical configurations you'll install the software on a single host system. For very large configurations where you'll be scanning petabytes of data, you can include additional hosts as _scanner nodes_ to provide additional processing power.
 
@@ -88,7 +88,7 @@ For typical configurations you'll install the software on a single host system. 
 +
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
-* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
+* A Red Hat Enterprise Linux system must be registered locally with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
 
 *	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 

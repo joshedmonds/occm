@@ -398,9 +398,9 @@ sidebar:
               entries:
                 - title: Deploy Data Sense in the cloud
                   url: /task_deploy_cloud_compliance.html
-                - title: Deploy Data Sense on your premises
+                - title: Deploy Data Sense on premises
                   url: /task-deploy-compliance-onprem.html
-                - title: Deploy Data Sense in a dark site
+                - title: Deploy Data Sense without internet access
                   url: /task-deploy-compliance-dark-site.html
             - title: Activate scanning on your data sources
               entries:
