@@ -15,7 +15,7 @@ summary: You can review performance results to help you decide which workloads a
 [.lead]
 You can review performance results to help you decide which workloads are appropriate for Cloud Volumes ONTAP.
 
-== Useful Performanace Technical Reports
+== Performance technical reports
 
 * Cloud Volumes ONTAP for AWS
 +
@@ -29,6 +29,8 @@ https://www.netapp.com/us/media/tr-4671.pdf[NetApp Technical Report 4671: Perfor
 +
 https://www.netapp.com/us/media/tr-4816.pdf[NetApp Technical Report 4816: Performance Characterization of Cloud Volumes ONTAP for Google Cloud^].
 
-== CPU Performance
+== CPU performance
 
-Please note that Cloud Volumes ONTAP nodes will show as highly utilized (over 90%) from the cloud provider monitoring tools. This is because ONTAP reserves all vCPUs presented to the virtual machine so that they are available when needed. For information about how to monitor Cloud Volumes ONTAP performance, please reference https://docs.netapp.com/us-en/occm/concept_monitoring.html[Monitoring Cloud Volumes ONTAP Performnace^] or check out this https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade[NetApp knowledgebase article about how to monitor ONTAP CPU utilization using CLI^].
+Cloud Volumes ONTAP nodes show as highly utilized (over 90%) from your cloud provider's monitoring tools. This is because ONTAP reserves all vCPUs presented to the virtual machine so that they are available when needed.
+
+link:concept_monitoring.html[Learn how to monitor Cloud Volumes ONTAP performance], or check out this https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade[NetApp knowledgebase article about how to monitor ONTAP CPU utilization using the CLI^].
