@@ -79,7 +79,7 @@ Disabling S3 accelerated downloads can resolve the issue. These steps must be co
 }
 
 +
-https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call].
+https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
 
 == Removing Connectors from Cloud Manager
 
