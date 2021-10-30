@@ -15,7 +15,7 @@ summary: When you create a Cloud Volumes ONTAP system, you need to select the Az
 [.lead]
 When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials to use with that system. You also need to choose a Marketplace subscription, if you're using pay-as-you-go licensing. Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.
 
-There are two ways to manage Azure credentials in Cloud Manager.
+There are two ways to add additional Azure subscriptions and credentials in Cloud Manager.
 
 . Associate additional Azure subscriptions with the Azure managed identity.
 
@@ -277,7 +277,11 @@ You can now switch to different set of credentials from the Details and Credenti
 
 image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]
 
-== Associating an Azure Marketplace subscription to credentials
+== Manage existing credentials
+
+Manage the Azure credentials that you've already added to Cloud Manager by associating a Marketplace subscription, editing credentials, and deleting them.
+
+=== Associating an Azure Marketplace subscription to credentials
 
 After you add your Azure credentials to Cloud Manager, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
@@ -308,7 +312,7 @@ The following video starts from the context of the working environment wizard, b
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
 
-== Editing credentials
+=== Editing credentials
 
 Edit your Azure credentials in Cloud Manager by modifying the details about your Azure service credentials. For example, you might need to update the client secret if a new secret was created for the service principal application.
 
@@ -320,7 +324,7 @@ Edit your Azure credentials in Cloud Manager by modifying the details about your
 
 . Make the required changes and then click *Apply*.
 
-== Deleting credentials
+=== Deleting credentials
 
 If you no longer need a set of credentials, you can delete them from Cloud Manager. You can only delete credentials that aren't associated with a working environment.
 

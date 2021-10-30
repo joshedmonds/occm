@@ -15,6 +15,8 @@ summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, th
 [.lead]
 When you create a Cloud Volumes ONTAP system, you need to select the AWS credentials and subscription to use with that system. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 
+== Granting permissions
+
 Before you add AWS credentials to Cloud Manager, you need to provide the required permissions to that account. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 
 NOTE: When you deployed a Connector from Cloud Manager, Cloud Manager automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_aws.html[Learn about AWS credentials and permissions].
@@ -33,7 +35,7 @@ With the first two options, Cloud Manager uses the AWS Security Token Service to
 If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.
 ****
 
-== Granting permissions by providing AWS keys
+=== Granting permissions by providing AWS keys
 
 If you want to provide Cloud Manager with AWS keys for an IAM user, then you need to grant the required permissions to that user. The Cloud Manager IAM policy defines the AWS actions and resources that Cloud Manager is allowed to use.
 
@@ -54,7 +56,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 
 The account now has the required permissions. <<Adding AWS credentials to Cloud Manager,You can now add it to Cloud Manager>>.
 
-== Granting permissions by assuming IAM roles in other accounts
+=== Granting permissions by assuming IAM roles in other accounts
 
 You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
 
