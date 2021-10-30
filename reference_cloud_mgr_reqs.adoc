@@ -1,8 +1,7 @@
 ---
-redirect: occm/task-install-connector-onprem-no-internet.html
 sidebar: sidebar
 permalink: reference_cloud_mgr_reqs.html
-keywords: configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space, 3306
+keywords:
 summary: The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 ---
 
@@ -14,44 +13,4 @@ summary: The Connector software must run on a host that meets specific operating
 :imagesdir: ./media/
 
 [.lead]
-The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
-
-A dedicated host is required::
-The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
-
-CPU:: 4 cores or 4 vCPUs
-
-RAM:: 14 GB
-
-AWS EC2 instance type::
-An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge and use that instance type when you deploy the Connector directly from Cloud Manager.
-
-Azure VM size::
-An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2 and use that VM size when you deploy the Connector directly from Cloud Manager.
-
-GCP machine type::
-An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4  and use that machine type when you deploy the Connector directly from Cloud Manager.
-
-Supported operating systems::
-* CentOS 7.6
-* CentOS 7.7
-* CentOS 7.8
-* CentOS 7.9
-* Red Hat Enterprise Linux 7.6
-* Red Hat Enterprise Linux 7.7
-* Red Hat Enterprise Linux 7.8
-* Red Hat Enterprise Linux 7.9
-+
-The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
-+
-The Connector is supported on English-language versions of these operating systems.
-
-Hypervisor::  A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
-https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
-
-Disk space in /opt:: 100 GiB of space must be available
-
-Disk space in /var:: 20 GiB of space must be available
-
-Outbound internet access::
-Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].
+Hey there. We moved the contents of this page. link:task_installing_linux.html[Click here to be redirected].

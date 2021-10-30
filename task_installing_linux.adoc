@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_installing_linux.html
-keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent
+keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent, configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space
 summary: The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
 ---
 
