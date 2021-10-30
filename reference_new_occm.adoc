@@ -34,7 +34,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 You can now disable S3 accelerated downloads of software updates for Cloud Volumes ONTAP in Google Cloud, which can resolve an issue where the Connector failed to download software updates when using a NAT Gateway in Google Cloud.
 
-Learn how to disable S3 accelerated downloads in Google Cloud (link coming soon).
+link:task_managing_connectors.html#disable-s3-accelerated-downloads-in-google-cloud[Learn how to disable S3 accelerated downloads in Google Cloud].
 
 === Amazon FSx for ONTAP enhancements
 
@@ -80,13 +80,9 @@ Now you can tag your Sync relationships so you can group or categorize them for 
 
 === Connector enhancements
 
-*	When you create a new Connector in Microsoft Azure, you can now authenticate with an Azure service principal, rather than with Azure account credentials.
-+
-Learn how to authenticate with an Azure service principal (link coming soon).
+When you create a new Connector in Microsoft Azure, you can now authenticate with an Azure service principal, rather than with Azure account credentials.
 
-*	You can now install the Connector in an on-premises site that doesn't have internet access, and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense. Learn more in the Cloud Data Sense section below (link coming soon).
-+
-Note that the installation must be completed by using a new on-prem Connector installer that's specifically for sites that don't have internet.
+link:task_creating_connectors_azure.html#create-a-connector-using-a-service-principal[Learn how to authenticate with an Azure service principal].
 
 === Credentials enhancement
 
