@@ -40,8 +40,7 @@ link:task_managing_connectors.html#disable-s3-accelerated-downloads-in-google-cl
 
 * You can create iSCSI volumes for FSx for ONTAP using the Cloud Manager API and manage them in your working environment.
 
-* You can link:task_manage_fsx_volumes.html#creating-volumes[select volume units (GiB or TiB) when creating volumes]
-in FSx for ONTAP.
+* You can link:task_manage_fsx_volumes.html#creating-volumes[select volume units (GiB or TiB) when creating volumes] in FSx for ONTAP.
 
 === Cloud Sync enhancements
 
