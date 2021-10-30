@@ -13,7 +13,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 :imagesdir: ./media/
 
 [.lead]
-An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept_connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept_connectors.html[Learn when a Connector is required].
 
 This page describes how to create a Connector in Azure directly from the Cloud Manager user interface. You also have the option to link:task_launching_azure_mktp.html[create the Connector from the Azure Marketplace], or to link:task_installing_linux.html[download the software and install it on your own host].
 
@@ -28,7 +28,12 @@ To deploy a Connector, you need to provide Cloud Manager with a login that has t
 You have two options:
 
 . Sign in with your Microsoft account when prompted. This account must have specific Azure permissions. This is the default option.
++
+<<Create a Connector using your Azure account,Follow the steps below to get started>>.
+
 . Provide details about an Azure AD service principal. This service principal also requires specific permissions.
++
+<<Create a Connector using a service principal,Follow the steps below to get started>>.
 
 == Create a Connector using your Azure account
 
@@ -93,7 +98,7 @@ NOTE: Azure SetupAsService is the default name provided in the https://mysupport
 
 The Azure user now has the permissions required to deploy the Connector from Cloud Manager.
 
-== Create the Connector by logging in to your Azure account
+=== Create the Connector by logging in with your Azure account
 
 Cloud Manager enables you to create a Connector in Azure directly from its user interface.
 
@@ -206,7 +211,7 @@ You must bind the service principal to the Azure subscription in which you plan 
 
 .Steps
 
-. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure]^].
+. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure^].
 +
 TIP: Right-click the link and click *Save link as...* to download the file.
 
