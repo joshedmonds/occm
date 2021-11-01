@@ -136,7 +136,7 @@ File Size:: Choose to sync all files regardless of their size or just files that
 
 Date Modified:: Choose all files regardless of their last modified date, files modified after a specific date, before a specific date, or between a time range.
 
-Copy Access Control Lists to the target:: Choose to copy access control lists (ACLs) between source SMB shares and target SMB shares. Note that this option is only available for sync relationships created after the 23 Feb 2020 release.
+Date Created:: When an SMB server is the source, this setting enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
 
 . Click *Save Settings*.
 

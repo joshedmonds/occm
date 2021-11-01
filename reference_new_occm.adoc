@@ -19,6 +19,46 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.12 (31 Oct 2021)
+
+* <<Cloud Volumes ONTAP enhancement>>
+* <<Amazon FSx for ONTAP enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Connector enhancements>>
+* <<Credentials enhancement>>
+
+=== Cloud Volumes ONTAP enhancement
+
+You can now disable S3 accelerated downloads of software updates for Cloud Volumes ONTAP in Google Cloud, which can resolve an issue where the Connector failed to download software updates when using a NAT Gateway in Google Cloud.
+
+link:task_managing_connectors.html#disable-s3-accelerated-downloads-in-google-cloud[Learn how to disable S3 accelerated downloads in Google Cloud].
+
+=== Amazon FSx for ONTAP enhancements
+
+* You can create iSCSI volumes for FSx for ONTAP using the Cloud Manager API and manage them in your working environment.
+
+* You can link:task_manage_fsx_volumes.html#creating-volumes[select volume units (GiB or TiB) when creating volumes] in FSx for ONTAP.
+
+=== Cloud Sync enhancements
+
+* Box support is now available in the Cloud Sync user interface as a preview.
++
+Box can be the source or target in several types of sync relationships. link:reference_sync_requirements.html[View supported sync relationships].
+
+* When an SMB server is the source, a new sync relationship setting called _Date Created_ enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
++
+link:task_sync_managing_relationships.html[Learn more about Cloud Sync settings].
+
+=== Connector enhancements
+
+When you create a new Connector in Microsoft Azure, you can now authenticate with an Azure service principal, rather than with Azure account credentials.
+
+link:task_creating_connectors_azure.html#create-a-connector-using-a-service-principal[Learn how to authenticate with an Azure service principal].
+
+=== Credentials enhancement
+
+We redesigned the Credentials page for ease of use and to match the current look and feel of the Cloud Manager interface.
+
 == Cloud Manager 3.9.11 (4 Oct 2021)
 
 * <<Amazon FSx for ONTAP enhancements>>

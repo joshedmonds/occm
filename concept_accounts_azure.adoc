@@ -17,7 +17,7 @@ Cloud Manager enables you to choose the Azure credentials to use when deploying 
 
 == Initial Azure credentials
 
-When you deploy a Connector from Cloud Manager, you need to use an Azure account that has permissions to deploy the Connector virtual machine. The required permissions are listed in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure^].
+When you deploy a Connector from Cloud Manager, you need to use an Azure account or service principal that has permissions to deploy the Connector virtual machine. The required permissions are listed in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure^].
 
 When Cloud Manager deploys the Connector virtual machine in Azure, it enables a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[system-assigned managed identity^] on virtual machine, creates a custom role, and assigns it to the virtual machine. The role provides Cloud Manager with permissions to manage resources and processes within that Azure subscription. link:reference_permissions.html#what-cloud-manager-does-with-azure-permissions[Review how Cloud Manager uses the permissions].
 

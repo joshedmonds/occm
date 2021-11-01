@@ -142,6 +142,8 @@ File Size:: Choose to sync all files regardless of their size or just files that
 
 Date Modified:: Choose all files regardless of their last modified date, files modified after a specific date, before a specific date, or between a time range.
 
+Date Created:: When an SMB server is the source, this setting enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
+
 . On the *Tags/Metadata* page, choose whether to save a key-value pair as a tag on all files transferred to the S3 bucket or to assign a metadata key-value pair on all files.
 +
 image:screenshot_relationship_tags.png[A screenshot that shows the the Tags/Metadata page when creating a sync relationship to Amazon S3.]

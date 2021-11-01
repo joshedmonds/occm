@@ -44,12 +44,14 @@ Cloud Sync supports the following storage types:
 * Amazon S3
 * Azure Blob
 * Azure NetApp Files
+* Box (available as a preview)
 * Cloud Volumes Service
 * Cloud Volumes ONTAP
 * Google Cloud Storage
 * IBM Cloud Object Storage
 * On-premises ONTAP cluster
 * ONTAP S3 Storage
+* SFTP (using API only)
 * StorageGRID
 
 link:reference_sync_requirements.html[Review the supported sync relationships].
