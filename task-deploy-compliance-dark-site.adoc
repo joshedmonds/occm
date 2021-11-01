@@ -15,7 +15,7 @@ summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-prem
 [.lead]
 Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
 
-When installed in this manner (sometimes called a "dark site"), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
+When installed in this manner (sometimes called an "offline" or "dark" site), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
 
 * On-premises ONTAP systems
 * Non-NetApp NFS or CIFS file shares
@@ -34,15 +34,12 @@ If you don't already have a Connector installed at your on-premises site, link:t
 ==== image:number2.png[Number 2] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your environment can meet the prerequisites. This includes connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+Ensure that your Linux system meets the <<Verify host requirements,host requirements>> and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+
+==== image:number3.png[Number 3] Deploy Data Sense
 
 [role="quick-margin-para"]
-You also need a Linux system that meets the <<Host requirements,following requirements>>.
-
-==== image:number3.png[Number 3] Deploy Cloud Data Sense
-
-[role="quick-margin-para"]
-Download the Cloud Data Sense software packages (OVF and tar files) from NetApp and copy the files to the dark site location. Then deploy the	OVF template that builds the required host system, and copy the Data Sense installer file to that host.
+Download the Data Sense software packages (OVF and tar files) from NetApp and copy the files to the dark site location. Then deploy the	OVF template that builds the required host system, and copy the Data Sense installer file to that host.
 
 [role="quick-margin-para"]
 Activate Data Sense from the Cloud Manager UI, and then follow the prompts to deploy the Cloud Data Sense instance.
@@ -54,35 +51,13 @@ Activate Data Sense from the Cloud Manager UI, and then follow the prompts to de
 [role="quick-margin-para"]
 The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A BYOL license from NetApp is required to continue scanning data after that point.
 
-== Creating a Connector
+== Create a Connector
 
-If you don't already have a Connector, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on an existing Linux host in your dark site.
+If you don't already have a Cloud Manager Connector, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on an existing Linux host in your dark site.
 
-== Reviewing prerequisites
+== Verify host requirements
 
-Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
-
-Ensure that Cloud Manager has the required permissions::
-Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance.
-
-Ensure that the Cloud Manager Connector can access Cloud Data Sense::
-Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
-+
-This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
-
-Ensure that you can keep Cloud Data Sense running::
-The Cloud Data Sense instance needs to stay on to continuously scan your data.
-
-Ensure web browser connectivity to Cloud Data Sense::
-After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
-+
-The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
-
-== Deploying Cloud Data Sense on premises without internet access
-
-For typical configurations you'll install the software on a single host system. For very large configurations where you'll be scanning petabytes of data, you can include additional hosts as _scanner nodes_ to provide additional processing power.
-
-=== Host requirements
+Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
@@ -95,17 +70,33 @@ Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, bu
 
 * A Red Hat Enterprise Linux system must be registered locally with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
 
-*	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
+== Verify Cloud Manager and Data Sense prerequisites
 
-* Root privileges are required to install Cloud Data Sense.
+Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
 
-See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements.
+* Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance.
+* Ensure that the Cloud Manager Connector can access the Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
++
+This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
++
+Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
+* Ensure that you can keep Cloud Data Sense running. The Cloud Data Sense instance needs to stay on to continuously scan your data.
+* Ensure web browser connectivity to Cloud Data Sense. After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
++
+The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
 
-=== Single-host installation for typical configurations
+== Deploy Data Sense on a single host (typical configuration)
 
-Follow these steps when installing Data Sense software on a single on-premises host.
+For typical configurations you'll install the software on a single host system. Follow these steps when installing Data Sense software on a single on-premises host in an offline environment.
 
-Before you begin, mailto:ng-contact-data-sense@netapp.com[send email to NetApp get the location of the software packages].
+For very large configurations where you'll be scanning petabytes of data, you can include additional hosts to provide additional processing power. <<Deploy Data Sense on a multiple hosts large configurations,See those steps here>>.
+
+.What you'll need
+
+* mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
+* Verify that your Linux system meets the <<Verify host requirements,host requirements>>.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+* Make sure you have root privileges to install Data Sense.
 
 .Steps
 
@@ -146,7 +137,7 @@ sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 | Enter the full command:
 
 |
-a. Paste the information you copied from step 6:
+a. Paste the information you copied from step 7:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token>`
 b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
 c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
@@ -171,7 +162,7 @@ Variable values:
 
 .Result
 
-The Cloud Data Sense installer installs packages, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
+The Data Sense installer installs packages, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
 
 If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Data Sense tab in Cloud Manager.
 
@@ -180,22 +171,19 @@ From the Configuration page you can select the data sources that you want to sca
 
 You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] at this time. You will not be charged until the amount of data exceeds 1 TB.
 
-=== Multi-host installation for large configurations
+== Deploy Data Sense on a multiple hosts (large configurations)
 
-Follow these steps when installing Data Sense software on multiple on-premises hosts.
+For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are call _Scanner nodes_.
 
-When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are call _Scanner nodes_.
+Follow these steps when installing Data Sense software on multiple on-premises hosts in an offline environment.
 
-.Requirements
+.What you'll need
 
 * mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
-
-* See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
-
-* The host requirements are the same for Scanner nodes as they are for Manager nodes. See <<Host requirements,Host requirements>> for details.
-
+* Verify that all your Linux systems meet the <<Verify host requirements,host requirements>>.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+* Make sure you have root privileges to install Data Sense.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
-
 * The following ports and protocols must be enabled on all hosts:
 +
 [cols="15,20,55",options="header"]
@@ -215,7 +203,7 @@ When using multiple host systems, the primary system is called the _Manager node
 
 .Steps
 
-. Follow steps 1 through 8 from the <<Single-host installation for typical configurations,Single-host installation>> on the manager node.
+. Follow steps 1 through 8 from the <<Deploy Data Sense on a single host typical configuration,Single-host installation>> on the manager node.
 
 . As shown in step 9, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
 +
@@ -237,7 +225,7 @@ When the installation finishes on all scanner nodes and they have been joined to
 
 .Result
 
-The Cloud Data Sense installer finishes installing packages, and registers the installation. Installation can take 10 to 20 minutes.
+The Cloud Data Sense installer finishes installing packages, and registers the installation. Installation can take 15 to 25 minutes.
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
