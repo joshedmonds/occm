@@ -202,9 +202,7 @@ image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup commun
 
 === Where backups reside
 
-Backup copies are stored in an object store that Cloud Manager creates in your cloud account. You identify the region when you enable the service.
-
-There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: "netapp-backup-_clusteruuid_". Be sure not to delete this object store.
+Backup copies are stored in an object store that Cloud Manager creates in your cloud account. There’s one object store per cluster/working environment, and Cloud Manager names the object store as follows: "netapp-backup-clusteruuid". Be sure not to delete this object store.
 
 * In AWS, Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket.
 
@@ -213,6 +211,8 @@ There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cl
 * In GCP, Cloud Manager uses a new or existing project with a storage account for the Google Cloud Storage bucket.
 
 * In StorageGRID, Cloud Manager uses an existing storage account for the object store bucket.
+
+If you want to change the destination object store for a cluster in the future, you'll need to link:task_managing_backups.html#unregistering-cloud-backup-for-a-working-environment[unregister Cloud Backup for the working environment^], and then enable Cloud Backup using the new cloud provider information.
 
 === Supported storage classes or access tiers
 
