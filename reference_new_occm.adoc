@@ -24,7 +24,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Volumes ONTAP enhancement>>
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
-* <<Resource Tagging enhancement>>
 * <<Connector enhancements>>
 * <<Credentials enhancement>>
 
@@ -49,10 +48,6 @@ Box can be the source or target in several types of sync relationships. link:ref
 * When an SMB server is the source, a new sync relationship setting called _Date Created_ enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
 +
 link:task_sync_managing_relationships.html[Learn more about Cloud Sync settings].
-
-=== Resource Tagging enhancement
-
-Now you can tag your Sync relationships so you can group or categorize them for easy access.
 
 === Connector enhancements
 
