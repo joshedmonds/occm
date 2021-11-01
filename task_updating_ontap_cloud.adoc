@@ -33,6 +33,12 @@ TIP: A system that isn't registered for support will still receive the software 
 
 Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
 
+== Limitation in Google Cloud
+
+By default, the Connector downloads software updates for Cloud Volumes ONTAP using S3 accelerated downloads. The download can fail if your configuration uses a Google Cloud NAT gateway. The failure occurs because the download opens multiple concurrent sessions that exceed the number of available ports.
+
+link:task_managing_connectors.html[Disabling S3 accelerated downloads can resolve the issue].
+
 == Ways to upgrade Cloud Volumes ONTAP
 
 Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
