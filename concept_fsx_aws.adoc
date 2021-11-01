@@ -53,4 +53,4 @@ For technical support issues specific to Cloud Manager or micro-services within,
 
 * Cloud Manager can replicate data only from on-premises or Cloud Volumes ONTAP to FSx for ONTAP.
 
-* At this time iSCSI volumes can be created using the ONTAP CLI or ONTAP API.
+* At this time iSCSI volumes can be created using the ONTAP CLI, ONTAP API, or Cloud Manager API.
