@@ -121,15 +121,15 @@ Before you begin, mailto:ng-contact-data-sense@netapp.com[send email to NetApp g
 
 . In Cloud Manager, click *Data Sense*.
 
-. Click *Activate Cloud Data Sense*.
+. Click *Activate Data Sense*.
 +
 image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
 
-. Click *Activate Data Sense* to start the on-prem deployment wizard.
+. Click *Deploy* to start the on-prem deployment wizard.
 +
-image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Data Sense on premises.]
+image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting the button to deploy Cloud Data Sense on premises.]
 
-. In the _Deploy Cloud Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
+. In the _Deploy Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later, and click *Close*. For example:
 +
 sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
