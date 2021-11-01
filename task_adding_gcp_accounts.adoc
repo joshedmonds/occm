@@ -83,11 +83,11 @@ Sometimes, subscribing to Cloud Volumes ONTAP through the Google marketplace can
 +
 image:screenshot_gcp_manage_orders.png[A screenshot of the marketplace page post subscription.]
 
-.. *Choose the Correct Billing Account*. If the order shows a Green Check mark and this is unexpected, somebody else from the organization using the same billing account may already be subscribed. If this is unexpected or you require the details of this subscription, please contact your NetApp sales team.
+.. *Choose the correct Billing Account*. If the order shows a Green Check mark and this is unexpected, somebody else from the organization using the same billing account may already be subscribed. If this is unexpected or you require the details of this subscription, please contact your NetApp sales team.
 +
 image:screenshot_gcp_green_marketplace.png[A screenshot of an accepted entitlement.]
 
-.. *Choose the Correct Billing Account*. If the order shows a clock and *Pending* under status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
+.. *Choose the correct Billing Account*. If the order shows a clock and *Pending* under status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
 +
 image:screenshot_gcp_pending_marketplace.png[A screenshot of a pending marketplace entitlement.]
 
