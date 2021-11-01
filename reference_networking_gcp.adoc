@@ -314,15 +314,12 @@ Communication from the HA nodes to the HA mediator takes place over port 3260 (i
 
 === Using your own firewall rules with VPCs 1-3
 
-When you create an HA pair, Cloud Manager gives you the option to use predefined firewall rules or to use existing rules. If you use your own firewall rules for these VPCs and you're deploying the HA pair across multiple Google Cloud zones, then you must set up a _target tag_ for the firewall rule and then use that same value as a _label_ on the HA pair.
+When you create an HA pair, Cloud Manager gives you the option to use predefined firewall rules or to use existing rules for each VPC. If you use your own firewall rules for VPCs 1-3 and you're deploying the HA pair across multiple Google Cloud zones, then you must set up a _target tag_ for the firewall rule. If you don't set up target tags, then you'll experience an error during deployment.
 
-. Choose a value for the firewall target tag and the HA pair label.
-+
-The value can be any text string that you'd like, but it must be exactly the same for the target tag and the HA pair label.
 . When you create the firewall rules in Google Cloud, go to the *Targets* field, select *Specified target tags*, and enter the tag.
-. When you create the Cloud Volumes ONTAP HA pair in Cloud Manager, specify the value on the Details and Credentials page in the *Add Labels* field.
 +
-The value of the tag must be the same for steps 2 and 3.
+The value can be any text string that you'd like.
+
 . When you create the HA pair in Cloud Manager, select the existing firewall rules on the *Connectivity* page.
 
 == Firewall rules for the Connector
