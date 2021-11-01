@@ -15,6 +15,8 @@ summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, th
 [.lead]
 When you create a Cloud Volumes ONTAP system, you need to select the AWS credentials and subscription to use with that system. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 
+== Granting permissions
+
 Before you add AWS credentials to Cloud Manager, you need to provide the required permissions to that account. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 
 NOTE: When you deployed a Connector from Cloud Manager, Cloud Manager automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_aws.html[Learn about AWS credentials and permissions].
@@ -33,7 +35,7 @@ With the first two options, Cloud Manager uses the AWS Security Token Service to
 If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.
 ****
 
-== Granting permissions by providing AWS keys
+=== Granting permissions by providing AWS keys
 
 If you want to provide Cloud Manager with AWS keys for an IAM user, then you need to grant the required permissions to that user. The Cloud Manager IAM policy defines the AWS actions and resources that Cloud Manager is allowed to use.
 
@@ -54,7 +56,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 
 The account now has the required permissions. <<Adding AWS credentials to Cloud Manager,You can now add it to Cloud Manager>>.
 
-== Granting permissions by assuming IAM roles in other accounts
+=== Granting permissions by assuming IAM roles in other accounts
 
 You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
 
@@ -103,23 +105,23 @@ If you just created these credentials in your cloud provider, it might take a fe
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Click *Add Credentials* and select *AWS*.
+. Click *Add Credentials* and follow the steps in the wizard.
 
-. Provide AWS keys or the ARN of a trusted IAM role.
+.. *Credentials Type*: Select *Amazon Web Services*.
 
-. Confirm that the policy requirements have been met and click *Continue*.
+.. *Define Credentials*: Provide AWS keys or the ARN (Amazon Resource Name) of a trusted IAM role.
 
-. Choose the subscription that you want to associate with the credentials, or click *Add Subscription* if you don't have one yet.
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
 +
 To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or with an annual contract, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
 
-. Click *Add*.
+.. *Review*: Confirm the details about the new credentials and click *Add*.
 
 .Result
 
 You can now switch to a different set of credentials from the Details and Credentials page when creating a new working environment:
 
-image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
 == Associating an AWS subscription to credentials
 
@@ -138,12 +140,38 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
-. Hover over a set of credentials and click the action menu.
-
-. From the menu, click *Associate Subscription*.
+. Click the action menu for a set of credentials and then select *Associate Subscription*.
 +
-image:screenshot_aws_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to AWS credentials from the menu.]
+image:screenshot_associate_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
-. Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
+. Select an existing subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
 +
 video::video_subscribing_aws.mp4[width=848, height=480]
+
+== Editing credentials
+
+Edit your AWS credentials in Cloud Manager by changing the account type (AWS keys or assume role), by editing the name, or by updating the credentials themselves (the keys or the role ARN).
+
+TIP: You can't edit the credentials for an instance profile that is associated with a Connector instance.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. Click the action menu for a set of credentials and then select *Edit Credentials*.
+
+. Make the required changes and then click *Apply*.
+
+== Deleting credentials
+
+If you no longer need a set of credentials, you can delete them from Cloud Manager. You can only delete credentials that aren't associated with a working environment.
+
+TIP: You can't delete the credentials for an instance profile that is associated with a Connector instance.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. Click the action menu for a set of credentials and then select *Delete Credentials*.
+
+. Click *Delete* to confirm.

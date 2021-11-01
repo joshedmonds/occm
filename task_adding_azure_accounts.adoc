@@ -15,7 +15,49 @@ summary: When you create a Cloud Volumes ONTAP system, you need to select the Az
 [.lead]
 When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials to use with that system. You also need to choose a Marketplace subscription, if you're using pay-as-you-go licensing. Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.
 
-There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP using different Azure credentials, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
+There are two ways to add additional Azure subscriptions and credentials in Cloud Manager.
+
+. Associate additional Azure subscriptions with the Azure managed identity.
+
+. If you want to deploy Cloud Volumes ONTAP using different Azure credentials, grant Azure permissions using a service principal and add its credentials to Cloud Manager.
+
+== Associating additional Azure subscriptions with a managed identity
+
+Cloud Manager enables you to choose the Azure credentials and Azure subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
+
+.About this task
+
+A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy a Connector from Cloud Manager. When you deployed the Connector, Cloud Manager created the Cloud Manager Operator role and assigned it to the Connector virtual machine.
+
+.Steps
+
+. Log in to the Azure portal.
+
+. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP.
+
+. Click *Access control (IAM)*.
+
+.. Click *Add* > *Add role assignment* and then add the permissions:
+
+* Select the *Cloud Manager Operator* role.
++
+NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+
+* Assign access to a *Virtual Machine*.
+
+* Select the subscription in which the Connector virtual machine was created.
+
+* Select the Connector virtual machine.
+
+* Click *Save*.
+
+. Repeat these steps for additional subscriptions.
+
+.Result
+
+When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the managed identity profile.
+
+image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]
 
 == Adding additional Azure credentials to Cloud Manager
 
@@ -175,8 +217,6 @@ image:screenshot_azure_app_ids.gif[A screenshot that shows the application (clie
 
 You need to create a client secret and then provide Cloud Manager with the value of the secret so Cloud Manager can use it to authenticate with Azure AD.
 
-NOTE: When you add the account to Cloud Manager, Cloud Manager refers to the client secret as the Application Key.
-
 .Steps
 
 . Open the *Azure Active Directory* service.
@@ -215,21 +255,21 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Click *Add Credentials* and select *Microsoft Azure*.
+. Click *Add Credentials* and follow the steps in the wizard.
 
-. Enter information about the Azure Active Directory service principal that grants the required permissions:
+.. *Credentials Type*: Select *Microsoft Azure*.
+
+.. *Define Credentials*: Enter information about the Azure Active Directory service principal that grants the required permissions:
 +
 * Application (client) ID: See <<Getting the application ID and directory ID>>.
 * Directory (tenant) ID: See <<Getting the application ID and directory ID>>.
 * Client Secret: See <<Creating a client secret>>.
 
-. Confirm that the policy requirements have been met and then click *Continue*.
-
-. Choose the pay-as-you-go subscription that you want to associate with the credentials, or click *Add Subscription* if you don't have one yet.
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
 +
-To create a pay-as-you-go Cloud Volumes ONTAP system, Azure credentials must be associated with a subscription to Cloud Volumes ONTAP from the Azure Marketplace.
+To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO), these Azure credentials must be associated with a subscription from the Azure Marketplace.
 
-. Click *Add*.
+.. *Review*: Confirm the details about the new credentials and click *Add*.
 
 .Result
 
@@ -237,7 +277,11 @@ You can now switch to different set of credentials from the Details and Credenti
 
 image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]
 
-== Associating an Azure Marketplace subscription to credentials
+== Manage existing credentials
+
+Manage the Azure credentials that you've already added to Cloud Manager by associating a Marketplace subscription, editing credentials, and deleting them.
+
+=== Associating an Azure Marketplace subscription to credentials
 
 After you add your Azure credentials to Cloud Manager, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
@@ -252,13 +296,15 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 .Steps
 
+. Select an existing subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
++
+video::video_subscribing_aws.mp4[width=848, height=480]
+
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
-. Hover over a set of credentials and click the action menu.
-
-. From the menu, click *Associate Subscription*.
+. Click the action menu for a set of credentials and then select *Associate Subscription*.
 +
-image:screenshot_azure_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to Azure credentials from the menu.]
+image:screenshot_azure_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
 . Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
 +
@@ -266,40 +312,26 @@ The following video starts from the context of the working environment wizard, b
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
 
-== Associating additional Azure subscriptions with a managed identity
+=== Editing credentials
 
-Cloud Manager enables you to choose the Azure credentials and Azure subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
-
-.About this task
-
-A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy a Connector from Cloud Manager. When you deployed the Connector, Cloud Manager created the Cloud Manager Operator role and assigned it to the Connector virtual machine.
+Edit your Azure credentials in Cloud Manager by modifying the details about your Azure service credentials. For example, you might need to update the client secret if a new secret was created for the service principal application.
 
 .Steps
 
-. Log in to the Azure portal.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
-. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP.
+. Click the action menu for a set of credentials and then select *Edit Credentials*.
 
-. Click *Access control (IAM)*.
+. Make the required changes and then click *Apply*.
 
-.. Click *Add* > *Add role assignment* and then add the permissions:
+=== Deleting credentials
 
-* Select the *Cloud Manager Operator* role.
-+
-NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+If you no longer need a set of credentials, you can delete them from Cloud Manager. You can only delete credentials that aren't associated with a working environment.
 
-* Assign access to a *Virtual Machine*.
+.Steps
 
-* Select the subscription in which the Connector virtual machine was created.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
-* Select the Connector virtual machine.
+. Click the action menu for a set of credentials and then select *Delete Credentials*.
 
-* Click *Save*.
-
-. Repeat these steps for additional subscriptions.
-
-.Result
-
-When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the managed identity profile.
-
-image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]
+. Click *Delete* to confirm.
