@@ -29,7 +29,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ==== image:number1.png[Number 1] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector installed at your on-premises site, link:task_installing_linux.html[deploy the Connector^] on a Linux host in the dark site.
+If you don't already have a Connector installed at your on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host in the dark site.
 
 ==== image:number2.png[Number 2] Review prerequisites
 
@@ -56,7 +56,7 @@ The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A B
 
 == Creating a Connector
 
-If you don't already have a Connector, link:task_installing_linux.html[deploy the Connector^] on an existing Linux host in your dark site.
+If you don't already have a Connector, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on an existing Linux host in your dark site.
 
 == Reviewing prerequisites
 
