@@ -199,6 +199,8 @@ NOTE: An *Activate Backup* button appears for that working environment while bac
 
 You can unregister Cloud Backup for a working environment if you no longer want to use backup functionality and you want to stop being charged for backups in that working environment. Typically this feature is used when you're planning to delete a working environment and you want to cancel the backup service.
 
+You can also use this feature if you want to change the destination object store where your cluster backups are being stored. After you unregister Cloud Backup for the working environment, then you can enable Cloud Backup for that cluster using the new cloud provider information.
+
 Before you can unregister Cloud Backup, you must perform the following steps, in this order:
 
 * Deactivate Cloud Backup for the working environment
