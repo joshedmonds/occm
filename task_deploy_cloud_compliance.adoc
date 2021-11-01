@@ -32,7 +32,7 @@ You can also link:task_installing_linux.html[deploy the Connector on-premises^] 
 ==== image:number2.png[Number 2] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Review prerequisites,See the complete list>>.
 
 [role="quick-margin-para"]
 The default configuration requires 16 vCPUs for the Cloud Data Sense instance. See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[more details about the instance type^].
@@ -48,7 +48,7 @@ Launch the installation wizard to deploy the Cloud Data Sense instance in the cl
 The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
 // The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
 
-== Creating a Connector
+== Create a Connector
 
 If you don't already have a Connector, create a Connector in AWS, Azure, or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
 
@@ -66,7 +66,7 @@ As you can see, there may be some situations where you need to use link:concept_
 
 NOTE: If you're planning on scanning Azure NetApp Files volumes, you need to make sure you're deploying in the same region as the volumes you wish to scan.
 
-== Reviewing prerequisites
+== Review prerequisites
 
 Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense in the cloud.
 
@@ -176,7 +176,7 @@ After Cloud Data Sense is enabled, ensure that users access the Cloud Manager in
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to your cloud provider (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
 
-== Deploying the Cloud Data Sense instance in the cloud
+== Deploy Cloud Data Sense in the cloud
 
 Follow these steps to deploy an instance of Cloud Data Sense in the cloud.
 

@@ -89,7 +89,7 @@ The Data Sense instance uses a private IP address to ensure that the indexed dat
 
 For typical configurations you'll install the software on a single host system. Follow these steps when installing Data Sense software on a single on-premises host in an offline environment.
 
-For very large configurations where you'll be scanning petabytes of data, you can include additional hosts to provide additional processing power. <<Deploy Data Sense on a multiple hosts large configurations,See those steps here>>.
+For very large configurations where you'll be scanning petabytes of data, you can include additional hosts to provide additional processing power. link:task-deploy-compliance-dark-site.html#deploy-data-sense-on-a-multiple-hosts-large-configurations[See those steps here].
 
 .What you'll need
 
@@ -203,7 +203,7 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 .Steps
 
-. Follow steps 1 through 8 from the <<Deploy Data Sense on a single host typical configuration,Single-host installation>> on the manager node.
+. Follow steps 1 through 8 from the link:task-deploy-compliance-dark-site.html#deploy-data-sense-on-a-single-host-typical-configuration[Single-host installation] on the manager node.
 
 . As shown in step 9, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
 +
