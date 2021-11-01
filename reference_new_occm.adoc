@@ -24,7 +24,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Volumes ONTAP enhancement>>
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
-* <<Cloud Backup enhancements>>
 * <<Resource Tagging enhancement>>
 * <<Connector enhancements>>
 * <<Credentials enhancement>>
@@ -50,14 +49,6 @@ Box can be the source or target in several types of sync relationships. link:ref
 * When an SMB server is the source, a new sync relationship setting called _Date Created_ enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
 +
 link:task_sync_managing_relationships.html[Learn more about Cloud Sync settings].
-
-=== Cloud Backup enhancements
-
-* Now you can tier older backup files to archival storage after a certain number of days to save costs.
-+
-If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure cloud storage, you can enable tiering of backups to archival storage. See more information about link:reference-aws-backup-tiers.html[AWS S3 archival storage classes] and link:reference-azure-backup-tiers.html[Azure Blob archival access tiers].
-
-* BYOL licensing for Cloud Backup has moved from the Cloud Backup Licenses tab to the Data Services Licenses tab in the Cloud Manager Digital Wallet.
 
 === Resource Tagging enhancement
 
