@@ -25,7 +25,6 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Cloud Backup enhancements>>
-* <<Cloud Data Sense enhancements>>
 * <<Resource Tagging enhancement>>
 * <<Connector enhancements>>
 * <<Credentials enhancement>>
@@ -59,19 +58,6 @@ link:task_sync_managing_relationships.html[Learn more about Cloud Sync settings]
 If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure cloud storage, you can enable tiering of backups to archival storage. See more information about link:reference-aws-backup-tiers.html[AWS S3 archival storage classes] and link:reference-azure-backup-tiers.html[Azure Blob archival access tiers].
 
 * BYOL licensing for Cloud Backup has moved from the Cloud Backup Licenses tab to the Data Services Licenses tab in the Cloud Manager Digital Wallet.
-
-=== Cloud Data Sense enhancements
-
-* Now you can choose to scan or classify individual volumes in your working environments.
-+
-In the past you could either map all volumes or map & classify all volumes in each working environment. Now you can choose to map _or_ map & classify individual volumes. This option is available for Cloud Volumes ONTAP volumes, ANF volumes, on-prem ONTAP volumes, and FSx for ONTAP volumes.
-
-* You can copy any source files that Data Sense is scanning directly from Data Sense. There are two types of copy operations:
-+
-** Copy files from the same, or different, volumes to a destination NFS share. This is helpful if you want to make a copy of certain data and move it to a different NFS location.
-** Clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume. This is helpful for situations where you’re migrating data and you want to exclude certain files, or if you want to create a copy of a volume for testing.
-
-* Existing functionality to delete a single file or add tags to a single file is now expanded so you can delete multiple files at a time and apply the same tags to multiple files at a time.
 
 === Resource Tagging enhancement
 
