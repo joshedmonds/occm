@@ -21,17 +21,10 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.12 (31 Oct 2021)
 
-* <<Cloud Volumes ONTAP enhancement>>
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Connector enhancements>>
 * <<Credentials enhancement>>
-
-=== Cloud Volumes ONTAP enhancement
-
-You can now disable S3 accelerated downloads of software updates for Cloud Volumes ONTAP in Google Cloud, which can resolve an issue where the Connector failed to download software updates when using a NAT Gateway in Google Cloud.
-
-link:task_managing_connectors.html#disable-s3-accelerated-downloads-in-google-cloud[Learn how to disable S3 accelerated downloads in Google Cloud].
 
 === Amazon FSx for ONTAP enhancements
 
