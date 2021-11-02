@@ -321,6 +321,8 @@ When you create an HA pair, Cloud Manager gives you the option to use predefined
 The value can be any text string that you'd like.
 
 . When you create the HA pair in Cloud Manager, select the existing firewall rules on the *Connectivity* page.
++
+After the firewall rules are attached to Cloud Volumes ONTAP, the target tag is automatically added to the Cloud Volumes ONTAP nodes as _network tags_.
 
 == Firewall rules for the Connector
 
