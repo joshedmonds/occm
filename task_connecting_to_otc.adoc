@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_connecting_to_otc.html
 keywords: system manager, connecting, cli, command, command line, connect, shell, interface
-summary: If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using OnCommand System Manager or the command line interface.
+summary: If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface.
 ---
 
 = Connecting to Cloud Volumes ONTAP
@@ -12,7 +12,7 @@ summary: If you need to perform advanced management of Cloud Volumes ONTAP, you 
 :linkattrs:
 :imagesdir: ./media/
 
-If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using OnCommand System Manager or the command line interface.
+If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface.
 
 == Connecting to System Manager
 
