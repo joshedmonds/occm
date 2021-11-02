@@ -37,57 +37,61 @@ image:screenshot_gcp_associate.gif[A screenshot of a Google Cloud project and su
 
 . Click *Associate*.
 
-. Alternatively, if you do not already have a subscription, click *Add Subscription* and follow the steps to create a new subscription below.
+. If you don't already have a subscription, click *Add Subscription* and follow the steps to create a new subscription below.
 +
-NOTE: Before you complete the following steps, ensure that you have both Billing Admin in your Google Cloud account as well as a NetApp Cloud Central account.
+NOTE: Before you complete the following steps, ensure that you have both Billing Admin privileges in your Google Cloud account as well as a NetApp Cloud Central login.
 
-. A pop-up will appear outlining the subscription steps. Click *Continue* here.
+. Reivew the subscription steps and click *Continue*.
 +
 image:screenshot_gcp_sub_popup.png[A screenshot of a subscription pop-up.]
 
-. You will be redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager Google marketplace page^]. *Ensure that the correct project is selected* at the top navigation menu.
+. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
 +
 image:screenshot_gcp_cvo_marketplace.png[A screenshot of the GCP CVO marketplace page.]
 
 . Click *Subscribe*.
 
-. Select the appropriate billing account and *agree to the Terms and Conditions*.
+. Select the appropriate billing account and agree to the terms and conditions.
 +
 image:screenshot_gcp_terms_and_conditions.png[A screenshot of the GCP terms and conditions.]
 
 . Click *Subscribe*.
++
+This step sends your transfer request to NetApp.
 
-. A pop-up will appear, click *Register with NetApp inc.* to be redirected back to NetApp Cloud Central.
+. On the pop-up dialog box, click *Register with NetApp, Inc.* to be redirected to NetApp Cloud Central.
 +
 image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
 +
-NOTE: Please note that this stage will have to be completed in order to link the GCP subscription to your NetApp account. The process of linking a subscription will not be complete until you sign in to a NetApp cloud central account and are redirected from this page.
+NOTE: This step must be completed to link the GCP subscription to your Cloud Central account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to NetApp Cloud Central.
 
-. You will be redirected to: https://services.cloud.netapp.com/subscription-mapping in a new browser tab. If you are not signed in to a NetApp cloud central account already, you will be prompted to do so. If you do not have an account, you will be prompted to sign up for a new one. Please follow those steps, then click *Done* to proceed. The GCP subscription will be linked to all Cloud Central accounts that your user login is associated with.
+. After you're redirected to Cloud Central, log in to NetApp Cloud Central or sign up, and then click *Done* to proceed.
++
+The GCP subscription will be linked to all Cloud Central accounts that your user login is associated with.
 +
 image:screenshot_gcp_sub_mapping.png[A screenshot of mapping GCP subscription to NetApp cloud central account.]
 +
-NOTE: If somebody from your organization has already subscribed to the NetApp Cloud Manager subscription from your billing account, you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token= instead. If this is unexpected, please contact your NetApp sales team. Google enables only 1 subscription per Google billing account.
+NOTE: If someone from your organization has already subscribed to the NetApp Cloud Manager subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on NetApp Cloud Central^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 
-. Once this process is complete, navigate back to the credentials page and your new subscription will be available to choose.
+. Once this process is complete, navigate back to the Credentials page in Cloud Manager and select this new subscription.
 +
 image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment page.]
 
-=== Associating a Marketplace subscription with GCP credentials Troubleshooting
+=== Troubleshooting the Marketplace subscription process
 
-Sometimes, subscribing to Cloud Volumes ONTAP through the Google marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to NetApp Cloud Central. Please follow the following steps to complete the subscription process.
+Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to NetApp Cloud Central. If this happens, use the following steps to complete the subscription process.
 
 .Steps
 
-. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager Google marketplace page^] to check on the state of the Order. If the page states *Manage on Provider* on the page, scroll down and click *Manage Orders*.
+. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager page on the Google Cloud Marketplace^] to check on the state of the order. If the page states *Manage on Provider*, scroll down and click *Manage Orders*.
 +
 image:screenshot_gcp_manage_orders.png[A screenshot of the marketplace page post subscription.]
 
-.. *Choose the correct Billing Account*. If the order shows a Green Check mark and this is unexpected, somebody else from the organization using the same billing account may already be subscribed. If this is unexpected or you require the details of this subscription, please contact your NetApp sales team.
+.. If the order shows a green check mark and this is unexpected, somebody else from the organization using the same billing account might already be subscribed. If this is unexpected or you require the details of this subscription, contact your NetApp sales team.
 +
 image:screenshot_gcp_green_marketplace.png[A screenshot of an accepted entitlement.]
 
-.. *Choose the correct Billing Account*. If the order shows a clock and *Pending* under status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
+.. If the order shows a clock and *Pending* status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
 +
 image:screenshot_gcp_pending_marketplace.png[A screenshot of a pending marketplace entitlement.]
 
