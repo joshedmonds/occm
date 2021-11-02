@@ -55,6 +55,10 @@ When you create a new Connector in Microsoft Azure, you can now authenticate wit
 
 link:task_creating_connectors_azure.html#create-a-connector-using-a-service-principal[Learn how to authenticate with an Azure service principal].
 
+=== Resource Tagging enhancements
+
+Now you can tag your Sync relationships so you can group or categorize them for easy access. link:concept_tagging.html[Learn more about resource tagging].
+
 === Credentials enhancement
 
 We redesigned the Credentials page for ease of use and to match the current look and feel of the Cloud Manager interface.
