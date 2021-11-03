@@ -145,6 +145,8 @@ sidebar:
               url: /task_planning_your_config_gcp.html
             - title: Set up your networking
               url: /reference_networking_gcp.html
+            - title: Plan for VPC Service Controls
+              url: /reference_vpc_service_controls_gcp.html
             - title: Create a service account
               url: /task_creating_gcp_service_account.html
             - title: Use customer-managed encryption keys
@@ -223,7 +225,7 @@ sidebar:
               url: /task_getting_started_fsx.html
             - title: Set up permissions for FSx for ONTAP
               url: /task_setting_up_permissions_fsx.html
-            - title: Create a working environment
+            - title: Create and manage a working environment
               url: /task_creating_fsx_working_environment.html
             - title: Create and manage volumes
               url: /task_manage_fsx_volumes.html
@@ -255,10 +257,12 @@ sidebar:
       entries:
         - title: Discover ONTAP clusters
           url: /task_discovering_ontap.html
-        - title: Manage clusters using Active IQ
+        - title: Manage clusters using Active IQ data
           url: /task_managing_ontap.html
-        - title: Manage ONTAP volumes
+        - title: Manage on-prem ONTAP volumes
           url: /task_provisioning_ontap.html
+        - title: Connect to your on-prem cluster
+          url: /task_connect_to_onprem.html
         - title: Remove a working environment
           url: /task-remove-on-prem.html
     - title: Replicate ONTAP data

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_adding_gcp_accounts.html
-keywords: permissions, gcp, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
+keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
 summary: You can manage two types of Google Cloud Platform credentials from Cloud Manager the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for data tiering.
 ---
 
@@ -25,17 +25,73 @@ At any time, you can change the Marketplace subscription that's associated with 
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
-. Hover over a set of credentials and click the action menu.
-
-. From the menu, click *Associate Subscription*.
+. Click the action menu for a set of credentials and then select *Associate Subscription*.
 +
-image:screenshot_gcp_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to GCP credentials from the menu.]
+image:screenshot_gcp_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
-. Select a Google Cloud project and subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
+. Select a Google Cloud project and subscription from the down-down list.
 +
 image:screenshot_gcp_associate.gif[A screenshot of a Google Cloud project and subscription selected for Google Cloud credentials.]
 
 . Click *Associate*.
+
+. If you don't already have a subscription, click *Add Subscription* and follow the steps to create a new subscription below.
++
+NOTE: Before you complete the following steps, ensure that you have both Billing Admin privileges in your Google Cloud account as well as a NetApp Cloud Central login.
+
+. Reivew the subscription steps and click *Continue*.
++
+image:screenshot_gcp_sub_popup.png[A screenshot of a subscription pop-up.]
+
+. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
++
+image:screenshot_gcp_cvo_marketplace.png[A screenshot of the GCP CVO marketplace page.]
+
+. Click *Subscribe*.
+
+. Select the appropriate billing account and agree to the terms and conditions.
++
+image:screenshot_gcp_terms_and_conditions.png[A screenshot of the GCP terms and conditions.]
+
+. Click *Subscribe*.
++
+This step sends your transfer request to NetApp.
+
+. On the pop-up dialog box, click *Register with NetApp, Inc.* to be redirected to NetApp Cloud Central.
++
+image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
++
+NOTE: This step must be completed to link the GCP subscription to your Cloud Central account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to NetApp Cloud Central.
+
+. After you're redirected to Cloud Central, log in to NetApp Cloud Central or sign up, and then click *Done* to proceed.
++
+The GCP subscription will be linked to all Cloud Central accounts that your user login is associated with.
++
+image:screenshot_gcp_sub_mapping.png[A screenshot of mapping GCP subscription to NetApp cloud central account.]
++
+NOTE: If someone from your organization has already subscribed to the NetApp Cloud Manager subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on NetApp Cloud Central^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
+
+. Once this process is complete, navigate back to the Credentials page in Cloud Manager and select this new subscription.
++
+image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment page.]
+
+=== Troubleshooting the Marketplace subscription process
+
+Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to NetApp Cloud Central. If this happens, use the following steps to complete the subscription process.
+
+.Steps
+
+. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager page on the Google Cloud Marketplace^] to check on the state of the order. If the page states *Manage on Provider*, scroll down and click *Manage Orders*.
++
+image:screenshot_gcp_manage_orders.png[A screenshot of the marketplace page post subscription.]
+
+.. If the order shows a green check mark and this is unexpected, somebody else from the organization using the same billing account might already be subscribed. If this is unexpected or you require the details of this subscription, contact your NetApp sales team.
++
+image:screenshot_gcp_green_marketplace.png[A screenshot of an accepted entitlement.]
+
+.. If the order shows a clock and *Pending* status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
++
+image:screenshot_gcp_pending_marketplace.png[A screenshot of a pending marketplace entitlement.]
 
 == Setting up and adding GCP accounts for data tiering with Cloud Volumes ONTAP 9.6
 

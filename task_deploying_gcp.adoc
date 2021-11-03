@@ -117,7 +117,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project. Alternatively, follow the steps to subscribe located in the link:task_adding_gcp_accounts.html#associating-a-marketplace-subscription-with-gcp-credentials[Associating a Marketplace subscription with GCP credentials] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
@@ -279,7 +279,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project.  Alternatively, follow the steps to subscribe located in the link:task_adding_gcp_accounts.html#associating-a-marketplace-subscription-with-gcp-credentials[Associating a Marketplace subscription with GCP credentials] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 

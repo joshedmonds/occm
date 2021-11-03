@@ -38,7 +38,7 @@ The ability to tag your resources requires no licensing and is free to use by al
 
 You can apply tags to the following resources.
 
-[cols=3*,options="header",cols="25,35,40",width="85%"]
+[cols=3*,options="header",cols="25,30,30",width="85%"]
 
 |===
 | Provider
@@ -52,6 +52,8 @@ Volume
 Storage VM
 Volume
 | Azure NetApp Files | Volume
+
+.1+| NetApp-Service | Sync | Relationship
 
 .1+| AWS | EC2 | Instance
 Security Group
