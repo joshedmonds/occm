@@ -23,6 +23,8 @@ If you want to see all the resources that have a certain tag, or a certain tag a
 
 . Select the *AppTemplate* service and click the *Tags* tab.
 
+. If necessary, choose the credentials for a specific cloud provider in the *Select credentials* field.
+
 . In the _Resource Type_ field, select the resource, for example, *ONTAP:CVO:VOLUME* to search across all Cloud Volumes ONTAP volumes.
 
 . In the _Tag Key_ field, select the tag, for example, *Env* to restrict the search to volumes with the "Env" tag.
@@ -39,7 +41,7 @@ image:screenshot_tags_search_single_2.png[A screenshot of the tag search criteri
 +
 image:screenshot_tags_search_single_result.png[A screenshot of the results for resources that meet the tag search criteria.]
 +
-If you want to add additional search criteria, follow steps 2 through 5 again and then click *Search*.
+If you want to add additional search criteria, follow steps 3 through 6 again and then click *Search*.
 
 === Search rules
 
