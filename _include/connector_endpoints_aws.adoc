@@ -16,8 +16,6 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
 
-| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -25,7 +23,7 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
-| 
+|
 \https://cloudmanagerinfraprod.azurecr.io
 *.blob.core.windows.net
 | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
@@ -43,7 +41,6 @@ support.netapp.com:443
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
-\https://eval.lic.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
 
 | Communication with NetApp for system licensing and support registration.
@@ -51,7 +48,6 @@ support.netapp.com:443
 |
 \https://client.infra.support.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.us-west-1.amazonaws.com
-\https://trigger.asup.netapp.com.s3.us-west-1.amazonaws.com
 
 | Enables NetApp to collect information needed to troubleshoot support issues.
 
