@@ -19,7 +19,7 @@ Complete a few steps to start scanning your Cloud Volumes ONTAP and on-premises 
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Discover the data sources that contain the data you want to scan
+==== image:number1.png[Number 1] Discover the data sources that you want to scan
 
 [role="quick-margin-para"]
 Before you can scan volumes, you must add the systems as working environments in Cloud Manager:
@@ -68,6 +68,8 @@ Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cl
 == Deploying the Cloud Data Sense instance
 
 Deploy Cloud Data Sense if there isn't already an instance deployed.
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
 
 You can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or in an link:task-deploy-compliance-onprem.html[on-premises location^] when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
 
@@ -158,6 +160,35 @@ image:screenshot_volume_compliance_selection.png[A screenshot of the Configurati
 
 NOTE: New volumes added to the working environment are automatically scanned only when you have set the *Map* or *Map & Classify* setting in the heading area. When set to *Custom* or *Off* in the heading area, you'll need to activate mapping and/or full scanning on each new volume you add in the working environment.
 
+== Scanning data protection volumes
+
+By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Data Sense cannot access them. These are the destination volumes for SnapMirror operations from an on-premises ONTAP system or from a Cloud Volumes ONTAP system.
+
+Initially, the volume list identifies these volumes as _Type_ *DP* with the _Status_ *Not Scanning* and the _Required Action_ *Enable Access to DP volumes*.
+
+image:screenshot_cloud_compliance_dp_volumes.png[A screenshot showing the Enable Access to DP Volumes button that you can select to scan data protection volumes.]
+
+.Steps
+
+If you want to scan these data protection volumes:
+
+. Click *Enable Access to DP volumes* at the top of the page.
+
+. Review the confirmation message and click *Enable Access to DP volumes* again.
+- Volumes that were initially created as NFS volumes in the source ONTAP system are enabled.
+- Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. If you already entered Active Directory credentials so that Cloud Data Sense can scan CIFS volumes you can use those credentials, or you can specify a different set of Admin credentials.
++
+image:screenshot_compliance_dp_cifs_volumes.png[A screenshot of the two options for enabling CIFS data protection volumes.]
+
+. Activate each DP volume that you want to scan <<Enabling and disabling compliance scans on volumes,the same way you enabled other volumes>>.
+
+.Result
+Once enabled, Cloud Data Sense creates an NFS share from each DP volume that was activated for scanning. The share export policies only allow access from the Data Sense instance.
+
+*Note:* If you had no CIFS data protection volumes when you initially enabled access to DP volumes, and later add some, the button *Enable Access to CIFS DP* appears at the top of the Configuration page. Click this button and add CIFS credentials to enable access to these CIFS DP volumes.
+
+NOTE: Active Directory credentials are only registered in the storage VM of the first CIFS DP volume, so all DP volumes on that SVM will be scanned. Any volumes that reside on other SVMs will not have the Active Directory credentials registered, so those DP volumes won't be scanned.
+
 == Scanning backup files from on-premises ONTAP systems
 
 If you don't want Cloud Data Sense to scan volumes directly on your on-prem ONTAP systems, a Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files to the cloud using link:concept_backup_to_cloud.html[Cloud Backup^], you can use this feature to run compliance scans on those backup files.
@@ -196,32 +227,3 @@ The first item is the on-prem cluster and the actual volumes.
 The second item is the backup files of those volumes from that same on-prem cluster.
 
 Choose the first option to scan the volumes on the on-prem system. Choose the second option to scan the backup files from those volumes. Do not scan both on-prem volumes and backup files of the same cluster.
-
-== Scanning data protection volumes
-
-By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Data Sense cannot access them. These are the destination volumes for SnapMirror operations from an on-premises ONTAP system or from a Cloud Volumes ONTAP system.
-
-Initially, the volume list identifies these volumes as _Type_ *DP* with the _Status_ *Not Scanning* and the _Required Action_ *Enable Access to DP volumes*.
-
-image:screenshot_cloud_compliance_dp_volumes.png[A screenshot showing the Enable Access to DP Volumes button that you can select to scan data protection volumes.]
-
-.Steps
-
-If you want to scan these data protection volumes:
-
-. Click *Enable Access to DP volumes* at the top of the page.
-
-. Review the confirmation message and click *Enable Access to DP volumes* again.
-- Volumes that were initially created as NFS volumes in the source ONTAP system are enabled.
-- Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. If you already entered Active Directory credentials so that Cloud Data Sense can scan CIFS volumes you can use those credentials, or you can specify a different set of Admin credentials.
-+
-image:screenshot_compliance_dp_cifs_volumes.png[A screenshot of the two options for enabling CIFS data protection volumes.]
-
-. Activate each DP volume that you want to scan <<Enabling and disabling compliance scans on volumes,the same way you enabled other volumes>>.
-
-.Result
-Once enabled, Cloud Data Sense creates an NFS share from each DP volume that was activated for scanning. The share export policies only allow access from the Data Sense instance.
-
-*Note:* If you had no CIFS data protection volumes when you initially enabled access to DP volumes, and later add some, the button *Enable Access to CIFS DP* appears at the top of the Configuration page. Click this button and add CIFS credentials to enable access to these CIFS DP volumes.
-
-NOTE: Active Directory credentials are only registered in the storage VM of the first CIFS DP volume, so all DP volumes on that SVM will be scanned. Any volumes that reside on other SVMs will not have the Active Directory credentials registered, so those DP volumes won't be scanned.

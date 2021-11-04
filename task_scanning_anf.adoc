@@ -19,7 +19,7 @@ Complete a few steps to get started with Cloud Data Sense for  Azure NetApp File
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Discover the data sources that contain the data you want to scan
+==== image:number1.png[Number 1] Discover the Azure NetApp Files systems that you want to scan
 
 [role="quick-margin-para"]
 Before you can scan Azure NetApp Files volumes, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
@@ -54,11 +54,11 @@ Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the c
 [role="quick-margin-para"]
 Select or deselect the volumes that you want to scan and Cloud Data Sense will start or stop scanning them.
 
-== Discovering the data sources that you want to scan
+== Discovering the Azure NetApp Files system that you want to scan
 
-If the data sources you want to scan are not already in your Cloud Manager environment, you can add them to the canvas at this time.
+If the Azure NetApp Files system you want to scan is not already in Cloud Manager as a working environment, you can add it to the canvas at this time.
 
-For Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
+link:task_manage_anf.html[See how to discover the Azure NetApp Files system in Cloud Manager^].
 
 == Deploying the Cloud Data Sense instance
 

@@ -143,6 +143,8 @@ The Data Sense instance uses a private IP address to ensure that the indexed dat
 
 For typical configurations you'll install the software on a single host system. For very large configurations where you'll be scanning petabytes of data, you can include additional hosts as _scanner nodes_ to provide additional processing power.
 
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
 NOTE: Cloud Data Sense is currently unable to scan S3 buckets, Azure NetApp Files, or FSx for ONTAP when the software is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Data Sense in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors^] for your different data sources.
 
 === Host requirements
@@ -239,7 +241,7 @@ You can also link:task_licensing_datasense.html[set up licensing for Cloud Data 
 
 Follow these steps when installing Data Sense software on multiple on-premises hosts.
 
-When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are call _Scanner nodes_.
+When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are called _Scanner nodes_.
 
 .Requirements
 

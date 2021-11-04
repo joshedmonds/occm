@@ -176,7 +176,7 @@ After Cloud Data Sense is enabled, ensure that users access the Cloud Manager in
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to your cloud provider (for example, a VPN), or from a host that's inside the same network as the Data Sense instance.
 
-== Deploy Cloud Data Sense in the cloud
+== Deploy Data Sense in the cloud
 
 Follow these steps to deploy an instance of Cloud Data Sense in the cloud.
 

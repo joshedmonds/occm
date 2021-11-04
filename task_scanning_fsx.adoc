@@ -31,7 +31,7 @@ link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html[AWS elas
 
 Get started quickly by following these steps or scroll down for full details.
 
-==== image:number1.png[Number 1] Discover the FSx for ONTAP working environment that contains the data you want to scan
+==== image:number1.png[Number 1] Discover the FSx for ONTAP file systems that you want to scan
 
 [role="quick-margin-para"]
 Before you can scan FSx for ONTAP volumes, link:concept_fsx_aws.html[you must have an FSx working environment with volumes configured^].
@@ -66,11 +66,11 @@ Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the c
 [role="quick-margin-para"]
 Select or deselect the volumes you want to scan and Cloud Data Sense will start or stop scanning them.
 
-== Discovering the data sources that you want to scan
+== Discovering the FSx for ONTAP file system that you want to scan
 
-If the data sources you want to scan are not already in your Cloud Manager environment, you can add them to the canvas at this time.
+If the FSx for ONTAP file system you want to scan is not already in Cloud Manager as a working environment, you can add it to the canvas at this time.
 
-For FSx for ONTAP, link:task_manage_fsx_volumes.html[Cloud Manager must be set up to discover the configuration^].
+link:task_creating_fsx_working_environment.html[See how to discover or create the FSx for ONTAP file system in Cloud Manager^].
 
 == Deploying the Cloud Data Sense instance
 
