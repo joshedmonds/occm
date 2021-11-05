@@ -19,22 +19,22 @@ Complete a few steps to start scanning files in your user's OneDrive folders wit
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review OneDrive prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review OneDrive prerequisites
 
 [role="quick-margin-para"]
 Ensure that you have the Admin credentials to log into the OneDrive account.
 
-==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Add the OneDrive account
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Add the OneDrive account
 
 [role="quick-margin-para"]
 Using Admin user credentials, log into the OneDrive account that you want to access so that it is added as a new working environment.
 
-==== image:number4.png[Number 4] Add the users and select the users to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Add the users and select the users to scan
 
 [role="quick-margin-para"]
 Add the list of users from the OneDrive account that you want to scan and select the type of scanning. You can add up to 100 users at time.

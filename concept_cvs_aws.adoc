@@ -43,22 +43,22 @@ There are no charges to discover a Cloud Volumes Service for AWS region or volum
 
 Get started quickly by following these steps, or go to the next sections for full details.
 
-==== image:number1.png[Number 1] Verify support for your configuration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Verify support for your configuration
 
 [role="quick-margin-para"]
 You must have set up AWS for Cloud Volumes Service and subscribed to one of the https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=netapp+cloud+volumes+service[NetApp Cloud Volumes Service offerings on the AWS Marketplace^] and have an existing CVS for AWS working environment configured in Cloud Manager to create and manage volumes.
 
-// ==== image:number2.png[Number 2] Add your Cloud Volumes Service for AWS subscription
+// .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Add your Cloud Volumes Service for AWS subscription
 //
 // [role="quick-margin-para"]
 // You must create a working environment for the volumes based on your Cloud Volumes Service for AWS subscription.
 
-==== image:number2.png[Number 2] Create, mount, and manage cloud volumes
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Create, mount, and manage cloud volumes
 
 [role="quick-margin-para"]
 Using an existing CVS for AWS working environment, you can create, mount, and manage cloud volumes for existing CVS for AWS subscriptions using Cloud Manager.
 
-// ==== image:number3.png[Number 3] Mount a cloud volume
+// .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Mount a cloud volume
 //
 // [role="quick-margin-para"]
 // Mount new cloud volumes to your AWS instance so that users can begin to use the storage.

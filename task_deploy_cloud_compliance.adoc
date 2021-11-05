@@ -21,7 +21,7 @@ The on-prem installation may be a good option if you prefer to scan on-premises 
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Create a Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
 If you don't already have a Connector, create a Connector in AWS, Azure or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
@@ -29,7 +29,7 @@ If you don't already have a Connector, create a Connector in AWS, Azure or GCP. 
 [role="quick-margin-para"]
 You can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud.
 
-==== image:number2.png[Number 2] Review prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review prerequisites
 
 [role="quick-margin-para"]
 Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
@@ -38,7 +38,7 @@ Ensure that your environment can meet the prerequisites. This includes outbound 
 * When installed in the cloud, the default configuration requires 16 vCPUs for the Cloud Data Sense instance. See link:concept_cloud_compliance.html#the-cloud-data-sense-instance[more details about the instance type^].
 * When installed on premises, you need a Linux system that meets the link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[following requirements].
 
-==== image:number3.png[Number 3] Deploy Cloud Data Sense
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
 Launch the installation wizard to deploy the Cloud Data Sense instance.
@@ -48,7 +48,7 @@ You can deploy Cloud Data Sense in the cloud or in an on-premises location. The 
 
 image:screenshot_compliance_onprem_notprem.png[A screenshot indicating a Cloud Data Sense on-prem deployment versus a cloud deployment.]
 
-==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Subscribe to the Cloud Data Sense service
 
 [role="quick-margin-para"]
 The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.

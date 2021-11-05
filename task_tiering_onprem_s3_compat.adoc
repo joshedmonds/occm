@@ -26,7 +26,7 @@ NetApp does not support nor is liable for any issues arising from any third-part
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[number 1] Prepare to tier data to S3-compatible object storage
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare to tier data to S3-compatible object storage
 
 [role="quick-margin-para"]
 You need the following:
@@ -37,12 +37,12 @@ You need the following:
 * A Connector installed on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to the S3-compatible object storage, and to the Cloud Tiering service.
 
-==== image:number2.png[number 2] Set up tiering
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
 [role="quick-margin-para"]
 In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to S3-compatible object storage.
 
-==== image:number3.png[number 3] Set up licensing
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
 [role="quick-margin-para"]
 Pay for Cloud Tiering through a pay-as-you-go subscription from your cloud provider, a NetApp Cloud Tiering bring-your-own-license, or a combination of both:
