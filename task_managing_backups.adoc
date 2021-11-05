@@ -5,7 +5,7 @@ keywords: cloud backup, cloud backup service, backup schedule, change schedule, 
 summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 ---
 
-= Managing backups for Cloud Volumes ONTAP and on-premises ONTAP systems
+= Managing backups for your ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -31,7 +31,7 @@ image:screenshot_backup_dashboard.png[A screenshot showing all the working envir
 
 If you are looking for specific volumes in certain working environments, you can refine the list by working environment and volume, or you can use the search filter.
 
-== Changing the schedule and backup retention
+== Changing the backup policy
 
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to a combination of hourly, daily, weekly, or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
 
@@ -50,6 +50,14 @@ image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Set
 . From the _Modify Policy_ page, change the schedule and backup retention and then click *Save*.
 +
 image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud Backup settings where you can modify the backup schedule and backup retention setting.]
++
+If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure for your cloud storage, you also have the option to enable or disable tiering of backups to archival storage after a certain number of days.
+link:reference-azure-backup-tiers.html[Learn more about using Azure archival storage].
+link:reference-aws-backup-tiers.html[Learn more about using AWS archival storage].
++
+image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tiering to archival storage settings for Cloud Backup.]
++
+Note that any backup files that have been tiered to archival storage are left in that tier if you stop tiering backups to archive - they are not automatically moved back to the standard tier.
 
 == Starting and stopping backups of volumes
 
@@ -190,6 +198,8 @@ NOTE: An *Activate Backup* button appears for that working environment while bac
 == Unregistering Cloud Backup for a working environment
 
 You can unregister Cloud Backup for a working environment if you no longer want to use backup functionality and you want to stop being charged for backups in that working environment. Typically this feature is used when you're planning to delete a working environment and you want to cancel the backup service.
+
+You can also use this feature if you want to change the destination object store where your cluster backups are being stored. After you unregister Cloud Backup for the working environment, then you can enable Cloud Backup for that cluster using the new cloud provider information.
 
 Before you can unregister Cloud Backup, you must perform the following steps, in this order:
 
