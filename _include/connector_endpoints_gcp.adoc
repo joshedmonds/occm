@@ -9,8 +9,6 @@
 
 | \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
 
-| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -36,14 +34,12 @@ support.netapp.com:443
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
-\https://eval.lic.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
 | Communication with NetApp for system licensing and support registration.
 
 |
 \https://client.infra.support.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.us-west-1.amazonaws.com
-\https://trigger.asup.netapp.com.s3.us-west-1.amazonaws.com
 
 | Enables NetApp to collect information needed to troubleshoot support issues.
 

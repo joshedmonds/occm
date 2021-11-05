@@ -19,6 +19,23 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Recent updates (4 Nov 2021)
+
+* <<SOC 2 Type 2 certification>>
+* <<Connector no longer works as a proxy>>
+
+=== SOC 2 Type 2 certification
+
+An independent certified public accountant firm and services auditor examined Cloud Manager, Cloud Sync, Cloud Tiering, Cloud Data Sense, and Cloud Backup (Cloud Manager platform), and affirmed that they have achieved SOC 2 Type 2 reports based on the applicable Trust Services criteria.
+
+https://www.netapp.com/company/trust-center/compliance/soc-2/[View NetApp's SOC 2 reports^].
+
+=== Connector no longer supported as a proxy
+
+You can no longer use the Cloud Manager Connector as a proxy server to send AutoSupport messages from Cloud Volumes ONTAP. This functionality has been removed and is no longer supported. You will need to provide AutoSupport connectivity through a NAT instance or your environment’s proxy services.
+
+link:task_setting_up_ontap_cloud.html[Learn more about configuring AutoSupport with Cloud Volumes ONTAP].
+
 == Cloud Manager 3.9.12 (31 Oct 2021)
 
 * <<Amazon FSx for ONTAP enhancements>>
