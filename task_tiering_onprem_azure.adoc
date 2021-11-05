@@ -29,7 +29,7 @@ You need the following:
 * A Connector installed in an Azure VNet or on your premises.
 * Networking for a Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure storage, and to the Cloud Tiering service.
 
-==== image:number2.png[number2] Set up tiering
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
 [role="quick-margin-para"]
 In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Azure Blob storage.

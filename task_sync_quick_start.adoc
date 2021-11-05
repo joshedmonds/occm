@@ -33,12 +33,12 @@ Cloud Sync guides you through the installation process when you create a sync re
 * link:task_sync_installing_gcp.html[Review GCP installation]
 * link:task_sync_installing_linux.html[Review Linux host installation]
 
-==== image:number3.png[number3] Create your first sync relationship
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create your first sync relationship
 
 [role="quick-margin-para"]
 Log in to https://cloudmanager.netapp.com/[Cloud Manager^], click *Sync*, and then drag and drop your selections for the source and target. Follow the prompts to complete the setup. link:task_sync_creating_relationships.html[Learn more].
 
-==== image:number4.png[number4] Pay for your sync relationships after your free trial ends
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Pay for your sync relationships after your free trial ends
 
 [role="quick-margin-para"]
 Subscribe from AWS or Azure to pay-as-you-go or to pay annually. Or purchase licenses directly from NetApp. Just go to the License Settings page in Cloud Sync to set it up. link:task_sync_licensing.html[Learn more].
