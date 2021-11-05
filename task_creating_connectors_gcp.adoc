@@ -21,7 +21,7 @@ These steps must be completed by a user who has the Account Admin role. A Worksp
 
 TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
-== Setting up permissions by creating service accounts
+== Creating service accounts
 
 Before you can deploy a Connector from Cloud Manager, you need to ensure that your GCP account has the correct permissions and that a service account is set up for the Connector VM.
 
@@ -172,7 +172,7 @@ In our examples, we'll use a local shell with the gcloud SDK installed, but you 
 +
 For more information about the Google Cloud SDK, visit the link:https://cloud.google.com/sdk[Google Cloud SDK documentation page^].
 
-. Check that you are logged in as a user who has the correct permissions defined above:
+. Verify that you are logged in as a user who has the required permissions that are defined in the section above:
 +
 [source,bash]
 gcloud auth list
@@ -180,7 +180,7 @@ gcloud auth list
 +
 The output should show the following where the * user account is the desired user account to be logged in as:
 +
-[source,bash]
+----
 Credentialed Accounts
 ACTIVE  ACCOUNT
      some_user_account@domain.com
@@ -190,8 +190,9 @@ To set the active account, run:
 Updates are available for some Cloud SDK components. To install them,
 please run:
 $ gcloud components update
+----
 
-. Run the `compute create` command:
+. Run the `gcloud compute instances create` command:
 +
 [source,bash]
 gcloud compute instances create <instance-name>
@@ -218,8 +219,10 @@ network-tag:: (Optional) Add network tagging to link a firewall rule using tags 
 network-path:: (Optional) Add the name of the network to deploy the Connector into (for a Shared VPC, you need the full path)
 subnet-path:: (Optional) Add the name of the subnet to deploy the Connector into (for a Shared VPC, you need the full path)
 kms-key-path:: (Optional) Add a KMS key to encrypt the Connector's disks (IAM permissions also need to be applied)
+
 +
 For more information about these flags, visit the link:https://cloud.google.com/sdk/gcloud/reference/compute/instances/create[Google Cloud compute SDK documentation^].
+
 +
 Running the command deploys the Connector using the NetApp golden image. The Connector instance and software should be running in approximately five minutes.
 
