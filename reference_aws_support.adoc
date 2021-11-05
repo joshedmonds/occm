@@ -25,7 +25,7 @@ When you set up data tiering to AWS, Cloud Tiering automatically uses the _Stand
 
 If you do not choose another storage class, then the data remains in the _Standard_ storage class and no rules are applied.
 
-When you configure a Cloud Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your AWS account. 
+When you configure a Cloud Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your AWS account.
 
 https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
 
@@ -52,7 +52,7 @@ Cloud Tiering supports the following AWS regions.
 ==== North America
 
 * Canada Central
-* GovCloud (US-West) – starting with ONTAP 9.3
+* GovCloud (US-West)
 * US East (N. Virginia)
 * US East (Ohio)
 * US West (N. California)
