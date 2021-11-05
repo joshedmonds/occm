@@ -308,7 +308,7 @@ NOTE: The source IP address is the Connector host.
 
 |===
 
-== Ports for the on-prem Connector
+=== Ports for the on-prem Connector
 
 The Connector uses the following ports when installed manually on an on-premises Linux host:
 
