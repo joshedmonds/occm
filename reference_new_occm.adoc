@@ -19,6 +19,18 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.12 update (5 Nov 2021)
+
+=== Cloud Backup enhancements
+
+* When restoring a volume to an on-premises ONTAP system from a backup file that resides on Amazon S3 or Azure Blob, now you can select a private endpoint that connects to your on-prem system privately and securely.
+
+* Now you can tier older backup files to archival storage after a certain number of days to save costs.
++
+If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure cloud storage, you can enable tiering of backups to archival storage. See more information about link:reference-aws-backup-tiers.html[AWS S3 archival storage classes] and link:reference-azure-backup-tiers.html[Azure Blob archival access tiers].
+
+* BYOL licensing for Cloud Backup has moved from the Cloud Backup Licenses tab to the Data Services Licenses tab in the Cloud Manager Digital Wallet.
+
 == Recent updates (4 Nov 2021)
 
 * <<SOC 2 Type 2 certification>>
