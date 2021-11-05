@@ -16,17 +16,17 @@ When you create a sync relationship that requires Amazon S3, Azure, or Google Cl
 
 This feature is supported through the Cloud Sync API with sync relationships that require Amazon S3, Azure, or Google Cloud credentials.
 
-==== image:number1.png[number 1] Prepare the vault
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare the vault
 
 [role="quick-margin-para"]
 Prepare the vault to supply credentials to the data broker by setting up the URLs. The URLs to the secrets in the vault must end with _Creds_.
 
-==== image:number2.png[number 2] Prepare the data broker
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Prepare the data broker
 
 [role="quick-margin-para"]
 Prepare the data broker to fetch credentials from the external vault by modifying the local config file for the data broker.
 
-==== image:number3.png[number 3] Create a sync relationship using the API
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a sync relationship using the API
 
 [role="quick-margin-para"]
 Now that everything is set up, you can send an API call to create a sync relationship that uses your vault to get the secrets.

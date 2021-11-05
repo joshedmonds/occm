@@ -22,7 +22,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Recent updates (4 Nov 2021)
 
 * <<SOC 2 Type 2 certification>>
-* <<Connector no longer works as a proxy>>
+* <<Connector no longer supported as a proxy>>
 
 === SOC 2 Type 2 certification
 
@@ -41,6 +41,7 @@ link:task_setting_up_ontap_cloud.html[Learn more about configuring AutoSupport w
 * <<Amazon FSx for ONTAP enhancements>>
 * <<Cloud Sync enhancements>>
 * <<Connector enhancements>>
+* <<Resource Tagging enhancement>>
 * <<Credentials enhancement>>
 
 === Amazon FSx for ONTAP enhancements
@@ -65,7 +66,7 @@ When you create a new Connector in Microsoft Azure, you can now authenticate wit
 
 link:task_creating_connectors_azure.html#create-a-connector-using-a-service-principal[Learn how to authenticate with an Azure service principal].
 
-=== Resource Tagging enhancements
+=== Resource Tagging enhancement
 
 Now you can tag your Sync relationships so you can group or categorize them for easy access. link:concept_tagging.html[Learn more about resource tagging].
 
