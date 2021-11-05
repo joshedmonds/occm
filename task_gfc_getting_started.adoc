@@ -25,27 +25,27 @@ Watch link:https://www.youtube.com/watch?v=TGIQVssr43A[this video^] to see the s
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details:
 
-==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Deploy Cloud Volumes ONTAP
 
 [role="quick-margin-para"]
 Deploy Cloud Volumes ONTAP in Azure or AWS and configure SMB file shares. For more information, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
-==== image:number2.png[Number 2] Deploy the Global File Cache Management Server
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Global File Cache Management Server
 
 [role="quick-margin-para"]
 Deploy an instance of the Global File Cache Management Server in the same working environment as the instance of Cloud Volumes ONTAP.
 
-==== image:number3.png[Number 3] Deploy the Global File Cache Core
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy the Global File Cache Core
 
 [role="quick-margin-para"]
 Deploy an instance, or multiple instances, of the Global File Cache Core in the same working environment as the instance of Cloud Volumes ONTAP and join it to your Active Directory domain.
 
-==== image:number4.png[Number 4] License Global File Cache
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] License Global File Cache
 
 [role="quick-margin-para"]
 Configure the Global File Cache License Management Server (LMS) service on a Global File Cache Core instance. You will need your NSS Credentials or a Customer ID and Subscription Number provided by NetApp to activate your subscription.
 
-==== image:number5.png[Number 5] Deploy the Global File Cache Edge instances
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Deploy the Global File Cache Edge instances
 
 [role="quick-margin-para"]
 See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge instances^] to deploy the Global File Cache Edge instances in each remote location. This step is not done using Cloud Manager.

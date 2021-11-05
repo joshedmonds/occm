@@ -19,7 +19,7 @@ Complete a few steps to start scanning data within object storage directly with 
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review object storage prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review object storage prerequisites
 
 [role="quick-margin-para"]
 You need to have the endpoint URL to connect with the object storage service.
@@ -27,17 +27,17 @@ You need to have the endpoint URL to connect with the object storage service.
 [role="quick-margin-para"]
 You need to have the Access Key and Secret Key from the object storage provider so that Cloud Data Sense can access the buckets.
 
-==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Add the Object Storage Service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Add the Object Storage Service
 
 [role="quick-margin-para"]
 Add the object storage service to Cloud Data Sense.
 
-==== image:number4.png[Number 4] Select the buckets to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the buckets to scan
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Data Sense will start scanning them.

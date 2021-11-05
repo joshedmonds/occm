@@ -14,12 +14,12 @@ summary: Getting started with the Cloud Sync service includes a few steps.
 
 Getting started with the Cloud Sync service includes a few steps.
 
-==== image:number1.png[number 1] Prepare your source and target
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare your source and target
 
 [role="quick-margin-para"]
 Verify that your source and target are supported and set up. The most important requirement is to verify connectivity between the data broker and the source and target locations. link:reference_sync_requirements.html[Learn more].
 
-==== image:number2.png[number 2] Prepare a location for the NetApp data broker
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Prepare a location for the NetApp data broker
 
 [role="quick-margin-para"]
 The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can run the data broker in AWS, Azure, Google Cloud Platform, or on your premises. The data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories. link:reference_sync_networking.html[View the list of endpoints].

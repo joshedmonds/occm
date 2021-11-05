@@ -23,7 +23,7 @@ A Beta feature released in January 2021 allows you to run compliance scans on th
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Verify support for your configuration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Verify support for your configuration
 
 [role="quick-margin-list"]
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
@@ -33,7 +33,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * The Connector must have the required network connections to Blob storage and to the cluster, and the required permissions.
 * You have a valid Azure subscription for the object storage space where your backups will be located.
 
-==== image:number2.png[Number 2] Enable Cloud Backup on the system
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on the system
 
 [role="quick-margin-para"]
 Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
@@ -41,7 +41,7 @@ Select the working environment and click *Enable* next to the Backup & Complianc
 [role="quick-margin-para"]
 image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment."]
 
-==== image:number3.png[Number 3] Select the cloud provider and enter the provider details
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Select the cloud provider and enter the provider details
 
 [role="quick-margin-para"]
 Select Microsoft Azure as your provider and then enter the provider details. You'll need to select the Azure Subscription and the region where you want to create the backups. You can also choose your own customer-managed key for data encryption instead of using the default Microsoft-managed encryption key.
@@ -49,7 +49,7 @@ Select Microsoft Azure as your provider and then enter the provider details. You
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
 
-==== image:number4.png[Number 4] Select the cluster IPspace and optional use of a private VNet endpoint
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the cluster IPspace and optional use of a private VNet endpoint
 
 [role="quick-margin-para"]
 Select the IPspace in the ONTAP cluster where the volumes reside. You can also choose to use an existing Azure Private Endpoint for a more secure connection to the VNet from your on-prem data center.
@@ -57,7 +57,7 @@ Select the IPspace in the ONTAP cluster where the volumes reside. You can also c
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
 
-==== image:number5.png[Number 5] Define the backup policy
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Define the backup policy
 
 [role="quick-margin-para"]
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies to retain.
@@ -65,17 +65,17 @@ The default policy backs up volumes every day and retains the most recent 30 bac
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can choose the backup schedule and retention period.]
 
-==== image:number6.png[Number 6] Select the volumes that you want to back up
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Select the volumes that you want to back up
 
 [role="quick-margin-para"]
 Identify which volumes you want to back up from the cluster.
 
-==== image:number7.png[Number 7] Activate Compliance scans on the backed up volumes (optional)
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
 Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
 
-==== image:number8.png[Number 8] Restore your data, as needed
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] Restore your data, as needed
 
 [role="quick-margin-para"]
 Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system in Azure, or to an on-premises ONTAP system.

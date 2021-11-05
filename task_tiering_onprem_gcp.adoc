@@ -19,7 +19,7 @@ Free space on your on-prem ONTAP clusters by tiering inactive data to Google Clo
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[number 1] Prepare to tier data to Google Cloud Storage
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare to tier data to Google Cloud Storage
 
 [role="quick-margin-para"]
 You need the following:
@@ -35,7 +35,7 @@ You need the following:
 [role="quick-margin-para"]
 In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Google Cloud Storage.
 
-==== image:number3.png[number 3] Set up licensing
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
 [role="quick-margin-para"]
 After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP Cloud Tiering BYOL license, or a combination of both:
