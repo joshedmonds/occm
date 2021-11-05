@@ -15,7 +15,7 @@ summary: Get started with Cloud Volumes ONTAP for AWS in a few steps.
 [.lead]
 Get started with Cloud Volumes ONTAP for AWS in a few steps.
 
-==== image:number1.png[Number 1] Create a Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
 If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS].
@@ -23,12 +23,12 @@ If you don't have a link:concept_connectors.html[Connector] yet, an Account Admi
 [role="quick-margin-para"]
 When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
 
-==== image:number2.png[Number 2] Plan your configuration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
 
 [role="quick-margin-para"]
 Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config.html[Learn more].
 
-==== image:number3.png[Number 3] Set up your networking
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
 
 [role="quick-margin-list"]
 .. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
@@ -44,12 +44,12 @@ A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTA
 [role="quick-margin-para"]
 link:reference_networking_aws.html[Learn more about networking requirements].
 
-==== image:number4.png[Number 4] Set up the AWS KMS
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up the AWS KMS
 
 [role="quick-margin-para"]
 If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to ensure that an active Customer Master Key (CMK) exists. You also need to modify the key policy for each CMK by adding the IAM role that provides permissions to the Connector as a _key user_. link:task_setting_up_kms.html[Learn more].
 
-==== image:number5.png[Number 5] Launch Cloud Volumes ONTAP using Cloud Manager
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task_deploying_otc_aws.html[Read step-by-step instructions].

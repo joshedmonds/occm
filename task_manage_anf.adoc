@@ -23,17 +23,17 @@ If you already set up Azure NetApp Files from outside of Cloud Manager, then you
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Request access
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Request access
 
 [role="quick-margin-para"]
 https://aka.ms/azurenetappfiles[Submit an online request^] to be granted access to Azure NetApp Files.
 
-==== image:number2.png[Number 2] Set up an Azure AD application
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up an Azure AD application
 
 [role="quick-margin-para"]
 From Azure, grant permissions to an Azure AD application and copy the application (client) ID, the directory (tenant) ID, and the value of a client secret.
 
-==== image:number3.png[Number 3] Create an Azure NetApp Files working environment
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create an Azure NetApp Files working environment
 
 [role="quick-margin-para"]
 In Cloud Manager, click *Add Working Environment* > *Microsoft Azure* > *Azure NetApp Files* and then provide details about the AD application.

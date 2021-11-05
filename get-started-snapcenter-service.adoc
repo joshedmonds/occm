@@ -15,7 +15,7 @@ summary: The tasks to deploy SnapCenter Service and protect your data.
 [.lead]
 Get started with SnapCenter Service to protect your data in a few steps.
 
-==== image:number1.png[Number 1] Access Cloud Manager
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Access Cloud Manager
 
 [role="quick-margin-para"]
 You should link:task_signing_up.html[sign up to NetApp Cloud Central], link:task_logging_in.html[log into Cloud Manager], and then set up a link:task_setting_up_cloud_central_accounts.html[Cloud Central account].
@@ -23,12 +23,12 @@ You should link:task_signing_up.html[sign up to NetApp Cloud Central], link:task
 [role="quick-margin-para"]
 Only an Account Admin can deploy the SnapCenter Service. However, both Account Admin and SnapCenter Admin can perform different operations. link:reference_user_roles.html[Learn more]
 
-==== image:number2.png[Number 2] Ensure that the prerequisites are met
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure that the prerequisites are met
 
 [role="quick-margin-para"]
 You should ensure that all the link:prerequisites-azure-connector-snapcenter-service.html[prerequisites] to create a Connector and enable SnapCenter Service are met.
 
-==== image:number3.png[Number 3] Create a Connector in Azure for SnapCenter Service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a Connector in Azure for SnapCenter Service
 
 [role="quick-margin-para"]
 You should link:create-azure-connector-user-consent-snapcenter-service.html[create a Connector in Azure for SnapCenter Service].
@@ -36,22 +36,22 @@ You should link:create-azure-connector-user-consent-snapcenter-service.html[crea
 [role="quick-margin-para"]
 If you have a connector that meets all the prerequisites, you can use that.
 
-==== image:number4.png[Number 4] Set up and discover Azure NetApp Files
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up and discover Azure NetApp Files
 
 [role="quick-margin-para"]
 Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots. link:task_manage_anf.html[Learn more]
 
-==== image:number5.png[Number 5] Enable SnapCenter Service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Enable SnapCenter Service
 
 [role="quick-margin-para"]
 You should link:enable-snapcenter-service-azure-netapp-files.html[enable SnapCenter Service] using the Cloud Manager UI. When the SnapCenter Service is enabled, Azure Kubernetes Service (AKS) cluster is created that will host the SnapCenter Service.
 
-==== image:number6.png[Number 6] Install the HDBSQL client
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Install the HDBSQL client
 
 [role="quick-margin-para"]
 You should link:install-hdbsql-client-snapcenter-service.html[install the HDBSQL client] to perform data protection operations on SAP HANA databases. The HDBSQL client is used to communicate with the SAP HANA systems.
 
-==== image:number7.png[Number 7] Protect SAP HANA systems
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Protect SAP HANA systems
 
 [role="quick-margin-para"]
 You should manually link:add-sap-hana-systems-non-data-volumes-snapcenter-service.html[add the SAP HANA systems].
