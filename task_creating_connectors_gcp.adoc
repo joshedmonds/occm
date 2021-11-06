@@ -129,6 +129,9 @@ Create a Connector in Google Cloud directly from the Cloud Manager user interfac
 
 .From Cloud Manager
 --
+
+.Steps
+
 . If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
 +
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
@@ -166,6 +169,9 @@ The instance should be ready in about 7 minutes. You should stay on the page unt
 
 .From gcloud
 --
+
+.Steps
+
 . Log in to the gcloud SDK using your preferred methodology.
 +
 In our examples, we'll use a local shell with the gcloud SDK installed, but you could use the native Google Cloud Shell in the GCP console.
@@ -202,7 +208,7 @@ gcloud compute instances create <instance-name>
   --scopes=cloud-platform
   --project=<project>
   --service-account=<<service-account>
-  --zone=<zone>>
+  --zone=<zone>
   --no-address
   --tags <network-tag>
   --network <network-path>
