@@ -163,7 +163,7 @@ NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP
 The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
 --
 
-.From gcloud
+.gcloud
 --
 
 . Log in to the gcloud SDK using your preferred methodology.
