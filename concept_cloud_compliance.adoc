@@ -29,7 +29,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
 * Add a custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
-* Move and delete files
+* Copy, move, and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
 
@@ -54,7 +54,7 @@ Cloud Data Sense can scan data from the following types of working environments 
 * Databases
 * OneDrive accounts
 
-NOTE: A Beta feature released in January 2021 allows you to run compliance scans _for free_ on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you a choice whether you want to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
+NOTE: A Beta feature released in January 2021 allows you to run compliance scans on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes (when the backups reside in AWS or Azure cloud storage).
 
 == Cost
 
@@ -63,7 +63,7 @@ NOTE: A Beta feature released in January 2021 allows you to run compliance scans
 +
 link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
 +
-*Note:* A PAYGO subscription or BYOL license is not needed to scan backup files created from your on-prem ONTAP systems.
+*Note:* When scanning backup files created from your on-prem ONTAP systems, the scanned data does not count against the capacity purchased in your PAYGO subscription or BYOL license.
 
 * Installing Cloud Data Sense in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See <<The Cloud Data Sense instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Data Sense on an on-premises system.
 
