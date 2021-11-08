@@ -224,6 +224,7 @@ The *Unstructured Data Report* includes the following information:
 * File type
 * File size
 * Created time
+* Discovered time (when Data Sense first discovered the file)
 * Last modified
 * Last accessed
 * File owner

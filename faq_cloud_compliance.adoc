@@ -67,11 +67,13 @@ The cost to use Cloud Data Sense depends on the amount of data that you're scann
 
 == What type of instance or VM is required for Cloud Data Sense?
 
+When link:task_deploy_cloud_compliance.html[deployed in the cloud]:
+
 * In AWS, Cloud Data Sense runs by default on an m5.4xlarge instance with a 500 GB GP2 disk.
 * In Azure, Cloud Data Sense runs by default on a Standard_D16s_v3 VM with a 512 GB disk.
 * In GCP, Cloud Data Sense runs by default on an n2-standard-16 VM with a 512 GB Standard persistent disk.
 
-You can also download and install Data Sense software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-data-sense-instance-on-premises[Deploying Cloud Data Sense on premises^] for system requirements and installation details.
+You can also download and install Data Sense software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task-deploy-compliance-onprem.html[Deploying Cloud Data Sense on premises^] for system requirements and installation details.
 
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
