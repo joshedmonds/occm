@@ -31,7 +31,7 @@ link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html[AWS elas
 
 Get started quickly by following these steps or scroll down for full details.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Discover the data sources that contain the data you want to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Discover the FSx for ONTAP file systems you want to scan
 
 [role="quick-margin-para"]
 Before you can scan FSx for ONTAP volumes, link:concept_fsx_aws.html[you must have an FSx working environment with volumes configured^].

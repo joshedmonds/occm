@@ -31,6 +31,18 @@ If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azu
 
 * BYOL licensing for Cloud Backup has moved from the Cloud Backup Licenses tab to the Data Services Licenses tab in the Cloud Manager Digital Wallet.
 
+=== Cloud Data Sense enhancements (7 Nov)
+
+* Now you can choose to map or classify individual volumes in your working environments.
++
+In the past you could either map all volumes or map & classify all volumes in each working environment. Now you can choose to map _or_ map & classify individual volumes. This option is available for Cloud Volumes ONTAP volumes, ANF volumes, on-prem ONTAP volumes, and FSx for ONTAP volumes.
+
+* You can copy any source files that Data Sense is scanning to a destination NFS share. This is helpful if you want to make a copy of certain data and move it to a different NFS location. link:task_managing_highlights.html#copying-source-files[Learn more].
+
+* Now you can scan data protection volumes on FSx for ONTAP file systems. link:task_scanning_fsx.html#scanning-data-protection-volumes[Learn more].
+
+* A new Filter in the Investigation page called "Discovered Time" enables you to view files by the date range when Data Sense first discovered the files. Discovered Time has also been added to the File Details page and to reports that you output in CSV format for a file.
+
 == Recent updates (4 Nov 2021)
 
 * <<SOC 2 Type 2 certification>>
