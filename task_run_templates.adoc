@@ -21,7 +21,7 @@ Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Fil
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Verify required prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Verify required prerequisites
 
 [role="quick-margin-list"]
 * Before you can create a volume for a Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files system using a template, make sure you have access to an appropriate working environment where the volume will be deployed.
@@ -29,12 +29,12 @@ Get started quickly by following these steps, or scroll down to the remaining se
 [role="quick-margin-list"]
 * If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^] or link:concept_cloud_compliance.html[Cloud Data Sense^], ensure that the service is active and licensed in your environment.
 
-==== image:number2.png[Number 2] Launch the Application Templates service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Launch the Application Templates service
 
 [role="quick-margin-para"]
 Select the *AppTemplate* service and click the *Templates* tab.
 
-==== image:number3.png[Number 3] Build the resource by running the template and defining parameters
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Build the resource by running the template and defining parameters
 
 [role="quick-margin-para"]
 Select the template, click *Run Template*, and enter values in the editable fields to create the resource.

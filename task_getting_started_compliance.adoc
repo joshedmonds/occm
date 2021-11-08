@@ -19,7 +19,7 @@ Complete a few steps to start scanning your Cloud Volumes ONTAP and on-premises 
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Discover the data sources that you want to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Discover the data sources that contain the data you want to scan
 
 [role="quick-margin-para"]
 Before you can scan volumes, you must add the systems as working environments in Cloud Manager:
@@ -28,17 +28,17 @@ Before you can scan volumes, you must add the systems as working environments in
 * For Cloud Volumes ONTAP systems, these working environments should already be available in Cloud Manager
 * For on-premises ONTAP systems, link:task_discovering_ontap.html[Cloud Manager must discover the ONTAP clusters^]
 
-==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense in Cloud Manager^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Enable Cloud Data Sense and select the volumes to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable Cloud Data Sense and select the volumes to scan
 
 [role="quick-margin-para"]
 Click *Data Sense*, select the *Configuration* tab, and activate compliance scans for volumes in specific working environments.
 
-==== image:number4.png[Number 4] Ensure access to volumes
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Ensure access to volumes
 
 [role="quick-margin-para"]
 Now that Cloud Data Sense is enabled, ensure that it can access all volumes.
@@ -54,7 +54,7 @@ Now that Cloud Data Sense is enabled, ensure that it can access all volumes.
 +
 Click *Compliance* > *Configuration* > *Edit CIFS Credentials* and provide the credentials.
 
-==== image:number5.png[Number 5] Manage the volumes you want to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Manage the volumes you want to scan
 
 [role="quick-margin-para"]
 Select or deselect the volumes that you want to scan and Cloud Data Sense will start or stop scanning them.

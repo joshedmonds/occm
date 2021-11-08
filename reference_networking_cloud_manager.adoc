@@ -307,3 +307,14 @@ NOTE: The source IP address is the Connector host.
 | DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
 
 |===
+
+=== Ports for the on-prem Connector
+
+The Connector uses the following ports when installed manually on an on-premises Linux host:
+
+* 80 for HTTP access
+* 443 for HTTPS access
+* 3306 for the Cloud Manager database
+* 8080 for the Cloud Manager API proxy
+* 8666 for the Service Manager API
+* 8777 for the Health-Checker Container Service API

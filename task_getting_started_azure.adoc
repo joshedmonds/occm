@@ -15,7 +15,7 @@ summary: Get started with Cloud Volumes ONTAP for Azure in a few steps.
 [.lead]
 Get started with Cloud Volumes ONTAP for Azure in a few steps.
 
-==== image:number1.png[Number 1] Create a Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
 If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_azure.html[Learn how to create a Connector in Azure].
@@ -23,12 +23,12 @@ If you don't have a link:concept_connectors.html[Connector] yet, an Account Admi
 [role="quick-margin-para"]
 When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
 
-==== image:number2.png[Number 2] Plan your configuration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
 
 [role="quick-margin-para"]
 Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config_azure.html[Learn more].
 
-==== image:number3.png[Number 3] Set up your networking
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
 
 [role="quick-margin-list"]
 .. Ensure that your VNet and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
@@ -40,7 +40,7 @@ This step is important because the Connector can't manage Cloud Volumes ONTAP wi
 [role="quick-margin-para"]
 link:reference_networking_azure.html[Learn more about networking requirements].
 
-==== image:number4.png[Number 4] Launch Cloud Volumes ONTAP using Cloud Manager
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task_deploying_otc_azure.html[Read step-by-step instructions].
