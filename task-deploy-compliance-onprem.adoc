@@ -23,7 +23,7 @@ The on-prem installation may be a good option if you prefer to scan on-premises 
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Create a Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
 If you don't already have a Connector, create a Connector in AWS, Azure or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
@@ -31,7 +31,7 @@ If you don't already have a Connector, create a Connector in AWS, Azure or GCP. 
 [role="quick-margin-para"]
 You can also link:task_installing_linux.html[deploy the Connector on-premises^] on a Linux host in your network or in the cloud.
 
-==== image:number2.png[Number 2] Review prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review prerequisites
 
 [role="quick-margin-para"]
 Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Review prerequisites,See the complete list>>.
@@ -39,12 +39,12 @@ Ensure that your environment can meet the prerequisites. This includes outbound 
 [role="quick-margin-para"]
 You also need a Linux system that meets the <<Host requirements,following requirements>>.
 
-==== image:number3.png[Number 3] Deploy Cloud Data Sense
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
 Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
 
-==== image:number4.png[Number 4] Subscribe to the Cloud Data Sense service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Subscribe to the Cloud Data Sense service
 
 [role="quick-margin-para"]
 The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
@@ -152,9 +152,11 @@ NOTE: Cloud Data Sense is currently unable to scan S3 buckets, Azure NetApp File
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
 ** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
+* Disk: 500 GiB SSD
+** Available disk space in /opt: 100 GiB
+** Available disk space in /var: 400 GiB
 * RAM: 64 GB (swap memory must be disabled on the host)
 * CPU: 16 cores
-* Disk: 500 GB SSD
 +
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
