@@ -152,9 +152,9 @@ NOTE: Cloud Data Sense is currently unable to scan S3 buckets, Azure NetApp File
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
 ** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
-* Disk: 500 GiB SSD
-** Available disk space in /opt: 100 GiB
-** Available disk space in /var: 400 GiB
+* Disk: SSD with 500 GiB available on /, or
+** 100 GiB available on /opt
+** 400 GiB available on /var
 * RAM: 64 GB (swap memory must be disabled on the host)
 * CPU: 16 cores
 +
