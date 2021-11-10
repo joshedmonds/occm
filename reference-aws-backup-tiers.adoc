@@ -44,7 +44,7 @@ There are 3 restore priorities you can choose when retrieving data from Amazon S
 
 |===
 +
-Each method has a different per-GB retrieval fee and per-request fee. For detailed S3 Glacier pricing by AWS Region, visit the https://aws.amazon.com/s3/pricing/[Amazon S3 pricing page].
+Each method has a different per-GB retrieval fee and per-request fee. For detailed S3 Glacier pricing by AWS Region, visit the https://aws.amazon.com/s3/pricing/[Amazon S3 pricing page^].
 
 How long will it take to restore my objects archived in Amazon S3 Glacier?::
 There are 2 parts that make up the total restore time:
@@ -66,4 +66,4 @@ There are 2 parts that make up the total restore time:
 * *Restore time*: The time to restore the data from the backup file in Standard storage. This time is no different than the typical restore operation directly from Standard storage - when not using an archival tier.
 
 +
-For more information about Amazon S3 Glacier and S3 Glacier Deep Archive retrieval options, refer to https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier[the Amazon FAQ about these storage classes].
+For more information about Amazon S3 Glacier and S3 Glacier Deep Archive retrieval options, refer to https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier[the Amazon FAQ about these storage classes^].

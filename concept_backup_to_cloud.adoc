@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Cloud Backup, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
-summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Cloud Backup
@@ -13,7 +13,7 @@ summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP
 :imagesdir: ./media/
 
 [.lead]
-Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 
 When necessary, you can restore an entire _volume_, or one or more _files_, from a backup to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
 
@@ -218,11 +218,11 @@ If you want to change the destination object store for a cluster in the future, 
 
 * In AWS, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 +
-If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about AWS archival storage].
+If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about AWS archival storage^].
 
 * In Azure, backups are associated with the _Cool_ access tier.
 +
-If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization. link:reference-azure-backup-tiers.html[Learn more about Azure archival storage].
+If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier older backups to _Azure Archive_ storage after a certain number of days for further cost optimization. link:reference-azure-backup-tiers.html[Learn more about Azure archival storage^].
 
 * In GCP, backups are associated with the _Standard_ storage class by default.
 +
@@ -284,7 +284,7 @@ If you have multiple Cloud Manager systems in the same Cloud Central account, ea
 
 == Supported volumes
 
-Cloud Backup supports FlexVol read-write volumes and data protection (DP) volumes.
+Cloud Backup supports FlexVol read-write volumes and SnapMirror data protection (DP) destination volumes.
 
 FlexGroup volumes and SnapLock volumes aren't currently supported.
 
