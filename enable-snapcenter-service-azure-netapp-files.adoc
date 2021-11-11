@@ -40,7 +40,7 @@ Ensure that the Connector has the network connectivity to the SAP HANA systems t
 .. On the Get Ready page, click *Continue*.
 .. Specify the Azure credentials.
 +
-IMPORTANT: You should ensure that the Azure login account has the sufficient permissions. For information on the permissions and how to assign the permissions, see <<Permissions required for Azure login account>>.
+TIP: You should ensure that the Azure login account has the sufficient permissions. For information on the permissions and how to assign the permissions, see <<Permissions required for Azure login account>>.
 
 * If you have created the Connector from Azure marketplace or if you do not have permissions to create and assign roles, follow the below steps to create the user assigned managed identity.
 .. Select *Use Azure CLI script*.

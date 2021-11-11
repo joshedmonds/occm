@@ -19,6 +19,10 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.12 build 2 (10 Nov 2021)
+
+This patch update includes bug fixes.
+
 == Cloud Manager 3.9.12 update (5 Nov 2021)
 
 === Cloud Backup enhancements
@@ -623,7 +627,7 @@ This release of Cloud Manager includes enhancements to the management of Cloud V
 
 * A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
 +
-If you choose this payment option, you can provision up to 2 PB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
+If you choose this payment option, you can provision up to 2 PiB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
 +
 Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
 
