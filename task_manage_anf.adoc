@@ -116,17 +116,11 @@ image:screenshot_azure_access_control.gif[]
 
 .. Click *JSON* and click *Edit* which appears at the top right of the JSON format.
 
-.. Add the following permissions under _actions_:
+.. Add the following permission under _actions_:
 +
 [source,json]
 "actions": [
     "Microsoft.NetApp/*",
-    "Microsoft.Resources/resources/read",
-    "Microsoft.Resources/subscriptions/resourceGroups/read",
-    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
-    "Microsoft.Resources/subscriptions/resourceGroups/write",
-    "Microsoft.Network/virtualNetworks/read",
-    "Microsoft.Insights/Metrics/Read"
     ],
 
 .. Click *Save*, click *Next*, and then click *Create*.
