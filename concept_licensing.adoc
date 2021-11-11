@@ -36,7 +36,7 @@ Essentials package a|
 ** A single node or HA system
 ** File and block storage or secondary data (DR)
 * Available by bringing your own license (BYOL) purchased from NetApp
-| Included | 2 PB
+| Included | 2 PiB
 
 a|
 Capacity-based license:
@@ -45,7 +45,7 @@ Professional package a|
 * Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type)
 * Includes volume backups using the Cloud Backup Service (only for volumes charged against this license)
 * Available through an AWS Marketplace annual contract or by bringing your own license (BYOL) purchased from NetApp
-| Included | 2 PB
+| Included | 2 PiB
 
 | PAYGO by node a|
 * Pay-as-you-go by the hour through a marketplace subscription from your cloud provider
@@ -100,7 +100,7 @@ Essentials package::
 * This package is available as a license (BYOL) purchased from NetApp.
 * Support is included for the length of the subscription term.
 * Conversions to another licensing option isn't supported.
-* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
+* Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
 
 Professional package::
 
@@ -111,7 +111,7 @@ Professional package::
 If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match a Marketplace contract with BYOL.
 * Support is included for the length of the subscription term.
 * Conversions to another licensing option isn't supported.
-* Each individual Cloud Volumes ONTAP system supports up to 2 PB of capacity through disks and tiering to object storage.
+* Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
 
 To get started with a capacity-based license, https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] and then link:task_managing_licenses.html[add your license to Cloud Manager].
 
