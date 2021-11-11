@@ -1,0 +1,207 @@
+---
+sidebar: sidebar
+permalink: task_backup_kubernetes_to_s3.html
+keywords: backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, aws, aws s3, amazon s3, s3 bucket, back up volumes, Cloud Backup, cloud backup service, kubernetes
+summary: Complete a few steps to get started backing up data from Kubernetes persistent volumes to Amazon S3.
+---
+
+= Backing up Kubernetes persistent volume data to Amazon S3
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to get started backing up data from Kubernetes persistent volumes to Amazon S3.
+
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Verify support for your configuration
+
+[role="quick-margin-list"]
+* You're running Cloud Volumes ONTAP 9.7P5 or later in AWS.
+* You have a valid cloud provider subscription for the storage space where your backups will be located.
+* You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering], an https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS annual contract], or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated] a Cloud Backup BYOL license from NetApp.
+* The IAM role that provides the Cloud Manager Connector with permissions includes S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on your existing Kubernetes cluster
+
+[role="quick-margin-para"]
+Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
++
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Enable button which is available after you select a working environment.]
+
+// .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enter the provider details
+//
+// [role="quick-margin-para"]
+//Select the AWS Account and the region where you want to create the backups. You can also choose your own customer-managed key for data encryption instead of using the default Amazon S3 encryption key.
+//
+// [role="quick-margin-para"]
+// image:screenshot_backup_provider_settings_aws.png[A screenshot that shows the cloud provider details when backing up volumes from a Cloud Volumes ONTAP system to AWS S3.]
+//
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Define the backup policy
+
+[role="quick-margin-para"]
+The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
+//
+// [role="quick-margin-para"]
+// By default, backups are stored in S3 Standard storage. If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization.
+
+[role="quick-margin-para"]
+image:screenshot_backup_policy_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the volumes that you want to back up
+
+[role="quick-margin-para"]
+Identify which volumes you want to back up in the Select Volumes page.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Restore your data, as needed
+
+[role="quick-margin-para"]
+Restore an entire backup to a new volume on the same or different Cloud Volumes ONTAP system in AWS.
+// Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system in AWS, or to an on-premises ONTAP system.
+
+[role="quick-margin-para"]
+See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
+
+== Requirements
+
+Read the following requirements to make sure that you have a supported configuration before you start backing up volumes to S3.
+
+The following image shows each component and the connections that you need to prepare between them:
+
+image:diagram_cloud_backup_cvo_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
+Supported ONTAP versions::
+Cloud Volumes ONTAP 9.7P5 and later.
+
+License requirements::
+For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
++
+For an annual contract that enables you to back up both Cloud Volumes ONTAP data and on-premises ONTAP data, you need to subscribe from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials].
++
+For an annual contract that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service, you must set up the annual contract when you create a Cloud Volumes ONTAP working environment. This option doesn't enable you to back up on-prem data.
++
+For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
++
+And you need to have an AWS account for the storage space where your backups will be located.
+
+Supported AWS regions::
+Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+
+Required setup for creating backups in a different AWS account::
+By default, backups are created using the same account as the one used for your Cloud Volumes ONTAP system. If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
+
+Required information for using customer-managed keys for data encryption::
+
+You can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys. In this case you'll need to have the encryption managed keys already set up. link:task_setting_up_kms.html[See how to use your own keys].
+
+AWS Backup permissions required::
+The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
++
+Here are the specific permissions from the policy:
++
+[source,json]
+{
+            "Sid": "backupPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPublicAccessBlock"
+            ],
+            "Resource": [
+                "arn:aws:s3:::netapp-backup-*"
+            ]
+        },
+
+// AWS Restore permissions required::
+// The following EC2 permissions are needed for the IAM role that provides Cloud Manager with permissions so that it can start, stop, and terminate the // Cloud Restore instance:
+// +
+// [source,json]
+//           "Action": [
+//               "ec2:DescribeInstanceTypeOfferings",
+//               "ec2:StartInstances",
+//               "ec2:StopInstances",
+//               "ec2:TerminateInstances"
+//           ],
+//
+// Required outbound internet access for AWS deployments::
+// The Cloud Restore instance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
+// +
+// [cols="43,57",options="header"]
+// |===
+// | Endpoints
+// | Purpose
+//
+// | \http://amazonlinux.us-east-1.amazonaws.com/2/extras/docker/stable/x86_64/4bf88ee77c395ffe1e0c3ca68530dfb3a683ec65a4a1ce9c0ff394be50e922b2/ | CentOS package for the Cloud Restore Instance AMI.
+//
+// |
+// \http://cloudmanagerinfraprod.azurecr.io
+// \https://cloudmanagerinfraprod.azurecr.io
+//
+// | Cloud Restore Instance image repository.
+//
+// |===
+
+== Enabling Cloud Backup on an existing system
+
+Enable Cloud Backup at any time directly from the working environment.
+
+.Steps
+
+. Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel.
++
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Settings button which is available after you select a working environment.]
+
+. Select the provider details and click *Next*.
+
+.. The AWS Account used to store the backups. This can be a different account than where the Cloud Volumes ONTAP system resides.
++
+If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
+.. The region where the backups will be stored. This can be a different region than where the Cloud Volumes ONTAP system resides.
+.. Whether you'll use the default Amazon S3 encryption keys or choose your own customer-managed keys from your AWS account to manage encryption of your data. (link:task_setting_up_kms.html[See how to use your own keys]).
++
+image:screenshot_backup_provider_settings_aws.png[A screenshot that shows the cloud provider details when backing up volumes from a Cloud Volumes ONTAP system to AWS S3.]
+
+. Enter the backup policy details and click *Next*.
+
+.. Define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+// .. When using ONTAP 9.10.1 and greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about using archival tiers].
++
+image:screenshot_backup_policy_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
+
+. Select the volumes that you want to back up and click *Activate Backup*.
++
+image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+
++
+* To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
+* To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
+
+.Result
+
+Cloud Backup starts taking the initial backups of each selected volume and the Volume Backup Dashboard is displayed so you can monitor the state of the backups.
+
+.What's next?
+
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes from a backup file^].
+// or individual files 

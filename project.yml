@@ -307,6 +307,8 @@ sidebar:
               url: /task_backup_onprem_to_gcp.html
             - title: Back up on-premises ONTAP data to StorageGRID
               url: /task_backup_onprem_private_cloud.html
+            - title: Back up Kubernetes clusters to Amazon S3
+              url: /task_backup_kubernetes_to_s3.html
         - title: Set up licensing
           url: /task_licensing_cloud_backup.html
         - title: Manage backups
