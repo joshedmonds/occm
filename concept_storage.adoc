@@ -15,7 +15,7 @@ summary: Understanding how Cloud Volumes ONTAP uses cloud storage can help you u
 [.lead]
 Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.
 
-IMPORTANT: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
 
 == Overview
 
