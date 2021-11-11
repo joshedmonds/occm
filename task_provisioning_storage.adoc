@@ -15,7 +15,7 @@ summary: You can provision additional storage for your Cloud Volumes ONTAP syste
 [.lead]
 You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 
-IMPORTANT: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
 
 == Creating FlexVol volumes
 
@@ -185,7 +185,7 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 You can create additional volumes on this aggregate if required.
 
-IMPORTANT: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
+TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
 
 == Creating aggregates
 

@@ -21,7 +21,7 @@ Microsoft Azure schedules periodic maintenance events on its virtual machines. W
 
 If you enable this setting, Cloud Volumes ONTAP will veto the locks and reset the active CIFS sessions. As a result, the HA pair can complete storage failover during these maintenance events.
 
-IMPORTANT: This process might be disruptive to CIFS clients. Data that is not committed from CIFS clients could be lost.
+CAUTION: This process might be disruptive to CIFS clients. Data that is not committed from CIFS clients could be lost.
 
 .What you'll need
 

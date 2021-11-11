@@ -44,7 +44,7 @@ For information about configuring a destination volume for data access and react
 
 | Resync a| Reestablishes a broken relationship between volumes and resumes data replication according to the defined schedule.
 
-IMPORTANT: When you resynchronize the volumes, the contents on the destination volume are overwritten by the contents on the source volume.
+NOTE: When you resynchronize the volumes, the contents on the destination volume are overwritten by the contents on the source volume.
 
 To perform a reverse resync, which resynchronizes the data from the destination volume to the source volume, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
 

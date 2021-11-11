@@ -63,7 +63,7 @@ You can enable data tiering when using specific configurations and features:
 ** Version 9.6 in Azure with HA pairs
 ** Version 9.6 in GCP
 +
-NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
+NOTE: Data tiering isn't supported in Azure with PAYGO Explore.
 
 * In AWS, the performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
 +
