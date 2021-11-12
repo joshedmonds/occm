@@ -25,7 +25,7 @@ You can view a list of all the volumes that are currently being backed up in the
 
 . Click the *Backup & Restore* tab.
 
-. Click the *Backup* tab and the Backup Dashboard is displayed.
+. Click the *Volumes* tab and the Volumes Backup Dashboard is displayed.
 +
 image:screenshot_backup_dashboard.png[A screenshot showing all the working environments and volumes that have backup files.]
 
@@ -39,7 +39,7 @@ Changing the backup policy affects both new volumes created after you change the
 
 .Steps
 
-. From the Backup Dashboard, select *Backup Settings*.
+. From the Volumes Backup Dashboard, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
@@ -65,7 +65,7 @@ You can stop backing up a volume if you do not need backup copies of that volume
 
 .Steps
 
-. From the Backup Dashboard, select *Backup Settings*.
+. From the Volumes Backup Dashboard, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
@@ -89,7 +89,7 @@ The backup name includes the timestamp so you can identify your on-demand backup
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
+. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
 +
 image:screenshot_backup_now_button.png[A screenshot that shows the Backup Now button which is available after you select a volume.]
 
@@ -107,7 +107,7 @@ This page also enables you perform the following tasks:
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
+. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
@@ -127,7 +127,7 @@ CAUTION: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system
 
 .Steps
 
-. From the Backup Dashboard, select *Backup Settings*.
+. From the Volumes Backup Dashboard, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
@@ -141,7 +141,7 @@ image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
+. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
@@ -161,7 +161,7 @@ You can delete a single backup file. This feature is available only if the volum
 
 .Steps
 
-. From the Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
+. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
@@ -183,7 +183,7 @@ Note that you'll continue to be charged by your cloud provider for object storag
 
 .Steps
 
-. From the Backup Dashboard, select *Backup Settings*.
+. From the Volumes Backup Dashboard, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
@@ -210,7 +210,7 @@ The unregister option is not available until these two actions are complete.
 
 .Steps
 
-. From the Backup Dashboard, select *Backup Settings*.
+. From the Volumes Backup Dashboard, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
