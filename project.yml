@@ -221,7 +221,7 @@ sidebar:
           entries:
             - title: Learn about FSx for ONTAP
               url: /concept_fsx_aws.html
-            - title: Quick Start
+            - title: Quick start
               url: /task_getting_started_fsx.html
             - title: Set up permissions for FSx for ONTAP
               url: /task_setting_up_permissions_fsx.html
