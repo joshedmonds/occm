@@ -21,30 +21,42 @@ You can restore files to a volume in the same working environment, to a volume i
 
 == Supported working environments and object storage providers
 
-You can restore a volume, or individual files, from a backup file to the following working environments:
+For backups of Cloud Volumes ONTAP and on-prem ONTAP volumes, you can restore a volume, or individual files, from a backup file to the following working environments:
 
-[cols=4*,options="header",cols="20,20,30,30",width="100%"]
+[cols=3*,options="header",cols="25,40,40",width="95%"]
 |===
 
-2+^| Backup File
+| Backup File Location
 2+^| Destination Working Environment
-| *Location* | *Type*
-| *Volume Restore* | *File Restore*
-| Amazon S3 | ONTAP | Cloud Volumes ONTAP in AWS
+
+| | *Volume Restore* | *File Restore*
+| Amazon S3 | Cloud Volumes ONTAP in AWS
 On-premises ONTAP system
 | Cloud Volumes ONTAP in AWS
 On-premises ONTAP system
-| Amazon S3 | Kubernetes | Kubernetes cluster in AWS |
-| Azure Blob | ONTAP | Cloud Volumes ONTAP in Azure
+| Azure Blob | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
-| Google Cloud Storage | ONTAP | Cloud Volumes ONTAP in Google
+| Google Cloud Storage | Cloud Volumes ONTAP in Google
 On-premises ONTAP system |
-| NetApp StorageGRID | ONTAP | On-premises ONTAP system |
+| NetApp StorageGRID | On-premises ONTAP system |
 
 |===
 
 *Note:* If the backup file resides in archival storage, only volume restore is supported. File restore is not currently supported from archival storage.
+
+For backups of Kubernetes volumes, you can restore a volume from a backup file to the following working environments:
+
+[cols=3*,options="header",cols="25,40,40",width="95%"]
+|===
+
+| Backup File Location
+2+^| Destination Working Environment
+
+| | *Volume Restore* | *File Restore*
+| Amazon S3 | Kubernetes cluster in AWS |
+
+|===
 
 == The Restore Dashboard
 

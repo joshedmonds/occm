@@ -81,7 +81,7 @@ image:diagram_cloud_backup_k8s_cvo_aws.png[A diagram showing how Cloud Backup co
 // When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
 
 Kubernetes cluster requirements::
-* You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:[See how to discover the Kubernetes cluster in Cloud Manager].
+* You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:[See how to discover the Kubernetes cluster].
 * The Trident version on the cluster must be a minimum of 20.10. link:[See how to upgrade the Trident version].
 * The Cloud Volumes ONTAP system being used as backend storage for the cluster must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
 
@@ -99,8 +99,11 @@ And you need to have an AWS account for the storage space where your backups wil
 Supported AWS regions::
 Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
-Required setup for creating backups in a different AWS account::
-By default, backups are created using the same account as the one used for your Cloud Volumes ONTAP system. If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
+Backups are created using the same account as the one used for your Cloud Volumes ONTAP system.
+// If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
+//
+// Required setup for creating backups in a different AWS account::
+// By default, backups are created using the same account as the one used for your Cloud Volumes ONTAP system. If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
 //
 // Required information for using customer-managed keys for data encryption::
 // You can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys. In this case you'll need to have the encryption managed keys already set up. link:task_setting_up_kms.html[See how to use your own keys].
