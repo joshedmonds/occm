@@ -37,10 +37,6 @@ Note that your subscription and charging are maintained by the Azure NetApp File
 
 https://cloud.netapp.com/cloud-volumes-global-regions[View supported Azure regions^].
 
-== Requesting access
-
-You need to be granted access to Azure NetApp Files by https://aka.ms/azurenetappfiles[submitting an online request^]. You'll need to wait for approval from the Azure NetApp Files team before you can proceed.
-
 == Getting help
 
 For technical support issues associated with Azure NetApp Files, use the Azure portal to log a support request to Microsoft. Select your associated Microsoft subscription and select the *Azure NetApp Files* service name under *Storage*. Provide the remaining information required to create your Microsoft support request.
