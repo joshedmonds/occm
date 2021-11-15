@@ -23,24 +23,15 @@ If you already set up Azure NetApp Files from outside of Cloud Manager, then you
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Request access
-
-[role="quick-margin-para"]
-https://aka.ms/azurenetappfiles[Submit an online request^] to be granted access to Azure NetApp Files.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up an Azure AD application
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up an Azure AD application
 
 [role="quick-margin-para"]
 From Azure, grant permissions to an Azure AD application and copy the application (client) ID, the directory (tenant) ID, and the value of a client secret.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create an Azure NetApp Files working environment
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Create an Azure NetApp Files working environment
 
 [role="quick-margin-para"]
 In Cloud Manager, click *Add Working Environment* > *Microsoft Azure* > *Azure NetApp Files* and then provide details about the AD application.
-
-== Requesting access
-
-You need to be granted access to Azure NetApp Files by https://aka.ms/azurenetappfiles[submitting an online request^]. You'll need to wait for approval from the Azure NetApp Files team before you can proceed.
 
 == Setting up an Azure AD application
 
@@ -58,7 +49,7 @@ You must have the right permissions in Azure to create an Active Directory appli
 
 . From the Azure portal, open the *Azure Active Directory* service.
 +
-image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
+image:screenshot_azure_ad.gif[A screenshot that shows the Active Directory service in Microsoft Azure.]
 
 . In the menu, click *App registrations*.
 
@@ -76,7 +67,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 . Copy the *Application (client) ID* and the *Directory (tenant) ID*.
 +
-image:screenshot_anf_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
+image:screenshot_anf_app_ids.gif["A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory."]
 +
 When you create the Azure NetApp Files working environment in Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
 
@@ -110,7 +101,7 @@ The following steps describe how to create the role from the Azure portal.
 
 .. Click *Add > Add custom role*.
 +
-image:screenshot_azure_access_control.gif[]
+image:screenshot_azure_access_control.gif[A screenshot that shows the steps to add a custom role in the Azure portal.]
 
 .. In the *Basics* tab, enter a name and description for the role.
 
