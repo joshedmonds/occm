@@ -59,7 +59,7 @@ image:screenshot_backup_policy_aws.png[A screenshot that shows the Cloud Backup 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the volumes that you want to back up
 
 [role="quick-margin-para"]
-Identify which volumes you want to back up in the Select Volumes page.
+Identify which volumes you want to back up in the Select Volumes page. An S3 bucket is created automatically in the same AWS account and Region as the Cloud Volumes ONTAP system, and the backup files are stored there.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Restore your data, as needed
 
@@ -99,7 +99,6 @@ And you need to have an AWS account for the storage space where your backups wil
 Supported AWS regions::
 Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
-Backups are created using the same account as the one used for your Cloud Volumes ONTAP system.
 // If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
 //
 // Required setup for creating backups in a different AWS account::
@@ -206,7 +205,7 @@ image:screenshot_backup_select_volumes_k8s.png[A screenshot of selecting the vol
 
 .Result
 
-Cloud Backup starts taking the initial backups of each selected volume and the Volume Backup Dashboard is displayed so you can monitor the state of the backups.
+An S3 bucket is created automatically in the same AWS account and Region as the Cloud Volumes ONTAP system, and Cloud Backup starts taking the initial backups of each selected volume. The Volume Backup Dashboard is displayed so you can monitor the state of the backups.
 
 .What's next?
 
