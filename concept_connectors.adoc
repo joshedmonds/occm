@@ -43,7 +43,7 @@ A Connector is supported in the following locations:
 * Google Cloud
 * On your premises
 
-NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
+NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
 == Connectors should remain running
 
