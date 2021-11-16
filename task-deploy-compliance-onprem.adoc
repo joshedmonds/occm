@@ -5,7 +5,7 @@ keywords: cloud compliance, data sense, get started, deploy cloud data sense, ou
 summary: Complete a few steps to deploy Cloud Data Sense on an on-premises system.
 ---
 
-= Deploy Cloud Data Sense on your premises
+= Deploy Cloud Data Sense on a Linux host that has internet access
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -174,7 +174,7 @@ Follow these steps when installing Data Sense software on a single on-premises h
 
 .Steps
 
-. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *cc_onprem_installer.tar.gz*.
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 

@@ -410,8 +410,8 @@ sidebar:
                   url: /task_deploy_cloud_compliance.html
                 - title: Deploy on premises
                   url: /task-deploy-compliance-onprem.html
-#                - title: Deploy on premises without internet access
-#                  url: /task-deploy-compliance-dark-site.html
+                - title: Deploy on premises without internet access
+                  url: /task-deploy-compliance-dark-site.html
             - title: Activate scanning on your data sources
               entries:
                 - title: Cloud Volumes ONTAP and on-prem ONTAP
