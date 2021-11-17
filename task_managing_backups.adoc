@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_backups.html
 keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup
-summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
+summary: You can manage backups for your Cloud Volumes ONTAP, on-premises ONTAP, and Kubernetes systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 ---
 
 = Managing backups for your ONTAP systems
@@ -13,7 +13,9 @@ summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP sy
 :imagesdir: ./media/
 
 [.lead]
-You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, creating an on-demand backup, deleting backups, and more.
+You can manage backups for your Cloud Volumes ONTAP, on-premises ONTAP, and Kubernetes systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
+
+Note that the following tasks are performed the same way for ONTAP clusters (Cloud Volumes ONTAP and on-premises ONTAP) and for Kubernetes clusters, but the text on the UI pages are slightly different. ONTAP cluster UI pages are shown in the examples.
 
 CAUTION: Do not manage or change backup files directly from your cloud provider environment. This may corrupt the files and will result in an unsupported configuration.
 
@@ -25,7 +27,7 @@ You can view a list of all the volumes that are currently being backed up in the
 
 . Click the *Backup & Restore* tab.
 
-. Click the *Volumes* tab and the Volumes Backup Dashboard is displayed.
+. Click the *Volumes* tab to view the list of volumes for Cloud Volumes ONTAP and on-premises ONTAP systems, or click the *Kubernetes* tab to view the list of persistent volumes for Kubernetes systems.
 +
 image:screenshot_backup_dashboard.png[A screenshot showing all the working environments and volumes that have backup files.]
 
@@ -39,11 +41,11 @@ Changing the backup policy affects both new volumes created after you change the
 
 .Steps
 
-. From the Volumes Backup Dashboard, select *Backup Settings*.
+. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to change the settings and select *Modify Policy*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to change the settings and select *Modify Policy*.
 +
 image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
@@ -65,11 +67,11 @@ You can stop backing up a volume if you do not need backup copies of that volume
 
 .Steps
 
-. From the Volumes Backup Dashboard, select *Backup Settings*.
+. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment and select *Manage Volumes*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, and select *Manage Volumes*.
 +
 image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
 
@@ -89,7 +91,7 @@ The backup name includes the timestamp so you can identify your on-demand backup
 
 .Steps
 
-. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
+. From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
 +
 image:screenshot_backup_now_button.png[A screenshot that shows the Backup Now button which is available after you select a volume.]
 
@@ -107,7 +109,7 @@ This page also enables you perform the following tasks:
 
 .Steps
 
-. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
+. From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
@@ -117,21 +119,21 @@ image:screenshot_backup_view_backups.png[A screenshot that shows the List of all
 
 == Deleting backups
 
-Cloud Backup enables you to delete a single backup file, delete all backups for a volume, or delete all backups of all volumes in a working environment. You might want to delete all backups if you no longer need the backups or if you deleted the source volume and want to remove all backups.
+Cloud Backup enables you to delete a single backup file, delete all backups for a volume, or delete all backups of all volumes in a working environment or Kubernetes cluster. You might want to delete all backups if you no longer need the backups or if you deleted the source volume and want to remove all backups.
 
 Note that deleting all backups does not disable further backups of this volume or the working environment. If you want to stop creating backups of a volume, you can disable backups <<Starting and stopping backups of volumes,as described here>>. If you want to stop creating backups of all volumes in a working environment, you can deactivate backups <<Disabling Cloud Backup for a working environment,as described here>>.
 
-CAUTION: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted. You'll continue to be charged for object storage costs for any remaining backups.
+CAUTION: If you plan to delete a working environment or cluster that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted. You'll continue to be charged for object storage costs for any remaining backups.
 
 === Deleting all backup files for a working environment
 
 .Steps
 
-. From the Volumes Backup Dashboard, select *Backup Settings*.
+. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. Click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to delete all backups and select *Delete All Backups*.
+. Click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to delete all backups and select *Delete All Backups*.
 +
 image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All Backups button to delete all backups for a working environment.]
 
@@ -141,7 +143,7 @@ image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All
 
 .Steps
 
-. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
+. From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
@@ -161,7 +163,7 @@ You can delete a single backup file. This feature is available only if the volum
 
 .Steps
 
-. From the Volumes Backup Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
+. From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the source volume and select *Details & Backup List*.
 +
 image:screenshot_backup_view_backups_button.png[A screenshot that shows the Details & Backup List button which is available for a single volume.]
 +
@@ -183,11 +185,11 @@ Note that you'll continue to be charged by your cloud provider for object storag
 
 .Steps
 
-. From the Volumes Backup Dashboard, select *Backup Settings*.
+. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to disable backups and select *Deactivate Backup*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to disable backups and select *Deactivate Backup*.
 +
 image:screenshot_disable_backups.png[A screenshot of the Deactivate Backup button for a working environment.]
 
@@ -197,7 +199,7 @@ NOTE: An *Activate Backup* button appears for that working environment while bac
 
 == Unregistering Cloud Backup for a working environment
 
-You can unregister Cloud Backup for a working environment if you no longer want to use backup functionality and you want to stop being charged for backups in that working environment. Typically this feature is used when you're planning to delete a working environment and you want to cancel the backup service.
+You can unregister Cloud Backup for a working environment if you no longer want to use backup functionality and you want to stop being charged for backups in that working environment. Typically this feature is used when you're planning to delete a working environment, or a Kubernetes cluster, and you want to cancel the backup service.
 
 You can also use this feature if you want to change the destination object store where your cluster backups are being stored. After you unregister Cloud Backup for the working environment, then you can enable Cloud Backup for that cluster using the new cloud provider information.
 
@@ -210,11 +212,11 @@ The unregister option is not available until these two actions are complete.
 
 .Steps
 
-. From the Volumes Backup Dashboard, select *Backup Settings*.
+. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to unregister the backup service and select *Unregister*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to unregister the backup service and select *Unregister*.
 +
 image:screenshot_backup_unregister.png[A screenshot of the Unregister backup button for a working environment.]
 

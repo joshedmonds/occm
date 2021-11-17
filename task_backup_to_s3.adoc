@@ -228,7 +228,7 @@ image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes
 
 .Result
 
-Cloud Backup starts taking the initial backups of each selected volume and the Backup Dashboard is displayed so you can monitor the state of the backups.
+Cloud Backup starts taking the initial backups of each selected volume and the Volume Backup Dashboard is displayed so you can monitor the state of the backups.
 
 .What's next?
 

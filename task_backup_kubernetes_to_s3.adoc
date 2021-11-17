@@ -54,7 +54,7 @@ The default policy backs up volumes every day and retains the most recent 30 bac
 // By default, backups are stored in S3 Standard storage. If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization.
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
+image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the volumes that you want to back up
 
