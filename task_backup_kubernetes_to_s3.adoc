@@ -110,7 +110,7 @@ Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volu
 AWS Backup permissions required::
 The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 +
-Here are the specific permissions from the policy:
+Here are the specific S3 permissions from the policy:
 +
 [source,json]
 {
@@ -138,6 +138,13 @@ Here are the specific permissions from the policy:
                 "arn:aws:s3:::netapp-backup-*"
             ]
         },
+
+Additionally, the Cloud Manger role has to have the following permissions:
++
+[source,json]
+eks:DescribeCluster
+eks:ListClusters
+iam:GetInstanceProfile
 
 // AWS Restore permissions required::
 // The following EC2 permissions are needed for the IAM role that provides Cloud Manager with permissions so that it can start, stop, and terminate the Cloud Restore instance:
@@ -190,22 +197,25 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 
 . Enter the backup policy details and click *Next*.
 
-.. Define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
-.. When using ONTAP 9.10.1 and greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about using archival tiers].
 +
-image:screenshot_backup_policy_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
+You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+// .. When using ONTAP 9.10.1 and greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about using archival tiers].
++
+image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
-. Select the persistent volumes that you want to back up and click *Activate Backup*.
-+
-image:screenshot_backup_select_volumes_k8s.png[A screenshot of selecting the volumes that will be backed up.]
+. Select the persistent volumes that you want to back up.
 
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
++
+image:screenshot_backup_select_volumes_k8s.png[A screenshot of selecting the volumes that will be backed up.]
+
+. Click *Activate Backup* and Cloud Backup starts taking the initial backups of each selected volume.
 
 .Result
 
-An S3 bucket is created automatically in the same AWS account and Region as the Cloud Volumes ONTAP system, and Cloud Backup starts taking the initial backups of each selected volume. The Volume Backup Dashboard is displayed so you can monitor the state of the backups.
+An S3 bucket is created automatically in the same AWS account and Region as the Cloud Volumes ONTAP system, and the backup files are stored there. The Volume Backup Dashboard is displayed so you can monitor the state of the backups.
 
 .What's next?
 

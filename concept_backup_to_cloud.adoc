@@ -307,7 +307,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 * When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the cloud.
 
-* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
+* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises. The Connector can be installed in a site with or without internet access. 
 
 * When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
 ** app_consistent
