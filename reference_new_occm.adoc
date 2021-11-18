@@ -19,6 +19,12 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.12 (31 Oct 2021)
+
+=== Cloud Volumes ONTAP enhancements
+
+* Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
+
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
 This patch update includes bug fixes.
