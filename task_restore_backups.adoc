@@ -74,7 +74,7 @@ Note that you can also initiate a volume or file restore operation from a workin
 
 image:screenshot_restore_services_actions.png[A screenshot showing how to select volume and file restore operations from the Services panel.]
 
-== Restoring a volume from a backup file
+== Restoring volumes from an ONTAP backup file
 
 When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. You can also restore volumes to an on-premises ONTAP system.
 
@@ -127,7 +127,7 @@ link:reference-aws-backup-tiers.html[Learn more about restoring from AWS archiva
 
 Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
 
-== Restoring files from a backup
+== Restoring files from an ONTAP backup file
 
 If you only need to restore a few files from a volume, you can choose to restore individual files instead of restoring the entire volume. You can restore files to a volume in the same working environment, or to a different working environment that's using the same cloud account. You can also restore files to an on-premises ONTAP system.
 
@@ -224,3 +224,33 @@ You have a few options for the location when restoring files.
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
 The Restore instance is shut down after a certain period of inactivity to save you money so that you incur costs only when it is active.
+
+== Restoring volumes from a Kubernetes backup file
+
+When you restore a persistent volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same Kubernetes cluster or to a different Kubernetes cluster that's located in the same cloud account as the source Kubernetes cluster.
+
+Before you start, you should know the name of the volume you want to restore and the date of the backup file you want to use to create the newly restored volume.
+
+.Steps
+
+. Select the *Backup & Restore* tab.
+
+. Click the *Kubernetes* tab and the Kubernetes Dashboard is displayed.
++
+image:screenshot_backup_view_k8s_backups_button.png[A screenshot of the Kubernetes dashboard with the list of all Kubernetes clusters and volumes that are being backed up.]
+
+. Locate the volume you want to restore, click image:screenshot_horizontal_more_button.gif[More icon], and then *Details & Backup List*.
++
+The list of all backup files for that volume is displayed along with details about the source volume, destination location, and backup details.
++
+image:screenshot_backup_view_k8s_backups.png[A screenshot of all the available backups for a single source volume.]
+
+. Locate the specific backup file that you want to restore based on the date/time stamp, click image:screenshot_horizontal_more_button.gif[More icon], and then *Restore*.
+
+. In the _Select Destination_ page, select the _Kubernetes cluster_ where you want to restore the volume, the _Namespace_, the _Storage Class_, and the new _Persistent volume name_.
+
+. Click *Restore* and you are returned to the Kubernetes Dashboard so you can review the progress of the restore operation.
+
+.Result
+
+Cloud Manager creates a new volume in the Kubernetes cluster based on the backup you selected.
