@@ -128,41 +128,32 @@ Cloud Data Sense categorizes your data as follows. Most of these categories can 
 
 The following Metadata categories are also supported:
 
-[cols="25,15,15,15",width=90%,options="header"]
-|===
-| Category
-| English
-| German
-| Spanish
-
-| Application Data | ✓ |  |
-| Archive Files | ✓ |  |
-| Audio | ✓ |  |
-| Business Application Data | ✓ |  |
-| CAD Files | ✓ |  |
-
-| Database and index files | ✓ |  |
-| Design Files | ✓ |  |
-| Email Application Data | ✓ |  |
-| Executables | ✓ |  |
-| Financial Application Data | ✓ |  |
-| Health Application Data | ✓ |  |
-| Images | ✓ |  |
-| Logs | ✓ |  |
-| Miscellaneous Documents | ✓ | ✓ | ✓
-| Miscellaneous Presentations | ✓ | ✓ | ✓
-| Miscellaneous Spreadsheets | ✓ | ✓ | ✓
-| Miscellaneous "Unknown" | ✓ | ✓ | ✓
-| Videos | ✓ |  |
-
-|===
+* Application Data
+* Archive Files
+* Audio
+* Business Application Data
+* CAD Files
+* Database and index files
+* Design Files
+* Email Application Data
+* Executables
+* Financial Application Data
+* Health Application Data
+* Images
+* Logs
+* Miscellaneous Documents
+* Miscellaneous Presentations
+* Miscellaneous Spreadsheets
+* Miscellaneous "Unknown"
+* Videos
 
 == Types of files
 
 Cloud Data Sense scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
 
 But when Data Sense detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
-.CSV, .DCM, .DICOM, .DOC, .DOCX, .JSON, .PDF, .PPTX, .RTF, .TXT, .XLS, and .XLSX.
+
+`+.CSV, .DCM, .DICOM, .DOC, .DOCX, .JSON, .PDF, .PPTX, .RTF, .TXT, .XLS, and .XLSX.+`
 
 == Accuracy of information found
 
