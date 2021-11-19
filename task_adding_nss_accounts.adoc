@@ -132,7 +132,6 @@ If your organization has multiple NetApp Support Site accounts, you can change w
 .. For the working environment that you want to change the association for, click image:icon-action.png["An icon that is three side-by-side dots"]
 
 .. Select *Change to a different NSS account*.
-
 +
 image:screenshot-nss-change-account.png[A screenshot that shows the action menu for a working environment that is associated with a NetApp Support Site account.]
 
