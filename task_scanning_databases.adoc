@@ -70,6 +70,14 @@ When choosing a user name and password, it’s important to choose one that has 
 
 *Note:* For MongoDB, a read-only Admin role is required.
 
+== Deploying the Cloud Data Sense instance
+
+Deploy Cloud Data Sense if there isn't already an instance deployed.
+
+Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
 == Adding the database server
 
 You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].

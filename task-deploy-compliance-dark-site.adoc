@@ -26,7 +26,7 @@ There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Fil
 
 == Unsupported features
 
-Certain Data Sense features are not currently supported:
+Most Data Sense features work when Data Sense is deployed in a site with no internet access, However, there are a few features that are not currently supported:
 
 * Microsoft Azure Information Protection (AIP) labels
 * Adding personal data identifiers using link:task_managing_data_fusion.html[Data Fusion]
@@ -180,7 +180,7 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 .What you'll need
 
-* mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
+// * mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
 * Verify that all your Linux systems meet the <<Verify host requirements,host requirements>>.
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.

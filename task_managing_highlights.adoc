@@ -394,9 +394,12 @@ You can manage AIP labels in the files that Cloud Data Sense is scanning if you 
 
 Cloud Data Sense supports AIP labels within the following file types: .DOC, .DOCX, .PDF, .PPTX, .XLS, .XLSX.
 
-Note that you can't currently change labels in files larger than 30 MB. For OneDrive accounts the maximum file size is 4 MB.
-
-TIP: If a file has a label which doesn’t exist anymore in AIP, Cloud Data Sense considers it as a file without a label.
+[NOTE]
+====
+* You can't currently change labels in files larger than 30 MB. For OneDrive accounts the maximum file size is 4 MB.
+* If a file has a label which doesn’t exist anymore in AIP, Cloud Data Sense considers it as a file without a label.
+* If you have deployed the Data Sense instance in an on-prem location that has no internet access (also known as a dark site), then the AIP label functionality is unavailable.
+====
 
 === Integrating AIP labels in your workspace
 

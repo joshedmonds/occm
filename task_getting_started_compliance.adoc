@@ -31,7 +31,7 @@ Before you can scan volumes, you must add the systems as working environments in
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
-link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense in Cloud Manager^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable Cloud Data Sense and select the volumes to scan
 
@@ -69,9 +69,11 @@ Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cl
 
 Deploy Cloud Data Sense if there isn't already an instance deployed.
 
-Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+If you are scanning Cloud Volumes ONTAP and on-premises ONTAP systems that are accessible over the internet, you can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or link:task-deploy-compliance-onprem.html[deploy Data Sense in an on-premises location that has internet access^].
 
-You can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or in an link:task-deploy-compliance-onprem.html[on-premises location^] when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
+If you are scanning on-premises ONTAP systems that have been installed in a dark site that has no internet access, you need to link:task-deploy-compliance-dark-site.html[deploy Cloud Data Sense in the same on-premises location that has no internet access^]. This also requires that the Cloud Manager Connector is deployed in that same on-premises location.
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
 
 == Enabling Cloud Data Sense in your working environments
 
