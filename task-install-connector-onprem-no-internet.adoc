@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-install-connector-onprem-no-internet.html
 keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
-summary: You can install the Connector on an on-premises Linux host that doesn't have internet access, and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
+summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters and back up data using the Cloud Backup Service or scan the on-prem clusters with Cloud Data Sense.
 ---
 
 = Install the Connector on-prem without internet access
@@ -13,7 +13,9 @@ summary: You can install the Connector on an on-premises Linux host that doesn't
 :imagesdir: ./media/
 
 [.lead]
-You can install the Connector on an on-premises Linux host that doesn't have internet access, and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
+You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters and back up data using the Cloud Backup Service or scan the on-prem clusters with Cloud Data Sense.
+
+TIP: When you use this installation method, both Cloud Backup Service and Cloud Data Sense run locally on the Connector.
 
 These installation instructions are specifically for the use case described above. link:concept_connectors.html[Learn about other ways to deploy a Connector].
 
@@ -45,7 +47,7 @@ The Connector is supported on English-language versions of these operating syste
 Hypervisor:: A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
 https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
 
-Docker Engine:: Docker Engine is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^].
+Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^].
 
 Disk space in /opt:: 100 GiB of space must be available
 
@@ -54,14 +56,6 @@ Disk space in /var:: 20 GiB of space must be available
 == Install the Connector
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
-
-.What you'll need
-
-* The host must meet link:reference_cloud_mgr_reqs.html[requirements for the Connector].
-
-* After you install the Connector, you'll need to set up permissions so Cloud Manager can manage resources and processes within your public cloud environment. See the steps below for more details.
-
-* Root privileges aren't required to install the Connector.
 
 .Steps
 
@@ -84,6 +78,7 @@ sudo /path/installation-file
 . Sign up at NetApp Cloud Central or log in.
 
 . After you log in, set up Cloud Manager:
+
 .. Specify the Cloud Central account to associate with the Connector.
 +
 link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
@@ -93,4 +88,10 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up scr
 
 .Result
 
-The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
+The Connector is now installed and set up with your Cloud Central account.
+
+.What's next?
+
+* Discover on-prem ONTAP clusters
+* Back up data using Cloud Backup Service
+* Scan the data using Cloud Data Sense
