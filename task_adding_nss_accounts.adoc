@@ -5,7 +5,7 @@ keywords: adding, creating, netapp support site account, nss
 summary: Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
 ---
 
-= Adding NetApp Support Site accounts to Cloud Manager
+= Add and manage NetApp Support Site accounts in Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,27 @@ summary: Adding your NetApp Support Site account to Cloud Manager is required to
 :imagesdir: ./media/
 
 [.lead]
-Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system or to enter the serial number for a capacity-based license. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
+Provide the credentials for your NetApp Support Site (NSS) accounts to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and proactive support through Active IQ.
+
+== Overview
+
+Adding your NetApp Support Site account to Cloud Manager is required to enable the following key tasks:
+
+* To deploy Cloud Volumes ONTAP when you bring your own license (BYOL)
++
+Providing your NSS account is required so that Cloud Manager can upload your license key and to enable the subscription for the term that you purchased. This includes automatic updates for term renewals.
+
+* To register pay-as-you-go Cloud Volumes ONTAP systems
++
+Providing your NSS account is required to activate support for your system and to gain access to NetApp technical support resources.
+
+* To upgrade to the latest Cloud Volumes ONTAP release
+
+* To use Active IQ Digital Advisor from within Cloud Manager
+
+== Add an NSS account to Cloud Manager
+
+The Support Dashboard enables you to add and manage all of your NetApp Support Site accounts from a single location.
 
 .Steps
 
@@ -23,7 +43,15 @@ Adding your NetApp Support Site account to Cloud Manager is required to deploy a
 
 . Click *NSS Management > Add NSS Account*.
 
-. Enter the user name and password for your account.
+. When you're prompted, click *Continue* to be redirected to a Microsoft login page.
++
+NetApp uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
+
+. At the login page, provide your NetApp Support Site registered email address and password to perform the authentication process.
++
+This action enables Cloud Manager to use your NSS account.
++
+Note the following requirements for the account:
 +
 * The account must be a customer-level account (not a guest or temp account).
 * If you plan to deploy a node-based BYOL system:
@@ -40,3 +68,85 @@ Users can now select the account when creating new Cloud Volumes ONTAP systems a
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
 * link:task_registering.html[Registering pay-as-you-go systems]
 * link:concept_licensing.html[Learn how Cloud Manager manages license files]
+
+== Update your NSS account by re-entering your credentials
+
+Starting in November 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing accounts that you previously added.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
+
+. Click *NSS Management*.
+
+. For the NSS account that you want to update, click *Update Account*.
++
+image:screenshot-nss-update-account.png[A screenshot that shows the Update Account option]
+
+. When you're prompted, click *Continue* to be redirected to a Microsoft login page.
++
+NetApp uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
+
+. At the login page, provide your NetApp Support Site registered email address and password to perform the authentication process.
++
+After the process is complete, the account that you updated should now be listed as a new account in the table. The older version is still listed in the table, so you'll need to delete it.
+
+. Go to the older version of the NSS account, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
++
+image:screenshot-nss-delete.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to choose the Delete option.]
+
+. Click *Delete* to confirm.
+
+== Update NSS credentials
+
+If you changed the credentials for your NSS account, you'll need to update them in Cloud Manager.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
+
+. Click *NSS Management*.
+
+. For the NSS account that you want to update, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Update Credentials*.
++
+image:screenshot-nss-update-credentials.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to choose the Delete option.]
+
+. When you're prompted, click *Continue* to be redirected to a Microsoft login page.
++
+NetApp uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
+
+. At the login page, provide your NetApp Support Site registered email address and password to perform the authentication process.
+
+== Attach a working environment to a different NSS account
+
+If your organization has multiple NetApp Support Site accounts, you can change which account is associated with a Cloud Volumes ONTAP system at any time.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
+
+. Click *NSS Management*.
+
+. For the NSS account that you want to delete, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
++
+image:screenshot-nss-delete.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to choose the Delete option.]
+
+. Click *Delete* to confirm.
+
+== Delete NSS accounts from Cloud Manager
+
+Delete any of the NSS accounts that you no longer want to use with Cloud Manager.
+
+Note that you can't delete an account that is currently associated with a Cloud Volumes ONTAP working environment. You would first need to attach those working environments to a different NSS account. Refer to the section above for details.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
+
+. Click *NSS Management*.
+
+. For the NSS account that you want to delete, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
++
+image:screenshot-nss-delete.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to choose the Delete option.]
+
+. Click *Delete* to confirm.
