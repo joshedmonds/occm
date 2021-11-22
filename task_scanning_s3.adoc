@@ -95,6 +95,8 @@ You need to deploy the instance using a Connector deployed in AWS so that Cloud 
 
 *Note:* Deploying Cloud Data Sense in an on-premises location is not currently supported when scanning S3 buckets.
 
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
 == Activating Data Sense on your S3 working environment
 
 Enable Cloud Data Sense on Amazon S3 after you verify the prerequisites.

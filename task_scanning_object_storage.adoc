@@ -62,8 +62,6 @@ Upgrades to Data Sense software is automated as long as the instance has interne
 
 == Adding the object storage service to Cloud Data Sense
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
-
 Add the object storage service.
 
 .Steps

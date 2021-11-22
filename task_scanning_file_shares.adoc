@@ -59,15 +59,11 @@ Review the following prerequisites to make sure that you have a supported config
 
 Deploy Cloud Data Sense if there isn't already an instance deployed.
 
-If you are scanning non-NetApp NFS or CIFS file shares that are accessible over the internet, you can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or link:task-deploy-compliance-onprem.html[deploy Data Sense in an on-premises location that has internet access^].
-
-If you are scanning non-NetApp NFS or CIFS file shares that have been installed in a dark site that has no internet access, you need to link:task-deploy-compliance-dark-site.html[deploy Cloud Data Sense in the same on-premises location that has no internet access^]. This also requires that the Cloud Manager Connector is deployed in that same on-premises location.
+Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
 
 Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
 
 == Creating the group for the file shares
-
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
 
 You must add a files shares "group" before you can add your file shares. The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
 
