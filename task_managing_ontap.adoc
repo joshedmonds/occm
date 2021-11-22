@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_ontap.html
 keywords: ontap, cluster, manage, fas, aff, active iq, shelf firmware, disk firmware, CVO licenses
-summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environments, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from Active IQ Digital Advisor.
+summary: The Discovery page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environments, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from Active IQ Digital Advisor.
 ---
 
 = Using Active IQ data to manage ONTAP clusters
@@ -12,7 +12,7 @@ summary: The Active IQ page in Cloud Manager shows you any undiscovered ONTAP cl
 :linkattrs:
 :imagesdir: ./media/
 
-The Active IQ page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environments, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
+The Discovery page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environments, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
 
 == Viewing unused Cloud Volumes ONTAP licenses
 
@@ -22,7 +22,7 @@ You can see whether you have any unused Cloud Volumes ONTAP licenses based on yo
 
 .Steps
 
-. In Cloud Manager, click the *Active IQ* tab.
+. In Cloud Manager, click the *Discovery* tab.
 
 . Click the *Licenses* tab in the lower portion of the page.
 +
@@ -112,7 +112,7 @@ A confirmation dialog is displayed.
 +
 image:screenshot_aiq_license_added.png[A screenshot showing that the license has been added to a Cloud Volumes ONTAP system.]
 
-. You can click *Close* to close the window and return to the Active IQ page, or you can click the link to go to the Cloud Volumes ONTAP Licensing page to view more details about licensing for that system.
+. You can click *Close* to close the window and return to the Discovery page, or you can click the link to go to the Cloud Volumes ONTAP Licensing page to view more details about licensing for that system.
 
 == Downloading new disk and shelf firmware
 
@@ -122,9 +122,9 @@ You can see whether any of your discovered ONTAP clusters need to have their she
 
 .Steps
 
-. From the Active IQ page, click the *Firmware Updates* tab.
+. From the Discovery page, click the *Firmware Updates* tab.
 +
-image:screenshot_aiq_firmware.png[A screenshot of the Active IQ page showing nodes that need updated firmware.]
+image:screenshot_aiq_firmware.png[A screenshot of the Discovery page showing nodes that need updated firmware.]
 +
 If any cluster require new firmware, a *Download All* button appears.
 
@@ -140,7 +140,7 @@ Your firmware is updated. The next time your ONTAP system sends an AutoSupport m
 
 Certain workloads or volumes are ideal to move to a Cloud Volumes ONTAP system from your on-prem ONTAP clusters. Some of the advantages include reduced costs and improved performance and resiliency. The _Cloud Ready Workloads_ tab provides a list of these workloads from your discovered ONTAP clusters.
 
-image:screenshot_aiq_workloads.png[A screenshot showing the workloads from your on-prem clusters that could be moved o the cloud.]
+image:screenshot_aiq_workloads.png[A screenshot showing the workloads from your on-prem clusters that could be moved to the cloud.]
 
 The supported workloads that are called out on this page include: SAP, SAP HANA, Oracle, File share, and SharePoint.
 
