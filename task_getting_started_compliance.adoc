@@ -69,7 +69,7 @@ Your Cloud Volumes ONTAP systems should already be available in the Canvas in Cl
 
 Deploy Cloud Data Sense if there isn't already an instance deployed.
 
-If you are scanning Cloud Volumes ONTAP and on-premises ONTAP systems that are accessible over the internet, you can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or link:task-deploy-compliance-onprem.html[deploy Data Sense in an on-premises location that has internet access^].
+If you are scanning Cloud Volumes ONTAP and on-premises ONTAP systems that are accessible over the internet, you can link:task_deploy_cloud_compliance.html[deploy Cloud Data Sense in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
 
 If you are scanning on-premises ONTAP systems that have been installed in a dark site that has no internet access, you need to link:task-deploy-compliance-dark-site.html[deploy Cloud Data Sense in the same on-premises location that has no internet access^]. This also requires that the Cloud Manager Connector is deployed in that same on-premises location.
 

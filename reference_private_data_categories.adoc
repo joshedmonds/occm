@@ -34,9 +34,10 @@ Note that you can add to the list of personal data that is found in your files i
 | IBAN number (International Bank Account Number) | No
 | IP address | No
 
-.32+| National Identifiers | Austrian SSN | Yes
+.34+| National Identifiers | Austrian SSN | Yes
 | Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
+| British Passport | Yes
 | Bulgarian ID (UCN) | Yes
 | California Driver's License | Yes
 | Croatian ID (OIB) | Yes
@@ -57,6 +58,7 @@ Note that you can add to the list of personal data that is found in your files i
 | Lithuanian ID | Yes
 | Luxembourg ID | Yes
 | Maltese ID | Yes
+| National Health Service (NHS) Number | Yes
 | Polish ID (PESEL) | Yes
 | Portuguese Tax Identification Number (NIF) | Yes
 | Romanian ID (CNP) | Yes

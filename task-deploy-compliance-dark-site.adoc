@@ -20,16 +20,15 @@ Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site
 When installed in this manner (sometimes called an "offline" or "dark" site), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
 
 * On-premises ONTAP systems
-* Non-NetApp NFS or CIFS file shares
+* Database schemas
 
-There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, Database schemas, OneDrive accounts, AWS S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, non-NetApp NFS or CIFS file shares, OneDrive accounts, AWS S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
 
 == Unsupported features
 
-Most Data Sense features work when Data Sense is deployed in a site with no internet access, However, there are a few features that are not currently supported:
+Most Data Sense features work when Data Sense is deployed in a site with no internet access. However, certain features that require internet access are not supported, for example:
 
 * Microsoft Azure Information Protection (AIP) labels
-* Adding personal data identifiers using link:task_managing_data_fusion.html[Data Fusion]
 
 == Quick start
 
@@ -43,7 +42,7 @@ If you don't already have a Connector installed at your on-premises site, link:t
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your Linux system meets the <<Verify host requirements,host requirements>> and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+Ensure that your Linux system meets the <<Verify host requirements,host requirements>>, that it has all required software installed, and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy Data Sense
 
@@ -61,11 +60,11 @@ If you don't already have a Cloud Manager Connector, link:task-install-connector
 
 == Verify host requirements
 
-Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
+Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on.
 
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
-** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
+** The OS must be capable of installing the Docker Engine (for example, disable the _firewalld_ service if needed)
 * Disk: SSD with 500 GiB available on /, or
 ** 100 GiB available on /opt
 ** 400 GiB available on /var
@@ -74,7 +73,13 @@ Data Sense software must run on a host that meets specific operating system requ
 +
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
-* The Docker Engine is required on the host before you install Data Sense. link:https://docs.docker.com/engine/install/[View installation instructions].
+The following software must be installed on the host before you install Data Sense:
+
+* Docker Engine version 19 or later. https://docs.docker.com/engine/install/[View installation instructions^].
+
+* Docker Compose version xx or later. https://docs.docker.com/compose/install/[View installation instructions^].
+
+* Python 3 version xx or later. https://www.python.org/downloads/[View installation instructions^].
 
 == Verify Cloud Manager and Data Sense prerequisites
 
@@ -101,6 +106,7 @@ For very large configurations where you'll be scanning petabytes of data, you ca
 
 // * mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software package].
 * Verify that your Linux system meets the <<Verify host requirements,host requirements>>.
+* Verify that you have installed the three required software packages (Docker Engine, Docker Compose, Python 3).
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.
 
@@ -111,7 +117,7 @@ For very large configurations where you'll be scanning petabytes of data, you ca
 
 . Copy the installer file to the Linux host you plan to use in the dark site.
 
-. In Cloud Manager, click *Data Sense*.
+. Launch Cloud Manager and click *Data Sense*.
 
 . Click *Activate Data Sense*.
 +
@@ -169,8 +175,8 @@ If there is connectivity over port 8080 between the host machine and the Connect
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
-
-You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
+//
+// You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
 
 == Deploy Data Sense on multiple hosts (large configurations)
 
@@ -182,6 +188,7 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 // * mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
 * Verify that all your Linux systems meet the <<Verify host requirements,host requirements>>.
+* Verify that you have installed the three required software packages (Docker Engine, Docker Compose, Python 3).
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
@@ -230,8 +237,8 @@ The Cloud Data Sense installer finishes installing packages, and registers the i
 
 .What's Next
 From the Configuration page you can select the data sources that you want to scan.
-
-You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
+//
+// You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
 
 == Upgrade Data Sense software
 
