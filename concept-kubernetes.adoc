@@ -1,0 +1,36 @@
+---
+sidebar: sidebar
+permalink: concept-kubernetes.html
+keywords: kubernetes, k8s, back up kubernetes, back up k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, back up persistent volumes, persistent volumes, kubernetes support
+summary: Add your managed-Kubernetes clusters to Cloud Manager for advanced data management.
+---
+
+= Kubernetes overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Add your managed-Kubernetes clusters to Cloud Manager for advanced data management.
+
+== Features
+
+* Discover your managed-Kubernetes clusters
+* View details about Kubernetes resources
+* Back up persistent volumes using Cloud Backup Service
+
+== Supported Kubernetes deployments
+
+Cloud Manager supports managed-Kubernetes clusters running in Amazon Elastic Kubernetes Service (Amazon EKS).
+
+== Cost
+
+There are no charges to _discover_ your Kubernetes clusters in Cloud Manager, but you will be charged when you back up persistent volumes using Cloud Backup Service.
+
+== How Kubernetes support works
+
+NetApp's Trident is required on each Kubernetes cluster that you want to manage from Cloud Manager. Trident enables Cloud Manager to discover details about the storage layer for your Kubernetes clusters.
+
+<picture of cloud manager, a kubernetes cluster, and trident>
