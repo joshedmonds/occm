@@ -57,6 +57,18 @@ sidebar:
               url: /task_creating_connectors_azure.html
             - title: Create a Connector in GCP
               url: /task_creating_connectors_gcp.html
+            - title: Install the Connector on your own host
+              entries:
+              - title: With internet connectivity
+                url: /task_installing_linux.html
+              - title: On-prem without internet connectivity
+                url: /task-install-connector-onprem-no-internet.html
+            - title: Create a Connector from the marketplace
+              entries:
+                - title: AWS Marketplace
+                  url: /task_launching_aws_mktp.html
+                - title: Azure Marketplace
+                  url: /task_launching_azure_mktp.html
         - title: Where to go next
           url: /reference_whats_next.html
     - title: Manage Cloud Volumes ONTAP
@@ -506,16 +518,6 @@ sidebar:
               url: /task_finding_system_id.html
             - title: Manage existing Connectors
               url: /task_managing_connectors.html
-            - title: More ways to create Connectors
-              entries:
-                - title: Create from the AWS Marketplace
-                  url: /task_launching_aws_mktp.html
-                - title: Create from the Azure Marketplace
-                  url: /task_launching_azure_mktp.html
-                - title: Manually install the Connector with internet access
-                  url: /task_installing_linux.html
-                - title: Manually install the Connector on-prem without internet access
-                  url: /task-install-connector-onprem-no-internet.html
             - title: Default configuration
               url: /reference_connector_default_config.html
         - title: Manage cloud provider credentials
