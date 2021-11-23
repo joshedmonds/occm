@@ -35,6 +35,15 @@ link:task_adding_nss_accounts.html#update-an-nss-account-for-the-new-authenticat
 +
 link:task_adding_nss_accounts.html#attach-a-working-environment-to-a-different-nss-account[Learn how to attach a working environment to a different NSS account].
 
+=== Connector enhancement
+
+You can now install the Connector in an on-premises site that doesn't have internet access and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
+
+The installation must be completed by using a new on-prem Connector installer that's specifically for sites that don't have internet.
+
+* link:task-install-connector-onprem-no-internet.html[Learn how to install the Connector on-prem without internet access].
+* link:task-deploy-compliance-dark-site.html[Learn how to get started with Cloud Data Sense].
+
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
 This patch update includes bug fixes.
