@@ -57,13 +57,13 @@ sidebar:
               url: /task_creating_connectors_azure.html
             - title: Create a Connector in GCP
               url: /task_creating_connectors_gcp.html
-            - title: Install the Connector on your own host
+            - title: Install on your own host
               entries:
-              - title: With internet connectivity
+              - title: With internet access
                 url: /task_installing_linux.html
-              - title: On-prem without internet connectivity
+              - title: On-prem without internet access
                 url: /task-install-connector-onprem-no-internet.html
-            - title: Create a Connector from the marketplace
+            - title: Create from the marketplace
               entries:
                 - title: AWS Marketplace
                   url: /task_launching_aws_mktp.html

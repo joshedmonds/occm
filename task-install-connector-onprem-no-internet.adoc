@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-install-connector-onprem-no-internet.html
 keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
-summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters and back up data using the Cloud Backup Service or scan the on-prem clusters with Cloud Data Sense.
+summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
 ---
 
 = Install the Connector on-prem without internet access
@@ -13,9 +13,9 @@ summary: You can install the Connector on an on-premises Linux host that doesn't
 :imagesdir: ./media/
 
 [.lead]
-You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters and back up data using the Cloud Backup Service or scan the on-prem clusters with Cloud Data Sense.
+You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
 
-TIP: When you use this installation method, both Cloud Backup Service and Cloud Data Sense run locally on the Connector.
+TIP: When you use this installation method, Cloud Data Sense runs locally on the Connector.
 
 These installation instructions are specifically for the use case described above. link:concept_connectors.html[Learn about other ways to deploy a Connector].
 
@@ -92,6 +92,5 @@ The Connector is now installed and set up with your Cloud Central account.
 
 .What's next?
 
-* Discover on-prem ONTAP clusters
-* Back up data using Cloud Backup Service
-* Scan the data using Cloud Data Sense
+* link:task_discovering_ontap.html[Discover on-prem ONTAP clusters]
+* link:task-deploy-compliance-dark-site.html[Scan the data using Cloud Data Sense]
