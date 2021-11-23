@@ -130,7 +130,7 @@ If any cluster require new firmware, a *Download All* button appears.
 
 . Click *Download All* and save the zip file.
 
-. Unzip the zip file and see the following instructions to link:https://aiq.netapp.com/assets/docs/Quick_Reference_Guide.pdf[update your storage system firmware].
+. Unzip the zip file and see the following instructions to link:https://aiq.netapp.com/assets/docs/Quick_Reference_Guide.pdf[update your storage system firmware^].
 
 .Result
 

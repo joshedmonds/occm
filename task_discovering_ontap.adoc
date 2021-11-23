@@ -38,7 +38,7 @@ If the Connector is in the cloud, all outbound communication is allowed by the p
 +
 The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modified this default policy, or if you created your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Connector host.
 
-* A valid set of NetApp Support Site credentials for accessing the Active IQ page. See how to link:task_adding_nss_accounts.html[add NetApp Support Site accounts to Cloud Manager].
+* A valid set of NetApp Support Site credentials. See how to link:task_adding_nss_accounts.html[add NetApp Support Site accounts to Cloud Manager].
 
 == Checking for on-premises clusters that have not been added to Cloud Manager
 
