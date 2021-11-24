@@ -45,7 +45,9 @@ image:screenshot_acl_support.gif[A screenshot that shows the option to enable Co
 
 . Follow the remaining prompts to create the sync relationship.
 +
-TIP: When you copy ACLs from SMB to object storage, you can choose to copy the ACLs to the object's tags or on the object's metadata, depending on the target. For Azure and Google Cloud Storage, only the metadata option is available.
+When you copy ACLs from SMB to object storage, you can choose to copy the ACLs to the object's tags or on the object's metadata, depending on the target. For Azure and Google Cloud Storage, only the metadata option is available.
++
+The following screenshot shows an example of the step where you can make this choice.
 +
 image:screenshot-sync-tags-metadata.png["A screenshot of the sixth step in the sync relationship wizard when copying to object storage. You can choose to save the ACLs to the object's tags or metadata."]
 
