@@ -104,7 +104,7 @@ For very large configurations where you'll be scanning petabytes of data, you ca
 
 // * mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software package].
 * Verify that your Linux system meets the <<Verify host requirements,host requirements>>.
-* Verify that you have installed the three required software packages (Docker Engine, Docker Compose, Python 3).
+* Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.
 
@@ -186,7 +186,7 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 // * mailto:ng-contact-data-sense@netapp.com[Send email to NetApp get the location of the software packages].
 * Verify that all your Linux systems meet the <<Verify host requirements,host requirements>>.
-* Verify that you have installed the three required software packages (Docker Engine, Docker Compose, Python 3).
+* Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
@@ -237,23 +237,23 @@ The Cloud Data Sense installer finishes installing packages, and registers the i
 From the Configuration page you can select the data sources that you want to scan.
 //
 // You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
-
-== Upgrade Data Sense software
-
-You must upgrade Data Sense software manually because there is no internet connectivity. Since the software is updated with new features on a regular basis, you should get into a routine to check for new versions periodically to make sure you are using the newest software and features.
-
-.Steps
-
-. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
-
-. Copy the upgrade file to the Linux host where Data Sense is installed in the dark site.
-+
-If you are using multiple hosts to scan large environments, copy the upgrade file to all hosts (manager and scanner nodes).
-
-. Unzip the upgrade file on all hosts.
-
-. Enter the following command on the manager node:
-`sudo ./upgrade.sh`
-
-. If you are using multiple hosts, enter the following command on all scanner nodes:
-`sudo ./node_upgrade.sh`
+//
+// == Upgrade Data Sense software
+//
+// You must upgrade Data Sense software manually because there is no internet connectivity. Since the software is updated with new features on a regular basis, you should get into a routine to check for new versions periodically to make sure you are using the newest software and features.
+//
+// .Steps
+//
+// . On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+//
+// . Copy the upgrade file to the Linux host where Data Sense is installed in the dark site.
+// +
+// If you are using multiple hosts to scan large environments, copy the upgrade file to all hosts (manager and scanner nodes).
+//
+// . Unzip the upgrade file on all hosts.
+//
+// . Enter the following command on the manager node:
+// `sudo ./upgrade.sh`
+//
+// . If you are using multiple hosts, enter the following command on all scanner nodes:
+// `sudo ./node_upgrade.sh`
