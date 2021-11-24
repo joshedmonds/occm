@@ -15,7 +15,7 @@ summary: You can install the Connector on an on-premises Linux host that doesn't
 [.lead]
 You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan them with Cloud Data Sense.
 
-These installation instructions are specifically for the use case described above. link:concept_connectors.html[Learn about other ways to deploy a Connector].
+These installation instructions are specifically for the use case described above. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 == Verify host requirements
 
