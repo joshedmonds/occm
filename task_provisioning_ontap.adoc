@@ -32,14 +32,6 @@ A Cloud Manager feature called "templates" enables you to create volumes that ar
 +
 Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
 +
-Size:: The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
-
-Snapshot Policy:: A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
-
-.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
-+
-Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
-+
 [cols=2*,options="header",cols="2,6"]
 |===
 | Field
@@ -51,35 +43,22 @@ Some of the fields on this page are self-explanatory. The following list describ
 
 |===
 
-.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
-+
-Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
-+
-* *Size*: The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
-
-* *Snapshot Policy*: A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
-
-.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
-+
-Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
-+
-* Size
-+
-The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
-
-* Snapshot Policy
-+
-A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
-
 .. *Protocol*: Choose the protocol for the volume (NFS or CIFS) and then set the access control or permissions for the volume.
 +
 If you choose CIFS and a server isn't set up yet, then Cloud Manager prompts you to set up a CIFS server using either Active Directory or a workgroup.
 +
 The following list describes fields for which you might need guidance:
 +
-Access Control:: An NFS export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
+[cols=2*,options="header",cols="2,6"]
+|===
+| Field
+| Description
 
-Permissions and Users/Groups:: These fields enable you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+| Access Control | An NFS export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
+
+| Permissions and Users/Groups | These fields enable you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+
+|===
 
 .. *Usage Profile*: Choose whether to enable or disable storage efficiency features on the volume.
 +
