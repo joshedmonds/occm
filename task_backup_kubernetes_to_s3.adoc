@@ -23,7 +23,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 [role="quick-margin-list"]
 * You have discovered the Kubernetes cluster as a Cloud Manager working environment.
-** Trident must be installed on the cluster, and the Trident version must be a minimum of 20.10.
+** Trident must be installed on the cluster, and the Trident version must be 21.1 or greater.
 ** The cluster must be using Cloud Volumes ONTAP on AWS for its' backend storage.
 ** The Cloud Volumes ONTAP system must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
 * You have a valid cloud provider subscription for the storage space where your backups will be located.
@@ -50,9 +50,6 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 
 [role="quick-margin-para"]
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
-//
-// [role="quick-margin-para"]
-// By default, backups are stored in S3 Standard storage. If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization.
 
 [role="quick-margin-para"]
 image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
@@ -66,7 +63,6 @@ Identify which volumes you want to back up in the Select Volumes page. An S3 buc
 
 [role="quick-margin-para"]
 Restore an entire backup as a new volume on the same or different Kubernetes cluster in AWS (in the same region).
-// Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system in AWS, or to an on-premises ONTAP system.
 
 [role="quick-margin-para"]
 See link:task_restore_backups.html[Restoring a volume from backup files^] for details.
@@ -83,7 +79,7 @@ image:diagram_cloud_backup_k8s_cvo_aws.png[A diagram showing how Cloud Backup co
 
 Kubernetes cluster requirements::
 * You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:task-kubernetes-discover-aws.html[See how to discover the Kubernetes cluster].
-* Trident must be installed on the cluster, and the Trident version must be a minimum of 20.10. See link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
+* Trident must be installed on the cluster, and the Trident version must be a minimum of 21.1. See link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
 * The cluster must be using Cloud Volumes ONTAP on AWS for its' backend storage.
 ** The Cloud Volumes ONTAP system must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
 
@@ -100,14 +96,6 @@ And you need to have an AWS account for the storage space where your backups wil
 
 Supported AWS regions::
 Cloud Backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
-
-// If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
-//
-// Required setup for creating backups in a different AWS account::
-// By default, backups are created using the same account as the one used for your Cloud Volumes ONTAP system. If you want to use a different AWS account for your backups, you must link:reference_backup_multi_account_aws.html[log in to the AWS portal and link the two accounts].
-//
-// Required information for using customer-managed keys for data encryption::
-// You can choose your own customer-managed keys for data encryption in the activation wizard instead of using the default Amazon S3 encryption keys. In this case you'll need to have the encryption managed keys already set up. link:task_setting_up_kms.html[See how to use your own keys].
 
 AWS Backup permissions required::
 The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
@@ -194,7 +182,6 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 
 +
 You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
-// .. When using ONTAP 9.10.1 and greater, you can choose to tier backups to either S3 Glacier or S3 Glacier Deep Archive storage after a certain number of days for further cost optimization. link:reference-aws-backup-tiers.html[Learn more about using archival tiers].
 +
 image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
