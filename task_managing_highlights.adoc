@@ -386,6 +386,30 @@ Note that you can also delete an individual file when viewing the metadata detai
 
 image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
 
+== Viewing the status of your compliance actions
+
+When you run an action from the Investigation Results pane across many files, for example, deleting 50 files, the process can take some time. You can monitor the status of the action so you'll know when it has been applied to all files. This allows you to see the actions that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
+
+The status can be:
+
+* Finished
+* In Progress
+* Queued
+* Canceled
+* Failed
+
+Note that you can Cancel any actions that have the "Queued" and "In Progress" status.
+
+.Steps
+
+. In the bottom-right of the Configuration tab you can see the button *Action Status*.
+
+. Click this button and the most recent 20 actions are listed.
++
+image:screenshot_compliance_action_status.png[A screenshot that shows the last 20 actions, and their status, in the Configuration page.]
+
+You can click the name of an action to view details corresponding to that operation.
+
 == Categorizing your data using AIP labels
 
 You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. AIP enables you to classify and protect documents and files by applying labels to content. Data Sense enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
