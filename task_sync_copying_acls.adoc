@@ -13,11 +13,9 @@ summary: Cloud Sync can copy access control lists (ACLs) between a source SMB sh
 :imagesdir: ./media/
 
 [.lead]
-Cloud Sync can copy access control lists (ACLs) between a source SMB share and a target SMB share, and from a source SMB share to object storage (except for ONTAP S3).
+Cloud Sync can copy access control lists (ACLs) between a source SMB share and a target SMB share, or from a source SMB share to object storage (except for ONTAP S3). If needed, you also have the option to manually preserve ACLs between SMB shares by using robocopy.
 
-NOTE: Cloud Sync doesn't support copying ACLs from object storage to SMB shares.
-
-If needed, you can manually preserve the ACLs between SMB shares by using robocopy.
+NOTE: Cloud Sync doesn't support copying ACLs back from object storage to SMB shares.
 
 .Choices
 
@@ -49,7 +47,7 @@ image:screenshot_acl_support.gif[A screenshot that shows the option to enable Co
 +
 TIP: When you copy ACLs from SMB to object storage, you can choose to copy the ACLs to the object's tags or on the object's metadata, depending on the target. For Azure and Google Cloud Storage, only the metadata option is available.
 +
-image:screenshot-sync-tags-metadata.html["A screenshot of the sixth step in the sync relationship wizard when copying to object storage. You can choose to save the ACLs to the object's tags or metadata."]
+image:screenshot-sync-tags-metadata.png["A screenshot of the sixth step in the sync relationship wizard when copying to object storage. You can choose to save the ACLs to the object's tags or metadata."]
 
 .Steps for an existing relationship
 
