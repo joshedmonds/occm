@@ -19,21 +19,19 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.12 (31 Oct 2021)
+== Cloud Manager 3.9.13 (28 Nov 2021)
 
 === Cloud Volumes ONTAP enhancements
 
-* Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
+Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
 
-=== NetApp Support Site account enhancements
+=== Kubernetes support
 
-* Starting in November 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing NetApp Support Site accounts that you previously added.
-+
-link:task_adding_nss_accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
+It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
 
-* If your organization has multiple NetApp Support Site accounts, you can now change which account is associated with a Cloud Volumes ONTAP system.
-+
-link:task_adding_nss_accounts.html#attach-a-working-environment-to-a-different-nss-account[Learn how to attach a working environment to a different NSS account].
+link:concept-kubernetes.html[Learn more].
+
+TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
 
 === Connector enhancement
 
