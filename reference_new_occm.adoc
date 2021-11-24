@@ -23,7 +23,15 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Cloud Volumes ONTAP enhancements
 
-Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
+* You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP.
++
+A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
++
+https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
++
+Learn how to get started with Keystone Flex Subscriptions in Cloud Manager.
+
+* Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
 
 === Kubernetes support
 
