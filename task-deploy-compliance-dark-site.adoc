@@ -77,9 +77,7 @@ The following software must be installed on the host before you install Data Sen
 
 * Docker Engine version 19 or later. https://docs.docker.com/engine/install/[View installation instructions^].
 
-* Docker Compose version xx or later. https://docs.docker.com/compose/install/[View installation instructions^].
-
-* Python 3 version xx or later. https://www.python.org/downloads/[View installation instructions^].
+* Python 3 version 3.6 or later. https://www.python.org/downloads/[View installation instructions^].
 
 == Verify Cloud Manager and Data Sense prerequisites
 
