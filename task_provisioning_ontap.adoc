@@ -36,6 +36,41 @@ Size:: The maximum size that you can enter largely depends on whether you enable
 
 Snapshot Policy:: A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 
+.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
++
+Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="2,6"]
+|===
+| Field
+| Description
+
+| Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
+
+| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
+|===
+
+.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
++
+Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
++
+* *Size*: The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
+
+* *Snapshot Policy*: A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
+.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
++
+Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
++
+* Size
++
+The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
+
+* Snapshot Policy
++
+A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
 .. *Protocol*: Choose the protocol for the volume (NFS or CIFS) and then set the access control or permissions for the volume.
 +
 If you choose CIFS and a server isn't set up yet, then Cloud Manager prompts you to set up a CIFS server using either Active Directory or a workgroup.
