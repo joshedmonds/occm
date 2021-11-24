@@ -21,6 +21,14 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.13 (28 Nov 2021)
 
+=== Kubernetes support
+
+It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
+
+link:concept-kubernetes.html[Learn more].
+
+TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
+
 === Cloud Volumes ONTAP enhancements
 
 * You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP.
@@ -33,14 +41,6 @@ Learn how to get started with Keystone Flex Subscriptions in Cloud Manager.
 
 * Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
 
-=== Kubernetes support
-
-It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
-
-link:concept-kubernetes.html[Learn more].
-
-TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
-
 === Connector enhancement
 
 You can now install the Connector in an on-premises site that doesn't have internet access and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
@@ -49,6 +49,12 @@ The installation must be completed by using a new on-prem Connector installer th
 
 * link:task-install-connector-onprem-no-internet.html[Learn how to install the Connector on-prem without internet access].
 * link:task-deploy-compliance-dark-site.html[Learn how to get started with Cloud Data Sense].
+
+=== On-prem ONTAP cluster enhancement
+
+We redesigned the create volume wizard for ease of use.
+
+image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
 
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
