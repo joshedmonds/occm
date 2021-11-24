@@ -40,7 +40,7 @@ TIP: The existing Kubernetes service (available through the *K8s* tab) has been 
 
 === Cloud Volumes ONTAP enhancements
 
-* You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP.
+* You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
 +
 A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 +
