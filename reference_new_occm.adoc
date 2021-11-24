@@ -21,11 +21,20 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.13 (28 Nov 2021)
 
+* <<Kubernetes support>>
+* <<Cloud Volumes ONTAP enhancement>>
+* <<Connector enhancement>>
+* <<On-prem ONTAP cluster enhancement>>
+
 === Kubernetes support
 
-It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
+You can now add your managed-Kubernetes clusters to Cloud Manager's Canvas for advanced data management.
 
-link:concept-kubernetes.html[Learn more].
+* Discover Amazon EKS Kubernetes clusters
+* View details about Kubernetes resources
+* Back up persistent volumes using Cloud Backup Service
+
+link:concept-kubernetes.html[Learn more about Kubernetes support].
 
 TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
 
