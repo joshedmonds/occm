@@ -319,8 +319,8 @@ sidebar:
           url: /task_managing_backups.html
         - title: Restore from backups
           url: /task_restore_backups.html
-        - title: Monitor the status of backup and restore jobs
-          url: task-monitor-backup-jobs.html
+#        - title: Monitor the status of backup and restore jobs
+#          url: task-monitor-backup-jobs.html
         - title: Reference
           entries:
             - title: Supported AWS archive storage tiers

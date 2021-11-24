@@ -82,8 +82,8 @@ image:diagram_cloud_backup_k8s_cvo_aws.png[A diagram showing how Cloud Backup co
 // When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
 
 Kubernetes cluster requirements::
-* You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:[See how to discover the Kubernetes cluster].
-* Trident must be installed on the cluster, and the Trident version must be a minimum of 20.10. link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[See how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
+* You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:task-kubernetes-discover-aws.html[See how to discover the Kubernetes cluster].
+* Trident must be installed on the cluster, and the Trident version must be a minimum of 20.10. See link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
 * The cluster must be using Cloud Volumes ONTAP on AWS for its' backend storage.
 ** The Cloud Volumes ONTAP system must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
 
@@ -140,13 +140,6 @@ Here are the specific S3 permissions from the policy:
                 "arn:aws:s3:::netapp-backup-*"
             ]
         },
-+
-Additionally, the Cloud Manager role has to have the following permissions to manage the Kubernetes cluster:
-+
-[source,json]
-eks:DescribeCluster
-eks:ListClusters
-iam:GetInstanceProfile
 
 // AWS Restore permissions required::
 // The following EC2 permissions are needed for the IAM role that provides Cloud Manager with permissions so that it can start, stop, and terminate the Cloud Restore instance:
@@ -219,9 +212,9 @@ image:screenshot_backup_select_volumes_k8s.png[A screenshot of selecting the vol
 
 An S3 bucket is created automatically in the same AWS account and Region as the Cloud Volumes ONTAP system, and the backup files are stored there.
 
-The Volume Backup Dashboard is displayed so you can monitor the state of the backups.
+The Kubernetes Dashboard is displayed so you can monitor the state of the backups.
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html#restoring-volumes-from-a-kubernetes-backup-file[restore entire volumes from a backup file^].
 // or individual files
