@@ -23,8 +23,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Kubernetes support>>
 * <<Cloud Volumes ONTAP enhancement>>
-* <<Connector enhancement>>
-* <<On-prem ONTAP cluster enhancement>>
+* <<On-prem ONTAP cluster enhancements>>
 * <<Cloud Sync enhancements>>
 
 === Kubernetes support
@@ -51,18 +50,16 @@ Learn how to get started with Keystone Flex Subscriptions in Cloud Manager.
 
 * Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
 
-=== Connector enhancement
+=== On-prem ONTAP cluster enhancements
 
-You can now install the Connector in an on-premises site that doesn't have internet access and then discover on-prem ONTAP clusters and scan them with Cloud Data Sense.
-
+* You can now install the Connector on an on-premises Linux host that doesn’t have internet access and then discover on-prem ONTAP clusters, replicate data between them, and scan them with Cloud Data Sense.
++
 The installation must be completed by using a new on-prem Connector installer that's specifically for sites that don't have internet.
++
+** link:task-install-connector-onprem-no-internet.html[Learn how to install the Connector on-prem without internet access]
+** link:task-deploy-compliance-dark-site.html[Learn how to get started with Cloud Data Sense]
 
-* link:task-install-connector-onprem-no-internet.html[Learn how to install the Connector on-prem without internet access].
-* link:task-deploy-compliance-dark-site.html[Learn how to get started with Cloud Data Sense].
-
-=== On-prem ONTAP cluster enhancement
-
-We redesigned the create volume wizard for ease of use.
+* We redesigned the create volume wizard for ease of use.
 
 image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
 
