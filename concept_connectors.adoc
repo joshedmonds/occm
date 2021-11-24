@@ -64,7 +64,7 @@ An Account Admin can create a Connector in a number of ways:
 ** link:task_creating_connectors_gcp.html[Create in GCP]
 * By manually installing the software on your own Linux host
 ** link:task_installing_linux.html[On a host that has internet access]
-** link:task-install-connector-onprem-no-internet.html[On a host that doesn't have internet access]
+** link:task-install-connector-onprem-no-internet.html[On an on-prem host that doesn't have internet access]
 * From your cloud provider's marketplace
 ** link:task_launching_aws_mktp.html[AWS Marketplace]
 ** link:task_launching_azure_mktp.html[Azure Marketplace]
