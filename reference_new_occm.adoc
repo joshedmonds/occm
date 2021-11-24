@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Volumes ONTAP enhancement>>
 * <<Connector enhancement>>
 * <<On-prem ONTAP cluster enhancement>>
+* <<Cloud Sync enhancements>>
 
 === Kubernetes support
 
@@ -64,6 +65,18 @@ The installation must be completed by using a new on-prem Connector installer th
 We redesigned the create volume wizard for ease of use.
 
 image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
+
+=== Cloud Sync enhancements
+
+* Cloud Sync can now copy access control lists (ACLs) when setting up a sync relationship from a source SMB share to object storage (except for ONTAP S3).
++
+Cloud Sync doesn't support copying ACLs from object storage to SMB shares.
++
+link:task_sync_copying_acls.html[Learn how to copy ACLs from an SMB share].
+
+* You can now update the Box credentials for an existing sync relationship.
++
+link:task_sync_managing_relationships.html[Learn how to update credentials].
 
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
