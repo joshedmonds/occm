@@ -330,8 +330,12 @@ sidebar:
       entries:
         - title: Learn about Kubernetes data management
           url: /concept-kubernetes.html
-        - title: Add Amazon EKS clusters
-          url: /task-kubernetes-discover-aws.html
+        - title: Get started with EKS clusters
+          entries:
+            - title: Requirements
+              url: /kubernetes-reqs-aws.html
+            - title: Add a cluster
+              url: /task-kubernetes-discover-aws.html
     - title: Protect data using SnapCenter Service
       entries:
         - title: Learn about SnapCenter Service
