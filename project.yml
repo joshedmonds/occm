@@ -326,6 +326,12 @@ sidebar:
                   url: /reference_backup_multi_account_aws.html
                 - title: Configure Backup for multi-account access in Azure
                   url: /reference_backup_multi_account_azure.html
+    - title: Manage data for Kubernetes clusters
+      entries:
+        - title: Learn about Kubernetes data management
+          url: /concept-kubernetes.html
+        - title: Add Amazon EKS clusters
+          url: /task-kubernetes-discover-aws.html
     - title: Protect data using SnapCenter Service
       entries:
         - title: Learn about SnapCenter Service
