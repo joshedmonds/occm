@@ -60,7 +60,7 @@ The installation must be completed by using a new on-prem Connector installer th
 ** link:task-deploy-compliance-dark-site.html[Learn how to get started with Cloud Data Sense]
 
 * We redesigned the create volume wizard for ease of use.
-
++
 image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
 
 === Cloud Sync enhancements
