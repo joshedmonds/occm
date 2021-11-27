@@ -18,7 +18,7 @@ Before you can add an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to 
 == Requirements
 
 Astra Trident::
-The EKS cluster must have NetApp Astra Trident installed. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Learn how to install Astra Trident^].
+The EKS cluster must have NetApp Astra Trident installed. One of the four most recent versions of Astra Trident is required. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Learn how to install Astra Trident^].
 
 Cloud Volumes ONTAP::
 Cloud Volumes ONTAP for AWS must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Learn how to configure backends using Astra Trident^].
