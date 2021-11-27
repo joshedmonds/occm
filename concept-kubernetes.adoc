@@ -17,8 +17,10 @@ Add managed-Kubernetes clusters to Cloud Manager for advanced data management.
 
 == Features
 
-* Add managed-Kubernetes clusters to the Canvas
+* Add managed-Kubernetes clusters to the Canvas to view and manage them as part of your hybrid cloud infrastructure
 * Back up persistent volumes using Cloud Backup Service
+
+image:screenshot-kubernetes-backup.png[A screenshot of the Kubernetes page in the Cloud Backup Service which shows five backup jobs for a Kubernetes cluster.]
 
 == Supported Kubernetes deployments
 

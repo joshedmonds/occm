@@ -19,15 +19,15 @@ Add an Amazon Elastic Kubernetes Service (Amazon EKS) clusters to Cloud Manager 
 
 . On the *Canvas*, click *Add Working Environment*.
 
-. Select *Amazon Web Services*.
-
-. Select *Kubernetes Cluster* and click *Next*.
+. Select *Amazon Web Services* > *Kubernetes Cluster* and click *Next*.
++
+image:screenshot-discover-kubernetes-aws-1.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected AWS region and a Kubernetes cluster.]
 
 . Select *Discover Cluster* and click *Next*.
 
 . Choose an AWS region, select a Kubernetes cluster, and then click *Next*.
 +
-image:screenshot-discover-kubernetes-aws.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected AWS region and a Kubernetes cluster.]
+image:screenshot-discover-kubernetes-aws-2.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected AWS region and a Kubernetes cluster.]
 
 .Result
 
@@ -37,4 +37,4 @@ image:screenshot-kubernetes-canvas.png[A screenshot of the Canvas in Cloud Manag
 
 .What's next?
 
-Add additional clusters or start backing up your persistent volumes using Cloud Backup Service.
+Add additional clusters or link:task_backup_kubernetes_to_s3.html[back up persistent volumes using Cloud Backup Service].
