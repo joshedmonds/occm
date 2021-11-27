@@ -336,6 +336,8 @@ sidebar:
               url: /kubernetes-reqs-aws.html
             - title: Add a cluster
               url: /task-kubernetes-discover-aws.html
+        - title: Enable NetApp's cloud data services
+          url: /task-kubernetes-enable-services.html
     - title: Protect data using SnapCenter Service
       entries:
         - title: Learn about SnapCenter Service
