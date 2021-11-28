@@ -105,29 +105,13 @@ If a capacity-based license expired and is no longer in use, then you can remove
 
 . Click *Remove* to confirm.
 
-== Manage node-based PAYGO licenses
-
-The Digital Wallet page enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
-
-.Steps
-
-. Click *All Services > Digital Wallet > Node-Based Licenses*.
-
-. Click *PAYGO*.
-
-. View details in the table about each of your PAYGO licenses.
-+
-image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digital Wallet page with three paygo licenses. Each row shows the name, type of system, serial number, package, and a link to manage the license."]
-
-. If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
-
 == Manage Keystone Flex Subscriptions
 
 Manage your Keystone Flex Subscriptions from the Digital Wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
 
 === Authorize your account
 
-Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you need to contact NetApp to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
+Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you need to contact NetApp to authorize your Cloud Manager user account with your Keystone Flex Subscriptions.
 
 .Steps
 
@@ -140,6 +124,8 @@ Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you 
 A NetApp representative will process your request by authorizing your user account to access the subscriptions.
 
 . Come back to the *Keystone Flex Subscription* to view your subscriptions.
++
+image:screenshot-keystone-overview.png[A screenshot that shows a list of Keystone Flex Subscriptions.]
 
 .What's next?
 
@@ -156,6 +142,8 @@ After NetApp authorizes your account, you need to link Keystone Flex Subscriptio
 . Click *Keystone Flex Subscription*.
 
 . For the subscription that you want to link, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Link*.
++
+image:screenshot-keystone-link.png[A screenshot that shows the link option for a subscription.]
 
 .Result
 
@@ -163,7 +151,7 @@ The subscription is now linked to your Cloud Manager account and available to se
 
 === Request more or less committed capacity
 
-If you need more capacity for a subscription or less capacity, you can send a request right from the Cloud Manager interface.
+If you need to adjust the committed capacity for a subscription, you can send a request right from the Cloud Manager interface.
 
 .Steps
 
@@ -171,9 +159,11 @@ If you need more capacity for a subscription or less capacity, you can send a re
 
 . Click *Keystone Flex Subscription*.
 
-. For the subscription that you want to to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *View detail and edit*.
+. For the subscription that you want adjust the capacity, click image:icon-action.png["An icon that is three side-by-side dots"] and select *View detail and edit*.
 
 . Enter the requested committed capacity for one or more subscriptions.
++
+image:screenshot-keystone-request.png[A screenshot that shows the ability to request a change to the committed capacity for a subscription.]
 
 . Scroll down, enter any additional details for the request, and then click *Submit*.
 
@@ -191,11 +181,27 @@ If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes
 
 . Click *Keystone Flex Subscription*.
 
-. For the subscription that you want to to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Unlink*.
+. For the subscription that you want to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Unlink*.
 
 .Result
 
-The subscription is unlinked to your Cloud Manager account and no longer available to select when creating a Cloud Volumes ONTAP working environment.
+The subscription is unlinked from your Cloud Manager account and no longer available to select when creating a Cloud Volumes ONTAP working environment.
+
+== Manage node-based PAYGO licenses
+
+The Digital Wallet page enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Node-Based Licenses*.
+
+. Click *PAYGO*.
+
+. View details in the table about each of your PAYGO licenses.
++
+image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digital Wallet page with three paygo licenses. Each row shows the name, type of system, serial number, package, and a link to manage the license."]
+
+. If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
 
 == Manage node-based BYOL licenses
 

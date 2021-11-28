@@ -142,7 +142,7 @@ If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that 
 
 == Keystone Flex Subscription
 
-== Description
+=== Description
 
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 
@@ -160,7 +160,7 @@ NOTE: Keystone Flex Subscriptions aren't supported with single node systems at t
 
 . If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^].
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link your subscriptions for use with Cloud Volumes ONTAP.
+. After NetApp authorizes your account, link:task_managing_licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP system.
 +
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]

@@ -32,7 +32,7 @@ You need the following to create a working environment.
 +
 You should have prepared by choosing a configuration and by obtaining GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
-* An understanding of what's required to choose a specific licensing option in the Add Working Environment wizard. 
+* An understanding of what's required to choose a specific licensing option in the Add Working Environment wizard.
 +
 [cols="20,40,40",options="header"]
 |===
@@ -43,8 +43,9 @@ You should have prepared by choosing a configuration and by obtaining GCP networ
 | Keystone Flex Subscription
 | Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.
 a|
-. Contact NetApp to authorize your user account to one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link your subscriptions for use with Cloud Volumes ONTAP.
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
+. After NetApp authorizes your account, link:task_managing_licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
 
 | PAYGO free trial
 | A Marketplace subscription is required.
@@ -52,7 +53,7 @@ a|
 
 | Freemium
 | A Marketplace subscription or NetApp Support Site (NSS) account is required.
-| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.
 
