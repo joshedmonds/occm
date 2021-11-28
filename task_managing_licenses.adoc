@@ -21,6 +21,8 @@ You can manage the following types of licenses for Cloud Volumes ONTAP:
 +
 https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a capacity-based license.
 
+* _Keystone Flex Subscriptions_*, which is a pay-as-you-grow storage service offered by NetApp.
+
 * _Node-based licenses_, which are any of the following:
 ** BYOL licenses purchased from NetApp.
 +
