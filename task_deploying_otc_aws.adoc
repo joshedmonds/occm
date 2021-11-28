@@ -38,7 +38,7 @@ For details, see link:reference_networking_aws.html[Networking requirements for 
 +
 [cols="20,40,40",options="header"]
 |===
-| Licensing option
+| Licensing option 
 | Requirement
 | How to meet the requirement
 

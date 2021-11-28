@@ -121,6 +121,82 @@ image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digi
 
 . If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
 
+== Manage Keystone Flex Subscriptions
+
+Manage your Keystone Flex Subscriptions from the Digital Wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
+
+=== Authorize your account
+
+Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you need to contact NetApp to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. If you see the *Welcome to NetApp Keystone* page, send an email to the address listed on the page.
++
+A NetApp representative will process your request by authorizing your user account to access the subscriptions.
+
+. Come back to the *Keystone Flex Subscription* to view your subscriptions.
+
+.What's next?
+
+Link the subscriptions that you want to use with Cloud Volumes ONTAP.
+
+=== Link a subscription
+
+After NetApp authorizes your account, you need to link Keystone Flex Subscriptions for use with Cloud Volumes ONTAP. This action enables users to select the subscription as the charging method for new Cloud Volumes ONTAP systems.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to link, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Link*.
+
+.Result
+
+The subscription is now linked to your Cloud Manager account and available to select when creating a Cloud Volumes ONTAP working environment.
+
+=== Request more or less committed capacity
+
+If you need more capacity for a subscription or less capacity, you can send a request right from the Cloud Manager interface.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *View detail and edit*.
+
+. Enter the requested committed capacity for one or more subscriptions.
+
+. Scroll down, enter any additional details for the request, and then click *Submit*.
+
+.Result
+
+Your request creates a ticket in NetApp's system for processing.
+
+=== Unlink a subscription
+
+If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes ONTAP systems, you can unlink the subscription. Note that you can only unlink a subscription that isn't attached to an existing Cloud Volumes ONTAP subscription.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Unlink*.
+
+.Result
+
+The subscription is unlinked to your Cloud Manager account and no longer available to select when creating a Cloud Volumes ONTAP working environment.
+
 == Manage node-based BYOL licenses
 
 Manage your node-based licenses to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.

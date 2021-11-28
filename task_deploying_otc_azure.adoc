@@ -34,7 +34,7 @@ You should have chose a configuration and obtained Azure networking information 
 +
 [cols="20,40,40",options="header"]
 |===
-| Licensing option
+| Licensing option 
 | Requirement
 | How to meet the requirement
 
