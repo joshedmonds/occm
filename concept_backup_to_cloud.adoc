@@ -320,7 +320,7 @@ There are certain things you need to be aware of when the volume you are backing
 
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
-* SVM-DR and SM-BC configurations are not supported.
+* SM-BC configurations are not supported.
 
 * MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC > SnapMirror > ONTAP > Cloud Backup Service > object storage.
 

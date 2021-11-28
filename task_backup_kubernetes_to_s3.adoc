@@ -24,8 +24,9 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * You have discovered the Kubernetes cluster as a Cloud Manager working environment.
 ** Trident must be installed on the cluster, and the Trident version must be 21.1 or greater.
+** All PVCs that will be used to create persistent volumes that you want to back up must have "snapshotPolicy" set to "default".
 ** The cluster must be using Cloud Volumes ONTAP on AWS for its' backend storage.
-** The Cloud Volumes ONTAP system must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
+** The Cloud Volumes ONTAP system must be running ONTAP 9.7P5 or later.
 * You have a valid cloud provider subscription for the storage space where your backups will be located.
 * You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering], an https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS annual contract], or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated] a Cloud Backup BYOL license from NetApp.
 * The IAM role that provides the Cloud Manager Connector with permissions includes S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
@@ -81,7 +82,49 @@ Kubernetes cluster requirements::
 * You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:task-kubernetes-discover-aws.html[See how to discover the Kubernetes cluster].
 * Trident must be installed on the cluster, and the Trident version must be a minimum of 21.1. See link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
 * The cluster must be using Cloud Volumes ONTAP on AWS for its' backend storage.
-** The Cloud Volumes ONTAP system must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
+* The Cloud Volumes ONTAP system must be in the same AWS region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
+* All Persistent Volume Claim objects that will be used to create the persistent volumes that you want to back up must have "snapshotPolicy" set to "default". This can be done using `snapshotPolicy` annotation on the PVC, or using the `snapshotPolicy` field under defaults in the `backend.json` file. See the bolded text in the following examples:
++
+[source,json]
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: full
+  annotations:
+    *trident.netapp.io/snapshotPolicy: "default"*
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+  storageClassName: silver
++
+OR
++
+[source,json]
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-ontap-nas-advanced
+spec:
+  version: 1
+  storageDriverName: ontap-nas
+  managementLIF: 10.0.0.1
+  dataLIF: 10.0.0.2
+  backendName: tbc-ontap-nas-advanced
+  svm: trident_svm
+  credentials:
+    name: backend-tbc-ontap-nas-advanced-secret
+  limitAggregateUsage: 80%
+  limitVolumeSize: 50Gi
+  nfsMountOptions: nfsvers=4
+  defaults:
+    spaceReserve: volume
+    exportPolicy: myk8scluster
+    *snapshotPolicy: default*
+    snapshotReserve: '10'
+  deletionPolicy: retain
 
 License requirements::
 For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
