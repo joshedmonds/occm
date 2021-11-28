@@ -295,13 +295,14 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 There are certain things you need to be aware of when the volume you are backing up resides on a FabricPool aggregate and it has an assigned policy other than `none`:
 
-* The first backup of a FabricPool-tiered volume requires retrieval of all local and all tiered data (from the object store). This operation could cause a one-time increase in cost to read the data from your cloud provider.
+* The first backup of a FabricPool-tiered volume requires reading all local and all tiered data (from the object store). A backup operation does not "reheat" the cold data tiered in object storage.
++
+This operation could cause a one-time increase in cost to read the data from your cloud provider.
+
 ** Subsequent backups are incremental and do not have this effect.
 ** If the tiering policy is assigned to the volume when it is initially created you will not see this issue.
 
 * Consider the impact of backups before assigning the `all` tiering policy to volumes. Because data is tiered immediately, Cloud Backup will read data from the cloud tier rather than from the local tier. Because concurrent backup operations share the network link to the cloud object store, performance degradation might occur if network resources become saturated. In this case, you may want to proactively configure multiple network interfaces (LIFs) to decrease this type of network saturation.
-
-* A backup operation does not "reheat" the cold data tiered in object storage.
 
 == Limitations
 
