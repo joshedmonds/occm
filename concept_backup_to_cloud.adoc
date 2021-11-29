@@ -306,20 +306,26 @@ This operation could cause a one-time increase in cost to read the data from you
 
 == Limitations
 
-* When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the cloud.
+* When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.
 
 * When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
 // The Connector can be installed in a site with or without internet access.
-
-* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
-** app_consistent
-** all_source_snapshot
 
 * In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Cloud Backup and then enable it again.
 
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
+
+* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
+** app_consistent
+** all_source_snapshot
+
+* SVM-DR volume backup is supported with the following restrictions:
+** Backups are supported from the ONTAP secondary only.
+** The Snapshot policy applied to the volume must be one of the policies recognized by Cloud Backup, including daily, weekly, monthly, etc. The default "sm_created" policy (used for *Mirror All Snapshots*) is not recognized and the DP volume will not be shown in the list of volumes that can be backed up.
+** Ad-hoc volume backups are not supported using the *Backup Now* button.
+** The destination cluster must at the same or later version of ONTAP software than the source cluster - the destination can't be running an older version of ONTAP.
 
 * SM-BC configurations are not supported.
 
