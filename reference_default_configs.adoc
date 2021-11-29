@@ -88,6 +88,8 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 * For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GiB
 
+TIP: In AWS, NVRAM is on the boot disk.
+
 === Azure (single node)
 
 * Three Premium SSD disks:
