@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_worm.html
-keywords: worm, write once, read many, snaplock, enterprise, retain, retention, period
-summary: You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. WORM files are protected at the file level.
+keywords: worm, write once, read many, snaplock, retain, retention, period, cloud worm, worm storage
+summary: You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cloud WORM storage is powered by SnapLock technology, which means WORM files are protected at the file level.
 ---
 
 = WORM storage
@@ -13,7 +13,7 @@ summary: You can activate write once, read many (WORM) storage on a Cloud Volume
 :imagesdir: ./media/
 
 [.lead]
-You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. WORM storage is powered by SnapLock technology in Enterprise mode, which means WORM files are protected at the file level.
+You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cloud WORM storage is powered by SnapLock technology, which means WORM files are protected at the file level.
 
 Once a file has been committed to WORM storage, it can't be modified, even after the retention period has expired. A tamper-proof clock determines when the retention period for a WORM file has elapsed.
 
@@ -35,14 +35,12 @@ You can use an application to commit files to WORM over NFS or CIFS, or use the 
 
 After you activate WORM storage on a Cloud Volumes ONTAP system, you must use the ONTAP CLI for all management of WORM storage. For instructions, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[ONTAP documentation^].
 
-NOTE: Cloud Volumes ONTAP support for WORM storage is equivalent to SnapLock Enterprise mode.
-
 == Limitations
 
 * WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. While WORM files are protected from alteration or modification, volumes can be deleted by a cluster administrator even if those volumes contain unexpired WORM data.
 
-* In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a “trusted cloud administrator” model. A cloud administrator could delete WORM data before its expiry date by removing or editing cloud storage directly from the cloud provider.
+* In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a "trusted cloud administrator" model. A cloud administrator could delete WORM data before its expiry date by removing or editing cloud storage directly from the cloud provider.
 
 * When WORM storage is activated, data tiering to object storage can't be enabled.
 
-* Cloud Backup must be disabled in order to enable WORM storage.
+* Cloud Backup Service must be disabled in order to enable WORM storage.

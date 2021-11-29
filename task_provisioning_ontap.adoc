@@ -2,41 +2,35 @@
 sidebar: sidebar
 permalink: task_provisioning_ontap.html
 keywords: ontap, cluster, manage, provision, provisioning, volumes, discovering, fas, aff, creating volumes, adding volumes
-summary: After you discover your on-prem ONTAP cluster from Cloud Manager, you can open the working environment to provision storage.
+summary: After you discover your on-prem ONTAP cluster from Cloud Manager, you can open the working environment to provision and manage storage.
 ---
 
-= Managing storage for ONTAP clusters
+= Managing storage for on-prem ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-After you discover your ONTAP cluster from Cloud Manager, you can open the working environment to provision and manage storage.
+After you discover your on-prem ONTAP cluster from Cloud Manager, you can open the working environment to provision and manage storage.
 
-== Creating volumes for ONTAP clusters
+== Creating volumes
 
-Cloud Manager enables you to provision NFS, CIFS, and iSCSI volumes on ONTAP clusters.
+Cloud Manager enables you to create NFS or CIFS volumes on existing aggregates. You can't create new aggregates on an on-prem ONTAP cluster from Cloud Manager.
 
 A Cloud Manager feature called "templates" enables you to create volumes that are optimized for the workload requirements for certain applications; such as databases or streaming services. If your organization has created volume templates that you should use, follow <<Creating volumes from templates,these steps>>.
 
-.Before you begin
-
-The data protocols must be set up on the cluster using System Manager or the CLI.
-
-.About this task
-
-You can create volumes on existing aggregates. You can't create new aggregates from Cloud Manager.
-
 .Steps
 
-. On the Canvas page, double-click the name of the ONTAP cluster on which you want to provision volumes.
+. On the Canvas page, double-click the name of the on-prem ONTAP cluster on which you want to provision volumes.
 
 . Click *Add New Volume*.
 
-. On the Create New Volume page, enter details for the volume, and then click *Create*.
+. Follow the steps in the wizard to create the volume.
+
+.. *Details & Protection*: Enter basic details about the volume and then select a Snapshot policy.
 +
-Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
+Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
 +
 [cols=2*,options="header",cols="2,6"]
 |===
@@ -47,22 +41,36 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 
-| Access control (for NFS only) | An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
+|===
 
-| Permissions and Users / Groups (for CIFS only) | These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
+.. *Protocol*: Choose the protocol for the volume (NFS or CIFS) and then set the access control or permissions for the volume.
++
+If you choose CIFS and a server isn't set up yet, then Cloud Manager prompts you to set up a CIFS server using either Active Directory or a workgroup.
++
+The following list describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="2,6"]
+|===
+| Field
+| Description
 
-| Initiator group and IQN (for iSCSI only) |
-iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.
+| Access Control | An NFS export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
 
-Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.
-
-iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
-
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, select it, click Target IQN, and then use the IQN to connect to the LUN from your hosts.
-
-| Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
+| Permissions and Users/Groups | These fields enable you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
 |===
+
+.. *Usage Profile*: Choose whether to enable or disable storage efficiency features on the volume.
++
+ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. NetApp storage efficiency features provide the following benefits:
++
+Thin provisioning:: Presents more logical storage to hosts or users than you actually have in your physical storage pool. Instead of preallocating storage space, storage space is allocated dynamically to each volume as data is written.
+
+Deduplication:: Improves efficiency by locating identical blocks of data and replacing them with references to a single shared block. This technique reduces storage capacity requirements by eliminating redundant blocks of data that reside in the same volume.
+
+Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
+
+.. *Review*: Review details about the volume and then click *Add*.
 
 == Creating volumes from templates
 
