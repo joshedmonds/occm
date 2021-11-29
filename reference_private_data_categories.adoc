@@ -21,6 +21,8 @@ TIP: If you need Cloud Data Sense to identify other private data types, such as 
 
 The personal data found in files can be general personal data or national identifiers. The third column identifies whether Cloud Data Sense uses link:task_controlling_private_data.html#personal-data[proximity validation^] to validate its findings for the identifier.
 
+The items in this category can be recognized in any language.
+
 Note that you can add to the list of personal data that is found in your files if you are scanning a database server. The _Data Fusion_ feature allows you to choose the additional identifiers that Cloud Data Sense will look for in its' scans by selecting columns in a database table. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
 
 [cols="20,50,18",width=80%,options="header"]
@@ -72,7 +74,7 @@ Note that you can add to the list of personal data that is found in your files i
 
 == Types of sensitive personal data
 
-The sensitive personal data that Cloud Data Sense can find in files includes the following:
+The sensitive personal data that Cloud Data Sense can find in files includes the following list. The items in this category can be recognized only in English at this time.
 
 // Civil Law Reference:: Data concerning a natural person’s civil law suits, offences, and procedures.
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
@@ -128,16 +130,19 @@ Cloud Data Sense categorizes your data as follows. Most of these categories can 
 
 |===
 
-The following Metadata categories are also supported:
+The following Metadata is also categorized, and are identified in the same supported languages:
 
 * Application Data
 * Archive Files
 * Audio
 * Business Application Data
 * CAD Files
+* Code
+* Corrupted
 * Database and index files
 * Design Files
 * Email Application Data
+* Encrypted
 * Executables
 * Financial Application Data
 * Health Application Data
@@ -147,7 +152,9 @@ The following Metadata categories are also supported:
 * Miscellaneous Presentations
 * Miscellaneous Spreadsheets
 * Miscellaneous "Unknown"
+* Structured Data
 * Videos
+* Zero-Byte Files
 
 == Types of files
 
