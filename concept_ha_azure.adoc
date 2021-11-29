@@ -72,7 +72,6 @@ You can use an HA pair as an active-active configuration, in which both nodes se
 The following limitations affect Cloud Volumes ONTAP HA pairs in Azure:
 
 * HA pairs are supported with Cloud Volumes ONTAP Standard, Premium, and BYOL. Explore is not supported.
-* NFSv4 is not supported. NFSv3 is supported.
 * HA pairs are not supported in some regions.
 +
 https://cloud.netapp.com/cloud-volumes-global-regions[See the list of supported Azure regions^].
