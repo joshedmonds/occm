@@ -24,8 +24,6 @@ You can view the overall status of your storage system, high-level information a
 * Analyze the performance of your storage devices by viewing the graphical format of performance data
 * Get details about systems that have exceeded 90% capacity or are nearing 90% capacity
 
-See the https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor documentation] for more information.
-
 == Supported ONTAP systems
 
 Active IQ Digital Advisor provides information for all the on-premises ONTAP systems and Cloud Volumes ONTAP systems within your NSS account.

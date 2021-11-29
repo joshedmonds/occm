@@ -26,8 +26,6 @@ You can view the overall status of your storage system, high-level information a
 * Get information about the hardware and software that have expired or are near-expiration within the next 6 months
 * Upgrade your storage system software, and update your ONTAP firmware using Ansible
 
-See the https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor documentation] for more information.
-
 == Supported ONTAP systems
 
 Active IQ Digital Advisor provides information for all the on-premises ONTAP systems and Cloud Volumes ONTAP systems within your NSS account.
