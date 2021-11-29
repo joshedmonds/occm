@@ -47,9 +47,9 @@ Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP us
 
 * link:task_planning_your_config.html[Learn how to choose disk types and disk sizes for your systems in AWS]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_9100.html[Review storage limits for Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_9101.html[Review storage limits for Cloud Volumes ONTAP in AWS^]
 
-* http://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9100.html[Review supported configurations for Cloud Volumes ONTAP in AWS^]
+* http://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9101.html[Review supported configurations for Cloud Volumes ONTAP in AWS^]
 
 == Azure storage
 
@@ -77,7 +77,7 @@ HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
 
 * link:task_planning_your_config_azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_9100.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_9101.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
 
 == GCP storage
 
@@ -89,7 +89,7 @@ The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persis
 
 * https://cloud.google.com/compute/docs/disks/[Google Cloud Platform documentation: Storage Options^]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_9100.html[Review storage limits for Cloud Volumes ONTAP in GCP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_9101.html[Review storage limits for Cloud Volumes ONTAP in GCP^]
 
 == RAID type
 
