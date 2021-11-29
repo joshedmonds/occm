@@ -35,16 +35,16 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9101.html[Learn 
 +
 A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 +
-https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
+** https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
 +
-Learn how to get started with Keystone Flex Subscriptions in Cloud Manager.
+** link:task_managing_licenses.html#manage-keystone-flex-subscriptions[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
 
 * Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
 
 === On-prem ONTAP cluster enhancements
 
 We redesigned the create volume wizard for ease of use and you can now choose a custom export policy.
-+
+
 image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
 
 === Cloud Sync enhancements
