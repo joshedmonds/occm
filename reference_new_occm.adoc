@@ -35,6 +35,8 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9101.html[Learn 
 +
 A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 +
+A Keystone Flex Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from Cloud Manager.
++
 ** https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
 +
 ** link:task_managing_licenses.html#manage-keystone-flex-subscriptions[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
