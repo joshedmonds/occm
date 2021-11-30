@@ -291,28 +291,36 @@ sidebar:
       entries:
         - title: Learn about Cloud Backup
           url: /concept_backup_to_cloud.html
-        - title: Get started
+        - title: Back up Cloud Volumes ONTAP data
           entries:
-            - title: Back up Cloud Volumes ONTAP data to Amazon S3
+            - title: Back up to Amazon S3
               url: /task_backup_to_s3.html
-            - title: Back up Cloud Volumes ONTAP data to Azure Blob
+            - title: Back up to Azure Blob
               url: /task_backup_to_azure.html
-            - title: Back up Cloud Volumes ONTAP data to Google Cloud
+            - title: Back up to Google Cloud
               url: /task_backup_to_gcp.html
-            - title: Back up on-premises ONTAP data to Amazon S3
+        - title: Back up on-premises ONTAP data
+          entries:
+            - title: Back up to Amazon S3
               url: /task_backup_onprem_to_aws.html
-            - title: Back up on-premises ONTAP data to Azure Blob
+            - title: Back up to Azure Blob
               url: /task_backup_onprem_to_azure.html
-            - title: Back up on-premises ONTAP data to Google Cloud
+            - title: Back up to Google Cloud
               url: /task_backup_onprem_to_gcp.html
-            - title: Back up on-premises ONTAP data to StorageGRID
+            - title: Back up to StorageGRID
               url: /task_backup_onprem_private_cloud.html
+        - title: Back up Kubernetes cluster data
+          entries:
+            - title: Back up to Amazon S3
+              url: /task_backup_kubernetes_to_s3.html
         - title: Set up licensing
           url: /task_licensing_cloud_backup.html
         - title: Manage backups
           url: /task_managing_backups.html
         - title: Restore from backups
           url: /task_restore_backups.html
+#        - title: Monitor the status of backup and restore jobs
+#          url: task-monitor-backup-jobs.html
         - title: Reference
           entries:
             - title: Supported AWS archive storage tiers
@@ -392,7 +400,7 @@ sidebar:
               url: /task_sync_licensing.html
         - title: Tutorials
           entries:
-            - title: Copy ACLs between shares
+            - title: Copy ACLs from an SMB share
               url: /task_sync_copying_acls.html
             - title: Encrypt NFS data in flight
               url: /task_sync_nfs_encryption.html

@@ -19,6 +19,63 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.13 (28 Nov 2021)
+
+* <<Cloud Volumes ONTAP enhancement>>
+* <<On-prem ONTAP cluster enhancements>>
+* <<Cloud Sync enhancements>>
+* <<Cloud Backup enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+* Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.1.
++
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9101.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+* You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
++
+A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
++
+A Keystone Flex Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from Cloud Manager.
++
+** https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
++
+** link:task_managing_licenses.html#manage-keystone-flex-subscriptions[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
+
+* Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
+
+=== On-prem ONTAP cluster enhancements
+
+We redesigned the create volume wizard for ease of use and you can now choose a custom export policy.
+
+image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
+
+=== Cloud Sync enhancements
+
+* Cloud Sync can now copy access control lists (ACLs) when setting up a sync relationship from a source SMB share to object storage (except for ONTAP S3).
++
+Cloud Sync doesn't support copying ACLs from object storage to SMB shares.
++
+link:task_sync_copying_acls.html[Learn how to copy ACLs from an SMB share].
+
+* You can now update Cloud Sync licenses that you extended.
++
+If you extended a Cloud Sync license that you purchased from NetApp, you can add the license again to refresh the expiration date.
++
+link:task_sync_licensing.html#update-a-license[Learn how to update a license].
+
+* You can now update the Box credentials for an existing sync relationship.
++
+link:task_sync_managing_relationships.html[Learn how to update credentials].
+
+=== Cloud Backup enhancements
+
+* Now you can back up persistent volumes from your Kubernetes clusters to Amazon S3.
++
+If your EKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for AWS as backend storage for the cluster, then you can back up and restore volumes to and from Amazon S3. link:task_backup_kubernetes_to_s3.html[Go here for details].
+
+* Cloud Backup now supports creating backups of DP volumes that exist on the target ONTAP system in an SVM-DR relationship. There are a few restrictions, so see link:concept_backup_to_cloud.html#limitations[the limitations] for details.
+
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
 This patch update includes bug fixes.

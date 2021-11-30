@@ -194,7 +194,11 @@ The following questions relate to data permissions.
 
 === Are SMB data permissions synced to the target location?
 
-You can set up Cloud Sync to preserve access control lists (ACLs) between a source SMB share and a target SMB share. Or you can manually copy the ACLs yourself. link:task_sync_copying_acls.html[Learn how to copy ACLs between SMB shares].
+You can set up Cloud Sync to preserve access control lists (ACLs) between a source SMB share and a target SMB share, and from a source SMB share to object storage (except for ONTAP S3).
+
+NOTE: Cloud Sync doesn't support copying ACLs from object storage to SMB shares.
+
+link:task_sync_copying_acls.html[Learn how to copy ACLs between SMB shares].
 
 === Are NFS data permissions synced to the target location?
 
