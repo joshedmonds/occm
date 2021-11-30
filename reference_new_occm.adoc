@@ -24,6 +24,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Volumes ONTAP enhancement>>
 * <<On-prem ONTAP cluster enhancements>>
 * <<Cloud Sync enhancements>>
+* <<Cloud Backup enhancements>>
 
 === Cloud Volumes ONTAP enhancements
 
@@ -66,6 +67,14 @@ link:task_sync_licensing.html#update-a-license[Learn how to update a license].
 * You can now update the Box credentials for an existing sync relationship.
 +
 link:task_sync_managing_relationships.html[Learn how to update credentials].
+
+=== Cloud Backup enhancements
+
+* Now you can back up persistent volumes from your Kubernetes clusters to Amazon S3.
++
+If your EKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for AWS as backend storage for the cluster, then you can back up and restore volumes to and from Amazon S3. link:task_backup_kubernetes_to_s3.html[Go here for details].
+
+* Cloud Backup now supports creating backups of DP volumes that exist on the target ONTAP system in an SVM-DR relationship. There are a few restrictions, so see link:concept_backup_to_cloud.html#limitations[the limitations] for details.
 
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 

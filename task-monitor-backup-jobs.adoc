@@ -1,0 +1,42 @@
+---
+sidebar: sidebar
+permalink: task-monitor-backup-jobs.html
+keywords: cloud backup, cloud backup service, backup, restore, status, monitor
+summary: You can monitor the status of backup and restore jobs that have been initiated in your working environments. This allows you to see the jobs that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
+---
+
+= Monitoring the status of backup and restore jobs
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can monitor the status of backup and restore jobs that have been initiated in your working environments. This allows you to see the jobs that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
+
+== Viewing the status of your backup and restore jobs
+
+You can view a list of all the backup and restore operations and their current status. This includes operations from your Cloud Volumes ONTAP, on-premises ONTAP, and Kubernetes systems. Each operation, or job, has a unique ID and a status. The status can be:
+
+* Successful
+* In Progress
+* Queued
+* Warning
+* Failed
+
+.Steps
+
+. Click the *Backup & Restore* tab.
+
+. Click the *Job Monitor* tab.
++
+image:screenshot_backup_job_monitor.png[A screenshot showing backup and restore jobs in the Job Monitor dashboard.]
+
+You can click the name of a job to view details corresponding to that operation.
+
+If you are looking for specific job, you can:
+
+* use the time selector at the top of the page to view jobs for a certain time range
+* enter a part of the job name in the Search field
+* sort the results by using the filter in each column heading

@@ -27,6 +27,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 ** The cluster has a SnapMirror license -- it is included as part of the Premium Bundle or Data Protection Bundle.
 ** The cluster must have the required network connections to StorageGRID and to the Connector.
 * You have a Connector installed on your premises.
+// ** The Connector can be installed in a site with or without internet access.
 ** Networking for the Connector enables an outbound HTTPS connection to the ONTAP cluster and to StorageGRID.
 * You have purchased link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 * Your StorageGRID has version 10.3 or later with access keys that have S3 permissions.
@@ -42,7 +43,7 @@ image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Ba
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enter the StorageGRID details
 
 [role="quick-margin-para"]
-Select StorageGRID as the provider, and then enter the StorageGRID details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
+Select StorageGRID as the provider, and then enter the StorageGRID server and service account details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
 
 [role="quick-margin-para"]
 image:screenshot_backup_provider_settings_storagegrid.png[A screenshot that shows the cloud provider details when backing up volumes from an ONTAP cluster to StorageGRID.]
@@ -58,7 +59,7 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Back
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Select the volumes that you want to back up
 
 [role="quick-margin-para"]
-Identify which volumes you want to back up from the cluster.
+Identify which volumes you want to back up from the cluster. An S3 bucket is created automatically in the service account indicated by the S3 access key and secret key you entered, and the backup files are stored there.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Restore your data, as needed
 
@@ -75,6 +76,8 @@ Read the following requirements to make sure you have a supported configuration 
 The following image shows each component when backing up an on-prem ONTAP system to StorageGRID and the connections that you need to prepare between them:
 
 image:diagram_cloud_backup_onprem_storagegrid.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+//
+// When the Connector is installed in an on-prem location without internet access, the StorageGRID system must be located in the same on-prem data center.
 
 Note that the Cloud Restore instance is not shown in this diagram because single-file restore is not currently supported when using StorageGRID.
 
@@ -90,10 +93,10 @@ ONTAP requirements::
 +
 *Note:* The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-76A429CC-56CF-4DC1-9DC5-A3E222892684.html[manage your cluster licenses^].
+See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[manage your cluster licenses^].
 *	Time and time zone are set correctly.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-644CED2B-ABC9-4FC5-BEB2-1BE6A867919E.html[configure your cluster time^].
+See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html[configure your cluster time^].
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port from the intercluster LIF to StorageGRID for backup and restore operations. The port is configurable during backup setup.
@@ -106,6 +109,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 * The nodes' intercluster LIFs are able to access the internet.
+//  (not required when the Connector is installed in a "dark" site).
 *	DNS servers have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
 * Note that if you use are using a different IPspace than the Default, then you might need to create a static route to get access to the object storage.
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through the port you specified (typically port 443) and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
@@ -136,10 +140,11 @@ You must not enable StorageGRID object versioning on the object store bucket.
 === Creating or switching Connectors
 
 When backing up data to StorageGRID, a Connector must be available on your premises. You'll either need to install a new Connector or make sure that the currently selected Connector resides on-prem.
+// The Connector can be installed in a site with or without internet access.
 
 * link:concept_connectors.html[Learn about Connectors]
-* link:reference_cloud_mgr_reqs.html[Connector host requirements]
-* link:task_installing_linux.html[Installing the Connector on an existing Linux host]
+* link:task_installing_linux.html[Installing the Connector on a Linux host with internet access]
+// * link:task-install-connector-onprem-no-internet.html[Installing the Connector on a Linux host without internet access]
 * link:task_managing_connectors.html[Switching between Connectors]
 
 === Preparing networking for the Connector
@@ -150,9 +155,10 @@ Ensure that the Connector has the required networking connections.
 
 . Ensure that the network where the Connector is installed enables the following connections:
 
-* An outbound internet connection to the Cloud Backup service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to StorageGRID
 * An HTTPS connection over port 443 to your ONTAP clusters
+* An outbound internet connection to the Cloud Backup service over port 443 (HTTPS)
+// (not required when the Connector is installed in a "dark" site)
 
 === License requirements
 
@@ -179,6 +185,7 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 .. The FQDN of the StorageGRID server and the port that ONTAP should use for HTTPS communication with StorageGRID; for example: `s3.eng.company.com:8082`
 .. The Access Key and the Secret Key used to access the bucket to store backups.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.
+// (not required when the Connector is installed in a "dark" site).
 +
 Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.
 +
@@ -200,11 +207,11 @@ See link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthl
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
-. Click *Activate Backup* and Cloud Backup starts taking the initial backups of each selected volume and the Backup Dashboard is displayed so you can monitor the state of the backups.
+. Click *Activate Backup* and Cloud Backup starts taking the initial backups of each selected volume.
 
 .Result
 
-Cloud Backup backs up your volumes from the on-premises ONTAP system.
+An S3 bucket is created automatically in the service account indicated by the S3 access key and secret key you entered, and the backup files are stored there. The Volume Backup Dashboard is displayed so you can monitor the state of the backups.
 
 .What's next?
 
