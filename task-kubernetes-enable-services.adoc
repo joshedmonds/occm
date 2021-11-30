@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: task-kubernetes-enable-services.html
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, kubernetes support
+summary: After you add a managed-Kubernetes cluster to the Canvas, you can use NetApp's cloud data services for advanced data management.
+---
+
+= Use NetApp's cloud data services with Kubernetes clusters
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you add a managed-Kubernetes cluster to the Canvas, you can use NetApp's cloud data services for advanced data management.
+
+At this time, Cloud Backup is supported with Kubernetes clusters. You can use Cloud Backup to back up persistent volumes to object storage.
+
+link:task_backup_kubernetes_to_s3.html[Go to the Cloud Backup docs to learn how to back up persistent volumes].
+
+image:screenshot-kubernetes-backup.png[A screenshot of the Kubernetes page in the Cloud Backup Service which shows five backup jobs for a Kubernetes cluster.]
