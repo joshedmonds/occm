@@ -70,7 +70,7 @@ Cloud Sync adds the new data broker to the sync relationships. The performance o
 
 You can update the data broker with the latest credentials of the source or target in an existing sync relationship. Updating the credentials can help if your security policies require you to update credentials on a periodic basis.
 
-Updating credentials is supported with any source or target that Cloud Sync requires credentials for: Azure Blob, IBM Cloud Object Storage, StorageGRID, ONTAP S3 Storage, SFTP, and SMB servers.
+Updating credentials is supported with any source or target that Cloud Sync requires credentials for: Azure Blob, Box, IBM Cloud Object Storage, StorageGRID, ONTAP S3 Storage, SFTP, and SMB servers.
 
 .Steps
 

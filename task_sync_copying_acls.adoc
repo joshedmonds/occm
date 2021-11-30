@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_sync_copying_acls.html
 keywords: permissions, access control list, acls, ntfs, cifs, smb, shares, robocopy, copy, transfer, activate, operating system, os, ram, cpu, networking, copy acls to the target
-summary: Cloud Sync can copy access control lists (ACLs) between a source SMB share and a target SMB share. If needed, you can manually preserve the ACLs yourself using robocopy.
+summary: Cloud Sync can copy access control lists (ACLs) between a source SMB share and a target SMB share, and from a source SMB share to object storage (except for ONTAP S3).
 ---
 
-= Copying ACLs between SMB shares
+= Copying ACLs from SMB shares
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,36 +13,28 @@ summary: Cloud Sync can copy access control lists (ACLs) between a source SMB sh
 :imagesdir: ./media/
 
 [.lead]
-Cloud Sync can copy access control lists (ACLs) between a source SMB share and a target SMB share. If needed, you can manually preserve the ACLs yourself by using robocopy.
+Cloud Sync can copy access control lists (ACLs) between a source SMB share and a target SMB share, or from a source SMB share to object storage (except for ONTAP S3). If needed, you also have the option to manually preserve ACLs between SMB shares by using robocopy.
+
+NOTE: Cloud Sync doesn't support copying ACLs back from object storage to SMB shares.
 
 .Choices
 
 * <<Setting up Cloud Sync to copy ACLs between SMB servers,Set up Cloud Sync to automatically copy ACLs>>
-* <<Manually copying ACLs,Manually copy the ACLs yourself>>
+* <<Manually copying ACLs,Manually copy the ACLs between SMB shares>>
 
-== Setting up Cloud Sync to copy ACLs between SMB servers
+== Setting up Cloud Sync to copy ACLs from an SMB server
 
-Copy ACLs between SMB servers by enabling a setting when you create a relationship or after you create a relationship.
-
-Note that this feature is available for new sync relationships created after the 23 Feb 2020 release. If you’d like to use this feature with existing relationships created prior to that date, then you’ll need to recreate the relationship.
+Copy ACLs from an SMB server by enabling a setting when you create a relationship or after you create a relationship.
 
 .What you'll need
 
-* A new sync relationship or an existing sync relationship created after the 23 Feb 2020 release.
-
-* Any type of data broker.
-+
 This feature works with _any_ type of data broker: the AWS, Azure, Google Cloud Platform, or on-prem data broker. The on-prem data broker can run link:task_sync_installing_linux.html[any supported operating system].
-
-* For NFS, you’ll need to use NFS version 4 or later.
-+
-The source and target versions must be the same. For example, 4.0 on the source and 4.0 on the target is supported. But 4.0 on the source and 4.1 on the target isn't supported because the versions are different.
 
 .Steps for a new relationship
 
 . From Cloud Sync, click *Create New Sync*.
 
-. Drag and drop *SMB Server* to the source and target and click *Continue*.
+. Drag and drop *SMB Server* to the source, choose an SMB server or object storage as the target, and click *Continue*.
 
 . On the *SMB Server* page:
 .. Enter a new SMB server or select an existing server and click *Continue*.
@@ -52,6 +44,12 @@ The source and target versions must be the same. For example, 4.0 on the source 
 image:screenshot_acl_support.gif[A screenshot that shows the option to enable Copy Access Control Lists to the target.]
 
 . Follow the remaining prompts to create the sync relationship.
++
+When you copy ACLs from SMB to object storage, you can choose to copy the ACLs to the object's tags or on the object's metadata, depending on the target. For Azure and Google Cloud Storage, only the metadata option is available.
++
+The following screenshot shows an example of the step where you can make this choice.
++
+image:screenshot-sync-tags-metadata.png["A screenshot of the sixth step in the sync relationship wizard when copying to object storage. You can choose to save the ACLs to the object's tags or metadata."]
 
 .Steps for an existing relationship
 
@@ -65,9 +63,9 @@ image:screenshot_acl_support.gif[A screenshot that shows the option to enable Co
 
 .Result
 
-When syncing data, Cloud Sync preserves the ACLs between the source and target SMB shares.
+When syncing data, Cloud Sync preserves the ACLs between the source and target SMB shares, or from a source SMB share to object storage.
 
-== Manually copying ACLs
+== Manually copying ACLs between SMB shares
 
 You can manually preserve ACLs between SMB shares by using the Windows robocopy command.
 

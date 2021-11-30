@@ -388,7 +388,7 @@ sidebar:
               url: /task_sync_licensing.html
         - title: Tutorials
           entries:
-            - title: Copy ACLs between shares
+            - title: Copy ACLs from an SMB share
               url: /task_sync_copying_acls.html
             - title: Encrypt NFS data in flight
               url: /task_sync_nfs_encryption.html
