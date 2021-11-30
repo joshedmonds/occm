@@ -325,7 +325,7 @@ This operation could cause a one-time increase in cost to read the data from you
 ** Backups are supported from the ONTAP secondary only.
 ** The Snapshot policy applied to the volume must be one of the policies recognized by Cloud Backup, including daily, weekly, monthly, etc. The default "sm_created" policy (used for *Mirror All Snapshots*) is not recognized and the DP volume will not be shown in the list of volumes that can be backed up.
 ** Ad-hoc volume backups are not supported using the *Backup Now* button.
-** The destination cluster must at the same or later version of ONTAP software than the source cluster - the destination can't be running an older version of ONTAP.
+// ** The destination cluster must at the same or later version of ONTAP software than the source cluster - the destination can't be running an older version of ONTAP.
 
 * SM-BC configurations are not supported.
 

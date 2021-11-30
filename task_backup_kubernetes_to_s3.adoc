@@ -103,7 +103,7 @@ spec:
   storageClassName: silver
 ```
 +
-You can do this for all PVCs by adding the `snapshotPolicy` field under defaults in the `backend.json` file:
+You can do this for all PVCs associated with a particular backend storage by adding the `snapshotPolicy` field under defaults in the `backend.json` file:
 +
 ```json
 apiVersion: trident.netapp.io/v1
