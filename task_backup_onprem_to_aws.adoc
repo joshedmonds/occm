@@ -109,10 +109,10 @@ ONTAP requirements::
 +
 *Note:* The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-76A429CC-56CF-4DC1-9DC5-A3E222892684.html[manage your cluster licenses^].
+See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[manage your cluster licenses^].
 *	Time and time zone are set correctly.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-644CED2B-ABC9-4FC5-BEB2-1BE6A867919E.html[configure your cluster time^].
+See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html[configure your cluster time^].
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over port 443 from the intercluster LIF to Amazon S3 storage for backup and restore operations.
