@@ -121,11 +121,11 @@ image:screenshot_backup_view_backups.png[A screenshot that shows the List of all
 
 Cloud Backup enables you to delete a single backup file, delete all backups for a volume, or delete all backups of all volumes in a working environment or Kubernetes cluster. You might want to delete all backups if you no longer need the backups or if you deleted the source volume and want to remove all backups.
 
-Note that deleting all backups does not disable further backups of this volume or the working environment. If you want to stop creating backups of a volume, you can disable backups <<Starting and stopping backups of volumes,as described here>>. If you want to stop creating backups of all volumes in a working environment, you can deactivate backups <<Disabling Cloud Backup for a working environment,as described here>>.
-
 CAUTION: If you plan to delete a working environment or cluster that has backups, you must delete the backups *before* deleting the system. Cloud Backup doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted. You'll continue to be charged for object storage costs for any remaining backups.
 
 === Deleting all backup files for a working environment
+
+Deleting all backups for a working environment does not disable future backups of volumes in this working environment. If you want to stop creating backups of all volumes in a working environment, you can deactivate backups <<Disabling Cloud Backup for a working environment,as described here>>.
 
 .Steps
 
@@ -140,6 +140,10 @@ image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All
 . In the confirmation dialog box, enter the name of the working environment and click *Delete*.
 
 === Deleting all backup files for a volume
+
+Deleting all backups for a volume also disables future backups for that volume.
+
+You can <<Starting and stopping backups of volumes,restart making backups for the volume>> at any time from the Manage Backups page.
 
 .Steps
 
