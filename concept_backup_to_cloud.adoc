@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Cloud Backup, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
-summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, kubernetes
+summary: Cloud Backup is a service for Cloud Manager working environments that provides backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Cloud Backup
@@ -13,9 +13,9 @@ summary: Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP
 :imagesdir: ./media/
 
 [.lead]
-Cloud Backup is a service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+Cloud Backup is a service for Cloud Manager working environments that provides backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 
-When necessary, you can restore an entire _volume_, or one or more _files_, from a backup to the same or different Cloud Volumes ONTAP or on-premises ONTAP cluster.
+When necessary, you can restore an entire _volume_, or one or more _files_, from a backup to the same or different working environment.
 
 link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup^].
 
@@ -25,8 +25,8 @@ Backup features:
 
 * Back up independent copies of your data volumes to low-cost object storage.
 * Tier older backup files to archival storage to save costs (supported with AWS and Azure when using ONTAP 9.10.1+)
-* Back up from cloud to cloud, and from on-premises ONTAP systems to public or private cloud.
-* Backups can reside on a different subscription/account or different region than your Cloud Volumes ONTAP system.
+* Back up from cloud to cloud, and from on-premises systems to public or private cloud.
+* For Cloud Volumes ONTAP system, your backups can reside on a different subscription/account or different region.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
 * You can use your own customer-managed keys for data encryption instead of using the default encryption keys from your cloud provider.
 * Support for up to 4,000 backups of a single volume.
@@ -60,28 +60,31 @@ Cloud Backup enables you to back up volumes from the following working environme
 Azure Blob
 Google Cloud Storage
 NetApp StorageGRID
+| Kubernetes cluster in AWS
+| Amazon S3
 
 |===
 
 You can restore a volume, or individual files, from a backup file to the following working environments:
 
-[cols=3*,options="header",cols="25,40,40",width="95%"]
+[cols=4*,options="header",cols="20,20,30,30",width="100%"]
 |===
 
-| Backup File Location
+2+^| Backup File
 2+^| Destination Working Environment
-
-| | *Volume Restore* | *File Restore*
-| Amazon S3 | Cloud Volumes ONTAP in AWS
+| *Location* | *Type*
+| *Volume Restore* | *File Restore*
+| Amazon S3 | ONTAP | Cloud Volumes ONTAP in AWS
 On-premises ONTAP system
 | Cloud Volumes ONTAP in AWS
 On-premises ONTAP system
-| Azure Blob | Cloud Volumes ONTAP in Azure
+| Amazon S3 | Kubernetes | Kubernetes cluster in AWS |
+| Azure Blob | ONTAP | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
-| Google Cloud Storage | Cloud Volumes ONTAP in Google
+| Google Cloud Storage | ONTAP | Cloud Volumes ONTAP in Google
 On-premises ONTAP system |
-| NetApp StorageGRID | On-premises ONTAP system |
+| NetApp StorageGRID | ONTAP | On-premises ONTAP system |
 
 |===
 
@@ -292,23 +295,21 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 There are certain things you need to be aware of when the volume you are backing up resides on a FabricPool aggregate and it has an assigned policy other than `none`:
 
-* The first backup of a FabricPool-tiered volume requires retrieval of all local and all tiered data (from the object store). This operation could cause a one-time increase in cost to read the data from your cloud provider.
+* The first backup of a FabricPool-tiered volume requires reading all local and all tiered data (from the object store). A backup operation does not "reheat" the cold data tiered in object storage.
++
+This operation could cause a one-time increase in cost to read the data from your cloud provider.
+
 ** Subsequent backups are incremental and do not have this effect.
 ** If the tiering policy is assigned to the volume when it is initially created you will not see this issue.
 
 * Consider the impact of backups before assigning the `all` tiering policy to volumes. Because data is tiered immediately, Cloud Backup will read data from the cloud tier rather than from the local tier. Because concurrent backup operations share the network link to the cloud object store, performance degradation might occur if network resources become saturated. In this case, you may want to proactively configure multiple network interfaces (LIFs) to decrease this type of network saturation.
 
-* A backup operation does not "reheat" the cold data tiered in object storage.
-
 == Limitations
 
-* When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the cloud.
+* When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.
 
 * When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
-
-* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
-** app_consistent
-** all_source_snapshot
+// The Connector can be installed in a site with or without internet access.
 
 * In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
@@ -316,7 +317,17 @@ There are certain things you need to be aware of when the volume you are backing
 
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
-* SVM-DR and SM-BC configurations are not supported.
+* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
+** app_consistent
+** all_source_snapshot
+
+* SVM-DR volume backup is supported with the following restrictions:
+** Backups are supported from the ONTAP secondary only.
+** The Snapshot policy applied to the volume must be one of the policies recognized by Cloud Backup, including daily, weekly, monthly, etc. The default "sm_created" policy (used for *Mirror All Snapshots*) is not recognized and the DP volume will not be shown in the list of volumes that can be backed up.
+** Ad-hoc volume backups are not supported using the *Backup Now* button.
+// ** The destination cluster must at the same or later version of ONTAP software than the source cluster - the destination can't be running an older version of ONTAP.
+
+* SM-BC configurations are not supported.
 
 * MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC > SnapMirror > ONTAP > Cloud Backup Service > object storage.
 
