@@ -110,10 +110,16 @@ For very large configurations where you'll be scanning petabytes of data, you ca
 
 .Steps
 
-. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *cc_onprem_installer_nointernet.tar.gz*.
+. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *<version>_darksite_installer_bundle.tar.gz*.
 // . On an internet-configured system, download the Cloud Data Sense software.
 
-. Copy the installer file to the Linux host you plan to use in the dark site.
+. Copy the installer bundle to the Linux host you plan to use in the dark site.
+
+. Unzip the installer bundle on the host machine, for example:
++
+`tar -xzf 53.6.0_darksite_installer_bundle.tar.gz`
++
+This extracts required software and the actual installer file *cc_onprem_installer.tar.gz*.
 
 . Launch Cloud Manager and click *Data Sense*.
 
@@ -127,11 +133,11 @@ image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting 
 
 . In the _Deploy Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later, and click *Close*. For example:
 +
-sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
+sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite
 
 . Unzip the installer file on the host machine:
 +
-`tar -xzf cc_onprem_installer_nointernet.tar.gz`
+`tar -xzf cc_onprem_installer.tar.gz`
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
@@ -143,12 +149,12 @@ sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
 |
 a. Paste the information you copied from step 6:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --darksite`
 b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
 c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
 d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
 | Alternatively, you can create the whole command in advance and enter it in the first prompt:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password> --darksite`
 |===
 
 +
@@ -209,14 +215,14 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 .Steps
 
-. Follow steps 1 through 7 from the link:task-deploy-compliance-dark-site.html#deploy-data-sense-on-a-single-host-typical-configuration[Single-host installation] on the manager node.
+. Follow steps 1 through 8 from the link:task-deploy-compliance-dark-site.html#deploy-data-sense-on-a-single-host-typical-configuration[Single-host installation] on the manager node.
 
-. As shown in step 8, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
+. As shown in step 9, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
 +
 In addition to the variables available for a single-host installation, a new option *-n <node_ip>* is used to specify the IP addresses of the scanner nodes. Multiple node IPs are separated by a comma.
 +
 For example, this command adds 3 scanner nodes:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> *-n <node_ip1>,<node_ip2>,<node_ip3>* --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> *-n <node_ip1>,<node_ip2>,<node_ip3>* --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password> --darksite`
 
 . Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
 +
