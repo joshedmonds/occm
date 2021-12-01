@@ -148,7 +148,7 @@ sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite
 | Enter the full command:
 
 |
-a. Paste the information you copied from step 6:
+a. Paste the information you copied from step 7:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --darksite`
 b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
 c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
