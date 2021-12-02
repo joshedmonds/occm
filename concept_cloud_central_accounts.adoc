@@ -46,6 +46,8 @@ When you associate a user, you assign them a role:
 * _Compliance Viewer_: Can only view Cloud Data Sense compliance information and generate reports for systems that they have permission to access.
 * _SnapCenter Admin_: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
 
+link:reference_user_roles.html[Learn more about these roles].
+
 == Workspaces
 
 In Cloud Manager, a workspace isolates any number of _working environments_ from other working environments. Workspace Admins can't access the working environments in a workspace unless the Account Admin associates the admin with that workspace.
@@ -56,11 +58,15 @@ A working environment represents a storage system:
 * An on-premises ONTAP cluster in your network
 * An ONTAP cluster in a NetApp Private Storage configuration
 
+link:task_setting_up_cloud_central_accounts.html[Learn how to add a workspace].
+
 == Connectors
 
 A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. The Connector runs on a virtual machine instance that you deploy in your cloud provider, or on an on-prem host that you configured.
 
 You can use a Connector with more than one NetApp cloud data service. For example, if you already have a Connector for Cloud Manager, you can select it when you set up the Cloud Tiering service.
+
+link:concept_connectors.html[Learn more about Connectors].
 
 == Subscriptions
 
@@ -73,6 +79,8 @@ After you've subscribed, each subscription is available from the Manage Account 
 You have the option to rename a subscription and to disassociate the subscription from one or more accounts.
 
 For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
+
+link:task_managing_cloud_central_accounts.html#managing-subscriptions[Learn how to manage subscriptions].
 
 == Examples
 
