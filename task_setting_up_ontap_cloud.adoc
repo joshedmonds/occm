@@ -33,11 +33,17 @@ For example, here's the API for a single-node system in AWS:
 
 image:screenshot_ntp_server_api.gif[A screenshot of the Swagger interface that shows the NTP API call.]
 
-| Optional: Configure AutoSupport | AutoSupport proactively monitors the health of your system and automatically sends messages to NetApp technical support by default.
+| Set up AutoSupport a| AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support. By default, AutoSupport is enabled on each node to send messages to technical support using the HTTPS transport protocol.
 
-If the Account Admin added a proxy server to Cloud Manager before you launched your instance, Cloud Volumes ONTAP is configured to use that proxy server for AutoSupport messages.
+If the Cloud Manager Account Admin added a proxy server to Cloud Manager before you launched your instance, Cloud Volumes ONTAP is configured to use that proxy server for AutoSupport messages.
 
-You should test AutoSupport to ensure that it can send messages. For instructions, see the System Manager Help or the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[ONTAP 9 System Administration Reference^].
+The only required configuration step is to ensure that Cloud Volumes ONTAP has outbound internet connectivity. For details, refer to the networking requirements for your cloud provider.
+
+* link:reference_networking_aws.html[AWS networking requirements]
+* link:reference_networking_azure.html[Azure networking requirement]
+* link:reference_networking_gcp.html[Google Cloud networking requirements]
+
+After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, go to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 
 | Optional: Configure EMS | The Event Management System (EMS) collects and displays information about events that occur on Cloud Volumes ONTAP systems. To receive event notifications, you can set event destinations (email addresses, SNMP trap hosts, or syslog servers) and event routes for a particular event severity.
 

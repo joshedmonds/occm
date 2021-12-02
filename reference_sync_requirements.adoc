@@ -263,16 +263,6 @@ Notes:
 
 . Box support is available as a preview.
 
-. When you create a sync relationship from Amazon S3 to Box, you must use a data broker group that has a unified configuration where the following settings are set to 1:
-+
-* Scanner Concurrency
-* Scanner Processes Limit
-* Transferrer Concurrency
-* Transferrer Processes Limit
-
-+
-link:task_sync_managing_data_brokers.html#define-a-unified-configuration-for-a-data-broker-group[Learn how to define a unified configuration for a data broker group].
-
 . You can choose a specific Azure Blob storage tier when a Blob container is the target:
 +
 * Hot storage
@@ -395,14 +385,24 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 === Box requirements
 
-To create a sync relationship that includes Box, you'll need to provide the following credentials:
+* To create a sync relationship that includes Box, you'll need to provide the following credentials:
 
-* Client ID
-* Client secret
-* Private key
-* Public key ID
-* Passphrase
-* Enterprise ID
+** Client ID
+** Client secret
+** Private key
+** Public key ID
+** Passphrase
+** Enterprise ID
+
+* If you create a sync relationship from Amazon S3 to Box, you must use a data broker group that has a unified configuration where the following settings are set to 1:
++
+** Scanner Concurrency
+** Scanner Processes Limit
+** Transferrer Concurrency
+** Transferrer Processes Limit
+
++
+link:task_sync_managing_data_brokers.html#define-a-unified-configuration-for-a-data-broker-group[Learn how to define a unified configuration for a data broker group].
 
 === [[google]]Google Cloud Storage bucket requirements
 
