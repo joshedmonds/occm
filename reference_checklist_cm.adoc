@@ -28,13 +28,9 @@ Users need to access Cloud Manager from a web browser. The machine running the w
 | \https://cloudmanager.cloud.netapp.com
 | To connect you to the Cloud Manager SaaS interface.
 
-| \https://api.services.cloud.netapp.com
-| To contact Cloud Central APIs.
-
 |
 \https://auth0.com
 \https://cdn.auth0.com
-\https://netapp-cloud-account.auth0.com
 \https://services.cloud.netapp.com
 
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
