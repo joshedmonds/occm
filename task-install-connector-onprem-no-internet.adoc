@@ -26,7 +26,7 @@ The Connector is not supported on a host that is shared with other applications.
 
 CPU:: 4 cores or 4 vCPUs
 
-RAM:: 14 GB
+RAM:: 16 GB
 
 Supported operating systems::
 * CentOS 7.6
@@ -45,11 +45,13 @@ The Connector is supported on English-language versions of these operating syste
 Hypervisor:: A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
 https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
 
-Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^].
+Disk type:: An SSD is required
 
 Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^].
 
 == Install the Connector
 
