@@ -331,6 +331,8 @@ This operation could cause a one-time increase in cost to read the data from you
 
 * MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC > SnapMirror > ONTAP > Cloud Backup Service > object storage.
 
+* ONTAP doesn't support fan-out of SnapMirror relationships from a single volume to multiple object stores; therefore, this configuration is not supported by Cloud Backup.
+
 * WORM/Compliance mode on an object store is not supported.
 
 === Single File Restore limitations
