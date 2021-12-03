@@ -46,6 +46,8 @@ A Keystone Flex Subscription is supported with all new versions of Cloud Volumes
 * Cloud Volumes ONTAP is now supported in the AWS Asia Pacific (Osaka) region (ap-northeast-3).
 
 * Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
++
+This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.13 release of the Connector.
 
 === On-prem ONTAP cluster enhancements
 
