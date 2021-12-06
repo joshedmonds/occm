@@ -359,7 +359,8 @@ TIP: You can't delete files that reside in databases or files that reside in vol
 
 .Requirements
 
-You must have the Account Admin or Workspace Admin role to delete files.
+* You must have the Account Admin or Workspace Admin role to delete files.
+* You can delete a maximum of 100,000 files at a time.
 
 Deleting files requires the following permissions:
 
@@ -388,7 +389,7 @@ image:screenshot_compliance_delete_file.png[A screenshot showing selection of th
 
 == Viewing the status of your compliance actions
 
-When you run an action from the Investigation Results pane across many files, for example, deleting 50 files, the process can take some time. You can monitor the status of the action so you'll know when it has been applied to all files. This allows you to see the actions that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
+When you run an action from the Investigation Results pane across many files, for example, deleting 50 files, the process can take some time. You can monitor the status of these asynchronous actions so you'll know when it has been applied to all files. This allows you to see the actions that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
 
 The status can be:
 

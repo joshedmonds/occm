@@ -19,19 +19,19 @@ When you deploy Cloud Volumes ONTAP in Google Cloud, you can choose a preconfigu
 
 Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9101.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9100.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
 
 == Supported machine types
 
 Cloud Volumes ONTAP supports several machine types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9101.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9100.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
 
 == Understanding storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_9101.html[Storage limits for Cloud Volumes ONTAP in GCP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_9100.html[Storage limits for Cloud Volumes ONTAP in GCP^]
 
 == Sizing your system in GCP
 

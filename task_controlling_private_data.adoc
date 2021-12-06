@@ -187,7 +187,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Open Permissions
 ** File Owner
 ** Label
-** Working Environment Type
+** Working Environment Type (note that OneDrive is categorized under "Cloud Apps")
 ** Working Environment name
 ** Storage Repository (for example, a volume or a schema)
 ** File Path
