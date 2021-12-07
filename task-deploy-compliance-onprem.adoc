@@ -174,7 +174,7 @@ Follow these steps when installing Data Sense software on a single on-premises h
 
 .Steps
 
-. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *cc_onprem_installer.tar.gz*.
+. Download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *cc_onprem_installer_<version>.tar.gz*.
 
 . Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 
@@ -192,9 +192,9 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 +
 sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
-. Unzip the installer file on the host machine:
+. Unzip the installer file on the host machine, for example:
 +
-`tar -xzf cc_onprem_installer.tar.gz`
+`tar -xzf cc_onprem_installer_1.7.0.tar.gz`
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
@@ -286,7 +286,7 @@ For example, this command adds 3 scanner nodes:
 sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212
 
 . On *each* scanner node host:
-.. Copy the Data Sense installer file (_cc_onprem_installer.tar.gz_) to the host machine (using `scp` or some other method).
+.. Copy the Data Sense installer file (*cc_onprem_installer_<version>.tar.gz*) to the host machine (using `scp` or some other method).
 .. Unzip the installer file.
 .. Paste and execute the command that you copied in step 3.
 +

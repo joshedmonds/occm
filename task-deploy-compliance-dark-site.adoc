@@ -110,16 +110,16 @@ For very large configurations where you'll be scanning petabytes of data, you ca
 
 .Steps
 
-. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *<version>_darksite_installer_bundle.tar.gz*.
+. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *DataSense-offline-bundle-<version>.tar.gz*.
 // . On an internet-configured system, download the Cloud Data Sense software.
 
 . Copy the installer bundle to the Linux host you plan to use in the dark site.
 
 . Unzip the installer bundle on the host machine, for example:
 +
-`tar -xzf 53.6.0_darksite_installer_bundle.tar.gz`
+`tar -xzf DataSense-offline-bundle-v1.7.0.tar.gz`
 +
-This extracts required software and the actual installer file *cc_onprem_installer.tar.gz*.
+This extracts required software and the actual installation file *cc_onprem_installer_<version>.tar.gz*.
 
 . Launch Cloud Manager and click *Data Sense*.
 
@@ -135,9 +135,9 @@ image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting 
 +
 sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite
 
-. Unzip the installer file on the host machine:
+. Unzip the installer file on the host machine, for example:
 +
-`tar -xzf cc_onprem_installer.tar.gz`
+`tar -xzf cc_onprem_installer_1.7.0.tar.gz`
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
@@ -229,7 +229,7 @@ For example, this command adds 3 scanner nodes:
 sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212
 
 . On *each* scanner node host:
-.. Copy the Data Sense installer file (_cc_onprem_installer.tar.gz_) to the host machine.
+.. Copy the Data Sense installer file (*cc_onprem_installer_<version>.tar.gz*) to the host machine.
 .. Unzip the installer file.
 .. Paste and execute the command that you copied in step 3.
 +
