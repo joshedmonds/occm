@@ -88,6 +88,12 @@ link:concept-kubernetes.html[Learn more about Kubernetes support].
 
 TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
 
+=== Full Active IQ Digital Advisor integration
+
+https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor^] is integrated into the Cloud Manager UI so that you can optimize the operations, security, and performance of your ONTAP clusters in a single pane of glass. Just select the "Active IQ" service in Cloud Manager.
++
+You may need to register, or update, your NSS account in Cloud Manager. link:concept-aiq-digital-advisor.html#how-active-iq-digital-advisor-works-with-cloud-manager[Go here for details].
+
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
 This patch update includes bug fixes.

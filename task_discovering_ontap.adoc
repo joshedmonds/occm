@@ -38,35 +38,35 @@ If the Connector is in the cloud, all outbound communication is allowed by the p
 +
 The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modified this default policy, or if you created your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Connector host.
 
-* A valid set of NetApp Support Site credentials for accessing the Active IQ page. See how to link:task_adding_nss_accounts.html[add NetApp Support Site accounts to Cloud Manager].
+* A valid set of NetApp Support Site credentials. See how to link:task_adding_nss_accounts.html[add NetApp Support Site accounts to Cloud Manager].
 
 == Checking for on-premises clusters that have not been added to Cloud Manager
 
-You can use the Active IQ service in Cloud Manager to discover, view, and manage your on-prem ONTAP clusters that are under a support contract.
+You can use the Discovery service in Cloud Manager to discover, view, and manage your on-prem ONTAP clusters that are under a support contract.
 
-NOTE: If your support contract expires, the systems are removed from the Active IQ page. However, you can continue to manage these systems in their working environment. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^].
+NOTE: If your support contract expires, the systems are removed from the Discovery page. However, you can continue to manage these systems in their working environment. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^].
 
 .Steps
 
-. From Cloud Manager, click the *Active IQ* tab.
+. From Cloud Manager, click the *Discovery* tab.
 
 . Select the Active IQ login associated with your NSS account if necessary.
 +
-image:screenshot_aiq_main_page.png[A screenshot of the main Active IQ page in Cloud Manager.]
+image:screenshot_aiq_main_page.png[A screenshot of the main Discovery page in Cloud Manager.]
 +
 Your ONTAP clusters that have a valid support contract are displayed with a status of whether they have been discovered in Cloud Manager.
 
 . If you want to manage the clusters that are listed as "Undiscovered" using Cloud Manager, click *Discover* and follow the prompts to add them.
 
-== Discovering clusters from the Active IQ page
+== Discovering clusters from the Discovery page
 
-You can discover your ONTAP clusters and add them to a working environment from the Active IQ page.
+You can discover your ONTAP clusters and add them to a working environment from the Discovery page.
 
 .Steps
 
-. From the *Active IQ* page, click the *Cluster Inventory* tab.
+. From the *Discovery* page, click the *Cluster Inventory* tab.
 +
-image:screenshot_aiq_clusters.png[A screenshot of the Active IQ page showing all clusters found in your NSS account.]
+image:screenshot_aiq_clusters.png[A screenshot of the Discovery page showing all clusters found in your NSS account.]
 
 . Click *Discover* for the cluster that you want to manage through Cloud Manager.
 
@@ -90,7 +90,7 @@ You can enable services for this cluster in the right panel to replicate data to
 
 == Discovering clusters from the Canvas page
 
-You can discover your ONTAP clusters and add them to a working environment from the Canvas page. These steps can be used in cases where the cluster is not listed in the Active IQ page because it currently has no support contract.
+You can discover your ONTAP clusters and add them to a working environment from the Canvas page. These steps can be used in cases where the cluster is not listed in the Discovery page because it currently has no support contract.
 
 .Steps
 

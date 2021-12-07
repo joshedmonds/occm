@@ -179,6 +179,8 @@ sidebar:
               url: /concept_monitoring.html
             - title: Get started
               url: /task_getting_started_monitoring.html
+        - title: Optimize with Active IQ Digital Advisor
+          url: /concept-cvo-aiq-digital-advisor.html
         - title: Improve ransomware protection
           url: /task_protecting_ransomware.html
         - title: Administer
@@ -257,13 +259,15 @@ sidebar:
       entries:
         - title: Discover ONTAP clusters
           url: /task_discovering_ontap.html
-        - title: Manage clusters using Active IQ data
-          url: /task_managing_ontap.html
         - title: Manage on-prem ONTAP volumes
           url: /task_provisioning_ontap.html
+        - title: Optimize clusters using Active IQ Digital Advisor
+          url: /concept-aiq-digital-advisor.html
+        - title: Manage clusters using Active IQ data
+          url: /task_managing_ontap.html
         - title: Connect to your on-prem cluster
           url: /task_connect_to_onprem.html
-        - title: Remove a working environment
+        - title: Remove an on-prem ONTAP working environment
           url: /task-remove-on-prem.html
     - title: Replicate ONTAP data
       entries:
