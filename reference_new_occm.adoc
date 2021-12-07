@@ -91,8 +91,20 @@ TIP: The existing Kubernetes service (available through the *K8s* tab) has been 
 === Full Active IQ Digital Advisor integration
 
 https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor^] is integrated into the Cloud Manager UI so that you can optimize the operations, security, and performance of your ONTAP clusters in a single pane of glass. Just select the "Active IQ" service in Cloud Manager.
-+
+
 You may need to register, or update, your NSS account in Cloud Manager. link:concept-aiq-digital-advisor.html#how-active-iq-digital-advisor-works-with-cloud-manager[Go here for details].
+
+=== NetApp Support Site account enhancements
+
+* Starting in December 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing NetApp Support Site accounts that you previously added.
++
+** link:task_adding_nss_accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
++
+** https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^].
+
+* If your organization has multiple NetApp Support Site accounts, you can now change which account is associated with a Cloud Volumes ONTAP system.
++
+link:task_adding_nss_accounts.html#attach-a-working-environment-to-a-different-nss-account[Learn how to attach a working environment to a different NSS account].
 
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
