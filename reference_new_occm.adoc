@@ -19,6 +19,93 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.13 (28 Nov 2021)
+
+This updates includes enhancements to several features and services.
+
+=== Cloud Volumes ONTAP enhancements
+
+* Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.1.
++
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9101.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+* You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
++
+A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
++
+A Keystone Flex Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from Cloud Manager.
++
+** https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
++
+** link:task_managing_licenses.html#manage-keystone-flex-subscriptions[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
+
+* Cloud Volumes ONTAP is now supported in the AWS Asia Pacific (Osaka) region (ap-northeast-3).
+
+* Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
++
+This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.13 release of the Connector.
+
+=== On-prem ONTAP cluster enhancements
+
+We redesigned the create volume wizard for ease of use and you can now choose a custom export policy.
+
+image:screenshot-onprem-create-volume.png[A screenshot that shows the Details and Protection page when creating a new volume.]
+
+=== Cloud Sync enhancements
+
+* Cloud Sync can now copy access control lists (ACLs) when setting up a sync relationship from a source SMB share to object storage (except for ONTAP S3).
++
+Cloud Sync doesn't support copying ACLs from object storage to SMB shares.
++
+link:task_sync_copying_acls.html[Learn how to copy ACLs from an SMB share].
+
+* You can now update Cloud Sync licenses that you extended.
++
+If you extended a Cloud Sync license that you purchased from NetApp, you can add the license again to refresh the expiration date.
++
+link:task_sync_licensing.html#update-a-license[Learn how to update a license].
+
+* You can now update the Box credentials for an existing sync relationship.
++
+link:task_sync_managing_relationships.html[Learn how to update credentials].
+
+=== Cloud Backup enhancements
+
+* Now you can back up persistent volumes from your Kubernetes clusters to Amazon S3.
++
+If your EKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for AWS as backend storage for the cluster, then you can back up and restore volumes to and from Amazon S3. link:task_backup_kubernetes_to_s3.html[Go here for details].
+
+* Cloud Backup now supports creating backups of DP volumes that exist on the target ONTAP system in an SVM-DR relationship. There are a few restrictions, so see link:concept_backup_to_cloud.html#limitations[the limitations] for details.
+
+=== New Kubernetes support
+
+You can now add your managed-Kubernetes clusters to Cloud Manager's Canvas for advanced data management.
+
+* Discover Amazon EKS clusters
+* Back up persistent volumes using Cloud Backup
+
+link:concept-kubernetes.html[Learn more about Kubernetes support].
+
+TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
+
+=== Full Active IQ Digital Advisor integration
+
+https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor^] is integrated into the Cloud Manager UI so that you can optimize the operations, security, and performance of your ONTAP clusters in a single pane of glass. Just select the "Active IQ" service in Cloud Manager.
+
+You may need to register, or update, your NSS account in Cloud Manager. link:concept-aiq-digital-advisor.html#how-active-iq-digital-advisor-works-with-cloud-manager[Go here for details].
+
+=== NetApp Support Site account enhancements
+
+* Starting in December 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing NetApp Support Site accounts that you previously added.
++
+** link:task_adding_nss_accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
++
+** https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^].
+
+* If your organization has multiple NetApp Support Site accounts, you can now change which account is associated with a Cloud Volumes ONTAP system.
++
+link:task_adding_nss_accounts.html#attach-a-working-environment-to-a-different-nss-account[Learn how to attach a working environment to a different NSS account].
+
 == Cloud Manager 3.9.12 build 2 (10 Nov 2021)
 
 This patch update includes bug fixes.
@@ -66,11 +153,7 @@ link:task_setting_up_ontap_cloud.html[Learn more about configuring AutoSupport w
 
 == Cloud Manager 3.9.12 (31 Oct 2021)
 
-* <<Amazon FSx for ONTAP enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Connector enhancements>>
-* <<Resource Tagging enhancement>>
-* <<Credentials enhancement>>
+This updates includes enhancements to several features and services.
 
 === Amazon FSx for ONTAP enhancements
 
@@ -104,14 +187,7 @@ We redesigned the Credentials page for ease of use and to match the current look
 
 == Cloud Manager 3.9.11 (4 Oct 2021)
 
-* <<Amazon FSx for ONTAP enhancements>>
-* <<Cloud Volumes ONTAP enhancements>>
-* <<Cloud Backup enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Cloud Data Sense enhancements>>
-* <<Application Templates enhancements (11 Oct)>>
-* <<Resource Tagging enhancements (11 Oct)>>
-* <<Support for SnapCenter Service (13 Oct)>>
+This updates includes enhancements to several features and services.
 
 === Amazon FSx for ONTAP enhancements
 
@@ -196,15 +272,7 @@ We fixed a Cloud Backup bug where a volume restore operation failed when the lan
 
 == Cloud Manager 3.9.10 (2 September 2021)
 
-* <<Support for Amazon FSx for ONTAP>>
-* <<Cloud Volumes ONTAP enhancement>>
-* <<Cloud Data Sense enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<Replication enhancements>>
-* <<Cloud Backup enhancements>>
-* <<Resource Tagging enhancements>>
-* <<A new Notification Service has been added>>
+This updates includes enhancements to several features and services.
 
 === Support for Amazon FSx for ONTAP
 
@@ -298,8 +366,7 @@ This patch update includes bug fixes.
 
 == Cloud Manager 3.9.9 update (8 Aug 2021)
 
-* <<Application Template enhancements>>
-* <<Resource Tagging enhancements>>
+This updates includes enhancements to several features and services.
 
 === Application Template enhancements
 
@@ -313,11 +380,7 @@ Now you can manage tags from your AWS EC2 Instances in Cloud Manager. You can vi
 
 == Cloud Manager 3.9.9 (1 Aug 2021)
 
-* <<Cloud Backup enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Cloud Data Sense enhancements>>
-* <<Monitoring enhancement>>
-* <<Connector enhancement>>
+This updates includes enhancements to several features and services.
 
 === Cloud Backup enhancements
 
@@ -383,8 +446,7 @@ This patch update includes bug fixes and security improvements.
 
 == Cloud Manager 3.9.8 update (13 July 2021)
 
-* <<Application Template enhancements>>
-* <<New Resource Tagging feature>>
+This updates includes enhancements to several features and services.
 
 === Application Template enhancements
 
@@ -400,14 +462,7 @@ link:concept_tagging.html[Learn more about tagging].
 
 == Cloud Manager 3.9.8 (7 July 2021)
 
-* <<Cloud Volumes ONTAP enhancements>>
-* <<Cloud Backup enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<Cloud Data Sense enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Connector enhancement>>
-* <<Support Dashboard enhancement>>
-* <<Digital Wallet enhancement>>
+This updates includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP enhancements
 
@@ -541,12 +596,7 @@ image:screenshot_digital_wallet_menu.png[A screenshot of the Digital Wallet unde
 
 == Cloud Manager 3.9.7 update (7 June 2021)
 
-* <<Cloud Sync support for storage classes in Google Cloud>>
-* <<Cloud Tiering enhancements>>
-* <<Cloud Backup enhancements>>
-* <<Application Templates enhancements>>
-* <<Cloud Data Sense (Cloud Compliance) enhancements>>
-* <<Global File Cache enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Sync support for storage classes in Google Cloud
 
@@ -616,8 +666,7 @@ Global File Cache software version 1.1.0 has been released. A new "Edge Synchron
 
 == Cloud Manager 3.9.7 (30 May 2021)
 
-* <<Cloud Volumes ONTAP enhancements>>
-* <<Digital Wallet>>
+This updates includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP enhancements
 
@@ -676,11 +725,7 @@ We fixed a bug that caused failures when creating a Cloud Volumes ONTAP working 
 
 == Cloud Manager 3.9.6 update (5 May 2021)
 
-* <<Cloud Backup enhancements>>
-* <<Monitoring enhancements>>
-* <<Replication enhancement>>
-* <<Account enhancement>>
-* <<Cloud Compliance enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Backup enhancements
 
@@ -731,9 +776,7 @@ link:task_managing_cloud_central_accounts.html[Learn how to filter the Timeline 
 
 == Cloud Manager 3.9.6 (2 May 2021)
 
-* <<Cloud Tiering enhancements>>
-* <<Application Template enhancements>>
-* <<Cloud Sync enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Tiering enhancements
 
@@ -761,12 +804,7 @@ link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-rela
 
 == Cloud Manager 3.9.5 (11 Apr 2021)
 
-* <<Cloud Volumes ONTAP enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Cloud Compliance enhancements>>
-* <<New Application Templates feature>>
-* <<Connector enhancement>>
-* <<Account enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP enhancements
 
@@ -876,12 +914,7 @@ For example, the dashboard identifies the amount of stale data, non-business dat
 
 == Cloud Manager 3.9.4 (8 Mar 2021)
 
-* <<Cloud Volumes ONTAP enhancements>>
-* <<Connector enhancements>>
-* <<Cloud Sync enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<Active IQ enhancements>>
-* <<ANF enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP enhancements
 
@@ -1001,8 +1034,7 @@ You can link:task_managing_highlights.html#deleting-source-files[permanently rem
 
 == Cloud Manager 3.9.3 update (10 Feb 2021)
 
-* <<Cloud Tiering enhancements>>
-* <<Cloud Sync enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Tiering enhancements
 
@@ -1032,8 +1064,7 @@ image:screenshot_sync_report_object.gif[A report that shows the number of path i
 
 == Cloud Manager 3.9.3 (9 Feb 2021)
 
-* <<Monitoring enhancements>>
-* <<Support improvements>>
+This updates includes enhancements to several features and services.
 
 === Monitoring enhancements
 
@@ -1052,8 +1083,7 @@ image:screenshot_support_dashboard.gif["A screenshot of the Support Dashboard wh
 
 == Cloud Manager 3.9.2 update (11 Jan 2021)
 
-* <<Cloud Compliance enhancements>>
-* <<Cloud Backup enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Compliance enhancements
 
@@ -1085,9 +1115,7 @@ View the link:concept_backup_to_cloud.html#supported-working-environments-and-ob
 
 == Cloud Manager 3.9.2 (4 Jan 2021)
 
-* <<Cloud Volumes ONTAP enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<General enhancements>>
+This updates includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP enhancements
 
@@ -1154,12 +1182,7 @@ image:screenshot_we_relationships.png[A screenshot that shows the Canvas tab and
 
 == Cloud Manager 3.9.1 (7 Dec 2020)
 
-* <<General enhancements>>
-* <<Cloud Volumes ONTAP AMI change>>
-* <<Cloud Backup enhancements>>
-* <<Cloud Compliance enhancements>>
-* <<Cloud Tiering enhancements>>
-* <<Cloud Sync enhancements>>
+This updates includes enhancements to several features and services.
 
 === General enhancements
 
@@ -1270,9 +1293,7 @@ Go to link:task_scanning_databases.html#quick-start[scanning database schemas] f
 
 == Cloud Manager 3.9 (3 Nov 2020)
 
-* <<Azure Private Link for Cloud Volumes ONTAP>>
-* <<Active IQ cluster insights>>
-* <<Cloud Tiering enhancements>>
+This updates includes enhancements to several features and services.
 
 === Azure Private Link for Cloud Volumes ONTAP
 
