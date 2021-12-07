@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_adding_nss_accounts.html
 keywords: adding, creating, netapp support site account, nss
-summary: Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
+summary: Adding your NetApp Support Site account to Cloud Manager is required to deploy a node-based BYOL system or to enter the serial number for a capacity-based license. It's also required to register pay-as-you-go systems and to upgrade ONTAP software.
 ---
 
 = Adding NetApp Support Site accounts to Cloud Manager
@@ -38,5 +38,6 @@ Users can now select the account when creating new Cloud Volumes ONTAP systems a
 
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
 * link:task_registering.html[Registering pay-as-you-go systems]
 * link:concept_licensing.html[Learn how Cloud Manager manages license files]
