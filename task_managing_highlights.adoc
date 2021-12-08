@@ -270,6 +270,8 @@ image:screenshot_compliance_copy_files_dialog.png[A screenshot showing the Copy 
 +
 A dialog appears with the status of the copy operation.
 
+You can view the progress of the copy operation in the <<Viewing the status of your compliance actions,Actions Status pane>>.
+
 Note that you can also copy an individual file when viewing the metadata details for a file. Just click *Copy File*.
 
 image:screenshot_compliance_copy_file.png[A screenshot showing selection of the Copy File button from the metadata details for a file in the Data Investigation page.]
@@ -316,6 +318,8 @@ A dialog appears with the status of the clone operation.
 
 The new, cloned volume is created in the same aggregate as the source volume.
 
+You can view the progress of the clone operation in the <<Viewing the status of your compliance actions,Actions Status pane>>.
+
 If you initially selected *Map all volumes* or *Map & Classify all volumes* when you enabled Data Sense for the working environment where the source volume resides, then Data Sense will scan the new cloned volume automatically. If you didn't use either of these selections initially, then if you want to scan this new volume, you'll need to link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[enable scanning on the volume manually].
 
 == Moving source files to an NFS share
@@ -353,7 +357,7 @@ image:screenshot_compliance_move_file.png[A screenshot showing selection of the 
 
 == Deleting source files
 
-You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo.
+You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo or restore.
 
 TIP: You can't delete files that reside in databases or files that reside in volume Backups.
 
@@ -383,13 +387,15 @@ image:screenshot_compliance_delete_multi_files.png["A screenshot showing how to 
 
 . Because the delete operation is permanent, you must type "*permanently delete*" in the subsequent _Delete File_ dialog and click *Delete File*.
 
+You can view the progress of the delete operation in the <<Viewing the status of your compliance actions,Actions Status pane>>.
+
 Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete file*.
 
 image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
 
 == Viewing the status of your compliance actions
 
-When you run an action from the Investigation Results pane across many files, for example, deleting 50 files, the process can take some time. You can monitor the status of these asynchronous actions so you'll know when it has been applied to all files. This allows you to see the actions that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
+When you run an action from the Investigation Results pane across many files, for example, deleting 100 files, the process can take some time. You can monitor the status of these asynchronous actions in the _Action Status_ pane so you'll know when it has been applied to all files. This allows you to see the actions that have completed successfully, those currently in progress, and those that have failed so you can diagnose and fix any problems.
 
 The status can be:
 
@@ -421,8 +427,9 @@ Cloud Data Sense supports AIP labels within the following file types: .DOC, .DOC
 ====
 * You can't currently change labels in files larger than 30 MB. For OneDrive accounts the maximum file size is 4 MB.
 * If a file has a label which doesn’t exist anymore in AIP, Cloud Data Sense considers it as a file without a label.
-* If you have deployed the Data Sense instance in an on-prem location that has no internet access (also known as a dark site), then the AIP label functionality is unavailable.
 ====
+//
+// * If you have deployed the Data Sense instance in an on-prem location that has no internet access (also known as a dark site), then the AIP label functionality is unavailable.
 
 === Integrating AIP labels in your workspace
 

@@ -69,14 +69,6 @@ link:task_sync_licensing.html#update-a-license[Learn how to update a license].
 +
 link:task_sync_managing_relationships.html[Learn how to update credentials].
 
-=== Cloud Backup enhancements
-
-* Now you can back up persistent volumes from your Kubernetes clusters to Amazon S3.
-+
-If your EKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for AWS as backend storage for the cluster, then you can back up and restore volumes to and from Amazon S3. link:task_backup_kubernetes_to_s3.html[Go here for details].
-
-* Cloud Backup now supports creating backups of DP volumes that exist on the target ONTAP system in an SVM-DR relationship. There are a few restrictions, so see link:concept_backup_to_cloud.html#limitations[the limitations] for details.
-
 === New Kubernetes support
 
 You can now add your managed-Kubernetes clusters to Cloud Manager's Canvas for advanced data management.
@@ -87,6 +79,30 @@ You can now add your managed-Kubernetes clusters to Cloud Manager's Canvas for a
 link:concept-kubernetes.html[Learn more about Kubernetes support].
 
 TIP: The existing Kubernetes service (available through the *K8s* tab) has been deprecated and will be removed in a future release.
+
+=== Cloud Backup enhancements
+
+* Now you can back up persistent volumes from your Kubernetes clusters to Amazon S3.
++
+If your EKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for AWS as backend storage for the cluster, then you can back up and restore volumes to and from Amazon S3. link:task_backup_kubernetes_to_s3.html[Go here for details].
+
+* Cloud Backup now supports creating backups of DP volumes that exist on the target ONTAP system in an SVM-DR relationship. There are a few restrictions, so see link:concept_backup_to_cloud.html#limitations[the limitations] for details.
+
+=== Cloud Data Sense enhancements
+
+* You can use Data Sense to clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume. This is helpful for situations where you’re migrating data and you want to exclude certain files, or if you want to create a copy of a volume for testing. 
++
+link:task_managing_highlights.html#cloning-volume-data-to-a-new-volume[See how to clone a volume].
+
+* Now you can view the status of your long-running compliance actions.
++
+When you run an action from the Investigation Results pane across many files, for example, deleting 50 files, the process can take some time. Now you can monitor the status of these asynchronous actions so you’ll know when it has been applied to all files.
++
+link:task_managing_highlights.html#viewing-the-status-of-your-compliance-actions[See how to view the status of your ongoing compliance actions].
+
+* Data Sense can now find the personal data types "British Passport" and "National Health Service (NHS) Number" in files. link:reference_private_data_categories.html#types-of-personal-data[See the list of all personal data types that Data Sense finds in scans].
+
+* When filtering data in the Data Investigation page, a new filter for “Working Environment Type” has been added. This allows you to filter the Results for Cloud Volumes ONTAP systems, FSx for ONTAP systems, on-premises ONTAP systems, and more.
 
 === Full Active IQ Digital Advisor integration
 
