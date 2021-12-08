@@ -164,11 +164,9 @@ See the following links for more details on vCPU limits:
 Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
 
 Ensure that the Cloud Manager Connector can access Cloud Data Sense::
-Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
+Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance. This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
 +
-This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
-
-Additional inbound and outbound rules are required for AWS and AWS GovCloud deployments. See link:reference_networking_cloud_manager.html#rules-for-the-connector-in-aws[Rules for the Connector in AWS for details].
+Additional inbound and outbound rules are required for AWS and AWS GovCloud deployments. See link:reference_networking_cloud_manager.html#rules-for-the-connector-in-aws[Rules for the Connector in AWS^] for details.
 
 Ensure that you can keep Cloud Data Sense running::
 The Cloud Data Sense instance needs to stay on to continuously scan your data.

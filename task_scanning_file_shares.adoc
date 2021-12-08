@@ -55,9 +55,15 @@ Review the following prerequisites to make sure that you have a supported config
 
 * For CIFS (SMB) shares, ensure that you have Active Directory credentials that provide read access to the shares. Admin credentials are preferred in case Cloud Data Sense needs to scan any data that requires elevated permissions.
 
-== Creating the group for the file shares
+== Deploying the Cloud Data Sense instance
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
+Deploy Cloud Data Sense if there isn't already an instance deployed.
+
+Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
+== Creating the group for the file shares
 
 You must add a files shares "group" before you can add your file shares. The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
 
