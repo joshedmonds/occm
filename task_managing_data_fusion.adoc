@@ -15,6 +15,8 @@ summary: A feature we call "Data Fusion" allows you to scan your organizations' 
 [.lead]
 A feature we call _Data Fusion_ allows you to scan your organizations' data to identify whether unique identifiers from your databases are found in files or other databases - basically making your own list of "personal data" that is identified in Cloud Data Sense scans. This gives you the full picture about where potentially sensitive data resides in _all_ your files.
 
+Since you are scanning your own databases, whatever language your data is stored in will be used to identify data in future Cloud Data Sense scans.
+
 NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
 
 == Creating custom personal data identifiers from your databases

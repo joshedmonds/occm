@@ -66,6 +66,10 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't 
 
 Data Sense must be deployed in the cloud when scanning Azure NetApp Files volumes, and it must be deployed in the same region as the volumes you wish to scan.
 
+*Note:* Deploying Cloud Data Sense in an on-premises location is not currently supported when scanning Azure NetApp Files volumes.
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
 == Enabling Cloud Data Sense in your working environments
 
 You can enable Cloud Data Sense on your Azure NetApp Files volumes.

@@ -40,15 +40,15 @@ You may want to investigate the items in the _Saving Opportunities_ area to see 
 
 * *Duplicate Files* - Files that are duplicated in other locations in the data sources you are scanning. link:task_controlling_private_data.html#viewing-all-duplicated-files[See what types of duplicate files are displayed].
 
-=== Data Overview
-
-A quick overview of all the data that is being scanned. Click the button to download a full data mapping report that includes Usage Capacity, Age of Data, Size of Data, and File Types for all working environments and data sources. See link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] for complete details.
-
 === Policies with the largest number of results
 
 Click the name of a Policy in the _Policy_ area to display the results in the Investigation page. Click *View All* to view the list of all available Policies.
 
 Click link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to learn more about Policies.
+
+=== Data Overview
+
+A quick overview of all the data that is being scanned. Click the button to download a full data mapping report that includes Usage Capacity, Age of Data, Size of Data, and File Types for all working environments and data sources. See link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] for complete details.
 
 === Top data repositories listed by data sensitivity
 
@@ -59,7 +59,8 @@ The _Top Data Repositories by Sensitivity Level_ area lists up to the top four d
 * Sensitive Personal data
 
 You can hover over each section to see the total number of items in each category.
-// Click each area to view the filtered results in the Investigation page so that you can investigate further.
+
+Click each area to view the filtered results in the Investigation page so that you can investigate further.
 
 === Data listed by types of Open Permissions
 

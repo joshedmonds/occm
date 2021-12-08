@@ -78,6 +78,10 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't 
 
 You should deploy Data Sense in the same AWS network as the Connector for AWS and the FSx volumes you wish to scan.
 
+*Note:* Deploying Cloud Data Sense in an on-premises location is not currently supported when scanning FSx volumes.
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
 == Enabling Cloud Data Sense in your working environments
 
 You can enable Cloud Data Sense for FSx for ONTAP volumes.

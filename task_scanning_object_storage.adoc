@@ -52,9 +52,15 @@ Review the following prerequisites to make sure that you have a supported config
 
 * Support for Azure Blob requires that you use the link:https://min.io/[MinIO service^].
 
-== Adding the object storage service to Cloud Data Sense
+== Deploying the Cloud Data Sense instance
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
+Deploy Cloud Data Sense if there isn't already an instance deployed.
+
+Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
+== Adding the object storage service to Cloud Data Sense
 
 Add the object storage service.
 
