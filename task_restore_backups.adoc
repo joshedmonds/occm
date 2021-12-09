@@ -15,9 +15,9 @@ summary: Backups are stored in an object store in your cloud account so that you
 [.lead]
 Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore individual files from a saved backup file.
 
-You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account, or to an on-premises ONTAP system. See <<Restoring a volume from a backup file,Restoring a volume from a backup>>.
+You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account. For Cloud Volumes ONTAP and on-premises ONTAP volumes, see <<Restoring volumes from an ONTAP backup file,Restoring an ONTAP volume>>. For Kubernetes backups, see <<Restoring volumes from a Kubernetes backup file,Restoring a Kubernetes volume>>.
 
-You can restore files to a volume in the same working environment, to a volume in a different working environment that's using the same cloud account, or to a volume on an on-premises ONTAP system. See <<Restoring files from a backup,Restoring files from a backup>>.
+You can restore files to a volume in the same working environment, to a volume in a different working environment that's using the same cloud account, or to a volume on an on-premises ONTAP system. See <<Restoring files from an ONTAP backup file,Restoring files from a backup>>.
 
 == Supported working environments and object storage providers
 
@@ -126,6 +126,8 @@ link:reference-aws-backup-tiers.html[Learn more about restoring from AWS archiva
 .Result
 
 Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
+
+Note that restoring a volume from a backup file that resides in archival storage can take many minutes or hours depending on the archive tier and the restore priority.
 
 == Restoring files from an ONTAP backup file
 
@@ -239,7 +241,7 @@ Before you start, you should know the name of the volume you want to restore and
 +
 image:screenshot_backup_view_k8s_backups_button.png[A screenshot of the Kubernetes dashboard with the list of all Kubernetes clusters and volumes that are being backed up.]
 
-. Locate the volume you want to restore, click image:screenshot_horizontal_more_button.gif[More icon], and then *Details & Backup List*.
+. Locate the volume you want to restore, click image:screenshot_horizontal_more_button.gif[More icon], and then *Volume Details*.
 +
 The list of all backup files for that volume is displayed along with details about the source volume, destination location, and backup details.
 +
@@ -248,6 +250,8 @@ image:screenshot_backup_view_k8s_backups.png[A screenshot of all the available b
 . Locate the specific backup file that you want to restore based on the date/time stamp, click image:screenshot_horizontal_more_button.gif[More icon], and then *Restore*.
 
 . In the _Select Destination_ page, select the _Kubernetes cluster_ where you want to restore the volume, the _Namespace_, the _Storage Class_, and the new _Persistent volume name_.
++
+image:screenshot_restore_k8s_volume.png[A screenshot about the destination information where the persistent volume will be restored.]
 
 . Click *Restore* and you are returned to the Kubernetes Dashboard so you can review the progress of the restore operation.
 
