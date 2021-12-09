@@ -91,7 +91,8 @@ The backup name includes the timestamp so you can identify your on-demand backup
 
 .Steps
 
-. From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
+// . From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
+. From the *Volumes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
 +
 image:screenshot_backup_now_button.png[A screenshot that shows the Backup Now button which is available after you select a volume.]
 

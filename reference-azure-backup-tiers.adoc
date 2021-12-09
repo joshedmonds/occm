@@ -41,7 +41,7 @@ Each method has a different per-GB retrieval fee and per-request fee. For detail
 How long will it take to restore my data archived in Azure Archive?::
 There are 2 parts that make up the restore time:
 
-* *Retrieval time*: The time to retrieve the archived backup file from Azure Archive and place it in Cool storage. The retrieval time is different depending on the restore priority you choose:
+* *Retrieval time*: The time to retrieve the archived backup file from Azure Archive and place it in Cool storage. This is sometimes called the "rehydration" time. The retrieval time is different depending on the restore priority you choose:
 ** *High*: < 1 hour
 ** *Standard*: < 15 hours
 * *Restore time*: The time to restore the data from the backup file in Cool storage. This time is no different than the typical restore operation directly from Cool storage - when not using an archival tier.
