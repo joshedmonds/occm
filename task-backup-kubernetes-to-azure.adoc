@@ -1,0 +1,192 @@
+---
+sidebar: sidebar
+permalink: task-backup-kubernetes-to-azure.html
+keywords: backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, azure, azure blob, back up volumes, Cloud Backup, cloud backup service, kubernetes
+summary: Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Azure Blob storage.
+---
+
+= Backing up Kubernetes persistent volume data to Azure Blob storage
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Azure Blob storage.
+
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review prerequisites
+
+[role="quick-margin-list"]
+* You have discovered the Kubernetes cluster as a Cloud Manager working environment.
+** Trident must be installed on the cluster, and the Trident version must be 21.1 or greater.
+** All PVCs that will be used to create persistent volumes that you want to back up must have "snapshotPolicy" set to "default".
+** The cluster must be using Cloud Volumes ONTAP on Azure for its' backend storage.
+** The Cloud Volumes ONTAP system must be running ONTAP 9.7P5 or later.
+* You have a valid cloud provider subscription for the storage space where your backups will be located.
+* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated^] a Cloud Backup BYOL license from NetApp.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on your existing Kubernetes cluster
+
+[role="quick-margin-para"]
+Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
+
+[role="quick-margin-para"]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Enable button which is available after you select a working environment.]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Define the backup policy
+
+[role="quick-margin-para"]
+The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
+
+[role="quick-margin-para"]
+image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the volumes that you want to back up
+
+[role="quick-margin-para"]
+Identify which volumes you want to back up in the Select Volumes page. The backup files are stored in a Blob container using the same Azure subscription and Region as the Cloud Volumes ONTAP system.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Restore your data, as needed
+
+[role="quick-margin-para"]
+Restore an entire backup as a new volume on the same or different Kubernetes cluster in Azure (in the same region).
+
+[role="quick-margin-para"]
+See link:task_restore_backups.html[Restoring a volume from backup files^] for details.
+
+== Requirements
+
+Read the following requirements to make sure that you have a supported configuration before you start backing up Kubernetes persistent volumes to Blob storage.
+
+The following image shows each component and the connections that you need to prepare between them:
+
+image:diagram_cloud_backup_k8s_cvo_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+//
+// When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
+
+Kubernetes cluster requirements::
+* You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:task-kubernetes-discover-azure.html[See how to discover the Kubernetes cluster].
+* Trident must be installed on the cluster, and the Trident version must be a minimum of 21.1. See link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
+* The cluster must be using Cloud Volumes ONTAP on Azure for its' backend storage.
+* The Cloud Volumes ONTAP system must be in the same Azure region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
+* All Persistent Volume Claim objects that will be used to create the persistent volumes that you want to back up must have "snapshotPolicy" set to "default".
++
+You can do this for individual PVCs by adding `snapshotPolicy` under annotations:
++
+```json
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: full
+  annotations:
+    trident.netapp.io/snapshotPolicy: "default"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+  storageClassName: silver
+```
++
+You can do this for all PVCs associated with a particular backend storage by adding the `snapshotPolicy` field under defaults in the `backend.json` file:
++
+```json
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-ontap-nas-advanced
+spec:
+  version: 1
+  storageDriverName: ontap-nas
+  managementLIF: 10.0.0.1
+  dataLIF: 10.0.0.2
+  backendName: tbc-ontap-nas-advanced
+  svm: trident_svm
+  credentials:
+    name: backend-tbc-ontap-nas-advanced-secret
+  limitAggregateUsage: 80%
+  limitVolumeSize: 50Gi
+  nfsMountOptions: nfsvers=4
+  defaults:
+    spaceReserve: volume
+    exportPolicy: myk8scluster
+    snapshotPolicy: default
+    snapshotReserve: '10'
+  deletionPolicy: retain
+```
+
+License requirements::
+For Cloud Backup PAYGO licensing, a subscription through the Azure Marketplace is required before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard^].
++
+For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
++
+And you need to have a Microsoft Azure subscription for the storage space where your backups will be located.
+
+Supported Azure regions::
+Cloud Backup is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+//
+// Required outbound internet access for Azure deployments::
+// The Cloud Restore virtual machine requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints.
+//
+// [cols="43,57",options="header"]
+// |===
+// | Endpoints
+// | Purpose
+//
+// |
+// \http://olcentgbl.trafficmanager.net
+// \https://olcentgbl.trafficmanager.net
+//
+// | Provides CentOS packages for the Cloud Restore virtual machine.
+//
+// |
+// \http://cloudmanagerinfraprod.azurecr.io
+// \https://cloudmanagerinfraprod.azurecr.io
+//
+// | Cloud Restore virtual machine image repository.
+//
+// |===
+
+== Enabling Cloud Backup on an existing system
+
+Enable Cloud Backup at any time directly from the working environment.
+
+.Steps
+
+. Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel.
++
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Settings button which is available after you select a working environment.]
+
+. Enter the backup policy details and click *Next*.
+
++
+You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
++
+image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
+
+. Select the persistent volumes that you want to back up.
+
++
+* To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
+* To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
++
+image:screenshot_backup_select_volumes_k8s.png[A screenshot of selecting the volumes that will be backed up.]
+
+. Click *Activate Backup* and Cloud Backup starts taking the initial backups of each selected volume.
+
+.Result
+
+The backup files are stored in a Blob container using the same Azure subscription and Region as the Cloud Volumes ONTAP system.
+
+The Kubernetes Dashboard is displayed so you can monitor the state of the backups.
+
+.What's next?
+
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html#restoring-volumes-from-a-kubernetes-backup-file[restore entire volumes from a backup file^].
+// or individual files
