@@ -88,6 +88,8 @@ On-premises ONTAP system |
 
 |===
 
+Note that Cloud Backup can be used in a site with no internet connectivity (a "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+
 == Cost
 
 There are two types of costs associated with using Cloud Backup: resource charges and service charges.
@@ -308,8 +310,7 @@ This operation could cause a one-time increase in cost to read the data from you
 
 * When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.
 
-* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
-// The Connector can be installed in a site with or without internet access.
+* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises. The Connector can be installed in a site with or without internet access.
 
 * In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
