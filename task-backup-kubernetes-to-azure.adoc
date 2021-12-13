@@ -44,7 +44,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
+image:screenshot_backup_policy_k8s_azure.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the volumes that you want to back up
 
@@ -168,7 +168,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 +
 You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
 +
-image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
+image:screenshot_backup_policy_k8s_azure.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
 . Select the persistent volumes that you want to back up.
 
