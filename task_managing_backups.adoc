@@ -89,6 +89,8 @@ You can create an on-demand backup at any time to capture the current state of t
 
 The backup name includes the timestamp so you can identify your on-demand backup from other scheduled backups.
 
+NOTE: On-demand volume backup isn't supported on data protection volumes or on Kubernetes persistent volumes.
+
 .Steps
 
 // . From the *Volumes* tab or the *Kubernetes* tab, click image:screenshot_horizontal_more_button.gif[More icon] for the volume and select *Backup Now*.
