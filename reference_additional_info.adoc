@@ -15,6 +15,10 @@ summary: You can get help and find more information about Cloud Manager and Clou
 [.lead]
 You can get help and find more information about Cloud Manager and Cloud Volumes ONTAP through various resources, including videos, forums, and support.
 
+* https://cloud.netapp.com/professional-services-and-support[Flex Professional Services for Cloud (FlexPS)^]
++
+Use a subscription-based service to enable ongoing success with NetApp's cloud solutions.
+
 * https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^]
 +
 Access support resources to get help and troubleshoot issues with Cloud Volumes ONTAP.
