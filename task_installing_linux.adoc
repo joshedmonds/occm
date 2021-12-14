@@ -94,16 +94,16 @@ _port_ is required if you changed the default HTTP (80) or HTTPS (443) ports. Fo
 .. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 
 . After you log in, set up Cloud Manager:
-.. Specify the Cloud Central account to associate with the Connector.
+.. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a Cloud Central account and name the system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a NetApp account and name the system.]
 
 .Result
 
-The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
+The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments.
 
 .After you finish
 

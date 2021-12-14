@@ -61,13 +61,13 @@ This step sends your transfer request to NetApp.
 +
 image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
 +
-NOTE: This step must be completed to link the GCP subscription to your Cloud Central account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to NetApp Cloud Central.
+NOTE: This step must be completed to link the GCP subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to NetApp Cloud Central.
 
 . After you're redirected to Cloud Central, log in to NetApp Cloud Central or sign up, and then click *Done* to proceed.
 +
-The GCP subscription will be linked to all Cloud Central accounts that your user login is associated with.
+The GCP subscription will be linked to all NetApp accounts that your user login is associated with.
 +
-image:screenshot_gcp_sub_mapping.png[A screenshot of mapping GCP subscription to NetApp cloud central account.]
+image:screenshot_gcp_sub_mapping.png[A screenshot of mapping a GCP subscription to a NetApp account.]
 +
 NOTE: If someone from your organization has already subscribed to the NetApp Cloud Manager subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on NetApp Cloud Central^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 

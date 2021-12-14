@@ -92,7 +92,7 @@ NOTE: If you are using Azure firewall, you can perform these steps using a scrip
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
 
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes NetApp accounts.
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 

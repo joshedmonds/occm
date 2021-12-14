@@ -46,7 +46,7 @@ The Compliance Viewer role is for read-only Cloud Data Sense access.
 
 | Create Connectors | Yes | No | No | No
 
-| Manage Cloud Central accounts |	Yes |	No | No | No
+| Manage NetApp accounts |	Yes |	No | No | No
 
 | Manage credentials | Yes | No | No | No
 
@@ -64,5 +64,5 @@ The Compliance Viewer role is for read-only Cloud Data Sense access.
 
 .Related links
 
-* link:task_setting_up_cloud_central_accounts.html[Setting up workspaces and users in the Cloud Central account^]
-* link:task_managing_cloud_central_accounts.html[Managing workspaces and users in the Cloud Central account^]
+* link:task_setting_up_cloud_central_accounts.html[Setting up workspaces and users in the NetApp account^]
+* link:task_managing_cloud_central_accounts.html[Managing workspaces and users in the NetApp account^]

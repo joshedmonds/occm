@@ -66,13 +66,13 @@ AWS launches the software with the specified settings. The Connector instance an
 http://_ipaddress_:80
 
 . After you log in, set up the Connector:
-.. Specify the Cloud Central account to associate with the Connector.
+.. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a Cloud Central account and name the system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a NetApp account and name the system.]
 
 .Result
 
-The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task_managing_connectors.html[switch between them].
+The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task_managing_connectors.html[switch between them].
