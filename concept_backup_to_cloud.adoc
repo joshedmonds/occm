@@ -99,9 +99,9 @@ There are two types of costs associated with using Cloud Backup: resource charge
 
 *Resource charges*
 
-Resource charges are paid to the cloud provider for storage capacity and for running a virtual machine/instance in the cloud.
+Resource charges are paid to the cloud provider for object storage capacity and for running a virtual machine/instance in the cloud.
 
-* For Backup, you pay your cloud provider for object storage costs. (There are no storage costs when creating backups on your StorageGRID systems.)
+* For Backup, you pay your cloud provider for object storage costs.
 +
 Since Cloud Backup preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the data _after_ ONTAP efficiencies (for the smaller amount of data after deduplication and compression have been applied).
 
@@ -122,9 +122,9 @@ The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated
 
 *Service charges*
 
-Backup service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the target backup capacity _before_ ONTAP efficiencies.
+Backup service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the source logical used capacity (_before_ ONTAP efficiencies) of ONTAP volumes which are backed up to object storage.
 
-There are three ways to pay for the Backup service. The first option is to subscribe from your cloud provider, which enables you to pay per month based on the amount of backed up data. The second option is to get an annual contract - this is only available through AWS. The third option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
+There are three ways to pay for the Backup service. The first option is to subscribe from your cloud provider, which enables you to pay per month. The second option is to get an annual contract - this is only available through AWS. The third option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
 
 == Licensing
 
@@ -138,7 +138,7 @@ Backup are not deleted when the service is disabled. You'll continue to be charg
 
 === Pay-as-you-go subscription
 
-Cloud Backup offers consumption-based licensing in a pay-as-you-go model. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies). After subscribing through your cloud provider’s marketplace, you pay per GB for data that’s backed up—​there’s no up-front payment. You are billed by your cloud provider through your monthly bill.
+Cloud Backup offers consumption-based licensing in a pay-as-you-go model. After subscribing through your cloud provider’s marketplace, you pay per GB for data that’s backed up—​there’s no up-front payment. You are billed by your cloud provider through your monthly bill.
 
 You should subscribe even if you have a free trial or if you bring your own license (BYOL):
 
@@ -170,9 +170,7 @@ link:task_licensing_cloud_backup.html#subscribe-to-yearly-contracts-through-aws[
 
 === Bring your own license
 
-BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments, based on the logical (before ONTAP storage efficiencies) backed up capacity. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount backup capacity, say 10 TB, and you'll need to pay your cloud provider for object storage costs (as described earlier).
-
-NOTE: Backup to StorageGRID does require a BYOL license, but there is no cost for cloud provider storage space in this case.
+BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount backup capacity, say 10 TB.
 
 You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Manager account^].
 
@@ -189,7 +187,7 @@ Use the chat icon in the lower right of the Cloud Manager interface to renew you
 
 Two things can happen when your license expires:
 
-* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
+* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by NetApp for backup licensing costs, for the capacity that your backups are using.
 * If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to see the warnings.
 
 Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license[how to update a Cloud Backup license].

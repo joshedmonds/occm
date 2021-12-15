@@ -25,7 +25,7 @@ link:concept_backup_to_cloud.html#licensing[Learn more about the licensing and c
 
 == Use a Cloud Backup PAYGO subscription
 
-For pay-as-you-go you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (_before_ ONTAP storage efficiencies). Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
+For pay-as-you-go you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
 
 * AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
@@ -102,7 +102,7 @@ Cloud Manager adds the license so that your Cloud Backup service is active.
 
 === Update a Cloud Backup BYOL license
 
-If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified. This status also appears in the Digital Wallet page.
+If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in the Backup UI. This status also appears in the Digital Wallet page and in link:task_monitor_cm_operations.html#monitoring-operations-status-using-the-notification-center[Notifications].
 
 image:screenshot_services_license_expire.png[A screenshot that shows an expiring license in the Digital Wallet page.]
 
