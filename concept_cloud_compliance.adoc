@@ -58,8 +58,7 @@ NOTE: A Beta feature released in January 2021 allows you to run compliance scans
 
 == Cost
 
-// add GCP below
-* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
+* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
 +
 link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
 +

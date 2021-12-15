@@ -224,6 +224,13 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 | Cloud Manager uses these permissions when you enable the Backup to S3 service.
 
+|
+"eks:ListClusters",
+"eks:DescribeCluster",
+"iam:GetInstanceProfile"
+
+| Enables discovery of Amazon EKS clusters.
+
 |===
 
 == What Cloud Manager does with Azure permissions
@@ -423,7 +430,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Compute/diskEncryptionSets/delete"
 "Microsoft.KeyVault/vaults/deploy/action",
 "Microsoft.KeyVault/vaults/read",
-"Microsoft.KeyVault/vaults/accessPolicies/write"
+"Microsoft.KeyVault/vaults/accessPolicies/write",
 
 | Enables use of customer-managed encryption keys with Cloud Volumes ONTAP. This feature is supported using APIs.
 
@@ -433,6 +440,16 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Resources/tags/delete"
 
 | Enables you to manage tags on your Azure resources using the Cloud Manager Tagging service.
+
+|
+"Microsoft.Network/applicationSecurityGroups/write",
+"Microsoft.Network/applicationSecurityGroups/read",
+"Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",
+"Microsoft.Network/networkSecurityGroups/securityRules/write",
+"Microsoft.Network/applicationSecurityGroups/delete",
+"Microsoft.Network/networkSecurityGroups/securityRules/delete"
+
+| Enables Cloud Manager to configure an application security group for an HA pair, which isolates the HA interconnect and cluster network NICs.
 
 |===
 
