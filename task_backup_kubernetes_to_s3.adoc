@@ -75,6 +75,8 @@ Read the following requirements to make sure that you have a supported configura
 The following image shows each component and the connections that you need to prepare between them:
 
 image:diagram_cloud_backup_k8s_cvo_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+
+Note that the VPC Endpoint is optional.
 //
 // When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
 
