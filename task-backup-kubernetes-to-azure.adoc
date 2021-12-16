@@ -76,6 +76,8 @@ Kubernetes cluster requirements::
 * Trident must be installed on the cluster, and the Trident version must be a minimum of 21.1. See link:https://netapp-trident.readthedocs.io/en/latest/kubernetes/deploying/index.html[how to install Trident] or https://netapp-trident.readthedocs.io/en/latest/kubernetes/upgrades/index.html[how to upgrade the Trident version].
 * The cluster must be using Cloud Volumes ONTAP on Azure for its' backend storage.
 * The Cloud Volumes ONTAP system must be in the same Azure region as the Kubernetes cluster, and it must be running ONTAP 9.7P5 or later.
++
+Note that Kubernetes clusters in on-premises locations are not supported. Only Kubernetes clusters in cloud deployments that are using Cloud Volumes ONTAP systems are supported.
 * All Persistent Volume Claim objects that will be used to create the persistent volumes that you want to back up must have "snapshotPolicy" set to "default".
 +
 You can do this for individual PVCs by adding `snapshotPolicy` under annotations:
