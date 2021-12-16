@@ -19,6 +19,13 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.13 update (16 Dec 2021)
+
+This update provides support for Cloud Manager and Cloud Data Sense to be deployed in an on-premises site that doesn’t have internet access. Now your secure sites can use Cloud Manager to manage your on-prem ONTAP clusters, and Cloud Data Sense to scan data from those on-premises ONTAP systems and any locally installed databases.
+
+* link:task-install-connector-onprem-no-internet.html[See how to deploy the Cloud Manager Connector in a site with no internet access^].
+* link:task-deploy-compliance-dark-site.html[See how to deploy Cloud Data Sense in a site with no internet access^].
+
 == Cloud Manager 3.9.13 (28 Nov 2021)
 
 This updates includes enhancements to several features and services.

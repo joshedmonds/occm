@@ -66,7 +66,7 @@ link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
 
 * Installing Cloud Data Sense in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See <<The Cloud Data Sense instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Data Sense on an on-premises system.
 
-* Cloud Data Sense requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
+* Cloud Data Sense requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^]. There is no cost if you install the Connector on an on-premises system.
 
 === Data transfer costs
 
@@ -100,7 +100,7 @@ In regions where n2-standard-16 isn't available, Data Sense runs on an n2d-stand
 
 * Only one Data Sense instance is deployed per Connector.
 
-* Upgrades of Data Sense software is automated--you don't need to worry about it.
+* Upgrades of Data Sense software is automated as long as the instance has internet access--you don't need to worry about it.
 
 TIP: The instance should remain running at all times because Cloud Data Sense continuously scans the data.
 
