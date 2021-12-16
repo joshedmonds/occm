@@ -28,7 +28,7 @@ The Connector is not supported on a host that is shared with other applications.
 
 CPU:: 4 cores or 4 vCPUs
 
-RAM:: 14 GB
+RAM:: 16 GB
 
 AWS EC2 instance type::
 An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge and use that instance type when you deploy the Connector directly from Cloud Manager.
@@ -87,11 +87,11 @@ For help with connecting and copying the file to an EC2 instance in AWS, see htt
 +
 *Example*
 +
- chmod +x OnCommandCloudManager-V3.8.9.sh
+ chmod +x OnCommandCloudManager-V3.8.13.sh
 
 . Run the installation script:
 +
- ./OnCommandCloudManager-V3.8.9.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+ ./OnCommandCloudManager-V3.8.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
 +
 _silent_ runs the installation without prompting you for information.
 +
