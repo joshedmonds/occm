@@ -15,7 +15,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 [.lead]
 An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept_connectors.html[Learn when a Connector is required].
 
-This page describes how to create a Connector in Azure directly from the Cloud Manager user interface. You also have the option to link:task_launching_azure_mktp.html[create the Connector from the Azure Marketplace], or to link:task_installing_linux.html[download the software and install it on your own host].
+This page describes how to create a Connector in Azure directly from Cloud Manager. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
