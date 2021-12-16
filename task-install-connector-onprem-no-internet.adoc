@@ -59,19 +59,19 @@ After you verify that you have a supported Linux host, you can obtain the Connec
 
 .Steps
 
-. Obtain a copy of the Connector installer by contacting us through the in-product chat.
+. Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
 
 . Copy the installer to the Linux host.
 
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x /path/installation-file
+chmod +x /path/cloud-manager-connector-offline-v3.9.13
 
 . Run the installation script:
 +
 [source,cli]
-sudo /path/installation-file
+sudo /path/cloud-manager-connector-offline-v3.9.13
 
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
 
@@ -79,16 +79,16 @@ sudo /path/installation-file
 
 . After you log in, set up Cloud Manager:
 
-.. Specify the Cloud Central account to associate with the Connector.
+.. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a Cloud Central account and name the system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a NetApp account and name the system.]
 
 .Result
 
-The Connector is now installed and set up with your Cloud Central account.
+The Connector is now installed and set up with your NetApp account.
 
 .What's next?
 
