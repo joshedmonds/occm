@@ -103,3 +103,23 @@ You'll need the serial number for your license and the user name and password fo
 * If your account wasn't added yet, click *Add NSS Credentials*, enter the user name and password, click *Register*, and then select it from the drop-down list.
 
 .. Click *Add*.
+
+== Updating a license
+
+If you extended a Cloud Sync license that you purchased from NetApp, the new expiration date won't update automatically in Cloud Sync. You need to add the license again to refresh the expiration date.
+
+.Steps
+
+. In Cloud Manager, click *Sync > Licensing*.
+
+. Click *Add License* and add the required information:
+
+.. Enter the serial number.
+
+.. Select the NetApp Support Site account that is associated with the license that you're adding.
+
+.. Click *Add*.
+
+.Result
+
+Cloud Sync updates the existing license with the new expiration date.

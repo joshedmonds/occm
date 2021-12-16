@@ -1,0 +1,69 @@
+---
+sidebar: sidebar
+permalink: reference-aws-backup-tiers.html
+keywords: aws, amazon, s3, storage classes, archive
+summary: Cloud Backup supports two S3 archival storage classes and most regions.
+---
+
+= AWS S3 archival storage classes and restore retrieval times
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup supports two S3 archival storage classes and most regions.
+
+== Supported S3 archival storage classes for Cloud Backup
+
+When backup files are initially created they're stored in S3 _Standard_ storage. This tier is optimized for storing data that's infrequently accessed; but that also allows you to access it immediately. After 30 days the backups transition to the S3 _Standard-Infrequent Access_ storage class to save on costs.
+
+If your source clusters are running ONTAP 9.10.1 or greater, you can choose to tier backups to either _S3 Glacier_ or _S3 Glacier Deep Archive_ storage after a certain number of days (typically more than 30 days) for further cost optimization. Data in these tiers can't be accessed immediately when needed, and will require a higher retrieval cost, so you need to consider how often you may need to restore data from these archived backup files. See the section about <<Restoring data from archival storage,restoring data from archival storage>>.
+
+Note that when you configure Cloud Backup with this type of lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your AWS account.
+
+https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
+
+== Restoring data from archival storage
+
+While storing older backup files in archival storage is much less expensive than Standard or Standard-IA storage, accessing data from a backup file in archive storage for restore operations will take a longer amount of time and will cost more money.
+
+How much does it cost to restore data from Amazon S3 Glacier and Amazon S3 Glacier Deep Archive?::
+There are 3 restore priorities you can choose when retrieving data from Amazon S3 Glacier, and 2 restore priorities when retrieving data from Amazon S3 Glacier Deep Archive. S3 Glacier Deep Archive costs less than S3 Glacier:
++
+[cols=4*,options="header",cols="25,25,25,25",width="95%"]
+|===
+
+| Archive Tier
+3+^| Restore Priority & Cost
+
+| | *High* | *Standard* | *Low*
+| *S3 Glacier* | Fastest retrieval, highest cost | Slower retrieval, lower cost | Slowest retrieval, lowest cost
+| *S3 Glacier Deep Archive* |  | Faster retrieval, higher cost | Slower retrieval, lowest cost
+
+|===
++
+Each method has a different per-GB retrieval fee and per-request fee. For detailed S3 Glacier pricing by AWS Region, visit the https://aws.amazon.com/s3/pricing/[Amazon S3 pricing page^].
+
+How long will it take to restore my objects archived in Amazon S3 Glacier?::
+There are 2 parts that make up the total restore time:
+
+* *Retrieval time*: The time to retrieve the backup file from archive and place it in Standard storage. This is sometimes called the "rehydration" time. The retrieval time is different depending on the restore priority you choose.
++
+[cols=4*,options="header",cols="25,20,20,20",width="95%"]
+|===
+
+| Archive Tier
+3+^| Restore Priority & Retrieval Time
+
+| | *High* | *Standard* | *Low*
+| *S3 Glacier* | 3-5 minutes | 3-5 hours | 5-12 hours
+| *S3 Glacier Deep Archive* |  | 12 hours | 48 hours
+
+|===
+
+* *Restore time*: The time to restore the data from the backup file in Standard storage. This time is no different than the typical restore operation directly from Standard storage - when not using an archival tier.
+
++
+For more information about Amazon S3 Glacier and S3 Glacier Deep Archive retrieval options, refer to https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier[the Amazon FAQ about these storage classes^].

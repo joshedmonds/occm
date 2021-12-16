@@ -19,22 +19,22 @@ Complete a few steps to start scanning non-NetApp NFS or CIFS file shares direct
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review file share prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review file share prerequisites
 
 [role="quick-margin-para"]
 For CIFS (SMB) shares, ensure that you have credentials to access the shares.
 
-==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Create a group to hold the file shares
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a group to hold the file shares
 
 [role="quick-margin-para"]
 The group is a container for the file shares that you want to scan, and it is used as the working environment name for those file shares.
 
-==== image:number4.png[Number 4] Add the file shares and select the shares to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Add the file shares and select the shares to scan
 
 [role="quick-margin-para"]
 Add the list of file shares that you want to scan and select the type of scanning. You can add up to 100 file shares at a time.
@@ -55,9 +55,15 @@ Review the following prerequisites to make sure that you have a supported config
 
 * For CIFS (SMB) shares, ensure that you have Active Directory credentials that provide read access to the shares. Admin credentials are preferred in case Cloud Data Sense needs to scan any data that requires elevated permissions.
 
-== Creating the group for the file shares
+== Deploying the Cloud Data Sense instance
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
+Deploy Cloud Data Sense if there isn't already an instance deployed.
+
+Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
+== Creating the group for the file shares
 
 You must add a files shares "group" before you can add your file shares. The group is a container for the file shares that you want to scan, and the group name is used as the working environment name for those file shares.
 

@@ -17,7 +17,7 @@ The most common way to create a Connector is directly from Cloud Manager or from
 
 link:concept_connectors.html[Learn about other ways to deploy a Connector].
 
-NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
+NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
 == Verify host requirements
 

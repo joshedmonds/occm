@@ -15,30 +15,30 @@ summary: Cloud Manager can automate the deployment of NetApp Trident on Kubernet
 [.lead]
 Cloud Manager can automate the deployment of NetApp Trident on Kubernetes clusters so you can use Cloud Volumes ONTAP as persistent storage for containers.
 
-Trident is a fully-supported open source project maintained by NetApp. Trident integrates natively with Kubernetes and its Persistent Volume framework to seamlessly provision and manage volumes from systems running any combination of NetApp's storage platforms. https://netapp-trident.readthedocs.io/en/latest/introduction.html[Learn more about Trident^].
+TIP: This feature has been deprecated and will be removed in a future release. It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management. link:concept-kubernetes.html[Learn more].
 
-NOTE: The Kubernetes feature isn't supported with on-prem ONTAP clusters. It's supported with Cloud Volumes ONTAP only.
+Trident is a fully-supported open source project maintained by NetApp. Trident integrates natively with Kubernetes and its Persistent Volume framework to seamlessly provision and manage volumes from systems running any combination of NetApp's storage platforms. https://netapp-trident.readthedocs.io/en/latest/introduction.html[Learn more about Trident^].
 
 == Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review prerequisites
 
 [role="quick-margin-para"]
 Ensure that your environment can meet the prerequisites, which includes connectivity between Kubernetes clusters and Cloud Volumes ONTAP, connectivity between Kubernetes clusters and a Connector, a minimum Kubernetes version of 1.14, at least one worker node in a cluster, and more. <<Reviewing prerequisites,See the complete list>>.
 
-==== image:number2.png[Number 2] Add your Kubernetes clusters to Cloud Manager
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Add your Kubernetes clusters to Cloud Manager
 
 [role="quick-margin-para"]
 In Cloud Manager, click *K8s* and discover clusters directly from your cloud provider's managed service or import a cluster by providing a kubeconfig file.
 
-==== image:number3.png[Number 3] Connect your clusters to Cloud Volumes ONTAP
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Connect your clusters to Cloud Volumes ONTAP
 
 [role="quick-margin-para"]
 After you add a Kubernetes cluster, click *Connect to Working Environment* to connect the cluster to one or more Cloud Volumes ONTAP systems.
 
-==== image:number4.png[Number 4] Start provisioning Persistent Volumes
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Start provisioning Persistent Volumes
 
 [role="quick-margin-para"]
 Request and manage Persistent Volumes using native Kubernetes interfaces and constructs. Cloud Manager creates NFS and iSCSI storage classes that you can use when provisioning Persistent Volumes.

@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: reference-azure-backup-tiers.html
+keywords: microsoft azure, azure, cool, access tier, archive
+summary: Cloud Backup supports one Azure archival access tier and most regions.
+---
+
+= Azure archival tiers and restore retrieval times
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Backup supports one Azure archival access tier and most regions.
+
+== Supported Azure Blob access tiers for Cloud Backup
+
+When backup files are initially created they're stored in the _Cool_ access tier. This tier is optimized for storing data that's infrequently accessed; but when needed, can be accessed immediately.
+
+If your source clusters are running ONTAP 9.10.1 or greater, you can choose to tier backups from _Cool_ to _Azure Archive_ storage after a certain number of days (typically more than 30 days) for further cost optimization. Data in this tier can't be accessed immediately when needed, and will require a higher retrieval cost, so you need to consider how often you may need to restore data from these archived backup files. See the next section about <<Restoring data from archival storage,restoring data from archival storage>>.
+
+Note that when you configure Cloud Backup with this type of lifecycle rule, you must not configure any lifecycle rules when setting up the container in your Azure account.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview[Learn about Azure Blob access tiers^].
+
+== Restoring data from archival storage
+
+While storing older backup files in archival storage is much less expensive than Cool storage, accessing data from a backup file in Azure Archive for restore operations will take a longer amount of time and will cost more money.
+
+How much does it cost to restore data from Azure Archive?::
+There are two restore priorities you can choose when retrieving data from Azure Archive:
+
+* *High*: Fastest retrieval, higher cost
+* *Standard*: Slower retrieval, lower cost
+
++
+Each method has a different per-GB retrieval fee and per-request fee. For detailed Azure Archive pricing by Azure Region, visit the https://azure.microsoft.com/en-us/pricing/details/storage/blobs/[Azure pricing page].
+
+How long will it take to restore my data archived in Azure Archive?::
+There are 2 parts that make up the restore time:
+
+* *Retrieval time*: The time to retrieve the archived backup file from Azure Archive and place it in Cool storage. This is sometimes called the "rehydration" time. The retrieval time is different depending on the restore priority you choose:
+** *High*: < 1 hour
+** *Standard*: < 15 hours
+* *Restore time*: The time to restore the data from the backup file in Cool storage. This time is no different than the typical restore operation directly from Cool storage - when not using an archival tier.
+
++
+For more information about Azure Archive retrieval options, refer to https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq[this Azure FAQ].

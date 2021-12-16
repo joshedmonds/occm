@@ -44,7 +44,7 @@ A Connector is supported in the following locations:
 * On your premises
 * On your premises, without internet access
 
-NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
+NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
 == Connectors should remain running
 
@@ -90,6 +90,12 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
 https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^].
+
+== Number of working environments per Connector
+
+A Connector can manage multiple working environments in Cloud Manager. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.
+
+If you have a large-scale deployment, work with your NetApp representative to size your environment. If you experience any issues along the way, reach out to us by using the in-product chat.
 
 == When to use multiple Connectors
 

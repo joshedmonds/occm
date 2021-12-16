@@ -40,13 +40,20 @@ You should have prepared by choosing a configuration and by obtaining GCP networ
 | Requirement
 | How to meet the requirement
 
+| Keystone Flex Subscription
+| Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.
+a|
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
+. After NetApp authorizes your account, link:task_managing_licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
+
 | PAYGO free trial
 | A Marketplace subscription is required.
 | You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
 | Freemium
 | A Marketplace subscription or NetApp Support Site (NSS) account is required.
-| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.
 
@@ -117,7 +124,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project. Alternatively, follow the steps to subscribe located in the link:task_adding_gcp_accounts.html#associating-a-marketplace-subscription-with-gcp-credentials[Associating a Marketplace subscription with GCP credentials] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
@@ -279,7 +286,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project.  Alternatively, follow the steps to subscribe located in the link:task_adding_gcp_accounts.html#associating-a-marketplace-subscription-with-gcp-credentials[Associating a Marketplace subscription with GCP credentials] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 

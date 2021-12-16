@@ -15,7 +15,7 @@ summary: Complete a few steps to get started backing up data from your on-premis
 [.lead]
 Complete a few steps to get started backing up data from your on-premises ONTAP systems to Azure Blob storage.
 
-TIP:: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
+TIP: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
 A Beta feature released in January 2021 allows you to run compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Data Sense for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Data Sense^] can get your business applications and cloud environments privacy ready.
 
@@ -23,7 +23,7 @@ A Beta feature released in January 2021 allows you to run compliance scans on th
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Verify support for your configuration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Verify support for your configuration
 
 [role="quick-margin-list"]
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
@@ -33,7 +33,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 * The Connector must have the required network connections to Blob storage and to the cluster, and the required permissions.
 * You have a valid Azure subscription for the object storage space where your backups will be located.
 
-==== image:number2.png[Number 2] Enable Cloud Backup on the system
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on the system
 
 [role="quick-margin-para"]
 Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
@@ -41,7 +41,7 @@ Select the working environment and click *Enable* next to the Backup & Complianc
 [role="quick-margin-para"]
 image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment."]
 
-==== image:number3.png[Number 3] Select the cloud provider and enter the provider details
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Select the cloud provider and enter the provider details
 
 [role="quick-margin-para"]
 Select Microsoft Azure as your provider and then enter the provider details. You'll need to select the Azure Subscription and the region where you want to create the backups. You can also choose your own customer-managed key for data encryption instead of using the default Microsoft-managed encryption key.
@@ -49,7 +49,7 @@ Select Microsoft Azure as your provider and then enter the provider details. You
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
 
-==== image:number4.png[Number 4] Select the cluster IPspace and optional use of a private VNet endpoint
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the cluster IPspace and optional use of a private VNet endpoint
 
 [role="quick-margin-para"]
 Select the IPspace in the ONTAP cluster where the volumes reside. You can also choose to use an existing Azure Private Endpoint for a more secure connection to the VNet from your on-prem data center.
@@ -57,25 +57,28 @@ Select the IPspace in the ONTAP cluster where the volumes reside. You can also c
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
 
-==== image:number5.png[Number 5] Define the backup policy
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Define the backup policy
 
 [role="quick-margin-para"]
-The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies to retain.
+The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can choose the backup schedule and retention period.]
+By default, backups are stored in the Cool access tier. If your cluster is using ONTAP 9.10.1 or greater, you can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization.
 
-==== image:number6.png[Number 6] Select the volumes that you want to back up
+[role="quick-margin-para"]
+image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backup settings where you can choose the backup schedule and retention period.]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Select the volumes that you want to back up
 
 [role="quick-margin-para"]
 Identify which volumes you want to back up from the cluster.
 
-==== image:number7.png[Number 7] Activate Compliance scans on the backed up volumes (optional)
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
 Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
 
-==== image:number8.png[Number 8] Restore your data, as needed
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] Restore your data, as needed
 
 [role="quick-margin-para"]
 Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system in Azure, or to an on-premises ONTAP system.
@@ -105,10 +108,10 @@ ONTAP requirements::
 +
 *Note:* The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-76A429CC-56CF-4DC1-9DC5-A3E222892684.html[manage your cluster licenses^].
+See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[manage your cluster licenses^].
 *	Time and time zone are set correctly.
 +
-See how to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/GUID-644CED2B-ABC9-4FC5-BEB2-1BE6A867919E.html[configure your cluster time^].
+See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html[configure your cluster time^].
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over port 443 from the intercluster LIF to Azure Blob storage for backup and restore operations.
@@ -120,7 +123,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[Learn more about IPspaces^].
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
-* The nodes' and intercluster LIFs are able to access the internet.
+* The nodes' and intercluster LIFs are able to access the object store.
 *	DNS servers have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
 * Note that if you use are using a different IPspace than the Default, then you might need to create a static route to get access to the object storage.
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
@@ -201,15 +204,13 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 . Select Microsoft Azure as your provider and click *Next*.
 
-. Enter the provider details. Note that you can't change this information after the service has started.
+. Enter the provider details and click *Next*.
 
 .. The Azure subscription used for backups and the Azure region where the backups will be stored.
 .. The resource group that manages the Blob container - you can create a new resource group or select an existing resource group.
 .. Whether you will use the default Microsoft-managed encryption key or choose your own customer-managed keys to manage encryption of your data. (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[See how to use your own keys^]).
 +
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to Azure Blob storage.]
-
-. Click *Next* after you've entered the provider details.
 
 . Enter the networking details and click *Next*.
 
@@ -218,11 +219,12 @@ image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud pr
 +
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
 
-. In the _Define Policy_ page, select an existing backup schedule and retention value, or define a new backup policy, and click *Next*.
+. Enter the backup policy details and click *Next*.
+
+.. Define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+.. When using ONTAP 9.10.1 and greater, you can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization. link:reference-azure-backup-tiers.html[Learn more about using archival tiers].
 +
-image:screenshot_backup_onprem_policy.png[A screenshot that shows the Cloud Backup settings where you can choose your backup schedule and retention period.]
-+
-See link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[the list of existing policies^].
+image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
 . Select the volumes that you want to back up.
 

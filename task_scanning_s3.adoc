@@ -19,22 +19,22 @@ Cloud Data Sense can scan your Amazon S3 buckets to identify the personal and se
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Set up the S3 requirements in your cloud environment
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up the S3 requirements in your cloud environment
 
 [role="quick-margin-para"]
 Ensure that your cloud environment can meet the requirements for Cloud Data Sense, including preparing an IAM role and setting up connectivity from Data Sense to S3. <<Reviewing S3 prerequisites,See the complete list>>.
 
-==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Activate Data Sense on your S3 working environment
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Activate Data Sense on your S3 working environment
 
 [role="quick-margin-para"]
 Select the Amazon S3 working environment, click *Enable*, and select an IAM role that includes the required permissions.
 
-==== image:number4.png[Number 4] Select the buckets to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the buckets to scan
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Data Sense will start scanning them.
@@ -57,7 +57,7 @@ Cloud Data Sense needs permissions to connect to the S3 buckets in your account 
           "Action": [
               "s3:Get*",
               "s3:List*",
-              "s3:PutObject",
+              "s3:PutObject"
           ],
           "Resource": "*"
       },
@@ -91,9 +91,11 @@ NOTE: You can't use a proxy to get to S3 over the internet.
 
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense in Cloud Manager^] if there isn't already an instance deployed.
 
-You need to deploy the instance in an AWS Connector so that Cloud Manager automatically discovers the S3 buckets in this AWS account and displays them in an Amazon S3 working environment.
+You need to deploy the instance using a Connector deployed in AWS so that Cloud Manager automatically discovers the S3 buckets in this AWS account and displays them in an Amazon S3 working environment.
 
 *Note:* Deploying Cloud Data Sense in an on-premises location is not currently supported when scanning S3 buckets.
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
 
 == Activating Data Sense on your S3 working environment
 
@@ -183,7 +185,7 @@ Be sure to do the following:
           "Action": [
               "s3:Get*",
               "s3:List*",
-              "s3:PutObject",
+              "s3:PutObject"
           ],
           "Resource": "*"
       },

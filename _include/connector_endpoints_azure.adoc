@@ -19,10 +19,6 @@
 \https://login.microsoftonline.com
 | Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in the Azure US Gov regions.
 
-| \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
-
-| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -39,27 +35,15 @@
 
 | \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
 
-| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
-
 |
-support.netapp.com:443
-\https://mysupport.netapp.com | Communication with NetApp AutoSupport. Note that the Connector communicates with support.netapp.com:443, which redirects to \https://mysupport.netapp.com.
-
-|
-\https://support.netapp.com/svcgw
-\https://support.netapp.com/ServiceGW/entitlement
-\https://eval.lic.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
 | Communication with NetApp for system licensing and support registration.
 
 |
 \https://client.infra.support.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.us-west-1.amazonaws.com
-\https://trigger.asup.netapp.com.s3.us-west-1.amazonaws.com
 
 | Enables NetApp to collect information needed to troubleshoot support issues.
-
-| \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
 
 | *.blob.core.windows.net | Required for HA pairs when using a proxy.
 

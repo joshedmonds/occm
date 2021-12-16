@@ -15,7 +15,7 @@ summary: You can provision additional storage for your Cloud Volumes ONTAP syste
 [.lead]
 You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 
-IMPORTANT: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
 
 == Creating FlexVol volumes
 
@@ -185,7 +185,7 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 You can create additional volumes on this aggregate if required.
 
-IMPORTANT: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
+TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
 
 == Creating aggregates
 
@@ -238,7 +238,5 @@ Cloud Manager does not provide management of FlexCache volumes at this time, but
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html[Creating FlexCache volumes in System Manager^]
 
 Starting with the 3.7.2 release, Cloud Manager generates a FlexCache license for all new Cloud Volumes ONTAP systems. The license includes a 500 GiB usage limit.
-
-NOTE: To generate the license, Cloud Manager needs to access \https://ipa-signer.cloudmanager.netapp.com. Make sure that this URL is accessible from your firewall.
 
 video::PBNPVRUeT1o[youtube, width=848, height=480]

@@ -157,6 +157,8 @@ sidebar:
               url: /task_planning_your_config_gcp.html
             - title: Set up your networking
               url: /reference_networking_gcp.html
+            - title: Plan for VPC Service Controls
+              url: /reference_vpc_service_controls_gcp.html
             - title: Create a service account
               url: /task_creating_gcp_service_account.html
             - title: Use customer-managed encryption keys
@@ -189,6 +191,8 @@ sidebar:
               url: /concept_monitoring.html
             - title: Get started
               url: /task_getting_started_monitoring.html
+        - title: Optimize with Active IQ Digital Advisor
+          url: /concept-cvo-aiq-digital-advisor.html
         - title: Improve ransomware protection
           url: /task_protecting_ransomware.html
         - title: Administer
@@ -231,11 +235,11 @@ sidebar:
           entries:
             - title: Learn about FSx for ONTAP
               url: /concept_fsx_aws.html
-            - title: Quick Start
+            - title: Quick start
               url: /task_getting_started_fsx.html
             - title: Set up permissions for FSx for ONTAP
               url: /task_setting_up_permissions_fsx.html
-            - title: Create a working environment
+            - title: Create and manage a working environment
               url: /task_creating_fsx_working_environment.html
             - title: Create and manage volumes
               url: /task_manage_fsx_volumes.html
@@ -267,11 +271,15 @@ sidebar:
       entries:
         - title: Discover ONTAP clusters
           url: /task_discovering_ontap.html
-        - title: Manage clusters using Active IQ
-          url: /task_managing_ontap.html
-        - title: Manage ONTAP volumes
+        - title: Manage on-prem ONTAP volumes
           url: /task_provisioning_ontap.html
-        - title: Remove a working environment
+        - title: Optimize clusters using Active IQ Digital Advisor
+          url: /concept-aiq-digital-advisor.html
+        - title: Manage clusters using Active IQ data
+          url: /task_managing_ontap.html
+        - title: Connect to your on-prem cluster
+          url: /task_connect_to_onprem.html
+        - title: Remove an on-prem ONTAP working environment
           url: /task-remove-on-prem.html
     - title: Replicate ONTAP data
       entries:
@@ -299,35 +307,61 @@ sidebar:
       entries:
         - title: Learn about Cloud Backup
           url: /concept_backup_to_cloud.html
-        - title: Get started
+        - title: Back up Cloud Volumes ONTAP data
           entries:
-            - title: Back up Cloud Volumes ONTAP data to Amazon S3
+            - title: Back up to Amazon S3
               url: /task_backup_to_s3.html
-            - title: Back up Cloud Volumes ONTAP data to Azure Blob
+            - title: Back up to Azure Blob
               url: /task_backup_to_azure.html
-            - title: Back up Cloud Volumes ONTAP data to Google Cloud
+            - title: Back up to Google Cloud
               url: /task_backup_to_gcp.html
-            - title: Back up on-premises ONTAP data to Amazon S3
+        - title: Back up on-premises ONTAP data
+          entries:
+            - title: Back up to Amazon S3
               url: /task_backup_onprem_to_aws.html
-            - title: Back up on-premises ONTAP data to Azure Blob
+            - title: Back up to Azure Blob
               url: /task_backup_onprem_to_azure.html
-            - title: Back up on-premises ONTAP data to Google Cloud
+            - title: Back up to Google Cloud
               url: /task_backup_onprem_to_gcp.html
-            - title: Back up on-premises ONTAP data to StorageGRID
+            - title: Back up to StorageGRID
               url: /task_backup_onprem_private_cloud.html
+        - title: Back up Kubernetes cluster data
+          entries:
+            - title: Back up to Amazon S3
+              url: /task_backup_kubernetes_to_s3.html
         - title: Set up licensing
           url: /task_licensing_cloud_backup.html
         - title: Manage backups
           url: /task_managing_backups.html
         - title: Restore from backups
           url: /task_restore_backups.html
-        - title: Cross-account and cross-region configurations
-          url: /reference_cross_account.html
+#        - title: Monitor the status of backup and restore jobs
+#          url: task-monitor-backup-jobs.html
+        - title: Reference
           entries:
-            - title: Configure Backup for multi-account access in AWS
-              url: /reference_backup_multi_account_aws.html
-            - title: Configure Backup for multi-account access in Azure
-              url: /reference_backup_multi_account_azure.html
+            - title: Supported AWS archive storage tiers
+              url: /reference-aws-backup-tiers.html
+            - title: Supported Azure archive access tiers
+              url: /reference-azure-backup-tiers.html
+            - title: Cross-account and cross-region configurations
+              url: /reference_cross_account.html
+              entries:
+                - title: Configure Backup for multi-account access in AWS
+                  url: /reference_backup_multi_account_aws.html
+                - title: Configure Backup for multi-account access in Azure
+                  url: /reference_backup_multi_account_azure.html
+    - title: Manage data for Kubernetes clusters
+      entries:
+        - title: Learn about Kubernetes data management
+          url: /concept-kubernetes.html
+        - title: Get started with EKS clusters
+          entries:
+            - title: Requirements
+              url: /kubernetes-reqs-aws.html
+            - title: Add a cluster
+              url: /task-kubernetes-discover-aws.html
+        - title: Enable NetApp's cloud data services
+          url: /task-kubernetes-enable-services.html
     - title: Protect data using SnapCenter Service
       entries:
         - title: Learn about SnapCenter Service
@@ -382,7 +416,7 @@ sidebar:
               url: /task_sync_licensing.html
         - title: Tutorials
           entries:
-            - title: Copy ACLs between shares
+            - title: Copy ACLs from an SMB share
               url: /task_sync_copying_acls.html
             - title: Encrypt NFS data in flight
               url: /task_sync_nfs_encryption.html
@@ -407,7 +441,13 @@ sidebar:
         - title: Get started
           entries:
             - title: Deploy Cloud Data Sense
-              url: /task_deploy_cloud_compliance.html
+              entries:
+                - title: Deploy in the cloud
+                  url: /task_deploy_cloud_compliance.html
+                - title: Deploy on premises
+                  url: /task-deploy-compliance-onprem.html
+#                - title: Deploy on premises without internet access
+#                  url: /task-deploy-compliance-dark-site.html
             - title: Activate scanning on your data sources
               entries:
                 - title: Cloud Volumes ONTAP and on-prem ONTAP

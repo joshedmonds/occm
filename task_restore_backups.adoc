@@ -15,13 +15,13 @@ summary: Backups are stored in an object store in your cloud account so that you
 [.lead]
 Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore individual files from a saved backup file.
 
-You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account, or to an on-premises ONTAP system. See <<Restoring a volume from a backup file,Restoring a volume from a backup>>.
+You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account. For Cloud Volumes ONTAP and on-premises ONTAP volumes, see <<Restoring volumes from an ONTAP backup file,Restoring an ONTAP volume>>. For Kubernetes backups, see <<Restoring volumes from a Kubernetes backup file,Restoring a Kubernetes volume>>.
 
-You can restore files to a volume in the same working environment, to a volume in a different working environment that's using the same cloud account, or to a volume on an on-premises ONTAP system. See <<Restoring files from a backup,Restoring files from a backup>>.
+You can restore files to a volume in the same working environment, to a volume in a different working environment that's using the same cloud account, or to a volume on an on-premises ONTAP system. See <<Restoring files from an ONTAP backup file,Restoring files from a backup>>.
 
 == Supported working environments and object storage providers
 
-You can restore a volume, or individual files, from a backup file to the following working environments:
+For backups of Cloud Volumes ONTAP and on-prem ONTAP volumes, you can restore a volume, or individual files, from a backup file to the following working environments:
 
 [cols=3*,options="header",cols="25,40,40",width="95%"]
 |===
@@ -43,6 +43,21 @@ On-premises ONTAP system |
 
 |===
 
+*Note:* If the backup file resides in archival storage, only volume restore is supported. File restore is not currently supported from archival storage.
+
+For backups of Kubernetes volumes, you can restore a volume from a backup file to the following working environments:
+
+[cols=3*,options="header",cols="25,40,40",width="95%"]
+|===
+
+| Backup File Location
+2+^| Destination Working Environment
+
+| | *Volume Restore* | *File Restore*
+| Amazon S3 | Kubernetes cluster in AWS |
+
+|===
+
 == The Restore Dashboard
 
 You access the Restore Dashboard by clicking the *Backup & Restore* tab from the top of Cloud Manager, or you can click image:screenshot_gallery_options.gif[More button] > *View Restore Dashboard* from the Backup & Restore service from the Services panel.
@@ -59,11 +74,15 @@ Note that you can also initiate a volume or file restore operation from a workin
 
 image:screenshot_restore_services_actions.png[A screenshot showing how to select volume and file restore operations from the Services panel.]
 
-== Restoring a volume from a backup file
+== Restoring volumes from an ONTAP backup file
 
-When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. You can also restore files to an on-premises ONTAP system.
+When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. You can also restore volumes to an on-premises ONTAP system.
 
-You should know the name of the volume you want to restore and the date of the backup file you want to use to create the newly restored volume.
+If the backup file for the volume that you want to restore resides in archival storage (available for AWS and Azure starting with ONTAP 9.10.1), the restore operation will take a longer amount of time and will cost more. Additionally, the destination cluster must also be running ONTAP 9.10.1 or greater.
+link:reference-azure-backup-tiers.html[Learn more about restoring from Azure archival storage].
+link:reference-aws-backup-tiers.html[Learn more about restoring from AWS archival storage].
+
+Before you start, you should know the name of the volume you want to restore and the date of the backup file you want to use to create the newly restored volume.
 
 .Steps
 
@@ -87,16 +106,20 @@ image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting th
 +
 . If you select an on-premises ONTAP system and you haven't already configured the cluster connection to the object storage, you are prompted for additional information:
 +
-* When restoring from Amazon S3, select the AWS Account and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
-* When restoring from Azure Blob, select the Azure Subscription to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
-* When restoring from Google Cloud Storage, select the Google Cloud Project and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volumes reside.
-* When restoring from StorageGRID, select the Access Key and Secret Key needed to access the object storage, and the IPspace in the ONTAP cluster where the destination volumes reside.
+* When restoring from Amazon S3, select the IPspace in the ONTAP cluster where the destination volume will reside, enter the access key and secret key for the user you created to give the ONTAP cluster access to the S3 bucket, and optionally choose a private VPC endpoint for secure data transfer.
+* When restoring from Azure Blob, select the IPspace in the ONTAP cluster where the destination volume will reside, select the Azure Subscription to access the object storage, and optionally choose a private endpoint for secure data transfer by selecting the VNet and Subnet.
+* When restoring from Google Cloud Storage, select the Google Cloud Project and the Access Key and Secret Key to access the object storage, the region where the backups are stored, and the IPspace in the ONTAP cluster where the destination volume will reside.
+* When restoring from StorageGRID, select the Access Key and Secret Key needed to access the object storage, and the IPspace in the ONTAP cluster where the destination volume will reside.
 
-. Select the Storage VM where the volume will reside and enter the name you want to use for the restored volume. By default, *<source_volume_name>_Restore* is used as the volume name.
+. Enter the name you want to use for the restored volume, and select the Storage VM where the volume will reside. By default, *<source_volume_name>_restore* is used as the volume name.
 +
-image:screenshot_restore_new_vol_name.png[A screenshot of selecting the volume and folder for the files you want to restore.]
+image:screenshot_restore_new_vol_name.png[A screenshot of entering the name of the new volume that you want to restore.]
 +
 You can select the Aggregate that the volume will use for its' capacity only when restoring a volume to an on-premises ONTAP system.
++
+And if you are restoring the volume from a backup file that resides in an archival storage tier (available starting with ONTAP 9.10.1), then you can select the Restore Priority.
+link:reference-azure-backup-tiers.html[Learn more about restoring from Azure archival storage].
+link:reference-aws-backup-tiers.html[Learn more about restoring from AWS archival storage].
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
@@ -104,11 +127,15 @@ You can select the Aggregate that the volume will use for its' capacity only whe
 
 Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
 
-== Restoring files from a backup
+Note that restoring a volume from a backup file that resides in archival storage can take many minutes or hours depending on the archive tier and the restore priority.
+
+== Restoring files from an ONTAP backup file
 
 If you only need to restore a few files from a volume, you can choose to restore individual files instead of restoring the entire volume. You can restore files to a volume in the same working environment, or to a different working environment that's using the same cloud account. You can also restore files to an on-premises ONTAP system.
 
 All the files are restored to the same destination volume that you choose. If you want to restore files to different volumes, you need run the restore process a second time.
+
+TIP: You can't restore individual files if the backup file resides in archival storage (available starting with ONTAP 9.10.1). In this case, you can either restore files from a backup file that has not been archived, or you can restore the entire volume from the archived backup.
 
 === Prerequisites
 
@@ -199,3 +226,35 @@ You have a few options for the location when restoring files.
 . Click *Restore* and you are returned to the Restore Dashboard so you can review the progress of the restore operation.
 
 The Restore instance is shut down after a certain period of inactivity to save you money so that you incur costs only when it is active.
+
+== Restoring volumes from a Kubernetes backup file
+
+When you restore a persistent volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same Kubernetes cluster or to a different Kubernetes cluster that's located in the same cloud account as the source Kubernetes cluster.
+
+Before you start, you should know the name of the volume you want to restore and the date of the backup file you want to use to create the newly restored volume.
+
+.Steps
+
+. Select the *Backup & Restore* tab.
+
+. Click the *Kubernetes* tab and the Kubernetes Dashboard is displayed.
++
+image:screenshot_backup_view_k8s_backups_button.png[A screenshot of the Kubernetes dashboard with the list of all Kubernetes clusters and volumes that are being backed up.]
+
+. Locate the volume you want to restore, click image:screenshot_horizontal_more_button.gif[More icon], and then *Volume Details*.
++
+The list of all backup files for that volume is displayed along with details about the source volume, destination location, and backup details.
++
+image:screenshot_backup_view_k8s_backups.png[A screenshot of all the available backups for a single source volume.]
+
+. Locate the specific backup file that you want to restore based on the date/time stamp, click image:screenshot_horizontal_more_button.gif[More icon], and then *Restore*.
+
+. In the _Select Destination_ page, select the _Kubernetes cluster_ where you want to restore the volume, the _Namespace_, the _Storage Class_, and the new _Persistent volume name_.
++
+image:screenshot_restore_k8s_volume.png[A screenshot about the destination information where the persistent volume will be restored.]
+
+. Click *Restore* and you are returned to the Kubernetes Dashboard so you can review the progress of the restore operation.
+
+.Result
+
+Cloud Manager creates a new volume in the Kubernetes cluster based on the backup you selected.

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_write_speed.html
 keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode
-summary: Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
+summary: Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP during initial deployment. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
 ---
 
 = Write speed
@@ -13,7 +13,7 @@ summary: Cloud Manager enables you to choose normal or high write speed for Clou
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
+Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP during initial deployment. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
 
 High write speed is supported with all types of single node systems. It's also supported with HA pairs in AWS and Azure when using a specific instance or VM type (refer to the sections below for the list of supported instances and VM types). High write speed is not supported with HA pairs in GCP.
 
@@ -47,7 +47,7 @@ If you use a single node system, Cloud Volumes ONTAP supports high write speed w
 
 Starting with the 9.8 release, Cloud Volumes ONTAP supports high write speed with HA pairs when using almost all supported EC2 instance types, except for m5.xlarge and r5.xlarge.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9100.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9101.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports^].
 
 ==== Azure
 
@@ -60,7 +60,7 @@ If you use an HA pair, Cloud Volumes ONTAP supports high write speed with the fo
 * DS15_v2
 * E48s_v3
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9100.html[Learn more about the Azure VM types that Cloud Volumes ONTAP supports^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9101.html[Learn more about the Azure VM types that Cloud Volumes ONTAP supports^].
 
 ==== Google Cloud
 
@@ -68,11 +68,11 @@ If you use a single node system, Cloud Volumes ONTAP supports high write speed w
 
 Cloud Volumes ONTAP doesn’t support high write speed with HA pairs in Google Cloud.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9100.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9101.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].
 
 == How to select a write speed
 
-You can choose a write speed when you create a new working environment and you can link:task_modifying_ontap_cloud.html#changing-write-speed-to-normal-or-high.html[change the write speed for an existing system].
+You can choose a write speed when you create a new working environment and with the assistance of NetApp Support you can link:task_modifying_ontap_cloud.html#changing-write-speed-to-normal-or-high.html[change the write speed for an existing system].
 
 == What to expect if data loss occurs
 

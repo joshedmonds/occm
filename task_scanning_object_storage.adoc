@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_scanning_object_storage.html
 keywords: cloud compliance, enable cloud compliance, privacy, compliance, object storage, Data Sense
-summary: Complete a few steps to start scanning data within object storage directly with Cloud Data Sense. Data Sense can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
+summary: Complete a few steps to start scanning data within object storage directly with Cloud Data Sense. Data Sense can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, Amazon S3, and more.
 ---
 
 = Scanning object storage that uses S3 protocol
@@ -13,13 +13,13 @@ summary: Complete a few steps to start scanning data within object storage direc
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to start scanning data within object storage directly with Cloud Data Sense. Data Sense can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, and more.
+Complete a few steps to start scanning data within object storage directly with Cloud Data Sense. Data Sense can scan data from any Object Storage service which uses the Simple Storage Service (S3) protocol. This includes NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (using MinIO), Linode, B2 Cloud Storage, Amazon S3, and more.
 
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review object storage prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review object storage prerequisites
 
 [role="quick-margin-para"]
 You need to have the endpoint URL to connect with the object storage service.
@@ -27,17 +27,17 @@ You need to have the endpoint URL to connect with the object storage service.
 [role="quick-margin-para"]
 You need to have the Access Key and Secret Key from the object storage provider so that Cloud Data Sense can access the buckets.
 
-==== image:number2.png[Number 2] Deploy the Cloud Data Sense instance
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Data Sense^] if there isn't already an instance deployed.
 
-==== image:number3.png[Number 3] Add the Object Storage Service
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Add the Object Storage Service
 
 [role="quick-margin-para"]
 Add the object storage service to Cloud Data Sense.
 
-==== image:number4.png[Number 4] Select the buckets to scan
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Select the buckets to scan
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Data Sense will start scanning them.
@@ -52,9 +52,15 @@ Review the following prerequisites to make sure that you have a supported config
 
 * Support for Azure Blob requires that you use the link:https://min.io/[MinIO service^].
 
-== Adding the object storage service to Cloud Data Sense
+== Deploying the Cloud Data Sense instance
 
-You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Data Sense in Cloud Manager already^].
+Deploy Cloud Data Sense if there isn't already an instance deployed.
+
+Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^] or link:task-deploy-compliance-onprem.html[in an on-premises location that has internet access^].
+
+Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
+
+== Adding the object storage service to Cloud Data Sense
 
 Add the object storage service.
 

@@ -97,7 +97,6 @@ In any case, you should secure network access by ensuring that security group ru
 |
 \https://auth0.com
 \https://cdn.auth0.com
-\https://netapp-cloud-account.auth0.com
 \https://services.cloud.netapp.com
 
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.

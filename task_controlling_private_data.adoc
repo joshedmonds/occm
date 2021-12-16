@@ -79,7 +79,7 @@ Cloud Data Sense takes the data that it scanned and divides it into different ty
 
 Categories can help you understand what's happening with your data by showing you the types of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an insecure location. You can then correct that issue.
 
-NOTE: Only English, German, and Spanish are supported for categories. Support for more languages will be added later.
+NOTE: English, German, and Spanish are supported for categories. Support for more languages will be added later.
 
 .Steps
 
@@ -119,7 +119,7 @@ Note that not all information is available for all data sources - just what is a
 
 When viewing the details for a single file there are a few actions you can take on the file:
 
-* You can move the file to any NFS share. See link:task_managing_highlights.html#moving-source-files-to-an-nfs-share[Moving source files to an NFS share] for details.
+* You can move or copy the file to any NFS share. See link:task_managing_highlights.html#moving-source-files-to-an-nfs-share[Moving source files to an NFS share] and link:task_managing_highlights.html#copying-source-files[Copying source files to an NFS share] for details.
 
 * You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files] for details.
 
@@ -187,8 +187,9 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Open Permissions
 ** File Owner
 ** Label
-** Working Environment
-** Storage Repository (For example, a volume or a schema)
+** Working Environment Type (note that OneDrive is categorized under "Cloud Apps")
+** Working Environment name
+** Storage Repository (for example, a volume or a schema)
 ** File Path
 ** Category
 ** Sensitivity Level
@@ -217,13 +218,15 @@ The *Unstructured Data Report* includes the following information:
 
 * File name
 * Location type
-* Working environment
+* Working environment type
+* Working environment name
 * Storage repository (for example, a volume)
 * Protocol type
 * File path
 * File type
 * File size
 * Created time
+* Discovered time (when Data Sense first discovered the file)
 * Last modified
 * Last accessed
 * File owner
@@ -238,7 +241,8 @@ The *Structured Data Report* includes the following information:
 
 * DB Table name
 * Location type
-* Working environment
+* Working environment type
+* Working environment name
 * Storage repository (for example, a schema)
 * Column count
 * Row count
