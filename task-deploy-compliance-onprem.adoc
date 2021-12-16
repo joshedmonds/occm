@@ -15,7 +15,7 @@ summary: Complete a few steps to deploy Cloud Data Sense on an on-premises syste
 [.lead]
 Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that has internet access.
 
-Note that you can also link:task_deploy_cloud_compliance.html[deploy Data Sense in the cloud].
+Note that you can also link:task-deploy-compliance-dark-site.html[deploy Data Sense in an on-premises site that doesn't have internet access].
 
 The on-prem installation may be a good option if you prefer to scan on-premises ONTAP systems using a Data Sense instance that's also located on premises -- but this is not a requirement. The software functions exactly the same way regardless of which installation method you choose.
 
