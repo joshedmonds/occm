@@ -15,6 +15,8 @@ summary: If you need to troubleshoot the Connector, it might help to understand 
 [.lead]
 If you need to troubleshoot the Connector, it might help to understand how it's configured.
 
+== Default configuration with internet access
+
 * If you deployed the Connector from Cloud Manager (or directly from a cloud provider's marketplace), note the following:
 
 ** In AWS, the user name for the EC2 Linux instance is ec2-user.
@@ -64,3 +66,26 @@ If the MySQL service is down, then the occm service is down too.
 ** 8080 for the Cloud Manager API proxy
 ** 8666 for the Service Manager API
 ** 8777 for the Health-Checker Container Service API
+
+== Default configuration without internet access
+
+The following configuration applies if you manually installed the Connector on an on-premises Linux host that doesn't have internet access. link:task-install-connector-onprem-no-internet.html[Learn more about this installation option].
+
+* The Connector installation folder resides in the following location:
++
+/opt/application/netapp/ds
+
+* Log files are contained in the following folders:
++
+/var/lib/docker/volumes/ds_occmdata/_data/log
++
+The logs in this folder provide details about the Connector and docker images.
+
+* All services are running inside docker containers
++
+The services are dependent on the docker runtime service running
+
+* The Connector uses the following ports on the Linux host:
+
+** 80 for HTTP access
+** 443 for HTTPS access
