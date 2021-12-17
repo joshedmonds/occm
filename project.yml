@@ -444,9 +444,9 @@ sidebar:
               entries:
                 - title: Deploy in the cloud
                   url: /task_deploy_cloud_compliance.html
-                - title: Deploy on premises
+                - title: Deploy on-prem with internet access
                   url: /task-deploy-compliance-onprem.html
-                - title: Deploy on premises without internet access
+                - title: Deploy on-prem without internet access
                   url: /task-deploy-compliance-dark-site.html
             - title: Activate scanning on your data sources
               entries:
