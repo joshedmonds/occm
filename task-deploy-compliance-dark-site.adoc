@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-deploy-compliance-dark-site.html
 keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site
-summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
+summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access. This type of installation is perfect for your secure sites.
 ---
 
 = Deploy Cloud Data Sense on prem without internet access
@@ -13,7 +13,7 @@ summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-prem
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access.
+Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access. This type of installation is perfect for your secure sites.
 
 Note that you can also link:task-deploy-compliance-onprem.html[deploy Data Sense in an on-premises site that has internet access].
 
@@ -39,9 +39,9 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector installed at your offline on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host in the offline site.
+If you don't already have a Connector installed at your offline on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host now.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review prerequisites
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review Data Sense prerequisites
 
 [role="quick-margin-para"]
 Ensure that your Linux system meets the <<Verify host requirements,host requirements>>, that it has all required software installed, and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
@@ -88,7 +88,7 @@ Review the following prerequisites to make sure that you have a supported config
 * Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance.
 * Ensure that the Cloud Manager Connector can access the Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 443 to and from the Data Sense instance.
 +
-This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
+This connection enables deployment of the Data Sense instance and enables you to view compliance and governance information.
 +
 Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 * Ensure that you can keep Cloud Data Sense running. The Cloud Data Sense instance needs to stay on to continuously scan your data.
@@ -251,9 +251,9 @@ From the Configuration page you can select the local on-prem ONTAP clusters and 
 //
 // . On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
 //
-// . Copy the upgrade file to the Linux host where Data Sense is installed in the dark site.
+// . Copy the installer package to the Linux host where Data Sense is installed in the dark site.
 // +
-// If you are using multiple hosts to scan large environments, copy the upgrade file to all hosts (manager and scanner nodes).
+// If you are using multiple hosts to scan large environments, copy the installation package to all hosts (manager and scanner nodes).
 //
 // . Unzip the upgrade file on all hosts.
 //
