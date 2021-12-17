@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-deploy-compliance-onprem.html
 keywords: cloud compliance, data sense, get started, deploy cloud data sense, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
-summary: Complete a few steps to deploy Cloud Data Sense on an on-premises system.
+summary: Complete a few steps to deploy Cloud Data Sense on a Linux host in your network, or in the cloud, that has internet access.
 ---
 
 = Deploy Cloud Data Sense on a Linux host that has internet access
@@ -13,11 +13,11 @@ summary: Complete a few steps to deploy Cloud Data Sense on an on-premises syste
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that has internet access.
-
-Note that you can also link:task_deploy_cloud_compliance.html[deploy Data Sense in the cloud].
+Complete a few steps to deploy Cloud Data Sense on a Linux host in your network, or in the cloud, that has internet access.
 
 The on-prem installation may be a good option if you prefer to scan on-premises ONTAP systems using a Data Sense instance that's also located on premises -- but this is not a requirement. The software functions exactly the same way regardless of which installation method you choose.
+
+Note that you can also link:task-deploy-compliance-dark-site.html[deploy Data Sense in an on-premises site that doesn't have internet access] for completely secure sites.
 
 == Quick start
 
@@ -26,7 +26,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector, create a Connector in AWS, Azure or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
+If you don't already have a Connector, create a Connector now. See link:task_creating_connectors_aws.html[creating a Connector in AWS^], link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^].
 
 [role="quick-margin-para"]
 You can also link:task_installing_linux.html[deploy the Connector on-premises^] on a Linux host in your network or in the cloud.
@@ -42,17 +42,16 @@ You also need a Linux system that meets the <<Host requirements,following requir
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy Cloud Data Sense
 
 [role="quick-margin-para"]
-Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
+Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Data Sense instance.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Subscribe to the Cloud Data Sense service
 
 [role="quick-margin-para"]
-The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
-// The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
+The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A subscription to your cloud provider Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point.
 
 == Create a Connector
 
-If you don't already have a Connector, create a Connector in AWS, Azure, or GCP. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
+If you don't already have a Connector, create a Connector in your cloud provider. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^], or link:task_creating_connectors_gcp.html[creating a Connector in GCP^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Data Sense because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases where you'll you need to set one up now.
 
 There are some scenarios where you have to use a Connector that's deployed in a specific cloud provider:
 
@@ -194,7 +193,7 @@ sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
 . Unzip the installer file on the host machine, for example:
 +
-`tar -xzf cc_onprem_installer_1.7.0.tar.gz`
+`tar -xzf cc_onprem_installer_1.7.2.tar.gz`
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 

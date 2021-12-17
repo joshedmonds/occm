@@ -56,6 +56,13 @@ You can find the latest list of permissions on the https://mysupport.netapp.com/
 
 === AWS
 
+* Starting with the 3.9.13 release, the following permissions are required for discovery of Amazon EKS clusters:
++
+[source,json]
+"eks:ListClusters",
+"eks:DescribeCluster",
+"iam:GetInstanceProfile"
+
 * Starting with the 3.9.9 release, the following permissions are required for the tagging service:
 +
 [source,json]
@@ -104,6 +111,16 @@ You can find the latest list of permissions on the https://mysupport.netapp.com/
         },
 
 === Azure
+
+* Starting with the 3.9.12 release, Cloud Manager configures an application security group for a Cloud Volumes ONTAP HA pair, which isolates the HA interconnect and cluster network NICs. A Connector requires the following new permissions to enable this configuration:
++
+[source,json]
+"Microsoft.Network/applicationSecurityGroups/write",
+"Microsoft.Network/applicationSecurityGroups/read",
+"Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",
+"Microsoft.Network/networkSecurityGroups/securityRules/write",
+"Microsoft.Network/applicationSecurityGroups/delete",
+"Microsoft.Network/networkSecurityGroups/securityRules/delete"
 
 * Starting with the 3.9.10 release, you can use customer-managed encryption keys with Cloud Volumes ONTAP. A Connector requires these new permissions to set up an encryption key with a single node Cloud Volumes ONTAP system:
 +
