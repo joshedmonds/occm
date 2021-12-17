@@ -466,6 +466,8 @@ sidebar:
                   url: /task_scanning_file_shares.html
                 - title: Object storage
                   url: /task_scanning_object_storage.html
+        - title: Integrate Active Directory
+          url: /task-add-active-directory-datasense.html
         - title: Set up licensing
           url: /task_licensing_datasense.html
         - title: View governance details about your data

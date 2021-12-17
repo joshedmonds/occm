@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: task-add-active-directory-datasense.html
+keywords: active directory, ad, data sense, cloud data sense
+summary: The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A BYOL license from NetApp, or a Cloud Manager subscription from your cloud provider Marketplace, is required to continue scanning data after that point.
+---
+
+= Integrate your Active Directory with Cloud Data Sense
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can integrate an Active Directory with Cloud Data Sense to enable Data Sense to collect insights about user permissions and unusual behaviors and to alert the user about them.
+
+(file permissions on demand, file owner)
+
+== Connecting to your Active Directory server
+
+.Before you begin
+
+You must...
+
+.Steps
+
+From
