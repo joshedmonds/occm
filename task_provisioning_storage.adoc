@@ -23,12 +23,12 @@ If you need more storage after you launch your initial Cloud Volumes ONTAP syste
 
 Cloud Manager provides several ways to create a new volume:
 
-* Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <<Create a volume on any aggregate,Learn more>>.
-* Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<Create volumes from templates,Learn more>>.
+* Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <<Create a volume,Learn more>>.
+* Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<Create a volume from a template,Learn more>>.
 * Create a volume on a data aggregate of your choice. <<Create a volume on a specific aggregate,Learn more>>.
 * Create a volume on the second node in an HA configuration. <<Create a volume on the second node in an HA configuration,Learn more>>.
 
-=== Before you create a volume
+=== Before you get started
 
 A few notes about volume provisioning:
 
@@ -102,7 +102,6 @@ https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-o
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
 NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
-|===
 --
 
 .iSCSI
@@ -114,7 +113,6 @@ Initiator groups are tables of iSCSI host node names and control which initiator
 iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
 
 When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning_storage.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
-|===
 --
 
 ====
@@ -140,7 +138,7 @@ Compression:: Reduces the physical capacity required to store data by compressin
 
 .Result
 
-Cloud Volumes ONTAP provisions the volume.
+Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
 
 === Create a volume from a template
 
@@ -248,7 +246,7 @@ For help with tiering policies, refer to link:concept_data_tiering.html[Data tie
 
 .Result
 
-Cloud Volumes ONTAP provisions the volume.
+Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
 
 === Create a volume on the second node in an HA configuration
 
@@ -268,9 +266,9 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 . Enter details for the new volume, and then click *Create*.
 
-.After you finish
+.Result
 
-You can create additional volumes on this aggregate if required.
+Cloud Manager creates the volume on the second node in the HA pair.
 
 TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
 
