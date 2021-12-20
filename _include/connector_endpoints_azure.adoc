@@ -40,6 +40,11 @@
 | Communication with NetApp for system licensing and support registration.
 
 |
+\https://signin.b2c.netapp.com
+
+| Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
+
+|
 \https://client.infra.support.netapp.com.s3.us-west-1.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.us-west-1.amazonaws.com
 
