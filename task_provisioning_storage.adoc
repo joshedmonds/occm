@@ -83,7 +83,7 @@ A custom NFS export policy defines the clients in the subnet that can access the
 The *Permissions* and *Users/Groups* fields enable you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user’s domain using the format domain\username.
 
 If a CIFS server has not been set up, Cloud Manager prompts you to set up CIFS connectivity after you click *Next*.
-+
+
 DNS Primary and Secondary IP Address:: The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
 Active Directory Domain to join:: The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
@@ -95,7 +95,6 @@ CIFS server NetBIOS name:: A CIFS server name that is unique in the AD domain.
 Organizational Unit:: The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 +
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
-+
 * To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
 
@@ -135,6 +134,28 @@ Deduplication:: Improves efficiency by locating identical blocks of data and rep
 Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
 
 .. *Review*: Review details about the volume and then click *Add*.
++
+// start tabbed area
+[role="tabbed-block"]
+====
+
+.test1
+--
+test
+--
+
+.test2
+--
+test2
+--
+
+.test3
+--
+test3
+--
+
+====
+// end tabbed area
 
 .Result
 
