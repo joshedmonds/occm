@@ -189,11 +189,12 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 
 . In the _Deploy Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later, and click *Close*. For example:
 +
-sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
+`sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq`
 
 . Unzip the installer file on the host machine, for example:
 +
-`tar -xzf cc_onprem_installer_1.7.2.tar.gz`
+[source,cli]
+tar -xzf cc_onprem_installer_1.7.2.tar.gz
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
@@ -282,7 +283,7 @@ For example, this command adds 3 scanner nodes:
 
 . Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
 +
-sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212
+`sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212`
 
 . On *each* scanner node host:
 .. Copy the Data Sense installer file (*cc_onprem_installer_<version>.tar.gz*) to the host machine (using `scp` or some other method).

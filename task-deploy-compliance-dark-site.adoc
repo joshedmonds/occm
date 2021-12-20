@@ -23,8 +23,10 @@ When installed in this manner (sometimes called an "offline" or "dark" site), Da
 
 * On-premises ONTAP systems
 * Database schemas
+* Non-NetApp NFS or CIFS file shares
+* Object Storage that uses the Simple Storage Service (S3) protocol
 
-There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, non-NetApp NFS or CIFS file shares, OneDrive accounts, AWS S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, or AWS S3 accounts.
 
 == Unsupported features
 
@@ -117,7 +119,8 @@ For very large configurations where you'll be scanning petabytes of data, you ca
 
 . Unzip the installer bundle on the host machine, for example:
 +
-`tar -xzf DataSense-offline-bundle-v1.7.2.tar.gz`
+[source,cli]
+tar -xzf DataSense-offline-bundle-v1.7.2.tar.gz
 +
 This extracts required software and the actual installation file *cc_onprem_installer_<version>.tar.gz*.
 
@@ -133,11 +136,12 @@ image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting 
 
 . In the _Deploy Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later, and click *Close*. For example:
 +
-sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite
+`sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite`
 
 . Unzip the installer file on the host machine, for example:
 +
-`tar -xzf cc_onprem_installer_1.7.2.tar.gz`
+[source,cli]
+tar -xzf cc_onprem_installer_1.7.2.tar.gz
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
@@ -225,7 +229,7 @@ For example, this command adds 3 scanner nodes:
 
 . Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
 +
-sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212
+`sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212`
 
 . On *each* scanner node host:
 .. Copy the Data Sense installer file (*cc_onprem_installer_<version>.tar.gz*) to the host machine.
