@@ -69,6 +69,7 @@ Some of the fields on this page are self-explanatory. The following list describ
 +
 Details about the fields on this page are provided by protocol.
 +
+
 // start tabbed area
 [role="tabbed-block"]
 ====
@@ -135,6 +136,7 @@ Compression:: Reduces the physical capacity required to store data by compressin
 
 .. *Review*: Review details about the volume and then click *Add*.
 +
+
 // start tabbed area
 [role="tabbed-block"]
 ====
@@ -160,6 +162,28 @@ test3
 .Result
 
 Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
+
+// start tabbed area
+[role="tabbed-block"]
+====
+
+.test1
+--
+test
+--
+
+.test2
+--
+test2
+--
+
+.test3
+--
+test3
+--
+
+====
+// end tabbed area
 
 === Create a volume from a template
 
