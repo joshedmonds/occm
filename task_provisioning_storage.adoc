@@ -68,7 +68,6 @@ Some of the fields on this page are self-explanatory. The following list describ
 .. *Protocol*: Choose a protocol for the volume (NFS, CIFS, or iSCSI) and then provide the required information.
 +
 Details about the fields on this page are provided by protocol.
-+
 
 // start tabbed area
 [role="tabbed-block"]
