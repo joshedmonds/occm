@@ -285,7 +285,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | TCP | 464 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
 | UDP | 464 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos key administration
 | TCP | 749 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (RPCSEC_GSS)
-.3+| Cluster | All traffic | All traffic | All LIFs on one node | All LIFs on the other node | Intercluster communications (Cloud Volumes ONTAP HA only)
+| Cluster | All traffic | All traffic | All LIFs on one node | All LIFs on the other node | Intercluster communications (Cloud Volumes ONTAP HA only)
 | UDP | 68 | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | UDP | 67 | Node management LIF | DHCP | DHCP server
 | DNS | UDP | 53 | Node management LIF and data LIF (NFS, CIFS) | DNS | DNS
