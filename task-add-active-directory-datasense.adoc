@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-add-active-directory-datasense.html
 keywords: active directory, ad, data sense, cloud data sense
-summary: The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager workspace is free. A BYOL license from NetApp, or a Cloud Manager subscription from your cloud provider Marketplace, is required to continue scanning data after that point.
+summary: You can integrate an Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and permissions.
 ---
 
 = Integrate your Active Directory with Cloud Data Sense
@@ -13,16 +13,33 @@ summary: The first 1 TB of data that Cloud Data Sense scans in a Cloud Manager w
 :imagesdir: ./media/
 
 [.lead]
-You can integrate an Active Directory with Cloud Data Sense to enable Data Sense to collect insights about user permissions and unusual behaviors and to alert the user about them.
-
-(file permissions on demand, file owner)
+You can integrate an Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and permissions.
 
 == Connecting to your Active Directory server
 
-.Before you begin
+After you have deployed Data Sense and have activated scanning on your data sources, you can integrate the system with your Active Directory.
 
-You must...
+.Requirements
+
+* You must have an Active Directory already set up for the users in your company.
+
+* You must have the information for the Active Directory:
+** DNS Server IP Address
+** User Name and Password
+** Domain Name
+** LDAP Server Port
+** Whether you are using secure LDAP (LDAPS)
 
 .Steps
 
-From
+. From the Cloud Data Sense Configuration page, click *Add Active Directory*.
++
+image:screenshot_compliance_integrate_active_directory.png[A screenshot that shows clicking the button to add an Active Directory server into Cloud Data Sense.]
+
+. In the Connect to Active Directory dialog, enter the Active Directory details and click *Connect*.
++
+image:screenshot_compliance_active_directory_dialog.png[A screenshot of the dialog where you define the Active Directory you want to integrate with Data Sense.]
++
+Data Sense integrates to the Active Directory and a new section is added to the Configuration page.
++
+image:screenshot_compliance_active_directory_added.png[A screenshot showing the new Active Directory integrated in Data Sense.]
