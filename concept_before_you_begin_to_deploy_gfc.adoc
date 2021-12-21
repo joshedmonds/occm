@@ -66,7 +66,7 @@ Global File Cache Edge prerequisites are described link:download_gfc_resources.h
 
 === Cloud Manager instance
 
-When using Cloud Volumes ONTAP for Azure as your storage platform, ensure that Cloud Manager has permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[Cloud Manager policy for Azure^].
+When using Cloud Volumes ONTAP for Azure as your storage platform, ensure that Cloud Manager has permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[Cloud Manager policy for Azure^].
 
 Newly created instances will have all the required permissions by default. If you deployed your instance prior to version 3.8.7 (August 3, 2020), then you will need to add these items.
 
