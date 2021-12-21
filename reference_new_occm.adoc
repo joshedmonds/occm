@@ -21,10 +21,23 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.13 update (16 Dec 2021)
 
+This updates includes enhancements to several features and services.
+
+=== Cloud Manager and Cloud Data Sense enhancements
+
 This update provides support for Cloud Manager and Cloud Data Sense to be deployed in an on-premises site that doesn’t have internet access. Now your secure sites can use Cloud Manager to manage your on-prem ONTAP clusters, replicate data between clusters, and scan data from those clusters using Cloud Data Sense.
 
 * link:task-install-connector-onprem-no-internet.html[See how to deploy the Cloud Manager Connector in a site with no internet access^].
 * link:task-deploy-compliance-dark-site.html[See how to deploy Cloud Data Sense in a site with no internet access^].
+
+=== SnapCenter Service enhancements (21 Dec)
+
+The SnapCenter Service 1.0.1 release contains security fixes for Log4j vulnerabilities.
+
+SnapCenter Service 1.0 uses Log4j 2.9.1 and is vulnerable to Log4j security threats. In SnapCenter Service 1.0.1, the Log4j version 2.17 is being used. The following CVEs are addressed in the release: CVE-2021-44228, CVE-2021-4104, and CVE-2021-45105.
+
+By default, the SnapCenter Service cluster is upgraded to the latest version. You should ensure that the version of the SnapCenter Service cluster is 1.0.1.1251 or later.
+
 
 == Cloud Manager 3.9.13 (28 Nov 2021)
 
