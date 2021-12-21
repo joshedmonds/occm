@@ -35,7 +35,7 @@ Most Data Sense features work when it is deployed in a site with no internet acc
 * Managing Microsoft Azure Information Protection (AIP) labels
 * Automated software upgrades from Cloud Manager
 +
-Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features and for when a software update package is available.
+Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available.
 
 == Quick start
 
