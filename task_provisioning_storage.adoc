@@ -67,55 +67,57 @@ Some of the fields on this page are self-explanatory. The following list describ
 
 .. *Protocol*: Choose a protocol for the volume (NFS, CIFS, or iSCSI) and then provide the required information.
 +
-Details about the fields on this page are provided by protocol.
-
-// start tabbed area
-[role="tabbed-block"]
-====
-
-.NFS
---
-A custom NFS export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
---
-
-.CIFS
---
-The *Permissions* and *Users/Groups* fields enable you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user’s domain using the format domain\username.
-
 If a CIFS server has not been set up, Cloud Manager prompts you to set up CIFS connectivity after you click *Next*.
-
-DNS Primary and Secondary IP Address:: The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
-
-Active Directory Domain to join:: The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
-
-Credentials authorized to join the domain::	The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
-
-CIFS server NetBIOS name:: A CIFS server name that is unique in the AD domain.
-
-Organizational Unit:: The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 +
+The following list describes fields for which you might need guidance:
++
+[cols=3*,options="header"]
+|===
+| Protocol
+| Field
+| Description
+
+| NFS
+
+| Export policy | Defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
+
+.8+| CIFS
+
+| Permissions and users/groups | Enables you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user’s domain using the format domain\username.
+
+| DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
+
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
+
+| Active Directory Domain to join |	The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+| Credentials authorized to join the domain |	The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
+
+| Organizational Unit
+a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+
 * To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
 
-DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
---
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
 
-.iSCSI
---
-iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.
+.3+| iSCSI
 
-Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.
-
-iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
+| LUN | iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.
 
 When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning_storage.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
---
 
-====
-// end tabbed area
+| Initiator group | Tables of iSCSI host node names and control which initiators have access to which LUNs.
+
+| Host initiator (IQN) | iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
+
+|===
 
 .. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
 +
@@ -134,55 +136,10 @@ Deduplication:: Improves efficiency by locating identical blocks of data and rep
 Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
 
 .. *Review*: Review details about the volume and then click *Add*.
-+
-
-// start tabbed area
-[role="tabbed-block"]
-====
-
-.test1
---
-test
---
-
-.test2
---
-test2
---
-
-.test3
---
-test3
---
-
-====
-// end tabbed area
 
 .Result
 
 Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
-
-// start tabbed area
-[role="tabbed-block"]
-====
-
-.test1
---
-test
---
-
-.test2
---
-test2
---
-
-.test3
---
-test3
---
-
-====
-// end tabbed area
 
 === Create a volume from a template
 
