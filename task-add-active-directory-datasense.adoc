@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-add-active-directory-datasense.html
 keywords: active directory, ad, data sense, cloud data sense
-summary: You can integrate an Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and permissions.
+summary: You can integrate an Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and which users and groups have access to your files.
 ---
 
 = Integrate your Active Directory with Cloud Data Sense
@@ -13,7 +13,27 @@ summary: You can integrate an Active Directory with Cloud Data Sense to enhance 
 :imagesdir: ./media/
 
 [.lead]
-You can integrate an Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and permissions.
+You can integrate an Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and which users and groups have access to your files.
+
+This helps in the following locations in Data Sense:
+
+* You can use the "File Owner" filter and see results in the file’s metadata in the Investigation pane. The file owner SID (Security IDentifier) will include the actual user name.
+* You can see link:task_controlling_private_data.html#viewing-permissions-for-files[full file permissions] for each file when you click the "View all Permissions" button.
+* In the link:task_controlling_governance_data.html[Governance dashboard], the Open Permissions panel will show a greater level of details about your data.
+
+Note that local user SIDs and SIDs from unknown domains will not be translated to the actual user name.
+
+== Supported data sources
+
+An Active Directory integration with Cloud Data Sense can identify data from the following data sources:
+
+* On-premises ONTAP systems
+* Cloud Volumes ONTAP
+* Azure NetApp Files
+* FSx for ONTAP
+* Non-NetApp CIFS file shares (not for NFS file shares)
+
+There is no support currently for identifying this data from Database schemas, OneDrive accounts, Amazon S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
 
 == Connecting to your Active Directory server
 
@@ -26,7 +46,7 @@ After you have deployed Data Sense and have activated scanning on your data sour
 * You must have the information for the Active Directory:
 ** DNS Server IP Address
 ** User Name and Password
-** Domain Name
+** Domain Name (Active Directory Name)
 ** LDAP Server Port
 ** Whether you are using secure LDAP (LDAPS)
 
@@ -43,3 +63,9 @@ image:screenshot_compliance_active_directory_dialog.png[A screenshot of the dial
 Data Sense integrates to the Active Directory and a new section is added to the Configuration page.
 +
 image:screenshot_compliance_active_directory_added.png[A screenshot showing the new Active Directory integrated in Data Sense.]
+
+== Managing your Active Directory integration
+
+You can click the *Edit* button to modify any setting in your Active Directory integration.
+
+You can also delete the integration if you no longer need it by clicking the image:screenshot_gallery_options.gif[More button] button and then *Remove Active Directory*.
