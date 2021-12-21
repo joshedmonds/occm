@@ -35,6 +35,10 @@ image:screenshot-cvo-charging-method.png[A screenshot that shows the charging me
 +
 image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials page in the working environment wizard where you can specify a user name.]
 
+* We redesigned the create volume wizard for ease of use and you can now choose a custom export policy.
+
+image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
+
 === Digital Wallet enhancement
 
 If you change the capacity or term for any of your licenses, the license terms now automatically update in the Digital Wallet. You don't need to manually update the license yourself.
