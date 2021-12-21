@@ -71,7 +71,7 @@ If a CIFS server has not been set up, Cloud Manager prompts you to set up CIFS c
 +
 The following list describes fields for which you might need guidance:
 +
-[cols=3*,options="header"]
+[cols=3*,options="header,autowidth"]
 |===
 | Protocol
 | Field
