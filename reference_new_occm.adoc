@@ -51,6 +51,12 @@ The automatic license update works with all types of Cloud Volumes ONTAP license
 +
 image:screenshot-connector-disk-encryption.png[A screenshot that shows the disk encryption option when creating a Connector in AWS.]
 
+=== Support Dashboard enhancements
+
+Cloud Manager can now display the email address that's associated with a NetApp Support Site account.
+
+image:screenshot-nss-display-email.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address.]
+
 == Cloud Manager 3.9.13 (28 Nov 2021)
 
 This updates includes enhancements to several features and services.
