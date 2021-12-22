@@ -64,6 +64,35 @@ If you change the capacity or term for any of your licenses, the license terms n
 
 The automatic license update works with all types of Cloud Volumes ONTAP licenses and all licenses for data services.
 
+=== Cloud Sync enhancements
+
+* You can now provide a meaningful name to each of your sync relationships to more easily identify the purpose of each relationship.
++
+image:screenshot-sync-relationship-edit-name.png[A screenshot of a sync relationship that shows the edit button that's next to the name of a relationship.]
+
+* When you sync data to or from Amazon S3, you can choose whether to use an S3 private link. When the data broker copies data from the source to the target, it goes through the private link.
++
+Note that the IAM role associated with your data broker will need the following permission to use this feature:
++
+[source,json]
+"ec2:DescribeVpcEndpoints"
++
+This permission is automatically added to any new data brokers that you create.
+
+* You can now choose the _Glacier Instant Retrieval_ storage class when Amazon S3 is the target in a sync relationship.
+
+* Cloud Sync now supports copying ACLs from object storage to SMB shares. Previously, we only supported copying ACLs from an SMB share to object storage.
+
+* Box to Azure NetApp Files is now supported as a sync relationship.
++
+link:reference_sync_requirements.html[View the list of supported sync relationships].
+
+* Creating a sync relationship from SFTP to Amazon S3 is now supported in the user interface. This sync relationship was previously supported with the API only.
+
+* We redesigned the table view on the Dashboard for ease of use. If you click *More info*, Cloud Sync filters the dashboard to show you more information about that specific relationship.
++
+image:screenshot-sync-table.png[A screenshot of the table view in the Dashboard.]
+
 === Connector enhancements
 
 * We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.
