@@ -44,7 +44,7 @@ Click *Create volume*, specify your storage needs, and let Cloud Manager handle 
 
 .Steps
 
-. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision FlexVol volumes.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
 
 . Click *Add Volume* > *New volume*.
 
