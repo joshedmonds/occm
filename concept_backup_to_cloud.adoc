@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, kubernetes
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, kubernetes, fetb
 summary: Cloud Backup is a service for Cloud Manager working environments that provides backup and restore capabilities for protection and long-term archive of your data. Backups are automatically generated and stored in an object store in your public or private cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
@@ -41,7 +41,7 @@ Restore features:
 
 == Supported working environments and object storage providers
 
-Cloud Backup enables you to back up volumes from the following working environments to object storage in the following cloud providers:
+Cloud Backup enables you to back up volumes from the following working environments to object storage in the following public and private cloud providers:
 
 [cols=2*,options="header",cols="40,40",width="85%"]
 |===
@@ -91,7 +91,9 @@ On-premises ONTAP system |
 
 |===
 
-Note that Cloud Backup can be used in a site with no internet connectivity (a "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+=== Support for sites with no internet connectivity
+
+Cloud Backup can be used in a site with no internet connectivity (an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
 
 == Cost
 
@@ -122,7 +124,7 @@ The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated
 
 *Service charges*
 
-Backup service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the source logical used capacity (_before_ ONTAP efficiencies) of ONTAP volumes which are backed up to object storage.
+Service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the source logical used capacity (_before_ ONTAP efficiencies) of ONTAP volumes which are backed up to object storage. This capacity is also known as Front-End Terabytes (FETB).
 
 There are three ways to pay for the Backup service. The first option is to subscribe from your cloud provider, which enables you to pay per month. The second option is to get an annual contract - this is only available through AWS. The third option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
 
@@ -134,7 +136,7 @@ Cloud Backup is available in three licensing options: Pay As You Go (PAYGO), an 
 
 When using the 30-day free trial, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
 
-Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
+Backup files are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
 
 === Pay-as-you-go subscription
 
@@ -148,7 +150,7 @@ When the trial ends, you’ll be charged hourly according to the amount of data 
 
 * If you back up more data than allowed by your BYOL license, then data backup continues through your pay-as-you-go subscription.
 +
-For example, if you have a 10 TB BYOL license, all capacity beyond the 10 TB is charged through the pay-as-you-go subscription.
+For example, if you have a 10 TB BYOL license, all capacity beyond the 10 TB is charged through the PAYGO subscription.
 
 You won’t be charged from your pay-as-you-go subscription during your free trial or if you haven’t exceeded your BYOL license.
 
@@ -160,9 +162,9 @@ Two annual contracts are available from the AWS Marketplace:
 
 *	An annual contract that enables you to back up Cloud Volumes ONTAP data and on-premises ONTAP data.
 +
-You’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription, since you can assign only one active subscription to your AWS credentials in Cloud Manager.
+You’ll also need to pay for your Cloud Volumes ONTAP systems using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
-* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12 months, 24 months, or 36 months. This option doesn’t enable you to back up on-prem data.
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12, 24, or 36 months. This option doesn’t enable you to back up on-prem data.
 +
 You can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager will prompt you to subscribe to the AWS Marketplace.
 
@@ -170,15 +172,15 @@ link:task_licensing_cloud_backup.html#subscribe-to-yearly-contracts-through-aws[
 
 === Bring your own license
 
-BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount backup capacity, say 10 TB.
+BYOL is term-based (12, 24, or 36 months) _and_ capacity-based in 1 TB increments. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount capacity, say 10 TB.
 
-You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached you'll need to renew the license.  The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Manager account^].
+You'll receive a serial number that you enter in the Cloud Manager Digital Wallet page to enable the service. When either limit is reached, you'll need to renew the license. The Backup BYOL license applies to all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Manager account^].
 
 link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[Learn how to manage your BYOL licenses].
 
 ==== BYOL license considerations
 
-When using a Cloud Backup BYOL license, Cloud Manager displays a warning in the user interface when backups are nearing the capacity limit or nearing the license expiration date. You receive these warnings:
+When using a Cloud Backup BYOL license, Cloud Manager displays a warning in the user interface when the size of all volumes you are backing up is nearing the capacity limit or nearing the license expiration date. You receive these warnings:
 
 * When backups have reached 80% of licensed capacity, and again when you have reached the limit
 * 30 days before a license is due to expire, and again when the license expires
@@ -187,10 +189,10 @@ Use the chat icon in the lower right of the Cloud Manager interface to renew you
 
 Two things can happen when your license expires:
 
-* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by NetApp for backup licensing costs, for the capacity that your backups are using.
+* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged for the capacity that your backups are using.
 * If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to see the warnings.
 
-Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license[how to update a Cloud Backup license].
+Once you renew your BYOL subscription, Cloud Manager automatically updates the license. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license[how to update a Cloud Backup license].
 
 Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backup activity that occurred while the license was expired.
 
@@ -198,13 +200,13 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 
 When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up. This keeps network traffic to a minimum.
 
-In most cases you will use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
+In most cases you'll use the Cloud Manager UI for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
 CAUTION: Any actions taken directly from your cloud provider environment to manage or change backup files may corrupt the files and will result in an unsupported configuration.
 
 The following image shows the relationship between each component:
 
-image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+image:diagram_cloud_backup_general.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination object storage where the backup files are located.]
 
 === Where backups reside
 
@@ -313,13 +315,11 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises. The Connector can be installed in a site with or without internet access.
 
-* In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
-
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Cloud Backup and then enable it again.
 
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
-* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels will not be backed up to cloud:
+* When backing up data protection (DP) volumes, relationships with the following SnapMirror labels won't be backed up to cloud:
 ** app_consistent
 ** all_source_snapshot
 

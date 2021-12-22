@@ -25,7 +25,7 @@ link:concept_backup_to_cloud.html#licensing[Learn more about the licensing and c
 
 == Use a Cloud Backup PAYGO subscription
 
-For pay-as-you-go you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
+For pay-as-you-go you'll pay your cloud provider for object storage costs and for NetApp backup licensing costs. Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
 
 * AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
@@ -41,7 +41,7 @@ There are two annual contracts available from the AWS Marketplace:
 +
 Go to the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] to view pricing details.
 +
-If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials^]. Note that you’ll also need to pay for Cloud Volumes ONTAP using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
+If you want to use this option, set up your subscription from the Marketplace page and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials^]. Note that you’ll also need to pay for your Cloud Volumes ONTAP systems using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
 * A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup service by using an annual contract for 1, 2, or 3 years. Payment is per TiB. This option doesn’t enable you to back up on-premises ONTAP data.
 +
@@ -51,9 +51,11 @@ If you want to use this option, you can set up the annual contract when you crea
 
 == Use a Cloud Backup BYOL license
 
-Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL Cloud Backup license is a floating license where the total capacity is shared across all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your Cloud Manager account.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. You pay only for the data that you protect, calculated by the logical used capacity (_before_ ONTAP efficiencies) of the source ONTAP volumes which are being backed up. This capacity is also known as Front-End Terabytes (FETB).
 
-If you don’t have a Cloud Backup license, click the chat icon in the lower-right of Cloud Manager to purchase one.
+The BYOL Cloud Backup license is a floating license where the total capacity is shared across all Cloud Volumes ONTAP and on-premises ONTAP systems associated with your Cloud Manager account. You can get a rough estimate of the capacity you'll need by running the ONTAP command `volume show-space -logical-used` for the volumes you plan to back up.
+
+If you don’t have a Cloud Backup BYOL license, click the chat icon in the lower-right of Cloud Manager to purchase one.
 
 You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for the Cloud Backup service. You can add new licenses and update existing licenses.
 
