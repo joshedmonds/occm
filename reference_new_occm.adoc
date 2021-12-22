@@ -25,6 +25,16 @@ This updates includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP enhancements
 
+* Cloud Volumes ONTAP is now supported with the following VM types in Microsoft Azure, starting with the 9.10.1 release:
+
+** E4ds_v4
+** E8ds_v4
+** E32ds_v4
+** E48ds_v4
++
+
+Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9101.html[Cloud Volumes ONTAP Release Notes^] for more details about supported configurations.
+
 * If you use a link:concept_licensing[capacity-based license^] for Cloud Volumes ONTAP, you are no longer charged for the capacity used by FlexClone volumes.
 
 * Cloud Manager now shows the charging method for each Cloud Volumes ONTAP working environment in the right panel of the Canvas.
@@ -36,7 +46,7 @@ image:screenshot-cvo-charging-method.png[A screenshot that shows the charging me
 image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials page in the working environment wizard where you can specify a user name.]
 
 * We redesigned the create volume wizard for ease of use and you can now choose a custom export policy.
-
++
 image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
 
 === Digital Wallet enhancement
