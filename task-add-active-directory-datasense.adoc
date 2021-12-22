@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-add-active-directory-datasense.html
 keywords: active directory, ad, data sense, cloud data sense
-summary: You can integrate your Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and which users and groups have access to your files.
+summary: You can integrate a global Active Directory with Cloud Data Sense to enhance the results that Data Sense reports about file owners and which users and groups have access to your files.
 ---
 
 = Integrate your Active Directory with Cloud Data Sense
@@ -13,15 +13,15 @@ summary: You can integrate your Active Directory with Cloud Data Sense to enhanc
 :imagesdir: ./media/
 
 [.lead]
-You can integrate your Active Directory with Cloud Data Sense to enhance the results that Data Sense can report about file owners and which users and groups have access to your files.
+You can integrate a global Active Directory with Cloud Data Sense to enhance the results that Data Sense reports about file owners and which users and groups have access to your files.
+
+When you set up certain data sources (listed below), you need to enter Active Directory credentials in order for Data Sense to scan CIFS volumes. This integration provides Data Sense with file owner and permissions details for those data sources. The Active Directory entered for those data sources may be different than the global Active Directory credentials you enter here. Data Sense will look in all integrated Active Directories for user and permission details.
 
 This helps in the following locations in Data Sense:
 
 * You can use the "File Owner" link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[filter] and see results in the file’s metadata in the Investigation pane. Instead of the file owner containing the SID (Security IDentifier), it is populated with the actual user name.
 * You can see link:task_controlling_private_data.html#viewing-permissions-for-files[full file permissions] for each file when you click the "View all Permissions" button.
 * In the link:task_controlling_governance_data.html[Governance dashboard], the Open Permissions panel will show a greater level of detail about your data.
-
-When you set up certain data sources (listed below), you need to enter Active Directory credentials in order for Data Sense to scan CIFS volumes. This integration provides Data Sense with file owner and permissions details for those data sources. The Active Directory entered for those data sources may be different than the global Active Directory credentials you enter here. Data Sense will look in all integrated Active Directories for user and permission details.
 
 NOTE: Local user SIDs, and SIDs from unknown domains, are not translated to the actual user name.
 
@@ -35,11 +35,11 @@ An Active Directory integration with Cloud Data Sense can identify data from wit
 * FSx for ONTAP
 * Non-NetApp CIFS file shares (not for NFS file shares)
 
-There is no support for identifying this data from Database schemas, OneDrive accounts, Amazon S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
+There is no support for identifying user and permission information from Database schemas, OneDrive accounts, Amazon S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
 
 == Connecting to your Active Directory server
 
-After you have deployed Data Sense and have activated scanning on your data sources, you can integrate the system with your Active Directory.
+After you have deployed Data Sense and have activated scanning on your data sources, you can integrate Data Sense with your Active Directory.
 
 The Active Directory credentials can be read-only, but providing admin credentials ensures that Data Sense can read any data that requires elevated permissions. The credentials are stored on the Cloud Data Sense instance.
 
@@ -49,7 +49,7 @@ The Active Directory credentials can be read-only, but providing admin credentia
 
 * You must have the information for the Active Directory:
 ** DNS Server IP Address
-** User Name and Password
+** User Name and Password for the server
 ** Domain Name (Active Directory Name)
 ** LDAP Server Port (389 for LDAP, and typically 636 for secure LDAP)
 ** Whether you are using secure LDAP (LDAPS)
