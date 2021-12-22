@@ -72,9 +72,23 @@ For example, if you install a Connector in your corporate network, then you must
 
 === Outbound internet access
 
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in Azure:
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
 
-include::_include/connector_endpoints_azure.adoc[]
+==== Endpoints to manage resources in your public cloud environment
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://hub.docker.com
+\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+
+|===
+
+==== Endpoints accessed from your web browser when using the local UI
 
 While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
 

@@ -33,25 +33,19 @@ The Connector requires outbound internet access to manage resources and processe
 
 The following sections identify the specific endpoints.
 
-=== Endpoints to manage resources in AWS
+=== Endpoints to manage resources in your public cloud environment
 
-A Connector contacts the following endpoints when managing resources in AWS:
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
 
-NOTE: If your VPC uses a network access control list (ACL) to filter traffic, then make sure that you enable these endpoints for both outbound and inbound traffic.
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://hub.docker.com
+\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
 
-include::_include/connector_endpoints_aws.adoc[]
-
-=== Endpoints to manage resources in Azure
-
-A Connector contacts the following endpoints when managing resources in Azure:
-
-include::_include/connector_endpoints_azure.adoc[]
-
-=== Endpoints to manage resources in GCP
-
-A Connector contacts the following endpoints when managing resources in GCP:
-
-include::_include/connector_endpoints_gcp.adoc[]
+|===
 
 === Endpoints to install the Connector on a Linux host
 
