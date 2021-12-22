@@ -57,6 +57,10 @@ The automatic license update works with all types of Cloud Volumes ONTAP license
 
 === Connector enhancements
 
+* We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.
++
+link:reference_networking_cloud_manager.html#outbound-internet-access[View the list of required endpoints].
+
 * When you deploy a new Connector in AWS from Cloud Manager, you can now choose to encrypt the Connector's EBS disks using the default master key or a managed key.
 +
 image:screenshot-connector-disk-encryption.png[A screenshot that shows the disk encryption option when creating a Connector in AWS.]
