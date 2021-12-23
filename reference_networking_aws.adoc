@@ -208,7 +208,7 @@ NOTE: If your VPC uses a network access control list (ACL) to filter traffic, th
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
 
-[cols="43,57",options="header"]
+[cols=2*,options="header,autowidth"]
 |===
 | Endpoints
 | Purpose
@@ -224,7 +224,7 @@ The Connector requires outbound internet access to manage resources and processe
 
 The Cloud Manager user interface is accessible from a web browser. The machine running the web browser must have connections to the following endpoints.
 
-[cols="43,57",options="header"]
+[cols=2*,options="header,autowidth"]
 |===
 | Endpoints
 | Purpose
