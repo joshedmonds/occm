@@ -118,6 +118,8 @@ https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google
 
 When you set up tiering, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables Cloud Tiering to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
 
+The Cloud Storage buckets must be in a link:reference_google_support.html#supported-google-cloud-regions[region that supports Cloud Tiering].
+
 NOTE: If you are planning to configure Cloud Tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your GCP account. Cloud Tiering manages the life cycle transitions.
 
 .Steps
