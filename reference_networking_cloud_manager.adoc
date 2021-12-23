@@ -79,27 +79,27 @@ AWS services (amazonaws.com):
 
 The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
 
-| Required to deploy a Connector in AWS from Cloud Manager.
+| Required to deploy a Connector from Cloud Manager in AWS.
 
 |
 \https://management.azure.com
 \https://login.microsoftonline.com
-| Required to deploy a Connector in most Azure regions from Cloud Manager.
+| Required to deploy a Connector from Cloud Manager in most Azure regions.
 
 |
 \https://management.microsoftazure.de
 \https://login.microsoftonline.de
-| Required to deploy a Connector in Azure Germany regions from Cloud Manager.
+| Required to deploy a Connector from Cloud Manager in Azure Germany regions.
 
 |
 \https://management.usgovcloudapi.net
 \https://login.microsoftonline.com
-| Required to deploy a Connector in Azure US Gov regions from Cloud Manager.
+| Required to deploy a Connector from Cloud Manager in Azure US Gov regions.
 
 |
 \https://www.googleapis.com
 
-| Required to deploy a Connector in Google Cloud from Cloud Manager.
+| Required to deploy a Connector from Cloud Manager in Google Cloud.
 
 | \https://signin.b2c.netapp.com
 | Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
