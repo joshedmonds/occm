@@ -33,7 +33,7 @@ https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
 
 Cloud Tiering supports the following AWS regions.
 
-==== Asia Pacific
+=== Asia Pacific
 
 * Mumbai
 * Seoul
@@ -41,7 +41,7 @@ Cloud Tiering supports the following AWS regions.
 * Sydney
 * Tokyo
 
-==== Europe
+=== Europe
 
 * Frankfurt
 * Ireland
@@ -49,15 +49,14 @@ Cloud Tiering supports the following AWS regions.
 * Paris
 * Stockholm
 
-==== North America
+=== North America
 
 * Canada Central
-* GovCloud (US-West)
 * US East (N. Virginia)
 * US East (Ohio)
 * US West (N. California)
 * US West (Oregon)
 
-==== South America
+=== South America
 
 * São Paulo
