@@ -29,7 +29,7 @@ If your network has a subnet configured in the 172 range, then you might experie
 
 == Outbound internet access
 
-Outbound internet access is required from the Connector and from your web browser. The following sections identify the specific endpoints.
+Outbound internet access is required from the Connector.
 
 === Endpoints to manage resources in your public cloud environment
 

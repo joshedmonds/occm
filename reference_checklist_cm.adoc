@@ -29,14 +29,14 @@ The Cloud Manager user interface is accessible from a web browser. The machine r
 | \http://cloudmanager.netapp.com | Your web browser contacts this URL when using the SaaS UI.
 
 | The Connector’s IP address
-a| In most cases, you should work with Cloud Manager from the SaaS UI, but if you need to use the link:concept_connectors.html#using-multiple-connectors-with-the-same-working-environment[local UI], then you must enter the host’s IP address from a web browser to load the Cloud Manager console.
+a| In most cases, you should work with Cloud Manager from the SaaS UI, but if you need to use the link:concept_connectors.html#using-multiple-connectors-with-the-same-working-environment[local UI], then you must enter the host’s IP address from a web browser.
 
-Depending on the connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
+Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
 
 - A private IP works if you have a VPN and direct connect access to your virtual network
 - A public IP works in any networking scenario
 
-In any case, you should secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
+In either case, secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
 
 a|
 AWS services (amazonaws.com):
@@ -47,9 +47,7 @@ AWS services (amazonaws.com):
 *	Security Token Service (STS)
 *	Simple Storage Service (S3)
 
-The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
-
-| Required to deploy a Connector from Cloud Manager in AWS.
+| Required to deploy a Connector from Cloud Manager in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
 
 |
 \https://management.azure.com
