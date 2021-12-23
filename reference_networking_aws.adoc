@@ -198,13 +198,15 @@ A Connector requires a network connection to the VPCs and VNets in which you wan
 
 For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
 
-=== Outbound internet access
+==== Outbound internet access
 
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+Outbound internet access is required from the Connector and from your web browser. The following sections identify the specific endpoints.
 
 NOTE: If your VPC uses a network access control list (ACL) to filter traffic, then make sure that you enable these endpoints for both outbound and inbound traffic.
 
-==== Endpoints to manage resources in your public cloud environment
+=== Endpoints to manage resources in your public cloud environment
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
 
 [cols="43,57",options="header"]
 |===
@@ -218,31 +220,67 @@ NOTE: If your VPC uses a network access control list (ACL) to filter traffic, th
 
 |===
 
-==== Endpoints accessed from your web browser when using the local UI
+==== Endpoints accessed from your web browser when using the UI
 
-While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
+The Cloud Manager user interface is accessible from a web browser. The machine running the web browser must have connections to the following endpoints.
 
 [cols="43,57",options="header"]
 |===
 | Endpoints
 | Purpose
-|
-The Connector host
 
-a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
+| \http://cloudmanager.netapp.com | Your web browser contacts this URL when using the SaaS UI.
 
-Depending on your connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
+| The Connector’s IP address
+a| In most cases, you should work with Cloud Manager from the SaaS UI, but if you need to use the link:concept_connectors.html#using-multiple-connectors-with-the-same-working-environment[local UI], then you must enter the host’s IP address from a web browser to load the Cloud Manager console.
+
+Depending on the connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
 
 - A private IP works if you have a VPN and direct connect access to your virtual network
 - A public IP works in any networking scenario
 
 In any case, you should secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
 
+a|
+AWS services (amazonaws.com):
+
+*	CloudFormation
+*	Elastic Compute Cloud (EC2)
+*	Key Management Service (KMS)
+*	Security Token Service (STS)
+*	Simple Storage Service (S3)
+
+The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
+
+| Required to deploy a Connector in AWS from Cloud Manager.
+
+|
+\https://management.azure.com
+\https://login.microsoftonline.com
+| Required to deploy a Connector in most Azure regions from Cloud Manager.
+
+|
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+| Required to deploy a Connector in Azure Germany regions from Cloud Manager.
+
+|
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.com
+| Required to deploy a Connector in Azure US Gov regions from Cloud Manager.
+
+|
+\https://www.googleapis.com
+
+| Required to deploy a Connector in Google Cloud from Cloud Manager.
+
+| \https://signin.b2c.netapp.com
+| Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
+
 |
 \https://auth0.com
 \https://cdn.auth0.com
 \https://services.cloud.netapp.com
-
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
 
 | \https://widget.intercom.io
