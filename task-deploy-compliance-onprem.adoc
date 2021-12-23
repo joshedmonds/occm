@@ -84,9 +84,10 @@ Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, bu
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
 
-*	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
+* The following software must be installed on the host. If it doesn't already exist on the host, then the installer will install the software for you:
 
-* Root privileges are required to install Cloud Data Sense.
+** Docker Engine version 19 or later. https://docs.docker.com/engine/install/[View installation instructions^].
+** Python 3 version 3.6 or later. https://www.python.org/downloads/[View installation instructions^].
 
 == Verify Cloud Manager and Data Sense prerequisites
 
@@ -150,6 +151,8 @@ Ensure that the Cloud Manager Connector can access Cloud Data Sense::
 Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 443 to and from the Data Sense instance.
 +
 This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
++
+Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 
 Ensure that you can keep Cloud Data Sense running::
 The Cloud Data Sense instance needs to stay on to continuously scan your data.
@@ -174,6 +177,13 @@ NOTE: Cloud Data Sense is currently unable to scan S3 buckets, Azure NetApp File
 === Single-host installation for typical configurations
 
 Follow these steps when installing Data Sense software on a single on-premises host.
+
+.What you'll need
+
+* Verify that your Linux system meets the <<Prepare the Linux host system,host requirements>>.
+* (Optional) Verify that the system has the two prerequisite software packages installed (Docker Engine and Python 3). The installer will install this software if it is not already on the system.
+* Make sure you have root privileges on the Linux system.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 
 .Steps
 
@@ -249,14 +259,13 @@ For very large configurations where you’ll be scanning petabytes of data, you 
 
 Follow these steps when installing Data Sense software on multiple on-premises hosts.
 
-.Requirements
+.What you'll need
 
-* See <<Verify Cloud Manager and Data Sense prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
-
-* The host requirements are the same for Scanner nodes as they are for Manager nodes. See <<Prepare the Linux host system,Host requirements>> for details.
-
+* Verify that all your Linux systems for the Manager and Scanner nodes meet the <<Prepare the Linux host system,host requirements>>.
+* (Optional) Verify that the systems have the two prerequisite software packages installed (Docker Engine and Python 3). The installer will install this software if it is not already on the systems.
+* Make sure you have root privileges on the Linux systems.
+* Verify that your environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
-
 * The following ports and protocols must be enabled on all hosts:
 +
 [cols="15,20,55",options="header"]

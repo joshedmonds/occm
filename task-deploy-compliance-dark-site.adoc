@@ -115,8 +115,8 @@ Follow these steps when installing Data Sense software on a single on-premises h
 
 * Verify that your Linux system meets the <<Prepare the Linux host system,host requirements>>.
 * Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
-* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 
 .Steps
 
@@ -201,10 +201,10 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 .What you'll need
 
-* Verify that all your Linux systems meet the <<Prepare the Linux host system,host requirements>>.
+* Verify that all your Linux systems for the Manager and Scanner nodes meet the <<Prepare the Linux host system,host requirements>>.
 * Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
+* Make sure you have root privileges on the Linux systems.
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
-* Make sure you have root privileges on the Linux system.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
 * The following ports and protocols must be enabled on all hosts:
 +
