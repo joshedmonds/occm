@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: kubernetes-reqs-anf.html
-keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, kubernetes support
-summary: Before you can add an Azure cluster to Cloud Manager, you need to ensure the following requirements have been met.
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, aks, kubernetes support
+summary: Before you can add an Azure Kubernetes Service (AKS) cluster to Cloud Manager, you need to ensure the following requirements have been met.
 ---
 
 = Requirements for Azure clusters
@@ -13,15 +13,15 @@ summary: Before you can add an Azure cluster to Cloud Manager, you need to ensur
 :imagesdir: ./media/
 
 [.lead]
-Before you can add an Azure cluster to Cloud Manager, you need to ensure the following requirements have been met.
+Before you can add an Azure Kubernetes Service (AKS) cluster to Cloud Manager, you need to ensure the following requirements have been met.
 
 == Requirements
 
 Astra Trident::
-The Azure cluster must have NetApp Astra Trident installed. One of the four most recent versions of Astra Trident is required. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Go to the Astra Trident docs for installation steps^].
+The AKS cluster must have NetApp Astra Trident installed. One of the four most recent versions of Astra Trident is required. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Go to the Astra Trident docs for installation steps^].
 
 Cloud Volumes ONTAP::
-Cloud Volumes ONTAP for Azure must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+Cloud Volumes ONTAP for AKS must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
 
 Cloud Manager Connector::
 A Connector must be running in Azure with the required permissions. <<Prepare a Connector,Learn more below>>.
@@ -34,7 +34,7 @@ The Cloud Manager Connector role must be authorized on each Azure cluster. <<Set
 
 == Prepare a Connector
 
-A Cloud Manager Connector is required in Azure to discover and manage Azure clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
+A Cloud Manager Connector is required in Azure to discover and manage AKS clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
 
 === Create a new Connector
 

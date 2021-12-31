@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-kubernetes-discover-azure.html
-keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, kubernetes support
-summary: Add an Azure cluster to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, aks, kubernetes support
+summary: Add an Azure Kubernetes Service (AKS) cluster to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
 ---
 
 = Add an Azure cluster to Cloud Manager
@@ -13,7 +13,7 @@ summary: Add an Azure cluster to Cloud Manager so that you can start backing up 
 :imagesdir: ./media/
 
 [.lead]
-Add an Azure cluster to Cloud Manager so that you can start backing up persistent volumes to Azure.
+Add an Azure Kubernetes Service (AKS) cluster to Cloud Manager so that you can start backing up persistent volumes to Azure.
 
 .Steps
 
