@@ -1,0 +1,36 @@
+---
+sidebar: sidebar
+permalink: task-kubernetes-discover-azure.html
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, aks, kubernetes support
+summary: Add an Azure Kubernetes Service (AKS) cluster to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
+---
+
+= Add an Azure cluster to Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Add an Azure Kubernetes Service (AKS) cluster to Cloud Manager so that you can start backing up persistent volumes to Azure.
+
+.Steps
+
+. On the *Canvas*, click *Add Working Environment*.
+
+. Select *Amazon Web Services* > *Kubernetes Cluster* and click *Next*.
++
+image:screenshot-discover-kubernetes-aws-1.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected AWS region and a Kubernetes cluster.]
+
+. Select *Discover Cluster* and click *Next*.
+
+. Choose an AWS region, select a Kubernetes cluster, and then click *Next*.
++
+image:screenshot-discover-kubernetes-aws-2.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected AWS region and a Kubernetes cluster.]
+
+.Result
+
+Cloud Manager adds the Kubernetes cluster to the Canvas.
+
+image:screenshot-kubernetes-canvas.png[A screenshot of the Canvas in Cloud Manager that shows a Kubernetes cluster.]
