@@ -131,6 +131,8 @@ When you set up tiering, you need to identify the resource group you want to use
 
 Cloud Tiering supports only the General Purpose v2 and Premium Block Blob types of storage accounts.
 
+The Blob container must be in a link:reference_azure_support.html#supported-azure-regions[region that supports Cloud Tiering].
+
 NOTE: If you are planning to configure Cloud Tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. Cloud Tiering manages the life cycle transitions.
 
 == Tiering inactive data from your first cluster to Azure Blob storage
