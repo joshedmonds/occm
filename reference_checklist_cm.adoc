@@ -19,24 +19,68 @@ A NetApp Cloud Central login::
 You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Cloud Manager and other cloud services.
 
 Network access from a web browser to several endpoints::
-Users need to access Cloud Manager from a web browser. The machine running the web browser must have connections to the following endpoints.
+The Cloud Manager user interface is accessible from a web browser. The machine running the web browser must have connections to the following endpoints.
 +
-[cols="43,57",options="header"]
+[cols=2*,options="header,autowidth"]
 |===
 | Endpoints
 | Purpose
-| \https://cloudmanager.cloud.netapp.com
-| To connect you to the Cloud Manager SaaS interface.
+
+| \http://cloudmanager.netapp.com | Your web browser contacts this URL when using the SaaS UI.
+
+a|
+AWS services (amazonaws.com):
+
+*	CloudFormation
+* Cognito
+*	Elastic Compute Cloud (EC2)
+*	Key Management Service (KMS)
+*	Security Token Service (STS)
+*	Simple Storage Service (S3)
+
+| Required to deploy a Connector from Cloud Manager in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
+
+|
+\https://management.azure.com
+\https://login.microsoftonline.com
+| Required to deploy a Connector from Cloud Manager in most Azure regions.
+
+|
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+| Required to deploy a Connector from Cloud Manager in Azure Germany regions.
+
+|
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.com
+| Required to deploy a Connector from Cloud Manager in Azure US Gov regions.
+
+|
+\https://www.googleapis.com
+
+| Required to deploy a Connector from Cloud Manager in Google Cloud.
+
+| \https://signin.b2c.netapp.com
+| Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
 
 |
 \https://auth0.com
 \https://cdn.auth0.com
 \https://services.cloud.netapp.com
-
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
 
 | \https://widget.intercom.io
 | For in-product chat that enables you to talk to NetApp cloud experts.
+
+| The Connector’s IP address
+a| In most cases, you should work with Cloud Manager from the SaaS UI, but link:concept_connectors.html#using-multiple-connectors-with-the-same-working-environment[if you use the local UI], then you must enter the host’s IP address from a web browser.
+
+Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
+
+- A private IP works if you have a VPN and direct access to your virtual network
+- A public IP works in any networking scenario
+
+In either case, secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
 
 |===
 
@@ -45,9 +89,19 @@ After logging in to Cloud Manager, an Account Admin will need to deploy a _Conne
 +
 * The network location must have an outbound internet connection.
 +
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment. Outbound internet access is also required if you want to manually install the Connector on a Linux host or access the local UI running on the Connector.
+The Connector requires outbound internet access to the following endpoints in order to manage resources and processes within your public cloud environment.
 +
-link:reference_networking_cloud_manager.html#outbound-internet-access[View the specific endpoints that the Connector contacts].
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://hub.docker.com
+\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+
+|===
 
 * There's no incoming traffic to the Connector, unless you initiate it.
 +
@@ -56,7 +110,7 @@ HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in ra
 Cloud provider permissions::
 You need an account that has permissions to deploy the Connector in your cloud provider directly from Cloud Manager.
 +
-NOTE: There are alternative ways to create a Connector. You also have the option to create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], link:task_launching_azure_mktp.html[Azure Marketplace], or to link:task_installing_linux.html[manually install the software].
+NOTE: There are alternate ways to create a Connector: you can create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], the link:task_launching_azure_mktp.html[Azure Marketplace], or you can link:task_installing_linux.html[manually install the software].
 +
 [cols="15,55,30",options="header"]
 |===

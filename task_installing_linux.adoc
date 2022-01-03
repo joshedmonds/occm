@@ -25,7 +25,6 @@ NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then y
 
 * The Connector installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to these endpoints:
 
-** \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 ** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 +
