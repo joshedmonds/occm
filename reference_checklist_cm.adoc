@@ -28,16 +28,6 @@ The Cloud Manager user interface is accessible from a web browser. The machine r
 
 | \http://cloudmanager.netapp.com | Your web browser contacts this URL when using the SaaS UI.
 
-| The Connector’s IP address
-a| In most cases, you should work with Cloud Manager from the SaaS UI, but if you need to use the link:concept_connectors.html#using-multiple-connectors-with-the-same-working-environment[local UI], then you must enter the host’s IP address from a web browser.
-
-Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
-
-- A private IP works if you have a VPN and direct connect access to your virtual network
-- A public IP works in any networking scenario
-
-In either case, secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
-
 a|
 AWS services (amazonaws.com):
 
@@ -82,6 +72,16 @@ AWS services (amazonaws.com):
 | \https://widget.intercom.io
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
+| The Connector’s IP address
+a| In most cases, you should work with Cloud Manager from the SaaS UI, but link:concept_connectors.html#using-multiple-connectors-with-the-same-working-environment[if you use the local UI], then you must enter the host’s IP address from a web browser.
+
+Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
+
+- A private IP works if you have a VPN and direct access to your virtual network
+- A public IP works in any networking scenario
+
+In either case, secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
+
 |===
 
 A network location for a Connector::
@@ -89,7 +89,7 @@ After logging in to Cloud Manager, an Account Admin will need to deploy a _Conne
 +
 * The network location must have an outbound internet connection.
 +
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+The Connector requires outbound internet access to the following endpoints in order to manage resources and processes within your public cloud environment.
 +
 [cols=2*,options="header,autowidth"]
 |===
