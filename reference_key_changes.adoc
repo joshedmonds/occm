@@ -42,9 +42,9 @@ Cloud Manager will prompt you with instructions to change the machine type of th
 
 == Account settings
 
-We introduced Cloud Central accounts to provide multi-tenancy, to help you organize users and resources in isolated workspaces, and to manage access to Connectors and subscriptions.
+We introduced NetApp accounts to provide multi-tenancy, to help you organize users and resources in isolated workspaces, and to manage access to Connectors and subscriptions.
 
-* link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts: users, workspaces, Connectors, and subscriptions]
+* link:concept_cloud_central_accounts.html[Learn about NetApp accounts: users, workspaces, Connectors, and subscriptions]
 * link:task_setting_up_cloud_central_accounts.html[Learn how to get started with your account]
 * link:task_managing_cloud_central_accounts.html[Learn how to manage your account after you set it up]
 

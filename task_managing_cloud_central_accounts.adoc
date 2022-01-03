@@ -15,7 +15,7 @@ summary: After you perform initial setup, you can administer your account settin
 [.lead]
 link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
 
-link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
+link:concept_cloud_central_accounts.html[Learn more about how NetApp accounts work].
 
 == Managing your account with the Tenancy API
 
@@ -29,7 +29,7 @@ The user's in your account can access the manage the resources in your account's
 
 === Adding users
 
-Associate Cloud Central users with the Cloud Central account so those users can create and manage working environments in Cloud Manager.
+Associate Cloud Central users with the NetApp account so those users can create and manage working environments in Cloud Manager.
 
 .Steps
 
@@ -64,7 +64,7 @@ The user should receive an email from NetApp Cloud Central titled "Account Assoc
 
 === Removing users
 
-Disassociating a user makes it so they can no longer access the resources in a Cloud Central account.
+Disassociating a user makes it so they can no longer access the resources in a NetApp account.
 
 .Steps
 
@@ -80,7 +80,7 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 .Result
 
-The user can no longer access the resources in this Cloud Central account.
+The user can no longer access the resources in this NetApp account.
 
 === Managing a Workspace Admin's workspaces
 

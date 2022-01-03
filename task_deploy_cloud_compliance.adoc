@@ -82,7 +82,7 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 | Endpoints
 | Purpose
 
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes NetApp accounts.
 
 |
 \https://netapp-cloud-account.auth0.com
@@ -119,7 +119,7 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 | Endpoints
 | Purpose
 
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes NetApp accounts.
 
 |
 \https://netapp-cloud-account.auth0.com
