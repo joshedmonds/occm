@@ -42,6 +42,7 @@ a|
 AWS services (amazonaws.com):
 
 *	CloudFormation
+* Cognito
 *	Elastic Compute Cloud (EC2)
 *	Key Management Service (KMS)
 *	Security Token Service (STS)
@@ -88,9 +89,19 @@ After logging in to Cloud Manager, an Account Admin will need to deploy a _Conne
 +
 * The network location must have an outbound internet connection.
 +
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment. Outbound internet access is also required if you want to manually install the Connector on a Linux host or access the local UI running on the Connector.
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
 +
-link:reference_networking_cloud_manager.html#outbound-internet-access[View the specific endpoints that the Connector contacts].
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://hub.docker.com
+\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+
+|===
 
 * There's no incoming traffic to the Connector, unless you initiate it.
 +
@@ -99,7 +110,7 @@ HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in ra
 Cloud provider permissions::
 You need an account that has permissions to deploy the Connector in your cloud provider directly from Cloud Manager.
 +
-NOTE: There are alternative ways to create a Connector. You also have the option to create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], link:task_launching_azure_mktp.html[Azure Marketplace], or to link:task_installing_linux.html[manually install the software].
+NOTE: There are alternate ways to create a Connector: you can create a Connector from the link:task_launching_aws_mktp.html[AWS Marketplace], the link:task_launching_azure_mktp.html[Azure Marketplace], or you can link:task_installing_linux.html[manually install the software].
 +
 [cols="15,55,30",options="header"]
 |===

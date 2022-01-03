@@ -6,6 +6,7 @@ a|
 AWS services (amazonaws.com):
 
 *	CloudFormation
+* Cognito
 *	Elastic Compute Cloud (EC2)
 *	Key Management Service (KMS)
 *	Security Token Service (STS)
