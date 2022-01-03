@@ -17,7 +17,7 @@ It's best to create a Connector directly from Cloud Manager, but you can launch 
 
 == Creating a Connector in Azure
 
-Deploy the Connector in Azure using the image in the Azure Marketplace and then log in to the Connector to specify your Cloud Central account.
+Deploy the Connector in Azure using the image in the Azure Marketplace and then log in to the Connector to specify your NetApp account.
 
 .Steps
 
@@ -52,12 +52,12 @@ Azure deploys the virtual machine with the specified settings. The virtual machi
 http://_ipaddress_:80
 
 . After you log in, set up the Connector:
-.. Specify the Cloud Central account to associate with the Connector.
+.. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a Cloud Central account and name the system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a NetApp account and name the system.]
 
 .Result
 

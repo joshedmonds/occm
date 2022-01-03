@@ -37,7 +37,7 @@ At a high-level, Cloud Insights integration with Cloud Manager works like this:
 
 . You enable the Monitoring service on Cloud Volumes ONTAP.
 . Cloud Manager configures your environment. It does the following:
-.. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
+.. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your NetApp account to the tenant.
 +
 If you already have a tenant, then Cloud Manager uses that existing tenant.
 .. Enables a free trial of Cloud Insights.

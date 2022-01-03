@@ -75,7 +75,12 @@ link:reference_networking_cloud_manager.html[Learn more about networking require
 
 * *AWS Credentials*: Specify the AWS access key and secret key that meet permissions requirements and then select your region.
 
-* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[the required permissions^].
+* *Details*: Provide details about the Connector.
++
+** Enter a name for the instance.
+** Add custom tags (metadata) to the instance.
+** Choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[the required permissions^].
+** Choose whether you want to encrypt the Connector's EBS disks. You have the option to use the default encryption key or to use a custom key.
 
 * *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.
 

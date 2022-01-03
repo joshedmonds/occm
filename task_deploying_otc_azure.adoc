@@ -106,7 +106,7 @@ You can add up to four tags from the user interface when creating a working envi
 
 For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 
-| User name and password |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | [[video]]Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. link:task_adding_azure_accounts.html[Learn how to add credentials].
 

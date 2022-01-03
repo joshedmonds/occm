@@ -6,6 +6,7 @@ a|
 AWS services (amazonaws.com):
 
 *	CloudFormation
+* Cognito
 *	Elastic Compute Cloud (EC2)
 *	Key Management Service (KMS)
 *	Security Token Service (STS)
@@ -28,7 +29,7 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
 
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes NetApp accounts.
 
 |
 \https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
