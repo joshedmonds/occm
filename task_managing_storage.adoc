@@ -199,7 +199,9 @@ For instructions, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.ex
 
 == Moving a volume when Cloud Manager displays an Action Required message
 
-Cloud Manager might display an Action Required message that says moving a volume is necessary to avoid capacity issues, but that it cannot provide recommendations to correct the issue. If this happens, you need to identify how to correct the issue and then move one or more volumes.
+Cloud Manager might display an Action Required message that says moving a volume is necessary to avoid capacity issues, but that you need to correct the issue yourself. If this happens, you need to identify how to correct the issue and then move one or more volumes.
+
+TIP: Cloud Manager displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task_tiering.html#changing-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering].
 
 .Steps
 
@@ -213,7 +215,7 @@ Cloud Manager might display an Action Required message that says moving a volume
 
 === Identifying how to correct capacity issues
 
-If Cloud Manager cannot provide recommendations for moving a volume to avoid capacity issues, you must identify the volumes that you need to move and whether you should move them to another aggregate on the same system or to another system.
+If Cloud Manager can't provide recommendations for moving a volume to avoid capacity issues, you must identify the volumes that you need to move and whether you should move them to another aggregate on the same system or to another system.
 
 .Steps
 
