@@ -34,7 +34,7 @@ You can also link:task_installing_linux.html[deploy the Connector on-premises^] 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 80, and more. <<Review prerequisites,See the complete list>>.
+Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Data Sense over port 443, and more. <<Review prerequisites,See the complete list>>.
 
 [role="quick-margin-para"]
 You also need a Linux system that meets the <<Host requirements,following requirements>>.
@@ -67,7 +67,29 @@ As you can see, there may be some situations where you need to use link:concept_
 
 NOTE: If you're planning on scanning Azure NetApp Files volumes, you need to make sure you're deploying in the same region as the volumes you wish to scan.
 
-== Review prerequisites
+== Prepare the Linux host system
+
+Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on.
+
+* Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
+** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
+** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
+* Disk: SSD with 500 GiB available on /, or
+** 100 GiB available on /opt
+** 400 GiB available on /var
+* RAM: 64 GB (swap memory must be disabled on the host)
+* CPU: 16 cores
++
+Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
+
+* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
+
+* The following software must be installed on the host. If it doesn't already exist on the host, then the installer will install the software for you:
+
+** Docker Engine version 19 or later. https://docs.docker.com/engine/install/[View installation instructions^].
+** Python 3 version 3.6 or later. https://www.python.org/downloads/[View installation instructions^].
+
+== Verify Cloud Manager and Data Sense prerequisites
 
 Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense on a Linux system.
 
@@ -79,7 +101,7 @@ Cloud Data Sense requires outbound internet access. If your virtual or physical 
 | Endpoints
 | Purpose
 
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes NetApp accounts.
 
 |
 \https://netapp-cloud-account.auth0.com
@@ -126,9 +148,11 @@ compute.subnetworks.use
 compute.subnetworks.useExternalIp
 
 Ensure that the Cloud Manager Connector can access Cloud Data Sense::
-Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Data Sense instance.
+Ensure connectivity between the Connector and the Cloud Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 443 to and from the Data Sense instance.
 +
 This connection enables deployment of the Data Sense instance and enables you to view information in the Compliance and Governance tabs.
++
+Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 
 Ensure that you can keep Cloud Data Sense running::
 The Cloud Data Sense instance needs to stay on to continuously scan your data.
@@ -140,36 +164,26 @@ The Data Sense instance uses a private IP address to ensure that the indexed dat
 
 == Deploy Data Sense on premises
 
-For typical configurations you'll install the software on a single host system. For very large configurations where you'll be scanning petabytes of data, you can include additional hosts as _scanner nodes_ to provide additional processing power.
+For typical configurations you'll install the software on a single host system. <<Single-host installation for typical configurations,See those steps here>>.
+
+For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. <<Multi-host installation for large configurations,See those steps here>>.
+
+See <<Prepare the Linux host system,Preparing the Linux host system>> and <<Verify Cloud Manager and Data Sense prerequisites,Reviewing prerequisites>> for the full list of requirements before you deploy Cloud Data Sense.
 
 Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
 
 NOTE: Cloud Data Sense is currently unable to scan S3 buckets, Azure NetApp Files, or FSx for ONTAP when the software is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Data Sense in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors^] for your different data sources.
 
-=== Host requirements
-
-* Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
-** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
-** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
-* Disk: SSD with 500 GiB available on /, or
-** 100 GiB available on /opt
-** 400 GiB available on /var
-* RAM: 64 GB (swap memory must be disabled on the host)
-* CPU: 16 cores
-+
-Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
-
-* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it's not registered, the system can't access repositories to update required 3rd party software during installation.
-
-*	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
-
-* Root privileges are required to install Cloud Data Sense.
-
-See <<Review prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
-
 === Single-host installation for typical configurations
 
 Follow these steps when installing Data Sense software on a single on-premises host.
+
+.What you'll need
+
+* Verify that your Linux system meets the <<Prepare the Linux host system,host requirements>>.
+* (Optional) Verify that the system has the two prerequisite software packages installed (Docker Engine and Python 3). The installer will install this software if it is not already on the system.
+* Make sure you have root privileges on the Linux system.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 
 .Steps
 
@@ -241,18 +255,17 @@ You can also link:task_licensing_datasense.html[set up licensing for Cloud Data 
 
 === Multi-host installation for large configurations
 
+For very large configurations where you’ll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are called _Scanner nodes_.
+
 Follow these steps when installing Data Sense software on multiple on-premises hosts.
 
-When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are called _Scanner nodes_.
+.What you'll need
 
-.Requirements
-
-* See <<Review prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Data Sense must be able to reach over the internet.
-
-* The host requirements are the same for Scanner nodes as they are for Manager nodes. See <<Host requirements,Host requirements>> for details.
-
+* Verify that all your Linux systems for the Manager and Scanner nodes meet the <<Prepare the Linux host system,host requirements>>.
+* (Optional) Verify that the systems have the two prerequisite software packages installed (Docker Engine and Python 3). The installer will install this software if it is not already on the systems.
+* Make sure you have root privileges on the Linux systems.
+* Verify that your environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
-
 * The following ports and protocols must be enabled on all hosts:
 +
 [cols="15,20,55",options="header"]

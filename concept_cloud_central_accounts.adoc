@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_cloud_central_accounts.html
 keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
-summary: A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
+summary: A NetApp account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 ---
 
 = Account settings: users, workspaces, Connectors, and subscriptions
@@ -13,23 +13,23 @@ summary: A Cloud Central account provides multi-tenancy and enables you to organ
 :imagesdir: ./media/
 
 [.lead]
-A _Cloud Central account_ provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
+A _NetApp account_ (formerly Cloud Central account) provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 
 For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called _workspaces_. These workspaces are invisible to other users, unless they are shared.
 
-When you first access Cloud Manager, you're prompted to select or create a Cloud Central account:
+When you first access Cloud Manager, you're prompted to select or create a NetApp account:
 
-image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the Cloud Central account in which you want to create Cloud Manager.]
+image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the NetApp account in which you want to create Cloud Manager.]
 
 Account Admins can then modify the settings for this account by managing users (members), workspaces, Connectors, and subscriptions:
 
 image:screenshot_account_settings.gif["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
-For step-by-step instructions, see link:task_setting_up_cloud_central_accounts.html[Setting up the Cloud Central account].
+For step-by-step instructions, see link:task_setting_up_cloud_central_accounts.html[Setting up the NetApp account].
 
 == Account Settings
 
-The Manage Account widget in Cloud Manager enables Account Admins to manage a Cloud Central account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, Connectors, and subscriptions that are associated with the account.
+The Manage Account widget in Cloud Manager enables Account Admins to manage a NetApp account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, Connectors, and subscriptions that are associated with the account.
 
 == Overview
 
@@ -37,7 +37,7 @@ The Overview page shows the Account Name and the Account ID. You may need to pro
 
 == Members
 
-The members are NetApp Cloud Central users that you associate with your Cloud Central account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in Cloud Manager.
+The members are NetApp Cloud Central users that you associate with your NetApp account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in Cloud Manager.
 
 When you associate a user, you assign them a role:
 
@@ -86,18 +86,18 @@ link:task_managing_cloud_central_accounts.html#managing-subscriptions[Learn how 
 
 The following examples depict how you might set up your accounts.
 
-NOTE: In both example images that follow, the Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
+NOTE: In both example images that follow, the Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 === Example 1
 
 The following example shows an account that uses two workspaces to create isolated environments. The first workspace is for a production environment and the second is for a dev environment.
 
-image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud Central account that contains two workspaces. Each workspace is associated with the same Connector and each has their own Workspace Admin.]
+image:diagram_cloud_central_accounts_one.png[A diagram that shows a single NetApp account that contains two workspaces. Each workspace is associated with the same Connector and each has their own Workspace Admin.]
 
 === Example 2
 
-Here's another example that shows the highest level of multi-tenancy by using two separate Cloud Central accounts. For example, a service provider might use Cloud Manager in one account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
+Here's another example that shows the highest level of multi-tenancy by using two separate NetApp accounts. For example, a service provider might use Cloud Manager in one account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
 
 Note that account 2 includes two separate Connectors. This might happen if you have systems in separate regions or in separate cloud providers.
 
-image:diagram_cloud_central_accounts_two.png["A diagram that shows two Cloud Central accounts, each with several workspaces and their associated Workspace Admins."]
+image:diagram_cloud_central_accounts_two.png["A diagram that shows two NetApp accounts, each with several workspaces and their associated Workspace Admins."]

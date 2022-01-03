@@ -39,9 +39,9 @@ sidebar:
           url: /task_signing_up.html
         - title: Log in to Cloud Manager
           url: /task_logging_in.html
-        - title: Set up a Cloud Central account
+        - title: Set up a NetApp account
           entries:
-            - title: Learn about Cloud Central accounts
+            - title: Learn about NetApp accounts
               url: /concept_cloud_central_accounts.html
             - title: Set up an account
               url: /task_setting_up_cloud_central_accounts.html
@@ -466,6 +466,8 @@ sidebar:
                   url: /task_scanning_file_shares.html
                 - title: Object storage
                   url: /task_scanning_object_storage.html
+        - title: Integrate Active Directory
+          url: /task-add-active-directory-datasense.html
         - title: Set up licensing
           url: /task_licensing_datasense.html
         - title: View governance details about your data

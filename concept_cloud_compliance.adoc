@@ -15,8 +15,6 @@ summary: Cloud Data Sense is a data governance service for Cloud Manager that sc
 [.lead]
 Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources and working environments to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 
-NOTE: *Cloud Compliance* was renamed to *Cloud Data Sense* in June 2021.
-
 https://cloud.netapp.com/netapp-cloud-data-sense[Learn about the use cases for Cloud Data Sense^].
 
 == Features
