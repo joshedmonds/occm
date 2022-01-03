@@ -107,8 +107,6 @@ Capacity-based licensing is available in the form of a _package_. When you deplo
 
 This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
 
-NOTE: For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
-
 Essentials package::
 
 * Provides a la carte licensing for Cloud Volumes ONTAP:
@@ -129,6 +127,12 @@ If you have an AWS Marketplace contract, _all_ Cloud Volumes ONTAP systems that 
 * Support is included for the length of the subscription term.
 * Conversions to another licensing option isn't supported.
 * Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
+
+=== A few notes about charging
+
+* For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
+
+* You won't be charged for the capacity used by FlexClone volumes.
 
 === How to get started
 
