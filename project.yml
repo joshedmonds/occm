@@ -354,18 +354,12 @@ sidebar:
       entries:
         - title: Learn about Kubernetes data management
           url: /concept-kubernetes.html
-        - title: Get started with Amazon EKS clusters
+        - title: Get started with EKS clusters
           entries:
             - title: Requirements
               url: /kubernetes-reqs-aws.html
             - title: Add a cluster
               url: /task-kubernetes-discover-aws.html
-        - title: Get started with Azure NetApp Files clusters
-          entries:
-            - title: Requirements
-              url: /kubernetes-reqs-anf.html
-            - title: Add a cluster
-              url: /task-kubernetes-discover-anf.html
         - title: Enable NetApp's cloud data services
           url: /task-kubernetes-enable-services.html
     - title: Protect data using SnapCenter Service
