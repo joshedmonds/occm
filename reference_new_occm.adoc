@@ -64,6 +64,16 @@ If you change the capacity or term for any of your licenses, the license terms n
 
 The automatic license update works with all types of Cloud Volumes ONTAP licenses and all licenses for data services.
 
+=== Cloud Data Sense enhancements
+
+* Now you can integrate a global Active Directory with Cloud Data Sense to enhance the results that Data Sense reports about file owners and which users and groups have access to your files.
++
+In addition to the Active Directory credentials you enter so that Data Sense can scan CIFS volumes from certain data sources, this new integration provides as additional integration for other users and systems. Data Sense will look in all integrated Active Directories for user and permission details. link:task-add-active-directory-datasense.html[See how to set up your global Active Directory].
+
+* Data Sense can automatically delete files that match the query that you define in a Policy. link:task_managing_highlights.html#controlling-your-data-using-policies[See how to create custom Policies].
+
+* The security group for the Cloud Manager Connector will use port 443 instead of port 80 for inbound and outbound traffic to and from the Data Sense instance for added security. Both ports remain open at this time, so you shouldn't see any issues, but you should update the security group in any older deployments of the Connector as port 80 will be deprecated in a future release.
+
 === Cloud Sync enhancements
 
 * Two new sync relationships are supported:
