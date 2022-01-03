@@ -165,9 +165,9 @@ You can update your Cloud Data Sense license before it expires so that there is 
 
 .Steps
 
-. Click the chat icon in the lower-right of Cloud Manager to request an extension or capacity add-on to your Cloud Data Sense license for the particular serial number.
+. Click the chat icon in the lower-right of Cloud Manager to request an extension to your term or additional capacity to your Cloud Data Sense license for the particular serial number.
 +
-After you pay for the license and it is registered with the NetApp Support Site, in most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
+After you pay for the license and it is registered with the NetApp Support Site, Cloud Manager automatically updates the license in the Digital Wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
 . If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Data Sense license file,obtain the license file from the NetApp Support Site>>.

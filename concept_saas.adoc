@@ -33,9 +33,9 @@ This SaaS-based approach provides several benefits:
 
 * It enables us to offer additional management capabilities for Azure NetApp Files and Cloud Volumes Service without needing to deploy software in your environment.
 
-* You can easily switch between your Cloud Central accounts.
+* You can easily switch between your NetApp accounts.
 +
-If a user is associated with multiple Cloud Central accounts, they can change to a different account at any time from the User Settings menu. They can then see the Connectors and working environments that are associated with that account.
+If a user is associated with multiple NetApp accounts, they can change to a different account at any time from the User Settings menu. They can then see the Connectors and working environments that are associated with that account.
 +
 image:screenshot_switch_account.gif[]
 

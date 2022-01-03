@@ -18,7 +18,7 @@ Get started with SnapCenter Service to protect your data in a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Access Cloud Manager
 
 [role="quick-margin-para"]
-You should link:task_signing_up.html[sign up to NetApp Cloud Central], link:task_logging_in.html[log into Cloud Manager], and then set up a link:task_setting_up_cloud_central_accounts.html[Cloud Central account].
+You should link:task_signing_up.html[sign up to NetApp Cloud Central], link:task_logging_in.html[log into Cloud Manager], and then set up a link:task_setting_up_cloud_central_accounts.html[NetApp account].
 
 [role="quick-margin-para"]
 Only an Account Admin can deploy the SnapCenter Service. However, both Account Admin and SnapCenter Admin can perform different operations. link:reference_user_roles.html[Learn more]

@@ -21,7 +21,7 @@ You can manage the following types of licenses for Cloud Volumes ONTAP:
 +
 https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a capacity-based license.
 
-* _Keystone Flex Subscriptions_*, which is a pay-as-you-grow storage service offered by NetApp.
+* _Keystone Flex Subscriptions_, which is a pay-as-you-grow storage service offered by NetApp.
 
 * _Node-based licenses_, which are any of the following:
 ** BYOL licenses purchased from NetApp.
@@ -79,7 +79,9 @@ If you entered a serial number, you also need to select the NetApp Support Site 
 
 === Update a capacity-based license
 
-If you purchased additional capacity or extended the term of your license, then you'll need to update the license in Cloud Manager.
+If you purchased additional capacity or extended the term of your license, Cloud Manager automatically updates the license in the Digital Wallet. There's nothing that you need to do.
+
+However, if you deployed Cloud Manager in a location that doesn't have internet access, then you'll need to manually update the license in Cloud Manager.
 
 .What you'll need
 

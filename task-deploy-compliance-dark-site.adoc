@@ -28,17 +28,20 @@ When installed in this manner (sometimes called an "offline" or "dark" site), Da
 
 There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, or AWS S3 accounts.
 
-== Unsupported features
+== Limitations
 
-Most Data Sense features work when Data Sense is deployed in a site with no internet access. However, certain features that require internet access are not supported, for example:
+Most Data Sense features work when it is deployed in a site with no internet access. However, certain features that require internet access are not supported, for example:
 
-* Microsoft Azure Information Protection (AIP) labels
+* Managing Microsoft Azure Information Protection (AIP) labels
+* Automated software upgrades from Cloud Manager
++
+Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available.
 
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Install the Cloud Manager Connector
 
 [role="quick-margin-para"]
 If you don't already have a Connector installed at your offline on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host now.
@@ -46,7 +49,7 @@ If you don't already have a Connector installed at your offline on-premises site
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review Data Sense prerequisites
 
 [role="quick-margin-para"]
-Ensure that your Linux system meets the <<Verify host requirements,host requirements>>, that it has all required software installed, and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+Ensure that your Linux system meets the <<Prepare the Linux host system,host requirements>>, that it has all required software installed, and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy Data Sense
 
@@ -58,11 +61,11 @@ Download the Cloud Data Sense software from the NetApp Support Site and copy the
 [role="quick-margin-para"]
 The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A BYOL license from NetApp is required to continue scanning data after that point.
 
-== Create a Connector
+== Install the Cloud Manager Connector
 
 If you don't already have a Cloud Manager Connector installed at your offline on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host in your offline site.
 
-== Verify host requirements
+== Prepare the Linux host system
 
 Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on.
 
@@ -98,18 +101,22 @@ Make sure port 8080 is open so you can see the installation progress in Cloud Ma
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
 
-== Deploy Data Sense on a single host (typical configuration)
+== Deploy Data Sense
 
-For typical configurations you'll install the software on a single host system. Follow these steps when installing Data Sense software on a single on-premises host in an offline environment.
+For typical configurations you'll install the software on a single host system. link:task-deploy-compliance-dark-site.html#single-host-installation-for-typical-configurations[See those steps here].
 
-For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. link:task-deploy-compliance-dark-site.html#deploy-data-sense-on-multiple-hosts-large-configurations[See those steps here].
+For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. link:task-deploy-compliance-dark-site.html#multi-host-installation-for-large-configurations[See those steps here].
+
+=== Single-host installation for typical configurations
+
+Follow these steps when installing Data Sense software on a single on-premises host in an offline environment.
 
 .What you'll need
 
-* Verify that your Linux system meets the <<Verify host requirements,host requirements>>.
+* Verify that your Linux system meets the <<Prepare the Linux host system,host requirements>>.
 * Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
-* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 * Make sure you have root privileges on the Linux system.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
 
 .Steps
 
@@ -182,11 +189,11 @@ The Data Sense installer installs packages, registers the installation, and inst
 If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Data Sense tab in Cloud Manager.
 
 .What's Next
-From the Configuration page you can select the local on-prem ONTAP clusters and databases that you want to scan.
+From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
 //
 // You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
 
-== Deploy Data Sense on multiple hosts (large configurations)
+=== Multi-host installation for large configurations
 
 For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are called _Scanner nodes_.
 
@@ -194,10 +201,10 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 
 .What you'll need
 
-* Verify that all your Linux systems meet the <<Verify host requirements,host requirements>>.
+* Verify that all your Linux systems for the Manager and Scanner nodes meet the <<Prepare the Linux host system,host requirements>>.
 * Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
+* Make sure you have root privileges on the Linux systems.
 * Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
-* Make sure you have root privileges on the Linux system.
 * You must have the IP addresses of the scanner node hosts that you plan to use.
 * The following ports and protocols must be enabled on all hosts:
 +
@@ -243,7 +250,8 @@ When the installation finishes on all scanner nodes and they have been joined to
 The Cloud Data Sense installer finishes installing packages, and registers the installation. Installation can take 15 to 25 minutes.
 
 .What's Next
-From the Configuration page you can select the local on-prem ONTAP clusters and databases that you want to scan.
+From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
+
 //
 // You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
 //
