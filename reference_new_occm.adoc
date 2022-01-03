@@ -97,6 +97,8 @@ This permission is automatically added to any new data brokers that you create.
 +
 image:screenshot-sync-table.png[A screenshot of the table view in the Dashboard.]
 
+* Cloud Sync now supports deploying the data broker in the AWS Asia Pacific (Jakarta) region.
+
 === Connector enhancements
 
 * We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.
