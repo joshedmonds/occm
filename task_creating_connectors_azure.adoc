@@ -15,7 +15,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 [.lead]
 An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept_connectors.html[Learn when a Connector is required].
 
-This page describes how to create a Connector in Azure directly from the Cloud Manager user interface. You also have the option to link:task_launching_azure_mktp.html[create the Connector from the Azure Marketplace], or to link:task_installing_linux.html[download the software and install it on your own host].
+This page describes how to create a Connector in Azure directly from Cloud Manager. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
@@ -108,7 +108,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 * A VNet and subnet in your Azure region of choice.
 
-* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[using this policy^].
+* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[using this policy^].
 +
 These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
 
@@ -136,7 +136,7 @@ TIP: If you're already logged in to an Azure account, then Cloud Manager will au
 
 * *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 
-* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[the required permissions^].
+* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[the required permissions^].
 +
 Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
 
@@ -328,7 +328,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 * A VNet and subnet in your Azure region of choice.
 
-* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[using this policy^].
+* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[using this policy^].
 +
 These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
 
@@ -354,7 +354,7 @@ link:reference_networking_cloud_manager.html[Learn more about networking require
 
 * *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 
-* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.8.json[the required permissions^].
+* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[the required permissions^].
 +
 Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
 

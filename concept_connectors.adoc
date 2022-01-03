@@ -19,18 +19,18 @@ In most cases, an Account Admin will need to deploy a _Connector_ in your cloud 
 
 A Connector is required to use any of the following features within Cloud Manager:
 
-* Cloud Volumes ONTAP
-* On-premises ONTAP clusters
-* Cloud Data Sense
-* Kubernetes
-* Cloud Backup
-* Monitoring
-* Tiering on-prem data
-* Global File Cache
-* Amazon S3 bucket discovery
 * Amazon FSx for ONTAP advanced management features
+* Amazon S3 bucket discovery
+* Cloud Backup
+* Cloud Data Sense
+* Cloud Tiering
+* Cloud Volumes ONTAP
+* Global File Cache
+* Kubernetes clusters
+* Monitoring
+* On-premises ONTAP clusters
 
-A Connector is *_not_* required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync.
+A Connector is *_not_* required for Azure NetApp Files, Cloud Volumes Service, Cloud Sync, or Active IQ Digital Advisor.
 
 NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
 
@@ -42,6 +42,7 @@ A Connector is supported in the following locations:
 * Microsoft Azure
 * Google Cloud
 * On your premises
+* On your premises, without internet access
 
 NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
@@ -61,11 +62,14 @@ An Account Admin can create a Connector in a number of ways:
 ** link:task_creating_connectors_aws.html[Create in AWS]
 ** link:task_creating_connectors_azure.html[Create in Azure]
 ** link:task_creating_connectors_gcp.html[Create in GCP]
-* link:task_launching_aws_mktp.html[From the AWS Marketplace]
-* link:task_launching_azure_mktp.html[From the Azure Marketplace]
-* link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]
+* By manually installing the software on your own Linux host
+** link:task_installing_linux.html[On a host that has internet access]
+** link:task-install-connector-onprem-no-internet.html[On an on-prem host that doesn't have internet access]
+* From your cloud provider's marketplace
+** link:task_launching_aws_mktp.html[AWS Marketplace]
+** link:task_launching_azure_mktp.html[Azure Marketplace]
 
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
+Cloud Manager will prompt you to create a Connector if one is needed to complete an action.
 
 == Permissions
 
@@ -126,7 +130,7 @@ link:task_managing_connectors.html#switch-between-connectors[Learn how to switch
 
 == The local user interface
 
-While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
+While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
 * link:task_configuring_proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)

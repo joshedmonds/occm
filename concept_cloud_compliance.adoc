@@ -15,8 +15,6 @@ summary: Cloud Data Sense is a data governance service for Cloud Manager that sc
 [.lead]
 Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources and working environments to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 
-NOTE: *Cloud Compliance* was renamed to *Cloud Data Sense* in June 2021.
-
 https://cloud.netapp.com/netapp-cloud-data-sense[Learn about the use cases for Cloud Data Sense^].
 
 == Features
@@ -28,7 +26,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Respond to Data Subject Access Requests (DSAR)
 * Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add a custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
+* Add custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
 * Copy, move, and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
@@ -54,12 +52,11 @@ Cloud Data Sense can scan data from the following types of working environments 
 * Databases
 * OneDrive accounts
 
-NOTE: A Beta feature released in January 2021 allows you to run compliance scans on the backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes (when the backups reside in AWS or Azure cloud storage).
+NOTE: A Beta feature released in January 2021 allows you to run compliance scans on the backup files from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost
 
-// add GCP below
-* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS or Azure Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
+* The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
 +
 link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
 +
@@ -67,7 +64,7 @@ link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
 
 * Installing Cloud Data Sense in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See <<The Cloud Data Sense instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Data Sense on an on-premises system.
 
-* Cloud Data Sense requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
+* Cloud Data Sense requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^]. There is no cost if you install the Connector on an on-premises system.
 
 === Data transfer costs
 
@@ -101,7 +98,7 @@ In regions where n2-standard-16 isn't available, Data Sense runs on an n2d-stand
 
 * Only one Data Sense instance is deployed per Connector.
 
-* Upgrades of Data Sense software is automated--you don't need to worry about it.
+* Upgrades of Data Sense software is automated as long as the instance has internet access.
 
 TIP: The instance should remain running at all times because Cloud Data Sense continuously scans the data.
 
@@ -130,15 +127,15 @@ At a high-level, Cloud Data Sense works like this:
 . You deploy an instance of Data Sense in Cloud Manager.
 . You enable high-level mapping or deep-level scanning on one or more working environments or data sources.
 . Data Sense scans the data using an AI learning process.
-. You click *Data Sense* and use the provided dashboards and reporting tools to help in your compliance efforts.
+. You use the provided dashboards and reporting tools to help in your compliance and governance efforts.
 
 == How scans work
 
-After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive users you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
+After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive user data you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
 
 Data Sense connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 
-image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager instance and a Cloud Data Sense instance running in your cloud provider. The Cloud Data Sense instance connects to NFS and CIFS volumes S3 buckets OneDrive accounts and databases to scan them.]
+image:diagram_cloud_compliance_scan.png["A diagram that shows a Cloud Manager instance and a Cloud Data Sense instance running in your cloud provider. The Data Sense instance connects to NFS and CIFS volumes, S3 buckets, OneDrive accounts, and databases to scan them."]
 
 After the initial scan, Data Sense continuously scans your data to detect incremental changes (this is why it's important to keep the instance running).
 
@@ -148,7 +145,7 @@ You can enable and disable scans at the volume level, at the bucket level, at th
 
 Cloud Data Sense enables you to run a general "mapping" scan on selected working environments and data sources. Mapping provides only a high-level overview of your data, whereas Classification provides deep-level scanning of your data. Mapping can be done on your data sources very quickly because it does not access files to see the data inside.
 
-Many users like this functionality because they want to quickly scan their data to identify the data sources that require more research - and then they can enable classification scans only on those required data sources.
+Many users like this functionality because they want to quickly scan their data to identify the data sources that require more research - and then they can enable classification scans only on those data sources or volumes.
 
 The table below shows some of the differences:
 
@@ -165,9 +162,9 @@ The table below shows some of the differences:
 | Ability to run a link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] | Yes | Yes
 | Data Investigation page to view file details | Yes | No
 | Search for names within files | Yes | No
-| Create policies that provide custom search results | Yes | No
+| Create link:task_managing_highlights.html#controlling-your-data-using-policies[policies] that provide custom search results | Yes | No
 | Categorize data using AIP labels and Status tags | Yes | No
-| Delete and move source files | Yes | No
+| Copy, delete, and move source files | Yes | No
 | Ability to run other reports | Yes | No
 |===
 
@@ -208,6 +205,6 @@ The role each user has been assigned provides different capabilities within Clou
 
 * A *Workspace Admin* can manage compliance settings and view compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Data Sense tab.
 
-* Users with the *Compliance Viewer* role can only view compliance information and generate reports for systems that they have permission to access. These users cannot enable/disable scanning of volumes, buckets, or database schemas.
+* Users with the *Compliance Viewer* role can only view compliance information and generate reports for systems that they have permission to access. These users cannot enable/disable scanning of volumes, buckets, or database schemas. These users can't copy, move, or delete files either.
 
 link:reference_user_roles.html[Learn more about Cloud Manager roles^] and how to link:task_managing_cloud_central_accounts.html#adding-users[add users with specific roles^].

@@ -137,6 +137,8 @@ image:screenshot_compliance_permissions.png[A screenshot showing detailed file p
 
 This button is available only for files in CIFS shares.
 
+Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. link:task-add-active-directory-datasense.html[See how to do this]. 
+
 == Checking for duplicate files in your storage systems
 
 You can view if duplicate files are being stored in your storage systems. This is useful if you want to identify areas where you can save storage space. It can also be helpful to make sure certain files that have specific permissions or sensitive information are not unnecessarily duplicated in your storage systems.

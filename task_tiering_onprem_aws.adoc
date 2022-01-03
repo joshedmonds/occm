@@ -96,7 +96,6 @@ A Connector is required to tier data to the cloud. When tiering data to AWS S3, 
 
 * link:concept_connectors.html[Learn about Connectors]
 * link:task_creating_connectors_aws.html[Creating a Connector in AWS]
-* link:reference_cloud_mgr_reqs.html[Connector host requirements]
 * link:task_installing_linux.html[Installing the Connector on an existing Linux host]
 * link:task_managing_connectors.html[Switching between Connectors]
 
@@ -119,6 +118,8 @@ A VPC Endpoint to S3 is recommended if you have a Direct Connect or VPN connecti
 === Preparing Amazon S3
 
 When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
+
+The S3 bucket must be in a link:reference_aws_support.html#supported-aws-regions[region that supports Cloud Tiering].
 
 NOTE: If you are planning to configure Cloud Tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. Cloud Tiering manages the life cycle transitions.
 

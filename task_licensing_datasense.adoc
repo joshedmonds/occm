@@ -20,7 +20,7 @@ A few notes before you read any further:
 * If you've already subscribed to the Cloud Manager pay-as-you-go (PAYGO) subscription in your cloud provider's marketplace, then you're automatically subscribed to Cloud Data Sense as well. You won’t need to subscribe again.
 // You'll see an active subscription in the Digital Wallet.
 
-* The Cloud Data Sense bring-your-own-license (BYOL) is a _floating_ license that you can use across all the working environments and data sources in the workspace that you plan to scan.
+* The Cloud Data Sense bring-your-own-license (BYOL) is a _floating_ license that you can use across all the working environments and data sources in the workspace that you plan to scan. You'll see an active subscription in the Digital Wallet.
 
 * There is no charge for scanning backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup]). This data doesn't count against the capacity purchased in your license.
 
@@ -44,11 +44,9 @@ These steps must be completed by a user who has the _Account Admin_ role.
 +
 image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
 
-// . Find the credentials for the AWS Instance Profile, Azure Managed Service Identity, or Google Project.
-. Find the credentials for the AWS Instance Profile or Azure Managed Service Identity.
+. Find the credentials for the AWS Instance Profile, Azure Managed Service Identity, or Google Project.
 +
-// The subscription must be added to the Instance Profile, Managed Service Identity, or Google Project. Charging won't work otherwise.
-The subscription must be added to the Instance Profile or Managed Service Identity. Charging won't work otherwise.
+The subscription must be added to the Instance Profile, Managed Service Identity, or Google Project. Charging won't work otherwise.
 +
 If you already have a subscription (shown below for AWS), then you're all set--there's nothing else that you need to do.
 +
@@ -67,10 +65,10 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 The following video shows how to associate an https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^] subscription to an Azure subscription:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
-// +
-// The following video shows how to associate a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^] subscription to a GCP subscription:
-// +
-// video::video_subscribing_gcp.mp4[width=848, height=480]
++
+The following video shows how to associate a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^] subscription to a GCP subscription:
++
+video::video_subscribing_gcp.mp4[width=848, height=480]
 
 === Change to the new Cloud Manager plan in Azure
 
@@ -167,9 +165,9 @@ You can update your Cloud Data Sense license before it expires so that there is 
 
 .Steps
 
-. Click the chat icon in the lower-right of Cloud Manager to request an extension or capacity add-on to your Cloud Data Sense license for the particular serial number.
+. Click the chat icon in the lower-right of Cloud Manager to request an extension to your term or additional capacity to your Cloud Data Sense license for the particular serial number.
 +
-After you pay for the license and it is registered with the NetApp Support Site, in most cases, Cloud Manager can automatically obtain your updated license file and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
+After you pay for the license and it is registered with the NetApp Support Site, Cloud Manager automatically updates the license in the Digital Wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
 . If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Data Sense license file,obtain the license file from the NetApp Support Site>>.

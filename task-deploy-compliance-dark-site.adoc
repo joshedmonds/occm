@@ -1,0 +1,276 @@
+---
+sidebar: sidebar
+permalink: task-deploy-compliance-dark-site.html
+keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site
+summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access. This type of installation is perfect for your secure sites.
+---
+
+= Deploy Cloud Data Sense on prem without internet access
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access. This type of installation is perfect for your secure sites.
+
+Note that you can also link:task-deploy-compliance-onprem.html[deploy Data Sense in an on-premises site that has internet access].
+
+== Supported data sources
+
+When installed in this manner (sometimes called an "offline" or "dark" site), Data Sense can only scan data from data sources that are also local to the on-premises site. At this time, Data Sense can scan the following local data sources:
+
+* On-premises ONTAP systems
+* Database schemas
+* Non-NetApp NFS or CIFS file shares
+* Object Storage that uses the Simple Storage Service (S3) protocol
+
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, or AWS S3 accounts.
+
+== Limitations
+
+Most Data Sense features work when it is deployed in a site with no internet access. However, certain features that require internet access are not supported, for example:
+
+* Managing Microsoft Azure Information Protection (AIP) labels
+* Automated software upgrades from Cloud Manager
++
+Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available.
+
+== Quick start
+
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Install the Cloud Manager Connector
+
+[role="quick-margin-para"]
+If you don't already have a Connector installed at your offline on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host now.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review Data Sense prerequisites
+
+[role="quick-margin-para"]
+Ensure that your Linux system meets the <<Prepare the Linux host system,host requirements>>, that it has all required software installed, and that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Deploy Data Sense
+
+[role="quick-margin-para"]
+Download the Cloud Data Sense software from the NetApp Support Site and copy the installer file to the Linux host you plan to use. Then launch the installation wizard and follow the prompts to deploy the Cloud Data Sense instance.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Subscribe to the Cloud Data Sense service
+
+[role="quick-margin-para"]
+The first 1 TB of data that Cloud Data Sense scans in Cloud Manager is free. A BYOL license from NetApp is required to continue scanning data after that point.
+
+== Install the Cloud Manager Connector
+
+If you don't already have a Cloud Manager Connector installed at your offline on-premises site, link:task-install-connector-onprem-no-internet.html[deploy the Connector^] on a Linux host in your offline site.
+
+== Prepare the Linux host system
+
+Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on.
+
+* Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
+** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
+** The OS must be capable of installing the Docker Engine (for example, disable the _firewalld_ service if needed)
+* Disk: SSD with 500 GiB available on /, or
+** 100 GiB available on /opt
+** 400 GiB available on /var
+* RAM: 64 GB (swap memory must be disabled on the host)
+* CPU: 16 cores
++
+Note that you can deploy Data Sense on a system with fewer CPUs and less RAM, but there are limitations when using these systems. See link:concept_cloud_compliance.html#using-a-smaller-instance-type[Using a smaller instance type] for details.
+
+The following software must be installed on the host before you install Data Sense:
+
+* Docker Engine version 19 or later. https://docs.docker.com/engine/install/[View installation instructions^].
+
+* Python 3 version 3.6 or later. https://www.python.org/downloads/[View installation instructions^].
+
+== Verify Cloud Manager and Data Sense prerequisites
+
+Review the following prerequisites to make sure that you have a supported configuration before you deploy Cloud Data Sense.
+
+* Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Data Sense instance.
+* Ensure that the Cloud Manager Connector can access the Data Sense instance. The security group for the Connector must allow inbound and outbound traffic over port 443 to and from the Data Sense instance.
++
+This connection enables deployment of the Data Sense instance and enables you to view compliance and governance information.
++
+Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
+* Ensure that you can keep Cloud Data Sense running. The Cloud Data Sense instance needs to stay on to continuously scan your data.
+* Ensure web browser connectivity to Cloud Data Sense. After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
++
+The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
+
+== Deploy Data Sense
+
+For typical configurations you'll install the software on a single host system. link:task-deploy-compliance-dark-site.html#single-host-installation-for-typical-configurations[See those steps here].
+
+For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. link:task-deploy-compliance-dark-site.html#multi-host-installation-for-large-configurations[See those steps here].
+
+=== Single-host installation for typical configurations
+
+Follow these steps when installing Data Sense software on a single on-premises host in an offline environment.
+
+.What you'll need
+
+* Verify that your Linux system meets the <<Prepare the Linux host system,host requirements>>.
+* Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
+* Make sure you have root privileges on the Linux system.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+
+.Steps
+
+. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *DataSense-offline-bundle-<version>.tar.gz*.
+
+. Copy the installer bundle to the Linux host you plan to use in the dark site.
+
+. Unzip the installer bundle on the host machine, for example:
++
+[source,cli]
+tar -xzf DataSense-offline-bundle-v1.7.2.tar.gz
++
+This extracts required software and the actual installation file *cc_onprem_installer_<version>.tar.gz*.
+
+. Launch Cloud Manager and click the *Data Sense* tab.
+
+. Click *Activate Data Sense*.
++
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Data Sense.]
+
+. Click *Deploy* to start the on-prem deployment wizard.
++
+image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting the button to deploy Cloud Data Sense on premises.]
+
+. In the _Deploy Data Sense On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later, and click *Close*. For example:
++
+`sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite`
+
+. Unzip the installer file on the host machine, for example:
++
+[source,cli]
+tar -xzf cc_onprem_installer_1.7.2.tar.gz
+
+. When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
+
++
+[cols="50a,50",options="header"]
+|===
+| Enter parameters as prompted:
+| Enter the full command:
+
+|
+a. Paste the information you copied from step 7:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --darksite`
+b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
+c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
+d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
+| Alternatively, you can create the whole command in advance and enter it in the first prompt:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password> --darksite`
+|===
+
++
+Variable values:
+
+* _account_id_ = NetApp Account ID
+* _agent_id_ = Connector ID
+* _token_ = jwt user token
+* _ds_host_ = IP address or host name of the Data Sense Linux system.
+* _cm_host_ = IP address or host name of the Cloud Manager Connector system.
+* _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
+* _proxy_port_ = Port to connect to the proxy server (default 80).
+* _proxy_scheme_ = Connection scheme: https or http (default http).
+* _proxy_user_ = Authenticated user to connect to the proxy server, if basic authentication is required.
+* _proxy_password_ = Password for the user name that you specified.
+
+.Result
+
+The Data Sense installer installs packages, registers the installation, and installs Data Sense. Installation can take 10 to 20 minutes.
+
+If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Data Sense tab in Cloud Manager.
+
+.What's Next
+From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
+//
+// You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
+
+=== Multi-host installation for large configurations
+
+For very large configurations where you'll be scanning petabytes of data, you can include multiple hosts to provide additional processing power. When using multiple host systems, the primary system is called the _Manager node_ and the additional systems that provide extra processing power are called _Scanner nodes_.
+
+Follow these steps when installing Data Sense software on multiple on-premises hosts in an offline environment.
+
+.What you'll need
+
+* Verify that all your Linux systems for the Manager and Scanner nodes meet the <<Prepare the Linux host system,host requirements>>.
+* Verify that you have installed the two prerequisite software packages (Docker Engine and Python 3).
+* Make sure you have root privileges on the Linux systems.
+* Verify that your offline environment meets the required <<Verify Cloud Manager and Data Sense prerequisites,permissions and connectivity>>.
+* You must have the IP addresses of the scanner node hosts that you plan to use.
+* The following ports and protocols must be enabled on all hosts:
++
+[cols="15,20,55",options="header"]
+|===
+| Port
+| Protocols
+| Description
+
+|2377 | TCP | Cluster management communications
+|7946 | TCP, UDP | Inter-node communication
+|4789 | UDP | Overlay network traffic
+|50 | ESP | Encrypted IPsec overlay network (ESP) traffic
+|111 | TCP, UDP | NFS Server for sharing files between the hosts (needed from each scanner node to manager node)
+|2049 | TCP, UDP | NFS Server for sharing files between the hosts (needed from each scanner node to manager node)
+
+|===
+
+.Steps
+
+. Follow steps 1 through 8 from the link:task-deploy-compliance-dark-site.html#deploy-data-sense-on-a-single-host-typical-configuration[Single-host installation] on the manager node.
+
+. As shown in step 9, when prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt.
++
+In addition to the variables available for a single-host installation, a new option *-n <node_ip>* is used to specify the IP addresses of the scanner nodes. Multiple node IPs are separated by a comma.
++
+For example, this command adds 3 scanner nodes:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> *-n <node_ip1>,<node_ip2>,<node_ip3>* --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password> --darksite`
+
+. Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
++
+`sudo ./node_install.sh -m 10.11.12.13 -t ABCDEF-1-3u69m1-1s35212`
+
+. On *each* scanner node host:
+.. Copy the Data Sense installer file (*cc_onprem_installer_<version>.tar.gz*) to the host machine.
+.. Unzip the installer file.
+.. Paste and execute the command that you copied in step 3.
++
+When the installation finishes on all scanner nodes and they have been joined to the manager node, the manager node installation finishes as well.
+
+.Result
+
+The Cloud Data Sense installer finishes installing packages, and registers the installation. Installation can take 15 to 25 minutes.
+
+.What's Next
+From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
+
+//
+// You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
+//
+// == Upgrade Data Sense software
+//
+// You must upgrade Data Sense software manually because there is no internet connectivity. Since the software is updated with new features on a regular basis, you should get into a routine to check for new versions periodically to make sure you are using the newest software and features.
+//
+// .Steps
+//
+// . On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
+//
+// . Copy the installer package to the Linux host where Data Sense is installed in the dark site.
+// +
+// If you are using multiple hosts to scan large environments, copy the installation package to all hosts (manager and scanner nodes).
+//
+// . Unzip the upgrade file on all hosts.
+//
+// . Enter the following command on the manager node:
+// `sudo ./upgrade.sh`
+//
+// . If you are using multiple hosts, enter the following command on all scanner nodes:
+// `sudo ./node_upgrade.sh`

@@ -125,6 +125,25 @@ Cloud Manager can now display the email address that's associated with a NetApp 
 
 image:screenshot-nss-display-email.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address.]
 
+== Cloud Manager 3.9.13 update (16 Dec 2021)
+
+This updates includes enhancements to several features and services.
+
+=== Cloud Manager and Cloud Data Sense enhancements
+
+This update provides support for Cloud Manager and Cloud Data Sense to be deployed in an on-premises site that doesn’t have internet access. Now your secure sites can use Cloud Manager to manage your on-prem ONTAP clusters, replicate data between clusters, and scan data from those clusters using Cloud Data Sense.
+
+* link:task-install-connector-onprem-no-internet.html[See how to deploy the Cloud Manager Connector in a site with no internet access^].
+* link:task-deploy-compliance-dark-site.html[See how to deploy Cloud Data Sense in a site with no internet access^].
+
+=== SnapCenter Service 1.0.1 (21 Dec)
+
+This update includes security fixes for Apache Log4j vulnerabilities.
+
+SnapCenter Service 1.0.1 upgrades Apache Log4j from version 2.9.1 to 2.17 to address the following vulnerabilities: CVE-2021-44228, CVE-2021-4104, and CVE-2021-45105.
+
+The SnapCenter Service cluster should auto-update to the latest version. You should ensure that the version in the SnapCenter Service UI shows that the cluster is 1.0.1.1251 or later.
+
 == Cloud Manager 3.9.13 (28 Nov 2021)
 
 This update includes enhancements to several features and services.
@@ -199,6 +218,8 @@ If your EKS cluster has NetApp Astra Trident installed, and it is using Cloud Vo
 * You can use Data Sense to clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume. This is helpful for situations where you’re migrating data and you want to exclude certain files, or if you want to create a copy of a volume for testing.
 +
 link:task_managing_highlights.html#cloning-volume-data-to-a-new-volume[See how to clone a volume].
+
+* The link:https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace subscription for Cloud Manager^] now includes support for Cloud Data Sense. So now you can use this pay-as-you-go (PAYGO) subscription to scan data from Cloud Volumes ONTAP systems deployed on Google Cloud storage in addition to using a BYOL license from NetApp.
 
 * Now you can view the status of your long-running compliance actions.
 +

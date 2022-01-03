@@ -14,11 +14,13 @@ summary: The Discovery page in Cloud Manager shows you any undiscovered ONTAP cl
 
 The Discovery page in Cloud Manager shows you any undiscovered ONTAP clusters in your on-premises environments, whether any clusters require updated disk or shelf firmware, and if you are using all the Cloud Volumes ONTAP licenses that you were granted when you purchased the on-prem systems. This information is provided to Cloud Manager from link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
 
-== Viewing unused Cloud Volumes ONTAP licenses
+== Viewing unused Cloud Volumes ONTAP node-based licenses
 
-Many on-premises ONTAP storage system packages that you purchased included a free Cloud Volumes ONTAP license so you can try the NetApp cloud storage offerings in Cloud Manager. You can use the license to create a new Cloud Volumes ONTAP instance, or you can apply the license to an existing Cloud Volumes ONTAP instance to expand the capacity by 368 TiB.
+Many on-premises ONTAP storage system packages that you purchased included a free Cloud Volumes ONTAP node-based license so you can try the NetApp cloud storage offerings in Cloud Manager. You can use the license to create a new Cloud Volumes ONTAP instance, or you can apply the license to an existing Cloud Volumes ONTAP instance to expand the capacity by 368 TiB.
 
 You can see whether you have any unused Cloud Volumes ONTAP licenses based on your NetApp Support Site credentials.
+
+TIP: The term for a node-based license starts on the first day of the next month after the license was issued. For example, if you obtain a node-based BYOL license on Dec 15, 2021, the license term starts on Jan 1, 2022 (the first day of the next month).
 
 .Steps
 

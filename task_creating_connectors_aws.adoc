@@ -15,7 +15,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 [.lead]
 An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept_connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-This page describes how to create a Connector in AWS directly from Cloud Manager. You also have the option to link:task_launching_aws_mktp.html[create the Connector from the AWS Marketplace], or to link:task_installing_linux.html[download the software and install it on your own host].
+This page describes how to create a Connector in AWS directly from Cloud Manager. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
