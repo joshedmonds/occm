@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_setting_up_cloud_central_accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
-summary: When you log in to Cloud Manager for the first time, you're prompted to create a NetApp Cloud Central account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
+summary: When you log in to Cloud Manager for the first time, you're prompted to create a NetApp account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 ---
 
-= Setting up workspaces and users in the Cloud Central account
+= Setting up workspaces and users in your NetApp account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: When you log in to Cloud Manager for the first time, you're prompted to
 :imagesdir: ./media/
 
 [.lead]
-When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
+link:concept_cloud_central_accounts.html[Learn more about how NetApp accounts work].
 
-Set up your Cloud Central account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
+Set up your NetApp account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
 == Adding workspaces
 
@@ -45,7 +45,7 @@ If a Workspace Admin needs access to this workspace, then you'll need to associa
 
 == Adding users
 
-Associate Cloud Central users with the Cloud Central account so those users can create and manage working environments in Cloud Manager.
+Associate Cloud Central users with the NetApp account so those users can create and manage working environments in Cloud Manager.
 
 .Steps
 

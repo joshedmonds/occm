@@ -49,6 +49,28 @@ image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector ic
 +
 The Cloud Manager interface running on the Connector loads in a new browser tab.
 
+== Downloading or sending an AutoSupport message
+
+If you're having problems, NetApp personnel might ask you to send an AutoSupport message to NetApp support for troubleshooting purposes.
+
+.Steps
+
+. Connect to the Connector local UI, as described in the section above.
+
+. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
++
+image:screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
+
+. Click *Connector*.
+
+. Depending on how you need to send the information to NetApp support, choose one of the following options:
+
+.. Select the option to download the AutoSupport message to your local machine. You can then send it to NetApp Support using a preferred method.
+.. Click *Send AutoSupport* to directly send the message to NetApp Support.
+
++
+image:screenshot-connector-autosupport.png[]
+
 == Editing a Connector's URIs
 
 Add and remove the URIs for a Connector.

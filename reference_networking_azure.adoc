@@ -72,37 +72,17 @@ For example, if you install a Connector in your corporate network, then you must
 
 === Outbound internet access
 
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in Azure:
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
 
-include::_include/connector_endpoints_azure.adoc[]
-
-While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
-
-[cols="43,57",options="header"]
+[cols=2*,options="header,autowidth"]
 |===
 | Endpoints
 | Purpose
-|
-The Connector host
 
-a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
-
-Depending on your connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
-
-- A private IP works if you have a VPN and direct connect access to your virtual network
-- A public IP works in any networking scenario
-
-In any case, you should secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
-
-|
-\https://auth0.com
-\https://cdn.auth0.com
-\https://services.cloud.netapp.com
-
-| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
-
-| \https://widget.intercom.io
-| For in-product chat that enables you to talk to NetApp cloud experts.
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://hub.docker.com
+\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
 
 |===
 

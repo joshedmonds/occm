@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_key_changes.html
-keywords: what's new, key changes, saas, accounts, workspaces, users, connectors, endpoints, urls, permissions, permission changes
+keywords: what's new, key changes, saas, accounts, workspaces, users, connectors, urls, permissions, permission changes
 summary: This page highlights _important_ changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the What's new page to learn about all new features and enhancements.
 ---
 
@@ -42,9 +42,9 @@ Cloud Manager will prompt you with instructions to change the machine type of th
 
 == Account settings
 
-We introduced Cloud Central accounts to provide multi-tenancy, to help you organize users and resources in isolated workspaces, and to manage access to Connectors and subscriptions.
+We introduced NetApp accounts to provide multi-tenancy, to help you organize users and resources in isolated workspaces, and to manage access to Connectors and subscriptions.
 
-* link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts: users, workspaces, Connectors, and subscriptions]
+* link:concept_cloud_central_accounts.html[Learn about NetApp accounts: users, workspaces, Connectors, and subscriptions]
 * link:task_setting_up_cloud_central_accounts.html[Learn how to get started with your account]
 * link:task_managing_cloud_central_accounts.html[Learn how to manage your account after you set it up]
 
@@ -224,19 +224,3 @@ Starting with the 3.8 release, the following permissions are now required to use
 - compute.instances.setServiceAccount
 - iam.serviceAccounts.getIamPolicy
 - iam.serviceAccounts.list
-
-== New endpoints
-
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment. This section identifies new endpoints that are now required.
-
-You can find the link:reference_networking.html[full list of endpoints accessed from your web browser here] and the link:reference_networking_cloud_manager.html#outbound-internet-access[full list of endpoints accessed by the Connector here].
-
-* Users need to access Cloud Manager from a web browser by contacting the following endpoint:
-+
-\https://cloudmanager.netapp.com
-
-* Connectors require access to the following endpoint to obtain software images of container components for a Docker infrastructure:
-+
-\https://cloudmanagerinfraprod.azurecr.io
-+
-Ensure that your firewall enables access to this endpoint from the Connector.

@@ -284,11 +284,11 @@ Note that the retention period for backups of data protection volumes is the sam
 
 The start time is based on the time zone set on each source ONTAP system. You can’t schedule backup operations at a user-specified time from the UI. For more information, contact your System Engineer.
 
-=== Backup copies are associated with your Cloud Central account
+=== Backup copies are associated with your NetApp account
 
-Backup copies are associated with the link:concept_cloud_central_accounts.html[Cloud Central account^] in which Cloud Manager resides.
+Backup copies are associated with the link:concept_cloud_central_accounts.html[NetApp account^] in which the Connector resides.
 
-If you have multiple Cloud Manager systems in the same Cloud Central account, each Cloud Manager system will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP and on-premises ONTAP instances from other Cloud Manager systems.
+If you have multiple Connectors in the same NetApp account, each Connector will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP and on-premises ONTAP instances from other Connectors.
 
 == FabricPool tiering policy considerations
 
