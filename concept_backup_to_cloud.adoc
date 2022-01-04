@@ -90,10 +90,10 @@ On-premises ONTAP system |
 | NetApp StorageGRID | ONTAP | On-premises ONTAP system |
 
 |===
-
-=== Support for sites with no internet connectivity
-
-Cloud Backup can be used in a site with no internet connectivity (an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+//
+// === Support for sites with no internet connectivity
+//
+// Cloud Backup can be used in a site with no internet connectivity (an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
 
 == Cost
 
@@ -313,7 +313,8 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.
 
-* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises. The Connector can be installed in a site with or without internet access.
+* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
+// The Connector can be installed in a site with or without internet access.
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Cloud Backup and then enable it again.
 

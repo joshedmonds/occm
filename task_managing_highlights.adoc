@@ -405,11 +405,11 @@ The status can be:
 * Canceled
 * Failed
 
-Note that you can Cancel any actions that have the "Queued" and "In Progress" status.
+Note that you can Cancel any actions that have the "Queued" or "In Progress" status.
 
 .Steps
 
-. In the bottom-right of the Configuration tab you can see the button *Action Status*.
+. In the bottom-right of the Data Sense UI you can see the *Actions Status* button image:button_actions_status.png[].
 
 . Click this button and the most recent 20 actions are listed.
 +
