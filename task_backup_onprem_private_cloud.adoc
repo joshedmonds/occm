@@ -77,7 +77,7 @@ The following image shows each component when backing up an on-prem ONTAP system
 
 image:diagram_cloud_backup_onprem_storagegrid.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 //
-// When the Connector is installed in an on-prem location without internet access, the StorageGRID system must be located in the same on-prem data center.
+// When the Connector and on-premises ONTAP system are installed in an on-prem location without internet access, the StorageGRID system must be located in the same on-prem data center.
 
 Note that the Cloud Restore instance is not shown in this diagram because single-file restore is not currently supported when using StorageGRID.
 
@@ -109,7 +109,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 * The nodes' intercluster LIFs are able to access the object store.
-//  (not required when the Connector is installed in a "dark" site).
+// (not required when the Connector is installed in a "dark" site).
 *	DNS servers have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
 * Note that if you use are using a different IPspace than the Default, then you might need to create a static route to get access to the object storage.
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through the port you specified (typically port 443) and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
