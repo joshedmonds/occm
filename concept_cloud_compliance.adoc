@@ -111,14 +111,14 @@ You can deploy Data Sense on a system with fewer CPUs and less RAM, but there ar
 | System size
 | Specs
 | Limitations
-| Extra Large (default) | 16 CPUs, 64 GB RAM | None
-| Medium | 8 CPUs, 32 GB RAM | Slower scanning, and can only scan up to 1 million files.
-| Small | 8 CPUs, 16 GB RAM | Same limitations as "Medium", plus the ability to identify link:task_responding_to_dsar.html[data subject names] inside files is disabled.
+| Extra Large (default) | 16 CPUs, 64 GB RAM, 500 GB SSD | None
+| Medium | 8 CPUs, 32 GB RAM, 200 GB SSD | Slower scanning, and can only scan up to 1 million files.
+| Small | 8 CPUs, 16 GB RAM, 100 GB SSD | Same limitations as "Medium", plus the ability to identify link:task_responding_to_dsar.html[data subject names] inside files is disabled.
 |===
 
-When deploying Data Sense in the cloud, email ng-contact-data-sense@netapp.com for assistance if you want to use one of these smaller systems.
+When deploying Data Sense in the cloud, email ng-contact-data-sense@netapp.com for assistance if you want to use one of these smaller systems. We'll need to work with you to deploy these smaller cloud configurations.
 
-When deploying Data Sense on-premises, just use a Linux host with these specifications.
+When deploying Data Sense on-premises, just use a Linux host with the smaller specifications. You do not need to contact NetApp for assistance.
 
 == How Cloud Data Sense works
 

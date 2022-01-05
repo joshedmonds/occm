@@ -55,6 +55,7 @@ For backups of Kubernetes volumes, you can restore a volume from a backup file t
 
 | | *Volume Restore* | *File Restore*
 | Amazon S3 | Kubernetes cluster in AWS |
+| Azure Blob | Kubernetes cluster in Azure |
 
 |===
 

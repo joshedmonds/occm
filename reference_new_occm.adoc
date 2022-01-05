@@ -64,6 +64,16 @@ If you change the capacity or term for any of your licenses, the license terms n
 
 The automatic license update works with all types of Cloud Volumes ONTAP licenses and all licenses for data services.
 
+=== Cloud Backup enhancements
+
+* Now you can back up persistent volumes from your AKS Kubernetes clusters to Azure Blob storage.
++
+If your AKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for Azure as backend storage for the cluster, then you can back up and restore volumes to and from Azure Blob storage. link:task_backup_kubernetes_to_azure.html[Go here for details].
+
+* Cloud Backup service charges have been changed in this release to align more closely with industry standards.
++
+Instead of paying NetApp for capacity based on the size of your backup files, now you pay only for the data that you protect, calculated by the logical used capacity (before ONTAP efficiencies) of the source ONTAP volumes which are being backed up. This capacity is also known as Front-End Terabytes (FETB).
+
 === Cloud Data Sense enhancements
 
 * Now you can integrate a global Active Directory with Cloud Data Sense to enhance the results that Data Sense reports about file owners and which users and groups have access to your files.
