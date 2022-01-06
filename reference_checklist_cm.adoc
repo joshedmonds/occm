@@ -87,7 +87,7 @@ In either case, secure network access by ensuring that security group rules allo
 Outbound networking for a Connector::
 After logging in to Cloud Manager, an Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. A Connector isn't required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync, but it is required for all other services and features in Cloud Manager. link:concept_connectors.html[Learn more about Connectors and how they work].
 +
-* The network location must have an outbound internet connection.
+* The network location where you deploy the Connector must have an outbound internet connection.
 +
 The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
 +
@@ -107,7 +107,6 @@ The Connector requires outbound internet access to contact the following endpoin
 ** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 ** *.blob.core.windows.net or \https://hub.docker.com
-
 +
 The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
 
