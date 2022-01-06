@@ -93,34 +93,7 @@ chmod +x OnCommandCloudManager-V3.9.13.sh
 If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
 +
 [source,cli]
-\./OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
-
-+
-_silent_ runs the installation without prompting you for information.
-
-. Run the installation script.
-+
-If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
-+
-[source,cli]
-+++.+++/OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
-
-. Run the installation script.
-+
-If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
-+
-[source,cli]
-+.+/OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
-
-+
-_silent_ runs the installation without prompting you for information.
-
-. Run the installation script.
-+
-If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
-+
-[source,cli]
-\\./OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+ ./OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
 
 +
 _silent_ runs the installation without prompting you for information.
