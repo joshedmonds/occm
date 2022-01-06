@@ -44,8 +44,7 @@ The Connector requires outbound internet access to manage resources and processe
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
-| \https://hub.docker.com
-\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+| \https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
 
 |===
 
@@ -55,7 +54,7 @@ You have the option to manually install the Connector software on your own Linux
 
 * \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 * \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-* *.blob.core.windows.net
+* *.blob.core.windows.net or \https://hub.docker.com
 
 The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
 
