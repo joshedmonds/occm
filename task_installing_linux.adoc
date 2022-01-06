@@ -85,13 +85,16 @@ For help with connecting and copying the file to an EC2 instance in AWS, see htt
 
 . Assign permissions to run the script.
 +
-*Example*
-+
- chmod +x OnCommandCloudManager-V3.8.13.sh
+[source,cli]
+chmod +x OnCommandCloudManager-V3.9.13.sh
 
-. Run the installation script:
+. Run the installation script.
 +
- ./OnCommandCloudManager-V3.8.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+
 +
 _silent_ runs the installation without prompting you for information.
 +
@@ -103,17 +106,15 @@ _proxyuser_ is the user name for the proxy server, if basic authentication is re
 +
 _proxypwd_ is the password for the user name that you specified.
 
-. Unless you specified the silent parameter, type *Y* to continue the script, and then enter the HTTP and HTTPS ports when prompted.
+. Unless you specified the silent parameter, enter *Y* to continue with the installation.
 +
 Cloud Manager is now installed. At the end of the installation, the Cloud Manager service (occm) restarts twice if you specified a proxy server.
 
 . Open a web browser and enter the following URL:
 +
-https://_ipaddress_:__port__
+https://_ipaddress_
 +
 _ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
-+
-_port_ is required if you changed the default HTTP (80) or HTTPS (443) ports. For example, if the HTTPS port was changed to 8443, you would enter https://_ipaddress_:8443
 
 . Sign up at NetApp Cloud Central or log in.
 
