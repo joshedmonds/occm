@@ -19,9 +19,7 @@ A NetApp Cloud Central login::
 You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so that you can access Cloud Manager and other cloud services.
 
 Network access from a web browser to several endpoints::
-The Cloud Manager user interface is accessible from a web browser. As you use the Cloud Manager user interface, it contacts several endpoints to complete data management tasks.
-+
-The machine running the web browser must have connections to the following endpoints.
+The Cloud Manager user interface is accessible from a web browser. As you use the Cloud Manager user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 +
 [cols=2*,options="header,autowidth"]
 |===
@@ -104,11 +102,12 @@ The Connector requires outbound internet access to contact the following endpoin
 
 |===
 
-* If you choose to manually install the Connector on your own Linux host (and not do so directly from the Cloud Manager interface), then the installer for the Connector must access the following URLs during the installation process:
+* If you choose to manually install the Connector on your own Linux host (and not do so directly from the Cloud Manager interface), the installer for the Connector requires access to the following endpoints during the installation process:
 +
-* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-* *.blob.core.windows.net or \https://hub.docker.com
+** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+** *.blob.core.windows.net or \https://hub.docker.com
+
 +
 The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
 
