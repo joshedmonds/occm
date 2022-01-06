@@ -33,30 +33,6 @@ TIP: A system that isn't registered for support will still receive the software 
 
 Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
 
-== Ways to upgrade Cloud Volumes ONTAP
-
-Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
-
-image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
-
-You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <<Upgrading Cloud Volumes ONTAP from Cloud Manager notifications>>.
-
-NOTE: For HA systems in AWS, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
-
-Cloud Manager also provides the following advanced options for upgrading Cloud Volumes ONTAP software with both PAYGO and BYOL:
-
-* Software upgrades using an image on an external URL
-+
-This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch.
-+
-For details, see <<Upgrading Cloud Volumes ONTAP by using an HTTP or FTP server>>.
-
-* Software upgrades using the alternate image on the system
-+
-You can use this option to upgrade by making the alternate software image the default image. This option is not available for HA pairs.
-+
-For details, see <<Upgrading Cloud Volumes ONTAP by using a local image>>.
-
 == Preparing to upgrade Cloud Volumes ONTAP software
 
 Before performing an upgrade, you must verify that your systems are ready and make any required configuration changes.
@@ -125,7 +101,31 @@ image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view
 
 .. Select the aggregate, and then click *More Actions > Status > Online*.
 
-== Upgrading Cloud Volumes ONTAP from Cloud Manager notifications
+== Upgrading Cloud Volumes ONTAP
+
+Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
+
+image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
+
+You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <<Upgrading from Cloud Manager notifications>>.
+
+NOTE: For HA systems in AWS or Google Cloud, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
+
+Cloud Manager also provides the following advanced options for upgrading Cloud Volumes ONTAP software with both PAYGO and BYOL:
+
+* Software upgrades using an image on an external URL
++
+This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch.
++
+For details, see <<Upgrading by using an HTTP or FTP server>>.
+
+* Software upgrades using the alternate image on the system
++
+You can use this option to upgrade by making the alternate software image the default image. This option is not available for HA pairs.
++
+For details, see <<Upgrading by using a local image>>.
+
+=== Upgrading from Cloud Manager notifications
 
 Cloud Manager notifies you when a new version of Cloud Volumes ONTAP is available. Click the notification to start the upgrade process.
 
@@ -159,7 +159,7 @@ Cloud Manager starts the software upgrade. You can perform actions on the workin
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-== Upgrading Cloud Volumes ONTAP by using an HTTP or FTP server
+=== Upgrading by using an HTTP or FTP server
 
 You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can't access the S3 bucket to upgrade the software.
 
@@ -191,7 +191,7 @@ Cloud Manager starts the software update. You can perform actions on the working
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-== Upgrading Cloud Volumes ONTAP by using a local image
+=== Upgrading by using a local image
 
 Each Cloud Volumes ONTAP system can hold two software images: the current image that is running, and an alternate image that you can boot. Cloud Manager can change the alternate image to be the default image.
 
@@ -210,3 +210,22 @@ Cloud Manager starts the software update. You can perform actions on the working
 .After you finish
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
+
+== Fixing download failures when using a Google Cloud NAT gateway
+
+The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.
+
+.Step
+
+.	Submit a PUT request to /occm/config with the following JSON as body:
+
+[source.json]
+{
+  "maxDownloadSessions": 32
+}
+
+The value for _maxDownloadSessions_ can be 1 or any integer greater than 1. If the value is 1, then the downloaded image will not be divided.
+
+Note that 32 is an example value. The value that you should use depends on your NAT configuration and the number of sessions that you can have simultaneously.
+
+https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].

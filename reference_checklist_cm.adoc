@@ -16,10 +16,10 @@ summary: Use this checklist to understand what's needed to get up and running wi
 Use this checklist to understand what's needed to get up and running with Cloud Manager in a typical deployment where the Connector has outbound internet access.
 
 A NetApp Cloud Central login::
-You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Cloud Manager and other cloud services.
+You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so that you can access Cloud Manager and other cloud services.
 
 Network access from a web browser to several endpoints::
-The Cloud Manager user interface is accessible from a web browser. The machine running the web browser must have connections to the following endpoints.
+The Cloud Manager user interface is accessible from a web browser. As you use the Cloud Manager user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 +
 [cols=2*,options="header,autowidth"]
 |===
@@ -84,12 +84,12 @@ In either case, secure network access by ensuring that security group rules allo
 
 |===
 
-A network location for a Connector::
+Outbound networking for a Connector::
 After logging in to Cloud Manager, an Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. A Connector isn't required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync, but it is required for all other services and features in Cloud Manager. link:concept_connectors.html[Learn more about Connectors and how they work].
 +
-* The network location must have an outbound internet connection.
+* The network location where you deploy the Connector must have an outbound internet connection.
 +
-The Connector requires outbound internet access to the following endpoints in order to manage resources and processes within your public cloud environment.
+The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
 +
 [cols=2*,options="header,autowidth"]
 |===
@@ -98,10 +98,17 @@ The Connector requires outbound internet access to the following endpoints in or
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
-| \https://hub.docker.com
-\https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+| \https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
 
 |===
+
+* If you choose to manually install the Connector on your own Linux host (and not do so directly from the Cloud Manager interface), the installer for the Connector requires access to the following endpoints during the installation process:
++
+** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+** *.blob.core.windows.net or \https://hub.docker.com
++
+The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
 
 * There's no incoming traffic to the Connector, unless you initiate it.
 +
