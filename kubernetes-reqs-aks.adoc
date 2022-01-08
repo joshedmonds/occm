@@ -34,7 +34,7 @@ Cloud Manager supports RBAC-enabled clusters with and without Active Directory. 
 
 == Prepare a Connector
 
-A Cloud Manager Connector is required in Azure to discover and manage AKS clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
+A Cloud Manager Connector in Azure is required to discover and manage AKS clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
 
 === Create a new Connector
 
