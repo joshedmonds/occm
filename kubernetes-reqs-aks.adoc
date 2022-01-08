@@ -1,0 +1,192 @@
+---
+sidebar: sidebar
+permalink: kubernetes-reqs-aks.html
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, aks, kubernetes support
+summary: Before you can add an Azure Kubernetes Service (AKS) cluster to Cloud Manager, you need to ensure the following requirements have been met.
+---
+
+= Requirements for Azure clusters
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Before you can add an Azure Kubernetes Service (AKS) cluster to Cloud Manager, you need to ensure the following requirements have been met.
+
+== Requirements
+
+Astra Trident::
+The AKS cluster must have NetApp Astra Trident installed. One of the four most recent versions of Astra Trident is required. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Go to the Astra Trident docs for installation steps^].
+
+Cloud Volumes ONTAP::
+Azure NetApp Files must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+
+Cloud Manager Connector::
+A Connector must be running in Azure with the required permissions. <<Prepare a Connector,Learn more below>>.
+
+Network connectivity::
+Network connectivity is required between the Azure cluster and the Connector and between the Azure cluster and Cloud Volumes ONTAP. <<Review networking requirements,Learn more below>>.
+
+RBAC authorization::
+Cloud Manager supports RBAC-enabled clusters with and without Active Directory. The Cloud Manager Connector role must be authorized on each Azure cluster. <<Set up RBAC authorization,Learn more below>>.
+
+== Prepare a Connector
+
+A Cloud Manager Connector is required in Azure to discover and manage AKS clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
+
+=== Create a new Connector
+
+Follow the steps in one of the links below.
+
+* link:task_creating_connectors_azure.html[Create a Connector from Cloud Manager] (recommended)
+* link:task_launching_azure_mktp.html[Create a Connector from the Azure Marketplace]
+* link:task_installing_linux.html[Install the Connector on an existing Linux host]
+
+=== Add the required permissions to an existing Connector
+
+If you created a Connector prior to this release, you'll need to modify the existing policy for the Connector's IAM role to provide the permissions.
+
+.Steps
+
+. Go the AWS console and open the EC2 service.
+
+. Select the Connector instance, click *Security*, and click the name of the IAM role to view the role in the IAM service.
++
+image:screenshot-aws-iam-role.png[A screenshot of the AWS console that shows the name of the IAM role in the Security tab.]
+
+. In the *Permissions* tab, expand the policy and click *Edit policy*.
++
+image:screenshot-aws-edit-policy.png[A screenshot of the AWS console that shows the Edit policy button in the Permissions tab.]
+
+. Click *JSON* and add the following permissions under the first set of actions:
++
+[source,json]
+"eks:ListClusters",
+"eks:DescribeCluster,"
+"iam:GetInstanceProfile"
+
++
+https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[View the full JSON format for the policy^].
+
+. Click *Review policy* and then click *Save changes*.
+
+== Review networking requirements
+
+You need to provide network connectivity between the EKS cluster and the Connector and between the EKS cluster and the Cloud Volumes ONTAP system that provides backend storage to the cluster.
+
+* Each EKS cluster must have an inbound connection from the Connector
+* The Connector must have an outbound connection to eks.amazonaws.com on port 443
+
+The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the EKS cluster. Otherwise, you need to set up a VPC peering connection between the different VPCs.
+
+Here's an example that shows each component in the same VPC.
+
+image:diagram-kubernetes-eks.png[An architectural diagram of an EKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
+
+And here's another example that shows an EKS cluster running in a different VPC. In this example, VPC peering provides a connection between the VPC for the EKS cluster and the VPC for the Connector and Cloud Volumes ONTAP.
+
+image:diagram_kubernetes.png[An architectural diagram of an EKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in a separate VPC.]
+
+== Set up RBAC authorization
+
+RBAC validation occurs only on AKS clusters with Active Directory (AD) enabled. AKS clusters without AD will pass validation automatically.
+
+You need authorize the Connector role on each AKS cluster so the Connector can discover and manage a cluster.
+
+== Before you begin
+You will need to know the Object ID for the Azure system-assigned managed identity for the virtual machine. This ID is available in Microsoft Azure portal.
+
+.Steps
+
+. Create a cluster role and role binding.
+
+.. Create a YAML file that includes the following text.
++
+[source,yaml]
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+    name: cloudmanager-access-clusterrole
+rules:
+    - apiGroups:
+          - ''
+      resources:
+          - secrets
+          - namespaces
+          - persistentvolumeclaims
+          - persistentvolumes
+      verbs:
+          - get
+          - list
+          - create
+    - apiGroups:
+          - storage.k8s.io
+      resources:
+          - storageclasses
+      verbs:
+          - get
+          - list
+    - apiGroups:
+          - trident.netapp.io
+      resources:
+          - tridentbackends
+          - tridentorchestrators
+      verbs:
+          - get
+          - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+    name: k8s-access-binding
+subjects:
+    - kind: User
+      name: system-assigned-managed-identity
+      apiGroup: rbac.authorization.k8s.io
+roleRef:
+    kind: ClusterRole
+    name: cloudmanager-access-clusterrole
+    apiGroup: rbac.authorization.k8s.io
+
+.. Apply the configuration to a cluster.
++
+[source,kubectl]
+kubectl apply -f <file-name>
+
+. Create an identity mapping to the permissions group.
++
+[role="tabbed-block"]
+====
+.Use eksctl
+--
+Use eksctl to create an IAM identity mapping between a cluster and the IAM role for the Cloud Manager Connector.
+https://eksctl.io/usage/iam-identity-mappings/[Go to the eksctl documentation for full instructions^].
+An example is provided below.
+[source,eksctl]
+eksctl create iamidentitymapping --cluster <eksCluster> --region <us-east-2> --arn <ARN of the Connector IAM role> --group cloudmanager-access-group --username system:node:{{EC2PrivateDNSName}}
+--
+.Edit aws-auth
+--
+Directly edit the aws-auth ConfigMap to add RBAC access to the IAM role for the Cloud Manager Connector.
+https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html[Go to the Amazon EKS documentation for full instructions^].
+An example is provided below.
+[source,yaml]
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - cloudmanager-access-group
+      rolearn: <ARN of the Connector IAM role>
+     username: system:node:{{EC2PrivateDNSName}}
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-09-30T21:09:18Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1021"
+  selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
+  uid: dcc31de5-3838-11e8-af26-02e00430057c
+--
+====
