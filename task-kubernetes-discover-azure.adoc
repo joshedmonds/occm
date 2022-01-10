@@ -28,7 +28,7 @@ image:screenshot-discover-kubernetes-aks.png[A screenshot of the Add Working Env
 
 . Select *Discover Cluster* and click *Next*.
 
-. Choose an AWS region, select a Kubernetes cluster, and then click *Next*.
+. Select a Kubernetes cluster and click *Next*.
 +
 image:screenshot-k8s-aks-discover.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected  Kubernetes cluster.]
 
