@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-kubernetes-discover-azure.html
 keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, import kubernetes cluster, azure, aks, kubernetes support
-summary: Add an Azure Kubernetes Service (AKS) cluster to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
+summary: Add an Kubernetes cluster to Cloud Manager so that you can start backing up persistent volumes to Azure.
 ---
 
 = Add an Azure cluster to Cloud Manager
@@ -13,7 +13,7 @@ summary: Add an Azure Kubernetes Service (AKS) cluster to Cloud Manager so that 
 :imagesdir: ./media/
 
 [.lead]
-You can discover or import Azure Kubernetes Service (AKS) clusters to Cloud Manager so that you can start backing up persistent volumes to Azure.
+You can discover or import Kubernetes clusters to Cloud Manager so that you can start backing up persistent volumes to Azure.
 
 == Discover a cluster
 You can discover a fully-managed or self-managed Kubernetes cluster. Managed clusters must be discovered; they cannot be imported.
