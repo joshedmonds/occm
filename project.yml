@@ -362,7 +362,7 @@ sidebar:
               url: /kubernetes-reqs-aws.html
             - title: Add a cluster
               url: /task-kubernetes-discover-aws.html
-        - title: Get started with Azure Kubernetes Service (AKS) clusters
+        - title: Get started with Azure Kubernetes clusters
           entries:
             - title: Requirements
               url: /kubernetes-reqs-aks.html

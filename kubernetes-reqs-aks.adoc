@@ -67,7 +67,7 @@ image:screenshot-k8s-aks-iam-edit.png[A screenshot of the Azure console that sho
 "Microsoft.ContainerService/managedClusters/read"
 
 +
-*NEED NEW LINK TO FULL POLICY ===>>>>* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[View the full JSON format for the policy^].
+https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[View the full JSON format for the policy^].
 
 . Click *Save*.
 
@@ -95,7 +95,7 @@ RBAC validation occurs only on Kubernetes clusters with Active Directory (AD) en
 You need authorize the Connector role on each Kubernetes cluster so the Connector can discover and manage a cluster.
 
 .Before you begin
-Your RBAC ``subjects: name`` configuration varies slightly based on your Kubernetes cluster type.
+Your RBAC ``subjects: name:`` configuration varies slightly based on your Kubernetes cluster type.
 
 * If you are deploying a *managed AKS cluster*, you need the Object ID for the system-assigned managed identity for the virtual machine. This ID is available in Azure management portal.
 
@@ -108,7 +108,7 @@ image:screenshot-k8s-aks-obj-id.png[A screenshot of the system-assigned object I
 
 . Create a cluster role and role binding.
 
-.. Create a YAML file that includes the following text.
+.. Create a YAML file that includes the following text. Replace the ``subjects: kind:`` variable with your username and ``subjects: user:`` with either the Object ID for the system-assigned managed identity or username of any authorized user as described above.
 +
 [source,yaml]
 apiVersion: rbac.authorization.k8s.io/v1
