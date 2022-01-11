@@ -5,7 +5,7 @@ keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, aks
 summary: You can add managed Azure Kubernetes clusters (AKS) or self-managed Kubernetes clusters for Azure to Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
 ---
 
-= Requirements for Kubernetes clusters for Azure
+= Requirements for Kubernetes clusters in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -23,7 +23,7 @@ Astra Trident::
 The Kubernetes cluster must have NetApp Astra Trident deployed. Install one of the four most recent versions of Astra Trident using Helm. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#deploy-the-trident-operator-by-using-helm[Go to the Astra Trident docs for installation steps using Helm^].
 
 Cloud Volumes ONTAP::
-Azure NetApp Files must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+Cloud Volumes ONTAP must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
 
 Cloud Manager Connector::
 A Connector must be running in Azure with the required permissions. <<Prepare a Connector,Learn more below>>.
@@ -46,30 +46,42 @@ Follow the steps in one of the links below.
 * link:task_launching_azure_mktp.html[Create a Connector from the Azure Marketplace]
 * link:task_installing_linux.html[Install the Connector on an existing Linux host]
 
-=== Add the required permissions to an existing Connector
+=== Add the required permissions to an existing Connector (to discover a managed AKS cluster)
 
-If you created a Connector prior to this release, you'll need to modify the existing policy for the Connector's IAM role to provide the permissions.
+If you want to discover a managed AKS cluster, you might need to modify the custom role for the Connector to provide the permissions.
 
 .Steps
 
-. Go the Azure console at azure.portal.com and open the Kubernetes service.
+. Identify the role assigned to the Connector virtual machine:
 
-. From *Access control (IAM)*, select the *Roles* tab.
+.. In the Azure portal, open the Virtual machines service.
 
-. Select the Connector instance, click the ellipses (...), and click *Edit*.
-+
-image:screenshot-k8s-aks-iam-edit.png[A screenshot of the Azure console that shows the name of the IAM role in the Roles tab.]
+.. Select the Connector virtual machine.
 
-. Click *JSON* and add the following permissions under the first set of actions:
+.. Under Settings, select *Identity*.
+
+.. Click *Azure role assignments*.
+
+.. Make note of the custom role assigned to the Connector virtual machine.
+
+. Update the custom role:
+
+.. In the Azure portal, open your Azure subscription.
+
+.. Click *Access control (IAM) > Roles*.
+
+.. Click the ellipsis (...) for the custom role and then click *Edit*.
+
+.. Click JSON and add the following permissions:
 +
 [source,json]
 "Microsoft.ContainerService/managedClusters/listClusterUserCredential/action"
 "Microsoft.ContainerService/managedClusters/read"
 
-+
-https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[View the full JSON format for the policy^].
+//+
+//https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[View the full JSON format for the policy^].
 
-. Click *Save*.
+.. Click *Review + update* and then click *Update*.
 
 == Review networking requirements
 
@@ -78,13 +90,13 @@ You need to provide network connectivity between the Kubernetes cluster and the 
 * Each Kubernetes cluster must have an inbound connection from the Connector
 * The Connector must have an outbound connection to Kubernetes cluster over port 443
 
-The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the Kubernetes cluster. Otherwise, you need to set up a VPC peering connection between the different VPCs.
+The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VNet as the Kubernetes cluster. Otherwise, you need to set up a peering connection between the different VNets.
 
-Here's an example that shows each component in the same VPC.
+Here's an example that shows each component in the same VNet.
 
 image:diagram-kubernetes-azure.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
 
-And here's another example that shows a Kubernetes cluster running in a different VPC. In this example, VPC peering provides a connection between the VPC for the AKS cluster and the VPC for the Connector and Cloud Volumes ONTAP.
+And here's another example that shows a Kubernetes cluster running in a different VNet. In this example, peering provides a connection between the VNet for the Kubernetes cluster and the VNet for the Connector and Cloud Volumes ONTAP.
 
 image:diagram-kubernetes-azure-with-peering.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in a separate VPC.]
 
@@ -97,7 +109,7 @@ You need authorize the Connector role on each Kubernetes cluster so the Connecto
 .Before you begin
 Your RBAC ``subjects: name:`` configuration varies slightly based on your Kubernetes cluster type.
 
-* If you are deploying a *managed AKS cluster*, you need the Object ID for the system-assigned managed identity for the virtual machine. This ID is available in Azure management portal.
+* If you are deploying a *managed AKS cluster*, you need the Object ID for the system-assigned managed identity for the Connector. This ID is available in Azure management portal.
 
 +
 image:screenshot-k8s-aks-obj-id.png[A screenshot of the system-assigned object ID window on the Azure management portal.]

@@ -42,7 +42,7 @@ image:screenshot-k8s-aks-canvas.png[A screenshot of the Canvas in Cloud Manager 
 You can import a self-managed Kubernetes cluster using a Kubernetes configuration file.
 
 == Before you get started
-You will need Certificate Authority, Client Key, and Client Certificate certificates to import AKS clusters. The AKS cluster administrator receives these certifications when creating users on the Kubernetes cluster.
+You will need Certificate Authority, Client Key, and Client Certificate certificates for the user specified in the cluster role YAML file to import Kubernetes clusters. The Kubernetes cluster administrator receives these certifications when creating users on the Kubernetes cluster.
 
 .Steps
 
@@ -56,7 +56,7 @@ You will need Certificate Authority, Client Key, and Client Certificate certific
 +
 image:screenshot-k8s-aks-import-1.png[A screenshot of the import Kubernetes cluster page with configuration file and available clusters table.]
 
-. Upload the cluster certificates provided by your Kubernetes cluster administrator.
+. Upload the cluster certificates provided by your Kubernetes cluster administrator.  
 +
 image:screenshot-k8s-aks-import-2.png[A screenshot of the cluster certificates page used to upload the Certificate Authority, Client Key, and Client Certificate certificates.]
 
