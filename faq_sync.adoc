@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: faq_sync.html
-keywords: community, forums, help, support, videos, faq, getting help, permissions, access control lists, acls, preserve, preserving, troubleshooting, support
+keywords: community, forums, help, support, videos, faq, getting help, permissions, access control lists, acls, preserve, preserving, troubleshooting, support, encryption, smb
 summary: You can get help with Cloud Sync and find more information through various resources, including forums, chat services, and videos.
 ---
 
