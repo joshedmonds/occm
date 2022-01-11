@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: faq_sync.html
-keywords: community, forums, help, support, videos, faq, getting help, permissions, access control lists, acls, preserve, preserving, troubleshooting, support
+keywords: community, forums, help, support, videos, faq, getting help, permissions, access control lists, acls, preserve, preserving, troubleshooting, support, encryption, smb
 summary: You can get help with Cloud Sync and find more information through various resources, including forums, chat services, and videos.
 ---
 
@@ -184,7 +184,9 @@ Any of these methods establishes a secure connection between your on-premises NA
 
 * Cloud Sync supports data-in-flight encryption between source and target NFS servers. link:task_sync_nfs_encryption.html[Learn more].
 
-* Encryption is not supported with SMB.
+* For SMB, Cloud Sync supports SMB 3.0 and 3.11 data that you've encrypted on the server side. Cloud Sync copies the encrypted data from the source to the target where the data remains encrypted.
++
+Cloud Sync cannot encrypt SMB data itself.
 
 * When an Amazon S3 bucket is the target in a sync relationship, you can choose whether to enable data encryption using AWS KMS encryption or AES-256 encryption.
 
@@ -237,7 +239,7 @@ The sync relationship shows the throughput of the data broker's network adapter.
 
 === I'm experiencing performance issues. Can we limit the number of concurrent transfers?
 
-The data broker can sync 4 files at a time. If you have very large files (multiple TiBs each), it can take a long time to complete the transfer process and performance might be impacted.
+If you have very large files (multiple TiBs each), it can take a long time to complete the transfer process and performance might be impacted.
 
 Limiting the number of concurrent transfers can help. mailto:ng-cloudsync-support@netapp.com[Contact us for help].
 
