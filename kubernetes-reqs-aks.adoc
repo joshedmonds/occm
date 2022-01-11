@@ -77,8 +77,7 @@ If you want to discover a managed AKS cluster, you might need to modify the cust
 [source,json]
 "Microsoft.ContainerService/managedClusters/listClusterUserCredential/action"
 "Microsoft.ContainerService/managedClusters/read"
-
-//+
++
 //https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[View the full JSON format for the policy^].
 
 .. Click *Review + update* and then click *Update*.
