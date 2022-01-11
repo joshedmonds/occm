@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: kubernetes-reqs-aks.html
 keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, azure, aks, kubernetes support
-summary: You can add managed Azure Kubernetes clusters (AKS) or self-managed Kubernetes clusters for Azure to Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
+summary: You can add and manage managed Azure Kubernetes clusters (AKS) and self-managed Kubernetes clusters in Azure using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
 ---
 
 = Requirements for Kubernetes clusters in Azure
@@ -13,7 +13,7 @@ summary: You can add managed Azure Kubernetes clusters (AKS) or self-managed Kub
 :imagesdir: ./media/
 
 [.lead]
-You can add managed Azure Kubernetes clusters (AKS) or self-managed Kubernetes clusters for Azure to Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
+You can add and manage managed Azure Kubernetes clusters (AKS) and self-managed Kubernetes clusters in Azure using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
 
 This topic uses _Kubernetes cluster_ where configuration is the same for AKS and self-managed Kubernetes clusters. The cluster type is specified where configuration differs.
 
