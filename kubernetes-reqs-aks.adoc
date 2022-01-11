@@ -82,11 +82,11 @@ The simplest way to provide this connectivity is to deploy the Connector and Clo
 
 Here's an example that shows each component in the same VPC.
 
-*BEN TO PROVIDE AZURE DIAGRAM =====>>>* image:diagram-kubernetes-eks.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
+image:diagram-kubernetes-azure.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
 
 And here's another example that shows a Kubernetes cluster running in a different VPC. In this example, VPC peering provides a connection between the VPC for the AKS cluster and the VPC for the Connector and Cloud Volumes ONTAP.
 
-*BEN TO PROVIDE AZURE DIAGRAM =====>>>*  image:diagram_kubernetes.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in a separate VPC.]
+image:diagram-kubernetes-azure-with-peering.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in a separate VPC.]
 
 == Set up RBAC authorization
 
