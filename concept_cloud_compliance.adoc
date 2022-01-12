@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, sharepoint, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
 summary: Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources and working environments to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 ---
 
@@ -51,8 +51,9 @@ Cloud Data Sense can scan data from the following types of working environments 
 * Object storage (that uses S3 protocol)
 * Databases
 * OneDrive accounts
+* SharePoint accounts
 
-NOTE: A Beta feature released in January 2021 allows you to run compliance scans on the backup files from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
+NOTE: A Beta feature released in 2021 allows you to run compliance scans on the backup files from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost
 
@@ -131,7 +132,7 @@ At a high-level, Cloud Data Sense works like this:
 
 == How scans work
 
-After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive user data you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
+After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive or SharePoint user data you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
 
 Data Sense connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 
@@ -139,7 +140,7 @@ image:diagram_cloud_compliance_scan.png["A diagram that shows a Cloud Manager in
 
 After the initial scan, Data Sense continuously scans your data to detect incremental changes (this is why it's important to keep the instance running).
 
-You can enable and disable scans at the volume level, at the bucket level, at the database schema level, and at the OneDrive user level.
+You can enable and disable scans at the volume level, at the bucket level, at the database schema level, at the OneDrive user level, and at the SharePoint site level.
 
 === What's the difference between Mapping and Classification scans
 
