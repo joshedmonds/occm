@@ -54,6 +54,10 @@ image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials p
 +
 image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
 
+=== Cloud Manager support for Kubernetes clusters in Azure (11 Jan 2022)
+
+You can now add and manage managed Azure Kubernetes clusters (AKS) and self-managed Kubernetes clusters in Azure using Cloud Manager. link:kubernetes-reqs-aks.html[Getting started with Kubernetes clusters in Azure^]
+
 === On-prem ONTAP cluster enhancements
 
 Tags that you add to a volume are now associated with the link:task_using_tags.html[Application Templates service], which can help you organize and simplify the management of your resources.
@@ -68,7 +72,7 @@ The automatic license update works with all types of Cloud Volumes ONTAP license
 
 * Now you can back up persistent volumes from your AKS Kubernetes clusters to Azure Blob storage.
 +
-If your AKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for Azure as backend storage for the cluster, then you can back up and restore volumes to and from Azure Blob storage. link:task_backup_kubernetes_to_azure.html[Go here for details].
+If your AKS cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for Azure as backend storage for the cluster, then you can back up and restore volumes to and from Azure Blob storage. link:task-backup-kubernetes-to-azure.html[Go here for details].
 
 * Cloud Backup service charges have been changed in this release to align more closely with industry standards.
 +
