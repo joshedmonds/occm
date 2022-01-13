@@ -13,7 +13,7 @@ summary: In most cases, you will need to deploy a Connector in your cloud or on-
 :imagesdir: ./media/
 
 [.lead]
-In most cases, an Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+In most cases, an Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of Cloud Manager. The Connector enables Cloud Manager to manage the resources and processes within your public cloud environment.
 
 == When a Connector is required
 
@@ -89,7 +89,8 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^].
+* https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
+* link:reference_permissions.html[Learn how Cloud Manager uses cloud provider permissions]
 
 == Number of working environments per Connector
 
