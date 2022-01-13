@@ -26,7 +26,7 @@ When installed in this manner (sometimes called an "offline" or "dark" site), Da
 * Non-NetApp NFS or CIFS file shares
 * Object Storage that uses the Simple Storage Service (S3) protocol
 
-There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, or AWS S3 accounts.
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, SharePoint accounts, or AWS S3 accounts.
 
 == Limitations
 
@@ -145,7 +145,7 @@ image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting 
 +
 `sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite`
 
-. Unzip the installer file on the host machine, for example:
+. Unzip the installation file on the host machine, for example:
 +
 [source,cli]
 tar -xzf cc_onprem_installer_1.7.2.tar.gz
@@ -254,23 +254,33 @@ From the Configuration page you can select the local link:task_getting_started_c
 
 //
 // You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
-//
-// == Upgrade Data Sense software
-//
-// You must upgrade Data Sense software manually because there is no internet connectivity. Since the software is updated with new features on a regular basis, you should get into a routine to check for new versions periodically to make sure you are using the newest software and features.
-//
-// .Steps
-//
-// . On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^].
-//
-// . Copy the installer package to the Linux host where Data Sense is installed in the dark site.
-// +
-// If you are using multiple hosts to scan large environments, copy the installation package to all hosts (manager and scanner nodes).
-//
-// . Unzip the upgrade file on all hosts.
-//
-// . Enter the following command on the manager node:
-// `sudo ./upgrade.sh`
-//
-// . If you are using multiple hosts, enter the following command on all scanner nodes:
-// `sudo ./node_upgrade.sh`
+
+== Upgrade Data Sense software
+
+Since Data Sense software is updated with new features on a regular basis, you should get into a routine to check for new versions periodically to make sure you're using the newest software and features. You'll need to upgrade Data Sense software manually because there is no internet connectivity.
+
+.Steps
+
+. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *DataSense-offline-bundle-<version>.tar.gz*.
+
+. Copy the installer package to the Linux host where Data Sense is installed in the dark site.
+
+. Unzip the installer bundle on the host machine, for example:
++
+[source,cli]
+tar -xzf DataSense-offline-bundle-v1.8.0.tar.gz
++
+This extracts required software and the actual installation file *cc_onprem_installer_<version>.tar.gz*.
++
+If you're using multiple hosts to scan large environments, copy this installation file to all scanner nodes as well.
+
+. Unzip the installation file on the host machine, and on any scanner nodes, for example:
++
+[source,cli]
+tar -xzf cc_onprem_installer_1.8.0.tar.gz
+
+.Result
+
+The Data Sense installer updates the software on your host (or manager and scanner nodes for your large environments). The update can take 10 to 15 minutes.
+
+Verify that the software is updated by checking the version at the bottom of the Data Sense UI pages.

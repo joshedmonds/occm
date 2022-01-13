@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_private_data_categories.html
 keywords: personal files, personal data, sensitive personal files, sensitive personal data, categories, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy,
-summary: There are many types of private data that Cloud Data Sense can identify in your volumes, Amazon S3 buckets, and databases. See the categories below.
+summary: There are many types of private data that Cloud Data Sense can identify in your volumes, Amazon S3 buckets, databases, OneDrive folders, and SharePoint accounts. See the categories below.
 ---
 
 = Categories of private data
@@ -13,7 +13,7 @@ summary: There are many types of private data that Cloud Data Sense can identify
 :imagesdir: ./media/
 
 [.lead]
-There are many types of private data that Cloud Data Sense can identify in your volumes, Amazon S3 buckets, databases, and OneDrive folders. See the categories below.
+There are many types of private data that Cloud Data Sense can identify in your volumes, Amazon S3 buckets, databases, OneDrive folders, and SharePoint accounts. See the categories below.
 
 TIP: If you need Cloud Data Sense to identify other private data types, such as additional national ID numbers or healthcare identifiers, email ng-contact-data-sense@netapp.com with your request.
 

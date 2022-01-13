@@ -59,7 +59,7 @@ There are some scenarios where you have to use a Connector that's deployed in a 
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
 * When scanning data in Cloud Volumes ONTAP in GCP, you use a connector in GCP.
 
-On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, and OneDrive folders can be scanned using any of these cloud Connectors.
+On-prem ONTAP systems, non-NetApp file shares, generic S3 Object storage, databases, OneDrive folders, and SharePoint accounts can be scanned using any of these cloud Connectors.
 
 Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on a Linux host in your network or in the cloud. Some users planning to install Data Sense on-prem may also choose to install the Connector on-prem.
 

@@ -129,7 +129,7 @@ NOTE: Activating Cloud Data Sense results in an immediate initial scan. Scan res
 
 == How do I disable Cloud Data Sense?
 
-You can disable Cloud Data Sense from scanning an individual working environment, database, file share group, or OneDrive account from the Data Sense Configuration page.
+You can disable Cloud Data Sense from scanning an individual working environment, database, file share group, OneDrive account, or SharePoint account from the Data Sense Configuration page.
 
 link:task_managing_compliance.html[Learn more^].
 

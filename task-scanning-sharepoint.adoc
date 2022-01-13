@@ -22,7 +22,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review SharePoint prerequisites
 
 [role="quick-margin-para"]
-Ensure that you have the Admin credentials to log into the SharePoint account.
+Ensure that you have the Admin credentials to log into the SharePoint account, and that you have the URLs for the SharePoint sites that you want to scan.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Deploy the Cloud Data Sense instance
 
@@ -37,11 +37,11 @@ Using Admin user credentials, log into the SharePoint account that you want to a
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Add the SharePoint site URLs to scan
 
 [role="quick-margin-para"]
-Add the list of SharePoint site URLs that you want to scan and select the type of scanning. You can add up to 100 URLs at time.
+Add the list of SharePoint site URLs that you want to scan in the SharePoint account, and select the type of scanning. You can add up to 100 URLs at time.
 
 == Reviewing SharePoint requirements
 
-Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Data Sense.
+Review the following prerequisites to make sure you are ready to enable Cloud Data Sense on a SharePoint account.
 
 * You must have the Admin login credentials for the SharePoint account that provides read access to all SharePoint sites.
 * You will need a line-separated list of the SharePoint site URLs for all the data you want to scan.
@@ -60,11 +60,11 @@ Add the SharePoint account where the user files reside.
 
 .Steps
 
-. From the Working Environments Configuration page, click *Add Data Source* > *Add SharePoint Account*.
+. From the Working Environments Configuration page, click *Add Data Source* > *Add SharePoint Online Account*.
 +
-image:screenshot_compliance_add_onedrive_button.png[A screenshot of the Scan Configuration page where you can click the Add SharePoint button.]
+image:screenshot_compliance_add_sharepoint_button.png[A screenshot of the Scan Configuration page where you can click the Add SharePoint button.]
 
-. In the Add a SharePoint Account dialog, click *Sign in to SharePoint*.
+. In the Add a SharePoint Online Account dialog, click *Sign in to SharePoint*.
 
 . In the Microsoft page that appears, select the SharePoint account and enter the required Admin user and password, then click *Accept* to allow Cloud Data Sense to read data from this account.
 
@@ -72,25 +72,25 @@ The SharePoint account is added to the list of working environments.
 
 == Adding SharePoint sites to compliance scans
 
-You can add individual SharePoint sites, or all of your SharePoint sites, so that the associated files will be scanned by Cloud Data Sense.
+You can add individual SharePoint sites, or all of the SharePoint sites in the account, so that the associated files will be scanned by Cloud Data Sense.
 
 .Steps
 
 . From the _Configuration_ page, click the *Configuration* button for the SharePoint account.
 +
-image:screenshot_compliance_onedrive_add_users.png[A screenshot of the Scan Configuration page where you can select the Configuration button.]
+image:screenshot_compliance_sharepoint_add_sites.png[A screenshot of the Scan Configuration page where you can select the Configuration button.]
 
 . If this is the first time adding sites for this SharePoint account, click *Add your first SharePoint site*.
 +
-image:screenshot_compliance_onedrive_add_initial_users.png[A screenshot showing the Add your first SharePoint sites button to add initial sites to be scanned.]
+image:screenshot_compliance_sharepoint_add_initial_sites.png[A screenshot showing the Add your first SharePoint sites button to add initial sites to be scanned.]
 +
 If you are adding additional users from a SharePoint account, click *Add SharePoint Sites*.
 +
-image:screenshot_compliance_onedrive_add_more_users.png[A screenshot showing the Add SharePoint sites button to add more sites to an account.]
+image:screenshot_compliance_sharepoint_add_more_sites.png[A screenshot showing the Add SharePoint sites button to add more sites to an account.]
 
 . Add the URLs for the sites whose files you want to scan - one URL per line (up to 100 maximum per session) - and click *Add Sites*.
 +
-image:screenshot_compliance_onedrive_add_email_addresses.png[A screenshot of the Add SharePoint Sites page where you can add sites to be scanned.]
+image:screenshot_compliance_sharepoint_add_site.png[A screenshot of the Add SharePoint Sites page where you can add sites to be scanned.]
 +
 A confirmation dialog displays the number of sites that were added.
 +
@@ -117,4 +117,4 @@ Cloud Data Sense starts scanning the files in the SharePoint sites you added, an
 
 If you remove a SharePoint site in the future, or decide not to scan files in a SharePoint site, you can remove individual SharePoint sites from having their files scanned at any time. Just click *Remove SharePoint Site* from the Configuration page.
 
-image:screenshot_compliance_onedrive_remove_user.png[A screenshot showing how to remove a single SharePoint site from having their files scanned.]
+image:screenshot_compliance_sharepoint_remove_site.png[A screenshot showing how to remove a single SharePoint site from having their files scanned.]

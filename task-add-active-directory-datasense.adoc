@@ -35,7 +35,7 @@ An Active Directory integration with Cloud Data Sense can identify data from wit
 * FSx for ONTAP
 * Non-NetApp CIFS file shares (not for NFS file shares)
 
-There is no support for identifying user and permission information from Database schemas, OneDrive accounts, Amazon S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
+There is no support for identifying user and permission information from Database schemas, OneDrive accounts, SharePoint accounts, Amazon S3 accounts, or Object Storage that uses the Simple Storage Service (S3) protocol.
 
 == Connecting to your Active Directory server
 
