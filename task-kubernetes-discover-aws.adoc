@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-kubernetes-discover-aws.html
-keywords: kubernetes, k8s, discover kubernetes cluster, import kubernetes cluster, import, discover k8s, amazon eks, eks, kubernetes support
-summary: You can discover or import an Amazon Elastic Kubernetes Service (Amazon EKS) clusters to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, kubernetes support, import kubernetes cluster, import, amazon s3, amazon, aws
+summary: Add an Amazon Elastic Kubernetes Service (Amazon EKS) clusters to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
 ---
 
-= Add an Amazon EKS cluster to Cloud Manager
+= Add an Amazon Kubernetes cluster to Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: You can discover or import an Amazon Elastic Kubernetes Service (Amazon
 :imagesdir: ./media/
 
 [.lead]
-You can discover or import an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to Cloud Manager so that you can start backing up persistent volumes to Amazon S3.
+You can discover or import Kubernetes clusers to Cloud Manager so you can back up persistent volumes to Amazon S3.
 
 == Discover a cluster
 You can discover a fully-managed or self-managed Kubernetes cluster. Managed clusters must be discovered; they cannot be imported.
@@ -45,13 +45,15 @@ You can import a self-managed Kubernetes cluster using a Kubernetes configuratio
 
 . On the *Canvas*, click *Add Working Environment*.
 
-. Select *Amazon Web Services* > *Kubernetes Cluster* and click *Next*.
+. Select *Amazon Wed Services* > *Kubernetes Cluster* and click *Next*.
 
 . Select *Import Cluster* and click *Next*.
 
 . Upload a Kubernetes configuration file in YAML format.
 +
 image:screenshot-k8s-aks-import-1.png[A screenshot of the import Kubernetes cluster page with configuration file and available clusters table.]
+
+. Select the Kubernetes cluster and click *Next*.
 
 .Result
 
