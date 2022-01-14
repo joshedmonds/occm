@@ -205,6 +205,9 @@ See link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthl
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
++
+If you want all volumes added in the future to have backup enabled, just leave the checkbox for "Automatically back up future volumes..." checked. If you disable this setting, you'll need to manually enable backups for future volumes.
+
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
 
 .Result

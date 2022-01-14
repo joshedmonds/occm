@@ -75,9 +75,12 @@ image:screenshot_backup_settings_button.png[A screenshot that shows the Backup S
 +
 image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
 
-. Select the checkbox for volumes that you want to start backing up, and deselect the checkbox for volumes that you want to stop backing up.
+. Select the checkbox for a volume, or volumes, that you want to change, and then click *Activate* or *Deactivate* depending on whether you want to start or stop backups for the volume.
 +
 image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
+
++
+You can choose to have all volumes added in the future to have backup enabled, or not, by using the checkbox for "Automatically back up future volumes...". If you disable this setting, you'll need to manually enable backups for future volumes.
 
 . Click *Save* to commit your changes.
 

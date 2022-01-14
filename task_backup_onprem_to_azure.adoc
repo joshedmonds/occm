@@ -234,6 +234,9 @@ image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backu
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
++
+If you want all volumes added in the future to have backup enabled, just leave the checkbox for "Automatically back up future volumes..." checked. If you disable this setting, you'll need to manually enable backups for future volumes.
+
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
 +
 You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Data Sense scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Data Sense instance^]).
