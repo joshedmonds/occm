@@ -237,11 +237,11 @@ You can copy any source files that Data Sense is scanning. There are two types o
 This is useful if you want to make a copy of certain data and move it to a different NFS location.
 * Clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume.
 +
-This is useful for situations where you're migrating data and you want to exclude certain files from the original volume. Or you might want to create a copy of a volume for testing, or to provide access to the volume for additional users without giving them access to the production data. This action uses the NetApp FlexClone functionality to quickly duplicate the volume and then remove the files that you did not select.
+This is useful for situations where you're migrating data and you want to exclude certain files from the original volume. Or you might want to create a copy of a volume for testing, or to provide access to the volume for additional users without giving them access to the production data. This action uses the NetApp FlexClone functionality to quickly duplicate the volume and then remove the files that you didn't select.
 
 === Copying source files to an NFS share
 
-You can copy source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
+You can copy source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
 
 TIP: You can't copy files that reside in databases.
 
@@ -282,7 +282,7 @@ You can clone an existing ONTAP volume that Data Sense is scanning using NetApp 
 
 The new volume is created in the same aggregate as the source volume. Ensure that you have enough space for this new volume in the aggregate before you start this task. Contact your storage administrator if necessary.
 
-*Note:* FlexGroup volumes can't be cloned because they are not supported by FlexClone.
+*Note:* FlexGroup volumes can't be cloned because they're not supported by FlexClone.
 
 .Requirements
 
@@ -293,9 +293,9 @@ The new volume is created in the same aggregate as the source volume. Ensure tha
 
 .Steps
 
-. In the Data Investigation results pane, create a filter using the *Storage Repository* option to make sure all the files are from the same volume. Apply any other filters so that you are seeing only the files that you want to clone to the new volume.
+. In the Data Investigation pane, create a filter using the *Storage Repository* option to make sure all the files are from the same volume. Apply any other filters so that you're seeing only the files that you want to clone to the new volume.
 
-. Select the files that you want to copy.
+. Select the files that you want to clone.
 +
 image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
 
@@ -324,7 +324,7 @@ If you initially selected *Map all volumes* or *Map & Classify all volumes* when
 
 == Moving source files to an NFS share
 
-You can move source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
+You can move source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
 
 TIP: You can't move files that reside in databases or files that reside in volume Backups.
 
@@ -357,7 +357,7 @@ image:screenshot_compliance_move_file.png[A screenshot showing selection of the 
 
 == Deleting source files
 
-You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo or restore.
+You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you've identified as a duplicate. This action is permanent and there is no undo or restore.
 
 TIP: You can't delete files that reside in databases or files that reside in volume Backups.
 

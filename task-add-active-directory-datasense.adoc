@@ -39,7 +39,7 @@ There is no support for identifying user and permission information from Databas
 
 == Connecting to your Active Directory server
 
-After you have deployed Data Sense and have activated scanning on your data sources, you can integrate Data Sense with your Active Directory.
+After you've deployed Data Sense and have activated scanning on your data sources, you can integrate Data Sense with your Active Directory.
 
 The Active Directory credentials can be read-only, but providing admin credentials ensures that Data Sense can read any data that requires elevated permissions. The credentials are stored on the Cloud Data Sense instance.
 
@@ -48,11 +48,11 @@ The Active Directory credentials can be read-only, but providing admin credentia
 * You must have an Active Directory already set up for the users in your company.
 
 * You must have the information for the Active Directory:
-** DNS Server IP Address
+** DNS Server IP Address, or multiple IP Addresses
 ** User Name and Password for the server
 ** Domain Name (Active Directory Name)
+** Whether you are using secure LDAP (LDAPS) or not
 ** LDAP Server Port (389 for LDAP, and typically 636 for secure LDAP)
-** Whether you are using secure LDAP (LDAPS)
 
 .Steps
 
@@ -64,7 +64,7 @@ image:screenshot_compliance_integrate_active_directory.png[A screenshot that sho
 +
 image:screenshot_compliance_active_directory_dialog.png[A screenshot of the dialog where you define the Active Directory you want to integrate with Data Sense.]
 +
-Data Sense integrates to the Active Directory and a new section is added to the Configuration page.
+Data Sense integrates to the Active Directory, and a new section is added to the Configuration page.
 +
 image:screenshot_compliance_active_directory_added.png[A screenshot showing the new Active Directory integrated in Data Sense.]
 
