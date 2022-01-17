@@ -34,6 +34,7 @@ Policies provide the following functionality:
 * Launch the Investigation page with the results from your Policies in one click
 * Send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data
 * Assign AIP (Azure Information Protection) labels automatically to all files that match the criteria defined in a Policy
+* Delete files automatically (once per day) when certain Policies return results so you can protect your data automatically
 
 The *Policies* tab in the Compliance Dashboard lists all the predefined and custom Policies available on this instance of Cloud Data Sense.
 
@@ -359,6 +360,8 @@ image:screenshot_compliance_move_file.png[A screenshot showing selection of the 
 
 You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo or restore.
 
+You can delete files manually from the Investigation pane, or automatically using Policies.
+
 TIP: You can't delete files that reside in databases or files that reside in volume Backups.
 
 .Requirements
@@ -371,6 +374,8 @@ Deleting files requires the following permissions:
 *	For NFS data – the export policy needs to be defined with write permissions.
 *	For CIFS data – the CIFS credentials need to have write permissions.
 *	For S3 data - the IAM role must include the following permission: `s3:DeleteObject`.
+
+=== Deleting source files manually
 
 .Steps
 
@@ -392,6 +397,33 @@ You can view the progress of the delete operation in the <<Viewing the status of
 Note that you can also delete an individual file when viewing the metadata details for a file. Just click *Delete file*.
 
 image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
+
+=== Deleting source files automatically using Policies
+
+You can create a custom Policy to delete files that match the policy. For example, you may want to delete files that contain sensitive information and were discovered by Data Sense in the past 30 days.
+
+NOTE: All files that match the policy will be permanently deleted once a day.
+
+TIP: Only Account Admins can create a policy to automatically delete files.
+
+.Steps
+
+. From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page^] for details.
+
+. Once you have all the filter characteristics just the way you want them, click *Create Policy from this search*.
+
+. Name the Policy and select other actions that can be performed by the Policy:
+.. Enter a unique name and description.
+.. Check the box to "Automatically delete files that match this policy" and type *permanently delete* to confirm that you want files permanently deleted by this policy.
+.. Click *Create Policy*.
++
+image:screenshot_compliance_delete_files_using_policies.png[A screenshot that shows how to configure the Policy and save it.]
+
+.Result
+
+The new Policy appears in the Policies tab.
+
+You can view the list of files that have been deleted in the <<Viewing the status of your compliance actions,Actions Status pane>>.
 
 == Viewing the status of your compliance actions
 
