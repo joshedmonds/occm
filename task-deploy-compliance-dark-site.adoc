@@ -281,7 +281,7 @@ This extracts the upgrade script *start_darksite_upgrade.sh* and any required th
 . Run the upgrade script on the host machine, for example:
 +
 [source,cli]
-./start_darksite_upgrade.sh
+start_darksite_upgrade.sh
 
 .Result
 
@@ -289,4 +289,4 @@ The Data Sense software is upgraded on your host. The update can take 5 to 10 mi
 
 Note that no upgrade is required on scanner nodes if you have deployed Data Sense on multiple hosts systems for scanning very large configurations.
 
-Verify that the software is updated by checking the version at the bottom of the Data Sense UI pages.
+You can verify that the software has been updated by checking the version at the bottom of the Data Sense UI pages.
