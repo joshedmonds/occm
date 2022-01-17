@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploy-compliance-dark-site.html
-keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site
+keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site, upgrade
 summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access. This type of installation is perfect for your secure sites.
 ---
 
@@ -253,33 +253,3 @@ The Cloud Data Sense installer finishes installing packages, and registers the i
 From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
 
 You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
-
-== Upgrade Data Sense software
-
-Since Data Sense software is updated with new features on a regular basis, you should get into a routine to check for new versions periodically to make sure you're using the newest software and features. You'll need to upgrade Data Sense software manually because there is no internet connectivity.
-
-.Steps
-
-. On an internet-configured system, download the Cloud Data Sense software from the https://mysupport.netapp.com/site/products/all/details/cloud-data-sense/downloads-tab/[NetApp Support Site^]. The file you should select is named *DataSense-offline-bundle-<version>.tar.gz*.
-
-. Copy the installer package to the Linux host where Data Sense is installed in the dark site.
-
-. Unzip the installer bundle on the host machine, for example:
-+
-[source,cli]
-tar -xzf DataSense-offline-bundle-v1.8.0.tar.gz
-+
-This extracts required software and the actual installation file *cc_onprem_installer_<version>.tar.gz*.
-+
-If you're using multiple hosts to scan large environments, copy this installation file to all scanner nodes as well.
-
-. Unzip the installation file on the host machine, and on any scanner nodes, for example:
-+
-[source,cli]
-tar -xzf cc_onprem_installer_1.8.0.tar.gz
-
-.Result
-
-The Data Sense installer updates the software on your host (or manager and scanner nodes for your large environments). The update can take 10 to 15 minutes.
-
-Verify that the software is updated by checking the version at the bottom of the Data Sense UI pages.
