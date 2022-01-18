@@ -35,7 +35,7 @@ Most Data Sense features work when it is deployed in a site with no internet acc
 * Managing Microsoft Azure Information Protection (AIP) labels
 * Automated software upgrades from Cloud Manager
 +
-Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available.
+Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available. Then you can follow the steps to <<Upgrade Data Sense software,upgrade your Data Sense software>>.
 
 == Quick start
 
@@ -252,9 +252,7 @@ The Cloud Data Sense installer finishes installing packages, and registers the i
 .What's Next
 From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
 
-//
-// You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
-//
+You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
 
 == Upgrade Data Sense software
 

@@ -231,20 +231,23 @@ The first email is sent now if there are any results from the Policy - but only 
 
 == Copying source files
 
-You can copy any source files that Data Sense is scanning. There are two types of copy operations depending on what you're trying to accomplish:
+You can copy any source files that Data Sense is scanning. There are three types of copy operations depending on what you're trying to accomplish:
 
-* Copy files from the same, or different, volumes or data sources to a destination NFS share.
+* *Copy files* from the same, or different, volumes or data sources to a destination NFS share.
 +
 This is useful if you want to make a copy of certain data and move it to a different NFS location.
-* Clone an ONTAP volume, but include only selected files from the source volume in the new cloned volume.
+* *Clone an ONTAP volume* to a new volume in the same aggregate, but include only selected files from the source volume in the new cloned volume.
 +
-This is useful for situations where you're migrating data and you want to exclude certain files from the original volume. Or you might want to create a copy of a volume for testing, or to provide access to the volume for additional users without giving them access to the production data. This action uses the NetApp FlexClone functionality to quickly duplicate the volume and then remove the files that you didn't select.
+This is useful for situations where you're migrating data and you want to exclude certain files from the original volume. This action uses the link:https://docs.netapp.com/us-en/ontap/volumes/flexclone-efficient-copies-concept.html[NetApp FlexClone^] functionality to quickly duplicate the volume and then remove the files that you *didn't* select.
+* *Copy and synchronize files* from a single source repository (ONTAP volume, S3 bucket, NFS share, etc.) to a directory in a specific destination (target) location.
++
+This is useful for situations where you're migrating data from one source system to another. After the initial copy, the service syncs any changed data based on the schedule that you set. This action uses the link:concept_cloud_sync.html[NetApp Cloud Sync^] functionality to copy and sync data from a source to a target.
 
 === Copying source files to an NFS share
 
-You can copy source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
+You can copy source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense, you just need to know the name of the NFS share where all selected files will be copied in the format `<host_name>:/<share_path>`.
 
-TIP: You can't copy files that reside in databases.
+TIP: You can't copy files that reside in databases or in volume backup.
 
 .Requirements
 
@@ -322,6 +325,54 @@ The new, cloned volume is created in the same aggregate as the source volume.
 You can view the progress of the clone operation in the <<Viewing the status of your compliance actions,Actions Status pane>>.
 
 If you initially selected *Map all volumes* or *Map & Classify all volumes* when you enabled Data Sense for the working environment where the source volume resides, then Data Sense will scan the new cloned volume automatically. If you didn't use either of these selections initially, then if you want to scan this new volume, you'll need to link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[enable scanning on the volume manually].
+
+=== Copying and synchronizing source files to a target system
+
+You can copy source files that Data Sense is scanning from a single source repository (ONTAP volume, S3 bucket, NFS share, etc.) to a directory in a specific destination (target) location. After the initial copy, any data changed in the files are synchronized based on the schedule that you configure.
+
+This is useful for situations where you're migrating data from one source system to another. This action uses the link:concept_cloud_sync.html[NetApp Cloud Sync] functionality to copy and sync data from a source to a target.
+
+TIP: You can't copy and sync files that reside in databases, OneDrive accounts, SharePoint accounts, or in volume backups.
+
+.Requirements
+
+* You must have the Account Admin or Workspace Admin role to copy and sync files.
+* All selected files must be from the same source repository (ONTAP volume, S3 bucket, NFS share, etc.).
+* You can copy a maximum of 200,000 files at a time.
+* You'll need to activate the Cloud Sync service and configure a minimum of one data broker that can be used to transfer files between the source and target systems.
++
+Note that the Cloud Sync service has separate service charges for your sync relationships, and will incur resource charges if you deploy the data broker in the cloud.
+
+.Steps
+
+. In the Data Investigation pane, create a filter using the *Storage Repository* option to make sure all the files are from the same repository. Apply any other filters so that you're seeing only the files that you want to copy and sync to the destination system.
+
+. In the Data Investigation results pane, select the file, or files, that you want to copy and sync.
++
+image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
+
++
+* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
+* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
+* To select all files on all pages in the Investigation results pane, check the box in the title row (image:button_select_all_files.png[]), and in the pop-up message click *Select all items in list (xxx items)*.
+
+. From the button bar, click *Copy*.
++
+image:screenshot_compliance_sync_files_dialog.png[A screenshot showing the Copy Files dialog so you can select the Sync option.]
+
+. In the _Copy Files_ dialog, select the *Sync* tab.
+
+. If you are sure that you want to sync the selected files to a destination location, click *OK*.
++
+The Cloud Sync UI is opened in a new browser window.
++
+You are prompted to define the sync relationship. The Source system is pre-populated based on the repository and files you already selected.
+
+. You'll need to select the Target system and the Data Broker you plan to use. Review the Cloud Sync requirements beginning with the link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[Quick Start description].
+
+.Result
+
+The files are copied to the target system and they'll be synchronized based on the schedule.
 
 == Moving source files to an NFS share
 
