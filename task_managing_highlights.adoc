@@ -19,7 +19,7 @@ Cloud Data Sense provides many ways for you to manage your private data. Some fu
 * You can send email alerts to Cloud Manager users when certain critical Policies return results.
 * You can add Tags to files that you want to mark for organization or for some type of follow-up.
 * If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
-* You can copy, move, or delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.
+* You can copy, move, or delete files that seem insecure or too risky to leave in your storage system, or that you have identified as duplicate.
 
 NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
 
@@ -62,7 +62,8 @@ image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to sa
 
 . Name the Policy and select other actions that can be performed by the Policy:
 .. Enter a unique name and description.
-.. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.
+.. Optionally, check the box to automatically delete files that match the Policy parameters. Learn more about <<Deleting source files automatically using Policies,deleting source files using a policy>>.
+.. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent. Learn more about <<Sending email alerts when non-compliant data is found,sending email alerts based on policy results>>.
 .. Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Only if you have already integrated AIP labels. Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
 .. Click *Create Policy*.
 +
@@ -247,7 +248,7 @@ This is useful for situations where you're migrating data from one source system
 
 You can copy source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense, you just need to know the name of the NFS share where all selected files will be copied in the format `<host_name>:/<share_path>`.
 
-TIP: You can't copy files that reside in databases or in volume backup.
+TIP: You can't copy files that reside in databases or in volume backups.
 
 .Requirements
 
@@ -364,21 +365,25 @@ image:screenshot_compliance_sync_files_dialog.png[A screenshot showing the Copy 
 
 . If you are sure that you want to sync the selected files to a destination location, click *OK*.
 +
-The Cloud Sync UI is opened in a new browser window.
+The Cloud Sync UI is opened in Cloud Manager.
 +
-You are prompted to define the sync relationship. The Source system is pre-populated based on the repository and files you already selected.
+You are prompted to define the sync relationship. The Source system is pre-populated based on the repository and files you already selected in Data Sense.
 
-. You'll need to select the Target system and the Data Broker you plan to use. Review the Cloud Sync requirements beginning with the link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[Quick Start description].
+. You'll need to select the Target system and then select (or create) the Data Broker you plan to use. Review the Cloud Sync requirements beginning with the link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[Quick Start description].
 
 .Result
 
 The files are copied to the target system and they'll be synchronized based on the schedule.
 
+Note that some of the usual Cloud Sync operations are disabled when it is invoked from Data Sense:
+* You can't use "Delete Files on Source" or "Delete Files on Target" buttons.
+* Running a report is disabled.
+
 == Moving source files to an NFS share
 
 You can move source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
 
-TIP: You can't move files that reside in databases or files that reside in volume Backups.
+TIP: You can't move files that reside in databases or files that reside in volume backups.
 
 .Requirements
 
@@ -413,12 +418,7 @@ You can permanently remove source files that seem insecure or too risky to leave
 
 You can delete files manually from the Investigation pane, or automatically using Policies.
 
-TIP: You can't delete files that reside in databases or files that reside in volume Backups.
-
-.Requirements
-
-* You must have the Account Admin or Workspace Admin role to delete files.
-* You can delete a maximum of 100,000 files at a time.
+TIP: You can't delete files that reside in databases or files that reside in volume backups.
 
 Deleting files requires the following permissions:
 
@@ -427,6 +427,11 @@ Deleting files requires the following permissions:
 *	For S3 data - the IAM role must include the following permission: `s3:DeleteObject`.
 
 === Deleting source files manually
+
+.Requirements
+
+* You must have the Account Admin or Workspace Admin role to delete files.
+* You can delete a maximum of 100,000 files at a time.
 
 .Steps
 
@@ -453,9 +458,9 @@ image:screenshot_compliance_delete_file.png[A screenshot showing selection of th
 
 You can create a custom Policy to delete files that match the policy. For example, you may want to delete files that contain sensitive information and were discovered by Data Sense in the past 30 days.
 
-NOTE: All files that match the policy will be permanently deleted once a day.
+Only Account Admins can create a policy to automatically delete files.
 
-TIP: Only Account Admins can create a policy to automatically delete files.
+NOTE: All files that match the policy will be permanently deleted once a day.
 
 .Steps
 
@@ -472,7 +477,7 @@ image:screenshot_compliance_delete_files_using_policies.png[A screenshot that sh
 
 .Result
 
-The new Policy appears in the Policies tab.
+The new Policy appears in the Policies tab. Files that match the policy are deleted once per day when the policy runs.
 
 You can view the list of files that have been deleted in the <<Viewing the status of your compliance actions,Actions Status pane>>.
 
