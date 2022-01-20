@@ -137,6 +137,21 @@ These other configurations, for example, Global File Cache using Cloud Volumes O
 
 == Release Notes
 
+=== What's new in version 1.2.0
+Released: 17 December 2021
+
+* The OpenSSL module has been upgraded to the latest and more secure version (ver 1.1.1l). This module is used for secure communication between GFC Edge and GFC Core.
+* Enhanced the logging infrastructure.
+
+=== Fixed issues in version 1.2.0
+
+* The Configuration UI (Optimus) is enhanced to validate the date field entries while adding pre-population jobs.
+* Pre-population is enhanced to monitor cache utilization and will skip populating if cache usage reaches close to cache cleaner parameters.
+* Removed the hard dependency of the License Management Server (LMS) Service running locally with Policy configuration.
+* The GFC Kernel driver is enhanced to avoid a crash in the SMB Server service in Windows Server 2016/2019.
+* Fixed an exception in the LMS Service.
+* Service Start types for LMS, LMC, and TappN Services are changed from 'Automatic Delayed' to 'Automatic'.
+
 === What's new in version 1.1.0
 Released: 9 June 2021
 
@@ -169,15 +184,3 @@ Released: 21 March 2021
 
 * The NetApp license registration and GFC subscription-based registration is only allowed by the cloud-based License Management Server (LMS). The on-premises LMS should use legacy licensing.
 * The Configuration UI now adds jobs in pre-population when the License Manager Client Service (LMC) uses hostnames instead of IP address for the LMS during configuration.
-
-==== What's new in version 1.0.2
-Released: 6 Jan 2021
-
-* Global File Cache now supports subscription ID based licensing. The Subscription Number is emailed to you after you register your system. See link:task_gfc_getting_started.html#license-your-global-file-cache-installation[Licensing Global File Cache^] for details.
-* The requirement for the GFC Core joining the domain has been relaxed. Now a username (part of Backup Operators group on the Cloud Volumes ONTAP system) is used to configure GFC services.
-* The License Manager Server now has an additional HTTPS endpoint to de-register any registration.
-
-==== Fixed issues in version 1.0.2
-
-* Duplicate GFC icons are no longer displayed on the desktop during upgrade.
-* The License Manager Client Service now retains the correct licensing information when the service is restarted.
