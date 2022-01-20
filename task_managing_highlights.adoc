@@ -369,14 +369,15 @@ The Cloud Sync UI is opened in Cloud Manager.
 +
 You are prompted to define the sync relationship. The Source system is pre-populated based on the repository and files you already selected in Data Sense.
 
-. You'll need to select the Target system and then select (or create) the Data Broker you plan to use. Review the Cloud Sync requirements beginning with the link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[Quick Start description].
+. You'll need to select the Target system and then select (or create) the Data Broker you plan to use. Review the Cloud Sync requirements beginning with the link:https://docs.netapp.com/us-en/occm/task_sync_quick_start.html[Quick Start description^].
 
 .Result
 
 The files are copied to the target system and they'll be synchronized based on the schedule.
 
 Note that some of the usual Cloud Sync operations are disabled when it is invoked from Data Sense:
-* You can't use "Delete Files on Source" or "Delete Files on Target" buttons.
+
+* You can't use the *Delete Files on Source* or *Delete Files on Target* buttons.
 * Running a report is disabled.
 
 == Moving source files to an NFS share
@@ -652,7 +653,7 @@ Cloud Data Sense provides the following system-defined Policies:
 | Name
 | Description
 | Logic
-| S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND contains personal OR sensitive personal info)
+| S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | S3 Public AND contains personal OR sensitive personal info
 | PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
 | HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
 | Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
