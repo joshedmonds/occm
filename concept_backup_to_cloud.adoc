@@ -164,7 +164,7 @@ Two annual contracts are available from the AWS Marketplace:
 +
 You’ll also need to pay for your Cloud Volumes ONTAP systems using this annual contract subscription since you can assign only one active subscription to your AWS credentials in Cloud Manager.
 
-* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract for 12, 24, or 36 months. This option doesn’t enable you to back up on-prem data.
+* A Professional Package that enables you to bundle Cloud Volumes ONTAP and Cloud Backup by using an annual contract for 12, 24, or 36 months. This option doesn’t enable you to back up on-prem data.
 +
 You can set up the annual contract when you create a Cloud Volumes ONTAP working environment and Cloud Manager will prompt you to subscribe to the AWS Marketplace.
 
@@ -330,7 +330,7 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * SM-BC configurations are not supported.
 
-* MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC > SnapMirror > ONTAP > Cloud Backup Service > object storage.
+* MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC > SnapMirror > ONTAP > Cloud Backup > object storage.
 
 * ONTAP doesn't support fan-out of SnapMirror relationships from a single volume to multiple object stores; therefore, this configuration is not supported by Cloud Backup.
 

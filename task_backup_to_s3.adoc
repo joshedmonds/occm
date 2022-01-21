@@ -86,7 +86,7 @@ For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in t
 +
 For an annual contract that enables you to back up both Cloud Volumes ONTAP data and on-premises ONTAP data, you need to subscribe from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials].
 +
-For an annual contract that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service, you must set up the annual contract when you create a Cloud Volumes ONTAP working environment. This option doesn't enable you to back up on-prem data.
+For an annual contract that enables you to bundle Cloud Volumes ONTAP and Cloud Backup, you must set up the annual contract when you create a Cloud Volumes ONTAP working environment. This option doesn't enable you to back up on-prem data.
 +
 For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 +
@@ -179,7 +179,7 @@ See link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS] for r
 
 . On the Services page, leave the service enabled and click *Continue*.
 +
-image:screenshot_backup_to_s3.gif[Shows the Cloud Backup option in the working environment wizard.]
+image:screenshot_backup_to_gcp.png[Shows the Cloud Backup option in the working environment wizard.]
 
 . Complete the pages in the wizard to deploy the system.
 

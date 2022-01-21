@@ -138,7 +138,7 @@ NOTE: If you want to pick the name of the resource group, *disable* Cloud Backup
 
 . On the Services page, leave the service enabled and click *Continue*.
 +
-image:screenshot_backup_to_azure.gif[Shows the Cloud Backup option in the working environment wizard.]
+image:screenshot_backup_to_gcp.png[Shows the Cloud Backup option in the working environment wizard.]
 
 . Complete the pages in the wizard to deploy the system.
 

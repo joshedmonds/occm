@@ -91,7 +91,7 @@ ONTAP requirements::
 * ONTAP 9.7P5 and later.
 * A SnapMirror license (included as part of the Premium Bundle or Data Protection Bundle).
 +
-*Note:* The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
+*Note:* The "Hybrid Cloud Bundle" is not required when using Cloud Backup.
 +
 See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[manage your cluster licenses^].
 *	Time and time zone are set correctly.
@@ -155,11 +155,11 @@ Ensure that the Connector has the required networking connections.
 
 * An HTTPS connection over port 443 to StorageGRID
 * An HTTPS connection over port 443 to your ONTAP clusters
-* An outbound internet connection to the Cloud Backup service over port 443 (HTTPS) (not required when the Connector is installed in a "dark" site)
+* An outbound internet connection to Cloud Backup service over port 443 (HTTPS) (not required when the Connector is installed in a "dark" site)
 
 === License requirements
 
-Before your 30-day free trial of the Cloud Backup service expires, you need to purchase and activate a Cloud Backup BYOL license from NetApp. This license is for the account and can be used across multiple systems.
+Before your 30-day free trial of Cloud Backup expires, you need to purchase and activate a Cloud Backup BYOL license from NetApp. This license is for the account and can be used across multiple systems.
 
 You'll need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[Learn how to manage your BYOL licenses].
 
