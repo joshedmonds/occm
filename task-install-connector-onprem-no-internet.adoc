@@ -57,6 +57,10 @@ Docker Engine:: Docker Engine version 19 or later is required on the host before
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
+.Required privileges
+
+Root privileges are required to install the Connector.
+
 .Steps
 
 . Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].

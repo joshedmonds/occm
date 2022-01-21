@@ -67,9 +67,11 @@ Outbound internet access is required to install the Connector and for the Connec
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
-.About this task
+.Required privileges
 
-* Root privileges are not required to install the Connector.
+Root privileges are required to install the Connector.
+
+.About this task
 
 * The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
 +
