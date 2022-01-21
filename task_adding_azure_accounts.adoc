@@ -166,19 +166,26 @@ You should now have a custom role called _Cloud Manager Operator_.
 
 .. Click *Access control (IAM) > Add > Add role assignment*.
 
-.. Select the *Cloud Manager Operator* role.
+.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
 
-.. Keep *Azure AD user, group, or service principal* selected.
+.. In the *Members* tab, complete the following steps:
 
-.. Search for the name of the application (you can't find it in the list by scrolling).
+* Keep *User, group, or service principal* selected.
+* Click *Select members*.
++
+image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
+* Search for the name of the application.
 +
 Here's an example:
 +
-image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Add role assignment form in the Azure portal.]
+image:screenshot_azure_service_principal_role.png[A screenshot of the Azure portal that shows the Add role assignment form in the Azure portal.]
 
-.. Select the application and click *Save*.
+* Select the application and click *Select*.
+* Click *Next*.
+
+.. Click *Review + assign*.
 +
-The service principal for Cloud Manager now has the required Azure permissions for that subscription.
+The service principal now has the required Azure permissions to deploy the Connector.
 +
 If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. Cloud Manager enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
 

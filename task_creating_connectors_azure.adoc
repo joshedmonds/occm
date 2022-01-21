@@ -84,15 +84,17 @@ You should now have a custom role called _Azure SetupAsService_.
 
 .. Click *Add* > *Add role assignment* and then add the permissions:
 
-* Select the *Azure SetupAsService* role.
+* Select the *Azure SetupAsService* role and click *Next*.
 +
 NOTE: Azure SetupAsService is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure^]. If you chose a different name for the role, then select that name instead.
 
-* Assign access to an *Azure AD user, group, or application*.
+* Keep *User, group, or service principal* selected.
 
-* Select the user account.
+* Click *Select members*, choose your user account, and click *Select*.
 
-* Click *Save*.
+* Click *Next*.
+
+* Click *Review + assign*.
 
 .Result
 
@@ -249,17 +251,24 @@ You should now have a custom role called _Azure SetupAsService_.
 
 .. Click *Access control (IAM) > Add > Add role assignment*.
 
-.. Select the *Cloud Manager Operator* role.
+.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
 
-.. Keep *Azure AD user, group, or service principal* selected.
+.. In the *Members* tab, complete the following steps:
 
-.. Search for the name of the application (you can't find it in the list by scrolling).
+* Keep *User, group, or service principal* selected.
+* Click *Select members*.
++
+image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
+* Search for the name of the application.
 +
 Here's an example:
 +
-image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Add role assignment form in the Azure portal.]
+image:screenshot_azure_service_principal_role.png[A screenshot of the Azure portal that shows the Add role assignment form in the Azure portal.]
 
-.. Select the application and click *Save*.
+* Select the application and click *Select*.
+* Click *Next*.
+
+.. Click *Review + assign*.
 +
 The service principal now has the required Azure permissions to deploy the Connector.
 
