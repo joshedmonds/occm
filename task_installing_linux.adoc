@@ -67,9 +67,11 @@ Outbound internet access is required to install the Connector and for the Connec
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
-.About this task
+.Required privileges
 
-* Root privileges are not required to install the Connector.
+Root privileges are required to install the Connector.
+
+.About this task
 
 * The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
 +
@@ -86,14 +88,14 @@ For help with connecting and copying the file to an EC2 instance in AWS, see htt
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x OnCommandCloudManager-V3.9.13.sh
+chmod +x OnCommandCloudManager-V3.9.14.sh
 
 . Run the installation script.
 +
 If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
 +
 [source,cli]
- ./OnCommandCloudManager-V3.9.13.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+ ./OnCommandCloudManager-V3.9.14.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
 
 +
 _silent_ runs the installation without prompting you for information.
