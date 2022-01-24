@@ -45,7 +45,7 @@ You can import a self-managed Kubernetes cluster using a Kubernetes configuratio
 
 . On the *Canvas*, click *Add Working Environment*.
 
-. Select *Amazon Wed Services* > *Kubernetes Cluster* and click *Next*.
+. Select *Amazon Web Services* > *Kubernetes Cluster* and click *Next*.
 
 . Select *Import Cluster* and click *Next*.
 

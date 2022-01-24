@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: kubernetes-reqs-aws.html
-keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, kubernetes support
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, kubernetes support, aws
 summary: Before you can add an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to Cloud Manager, you need to ensure that the following requirements have been met.
 ---
 
-= Requirements for Kubernetes clusters in Amazon
+= Requirements for Kubernetes clusters in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Before you can add an Amazon Elastic Kubernetes Service (Amazon EKS) cl
 :imagesdir: ./media/
 
 [.lead]
-You can add a managed Amazon Elastic Kubernetes Service (Amazon EKS) clusters or self-managed Kubernetes clusters in Amazon to Cloud Manager. Before you can add the clusters to Cloud Manager, you need to ensure that the following requirements are met.
+You can add managed Amazon Elastic Kubernetes Service (EKS) clusters or self-managed Kubernetes clusters on AWS to Cloud Manager. Before you can add the clusters to Cloud Manager, you need to ensure that the following requirements are met.
 
 This topic uses _Kubernetes cluster_ where configuration is the same for EKS and self-managed Kubernetes clusters. The cluster type is specified where configuration differs.
 
@@ -79,7 +79,7 @@ https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.js
 You need to provide network connectivity between the Kubernetes cluster and the Connector and between the Kubernetes cluster and the Cloud Volumes ONTAP system that provides backend storage to the cluster.
 
 * Each Kubernetes cluster must have an inbound connection from the Connector
-* The Connector must have an outbound connection to Kubernetes cluster over port 443
+* The Connector must have an outbound connection to each Kubernetes cluster over port 443
 
 The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the Kubernetes cluster. Otherwise, you need to set up a VPC peering connection between the different VPCs.
 
@@ -174,7 +174,7 @@ eksctl create iamidentitymapping --cluster <eksCluster> --region <us-east-2> --a
 --
 Directly edit the aws-auth ConfigMap to add RBAC access to the IAM role for the Cloud Manager Connector.
 
-https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html[Go to the Amazon EKS documentation for full instructions^].
+https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html[Go to the AWS EKS documentation for full instructions^].
 
 An example is provided below.
 
