@@ -92,7 +92,7 @@ image:screenshot-onprem-darksite-welcome.png[A screenshot of the Welcome page th
 
 * *System Details*: Enter a name for the Cloud Manager system and your company name.
 +
-image:screenshot-onprem-darksite-details.png[A screenshot of the System Details page that prompts you to enter th Cloud Manager name and Company name.]
+image:screenshot-onprem-darksite-details.png[A screenshot of the System Details page that prompts you to enter the Cloud Manager name and Company name.]
 
 * *Create Admin User*: Create the admin user for the system.
 +
@@ -111,3 +111,5 @@ The Connector is now installed and you can start using the Cloud Manager feature
 * link:task_discovering_ontap.html[Discover on-prem ONTAP clusters]
 * link:task_replicating_data.html[Replicate data between on-prem ONTAP clusters]
 * link:task-deploy-compliance-dark-site.html[Scan the data using Cloud Data Sense]
+
+When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
