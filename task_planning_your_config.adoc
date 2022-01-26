@@ -83,6 +83,14 @@ Watch the following video for more details about sizing your Cloud Volumes ONTAP
 
 video::GELcXmOuYPw[youtube, width=848, height=480]
 
+== Viewing default system disks
+
+In addition to the storage for user data, Cloud Manager also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
+
+link:reference_default_configs.html#aws[View the default disks for Cloud Volumes ONTAP system data in AWS].
+
+TIP: The Connector also requires a system disk. link:reference_connector_default_config.html[View details about the Connector's default configuration].
+
 == Preparing to deploy Cloud Volumes ONTAP in an AWS Outpost
 
 If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC in the Working Environment wizard. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
