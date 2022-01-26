@@ -122,7 +122,16 @@ Recently Modified Files:: Choose to exclude files that were recently modified pr
 Delete Files on Source::
 Choose to delete files from the source location after Cloud Sync copies the files to the target location. This option includes the risk of data loss because the source files are deleted after they're copied.
 +
-If you enable this option, you also need to change a parameter in the local.json file on the data broker. Open the file and change the parameter named _workers.transferrer.delete-on-source_ to *true*.
+If you enable this option, you also need to change a parameter in the local.json file on the data broker. Open the file and update it as follows:
++
+[source,json]
+{
+"workers":{
+"transferrer":{
+"delete-on-source": true
+}
+}
+}
 
 Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never deletes files from the target location.
 
