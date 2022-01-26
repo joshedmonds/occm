@@ -111,8 +111,8 @@ You use the Digital Wallet page in Cloud Manager to manage Cloud Data Sense BYOL
 === Obtain your Cloud Data Sense license file
 
 After you have purchased your Cloud Data Sense license, you activate the license in Cloud Manager by entering the Cloud Data Sense serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
-
-If you've deployed Cloud Data Sense on a host in an on-premises site that doesn’t have internet access, you'll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for dark site installations.
+//
+// If you've deployed Cloud Data Sense on a host in an on-premises site that doesn’t have internet access, you'll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for dark site installations.
 
 .Steps
 
