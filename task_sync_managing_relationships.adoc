@@ -126,9 +126,9 @@ If you enable this option, you also need to change a parameter in the local.json
 +
 [source,json]
 {
-“workers:{
-“transferrer”:{
-“delete-on-source”: true
+"workers":{
+"transferrer":{
+"delete-on-source": true
 }
 }
 }
