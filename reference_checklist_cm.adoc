@@ -64,7 +64,7 @@ AWS services (amazonaws.com):
 | Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
 
 |
-\https://auth0.com
+\https://netapp-cloud-account.auth0.com
 \https://cdn.auth0.com
 \https://services.cloud.netapp.com
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
