@@ -133,6 +133,8 @@ Cloud Manager removes the Connector from its records.
 
 If you link:task-install-connector-onprem-no-internet.html[installed the Connector on an on-premises host that doesn't have internet access], you can upgrade the Connector when a newer version is available from the NetApp Support Site.
 
+The Connector needs to restart during the upgrade process so the user interface will be unavailable during the upgrade.
+
 .Steps
 
 . Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
@@ -149,6 +151,8 @@ chmod +x /path/cloud-manager-connector-offline-v3.9.14
 [source,cli]
 sudo /path/cloud-manager-connector-offline-v3.9.14
 
+. After the upgrade is complete, you can verify the Connector's version by going to *Help > Support > Connector*.
+
 .What about software upgrades on hosts that have internet access?
 ****
 The Connector automatically updates its software to the latest version, as long as it has link:reference_networking_cloud_manager.html[outbound internet access] to obtain the software update.
@@ -156,7 +160,11 @@ The Connector automatically updates its software to the latest version, as long 
 
 == Uninstalling the Connector software
 
-The Connector includes an uninstallation script that you can use to uninstall the software to troubleshoot issues or to permanently remove the software from the host.
+Uninstall the Connector software to troubleshoot issues or to permanently remove the software from the host. The steps that you need to use depends on whether you installed the Connector on a host that has internet access or a host in a restricted network that doesn't have internet access.
+
+=== Uninstalling the Connector from a host that has internet access
+
+The online Connector includes an uninstallation script that you can use to uninstall the software.
 
 .Step
 
@@ -165,3 +173,15 @@ The Connector includes an uninstallation script that you can use to uninstall th
 */opt/application/netapp/cloudmanager/bin/uninstall.sh [silent]*
 +
 _silent_ runs the script without prompting you for confirmation.
+
+=== Uninstalling the Connector from a host that doesn't have internet access
+
+Use these commands if you downloaded the Connector software from the NetApp Support Site and installed it in a restricted network that doesn't have internet access.
+
+.Step
+
+. From the Linux host, run the following commands:
++
+[source,cli]
+docker-compose -f /opt/application/netapp/ds/docker-compose.yml down -v
+rm -rf /opt/application/netapp/ds
