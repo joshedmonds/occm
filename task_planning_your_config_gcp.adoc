@@ -66,6 +66,17 @@ Refer to the following for more details:
 ** https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^]
 ** https://cloud.google.com/compute/docs/disks/performance[Google Cloud documentation: Optimizing Persistent Disk and Local SSD Performance^]
 
+== Viewing default system disks
+
+In addition to the storage for user data, Cloud Manager also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
+
+* link:reference_default_configs.html#google-cloud-single-node[View the default disks for Cloud Volumes ONTAP system data in Google Cloud].
+* https://cloud.google.com/compute/quotas[Google Cloud docs: Resource quotas^]
++
+Google Cloud Compute Engine enforces quotas on resource usage so you should ensure that you haven't reached your limit before you deploy Cloud Volumes ONTAP.
+
+TIP: The Connector also requires a system disk. link:reference_connector_default_config.html[View details about the Connector's default configuration].
+
 == GCP network information worksheet
 
 When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
