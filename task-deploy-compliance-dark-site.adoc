@@ -261,7 +261,7 @@ Since Data Sense software is updated with new features on a regular basis, you s
 .Before you begin
 
 * Data Sense software can be upgraded one major version at a time. For example, if you have version 1.7.x installed, you can upgrade only to 1.8.x. If you are a few major versions behind, you'll need to upgrade the software multiple times.
-* Verify that your on-prem Connector software has been upgraded to the newest available version. link:task-install-connector-onprem-no-internet.html[See the Connector upgrade steps].
+* Verify that your on-prem Connector software has been upgraded to the newest available version. link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[See the Connector upgrade steps^].
 
 .Steps
 

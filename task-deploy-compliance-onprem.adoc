@@ -125,11 +125,6 @@ Cloud Data Sense requires outbound internet access. If your virtual or physical 
 |
 \https://github.com/docker
 \https://download.docker.com
-\https://rhui3.us-west-2.aws.ce.redhat.com
-\https://github-production-release-asset-2e65be.s3.amazonaws.com
-\https://pypi.org
-\https://pypi.python.org
-\https://files.pythonhosted.org
 \http://mirror.centos.org
 \http://mirrorlist.centos.org
 \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm
