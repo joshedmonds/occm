@@ -62,8 +62,8 @@ You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for Clo
 === Obtain your Cloud Backup license file
 
 After you've purchased your Cloud Backup license, you activate the license in Cloud Manager by entering the Cloud Backup serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
-
-If you're running Cloud Backup in an on-premises site that doesn’t have internet access, meaning that you’ve deployed the Cloud Manager Connector on a host in the offline on-premises site, you’ll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for offline (dark site) installations.
+//
+// If you're running Cloud Backup in an on-premises site that doesn’t have internet access, meaning that you’ve deployed the Cloud Manager Connector on a host in the offline on-premises site, you’ll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for offline (dark site) installations.
 
 .Steps
 
