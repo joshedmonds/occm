@@ -44,13 +44,7 @@ A Connector is supported in the following locations:
 * On your premises
 * On your premises, without internet access
 
-=== Note about Azure deployments
-
-If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task_enabling_private_link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
-
-=== Note about Google Cloud deployments
-
-If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
+NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
 == Connectors should remain running
 
