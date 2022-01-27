@@ -63,6 +63,11 @@ Root privileges are required to install the Connector.
 
 .Steps
 
+.	Verify that docker is enabled and running.
++
+[source,cli]
+sudo sysctl enable docker && sudo sysctl start docker
+
 . Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
 
 . Copy the installer to the Linux host.
@@ -78,10 +83,16 @@ chmod +x /path/cloud-manager-connector-offline-v3.9.14
 sudo /path/cloud-manager-connector-offline-v3.9.14
 
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
++
+You should see the following screen.
++
+image:screenshot-onprem-darksite-welcome.png[A screenshot of the Welcome page that appears after you enter the IP address of the Connector into your web browser.]
 
 . Click *Set Up New Cloud Manager* and follow the prompts to set up the system.
 
 * *System Details*: Enter a name for the Cloud Manager system and your company name.
++
+image:screenshot-onprem-darksite-details.png[A screenshot of the System Details page that prompts you to enter the Cloud Manager name and Company name.]
 
 * *Create Admin User*: Create the admin user for the system.
 +
@@ -100,3 +111,5 @@ The Connector is now installed and you can start using the Cloud Manager feature
 * link:task_discovering_ontap.html[Discover on-prem ONTAP clusters]
 * link:task_replicating_data.html[Replicate data between on-prem ONTAP clusters]
 * link:task-deploy-compliance-dark-site.html[Scan the data using Cloud Data Sense]
+
+When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
