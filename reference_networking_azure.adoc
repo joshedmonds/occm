@@ -81,7 +81,9 @@ The Connector requires outbound internet access to manage resources and processe
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
-| \https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+| \https://cloudmanagerinfraprod.azurecr.io
+*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
 
 |===
 
