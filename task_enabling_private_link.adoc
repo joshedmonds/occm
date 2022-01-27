@@ -17,6 +17,10 @@ By default, Cloud Manager enables an Azure Private Link connection between Cloud
 
 In most cases, there’s nothing that you need to do--Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You can also disable the Private Link connection, if desired.
 
+== Connector location in Azure
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task_enabling_private_link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+
 == How Private Link connections work with Cloud Volumes ONTAP
 
 When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with the storage account for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.
