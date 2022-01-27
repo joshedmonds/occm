@@ -133,6 +133,8 @@ Cloud Manager removes the Connector from its records.
 
 If you link:task-install-connector-onprem-no-internet.html[installed the Connector on an on-premises host that doesn't have internet access], you can upgrade the Connector when a newer version is available from the NetApp Support Site.
 
+The Connector needs to restart during the upgrade process so the user interface will be unavailable during the upgrade.
+
 .Steps
 
 . Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
@@ -148,6 +150,8 @@ chmod +x /path/cloud-manager-connector-offline-v3.9.14
 +
 [source,cli]
 sudo /path/cloud-manager-connector-offline-v3.9.14
+
+. After the upgrade is complete, you can verify the Connector's version by going to *Help > Support > Connector*.
 
 .What about software upgrades on hosts that have internet access?
 ****
