@@ -145,6 +145,8 @@ When backing up data to StorageGRID, a Connector must be available on your premi
 * link:task-install-connector-onprem-no-internet.html[Installing the Connector on a Linux host without internet access]
 * link:task_managing_connectors.html[Switching between Connectors]
 
+NOTE: Cloud Backup functionality is built into the Cloud Manager Connector. When installed in a site with no internet connectivity, you'll need to update the Connector software periodically to get access to new features. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each Cloud Backup release, and then you can follow the steps to link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[upgrade the Connector software] when you want to use a new feature.
+
 === Preparing networking for the Connector
 
 Ensure that the Connector has the required networking connections.

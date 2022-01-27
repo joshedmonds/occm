@@ -93,7 +93,7 @@ On-premises ONTAP system |
 
 === Support for sites with no internet connectivity
 
-Cloud Backup can be used in a site with no internet connectivity (an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+Cloud Backup can be used in a site with no internet connectivity (an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to NetApp StorageGRID systems. In this case, you need to deploy the Cloud Manager Connector in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
 
 == Cost
 
