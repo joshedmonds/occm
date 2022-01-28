@@ -27,6 +27,14 @@ image:screenshot_account_settings.gif["A screenshot that shows the Manage Accoun
 
 For step-by-step instructions, see link:task_setting_up_cloud_central_accounts.html[Setting up the NetApp account].
 
+== Max Cloud Volumes ONTAP systems per account
+
+The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
+
+A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you'd have a total of 4 systems, with room for 16 additional systems in your account.
+
+If you have questions, reach out to your account rep or sales team.
+
 == Account Settings
 
 The Manage Account widget in Cloud Manager enables Account Admins to manage a NetApp account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, Connectors, and subscriptions that are associated with the account.
