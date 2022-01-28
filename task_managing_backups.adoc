@@ -33,25 +33,27 @@ image:screenshot_backup_dashboard.png[A screenshot showing all the working envir
 
 If you are looking for specific volumes in certain working environments, you can refine the list by working environment and volume, or you can use the search filter.
 
-== Changing the backup policy
+== Editing an existing backup policy
 
-The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to a combination of hourly, daily, weekly, or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
-
-Changing the backup policy affects both new volumes created after you change the schedule, and any existing volumes that were using the original policy.
+You can change the attributes for a backup policy that is currently applied to volumes in a working environment. Changing the backup policy affects all existing volumes that are using the policy.
 
 .Steps
 
-. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
+. From the *Volumes* tab, select *Backup Settings*.
 +
-image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button from the Volumes tab.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to change the settings and select *Manage Policies*.
+. From the _Backup Settings_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to change the settings, and select *Manage Policies*.
 +
 image:screenshot_backup_modify_policy.png[A screenshot that shows the Manage Policies option from the Backup Settings page.]
 
-. From the _Manage Policies_ page, change the schedule and backup retention and then click *Save*.
+. From the _Manage Policies_ page, click *Edit Policy* for the backup policy you want to change in that working environment.
 +
-image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud Backup settings where you can modify the backup schedule and backup retention setting.]
+image:screenshot_backup_manage_policy_page_edit.png[A screenshot that shows the Edit Policy button from the Manage Policies page.]
+
+. From the _Edit Policy_ page, change the schedule and backup retention and click *Save*.
++
+image:screenshot_backup_edit_policy.png[A screenshot that shows the backup policy settings where you can modify the backup schedule and backup retention setting.]
 +
 If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure for your cloud storage, you also have the option to enable or disable tiering of backups to archival storage after a certain number of days.
 link:reference-azure-backup-tiers.html[Learn more about using Azure archival storage].
@@ -61,7 +63,35 @@ image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tier
 +
 Note that any backup files that have been tiered to archival storage are left in that tier if you stop tiering backups to archive - they are not automatically moved back to the standard tier.
 
-== Starting and stopping backups of volumes
+== Adding a new backup policy
+
+If you want to apply a new backup policy to certain volumes in a working environment, you first need to add the backup policy to the working environment. Then you can add the policy to volumes in that working environment.
+
+.Steps
+
+. From the *Volumes* tab, select *Backup Settings*.
++
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button from the Volumes tab.]
+
+. From the _Backup Settings_ page, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where you want to add the new policy, and select *Manage Policies*.
++
+image:screenshot_backup_modify_policy.png[A screenshot that shows the Manage Policies option from the Backup Settings page.]
+
+. From the _Manage Policies_ page, click *Add New Policy*.
++
+image:screenshot_backup_manage_policy_page_add.png[A screenshot that shows the Add New Policy button from the Manage Policies page.]
+
+. From the _Add New Policy_ page, define the schedule and backup retention and click *Save*.
++
+image:screenshot_backup_add_new_policy.png[A screenshot that shows the backup policy settings where you can add the backup schedule and backup retention setting.]
++
+If your cluster is running ONTAP 9.10.1 or greater, and you are using AWS or Azure for your cloud storage, you also have the option to enable or disable tiering of backups to archival storage after a certain number of days.
+link:reference-azure-backup-tiers.html[Learn more about using Azure archival storage].
+link:reference-aws-backup-tiers.html[Learn more about using AWS archival storage].
++
+image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tiering to archival storage settings for Cloud Backup.]
+
+== Enabling and disabling backups of volumes
 
 You can stop backing up a volume if you do not need backup copies of that volume and you do not want to pay for the cost to store the backups. You can also add a new volume to the backup list if it is not currently being backed up.
 
@@ -80,11 +110,37 @@ image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Vo
 image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
 
 +
-You can choose to have all volumes added in the future to have backup enabled, or not, by using the checkbox for "Automatically back up future volumes...". If you disable this setting, you'll need to manually enable backups for future volumes.
+You can choose to have all volumes added in the future to have backup enabled, or not, by using the checkbox for "Automatically back up future volumes...". If you disable this setting, you'll need to manually enable backups for volumes added in the future.
 
 . Click *Save* to commit your changes.
 
 *Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<Deleting backups,delete the backups>>.
+
+== Changing the policy assigned to existing volumes
+
+You can change the backup policy assigned to your existing volumes.
+
+Note that the policy that you want to apply to the volumes must already exist. <<Adding a new backup policy,See how to add a new backup policy for a working environment>>.
+
+.Steps
+
+. From the *Volumes* tab, select *Backup Settings*.
++
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
+
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, and select *Manage Volumes*.
++
+image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
+
+. Select the checkbox for a volume, or volumes, that you want to change the policy, and then click *Change Policy*.
++
+image:screenshot_backup_manage_volumes_page_change.png[The Manage Volumes page where you can select or deselect volumes.]
+
+. In the _Change Policy_ page, select the policy that you want to apply to the volumes, and click *Change Policy*.
++
+image:screenshot_backup_change_policy.png[A screenshot showing how to select a new policy to apply to selected volumes.]
+
+. Click *Save* to commit your changes.
 
 == Creating a manual volume backup at any time
 
