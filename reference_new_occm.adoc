@@ -84,7 +84,7 @@ Instead of paying NetApp for capacity based on the size of your backup files, no
 +
 In addition to the Active Directory credentials you enter so that Data Sense can scan CIFS volumes from certain data sources, this new integration provides as additional integration for other users and systems. Data Sense will look in all integrated Active Directories for user and permission details. link:task-add-active-directory-datasense.html[See how to set up your global Active Directory].
 
-* Data Sense can automatically delete files that match the query that you define in a Policy. link:task_managing_highlights.html#controlling-your-data-using-policies[See how to create custom Policies].
+* Data Sense can automatically delete files that match the query that you define in a Policy. link:task_managing_highlights.html#deleting-source-files-automatically-using-Policies[See how to create custom Policies].
 
 * The security group for the Cloud Manager Connector will use port 443 instead of port 80 for inbound and outbound traffic to and from the Data Sense instance for added security. Both ports remain open at this time, so you shouldn't see any issues, but you should update the security group in any older deployments of the Connector as port 80 will be deprecated in a future release.
 

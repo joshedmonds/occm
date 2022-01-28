@@ -95,7 +95,7 @@ TIP: In AWS, NVRAM is on the boot disk.
 * Three Premium SSD disks:
 ** One 10 GiB disk for boot data
 ** One 140 GiB disk for root data
-** One 128 GiB disk for NVRAM
+** One 512 GiB disk for NVRAM
 +
 If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSDs, then the system uses an Ultra SSD for NVRAM, rather than a Premium SSD.
 
@@ -108,7 +108,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 *	Two 10 GiB Premium SSD disks for the boot volume (one per node)
 * Two 140 GiB Premium Storage page blobs for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
-* Two 128 GiB Premium SSD disks for NVRAM (one per node)
+* Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
 
 === Google Cloud (single node)

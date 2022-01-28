@@ -37,8 +37,6 @@ TIP: For IAM user permissions for Amazon FSx for ONTAP, see link:task_creating_f
 
 . Attach the policy that you created in the previous step to the IAM user who will create the Connector from Cloud Manager.
 
-
-
 .Result
 
 The AWS user now has the permissions required to create the Connector from Cloud Manager. You'll need to specify AWS access keys for this user when you're prompted by Cloud Manager.

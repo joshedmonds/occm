@@ -21,17 +21,17 @@ Download the Global File Cache Virtual Templates you are planning to use in your
 
 * Windows Server 2016 Virtual Template:
 +
-https://repo.cloudsync.netapp.com/gfc/2K16_ova_1-1-0-78.zip[Windows Server 2016 .OVA including NetApp GFC (VMware VSphere 6.5+)^]
-https://repo.cloudsync.netapp.com/gfc/2K16_vhd_1-1-0-78.zip[Windows Server 2016 .VHDX including NetApp GFC (Microsoft Hyper-v)^]
+https://repo.cloudsync.netapp.com/gfc/2k16_ova_1_2_0-93.zip[Windows Server 2016 .OVA including NetApp GFC (VMware VSphere 6.5+)^]
+https://repo.cloudsync.netapp.com/gfc/2k16_vhd_1-2-0-93.zip[Windows Server 2016 .VHDX including NetApp GFC (Microsoft Hyper-v)^]
 
 * Windows Server 2019 Virtual Template:
 +
-https://repo.cloudsync.netapp.com/gfc/2K19_ova_1-1-0-78.zip[Windows Server 2019 .OVA including NetApp GFC (VMware VSphere 6.5+)^]
-https://repo.cloudsync.netapp.com/gfc/2K19_vhd_1-1-0-78.zip[Windows Server 2019 .VHDX including NetApp GFC (Microsoft Hyper-v)^]
+https://repo.cloudsync.netapp.com/gfc/2k19_ova_1_2_0-93.zip[Windows Server 2019 .OVA including NetApp GFC (VMware VSphere 6.5+)^]
+https://repo.cloudsync.netapp.com/gfc/2k19_vhd_1-2-0-93.zip[Windows Server 2019 .VHDX including NetApp GFC (Microsoft Hyper-v)^]
 
 * Global File Cache Edge Software:
 +
-https://repo.cloudsync.netapp.com/gfc/GFC-1-1-0-78-Release.exe[NetApp GFC Software Installation Package (.EXE)^]
+https://repo.cloudsync.netapp.com/gfc/GFC-1-2-0-94-Release.exe[NetApp GFC Software Installation Package (.EXE)^]
 
 * Global File Cache SCOM (Microsoft Systems Center Operations Manager) Package:
 +

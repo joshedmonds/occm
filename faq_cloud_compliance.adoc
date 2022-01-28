@@ -40,7 +40,9 @@ https://cloud.netapp.com/cloud-compliance[Learn more about the use cases for Clo
 
 == What types of data can be scanned with Cloud Data Sense?
 
-Cloud Data Sense supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSx for ONTAP, and on-prem ONTAP systems. Data Sense can also scan data stored on Amazon S3 buckets, in generic S3 object storage, and in non-NetApp file shares.
+Cloud Data Sense supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSx for ONTAP, on-prem ONTAP systems, and in non-NetApp file shares. Data Sense supports NFS versions 3.x, 4.0, and 4.1, and CIFS versions 1.x, 2.0, 2.1, and 3.0.
+
+Data Sense can also scan data stored on Amazon S3 buckets and in generic S3 object storage.
 
 Additionally, Data Sense can scan databases that are located anywhere, and user files from OneDrive accounts.
 

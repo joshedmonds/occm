@@ -52,6 +52,8 @@ Cloud Data Sense can scan data from the following types of working environments 
 * Databases
 * OneDrive accounts
 
+Data Sense supports NFS versions 3.x, 4.0, and 4.1, and CIFS versions 1.x, 2.0, 2.1, and 3.0.
+
 NOTE: A Beta feature released in January 2021 allows you to run compliance scans on the backup files from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost

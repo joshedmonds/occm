@@ -57,7 +57,16 @@ Docker Engine:: Docker Engine version 19 or later is required on the host before
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
+.Required privileges
+
+Root privileges are required to install the Connector.
+
 .Steps
+
+.	Verify that docker is enabled and running.
++
+[source,cli]
+sudo sysctl enable docker && sudo sysctl start docker
 
 . Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
 
@@ -66,32 +75,41 @@ After you verify that you have a supported Linux host, you can obtain the Connec
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x /path/cloud-manager-connector-offline-v3.9.13
+chmod +x /path/cloud-manager-connector-offline-v3.9.14
 
 . Run the installation script:
 +
 [source,cli]
-sudo /path/cloud-manager-connector-offline-v3.9.13
+sudo /path/cloud-manager-connector-offline-v3.9.14
 
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
-
-. Sign up at NetApp Cloud Central or log in.
-
-. After you log in, set up Cloud Manager:
-
-.. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
-.. Enter a name for the system.
+You should see the following screen.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a NetApp account and name the system.]
+image:screenshot-onprem-darksite-welcome.png[A screenshot of the Welcome page that appears after you enter the IP address of the Connector into your web browser.]
+
+. Click *Set Up New Cloud Manager* and follow the prompts to set up the system.
+
+* *System Details*: Enter a name for the Cloud Manager system and your company name.
++
+image:screenshot-onprem-darksite-details.png[A screenshot of the System Details page that prompts you to enter the Cloud Manager name and Company name.]
+
+* *Create Admin User*: Create the admin user for the system.
++
+This user account runs locally on the system. There's no connection to NetApp Cloud Central.
+
+* *Review*: Review the details, accept the license agreement, and then click *Set Up*.
+
+. Log in to Cloud Manager using the admin user that you just created.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
+The Connector is now installed and you can start using the Cloud Manager features that are available in a dark site deployment.
 
 .What's next?
 
 * link:task_discovering_ontap.html[Discover on-prem ONTAP clusters]
 * link:task_replicating_data.html[Replicate data between on-prem ONTAP clusters]
 * link:task-deploy-compliance-dark-site.html[Scan the data using Cloud Data Sense]
+
+When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].

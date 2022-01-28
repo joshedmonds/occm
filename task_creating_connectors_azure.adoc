@@ -35,6 +35,10 @@ You have two options:
 +
 <<Create a Connector using a service principal,Follow the steps below to get started>>.
 
+== Note about Azure regions
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task_enabling_private_link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+
 == Create a Connector using your Azure account
 
 The default way to create a Connector in Azure is by logging in with your Azure account when prompted. The login form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
@@ -84,15 +88,17 @@ You should now have a custom role called _Azure SetupAsService_.
 
 .. Click *Add* > *Add role assignment* and then add the permissions:
 
-* Select the *Azure SetupAsService* role.
+* Select the *Azure SetupAsService* role and click *Next*.
 +
 NOTE: Azure SetupAsService is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure^]. If you chose a different name for the role, then select that name instead.
 
-* Assign access to an *Azure AD user, group, or application*.
+* Keep *User, group, or service principal* selected.
 
-* Select the user account.
+* Click *Select members*, choose your user account, and click *Select*.
 
-* Click *Save*.
+* Click *Next*.
+
+* Click *Review + assign*.
 
 .Result
 
@@ -249,17 +255,24 @@ You should now have a custom role called _Azure SetupAsService_.
 
 .. Click *Access control (IAM) > Add > Add role assignment*.
 
-.. Select the *Cloud Manager Operator* role.
+.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
 
-.. Keep *Azure AD user, group, or service principal* selected.
+.. In the *Members* tab, complete the following steps:
 
-.. Search for the name of the application (you can't find it in the list by scrolling).
+* Keep *User, group, or service principal* selected.
+* Click *Select members*.
++
+image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
+* Search for the name of the application.
 +
 Here's an example:
 +
-image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Add role assignment form in the Azure portal.]
+image:screenshot_azure_service_principal_role.png[A screenshot of the Azure portal that shows the Add role assignment form in the Azure portal.]
 
-.. Select the application and click *Save*.
+* Select the application and click *Select*.
+* Click *Next*.
+
+.. Click *Review + assign*.
 +
 The service principal now has the required Azure permissions to deploy the Connector.
 
