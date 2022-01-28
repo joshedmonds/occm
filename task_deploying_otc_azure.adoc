@@ -30,7 +30,7 @@ You need the following to create a working environment.
 +
 You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task_planning_your_config_azure.html[Planning your Cloud Volumes ONTAP configuration].
 
-* An understanding of what's required to choose a specific licensing option in the Add Working Environment wizard.
+* An understanding of what's required to choose a specific licensing option in the Add Working Environment wizard. link:concept_licensing.html[Learn more about Cloud Volumes ONTAP licensing].
 +
 [cols="20,40,40",options="header"]
 |===
@@ -39,13 +39,9 @@ You should have chose a configuration and obtained Azure networking information 
 | How to meet the requirement
 
 | Professional or Essential
-| A Marketplace subscription or capacity-based license (BYOL) is required.
+| A capacity-based license (BYOL) is required.
 
-A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn't have a valid capacity-based license, or in the event that your provisioned capacity exceeds the licensed capacity.
-
-| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
-
-If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task_managing_licenses.html[Learn how to add capacity-based BYOL licenses].
+| If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task_managing_licenses.html[Learn how to add capacity-based BYOL licenses].
 
 | Freemium
 | A Marketplace subscription or NetApp Support Site (NSS) account is required.
@@ -61,7 +57,7 @@ a|
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
 
 | Per node
-| An AWS Marketplace subscription is required or you need to bring your own license (BYOL).
+| A Marketplace subscription is required or you need to bring your own license (BYOL).
 
 | You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
