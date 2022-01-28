@@ -19,6 +19,33 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.15 (30 Jan 2022)
+
+This update includes enhancements to several features and services.
+
+=== Cloud Volumes ONTAP
+
+* We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the new by-capacity charging methods and support upcoming offerings through the cloud provider marketplaces.
+
+* We updated the *Digital Wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
+
+* The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
++
+A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you'd have a total of 4 systems, with room for 16 additional systems in your account.
++
+If you have questions, reach out to your account rep or sales team.
++
+link:concept_cloud_central_accounts.html[Learn more about NetApp accounts].
+
+=== NetApp Support Site accounts
+
+As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.
+
+If you haven't yet migrated your NSS account to IDaaS, you first need to migrate the account and then update your credentials in Cloud Manager.
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^].
+* link:task_adding_nss_accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
+
 == Cloud Manager 3.9.14 (2 Jan 2022)
 
 This update includes enhancements to several features and services.
