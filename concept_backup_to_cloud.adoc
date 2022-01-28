@@ -24,11 +24,12 @@ link:https://cloud.netapp.com/cloud-backup-service[Learn more about Cloud Backup
 Backup features:
 
 * Back up independent copies of your data volumes to low-cost object storage.
+* Apply a single backup policy to all volumes in a cluster, or assign different backup policies to volumes that have unique recovery point objectives.
 * Tier older backup files to archival storage to save costs (supported with AWS and Azure when using ONTAP 9.10.1+)
 * Back up from cloud to cloud, and from on-premises systems to public or private cloud.
-* For Cloud Volumes ONTAP system, your backups can reside on a different subscription/account or different region.
+* For Cloud Volumes ONTAP systems, your backups can reside on a different subscription/account or different region.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
-* You can use your own customer-managed keys for data encryption instead of using the default encryption keys from your cloud provider.
+* Use your own customer-managed keys for data encryption instead of using the default encryption keys from your cloud provider.
 * Support for up to 4,000 backups of a single volume.
 
 Restore features:
@@ -120,7 +121,7 @@ The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated
 
 * For Volume Restore there is no cost because no separate instance or virtual machine is required.
 
-* If you need to restore volume data from a backup file that has been moved to archival storage (supported with AWS and Azure when using ONTAP 9.10.1+), then there is an additional per-GB retrieval fee and per-request fee.
+* If you need to restore volume data from a backup file that has been moved to archival storage (supported with AWS and Azure when using ONTAP 9.10.1+), then there is an additional per-GB retrieval fee and per-request fee from the cloud provider.
 
 *Service charges*
 
@@ -200,7 +201,7 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 
 When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up. This keeps network traffic to a minimum.
 
-In most cases you'll use the Cloud Manager UI for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
+In most cases you'll use the Cloud Manager UI for all backup operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
 CAUTION: Any actions taken directly from your cloud provider environment to manage or change backup files may corrupt the files and will result in an unsupported configuration.
 
@@ -238,13 +239,9 @@ You can also use the lower cost _Nearline_ storage class, or the _Coldline_ or _
 
 * In StorageGRID, backups are associated with the _Standard_ storage class.
 
-=== Backup settings are system wide
+=== Customizable backup schedule and retention settings per cluster
 
-When you enable Cloud Backup, all the volumes you identify on the system are backed up to the cloud.
-
-The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
-
-=== The schedule is hourly, daily, weekly, monthly, or a combination
+When you enable Cloud Backup for a working environment, all the volumes you initially select are backed up using the default backup policy that you defined. If you want to assign different backup policies to certain volumes that have different recovery point objectives (RPO), you can create additional policies for that cluster and assign those policies to other volumes.
 
 You can choose a combination of hourly, daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
 
@@ -264,13 +261,13 @@ You can choose a combination of hourly, daily, weekly, and monthly backups of al
 
 |===
 
-Backup protection policies that you have created on the cluster using ONTAP System Manager or the ONTAP CLI are also available as selections.
-
-You can also link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[create an on-demand backup of a volume] from the Backup Dashboard in addition to those backup files created from the scheduled backups.
+Backup protection policies that you have created on the cluster using ONTAP System Manager or the ONTAP CLI will also appear as selections.
 
 Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you always have the most current backups.
 
-Note that the retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
+You can also link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[create an on-demand backup of a volume] from the Backup Dashboard in addition to those backup files created from the scheduled backups.
+
+TIP: The retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
 
 === Backups are taken at midnight
 

@@ -232,7 +232,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 . Enter the backup policy details and click *Next*.
 
 +
-You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+You can define the backup schedule and choose the number of backups to retain.
 +
 image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 

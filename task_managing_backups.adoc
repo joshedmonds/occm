@@ -15,7 +15,7 @@ summary: You can manage backups for your Cloud Volumes ONTAP, on-premises ONTAP,
 [.lead]
 You can manage backups for your Cloud Volumes ONTAP, on-premises ONTAP, and Kubernetes systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 
-Note that the following tasks are performed the same way for ONTAP clusters (Cloud Volumes ONTAP and on-premises ONTAP) and for Kubernetes clusters, but the text on the UI pages are slightly different. ONTAP cluster UI pages are shown in the examples.
+Note that the following tasks are performed the same way for ONTAP clusters (Cloud Volumes ONTAP and on-premises ONTAP) and for Kubernetes clusters, but the text on the UI pages is slightly different. ONTAP cluster UI pages are shown in the examples.
 
 CAUTION: Do not manage or change backup files directly from your cloud provider environment. This may corrupt the files and will result in an unsupported configuration.
 
@@ -45,11 +45,11 @@ Changing the backup policy affects both new volumes created after you change the
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to change the settings and select *Modify Policy*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, where you want to change the settings and select *Manage Policies*.
 +
-image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
+image:screenshot_backup_modify_policy.png[A screenshot that shows the Manage Policies option from the Backup Settings page.]
 
-. From the _Modify Policy_ page, change the schedule and backup retention and then click *Save*.
+. From the _Manage Policies_ page, change the schedule and backup retention and then click *Save*.
 +
 image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Cloud Backup settings where you can modify the backup schedule and backup retention setting.]
 +
