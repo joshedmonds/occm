@@ -28,6 +28,12 @@ If you need to troubleshoot the Connector, it might help to understand how it's 
 +
 The operating system does not include a GUI. You must use a terminal to access the system.
 
+* When deployed from Cloud Manager, the default system disk is as follows:
+
+** AWS: 50 GiB gp2 disk
+** Azure: 100 GiB premium SSD disk
+** Google Cloud: 100 GiB SSD persistent disk
+
 * The Connector installation folder resides in the following location:
 +
 /opt/application/netapp/cloudmanager

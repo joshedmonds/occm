@@ -96,21 +96,23 @@ You should now have a custom role called Cloud Manager Operator that you can ass
 
 .. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
 
-.. Click *Access control (IAM)*.
+.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
 
-.. Click *Add* > *Add role assignment* and then add the permissions:
-
-* Select the *Cloud Manager Operator* role.
+.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
 +
 NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
 
-* Assign access to a *Virtual Machine*.
+.. In the *Members* tab, complete the following steps:
 
-* Select the subscription in which the Connector virtual machine was created.
+* Assign access to a *Managed identity*.
 
-* Select the Connector virtual machine.
+* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
 
-* Click *Save*.
+* Click *Select*.
+
+* Click *Next*.
+
+.. Click *Review + assign*.
 
 .. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
 
