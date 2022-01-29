@@ -211,4 +211,5 @@ An S3 bucket is created automatically in the service account indicated by the S3
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^]. You can also link:task_restore_backups.html[restore entire volumes from a backup file^] to a new volume on an on-premises ONTAP system.
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^].
+You can also link:task_restore_backups.html[restore entire volumes from a backup file^] to a new volume on an on-premises ONTAP system.

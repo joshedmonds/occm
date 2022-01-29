@@ -241,11 +241,11 @@ You can also use the lower cost _Nearline_ storage class, or the _Coldline_ or _
 
 === Customizable backup schedule and retention settings per cluster
 
-When you enable Cloud Backup for a working environment, all the volumes you initially select are backed up using the default backup policy that you defined. If you want to assign different backup policies to certain volumes that have different recovery point objectives (RPO), you can create additional policies for that cluster and assign those policies to other volumes.
+When you enable Cloud Backup for a working environment, all the volumes you initially select are backed up using the default backup policy that you define. If you want to assign different backup policies to certain volumes that have different recovery point objectives (RPO), you can create additional policies for that cluster and assign those policies to other volumes.
 
 You can choose a combination of hourly, daily, weekly, and monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
 
-[cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
+[cols=5*,options="header",cols="35,16,16,16,26",width="80%"]
 |===
 | Backup Policy Name
 3+| Backups per interval...
@@ -265,7 +265,7 @@ Backup protection policies that you have created on the cluster using ONTAP Syst
 
 Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you always have the most current backups.
 
-You can also link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[create an on-demand backup of a volume] from the Backup Dashboard in addition to those backup files created from the scheduled backups.
+Note that you can link:task_managing_backups.html#creating-a-manual-volume-backup-at-any-time[create an on-demand backup of a volume] from the Backup Dashboard at any time, in addition to those backup files created from the scheduled backups.
 
 TIP: The retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
 

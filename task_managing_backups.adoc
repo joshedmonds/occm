@@ -63,6 +63,31 @@ image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tier
 +
 Note that any backup files that have been tiered to archival storage are left in that tier if you stop tiering backups to archive - they are not automatically moved back to the standard tier.
 
+== Enabling and disabling backups of volumes
+
+You can stop backing up a volume if you do not need backup copies of that volume and you do not want to pay for the cost to store the backups. You can also add a new volume to the backup list if it is not currently being backed up.
+
+.Steps
+
+. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
++
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
+
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, and select *Manage Volumes*.
++
+image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
+
+. Select the checkbox for a volume, or volumes, that you want to change, and then click *Activate* or *Deactivate* depending on whether you want to start or stop backups for the volume.
++
+image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
+
++
+You can choose to have all volumes added in the future to have backup enabled, or not, by using the checkbox for "Automatically back up future volumes...". If you disable this setting, you'll need to manually enable backups for volumes added in the future.
+
+. Click *Save* to commit your changes.
+
+*Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<Deleting backups,delete the backups>>.
+
 == Adding a new backup policy
 
 If you want to apply a new backup policy to certain volumes in a working environment, you first need to add the backup policy to the working environment. Then you can add the policy to volumes in that working environment.
@@ -91,34 +116,9 @@ link:reference-aws-backup-tiers.html[Learn more about using AWS archival storage
 +
 image:screenshot_backup_modify_policy_page2.png[A screenshot that shows the tiering to archival storage settings for Cloud Backup.]
 
-== Enabling and disabling backups of volumes
-
-You can stop backing up a volume if you do not need backup copies of that volume and you do not want to pay for the cost to store the backups. You can also add a new volume to the backup list if it is not currently being backed up.
-
-.Steps
-
-. From the *Volumes* tab or the *Kubernetes* tab, select *Backup Settings*.
-+
-image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
-
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, or the Kubernetes cluster, and select *Manage Volumes*.
-+
-image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
-
-. Select the checkbox for a volume, or volumes, that you want to change, and then click *Activate* or *Deactivate* depending on whether you want to start or stop backups for the volume.
-+
-image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
-
-+
-You can choose to have all volumes added in the future to have backup enabled, or not, by using the checkbox for "Automatically back up future volumes...". If you disable this setting, you'll need to manually enable backups for volumes added in the future.
-
-. Click *Save* to commit your changes.
-
-*Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<Deleting backups,delete the backups>>.
-
 == Changing the policy assigned to existing volumes
 
-You can change the backup policy assigned to your existing volumes.
+You can change the backup policy assigned to your existing volumes if you want to change the frequency of taking backups, or if you want to change the retention value.
 
 Note that the policy that you want to apply to the volumes must already exist. <<Adding a new backup policy,See how to add a new backup policy for a working environment>>.
 
@@ -128,11 +128,11 @@ Note that the policy that you want to apply to the volumes must already exist. <
 +
 image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment, and select *Manage Volumes*.
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment where the volumes exist, and select *Manage Volumes*.
 +
 image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
 
-. Select the checkbox for a volume, or volumes, that you want to change the policy, and then click *Change Policy*.
+. Select the checkbox for a volume, or volumes, that you want to change the policy for, and then click *Change Policy*.
 +
 image:screenshot_backup_manage_volumes_page_change.png[The Manage Volumes page where you can select or deselect volumes.]
 
