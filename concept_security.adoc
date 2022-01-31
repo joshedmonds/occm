@@ -28,18 +28,16 @@ You can use NetApp encryption solutions with native encryption from AWS, Azure, 
 
 === NetApp encryption solutions (NVE and NAE)
 
-Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) with an external key manager. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes.
+Cloud Volumes ONTAP supports https://www.netapp.com/us/media/ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption.
 
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
 
-Both NVE and NAE use AES 256-bit encryption.
+Both NVE and NAE are supported with an external key manager. If you use NVE, you have the option to use Azure Key Vault (AKV) or the Google Cloud Key Management Service to protect ONTAP encryption keys.
 
-https://www.netapp.com/us/media/ds-3899.pdf[Learn more about NetApp Volume Encryption and NetApp Aggregate Encryption^].
+New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
 
-Starting with Cloud Volumes ONTAP 9.7, new aggregates will have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
-
-Setting up a supported key manager is the only required step. For set up instructions, see link:task_encrypting_volumes.html[Encrypting volumes with NetApp encryption solutions].
+Setting up a supported key manager is the only required step. For set up instructions, refer to link:task_encrypting_volumes.html[Encrypting volumes with NetApp encryption solutions].
 
 === AWS Key Management Service
 
@@ -51,18 +49,9 @@ If you want to use this encryption option, then you must ensure that the AWS KMS
 
 === Azure Storage Service Encryption
 
-https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] for data at rest is enabled by default for Cloud Volumes ONTAP data in Azure. No setup is required.
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key.
 
-You can encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using Cloud Manager APIs.
-
-You just need to add the following to the API request when creating the single node system:
-
-[source,json]
-"azureEncryptionParameters": {
-      "key": <azure id of encryptionset>
-  }
-
-NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP HA pairs.
+You can use your own encryption keys if you prefer. link:task_set_up_azure_encryption.html[Learn how to set up Cloud Volumes ONTAP to use a customer-managed key in Azure].
 
 === Google Cloud Platform default encryption
 

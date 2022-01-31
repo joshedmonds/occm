@@ -64,7 +64,7 @@ AWS services (amazonaws.com):
 | Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
 
 |
-\https://auth0.com
+\https://netapp-cloud-account.auth0.com
 \https://cdn.auth0.com
 \https://services.cloud.netapp.com
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
@@ -98,7 +98,9 @@ The Connector requires outbound internet access to contact the following endpoin
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
-| \https://cloudmanagerinfraprod.azurecr.io  | To upgrade the Connector and its Docker components.
+| \https://cloudmanagerinfraprod.azurecr.io
+*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
 
 |===
 

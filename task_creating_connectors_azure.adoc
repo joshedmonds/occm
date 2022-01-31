@@ -35,6 +35,10 @@ You have two options:
 +
 <<Create a Connector using a service principal,Follow the steps below to get started>>.
 
+== Note about Azure regions
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task_enabling_private_link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+
 == Create a Connector using your Azure account
 
 The default way to create a Connector in Azure is by logging in with your Azure account when prompted. The login form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.

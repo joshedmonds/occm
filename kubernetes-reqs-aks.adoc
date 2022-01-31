@@ -87,7 +87,7 @@ If you want to discover a managed AKS cluster, you might need to modify the cust
 You need to provide network connectivity between the Kubernetes cluster and the Connector and between the Kubernetes cluster and the Cloud Volumes ONTAP system that provides backend storage to the cluster.
 
 * Each Kubernetes cluster must have an inbound connection from the Connector
-* The Connector must have an outbound connection to Kubernetes cluster over port 443
+* The Connector must have an outbound connection to each Kubernetes cluster over port 443
 
 The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VNet as the Kubernetes cluster. Otherwise, you need to set up a peering connection between the different VNets.
 

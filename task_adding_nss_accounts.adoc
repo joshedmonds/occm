@@ -76,6 +76,8 @@ Starting in November 2021, NetApp now uses Microsoft Azure Active Directory as t
 
 .Steps
 
+. If you haven't already done so, https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[create a Microsoft Azure Active Directory B2C account that will be linked to your current NetApp account^].
+
 . In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
 
 . Click *NSS Management*.
@@ -119,6 +121,8 @@ NetApp uses Microsoft Azure Active Directory as the identity provider for authen
 == Attach a working environment to a different NSS account
 
 If your organization has multiple NetApp Support Site accounts, you can change which account is associated with a Cloud Volumes ONTAP system.
+
+This feature is only supported with NSS accounts that are configured to use Microsoft Azure AD adopted by NetApp for identity management. Before you can use this feature, you need click *Add NSS Account* or *Update Account*.
 
 .Steps
 
