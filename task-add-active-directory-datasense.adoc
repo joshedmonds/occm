@@ -52,7 +52,24 @@ The Active Directory credentials can be read-only, but providing admin credentia
 ** User Name and Password for the server
 ** Domain Name (Active Directory Name)
 ** Whether you are using secure LDAP (LDAPS) or not
-** LDAP Server Port (389 for LDAP, and typically 636 for secure LDAP)
+** LDAP Server Port (typically 389 for LDAP, and 636 for secure LDAP)
+
+* The following ports must be open for outbound communication by the Data Sense instance:
++
+[cols="15,15,25,25",width=80%,options="header"]
+|===
+
+| Protocol
+| Port
+| Destination
+| Purpose
+
+| TCP & UDP | 389 | Active Directory | LDAP
+| TCP | 636 | Active Directory | LDAP over SSL
+| TCP | 3268 | Active Directory | Global Catalog
+| TCP | 3269 | Active Directory | Global Catalog over SSL
+
+|===
 
 .Steps
 
