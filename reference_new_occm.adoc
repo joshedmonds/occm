@@ -25,7 +25,7 @@ This update includes enhancements to several features and services.
 
 === Cloud Volumes ONTAP
 
-* We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the new by-capacity charging methods and support upcoming offerings through the cloud provider marketplaces.
+* We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the by-capacity charging methods that were introduced in July 2021 and support upcoming offerings through the cloud provider marketplaces.
 
 * We updated the *Digital Wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
 
