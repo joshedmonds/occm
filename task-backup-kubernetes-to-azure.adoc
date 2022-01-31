@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-backup-kubernetes-to-azure.html
 keywords: backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, azure, azure blob, back up volumes, Cloud Backup, cloud backup service, kubernetes
-summary: Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Azure Blob storage.
+summary: Complete a few steps to get started backing up data from your persistent volumes on AKS Kubernetes clusters to Azure Blob storage.
 ---
 
 = Backing up Kubernetes persistent volume data to Azure Blob storage
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started backing up data from your Kubernete
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Azure Blob storage.
+Complete a few steps to get started backing up data from your persistent volumes on AKS Kubernetes clusters to Azure Blob storage.
 
 == Quick start
 

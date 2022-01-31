@@ -160,7 +160,7 @@ Before your 30-day free trial of Cloud Backup expires, you need to purchase and 
 
 You'll need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-a-cloud-backup-byol-license[Learn how to manage your BYOL licenses].
 
-TIP: PAYGO licensing is not currently supported when backing up files to StorageGRID.
+TIP: PAYGO licensing is not supported when backing up files to StorageGRID.
 
 A SnapMirror license is required on the cluster. Note that the "Hybrid Cloud Bundle" is not required when using Cloud Backup.
 

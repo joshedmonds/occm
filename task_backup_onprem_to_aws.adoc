@@ -290,7 +290,7 @@ If you want all volumes added in the future to have backup enabled, just leave t
 +
 You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Data Sense scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Data Sense instance^]).
 +
-image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Data Sense on your backed up volumes.]
+image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Data Sense on your backed up volumes.]
 
 . Click *Go to Data Sense* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Data Sense.)
 

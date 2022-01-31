@@ -170,7 +170,7 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 
 . From the Canvas, select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel.
 +
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment.]
+image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Enable button which is available after you select an on-prem working environment.]
 
 . Select Google Cloud as your provider and click *Next*.
 

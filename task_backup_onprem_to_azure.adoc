@@ -242,7 +242,7 @@ image:screenshot_compliance_on_backups.png[A screenshot of the page where you ca
 image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
 * If Cloud Data Sense has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
 +
-image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Data Sense.]
+image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Data Sense.]
 +
 After you have deployed Compliance you can choose the volumes you want to scan as described above.
 

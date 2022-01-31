@@ -90,7 +90,9 @@ You can choose to have all volumes added in the future to have backup enabled, o
 
 == Adding a new backup policy
 
-If you want to apply a new backup policy to certain volumes in a working environment, you first need to add the backup policy to the working environment. Then you can add the policy to volumes in that working environment.
+When you enable Cloud Backup for a working environment, all the volumes you initially select are backed up using the default backup policy that you defined. If you want to assign different backup policies to certain volumes that have different recovery point objectives (RPO), you can create additional policies for that cluster and assign those policies to other volumes.
+
+If you want to apply a new backup policy to certain volumes in a working environment, you first need to add the backup policy to the working environment. Then you can <<Changing the policy assigned to existing volumes,apply the policy to volumes in that working environment>>.
 
 .Steps
 

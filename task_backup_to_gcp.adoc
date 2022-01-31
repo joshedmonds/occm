@@ -63,7 +63,7 @@ Read the following requirements to make sure that you have a supported configura
 
 The following image shows each component and the connections that you need to prepare between them:
 
-image:diagram_cloud_backup_cvo_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
+image:diagram_cloud_backup_cvo_google.png[A diagram showing how Cloud Backup communicates with the volumes on the source system and the destination storage where the backup files are located.]
 
 Supported ONTAP versions::
 Cloud Volumes ONTAP 9.7P5 and later.
