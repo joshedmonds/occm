@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: kubernetes-reqs-aws.html
-keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, kubernetes support
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, amazon eks, eks, kubernetes support, aws
 summary: Before you can add an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to Cloud Manager, you need to ensure that the following requirements have been met.
 ---
 
-= Requirements for EKS clusters
+= Requirements for Kubernetes clusters in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,12 +13,14 @@ summary: Before you can add an Amazon Elastic Kubernetes Service (Amazon EKS) cl
 :imagesdir: ./media/
 
 [.lead]
-Before you can add an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to Cloud Manager, you need to ensure that the following requirements have been met.
+You can add managed Amazon Elastic Kubernetes Service (EKS) clusters or self-managed Kubernetes clusters on AWS to Cloud Manager. Before you can add the clusters to Cloud Manager, you need to ensure that the following requirements are met.
+
+This topic uses _Kubernetes cluster_ where configuration is the same for EKS and self-managed Kubernetes clusters. The cluster type is specified where configuration differs.
 
 == Requirements
 
 Astra Trident::
-The EKS cluster must have NetApp Astra Trident installed. One of the four most recent versions of Astra Trident is required. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Go to the Astra Trident docs for installation steps^].
+The Kubernetes cluster must have NetApp Astra Trident installed. One of the four most recent versions of Astra Trident is required. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html[Go to the Astra Trident docs for installation steps^].
 
 Cloud Volumes ONTAP::
 Cloud Volumes ONTAP for AWS must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
@@ -27,14 +29,14 @@ Cloud Manager Connector::
 A Connector must be running in AWS with the required permissions. <<Prepare a Connector,Learn more below>>.
 
 Network connectivity::
-Network connectivity is required between the EKS cluster and the Connector and between the EKS cluster and Cloud Volumes ONTAP. <<Review networking requirements,Learn more below>>.
+Network connectivity is required between the Kubernetes cluster and the Connector and between the Kubernetes cluster and Cloud Volumes ONTAP. <<Review networking requirements,Learn more below>>.
 
 RBAC authorization::
-The Cloud Manager Connector role must be authorized on each EKS cluster. <<Set up RBAC authorization,Learn more below>>.
+The Cloud Manager Connector role must be authorized on each Kubernetes cluster. <<Set up RBAC authorization,Learn more below>>.
 
 == Prepare a Connector
 
-A Cloud Manager Connector is required in AWS to discover and manage Amazon EKS clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
+A Cloud Manager Connector is required in AWS to discover and manage Kubernetes clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
 
 === Create a new Connector
 
@@ -46,7 +48,7 @@ Follow the steps in one of the links below.
 
 === Add the required permissions to an existing Connector
 
-Starting in the 3.9.13 release, any _newly_ created Connectors include three new AWS permissions that enable discovery and management of EKS clusters. If you created a Connector prior to this release, then you'll need to modify the existing policy for the Connector's IAM role to provide the permissions.
+Starting in the 3.9.13 release, any _newly_ created Connectors include three new AWS permissions that enable discovery and management of Kubernetes clusters. If you created a Connector prior to this release, then you'll need to modify the existing policy for the Connector's IAM role to provide the permissions.
 
 .Steps
 
@@ -74,12 +76,12 @@ https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.js
 
 == Review networking requirements
 
-You need to provide network connectivity between the EKS cluster and the Connector and between the EKS cluster and the Cloud Volumes ONTAP system that provides backend storage to the cluster.
+You need to provide network connectivity between the Kubernetes cluster and the Connector and between the Kubernetes cluster and the Cloud Volumes ONTAP system that provides backend storage to the cluster.
 
-* Each EKS cluster must have an inbound connection from the Connector
-* The Connector must have an outbound connection to eks.amazonaws.com on port 443
+* Each Kubernetes cluster must have an inbound connection from the Connector
+* The Connector must have an outbound connection to each Kubernetes cluster over port 443
 
-The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the EKS cluster. Otherwise, you need to set up a VPC peering connection between the different VPCs.
+The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the Kubernetes cluster. Otherwise, you need to set up a VPC peering connection between the different VPCs.
 
 Here's an example that shows each component in the same VPC.
 
@@ -91,7 +93,7 @@ image:diagram_kubernetes.png[An architectural diagram of an EKS Kubernetes clust
 
 == Set up RBAC authorization
 
-You need to authorize the Connector role on each EKS cluster so the Connector can discover and manage a cluster.
+You need to authorize the Connector role on each Kubernetes cluster so the Connector can discover and manage a cluster.
 
 .Steps
 
@@ -172,7 +174,7 @@ eksctl create iamidentitymapping --cluster <eksCluster> --region <us-east-2> --a
 --
 Directly edit the aws-auth ConfigMap to add RBAC access to the IAM role for the Cloud Manager Connector.
 
-https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html[Go to the Amazon EKS documentation for full instructions^].
+https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html[Go to the AWS EKS documentation for full instructions^].
 
 An example is provided below.
 

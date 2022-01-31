@@ -8,7 +8,6 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
-    langs: us-en,ja-jp,zh-cn
 sidebar:
   entries:
     - title: Cloud Manager 3.9 docs
@@ -356,7 +355,7 @@ sidebar:
       entries:
         - title: Learn about Kubernetes data management
           url: /concept-kubernetes.html
-        - title: Get started with Amazon EKS clusters
+        - title: Get started with Kubernetes clusters in AWS
           entries:
             - title: Requirements
               url: /kubernetes-reqs-aws.html
