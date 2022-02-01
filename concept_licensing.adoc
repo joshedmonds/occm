@@ -15,6 +15,16 @@ summary: Several licensing options are available for Cloud Volumes ONTAP. Each o
 [.lead]
 Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 
+== Max systems per account
+
+The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
+
+A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you'd have a total of 4 systems, with room for 16 additional systems in your account.
+
+If you have questions, reach out to your account rep or sales team.
+
+link:concept_cloud_central_accounts.html[Learn more about NetApp accounts].
+
 == Licensing overview
 
 The following table provides an overview of the licensing options for Cloud Volumes ONTAP.
