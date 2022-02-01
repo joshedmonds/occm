@@ -42,11 +42,16 @@ This is useful if you are planning to migrate data from on-premises locations to
 
 Cloud Data Sense can scan data from the following types of working environments and data sources:
 
+*Working environments:*
+
 * Cloud Volumes ONTAP (deployed in AWS, Azure, or GCP)
 * On-premises ONTAP clusters
 * Azure NetApp Files
 * Amazon FSx for ONTAP
 * Amazon S3
+
+*Data sources:*
+
 * Non-NetApp file shares
 * Object storage (that uses S3 protocol)
 * Databases
