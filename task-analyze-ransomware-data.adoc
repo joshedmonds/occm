@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-analyze-ransomware-data.html
 keywords: personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity
-summary: Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. Where you see an area of interest, you can drill in to find more details and possible remediations.
+summary: Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in each area to find more details and possible remediations.
 ---
 
 = Managing cyber security recommendations for your data sources
@@ -13,55 +13,95 @@ summary: Use the Ransomware Protection dashboard to view an overview of the cybe
 :imagesdir: ./media/
 
 [.lead]
-Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. Where you see an area of interest, you can drill in to find more details and possible remediations.
-
-== The Ransomware Protection dashboard
-
-The Ransomware Protection dashboard provides information so that you can increase the efficiency and control the costs related to the data stored on your storage resources.
+Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in each area to find more details and possible remediations.
 
 image:screenshot_ransomware_dashboard.png[A screenshot of the Ransomware Protection dashboard.]
 
-=== Cyber Resilience Map
+== Cyber Resilience Map
 
-The Cyber Resilience map enables you to see all your working environments and data sources in a visual manner and be able to view relevant cyber-resilience information.
+The Cyber Resilience Map is the main area in the dashboard. It enables you to see all your working environments and data sources in a visual manner and be able to view relevant cyber-resilience information.
 
 image:screenshot_ransomware_cyber_map.png[A screenshot of the Cyber Resilience Map on the Ransomware Protection dashboard.]
 
 The map consists of three parts:
 
-* Left panel - Shows a list of alerts for which the service is monitoring across all data sources.
-* Center panel – Shows all the working environments and data sources. A dot in green or red indicate whether there are alerts for that working environment.
-* Right panel- After you click on a working environment, this panel shows the alerts for that working environment and provides recommendations to resolve the alert.
+Left panel::
+Shows a list of alerts for which the service is monitoring across all of your data sources. It also indicates the number of each particular alert that is active in your environment. Having a large number of one type of alert may be a good reason to try to resolve those alerts first.
+Center panel::
+Shows all of your data sources. Healthy environments have a green indicator and environments that have alerts have a red indicator.
+Right panel::
+After you click on a data source that has a red indicator, this panel shows the alerts for that data source and provides recommendations to resolve the alert. Alerts are sorted so that the most recent alerts are listed first. Most recommendations lead you to another Cloud Manager service where you can resolve the issue.
 
-=== Top data repositories by data sensitivity
+These are the currently tracked alerts and suggested remediations.
+
+[cols=3*,options="header",cols="33,33,33",width="100%"]
+
+|===
+| Alert
+| Description
+| Remediation
+
+| High data encryption rates detected
+| An abnormal increase in the percentage of encrypted files in the data source has occurred. This means that there was a greater than 20% increase in the number of encrypted files in the past 7 days.
+| Click the link to launch the link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Data Sense Investigation page]. There you can select the filters for the specific _Working Environment_ and _Category (Encrypted)_ to view the list of all encrypted files.
+
+| Sensitive data with wide permissions found
+| Sensitive data is found in files and the access permissions level is too high in a data source.
+| Click the link to launch the link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Data Sense Investigation page]. There you can select the filters for the specific _Working Environment_, _Sensitivity Level (Sensitive Personal)_, and _Open Permissions_ to view the list of the files that have this issue.
+
+| One or more volumes are not backed up using Cloud Backup
+| Some volumes in the working environment aren't being protected using link:concept_backup_to_cloud.html[Cloud Backup].
+| Click the link to launch Cloud Backup and then you can identify the volumes that aren't being backed up in the working environment, and then decide if you want to enable backups on those volumes.
+
+| Data Sense is not scanning your working environment
+| Data in the working environment isn't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns, and find optimization opportunities.
+| Click the link to launch Data Sense and enable scanning and mapping for the working environment.
+
+|===
+
+== Top data repositories by data sensitivity
 
 The _Top Data Repositories by Sensitivity Level_ area lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:
 
-* Non-Personal data
+* Non-Sensitive data
 * Personal data
 * Sensitive Personal data
+
+image:screenshot_ransomware_sensitivity.png[A screenshot of the data sensitivity chart on the Ransomware Protection dashboard.]
 
 You can hover over each section to see the total number of items in each category.
 
 Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
-=== Domain Administrator Group control
+== Domain Administrator Group control
 
-This section of the page
+The _Domain Administrator Group control_ area shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have link:task-add-active-directory-datasense.html[integrated a global Active Directory] into Cloud Data Sense for this panel to be active.
 
-=== Data listed by types of Open Permissions
+image:screenshot_ransomware_domain_admin.png[A screenshot of the users who have been added as domain admins on the Ransomware Protection dashboard.]
 
-The _Open Permissions_ area shows the percentage for each type of permissions that exist for all files that are being scanned. The chart shows the following types of permissions:
+The default administrative admin groups include “Administrators”, “Domain Admins”, “Enterprise Admins”, “Enterprise Key Admins”, and “Key Admins”.
+
+== Data listed by types of open permissions
+
+The _Open Permissions_ area shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:
 
 * No Open Access
 * Open to Organization
 * Open to Public
 * Unknown Access
 
-You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
+image:screenshot_ransomware_permissions.png[A screenshot of the encrypted file chart on the Ransomware Protection dashboard.]
+
+You can hover over each section to see the percentage and total number of files in each category.
+
+Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
 TIP: Files in OneDrive accounts, SharePoint accounts, and in databases are not represented in this chart.
 
-=== Data listed by Encrypted files
+== Data listed by encrypted files
 
-This section of the page shows how to view encrypted files...
+The _Encrypted Files_ area shows the percentage of files that are encrypted in the top 4 data sources, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
+
+image:screenshot_ransomware_encrypt_files.png[A screenshot of the encrypted file chart on the Ransomware Protection dashboard.]
+
+Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.

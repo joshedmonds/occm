@@ -22,20 +22,21 @@ TIP: The Ransomware Protection service is currently a Beta offering.
 
 == Features
 
-Ransomware Protection currently provides several features that can help you with your cyberstorage protection efforts. Additional features will be added each month. Current features identify when:
+Ransomware Protection currently provides several features that can help you with your cyberstorage protection efforts. Additional features will be added in the future. Current features identify when:
 
 * Volumes in your working environments aren't being protected using link:concept_backup_to_cloud.html[Cloud Backup].
-* Data in your working environments and imported data sources aren't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns, and find optimization opportunities.
+* Data in your working environments and data sources aren't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns, and find optimization opportunities.
 * An abnormal increase in the percentage of encrypted files in a working environment or data source has occurred.
 +
 This can be an indicator that a ransomware attack has commenced on your network.
 * Sensitive data is found in files and the access permissions level is too high in a working environment or data source.
+* Users have been added to your Active Directory Domain Administrator Groups.
 
 When using Cloud Volumes ONTAP systems, there are some additional ransomware protections you can deploy directly from the working environment. link:task_protecting_ransomware.html[See how to add additional protection against ransomware].
 
 == Supported working environments and data sources
 
-Cloud Data Sense is a prerequisite to using the Ransomware Protection service. After Data Sense is installed and activated, you can use Ransomware Protection to see how resilient your data is to a cyber attack on the following types of working environments and data sources:
+link:concept_cloud_compliance.html[Cloud Data Sense] is a prerequisite to using the Ransomware Protection service. After Data Sense is installed and activated, you can use Ransomware Protection to see how resilient your data is to a cyber attack on the following types of working environments and data sources:
 
 *Working environments:*
 
@@ -64,4 +65,4 @@ At a high-level, Ransomware Protection works like this:
 
 == Cost
 
-There is no cost during the Beta cycle.
+There is no separate cost for the Ransomware Protection service during the Beta.
