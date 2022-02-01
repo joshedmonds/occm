@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-analyze-ransomware-data.html
 keywords: personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity
-summary: Gain control of the costs related to the data on your organizations' storage resources. Cloud Data Sense identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
+summary: Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. Where you see an area of interest, you can drill in to find more details and possible remediations.
 ---
 
-= Managing cyber security recommendations for your data
+= Managing cyber security recommendations for your data sources
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,21 +13,27 @@ summary: Gain control of the costs related to the data on your organizations' st
 :imagesdir: ./media/
 
 [.lead]
-Gain control of the costs related to the data on your organizations' storage resources. Cloud Data Sense identifies the amount of stale data, non-business data, duplicate files, and very large files in your systems so you can decide whether you want to remove or tier some files to less expensive object storage.
-
-Additionally, if you are planning to migrate data from on-premises locations to the cloud, you can view the size of the data and whether any of the data contains sensitive information prior to moving it.
+Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. Where you see an area of interest, you can drill in to find more details and possible remediations.
 
 == The Ransomware Protection dashboard
 
-The Governance dashboard provides information so that you can increase the efficiency and control the costs related to the data stored on your storage resources.
+The Ransomware Protection dashboard provides information so that you can increase the efficiency and control the costs related to the data stored on your storage resources.
 
 image:screenshot_ransomware_dashboard.png[A screenshot of the Ransomware Protection dashboard.]
 
 === Cyber Resilience Map
 
-You may want to investigate the items in the _Saving Opportunities_ area to see if there is any data you should delete or tier to less expensive object storage. Click each item to view the filtered results in the Investigation page.
+The Cyber Resilience map enables you to see all your working environments and data sources in a visual manner and be able to view relevant cyber-resilience information.
 
-=== Top data repositories listed by data sensitivity
+image:screenshot_ransomware_cyber_map.png[A screenshot of the Cyber Resilience Map on the Ransomware Protection dashboard.]
+
+The map consists of three parts:
+
+* Left panel - Shows a list of alerts for which the service is monitoring across all data sources.
+* Center panel – Shows all the working environments and data sources. A dot in green or red indicate whether there are alerts for that working environment.
+* Right panel- After you click on a working environment, this panel shows the alerts for that working environment and provides recommendations to resolve the alert.
+
+=== Top data repositories by data sensitivity
 
 The _Top Data Repositories by Sensitivity Level_ area lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:
 
@@ -37,7 +43,7 @@ The _Top Data Repositories by Sensitivity Level_ area lists up to the top four d
 
 You can hover over each section to see the total number of items in each category.
 
-Click each area to view the filtered results in the Investigation page so that you can investigate further.
+Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
 === Domain Administrator Group control
 
@@ -52,7 +58,7 @@ The _Open Permissions_ area shows the percentage for each type of permissions th
 * Open to Public
 * Unknown Access
 
-You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Investigation page so that you can investigate further.
+You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
 TIP: Files in OneDrive accounts, SharePoint accounts, and in databases are not represented in this chart.
 
