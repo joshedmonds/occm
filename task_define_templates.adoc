@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_define_templates.html
-keywords: templates, resource templates, services templates, volume templates, cvo working environment template
+keywords: templates, resource templates, services templates, volume templates, cvo working environment template, find volumes
 summary: Select one or more of the NetApp-provided "actions" and quickly build an application template that your organization can use to start optimizing the creation of resources.
 ---
 
@@ -30,7 +30,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *AppTemplate* service, click the *Editor* tab, and select the template.
+Select the *AppTemplate* service, click the *Editor* tab, and select the actions you'll use in your template.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Build the template by selecting "actions" and defining parameters
 
@@ -49,9 +49,9 @@ Read the following requirements to make sure that you have a supported configura
 
 * When creating an Azure NetApp Files volume template, make sure you have an Azure NetApp Files working environment available for your users. See how to link:task_manage_anf.html[create an Azure NetApp Files working environment^] in Cloud Manager.
 
-* If you plan to enable Cloud Backup in the template, ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to use Cloud Backup to backup up a volume in the template, ensure that your environment has activated Cloud Backup.
 
-* If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
+* If you plan to use Cloud Data Sense to scan volumes in the template, ensure that your environment has activated Cloud Data Sense.
 
 * If you plan to enable Replication in the template, and the template is for an on-premises ONTAP volume, the ONTAP cluster must have an active SnapMirror license.
 
@@ -487,6 +487,18 @@ Drift allows Cloud Manager to monitor the hard-coded values you entered for para
 The template is created and you are returned to the Template Dashboard where your new template appears.
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
+
+== Examples of finding existing resources using templates so you can activate cloud services
+
+Using the _Find Existing Resources_ action you can find existing resources and enable a cloud service on those resources.
+
+At this time you can find volumes within Cloud Volumes ONTAP, on-premises ONTAP, and Azure NetApp Files systems only. And you can enable only Cloud Backup on these existing volumes. Additional resources and service will be available at a later time.
+
+=== Find existing volumes so you can activate cloud backup
+
+
+
+
 
 == Examples of enabling services using templates
 
