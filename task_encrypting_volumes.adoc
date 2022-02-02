@@ -41,5 +41,4 @@ TIP: Search for the *Key Managers* solution.
 
 . Configure external key management.
 +
-* For NVE, https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html[refer to these instructions in the ONTAP documentation^].
-* For NAE, https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-concept.html[refer to these instructions in the ONTAP documentation^].
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html[Go to the ONTAP documentation for instructions^].
