@@ -47,8 +47,8 @@ Cloud Tiering supports the following Azure regions.
 === Europe
 
 * France Central
-* Germany West Central
-* Germany North
+* Germany Central
+* Germany Northeast
 * North Europe
 * UK South
 * UK West
