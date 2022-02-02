@@ -19,6 +19,30 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.15 update (8 Feb 2022)
+
+This updates includes enhancements to several features and services.
+
+=== Cloud Sync
+
+* We changed how you interact with data brokers by emphasizing data broker _groups_.
++
+For example, when you create a new sync relationship, you select the data broker _group_ to use with the relationship, rather than a specific data broker.
++
+image:screenshot-sync-select-data-broker-group.png[A screenshot of the Sync Relationship wizard that shows the data broker group selection.]
++
+In the *Manage Data Brokers* tab, we also show the number of sync relationships that a data broker group is managing.
++
+image:screenshot-sync-group-relationships.png["A screenshot of the Manage Data Brokers page that shows a data broker group and details about that group, including the number of relationships that it's managing."]
+
+* Cloud Sync is now integrated with Cloud Data Sense. You can use Data Sense to copy files from a single source repository (ONTAP volume, S3 bucket, NFS share, etc.) to a target location and synchronize those files.
++
+link:task_managing_highlights.html#copying-and-synchronizing-source-files-to-a-target-system[Learn how to copy and sync files].
+
+* You can now download a PDF of a report.
++
+link:task_sync_managing_reports.html[Learn about reports].
+
 == Cloud Manager 3.9.15 (30 Jan 2022)
 
 This update includes enhancements to several features and services.
