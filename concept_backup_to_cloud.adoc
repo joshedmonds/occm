@@ -314,6 +314,8 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
+* When creating or editing a backup policy when no volumes are assigned to the policy, the number of retained backups can be a maximum of 1018. As a workaround you can reduce the number of backups to create the policy. Then you can edit the policy to create up to 4000 backups after you assign volumes to the policy.
+
 * When backing up data protection (DP) volumes, relationships with the following SnapMirror labels won't be backed up to cloud:
 ** app_consistent
 ** all_source_snapshot
