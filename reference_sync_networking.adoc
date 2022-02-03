@@ -56,45 +56,45 @@ The data broker contacts the following endpoints:
 | Endpoints
 | Purpose
 
-| /https://olcentgbl.trafficmanager.net | To contact a repository for updating CentOS packages for the data broker host. This endpoint is contacted only if you manually install the data broker on a CentOS host.
+| \https://olcentgbl.trafficmanager.net | To contact a repository for updating CentOS packages for the data broker host. This endpoint is contacted only if you manually install the data broker on a CentOS host.
 
 |
-/https://rpm.nodesource.com
-/https://registry.npmjs.org
-/https://nodejs.org:
+\https://rpm.nodesource.com
+\https://registry.npmjs.org
+\https://nodejs.org:
 | To contact repositories for updating Node.js, npm, and other 3rd party packages used in development.
 
-| /https://tgz.pm2.io | To access a repository for updating PM2, which is a 3rd party package used to monitor Cloud Sync.
+| \https://tgz.pm2.io | To access a repository for updating PM2, which is a 3rd party package used to monitor Cloud Sync.
 
 |
-/https://sqs.us-east-1.amazonaws.com
-/https://kinesis.us-east-1.amazonaws.com
+\https://sqs.us-east-1.amazonaws.com
+\https://kinesis.us-east-1.amazonaws.com
 | To contact the AWS services that Cloud Sync uses for operations (queuing files, registering actions, and delivering updates to the data broker).
 
-| /https://s3._region_.amazonaws.com
+| \https://s3._region_.amazonaws.com
 
 For example: s3.us-east-2.amazonaws.com:443
 https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region[See AWS documentation for a list of S3 endpoints^]
 | To contact Amazon S3 when a sync relationship includes an S3 bucket.
 
-| /https://s3.us-east-1.amazonaws.com
+| \https://s3.us-east-1.amazonaws.com
 
 | When you download data broker logs from Cloud Sync, the data broker zips its logs directory and uploads the logs to a predefined S3 bucket in the us-east-1 region.
 
 |
-/https://cf.cloudsync.netapp.com
-/https://repo.cloudsync.netapp.com
+\https://cf.cloudsync.netapp.com
+\https://repo.cloudsync.netapp.com
 | To contact the Cloud Sync service.
 
-| /https://support.netapp.com | To contact NetApp support when using a BYOL license for sync relationships.
+| \https://support.netapp.com | To contact NetApp support when using a BYOL license for sync relationships.
 
-| /https://fedoraproject.org | To install 7z on the data broker virtual machine during installation and updates. 7z is needed to send AutoSupport messages to NetApp technical support.
+| \https://fedoraproject.org | To install 7z on the data broker virtual machine during installation and updates. 7z is needed to send AutoSupport messages to NetApp technical support.
 
-| /https://sts.amazonaws.com | To verify AWS credentials when the data broker is deployed in AWS or when it's deployed on your premises and AWS credentials are provided. The data broker contacts this endpoint during deployment, when it's updated, and when it's restarted.
+| \https://sts.amazonaws.com | To verify AWS credentials when the data broker is deployed in AWS or when it's deployed on your premises and AWS credentials are provided. The data broker contacts this endpoint during deployment, when it's updated, and when it's restarted.
 
 |
-/https://cloudmanager.cloud.netapp.com
-/https://netapp-cloud-account.auth0.com
+\https://cloudmanager.cloud.netapp.com
+\https://netapp-cloud-account.auth0.com
 
 | To contact Cloud Data Sense when you use Data Sense to select the source files for a new sync relationship.
 
