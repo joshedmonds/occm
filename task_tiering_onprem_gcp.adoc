@@ -132,7 +132,7 @@ NOTE: If you are planning to configure Cloud Tiering to use lower cost storage c
 
 .. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
 +
-You'll need to link:task_tiering_google.html#tiering-inactive-data-to-a-google-cloud-storage-bucket[enter the keys in Cloud Tiering] later when you set up tiering.
+You'll need to enter the keys later when you set up Cloud Tiering.
 
 == Tiering inactive data from your first cluster to Google Cloud Storage
 
