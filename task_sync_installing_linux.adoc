@@ -13,7 +13,7 @@ summary: When you create a new data broker, choose the On-Prem Data Broker optio
 :imagesdir: ./media/
 
 [.lead]
-When you create a new data broker, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+When you create a new data broker group, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 
 == Linux host requirements
 
@@ -89,13 +89,11 @@ You can install a data broker on a Linux host when you create a sync relationshi
 
 . On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
 +
-Complete the steps until you reach the *Data Broker* page.
+Complete the steps until you reach the *Data Broker Group* page.
 
-. On the *Data Broker* page, click *Create Data Broker* and then select *On-Prem Data Broker*.
+. On the *Data Broker Group* page, click *Create Data Broker* and then select *On-Prem Data Broker*.
 +
-If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
-+
-image:screenshot_create_data_broker.gif["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
+image:screenshot-on-prem.png["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
 +
 NOTE: Even though the option is labeled *_On-Prem_ Data Broker*, it applies to a Linux host on your premises or in the cloud.
 

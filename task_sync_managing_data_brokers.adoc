@@ -5,7 +5,7 @@ keywords: manage data brokers, manage data broker groups, data broker performanc
 summary: A data broker syncs data from a source location to a target location. A data broker is required for each sync relationship that you create. Manage data brokers by adding a new data broker to a group, by viewing information about data brokers, and more.
 ---
 
-= Manage data brokers
+= Manage data broker groups
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -14,15 +14,15 @@ summary: A data broker syncs data from a source location to a target location. A
 :imagesdir: ./media/
 
 [.lead]
-A data broker syncs data from a source location to a target location. A data broker is required for each sync relationship that you create. Manage data brokers by adding a new data broker to a group, by viewing information about data brokers, and more.
+A data broker group syncs data from a source location to a target location. At least one data broker is required in a group for each sync relationship that you create. Manage data broker groups by adding a new data broker to a group, by viewing information about groups, and more.
 
 == Data broker groups
 
 Grouping data brokers together can help improve the performance of sync relationships.
 
-=== Determining the number of data brokers
+=== Determining the number of data brokers in a group
 
-In many cases, a single data broker can meet the performance requirements for a sync relationship. If it doesn’t, you can accelerate sync performance by adding additional data brokers to the group. But you should first check other factors that can impact sync performance. link:faq_sync.html#how-many-data-brokers-are-required[Learn more about how to determine when multiple data brokers are required].
+In many cases, a single data broker can meet the performance requirements for a sync relationship. If it doesn’t, you can accelerate sync performance by adding additional data brokers to the group. But you should first check other factors that can impact sync performance. link:faq_sync.html#how-many-data-brokers-are-required-in-a-group[Learn more about how to determine when multiple data brokers are required].
 
 === Groups can manage several relationships
 
@@ -30,11 +30,11 @@ A data broker group can manage one or more sync relationships at a time.
 
 For example, let's say you have three relationships:
 
-* Relationship 1 uses data broker A
-* Relationship 2 uses data broker B
-* Relationship 3 uses data broker A
+* Relationship 1 uses data broker group A
+* Relationship 2 uses data broker group B
+* Relationship 3 uses data broker group A
 
-You want to accelerate the performance of relationship 1 so you add a new data broker (data broker C) to the group. Because data broker A is also used to manage relationship 3, having two data brokers in the group also accelerates the performance of this relationship.
+You want to accelerate the performance of relationship 1 so you add a new data broker to the group A. Because data broker group A is also used to manage relationship 3, having two data brokers in the group also accelerates the performance of this relationship.
 
 === New data brokers only
 
@@ -83,7 +83,7 @@ For help, refer to the following pages:
 +
 image:screenshot_sync_group_add.gif[A screenshot of the action menu that's available for each individual data broker in a group.]
 
-. Follow the prompts to create the data broker.
+. Follow the prompts to create the data broker in the group.
 +
 For help, refer to the following pages:
 +

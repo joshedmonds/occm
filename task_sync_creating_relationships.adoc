@@ -62,7 +62,7 @@ image:screenshot_nfs_to_s3.png[A screenshot that shows NFS as a source and S3 as
 
 . On the *NFS Server* page, enter the IP address or fully qualified domain name of the NFS server that you want to sync to AWS.
 
-. On the *Data Broker* page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
+. On the *Data Broker Group* page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
 +
 For more details, refer to the following pages:
 +
@@ -73,9 +73,9 @@ For more details, refer to the following pages:
 
 . After you install the data broker, click *Continue*.
 +
-The following image shows a successfully deployed data broker in AWS:
+The following image shows a data broker group in AWS:
 +
-image:screenshot_created_instance.gif[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
+image:screenshot-data-broker-group.png[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
 
 . [[filter]]On the *Directories* page, select a top-level directory or subdirectory.
 +
@@ -152,6 +152,8 @@ File Size:: Choose to sync all files regardless of their size or just files that
 Date Modified:: Choose all files regardless of their last modified date, files modified after a specific date, before a specific date, or between a time range.
 
 Date Created:: When an SMB server is the source, this setting enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
+
+ACL - Access Control List:: Copy ACLs from an SMB server by enabling a setting when you create a relationship or after you create a relationship.
 
 . On the *Tags/Metadata* page, choose whether to save a key-value pair as a tag on all files transferred to the S3 bucket or to assign a metadata key-value pair on all files.
 +
