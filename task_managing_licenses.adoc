@@ -261,6 +261,8 @@ image:screenshot-exchange-license.png[A screenshot of the Exchange License optio
 
 . Read the legal consent and click *Agree*.
 
+.Result
+
 Cloud Manager converts the unassigned license to the service that you selected. You can view the new license in the *Data Services Licenses* tab.
 
 === Obtain a system license file
