@@ -46,7 +46,7 @@ For example, let's say you have three relationships:
 * Relationship 2 is managed by data broker group B
 * Relationship 3 is managed by data broker group A
 
-You want to accelerate the performance of relationship 1 so you add a new data broker to data broker group A. Because group A also manages sync relationship 3, the sync performance for relationship is automatically accelerated as well..
+You want to accelerate the performance of relationship 1 so you add a new data broker to data broker group A. Because group A also manages sync relationship 3, the sync performance for relationship is automatically accelerated as well.
 
 .Steps
 

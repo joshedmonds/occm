@@ -66,14 +66,12 @@ image:screenshot_nfs_to_s3.png[A screenshot that shows NFS as a source and S3 as
 +
 For more details, refer to the following pages:
 +
-* link:task_sync_installing_aws.html[Installing the data broker in AWS]
-* link:task_sync_installing_azure.html[Installing the data broker in Azure]
-* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_aws.html[Create a data broker in AWS]
+* link:task_sync_installing_azure.html[Create a data broker in Azure]
+* link:task_sync_installing_gcp.html[Create a data broker in Google Cloud]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
 . After you install the data broker, click *Continue*.
-+
-The following image shows a data broker group in AWS:
 +
 image:screenshot-data-broker-group.png[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
 

@@ -30,11 +30,11 @@ A data broker group can manage one or more sync relationships at a time.
 
 For example, let's say you have three relationships:
 
-* Relationship 1 uses data broker group A
-* Relationship 2 uses data broker group B
-* Relationship 3 uses data broker group A
+* Relationship 1 is managed by data broker group A
+* Relationship 2 is managed by data broker group B
+* Relationship 3 is managed by data broker group A
 
-You want to accelerate the performance of relationship 1 so you add a new data broker to the group A. Because data broker group A is also used to manage relationship 3, having two data brokers in the group also accelerates the performance of this relationship.
+You want to accelerate the performance of relationship 1 so you add a new data broker to data broker group A. Because group A also manages sync relationship 3, the sync performance for relationship is automatically accelerated as well.
 
 === New data brokers only
 
@@ -70,9 +70,9 @@ For example, if a group includes an AWS data broker, then you can create an AWS 
 +
 For help, refer to the following pages:
 +
-* link:task_sync_installing_aws.html[Installing the data broker in AWS]
-* link:task_sync_installing_azure.html[Installing the data broker in Azure]
-* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_aws.html[Create a data broker in AWS]
+* link:task_sync_installing_azure.html[Create a data broker in Azure]
+* link:task_sync_installing_gcp.html[Create a data broker in Google Cloud]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
 .Steps to create a data broker in an existing group
@@ -87,9 +87,9 @@ image:screenshot_sync_group_add.gif[A screenshot of the action menu that's avail
 +
 For help, refer to the following pages:
 +
-* link:task_sync_installing_aws.html[Installing the data broker in AWS]
-* link:task_sync_installing_azure.html[Installing the data broker in Azure]
-* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_aws.html[Create a data broker in AWS]
+* link:task_sync_installing_azure.html[Create a data broker in Azure]
+* link:task_sync_installing_gcp.html[Create a data broker in Google Cloud]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
 == Security recommendations
