@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_run_templates.html
 keywords: templates, resource templates, services templates, volume templates, working environment templates
-summary: Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) for the volumes.
+summary: Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) on the volumes, or on existing volumes.
 ---
 
-= Create resources using templates
+= Create or modify resources using templates
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Select one of the application templates that your organization has buil
 :imagesdir: ./media/
 
 [.lead]
-Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes.
+Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes, or on existing volumes.
 
 Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems.
 
