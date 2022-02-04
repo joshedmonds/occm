@@ -13,7 +13,7 @@ summary: The Application Templates service enables you to standardize resource c
 :imagesdir: ./media/
 
 [.lead]
-The Application Templates service enables you to standardize resource creation in your working environments. For example, you can hard-code required parameters in a "volume template" that are later applied when a storage admin creates a volume using the template. This can include required disk type, size, protocol, snapshot policy, cloud provider, and more. You can also turn on certain services, like Cloud Backup, for every created volume.
+The Application Template service enables you to standardize resource creation in your working environments. For example, you can hard-code required parameters in a "volume template" that are later applied when a storage admin creates a volume using the template. This can include required disk type, size, protocol, snapshot policy, cloud provider, and more. You can also turn on certain services, like Cloud Backup, for every created volume.
 
 Templates make it easy for your storage admins to create volumes that are optimized for the workload requirements for each deployed application; such as databases, email, or streaming services. And it makes life easier for your storage architects knowing that each volume is created optimally for each application.
 
@@ -31,23 +31,17 @@ Application Templates offer the following features and benefits:
 
 link:task_check_template_compliance.html[Learn more about drift].
 
-== Pricing and licenses
-
-The Application Templates feature requires no licensing and is free to use by all Cloud Manager users.
-
-NOTE: Templates enable you to apply a cloud service onto a created resources, for example, enable Cloud Backup on every volume. In this case there is a cost for using the Backup service and for the object storage space used by the backup files.
-
 == Available template actions
 
 A template is a chain of "actions" that have some pre-defined values. You can build templates that include the following actions:
 
 *Resource actions:*
 
-* Create a Cloud Volumes ONTAP volume
+* Create a Cloud Volumes ONTAP volume (on AWS, Azure, or GCP)
 * Create an Azure NetApp Files volume
 * Create an on-premises ONTAP volume
-* Create a Cloud Volumes ONTAP working environment (single node on AWS)
-* Find an existing resource, or resources, that meet certain criteria (so you can apply a "services" action on exiting resources)
+* Create a Cloud Volumes ONTAP working environment (single node system on AWS)
+* Find an existing resources that meet certain criteria (so you can apply a "services" action on exiting resources)
 
 *Services actions:*
 
@@ -77,6 +71,12 @@ For example, they select high speed disks and a large amount of RAM for Cloud Vo
 +
 For example, they create a volume that will be used for an Oracle database by using the volume template created for databases.
 . The service tracks certain resource settings defined in the template using the "drift" feature as determined by your storage architect.
+
+== Pricing and licenses
+
+The Application Templates feature requires no licensing and is free to use by all Cloud Manager users.
+
+NOTE: Templates enable you to apply a cloud service onto a created resources, for example, enable Cloud Backup on every volume. In this case there is a cost for using the Backup service and for the object storage space used by the backup files.
 
 == Limitations
 
