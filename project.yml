@@ -280,6 +280,24 @@ sidebar:
           url: /task_connect_to_onprem.html
         - title: Remove an on-prem ONTAP working environment
           url: /task-remove-on-prem.html
+    - title: Manage data for Kubernetes clusters
+      entries:
+        - title: Learn about Kubernetes data management
+          url: /concept-kubernetes.html
+        - title: Get started with Kubernetes clusters in AWS
+          entries:
+            - title: Requirements
+              url: /kubernetes-reqs-aws.html
+            - title: Add a cluster
+              url: /task-kubernetes-discover-aws.html
+        - title: Get started with Kubernetes clusters in Azure
+          entries:
+            - title: Requirements
+              url: /kubernetes-reqs-aks.html
+            - title: Add a cluster
+              url: /task-kubernetes-discover-azure.html
+        - title: Enable NetApp's cloud data services
+          url: /task-kubernetes-enable-services.html
     - title: Replicate ONTAP data
       entries:
         - title: Learn about the Replication service
@@ -351,24 +369,6 @@ sidebar:
                   url: /reference_backup_multi_account_aws.html
                 - title: Configure Backup for multi-account access in Azure
                   url: /reference_backup_multi_account_azure.html
-    - title: Manage data for Kubernetes clusters
-      entries:
-        - title: Learn about Kubernetes data management
-          url: /concept-kubernetes.html
-        - title: Get started with Kubernetes clusters in AWS
-          entries:
-            - title: Requirements
-              url: /kubernetes-reqs-aws.html
-            - title: Add a cluster
-              url: /task-kubernetes-discover-aws.html
-        - title: Get started with Kubernetes clusters in Azure
-          entries:
-            - title: Requirements
-              url: /kubernetes-reqs-aks.html
-            - title: Add a cluster
-              url: /task-kubernetes-discover-azure.html
-        - title: Enable NetApp's cloud data services
-          url: /task-kubernetes-enable-services.html
     - title: Protect data using SnapCenter Service
       entries:
         - title: Learn about SnapCenter Service
