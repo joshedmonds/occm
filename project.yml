@@ -104,8 +104,6 @@ sidebar:
                 url: /concept_licensing.html
               - title: Management of node-based BYOL
                 url: /concept_license_management.html
-              - title: Evaluating
-                url: /concept_evaluating.html
               - title: Security
                 url: /concept_security.html
               - title: Performance

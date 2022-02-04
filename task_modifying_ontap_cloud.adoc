@@ -49,7 +49,7 @@ Cloud Volumes ONTAP reboots with the new configuration.
 
 == Changing between hourly (pay-as-you-go) configurations
 
-After you launch an hourly, pay-as-you-go Cloud Volumes ONTAP system, you can change between the Explore, Standard, and Premium configurations at any time by modifying the license. Changing the license increases or decreases the raw capacity limit and enables you to choose from different instance or VM types.
+After you launch a by-node, pay-as-you-go Cloud Volumes ONTAP system, you can change between the Explore, Standard, and Premium configurations at any time by modifying the license. Changing the license increases or decreases the raw capacity limit and enables you to choose from different instance or VM types.
 
 .About this task
 

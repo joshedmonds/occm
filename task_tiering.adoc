@@ -62,8 +62,6 @@ You can enable data tiering when using specific configurations and features:
 ** Version 9.4 in Azure with single node systems
 ** Version 9.6 in Azure with HA pairs
 ** Version 9.6 in GCP
-+
-NOTE: Data tiering isn't supported in Azure with PAYGO Explore.
 
 * In AWS, the performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
 +

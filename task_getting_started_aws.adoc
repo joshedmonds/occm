@@ -56,7 +56,6 @@ Click *Add Working Environment*, select the type of system that you would like t
 
 .Related links
 
-* link:concept_evaluating.html[Evaluating]
 * link:task_creating_connectors_aws.html[Creating a Connector from Cloud Manager]
 * link:task_launching_aws_mktp.html[Launching a Connector from the AWS Marketplace]
 * link:task_installing_linux.html[Installing the Connector software on a Linux host]

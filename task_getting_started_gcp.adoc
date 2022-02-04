@@ -79,7 +79,6 @@ Click *Add Working Environment*, select the type of system that you would like t
 
 .Related links
 
-* link:concept_evaluating.html[Evaluating]
 * link:task_creating_connectors_gcp.html[Creating a Connector from Cloud Manager]
 * link:task_installing_linux.html[Installing the Connector software on a Linux host]
 * link:reference_permissions.html#what-cloud-manager-does-with-gcp-permissions[What Cloud Manager does with GCP permissions]

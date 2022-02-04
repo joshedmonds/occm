@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_planning_your_config_gcp.html
-keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, use profile, thin provisioning, deduplication, compression, Cloud Volumes ONTAP explore, Cloud Volumes ONTAP standard, Cloud Volumes ONTAP premium, Cloud Volumes ONTAP byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported machine types, supported virtual machines, supported vms, supported instances
+keywords: license, disk, ebs, storage, size, write speed, volume usage, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, use profile, thin provisioning, deduplication, compression, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported machine types, supported virtual machines, supported vms, supported instances
 summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 ---
 
@@ -15,11 +15,13 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 [.lead]
 When you deploy Cloud Volumes ONTAP in Google Cloud, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 
-== Choosing a license type
+== Viewing supported regions
 
-Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
+Cloud Volumes ONTAP is supported in most Google Cloud regions. https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^].
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9101.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
+== Choosing a license
+
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs. link:concept_licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
 
 == Supported machine types
 
