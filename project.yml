@@ -98,6 +98,8 @@ sidebar:
                     url: /concept_ha_azure.html
                   - title: HA pairs in GCP
                     url: /concept_ha_google_cloud.html
+                  - title: Actions during storage takeover
+                    url: /concept-degraded-ha-pair.html
               - title: Licensing
                 url: /concept_licensing.html
               - title: Management of node-based BYOL
