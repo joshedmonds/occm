@@ -106,6 +106,8 @@ If you don't have a Cloud Data Sense license, contact us to purchase one:
 * mailto:ng-contact-data-sense@netapp.com?subject=Licensing[Send email to purchase a license].
 * Click the chat icon in the lower-right of Cloud Manager to request a license.
 
+Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a Cloud Data Sense license with the same dollar-equivalence and the same expiration date. link:task_managing_licenses.html#exchange-unassigned-node-based-licenses[Go here for details].
+
 You use the Digital Wallet page in Cloud Manager to manage Cloud Data Sense BYOL licenses. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Data Sense license file
