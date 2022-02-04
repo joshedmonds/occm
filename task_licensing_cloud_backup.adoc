@@ -57,6 +57,8 @@ The BYOL Cloud Backup license is a floating license where the total capacity is 
 
 If you don’t have a Cloud Backup BYOL license, click the chat icon in the lower-right of Cloud Manager to purchase one.
 
+Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a Cloud Backup license with the same dollar-equivalence and the same expiration date. link:task_managing_licenses.html#exchange-unassigned-node-based-licenses[Go here for details].
+
 You use the Digital Wallet page in Cloud Manager to manage BYOL licenses for Cloud Backup. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Backup license file
