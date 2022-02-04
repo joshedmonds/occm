@@ -28,9 +28,9 @@ The map consists of three parts:
 Left panel::
 Shows a list of alerts for which the service is monitoring across all of your data sources. It also indicates the number of each particular alert that is active in your environment. Having a large number of one type of alert may be a good reason to try to resolve those alerts first.
 Center panel::
-Shows all of your data sources. Healthy environments have a green indicator and environments that have alerts have a red indicator.
+Shows all of your data sources, services, and Active Directory in a graphical format. Healthy environments have a green indicator and environments that have alerts have a red indicator.
 Right panel::
-After you click on a data source that has a red indicator, this panel shows the alerts for that data source and provides recommendations to resolve the alert. Alerts are sorted so that the most recent alerts are listed first. Most recommendations lead you to another Cloud Manager service where you can resolve the issue.
+After you click on a data source that has a red indicator, this panel shows the alerts for that data source and provides recommendations to resolve the alert. Alerts are sorted so that the most recent alerts are listed first. Many recommendations lead you to another Cloud Manager service where you can resolve the issue.
 
 These are the currently tracked alerts and suggested remediations.
 
@@ -42,8 +42,8 @@ These are the currently tracked alerts and suggested remediations.
 | Remediation
 
 | High data encryption rates detected
-| An abnormal increase in the percentage of encrypted files in the data source has occurred. This means that there was a greater than 20% increase in the number of encrypted files in the past 7 days.
-| Click the link to launch the link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Data Sense Investigation page]. There you can select the filters for the specific _Working Environment_ and _Category (Encrypted)_ to view the list of all encrypted files.
+| An abnormal increase in the percentage of encrypted files, or corrupted files, in the data source has occurred. This means that there was a greater than 20% increase in the percentage of encrypted files in the past 7 days. For example, if 50% of your files are encrypted, then a day later this number increases to 60%, you would see this alert.
+| Click the link to launch the link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Data Sense Investigation page]. There you can select the filters for the specific _Working Environment_ and _Category (Encrypted and Corrupted)_ to view the list of all encrypted and corrupted files.
 
 | Sensitive data with wide permissions found
 | Sensitive data is found in files and the access permissions level is too high in a data source.
@@ -53,9 +53,9 @@ These are the currently tracked alerts and suggested remediations.
 | Some volumes in the working environment aren't being protected using link:concept_backup_to_cloud.html[Cloud Backup].
 | Click the link to launch Cloud Backup and then you can identify the volumes that aren't being backed up in the working environment, and then decide if you want to enable backups on those volumes.
 
-| Data Sense is not scanning your working environment
-| Data in the working environment isn't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns, and find optimization opportunities.
-| Click the link to launch Data Sense and enable scanning and mapping for the working environment.
+| One or more repositories (volumes, buckets, etc.) in your data sources are not being scanned by Data Sense
+| Some data in your data sources isn't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns and find optimization opportunities.
+| Click the link to launch Data Sense and enable scanning and mapping for the items that are not being scanned.
 
 |===
 
@@ -100,7 +100,7 @@ TIP: Files in OneDrive accounts, SharePoint accounts, and in databases are not r
 
 == Data listed by encrypted files
 
-The _Encrypted Files_ area shows the percentage of files that are encrypted in the top 4 data sources, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
+The _Encrypted Files_ area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
 
 image:screenshot_ransomware_encrypt_files.png[A screenshot of the encrypted file chart on the Ransomware Protection dashboard.]
 
