@@ -20,7 +20,7 @@ To set up data tiering, you need to do the following:
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Choose a supported configuration
 
 [role="quick-margin-para"]
-Most configurations are supported. If you have a Cloud Volumes ONTAP Standard, Premium, or BYOL system running the most recent version, then you should be good to go. link:task_tiering.html#configurations-that-support-data-tiering[Learn more].
+Most configurations are supported. If you have a Cloud Volumes ONTAP system running the most recent version, then you should be good to go. link:task_tiering.html#configurations-that-support-data-tiering[Learn more].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
@@ -57,7 +57,7 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 You can enable data tiering when using specific configurations and features:
 
-* Data tiering is supported with Cloud Volumes ONTAP Standard, Premium, and BYOL, starting with the following versions:
+* Data tiering is supported with Cloud Volumes ONTAP starting with the following versions:
 ** Version 9.2 in AWS
 ** Version 9.4 in Azure with single node systems
 ** Version 9.6 in Azure with HA pairs
