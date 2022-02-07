@@ -23,17 +23,9 @@ https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a capaci
 
 * _Keystone Flex Subscriptions_, which is a pay-as-you-grow storage service offered by NetApp.
 
-* _Node-based licenses_, which are any of the following:
+* _Node-based licenses_, which are the previous generation licensing model:
 ** BYOL licenses purchased from NetApp.
-+
-This includes Eval licenses that you can later convert to BYOL licenses.
-+
-To get started with a node-based BYOL, https://cloud.netapp.com/contact-cds[contact NetApp Sales^].
 ** Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace.
-+
-This includes 30-day free trials.
-+
-To get started with PAYGO, create a Cloud Volumes ONTAP working environment and subscribe to your cloud provider's marketplace when prompted.
 
 link:concept_licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
@@ -371,8 +363,6 @@ When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Vol
 
 * For a single-node system, the restart results in I/O interruption during the reboot process.
 * For an HA pair, the restart initiates takeover and giveback to continue serving I/O to clients.
-
-link:concept_evaluating.html[Learn more about Evaluation licenses].
 
 .Steps
 
