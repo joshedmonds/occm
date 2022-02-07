@@ -30,7 +30,7 @@ The paths (source or target) in each of your sync relationships display in a tab
 
 . In the *Reports Actions* column, go to a specific path and click *Create*, or click the action menu and select *Create New*.
 
-. When the report is ready, click action menu and select *View*.
+. When the report is ready, click the action menu and select *View*.
 +
 Here's a sample report for a file system path.
 +
@@ -39,6 +39,20 @@ image:screenshot_sync_report.gif[A report that shows the amount of sync items, f
 And here's a sample report for object storage.
 +
 image:screenshot_sync_report_object.gif[A report that shows the number of path items, objects size, modify time, and storage class.]
+
+== Downloading reports
+
+You can download a report in PDF so that you can view it offline or share it.
+
+.Steps
+
+. Click *Sync > Reports*.
+
+. In the *Reports Actions* column, click the action menu and select *View*.
+
+. In the top right of the report, click the action menu and select *Download pdf*.
++
+image:screenshot-sync-download-report.png[A screenshot of the Download pdf option that appears after you click the action menu in a report.]
 
 == Viewing report errors
 

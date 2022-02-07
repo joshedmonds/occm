@@ -5,7 +5,7 @@ keywords: data broker, install, azure, networking, permissions, regions, install
 summary: When you create a new data broker, choose the Azure Data Broker option to deploy the data broker software on a new virtual machine in a VNet. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 ---
 
-= Installing the data broker in Azure
+= Creating a new data broker in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: When you create a new data broker, choose the Azure Data Broker option 
 :imagesdir: ./media/
 
 [.lead]
-When you create a new data broker, choose the Azure Data Broker option to deploy the data broker software on a new virtual machine in a VNet. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+When you create a new data broker group, choose the Microsoft Azure to deploy the data broker software on a new virtual machine in a VNet. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 
 You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_sync_installing_linux.html[Learn more].
 
@@ -41,9 +41,9 @@ For help with creating a key pair, refer to https://docs.microsoft.com/en-us/azu
 
 //???
 
-== Installing the data broker
+== Creating the data broker
 
-You can install a data broker in Azure when you create a sync relationship.
+There are a few ways to create a new data broker. These steps describe how to install a data broker in Azure when you create a sync relationship.
 
 .Steps
 
@@ -51,13 +51,11 @@ You can install a data broker in Azure when you create a sync relationship.
 
 . On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
 +
-Complete the pages until you reach the *Data Broker* page.
+Complete the steps until you reach the *Data Broker Group* page.
 
-. On the *Data Broker* page, click *Create Data Broker* and then select *Microsoft Azure*.
+. On the *Data Broker Group* page, click *Create Data Broker* and then select *Microsoft Azure*.
 +
-If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
-+
-image:screenshot_create_data_broker.gif["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
+image:screenshot-azure.png["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
 
 . Enter a name for the data broker and click *Continue*.
 
