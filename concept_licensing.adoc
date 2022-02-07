@@ -13,7 +13,7 @@ summary: Several licensing options are available for Cloud Volumes ONTAP. Each o
 :imagesdir: ./media/
 
 [.lead]
-Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs.
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 
 == Licensing overview
 
@@ -59,7 +59,7 @@ Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of c
 
 For example, you could purchase a single 20 TiB license, deploy four Cloud Volumes ONTAP systems, and then allocate a 5 TiB volume to each system, for a total of 20 TiB. The capacity is available to the volumes on each Cloud Volumes ONTAP system deployed in that account.
 
-Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose the _Essentials_ package or the _Professional_ package.
+Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from the Essentials or Professional packages.
 
 Essentials package::
 * Choose your Cloud Volumes ONTAP configuration:
@@ -74,7 +74,7 @@ Professional package::
 
 === Consumption models
 
-The Essentials and Professional packages are available with the following consumption models:
+The Essentials and Professional packages are available using the following consumption options:
 
 * A license (BYOL) purchased from NetApp
 * An annual contract from your cloud provider's marketplace
@@ -82,7 +82,7 @@ The Essentials and Professional packages are available with the following consum
 
 Note the following:
 
-* If you purchase a license from NetApp, you also need to subscribe to the PAYGO offering from your cloud provider's marketplace. If you exceed your licensed capacity, you'll be charged for overages at the hourly rate in the marketplace.
+* If you purchase a license from NetApp, you should subscribe to the PAYGO offering from your cloud provider's marketplace. If you exceed your licensed capacity, this ensures that you can pay for overages.
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
 
@@ -96,17 +96,17 @@ A free trial automatically converts to a paid hourly subscription when it expire
 
 Pay-as-you-go trials are awarded through a cloud provider and are not extendable by any means.
 
-=== Supported configurations
+=== Supported Cloud Volumes ONTAP versions
 
-Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
+This licensing method is available for Cloud Volumes ONTAP 9.7 and later.
 
 === Capacity limit
 
-With this licensing model, each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
+With capacity-based licensing, each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
 
 === License conversions
 
-Conversions to another licensing model isn't supported.
+Conversions to another licensing option isn't supported.
 
 === Notes about charging
 
@@ -155,7 +155,9 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 
 == Node-based licensing
 
-Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. It has been replaced with the by-capacity charging methods described above.
+Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node.
+
+This licensing model is not available for new customers. It has been replaced with the by-capacity charging methods described above.
 
 Node-based licensing is still available for existing customers:
 
@@ -164,7 +166,7 @@ Node-based licensing is still available for existing customers:
 
 Conversions to another licensing option isn't supported. If you want to transition to capacity-based licensing, you can purchase a license, deploy a new Cloud Volumes ONTAP system, and then replicate the data to that new system.
 
-== Max number of systems
+== Max number of Cloud Volumes ONTAP systems
 
 The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
 
