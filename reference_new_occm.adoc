@@ -43,10 +43,6 @@ In the *Manage Data Brokers* tab, we also show the number of sync relationships 
 +
 image:screenshot-sync-group-relationships.png["A screenshot of the Manage Data Brokers page that shows a data broker group and details about that group, including the number of relationships that it's managing."]
 
-* Cloud Sync is now integrated with Cloud Data Sense. From within Data Sense, you can select the source files that you’d like to sync to a target location using Cloud Sync.
-+
-link:task_managing_highlights.html#copying-and-synchronizing-source-files-to-a-target-system[Learn how to start a sync relationship from Cloud Data Sense].
-
 * You can now download a PDF of a report.
 +
 link:task_sync_managing_reports.html[Learn about reports].
