@@ -5,7 +5,7 @@ keywords: data broker, install, aws, networking, permissions, regions, install d
 summary: When you create a new data broker, choose the AWS Data Broker option to deploy the data broker software on a new EC2 instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 ---
 
-= Installing the data broker in AWS
+= Creating a new data broker in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,13 +13,13 @@ summary: When you create a new data broker, choose the AWS Data Broker option to
 :imagesdir: ./media/
 
 [.lead]
-When you create a new data broker, choose the AWS Data Broker option to deploy the data broker software on a new EC2 instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+When you create a new data broker group, choose Amazon Web Services to deploy the data broker software on a new EC2 instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 
 You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_sync_installing_linux.html[Learn more].
 
 == Supported AWS regions
 
-All regions are supported except for the China and GovCloud (US) regions.
+All regions are supported except for the China regions.
 
 == Networking requirements
 
@@ -46,9 +46,9 @@ The IAM role must meet the following requirements:
 
 Follow the steps below to specify the IAM role when deploying the data broker.
 
-== Installing the data broker
+== Creating the data broker
 
-You can install a data broker in AWS when you create a sync relationship.
+There are a few ways to create a new data broker. These steps describe how to install a data broker in AWS when creating a sync relationship.
 
 .Steps
 
@@ -56,13 +56,11 @@ You can install a data broker in AWS when you create a sync relationship.
 
 . On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
 +
-Complete the steps until you reach the *Data Broker* page.
+Complete the steps until you reach the *Data Broker Group* page.
 
-. On the *Data Broker* page, click *Create Data Broker* and then select *Amazon Web Services*.
+. On the *Data Broker Group* page, click *Create Data Broker* and then select *Amazon Web Services*.
 +
-If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
-+
-image:screenshot_create_data_broker.gif[A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker.]
+image:screenshot-aws.png["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
 
 . Enter a name for the data broker and click *Continue*.
 
@@ -88,13 +86,13 @@ image:screenshot_aws_data_broker.gif[A screenshot of the information that you ne
 +
 The following image shows a successfully deployed instance in AWS:
 +
-image:screenshot_created_instance.gif[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
+image:screenshot-data-broker-group-selected.png[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
 
 . Complete the pages in the wizard to create the new sync relationship.
 
 .Result
 
-You have deployed a data broker in AWS and created a new sync relationship. You can use this data broker with additional sync relationships.
+You have deployed a data broker in AWS and created a new sync relationship. You can use this data broker group with additional sync relationships.
 
 == Details about the data broker instance
 

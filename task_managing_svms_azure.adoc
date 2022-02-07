@@ -51,6 +51,8 @@ You'll need to create an IP address for data LIF access and another optional IP 
 . Enter a name for the IP configuration, select *Dynamic*, and then click *OK*.
 
 . Click the name of the IP configuration that you just created, change the *Assignment* to *Static*, and click *Save*.
++
+It's best to use a static IP address because a static IP ensures that the IP address won't change, which can help to prevent unnecessary outages to your application.
 
 . If you want to create an SVM management LIF, repeat these steps on node 1.
 
@@ -81,6 +83,8 @@ You'll need to create an IP address for data LIF access from node 1, another IP 
 . Enter a name for the IP configuration, select *Dynamic*, and then click *OK*.
 
 . Click the name of the IP configuration that you just created, change the *Assignment* to *Static*, and click *Save*.
++
+It's best to use a static IP address because a static IP ensures that the IP address won't change, which can help to prevent unnecessary outages to your application.
 
 . Repeat these steps on node 2.
 
@@ -111,6 +115,8 @@ IP addresses that you use for NFS and SMB data are allocated in the load balance
 image:screenshot_azure_frontend_ip.gif[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
 
 .. Click the name of the frontend IP configuration that you just created, change the *Assignment* to *Static*, and click *Save*.
++
+It's best to use a static IP address because a static IP ensures that the IP address won't change, which can help to prevent unnecessary outages to your application.
 
 . Add a health probe for each frontend IP that you just created.
 
