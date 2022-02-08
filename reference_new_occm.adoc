@@ -19,11 +19,29 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.15 update (6 Feb 2022)
+== Cloud Manager 3.9.15
+
+This release includes enhancements to several features and services.
+
+=== 3.9.15 release update (9 Feb 2022)
+
+This update includes enhancements to Cloud Volumes ONTAP
+
+==== Cloud Volumes ONTAP
+
+* The Essentials package and Professional package are now available in the AWS and Google Cloud Marketplaces.
++
+These by-capacity charging methods enable you to pay by the hour or to purchase an annual contract directly from your cloud provider. You still have the option to purchase a license directly from NetApp.
+
+* By-node licensing via the AWS and Google Cloud Marketplaces (Explore, Standard, and Premium) is deprecated and no longer available for new subscribers.
++
+This charging method is still available for customers who have an active subscription.
+
+=== 3.9.15 release update (6 Feb 2022)
 
 This update includes enhancements to several features and services.
 
-=== Cloud Volumes ONTAP
+==== Cloud Volumes ONTAP
 
 If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
 
@@ -31,7 +49,7 @@ This action revokes the Cloud Volumes ONTAP license and creates a dollar-equival
 
 link:task_managing_licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
 
-=== Cloud Sync
+==== Cloud Sync
 
 * We changed how you interact with data brokers by emphasizing data broker _groups_.
 +
@@ -47,11 +65,11 @@ image:screenshot-sync-group-relationships.png["A screenshot of the Manage Data B
 +
 link:task_sync_managing_reports.html[Learn about reports].
 
-== Cloud Manager 3.9.15 (30 Jan 2022)
+=== Initial release (30 Jan 2022)
 
 This update includes enhancements to several features and services.
 
-=== Cloud Volumes ONTAP
+==== Cloud Volumes ONTAP
 
 * We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the by-capacity charging methods that were introduced in July 2021 and support upcoming offerings through the cloud provider marketplaces.
 
@@ -65,7 +83,7 @@ If you have questions, reach out to your account rep or sales team.
 +
 link:concept_cloud_central_accounts.html[Learn more about NetApp accounts].
 
-=== NetApp Support Site accounts
+==== NetApp Support Site accounts
 
 As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.
 
