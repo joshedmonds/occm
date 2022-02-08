@@ -1,0 +1,65 @@
+---
+sidebar: sidebar
+permalink: task-kubernetes-discover-azure.html
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, import kubernetes cluster, google, gke, kubernetes support
+summary: Add an Kubernetes cluster to Cloud Manager so that you can start backing up persistent volumes to Google.
+---
+
+= Add an Azure Kubernetes cluster to Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can discover or import Kubernetes clusters to Cloud Manager so that you can back up persistent volumes to Google.
+
+== Discover a cluster
+You can discover a fully-managed or self-managed Kubernetes cluster. Managed clusters must be discovered; they cannot be imported.
+
+.Steps
+
+. On the *Canvas*, click *Add Working Environment*.
+
+. Select *Google* > *Kubernetes Cluster* and click *Next*.
++
+image:screenshot-discover-kubernetes-aks.png[A screenshot of the Add Working Environment page showing Microsoft Azure and Kubernetes Cluster selected.]
+
+. Select *Discover Cluster* and click *Next*.
+
+. Select a Kubernetes cluster and click *Next*.
++
+image:screenshot-k8s-aks-discover.png[A screenshot of the Discover a Kubernetes Cluster page showing a selected  Kubernetes cluster.]
+
+.Result
+
+Cloud Manager adds the Kubernetes cluster to the Canvas.
+
+image:screenshot-k8s-aks-canvas.png[A screenshot of the Canvas in Cloud Manager that shows a Kubernetes cluster.]
+
+== Import a Cluster
+You can import a self-managed Kubernetes cluster using a Kubernetes configuration file.
+
+== Before you get started
+You will need Certificate Authority, Client Key, and Client Certificate certificates for the user specified in the cluster role YAML file to import Kubernetes clusters. The Kubernetes cluster administrator receives these certifications when creating users on the Kubernetes cluster.
+
+.Steps
+
+. On the *Canvas*, click *Add Working Environment*.
+
+. Select *Google* > *Kubernetes Cluster* and click *Next*.
+
+. Select *Import Cluster* and click *Next*.
+
+. Upload a Kubernetes configuration file in YAML format.
++
+image:screenshot-k8s-aks-import-1.png[A screenshot of the import Kubernetes cluster page with configuration file and available clusters table.]
+
+. Upload the cluster certificates provided by your Kubernetes cluster administrator.
++
+image:screenshot-k8s-aks-import-2.png[A screenshot of the cluster certificates page used to upload the Certificate Authority, Client Key, and Client Certificate certificates.]
+
+.Result
+
+Cloud Manager adds the Kubernetes cluster to the Canvas.

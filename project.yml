@@ -298,6 +298,12 @@ sidebar:
               url: /kubernetes-reqs-aks.html
             - title: Add a cluster
               url: /task-kubernetes-discover-azure.html
+        - title: Get started with Kubernetes clusters in GKE
+          entries:
+            - title: Requirements
+              url: /kubernetes-reqs-gke.html
+            - title: Add a cluster
+              url: /task-kubernetes-discover-gke.html
         - title: Enable NetApp's cloud data services
           url: /task-kubernetes-enable-services.html
     - title: Replicate ONTAP data
