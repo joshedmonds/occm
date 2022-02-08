@@ -19,11 +19,11 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.15
+== Cloud Manager 3.9.15 (30 Jan 2022)
 
 This release includes enhancements to several features and services.
 
-=== 3.9.15 release update (9 Feb 2022)
+=== Release update (9 Feb 2022)
 
 This update includes enhancements to Cloud Volumes ONTAP
 
@@ -37,7 +37,7 @@ These by-capacity charging methods enable you to pay by the hour or to purchase 
 +
 This charging method is still available for customers who have an active subscription.
 
-=== 3.9.15 release update (6 Feb 2022)
+=== Release update (6 Feb 2022)
 
 This update includes enhancements to several features and services.
 
@@ -65,11 +65,7 @@ image:screenshot-sync-group-relationships.png["A screenshot of the Manage Data B
 +
 link:task_sync_managing_reports.html[Learn about reports].
 
-=== Initial release (30 Jan 2022)
-
-This update includes enhancements to several features and services.
-
-==== Cloud Volumes ONTAP
+=== Cloud Volumes ONTAP
 
 * We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the by-capacity charging methods that were introduced in July 2021 and support upcoming offerings through the cloud provider marketplaces.
 
@@ -83,7 +79,7 @@ If you have questions, reach out to your account rep or sales team.
 +
 link:concept_cloud_central_accounts.html[Learn more about NetApp accounts].
 
-==== NetApp Support Site accounts
+=== NetApp Support Site accounts
 
 As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.
 
