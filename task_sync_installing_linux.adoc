@@ -35,8 +35,6 @@ A Red Hat Enterprise Linux system must be registered with Red Hat Subscription M
 +
 SELinux enforces a policy that blocks data broker software updates and can block the data broker from contacting endpoints required for normal operation.
 
-* *OpenSSL*: OpenSSL must be installed on the Linux host.
-
 == Networking requirements
 
 * The Linux host must have a connection to the source and target.
