@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploy-compliance-dark-site.html
-keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site
+keywords: cloud compliance, data sense, get started, deploy cloud data sense, web browser connectivity, cloud compliance access, privacy, compliance, on-premises, dark site, upgrade
 summary: Complete a few steps to deploy Cloud Data Sense on a host in an on-premises site that doesn’t have internet access. This type of installation is perfect for your secure sites.
 ---
 
@@ -26,7 +26,7 @@ When installed in this manner (sometimes called an "offline" or "dark" site), Da
 * Non-NetApp NFS or CIFS file shares
 * Object Storage that uses the Simple Storage Service (S3) protocol
 
-There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, or AWS S3 accounts.
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, SharePoint accounts, or AWS S3 accounts.
 
 == Limitations
 
@@ -35,7 +35,7 @@ Most Data Sense features work when it is deployed in a site with no internet acc
 * Managing Microsoft Azure Information Protection (AIP) labels
 * Automated software upgrades from Cloud Manager
 +
-Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available.
+Both the Cloud Manager Connector and Data Sense will require periodic manual upgrades to enable new features. You can see the Data Sense version at the bottom of the Data Sense UI pages. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each release and for when a software update package is available. Then you can follow the steps to <<Upgrade Data Sense software,upgrade your Data Sense software>>.
 
 == Quick start
 
@@ -145,7 +145,7 @@ image:screenshot_cloud_compliance_deploy_darksite.png[A screenshot of selecting 
 +
 `sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq --darksite`
 
-. Unzip the installer file on the host machine, for example:
+. Unzip the installation file on the host machine, for example:
 +
 [source,cli]
 tar -xzf cc_onprem_installer_1.7.2.tar.gz
@@ -251,10 +251,8 @@ The Cloud Data Sense installer finishes installing packages, and registers the i
 
 .What's Next
 From the Configuration page you can select the local link:task_getting_started_compliance.html[on-prem ONTAP clusters] and link:task_scanning_databases.html[databases] that you want to scan.
-
 //
 // You can also link:task_licensing_datasense.html#use-a-cloud-data-sense-byol-license[set up BYOL licensing for Cloud Data Sense] from the Digital Wallet page at this time. You will not be charged until the amount of data exceeds 1 TB.
-//
 
 == Upgrade Data Sense software
 
@@ -263,7 +261,7 @@ Since Data Sense software is updated with new features on a regular basis, you s
 .Before you begin
 
 * Data Sense software can be upgraded one major version at a time. For example, if you have version 1.7.x installed, you can upgrade only to 1.8.x. If you are a few major versions behind, you'll need to upgrade the software multiple times.
-* Verify that your on-prem Connector software has been upgraded to the newest available version. link:task-install-connector-onprem-no-internet.html[See the Connector upgrade steps].
+* Verify that your on-prem Connector software has been upgraded to the newest available version. link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[See the Connector upgrade steps^].
 
 .Steps
 

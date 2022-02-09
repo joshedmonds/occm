@@ -15,7 +15,7 @@ summary: Respond to a Data Subject Access Request (DSAR) by searching for a subj
 [.lead]
 Respond to a Data Subject Access Request (DSAR) by searching for a subject's full name or known identifier (such as an email address) and then downloading a report. The report is designed to aid in your organization's requirement to comply with GDPR or similar data privacy laws.
 
-NOTE: The DSAR capabilities are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not provide file-level details. 
+NOTE: The DSAR capabilities are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not provide file-level details.
 
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Data Sense identifies. You should always validate the information by reviewing the data.
 
@@ -25,17 +25,17 @@ Privacy regulations such as the European GDPR grant data subjects (such as custo
 
 == How can Cloud Data Sense help you respond to a DSAR?
 
-When you perform a data subject search, Cloud Data Sense finds all of the files, buckets, and databases that have that person's name or identifier in it. Data Sense checks the latest pre-indexed data for the name or identifier. It doesn't initiate a new scan.
+When you perform a data subject search, Cloud Data Sense finds all of the files, buckets, OneDrive, and SharePoint accounts that have that person's name or identifier in it. Data Sense checks the latest pre-indexed data for the name or identifier. It doesn't initiate a new scan.
 
 After the search is complete, you can then download the list of files for a Data Subject Access Request report. The report aggregates insights from the data and puts it into legal terms that you can send back to the person.
+
+NOTE: Data subject search is not supported within databases at this time.
 
 == Searching for data subjects and downloading reports
 
 Search for the data subject's full name or known identifier and then download a file list report or DSAR report. You can search by link:task_controlling_private_data.html#types-of-personal-data[any personal information type^].
 
-Only English is supported when searching for the names of data subjects. Support for more languages will be added later.
-
-NOTE: Data subject search is not supported within databases at this time.
+NOTE: English, German, and Spanish are supported when searching for the names of data subjects. Support for more languages will be added later.
 
 .Steps
 
