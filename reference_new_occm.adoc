@@ -27,7 +27,9 @@ We have introduced the following marketplace changes for Cloud Volumes ONTAP:
 +
 These by-capacity charging methods enable you to pay by the hour or to purchase an annual contract directly from your cloud provider. You still have the option to purchase a by-capacity license directly from NetApp.
 +
-If you have an existing subscription in a cloud marketplace, you're automatically subscribed to these new offerings as well. You can choose by-capacity charging when you deploy a new Cloud Volumes ONTAP system.
+If you have an existing subscription in a cloud marketplace, you're automatically subscribed to these new offerings as well. You can choose by-capacity charging when you deploy a new Cloud Volumes ONTAP working environment.
++
+If you're a new customer, Cloud Manager will prompt you to subscribe when you create a new working environment.
 
 * By-node licensing via the AWS and Google Cloud Marketplaces is deprecated and no longer available for new subscribers. This includes annual contracts and hourly subscriptions (Explore, Standard, and Premium).
 +
