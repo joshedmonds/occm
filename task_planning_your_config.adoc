@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_planning_your_config.html
-keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, use profile, thin provisioning, deduplication, compression, Cloud Volumes ONTAP explore, Cloud Volumes ONTAP standard, Cloud Volumes ONTAP premium, Cloud Volumes ONTAP byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported instances, instances, instances supported, supported ec2 instances, supported instance, aws outpost, outpost, outposts, deploy in outpost, deploy in aws outpost
+keywords: license, disk, ebs, storage, size, write speed, volume usage, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, use profile, thin provisioning, deduplication, compression, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported instances, instances, instances supported, supported ec2 instances, supported instance, aws outpost, outpost, outposts, deploy in outpost, deploy in aws outpost
 summary: When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 ---
 
@@ -21,11 +21,9 @@ Cloud Volumes ONTAP is supported in most AWS regions. https://cloud.netapp.com/c
 
 Newer AWS regions must be enabled before you can create and manage resources in those regions. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html[Learn how to enable a region^].
 
-== Choosing a license type
+== Choosing a license
 
-A few licensing options are available for Cloud Volumes ONTAP. Each of these licensing options enables you to choose a configuration that meets your needs.
-
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9101.html[Supported configurations for Cloud Volumes ONTAP in AWS^]
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs. link:concept_licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
 
 == Choosing a supported instance
 

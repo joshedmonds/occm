@@ -290,11 +290,11 @@ Verify that your source and targets meet the following requirements.
 
 === Networking
 
-* The source and target must have a network connection to the data broker.
+* The source and target must have a network connection to the data broker group.
 +
-For example, if an NFS server is in your data center and the data broker is in AWS, then you need a network connection (VPN or Direct Connect) from your network to the VPC.
+For example, if an NFS server is in your data center and a data broker is in AWS, then you need a network connection (VPN or Direct Connect) from your network to the VPC.
 
-* NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
+* NetApp recommends configuring the source, the target, and data brokers to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
 
 === Target directory
 
@@ -307,7 +307,7 @@ In order to show every directory or folder in a source or target, Cloud Sync nee
 NFS:: Permissions must be defined on the source/target with uid/gid on files and directories.
 
 Object storage::
-* For AWS and Google Cloud, the data broker must have list object permissions (these permissions are provided by default if you follow the data broker installation steps).
+* For AWS and Google Cloud, a data broker must have list object permissions (these permissions are provided by default if you follow the data broker installation steps).
 * For Azure, StorageGRID, and IBM, the credentials that you enter when setting up a sync relationship must have list object permissions.
 
 SMB:: The SMB credentials that you enter when setting up a sync relationship must have list folder permissions.
@@ -327,22 +327,22 @@ Sync relationships that include S3 storage require a data broker deployed in AWS
 
 ==== Supported AWS regions
 
-All regions are supported except for the China and GovCloud (US) regions.
+All regions are supported except for the China regions.
 
 ==== Permissions required for S3 buckets in other AWS accounts
 
-When setting up a sync relationship, you can specify an S3 bucket that resides in an AWS account that isn't associated with the data broker.
+When setting up a sync relationship, you can specify an S3 bucket that resides in an AWS account that isn't associated with a data broker.
 
-link:media/aws_iam_policy_s3_bucket.json[The permissions included in this JSON file^] must be applied to that S3 bucket so the data broker can access it. These permissions enable the data broker to copy data to and from the bucket and to list the objects in the bucket.
+link:media/aws_iam_policy_s3_bucket.json[The permissions included in this JSON file^] must be applied to that S3 bucket so a data broker can access it. These permissions enable the data broker to copy data to and from the bucket and to list the objects in the bucket.
 
 Note the following about the permissions included in the JSON file:
 
-. _<BucketName>_ is the name of the bucket that resides in the AWS account that isn't associated with the data broker.
+. _<BucketName>_ is the name of the bucket that resides in the AWS account that isn't associated with a data broker.
 
 . _<RoleARN>_ should be replaced with one of the following:
-* If the data broker was manually installed on a Linux host, _RoleARN_ should be the ARN of the AWS user for which you provided AWS credentials when deploying the data broker.
+* If a data broker was manually installed on a Linux host, _RoleARN_ should be the ARN of the AWS user for which you provided AWS credentials when deploying a data broker.
 
-* If the data broker was deployed in AWS using the CloudFormation template, _RoleARN_ should be the ARN of the IAM role created by the template.
+* If a data broker was deployed in AWS using the CloudFormation template, _RoleARN_ should be the ARN of the IAM role created by the template.
 +
 You can find the Role ARN by going to the EC2 console, selecting the data broker instance, and clicking the IAM role from the Description tab. You should then see the Summary page in the IAM console that contains the Role ARN.
 +
@@ -354,7 +354,7 @@ Make sure that your Azure Blob storage meets the following requirements.
 
 ==== Supported data broker locations for Azure Blob
 
-The data broker can reside in any location when a sync relationship includes Azure Blob storage.
+A data broker can reside in any location when a sync relationship includes Azure Blob storage.
 
 ==== Supported Azure regions
 
@@ -410,9 +410,9 @@ Make sure that your Google Cloud Storage bucket meets the following requirements
 
 ==== Supported data broker locations for Google Cloud Storage
 
-Sync relationships that include Google Cloud Storage require a data broker deployed in GCP or on your premises. Cloud Sync guides you through the data broker installation process when you create a sync relationship.
+Sync relationships that include Google Cloud Storage require a data broker deployed in Google Cloud or on your premises. Cloud Sync guides you through the data broker installation process when you create a sync relationship.
 
-* link:task_sync_installing_gcp.html[Learn how to deploy the GCP data broker]
+* link:task_sync_installing_gcp.html[Learn how to deploy the Google Cloud data broker]
 * link:task_sync_installing_linux.html[Learn how to install the data broker on a Linux host]
 
 ==== Supported GCP regions
@@ -434,7 +434,7 @@ If the source for a sync relationship is a SnapMirror destination (which is read
 === NFS server requirements
 
 * The NFS server can be a NetApp system or a non-NetApp system.
-* The file server must allow the data broker host to access the exports.
+* The file server must allow a data broker host to access the exports.
 * NFS versions 3, 4.0, 4.1, and 4.2 are supported.
 +
 The desired version must be enabled on the server.
@@ -457,7 +457,7 @@ When you set up a sync relationship that includes http://docs.netapp.com/ontap-9
 +
 Members of the Backup Operators group are supported with a source SMB server.
 ** For a target SMB server, the following permissions are required: list, read, and write.
-* The file server must allow the data broker host to access the exports.
+* The file server must allow a data broker host to access the exports.
 * SMB versions 1.0, 2.0, 2.1, 3.0 and 3.11 are supported.
 * Grant the "Administrators" group with "Full Control" permissions to the source and target folders.
 +

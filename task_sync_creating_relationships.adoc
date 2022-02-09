@@ -17,7 +17,7 @@ When you create a sync relationship, the Cloud Sync service copies files from th
 
 Before you can create some types of sync relationships, you'll first need to create a working environment in Cloud Manager.
 
-== Create sync relationships for specific types of working environment
+== Create sync relationships for specific types of working environments
 
 If you want to create sync relationships for any of the following, then you first need to create or discover the working environment:
 
@@ -62,20 +62,18 @@ image:screenshot_nfs_to_s3.png[A screenshot that shows NFS as a source and S3 as
 
 . On the *NFS Server* page, enter the IP address or fully qualified domain name of the NFS server that you want to sync to AWS.
 
-. On the *Data Broker* page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
+. On the *Data Broker Group* page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
 +
 For more details, refer to the following pages:
 +
-* link:task_sync_installing_aws.html[Installing the data broker in AWS]
-* link:task_sync_installing_azure.html[Installing the data broker in Azure]
-* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_aws.html[Create a data broker in AWS]
+* link:task_sync_installing_azure.html[Create a data broker in Azure]
+* link:task_sync_installing_gcp.html[Create a data broker in Google Cloud]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
 . After you install the data broker, click *Continue*.
 +
-The following image shows a successfully deployed data broker in AWS:
-+
-image:screenshot_created_instance.gif[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
+image:screenshot-data-broker-group.png[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
 
 . [[filter]]On the *Directories* page, select a top-level directory or subdirectory.
 +
@@ -153,6 +151,8 @@ Date Modified:: Choose all files regardless of their last modified date, files m
 
 Date Created:: When an SMB server is the source, this setting enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
 
+ACL - Access Control List:: Copy ACLs from an SMB server by enabling a setting when you create a relationship or after you create a relationship.
+
 . On the *Tags/Metadata* page, choose whether to save a key-value pair as a tag on all files transferred to the S3 bucket or to assign a metadata key-value pair on all files.
 +
 image:screenshot_relationship_tags.png[A screenshot that shows the the Tags/Metadata page when creating a sync relationship to Amazon S3.]
@@ -164,3 +164,9 @@ TIP: This same feature is available when syncing data to StorageGRID and IBM Clo
 *Result*
 
 Cloud Sync starts syncing data between the source and target.
+
+== Create sync relationships from Cloud Data Sense
+
+Cloud Sync is integrated with Cloud Data Sense. From within Data Sense, you can select the source files that you'd like to sync to a target location using Cloud Sync.
+
+link:task_managing_highlights.html#copying-and-synchronizing-source-files-to-a-target-system[Learn how to start a sync relationship from Cloud Data Sense].

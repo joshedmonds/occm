@@ -97,7 +97,7 @@ TIP: In AWS, NVRAM is on the boot disk.
 ** One 140 GiB disk for root data
 ** One 512 GiB disk for NVRAM
 +
-If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSDs, then the system uses an Ultra SSD for NVRAM, rather than a Premium SSD.
+If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSDs, then the system uses a 32 GiB Ultra SSD for NVRAM, rather than a Premium SSD.
 
 * One 1024 GiB Standard HDD disk for saving cores
 

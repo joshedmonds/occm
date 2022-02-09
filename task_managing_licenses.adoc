@@ -213,7 +213,7 @@ image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digi
 
 Manage your node-based licenses to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
 
-=== Adding unassigned licenses
+=== Add unassigned licenses
 
 Add a node-based license to the Digital Wallet so that you can select the license when you create a new Cloud Volumes ONTAP system. The Digital Wallet identifies these licenses as _unassigned_.
 
@@ -237,7 +237,35 @@ If you don't have the license file yet, refer to the section below.
 
 Cloud Manager adds the license to the Digital Wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in the Digital Wallet.
 
-==== Obtain a system license file
+=== Exchange unassigned node-based licenses
+
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
+
+This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *Unassigned*.
+
+. Click *Exchange License*.
++
+image:screenshot-exchange-license.png[A screenshot of the Exchange License option that appears on the Unassigned license page.]
+
+. Select the service that you'd like to exchange the license with.
+
+. If you're prompted, select an additional license for the HA pair.
+
+. Read the legal consent and click *Agree*.
+
+.Result
+
+Cloud Manager converts the unassigned license to the service that you selected. You can view the new license in the *Data Services Licenses* tab.
+
+=== Obtain a system license file
 
 In most cases, Cloud Manager can automatically obtain your license file using your NetApp Support Site account. But if it can't, then you'll need to manually upload the license file. If you don't have the license file, you can obtain it from netapp.com.
 

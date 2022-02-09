@@ -5,7 +5,7 @@ keywords: data broker, install, gcp, google, networking, permissions, regions, i
 summary: When you create a new data broker, choose the GCP Data Broker option to deploy the data broker software on a new virtual machine instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 ---
 
-= Installing the data broker in Google Cloud Platform
+= Creating a new data broker in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: When you create a new data broker, choose the GCP Data Broker option to
 :imagesdir: ./media/
 
 [.lead]
-When you create a new data broker, choose the GCP Data Broker option to deploy the data broker software on a new virtual machine instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+When you create a new data broker group, choose Google Cloud Platform to deploy the data broker software on a new virtual machine instance in a Google Cloud VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 
 You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_sync_installing_linux.html[Learn more].
 
@@ -57,9 +57,9 @@ When you deploy the data broker, you need to select a service account that has t
 
 NOTE: The "iam.serviceAccounts.signJwt" permission is required only if you're planning to set up the data broker to use an external HashiCorp vault.
 
-== Installing the data broker
+== Creating the data broker
 
-You can install a data broker in GCP when you create a sync relationship.
+There are a few ways to create a new data broker. These steps describe how to install a data broker in Google Cloud when you create a sync relationship.
 
 .Steps
 
@@ -67,13 +67,11 @@ You can install a data broker in GCP when you create a sync relationship.
 
 . On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
 +
-Complete the steps until you reach the *Data Broker* page.
+Complete the steps until you reach the *Data Broker Group* page.
 
-. On the *Select a Data Broker* page, click the *Create Data Broker* and then select *Google Cloud Platform*.
+. On the *Data Broker Group* page, click *Create Data Broker* and then select *Microsoft Azure*.
 +
-If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
-+
-image:screenshot_create_data_broker.gif["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
+image:screenshot-google.png["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
 
 . Enter a name for the data broker and click *Continue*.
 
@@ -99,7 +97,7 @@ The instance takes approximately 5 to 10 minutes to deploy. You can monitor the 
 
 .Result
 
-You've deployed a data broker in GCP and created a new sync relationship. You can use this data broker with additional sync relationships.
+You've deployed a data broker in Google Cloud and created a new sync relationship. You can use this data broker with additional sync relationships.
 
 == Providing permissions to use buckets in other Google Cloud projects
 
