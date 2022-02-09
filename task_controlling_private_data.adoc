@@ -137,7 +137,7 @@ image:screenshot_compliance_permissions.png[A screenshot showing detailed file p
 
 This button is available only for files in CIFS shares.
 
-Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. link:task-add-active-directory-datasense.html[See how to do this]. 
+Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. link:task-add-active-directory-datasense.html[See how to do this].
 
 == Checking for duplicate files in your storage systems
 
@@ -189,7 +189,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Open Permissions
 ** File Owner
 ** Label
-** Working Environment Type (note that OneDrive is categorized under "Cloud Apps")
+** Working Environment Type (note that OneDrive and SharePoint are categorized under "Cloud Apps")
 ** Working Environment name
 ** Storage Repository (for example, a volume or a schema)
 ** File Path

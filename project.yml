@@ -98,12 +98,12 @@ sidebar:
                     url: /concept_ha_azure.html
                   - title: HA pairs in GCP
                     url: /concept_ha_google_cloud.html
+                  - title: Actions during storage takeover
+                    url: /concept-degraded-ha-pair.html
               - title: Licensing
                 url: /concept_licensing.html
               - title: Management of node-based BYOL
                 url: /concept_license_management.html
-              - title: Evaluating
-                url: /concept_evaluating.html
               - title: Security
                 url: /concept_security.html
               - title: Performance
@@ -409,11 +409,11 @@ sidebar:
               url: /reference_sync_networking.html
             - title: How to install a data broker
               entries:
-                - title: Install in AWS
+                - title: Create in AWS
                   url: /task_sync_installing_aws.html
-                - title: Install in Azure
+                - title: Create in Azure
                   url: /task_sync_installing_azure.html
-                - title: Install in GCP
+                - title: Create in Google Cloud
                   url: /task_sync_installing_gcp.html
                 - title: Install on a Linux host
                   url: /task_sync_installing_linux.html
@@ -469,6 +469,8 @@ sidebar:
                   url: /task_scanning_databases.html
                 - title: OneDrive accounts
                   url: /task_scanning_onedrive.html
+                - title: SharePoint accounts
+                  url: /task-scanning-sharepoint.html
                 - title: File shares
                   url: /task_scanning_file_shares.html
                 - title: Object storage
@@ -495,6 +497,12 @@ sidebar:
           url: /task_managing_compliance.html
         - title: FAQ
           url: /faq_cloud_compliance.html
+    - title: Secure your data from ransomware and internal attacks
+      entries:
+        - title: Learn about Ransomware Protection
+          url: /concept-ransomware-protection.html
+        - title: Manage cyber security recommendations for your data
+          url: /task-analyze-ransomware-data.html
     - title: Tier on-premises data to the cloud
       entries:
         - title: Learn about Cloud Tiering
@@ -607,8 +615,6 @@ sidebar:
               url: /reference_user_roles.html
             - title: Permissions
               url: /reference_permissions.html
-            - title: AWS Marketplace pages
-              url: /reference_aws_marketplace.html
     - title: Automate with the REST API
       entries:
         - title: Cloud Manager API documentation

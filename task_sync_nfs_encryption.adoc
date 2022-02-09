@@ -61,6 +61,8 @@ Be sure to have the following:
 +
 You can select an existing data broker but it must function as the initiator. The listener data broker must be a _new_ data broker.
 +
+If you want to use an existing data broker group, the group must have only one data broker. Multiple data brokers in a group aren't supported with encrypted sync relationships.
++
 If you have not yet deployed a data broker, review the data broker requirements. Because you have strict security policies, be sure to review the networking requirements, which includes outbound traffic from port 443 and the link:reference_sync_networking.html[internet endpoints] that the data broker contacts.
 +
 ** link:task_sync_installing_aws.html[Review AWS installation]
@@ -86,11 +88,11 @@ Create a new sync relationship between two NFS servers or between Azure NetApp F
 
 .. *Data Broker*: Follow the prompts to add a new source data broker or select an existing data broker.
 +
-If the source data broker acts as the listener, then it must be a new data broker.
+Note the following:
 +
-If you need a new data broker, Cloud Sync prompts you with the installation instructions. You can deploy the data broker in the cloud or download an installation script for your own Linux host.
-+
-image:screenshot_create_data_broker.gif["A screenshot showing the option to select a data broker in AWS, Azure, Google Cloud Platform, or an existing Linux host."]
+* If you want to use an existing data broker group, the group must have only one data broker. Multiple data brokers in a group aren't supported with encrypted sync relationships.
+* If the source data broker acts as the listener, then it must be a new data broker.
+* If you need a new data broker, Cloud Sync prompts you with the installation instructions. You can deploy the data broker in the cloud or download an installation script for your own Linux host.
 
 .. *Directories*: Choose the directories that you want to sync by selecting all directories, or by drilling down and selecting a subdirectory.
 +

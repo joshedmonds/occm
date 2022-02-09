@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: concept-ransomware-protection.html
+keywords: artificial intelligence, personal data, personal information, sensitive, personal sensitive data, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity
+summary: Ransomware attacks can cost a business time, resources, and reputation. The Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.
+---
+
+= Learn about Ransomware Protection
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Ransomware attacks can cost a business time, resources, and reputation. The Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.
+
+[Learn about the use cases for Ransomware Protection^].
+*Link to Cloud Central Ransomware Protection page*
+
+TIP: The Ransomware Protection service is currently a Beta offering.
+
+== Features
+
+Ransomware Protection currently provides several features that can help you with your cyberstorage protection efforts. Additional features will be added in the future. Current features identify when:
+
+* Volumes in your working environments aren't being protected using link:concept_backup_to_cloud.html[Cloud Backup].
+* Data in your working environments and data sources aren't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns, and find optimization opportunities.
+* An abnormal increase in the percentage of encrypted files in a working environment or data source has occurred.
++
+This can be an indicator that a ransomware attack has commenced on your network.
+* Sensitive data is found in files and the access permissions level is too high in a working environment or data source.
+* Users have been added to your Active Directory Domain Administrator Groups.
+
+link:task-analyze-ransomware-data.html[See how to view these potential issues in the Ransomware Protection dashboard.]
+
+When using Cloud Volumes ONTAP systems, there are some additional ransomware protections you can deploy directly from the working environment. link:task_protecting_ransomware.html[See how to add additional protection against ransomware].
+
+== Supported working environments and data sources
+
+link:concept_cloud_compliance.html[Cloud Data Sense] is a prerequisite to using the Ransomware Protection service. After Data Sense is installed and activated, you can use Ransomware Protection to see how resilient your data is to a cyber attack on the following types of working environments and data sources:
+
+*Working environments:*
+
+* Cloud Volumes ONTAP (deployed in AWS, Azure, or GCP)
+* On-premises ONTAP clusters
+* Azure NetApp Files
+* Amazon FSx for ONTAP
+* Amazon S3
+
+*Data sources:*
+
+* Non-NetApp file shares
+* Object storage (that uses S3 protocol)
+* Databases
+* OneDrive accounts
+* SharePoint accounts
+
+Ransomware Protection also monitors your global Active Directory configuration if you have link:task-add-active-directory-datasense.html[configured this in Cloud Data Sense].
+
+== How Ransomware Protection works
+
+At a high-level, Ransomware Protection works like this:
+
+. Ransomware Protection gathers information from Data Sense, Cloud Backup, and from other Cloud Manager resources, to populate the Ransomware Protection Dashboard.
+. You use the Ransomware Protection dashboard to gather an overview of how well protected your systems are.
+. You use the provided reporting tools to help in your cyberstorage protection efforts.
+
+== Cost
+
+There is no separate cost for the Ransomware Protection service during the Beta.

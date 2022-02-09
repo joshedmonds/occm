@@ -5,26 +5,26 @@ keywords: hashicorp, vault, credentials, secrets, API
 summary: When you create a sync relationship that requires Amazon S3, Azure, or Google Cloud credentials, you need to specify those credentials through the Cloud Sync user interface or API. An alternative is to set up the data broker to access the credentials directly from an external HashiCorp Vault.
 ---
 
-= Setting up the data broker to use an external HashiCorp Vault
+= Setting up a data broker group to use an external HashiCorp Vault
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-When you create a sync relationship that requires Amazon S3, Azure, or Google Cloud credentials, you need to specify those credentials through the Cloud Sync user interface or API. An alternative is to set up the data broker to access the credentials (or _secrets_) directly from an external HashiCorp Vault.
+When you create a sync relationship that requires Amazon S3, Azure, or Google Cloud credentials, you need to specify those credentials through the Cloud Sync user interface or API. An alternative is to set up the data broker group to access the credentials (or _secrets_) directly from an external HashiCorp Vault.
 
 This feature is supported through the Cloud Sync API with sync relationships that require Amazon S3, Azure, or Google Cloud credentials.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare the vault
 
 [role="quick-margin-para"]
-Prepare the vault to supply credentials to the data broker by setting up the URLs. The URLs to the secrets in the vault must end with _Creds_.
+Prepare the vault to supply credentials to the data broker group by setting up the URLs. The URLs to the secrets in the vault must end with _Creds_.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Prepare the data broker
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Prepare the data broker group
 
 [role="quick-margin-para"]
-Prepare the data broker to fetch credentials from the external vault by modifying the local config file for the data broker.
+Prepare the data broker group to fetch credentials from the external vault by modifying the local config file for each data broker in the group.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a sync relationship using the API
 
@@ -61,13 +61,13 @@ Example for the full URL and path for target credentials::
 +
 The prefix path is _/my-path/all-secrets/_, the request ID is _n32hcbnejk2_, and the target endpoint is Azure.
 
-== Preparing the data broker
+== Preparing the data broker group
 
-Prepare the data broker to fetch credentials from the external vault by modifying the local config file for the data broker.
+Prepare the data broker group to fetch credentials from the external vault by modifying the local config file for each data broker in the group.
 
 .Steps
 
-. SSH to the data broker.
+. SSH to a data broker in the group.
 
 . Edit the local.json file that resides in /opt/netapp/databroker/config.
 
@@ -108,6 +108,8 @@ Secretid & rootid::
 Namespace::
 * Type: string
 * Your namespace (X-Vault-Namespace header if needed)
+
+. Repeat these steps for any other data brokers in the group.
 
 === Example for aws-role authentication
 

@@ -19,6 +19,52 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.15 update (9 Feb 2022)
+
+We have introduced the following marketplace changes for Cloud Volumes ONTAP:
+
+* The Essentials package and Professional package are now available in the AWS and Google Cloud Marketplaces.
++
+These by-capacity charging methods enable you to pay by the hour or to purchase an annual contract directly from your cloud provider. You still have the option to purchase a by-capacity license directly from NetApp.
++
+If you have an existing subscription in a cloud marketplace, you're automatically subscribed to these new offerings as well. You can choose by-capacity charging when you deploy a new Cloud Volumes ONTAP working environment.
++
+If you're a new customer, Cloud Manager will prompt you to subscribe when you create a new working environment.
+
+* By-node licensing via the AWS and Google Cloud Marketplaces is deprecated and no longer available for new subscribers. This includes annual contracts and hourly subscriptions (Explore, Standard, and Premium).
++
+This charging method is still available for existing customers who have an active subscription.
+
+link:concept_licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
+
+== Cloud Manager 3.9.15 update (6 Feb 2022)
+
+This update includes enhancements to several features and services.
+
+=== Cloud Volumes ONTAP
+
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
+
+This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
+
+link:task_managing_licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
+
+=== Cloud Sync
+
+* We changed how you interact with data brokers by emphasizing data broker _groups_.
++
+For example, when you create a new sync relationship, you select the data broker _group_ to use with the relationship, rather than a specific data broker.
++
+image:screenshot-sync-select-data-broker-group.png[A screenshot of the Sync Relationship wizard that shows the data broker group selection.]
++
+In the *Manage Data Brokers* tab, we also show the number of sync relationships that a data broker group is managing.
++
+image:screenshot-sync-group-relationships.png["A screenshot of the Manage Data Brokers page that shows a data broker group and details about that group, including the number of relationships that it's managing."]
+
+* You can now download a PDF of a report.
++
+link:task_sync_managing_reports.html[Learn about reports].
+
 == Cloud Manager 3.9.15 (30 Jan 2022)
 
 This update includes enhancements to several features and services.
@@ -45,6 +91,38 @@ If you haven't yet migrated your NSS account to IDaaS, you first need to migrate
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^].
 * link:task_adding_nss_accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
+
+=== Cloud Data Sense enhancements
+
+* Added support for scanning Microsoft SharePoint online accounts.
++
+Now you can add your SharePoint online accounts to Data Sense in order to scan the documents and files from your SharePoint sites. link:task-scanning-sharepoint.html[See how to scan your SharePoint accounts].
+
+* You can use Data Sense to copy files from a single source repository (ONTAP volume, S3 bucket, NFS share, etc.) to a target location and synchronize those files.
++
+This is helpful for situations where you’re migrating data and you want to catch any last changes that are made to the files. This action uses the https://docs.netapp.com/us-en/occm/concept_cloud_sync.html[NetApp Cloud Sync] functionality to copy and sync data from a source to a target.
++
+link:task_managing_highlights.html#copying-and-synchronizing-source-files-to-a-target-system[See how to copy and sync files].
+
+* German and Spanish are now supported when searching for names of data subjects in order to create Data Subject Access Request (DSAR) reports. This report is designed to aid in your organization’s requirement to comply with GDPR or similar data privacy laws.
+
+* New personal data types. Data Sense can now find French social security numbers, French IDs, and French driver license numbers in files. link:reference_private_data_categories.html#types-of-personal-data[See the list of all personal data types that Data Sense finds in scans].
+
+* The security group for the Cloud Manager Connector will use port 443 instead of port 80 for inbound and outbound traffic to and from the Data Sense instance for added security. Both ports remain open at this time, so you shouldn't see any issues, but you should update the security group in any older deployments of the Connector as port 80 will be deprecated in a future release.
+
+=== New Ransomware Protection service has been released for Beta
+
+* The new Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.
++
+link:concept-ransomware-protection.html[Learn more about this new service].
+
+=== Resource Tagging enhancements
+
+* Now you can build a Template to find specific existing volumes and then enable Cloud Backup.
++
+Using the new "Find Resource" action you can identify all the volumes on which you want to enable Cloud Backup, and then use the Cloud Backup action to enable backup on those volumes.
++
+Current support is for volumes on Cloud Volumes ONTAP and on-premises ONTAP systems. link:task_define_templates.html#find-existing-volumes-and-activate-cloud-backup[Go here for details].
 
 == Cloud Manager 3.9.14 (2 Jan 2022)
 

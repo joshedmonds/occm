@@ -38,16 +38,20 @@ You should have chose a configuration and obtained Azure networking information 
 | Requirement
 | How to meet the requirement
 
-| Professional or Essential
-| A capacity-based license (BYOL) is required.
-
-| If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task_managing_licenses.html[Learn how to add capacity-based BYOL licenses].
-
 | Freemium
 | A Marketplace subscription or NetApp Support Site (NSS) account is required.
 | You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.
+
+| Professional or Essential package
+| A Marketplace subscription or capacity-based license (BYOL) is required.
+
+A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn't have a valid capacity-based license, or in the event that your provisioned capacity exceeds the licensed capacity.
+
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
+
+If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task_managing_licenses.html[Learn how to add capacity-based BYOL licenses].
 
 | Keystone Flex Subscription
 | Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.
@@ -56,12 +60,10 @@ a|
 . After NetApp authorizes your account, link:task_managing_licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
 
-| Per node
-| A Marketplace subscription is required or you need to bring your own license (BYOL).
+| Per node licensing
+| A Marketplace subscription is required or you need to bring your own license (BYOL). This option is available for customers with existing subscriptions or existing licenses. It's not available for new customers.
 
-| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
-
-If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task_managing_licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
+| If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task_managing_licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.
 
@@ -154,7 +156,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, and select a virtual machine type.
 +
-image:screenshot_cvo_licensing_azure.gif[A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version, license (either Explore, Standard, or Premium), and the VM type.]
+image:screenshot_cvo_licensing_azure.gif[A screenshot of the Licensing page]
 +
 If your needs change after you launch the system, you can modify the license or virtual machine type later.
 +
