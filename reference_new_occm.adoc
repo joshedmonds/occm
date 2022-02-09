@@ -19,6 +19,24 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.15 update (9 Feb 2022)
+
+We have introduced the following marketplace changes for Cloud Volumes ONTAP:
+
+* The Essentials package and Professional package are now available in the AWS and Google Cloud Marketplaces.
++
+These by-capacity charging methods enable you to pay by the hour or to purchase an annual contract directly from your cloud provider. You still have the option to purchase a by-capacity license directly from NetApp.
++
+If you have an existing subscription in a cloud marketplace, you're automatically subscribed to these new offerings as well. You can choose by-capacity charging when you deploy a new Cloud Volumes ONTAP working environment.
++
+If you're a new customer, Cloud Manager will prompt you to subscribe when you create a new working environment.
+
+* By-node licensing via the AWS and Google Cloud Marketplaces is deprecated and no longer available for new subscribers. This includes annual contracts and hourly subscriptions (Explore, Standard, and Premium).
++
+This charging method is still available for existing customers who have an active subscription.
+
+link:concept_licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
+
 == Cloud Manager 3.9.15 update (6 Feb 2022)
 
 This update includes enhancements to several features and services.
