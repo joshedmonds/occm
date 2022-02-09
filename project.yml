@@ -607,8 +607,6 @@ sidebar:
               url: /reference_user_roles.html
             - title: Permissions
               url: /reference_permissions.html
-            - title: AWS Marketplace pages
-              url: /reference_aws_marketplace.html
     - title: Automate with the REST API
       entries:
         - title: Cloud Manager API documentation
