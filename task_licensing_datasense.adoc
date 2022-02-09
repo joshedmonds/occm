@@ -106,11 +106,15 @@ If you don't have a Cloud Data Sense license, contact us to purchase one:
 * mailto:ng-contact-data-sense@netapp.com?subject=Licensing[Send email to purchase a license].
 * Click the chat icon in the lower-right of Cloud Manager to request a license.
 
+Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a Cloud Data Sense license with the same dollar-equivalence and the same expiration date. link:task_managing_licenses.html#exchange-unassigned-node-based-licenses[Go here for details].
+
 You use the Digital Wallet page in Cloud Manager to manage Cloud Data Sense BYOL licenses. You can add new licenses and update existing licenses.
 
 === Obtain your Cloud Data Sense license file
 
 After you have purchased your Cloud Data Sense license, you activate the license in Cloud Manager by entering the Cloud Data Sense serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
+//
+// If you've deployed Cloud Data Sense on a host in an on-premises site that doesn’t have internet access, you'll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for dark site installations.
 
 .Steps
 
@@ -165,11 +169,11 @@ You can update your Cloud Data Sense license before it expires so that there is 
 
 .Steps
 
-. Click the chat icon in the lower-right of Cloud Manager to request an extension to your term or additional capacity to your Cloud Data Sense license for the particular serial number.
+. Click the chat icon in the lower-right of Cloud Manager to request an extension to your term or additional capacity to your Cloud Data Sense license for the particular serial number. You can also mailto:ng-contact-data-sense@netapp.com?subject=Licensing[send an email to request an update to your license].
 +
 After you pay for the license and it is registered with the NetApp Support Site, Cloud Manager automatically updates the license in the Digital Wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
-. If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
+. If Cloud Manager can't automatically update the license (for example, when installed in a dark site), then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Data Sense license file,obtain the license file from the NetApp Support Site>>.
 .. On the Digital Wallet page in the _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
 +
