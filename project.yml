@@ -471,6 +471,8 @@ sidebar:
                   url: /task_scanning_databases.html
                 - title: OneDrive accounts
                   url: /task_scanning_onedrive.html
+                - title: SharePoint accounts
+                  url: /task-scanning-sharepoint.html
                 - title: File shares
                   url: /task_scanning_file_shares.html
                 - title: Object storage

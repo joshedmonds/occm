@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_managing_compliance.html
-keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance, Data Sense
-summary: If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Data Sense with your working environments.
+keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance, data sense
+summary: If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, OneDrive accounts, or SharePoint accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Data Sense with your working environments.
 ---
 
 = Removing data sources from Cloud Data Sense
@@ -13,7 +13,7 @@ summary: If you need to, you can stop Cloud Data Sense from scanning one or more
 :imagesdir: ./media/
 
 [.lead]
-If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, or OneDrive accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Data Sense with your working environments.
+If you need to, you can stop Cloud Data Sense from scanning one or more working environments, databases, file share groups, OneDrive accounts, or SharePoint accounts. You can also delete the Cloud Data Sense instance if you no longer want to use Data Sense with your working environments.
 
 == Deactivating compliance scans for a working environment
 
@@ -33,13 +33,13 @@ If you no longer want to scan a certain database, you can delete it from the Clo
 
 image:screenshot_compliance_remove_db.png[A screenshot of the Remove DB Server button from the Scan Configuration page.]
 
-== Removing a OneDrive account from Cloud Data Sense
+== Removing a OneDrive or SharePoint account from Cloud Data Sense
 
-If you no longer want to scan user files from a certain OneDrive account, you can delete the account from the Cloud Data Sense interface and stop all scans.
+If you no longer want to scan user files from a certain OneDrive account, or from a specific SharePoint account, you can delete the account from the Cloud Data Sense interface and stop all scans.
 
 .Steps
 
-. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the OneDrive account, and then click *Remove OneDrive Account*.
+. From the _Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the OneDrive or SharePoint account, and then click *Remove OneDrive Account* or *Remove SharePoint Account*.
 +
 image:screenshot_compliance_remove_onedrive.png[A screenshot of the Remove OneDrive button from the Scan Configuration page.]
 
