@@ -497,6 +497,12 @@ sidebar:
           url: /task_managing_compliance.html
         - title: FAQ
           url: /faq_cloud_compliance.html
+    - title: Secure your data from ransomware and internal attacks
+      entries:
+        - title: Learn about Ransomware Protection
+          url: /concept-ransomware-protection.html
+        - title: Manage cyber security recommendations for your data
+          url: /task-analyze-ransomware-data.html
     - title: Tier on-premises data to the cloud
       entries:
         - title: Learn about Cloud Tiering
