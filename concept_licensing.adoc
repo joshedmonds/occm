@@ -31,7 +31,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unli
 Keystone Flex Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
 
-The previous by-node licensing model remains available for existing customers who have already purchased a license or have an active marketplace subscription.
+The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.
 
 The following sections provide more details about each of these options.
 
@@ -77,7 +77,7 @@ Professional package::
 The Essentials and Professional packages are available with the following consumption models:
 
 * A license (BYOL) purchased from NetApp
-* An annual contract from your cloud provider's marketplace
+* An annual contract from your cloud provider's marketplace (AWS and Google Cloud only)
 * An hourly subscription (PAYGO) from your cloud provider's marketplace
 
 Note the following:
@@ -85,6 +85,10 @@ Note the following:
 * If you purchase a license from NetApp, you also need to subscribe to the PAYGO offering from your cloud provider's marketplace. If you exceed your licensed capacity, you'll be charged for overages at the hourly rate in the marketplace.
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
+
+=== Pricing
+
+For details about pricing, go to https://cloud.netapp.com/ontap-cloud[NetApp Cloud Central^].
 
 === Free trials
 
@@ -106,15 +110,25 @@ Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and
 
 With this licensing model, each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
 
+There is no maximum capacity limitation when it comes to the license itself.
+
 === License conversions
 
-Conversions to another licensing model isn't supported.
+Conversions to another licensing option isn't supported. If you want to transition to capacity-based licensing, you can deploy a new Cloud Volumes ONTAP system that uses capacity-based charging and then replicate the data to that new system.
 
 === Notes about charging
 
+* If you exceed your BYOL capacity, you'll be charged for overages at the hourly rate based on your marketplace subscription.
+
 * For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
 
+* There are no extra licensing costs for additional data serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per SVM.
+
+* For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
+
 * You won't be charged for the capacity used by FlexClone volumes.
+
+* Source and destination FlexCache volumes are considered primary data and charged according to the provisioned space.
 
 === How to get started
 
