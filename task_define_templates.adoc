@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_define_templates.html
-keywords: templates, resource templates, services templates, volume templates, cvo working environment template
+keywords: templates, resource templates, services templates, volume templates, cvo working environment template, find volumes
 summary: Select one or more of the NetApp-provided "actions" and quickly build an application template that your organization can use to start optimizing the creation of resources.
 ---
 
@@ -30,7 +30,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Launch the Application Templates service
 
 [role="quick-margin-para"]
-Select the *AppTemplate* service, click the *Editor* tab, and select the template.
+Select the *AppTemplate* service, click the *Editor* tab, and select the actions you'll use in your template.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Build the template by selecting "actions" and defining parameters
 
@@ -49,9 +49,9 @@ Read the following requirements to make sure that you have a supported configura
 
 * When creating an Azure NetApp Files volume template, make sure you have an Azure NetApp Files working environment available for your users. See how to link:task_manage_anf.html[create an Azure NetApp Files working environment^] in Cloud Manager.
 
-* If you plan to enable Cloud Backup in the template, ensure that your environment has an active and licensed Cloud Backup service.
+* If you plan to use Cloud Backup to backup up a volume in the template, ensure that your environment has activated Cloud Backup.
 
-* If you plan to enable Cloud Data Sense in the template, ensure that your environment has an active and licensed Cloud Data Sense service.
+* If you plan to use Cloud Data Sense to scan volumes in the template, ensure that your environment has activated Cloud Data Sense.
 
 * If you plan to enable Replication in the template, and the template is for an on-premises ONTAP volume, the ONTAP cluster must have an active SnapMirror license.
 
@@ -71,7 +71,7 @@ Make the volume for the AWS environment, configure it with 100 GB of storage, se
 
 *	Enable Cloud Backup
 +
-Create daily backups with a retention value of 30 copies.
+Create 30 daily, 13 weekly, and 3 monthly backups (using the _3 Months Retention_ policy).
 
 .Steps
 
@@ -88,6 +88,12 @@ The _Create Volume in Cloud Volumes ONTAP Action Definition_ page is displayed.
 image:screenshot_create_template_define_action_cvo.png[A screenshot showing a blank CVO template that you need to fill in.]
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
+
+. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created. That's why these fields are marked as "Editable".
 
 . *Details:* Enter the volume name and size.
 +
@@ -147,23 +153,17 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 +
 See link:concept_data_tiering.html#volume-tiering-policies[volume tiering policies^] for an overview, and see link:task_tiering.html[Tiering inactive data to object storage^] to make sure your environment is set up for tiering.
 
-. *Context:* Enter the Cloud Volumes ONTAP working environment context; if required.
-+
-When users launch the template from an existing working environment, this information gets filled in automatically.
-+
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment and the SVM where the volume will be created. That's why these fields are marked as "Editable".
-
 . Click *Apply* after you have defined the parameters needed for this action.
 +
 If the template values are correctly completed, a green checkmark is added to the "Create Volume in Cloud Volumes ONTAP" box.
 
-. Click the *Enable Cloud Backup* box and the _Enable Cloud Backup Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
+. Click the *Enable Cloud Backup on Volume* box and the _Enable Cloud Backup on Volume Action Definition_ dialog is displayed so you can fill in the Cloud Backup details.
 +
 image:screenshot_create_template_add_action.png[A screenshot showing additional actions that you can add to the created volume.]
 
-. Define the backup policy to create daily backups with a 30-day retention value.
+. Select the *3 Months Retention* backup policy to create 30 daily, 13 weekly, and 3 monthly backups.
 
-. Below the Volume Name field there are three fields you use to indicate which volume will have backup enabled. See <<Pass values between template actions,how to complete these fields>>.
+. Below the Working Environment and Volume Name fields there are three selections you use to indicate which volume will have backup enabled. See <<Pass values between template actions,how to complete these fields>>.
 
 . Click *Apply* and the Cloud Backup dialog is saved.
 
@@ -193,9 +193,11 @@ See link:task_manage_anf_volumes.html#creating-volumes[how to provision Azure Ne
 +
 The _Select_a Template_ page is displayed.
 +
-image:screenshot_create_template_primary_action_anf.png[A screenshot showing how to select the primary action that will be performed using this template.]
+image:screenshot_create_template_primary_action_blank.png[A screenshot showing how to select the primary action that will be performed using this template.]
 
-. Select *Volume for Azure NetApp Files* as the type of resource you want to create, and click *Get Started*.
+. Select *Blank template* and click *Get Started*.
+
+. Select *Create Volume in Azure NetApp Files* as the type of resource you want to create, and click *Apply*.
 +
 The _Create Volume in Azure NetApp Files Action Definition_ page is displayed.
 +
@@ -315,6 +317,12 @@ image:screenshot_create_template_define_action_onprem.png[A screenshot showing a
 
 . *Action Name*: Optionally, enter a customized action name instead of the default value.
 
+. *Context:* Enter the on-premises ONTAP working environment context; if required.
++
+When users launch the template from an existing working environment, this information gets filled in automatically.
++
+When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment, the SVM, and the aggregate where the volume will be created.
+
 . *Details:* Enter the volume name and size.
 +
 [cols=2*,options="header",cols="25,75"]
@@ -366,12 +374,6 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 | Users / Groups | Specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
 |===
-
-. *Context:* Enter the on-premises ONTAP working environment context; if required.
-+
-When users launch the template from an existing working environment, this information gets filled in automatically.
-+
-When users launch the template from the Templates Dashboard (not in a working environment context), then they need to select the working environment, the SVM, and the aggregate where the volume will be created.
 
 . Click *Apply* after you have defined the parameters needed for this action.
 +
@@ -462,7 +464,7 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_licensing.html[Learn about these charging methods].
 
-. *NSS Account*: Select a NetApp Support Site account.
+. *NetApp Support Site Account*: Select a NetApp Support Site account.
 
 . *Preconfigured Packages*: Select one of the four preconfigured packages that will determine several factors for volumes created in the working environment.
 
@@ -488,19 +490,96 @@ The template is created and you are returned to the Template Dashboard where you
 
 See <<What to do after you have created the template,what you should tell your users about templates>>.
 
+== Examples of finding existing resources and enabling services using templates
+
+Using the _Find Existing Resources_ action you can find existing resources and enable a cloud service on those resources. This action provides a variety of filters so you can narrow your search to just the resources you are interested in.
+
+NOTE: At this time you can find volumes within Cloud Volumes ONTAP, on-premises ONTAP, and Azure NetApp Files systems only. And you can enable only Cloud Backup on Cloud Volumes ONTAP and on-premises ONTAP volumes. Additional resources and services will be available at a later time.
+
+=== Find existing volumes and activate Cloud Backup
+
+The current functionality enables you to find volumes on Cloud Volumes ONTAP and on-premises ONTAP working environments that do not currently have Cloud Backup enabled. When you enable Cloud Backup on specific volumes, this action also sets the backup policy you configure as the default policy for that working environment. So all future volumes on those working environments can use the same backup policy.
+
+.Steps
+
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
++
+The _Select_a Template_ page is displayed.
++
+image:screenshot_create_template_primary_action_blank.png[A screenshot showing how to select the primary action that will be performed using this template.]
+
+. Select *Blank template* and click *Get Started*.
++
+The _Add New Action_ page is displayed.
++
+image:screenshot_create_template_find_resource_action.png[A screenshot showing how to select the Find Existing Resources action from the Add New Action page.]
+
+. Select *Find Existing Resources* as the type of action you want to define, and click *Apply*.
++
+The _Find Existing Resources Action Definition_ page is displayed.
++
+image:screenshot_define_find_resource_action1.png[A screenshot showing a blank find existing resources template that you need to fill in.]
+
+. *Action Name*: Enter a customized action name instead of the default value. For example, "Find large volumes on cluster ABC and enable Backup".
+
+. *Resource Type:* Select the type of resource you want to find. In this case you might select *Volumes in Cloud Volumes ONTAP*.
++
+This is the only required entry for this action. You could click *Continue* now and you'll receive a list of all volumes on all Cloud Volumes ONTAP systems in your environment.
++
+Instead, it is recommended that you fill out a few filters to reduce the number of results (in this case, volumes) on which you'll apply the Cloud Backup action.
+
+. In the _Context_ area you can select a specific working environment and some other details about that working environment.
++
+image:screenshot_define_find_resource_filter_context.png[A screenshot showing the Context filters you can apply to the find existing resources template.]
+
+. In the _Details_ area you can select a volume name and the volume size.
++
+For the volume name, click in the field and select one of the 5 options. You can let the admin enter any name by selecting *Free Text*, or you can specify that the volume name must have a certain prefix or suffix, that it _contains_ certain characters, or that it follows rules from a regular expression (regex) you enter.
++
+For volume size you can specify a range; for example, all volumes between 100 GiB and 500 GiB.
++
+image:screenshot_define_find_resource_filter_details.png[A screenshot showing the Details filters you can apply to the find existing resources template.]
+
+. Click *Continue* and the page updates to show the Search Criteria that you've defined in the template.
++
+image:screenshot_define_find_resource_search_criteria.png[A screenshot showing the search criteria you have defined for the find existing resources template.]
+
+. Click *Test your search criteria now* to see the current results.
+
+* If the results are not what you expected, click image:screenshot_edit_icon.gif[edit pencil icon] next to _Search Criteria_ and refine your search further.
+* When the results are good, click *Done*.
++
+Your completed _Find Existing Resources_ action appears in the editor window.
+
+. Click the Plus sign to add another action, select *Enable Cloud Backup On Volume*, and click *Apply*.
++
+The _Enable Cloud Backup On Volume_ action is added to the window.
++
+image:screenshot_template_add_backup_action.png[A screenshot showing the steps to add a Cloud Backup action to your template.]
+
+. Now you can define the Backup criteria as described in <<Add Backup functionality to a volume,Adding Backup functionality to a volume>> so that the template applies the correct backup policy to the volumes you select from the _Find Existing Resources_ action.
+
+. Click *Apply* to save the customization you made to the Backup action, and then click *Save Template* when you are done.
+
+.Result
+
+The template is created and you are returned to the Template Dashboard where your new template appears.
+
+See <<What to do after you have created the template,what you should tell your users about templates>>.
+
 == Examples of enabling services using templates
 
 Service templates enable you to activate Cloud Backup, Cloud Data Sense, or Replication (SnapMirror) services on a newly created volume.
 
 === Add Backup functionality to a volume
 
-When creating a volume template, you can add in the template that you want to create backups of the volume periodically using the link:concept_backup_to_cloud.html[Cloud Backup] service.
+When creating a volume template, you can add in the template that you want to create backups of the volume periodically using the link:concept_backup_to_cloud.html[Cloud Backup^] service.
 
 TIP: This action is not applicable for Azure NetApp Files volumes.
 
 image:screenshot_template_backup.png[A screenshot of the page to enable backup functionality for your volumes.]
 
-. *Policy*: Define the backup policy to create daily, weekly, or monthly backups, and specify the number of backup copies to retain.
+. *Policy*: Select the backup policy that you want to use.
 
 . *Context*: By default, the variables are filled out for the working environment, storage VM, and volume to indicate that you will be creating backups for the volume created previously in this same template. So if that's what you want to do, you're all set.
 +

@@ -471,6 +471,8 @@ sidebar:
                   url: /task_scanning_databases.html
                 - title: OneDrive accounts
                   url: /task_scanning_onedrive.html
+                - title: SharePoint accounts
+                  url: /task-scanning-sharepoint.html
                 - title: File shares
                   url: /task_scanning_file_shares.html
                 - title: Object storage
@@ -497,6 +499,12 @@ sidebar:
           url: /task_managing_compliance.html
         - title: FAQ
           url: /faq_cloud_compliance.html
+    - title: Secure your data from ransomware and internal attacks
+      entries:
+        - title: Learn about Ransomware Protection
+          url: /concept-ransomware-protection.html
+        - title: Manage cyber security recommendations for your data
+          url: /task-analyze-ransomware-data.html
     - title: Tier on-premises data to the cloud
       entries:
         - title: Learn about Cloud Tiering

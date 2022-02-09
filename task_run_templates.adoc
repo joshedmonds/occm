@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_run_templates.html
 keywords: templates, resource templates, services templates, volume templates, working environment templates
-summary: Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) for the volumes.
+summary: Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate Cloud Backup, Cloud Data Sense, and Replication (SnapMirror) on the volumes, or on existing volumes.
 ---
 
-= Create resources using templates
+= Create or modify resources using templates
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Select one of the application templates that your organization has buil
 :imagesdir: ./media/
 
 [.lead]
-Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes.
+Select one of the application templates that your organization has built to create working environments or volumes that are optimized for specific workloads and applications. Templates also enable you to activate link:concept_backup_to_cloud.html[Cloud Backup], link:concept_cloud_compliance.html[Cloud Data Sense], and link:concept_replication.html[Replication (SnapMirror)] on the created volumes, or on existing volumes.
 
 Templates enable you to create volumes for Cloud Volumes ONTAP, Azure NetApp Files, and on-premises ONTAP systems.
 
@@ -53,7 +53,7 @@ Read the following requirements to make sure that you have a supported configura
 
 * If the template activates a cloud service on the volume, such as link:concept_backup_to_cloud.html[Cloud Backup^], link:concept_cloud_compliance.html[Cloud Data Sense^], or link:concept_replication.html[Replication (SnapMirror)], ensure that the service is active and licensed in your environment.
 
-== Select and run the volume template
+== Select and run a volume template
 
 There are multiple ways to select and run a template to create new volumes:
 
@@ -128,6 +128,36 @@ image:screenshot_template_run_from_dashboard3.png[A screenshot showing how to ru
 +
 The _Run Template_ page appears.
 
-. Enter values in editable fields to create the volume and click *Run Template*.
+. Enter values in editable fields to create the working environment and the first volume and click *Run Template*.
 +
 image:screenshot_template_run_from_dashboard_we.png[A screenshot showing the parameters you need to define to create the working environment from a template.]
+
+== Select and run a template that finds existing resources
+
+You can run a template that finds certain resources (for example, volumes), and then enables a cloud service on those resources (for example, Cloud Backup), if your company has created a template using this functionality. When running the template, you can make some minor adjustments so that you apply the cloud service only to the appropriate resources.
+
+.Steps
+
+. Select the *AppTemplate* service and click the *Templates* tab.
++
+The _Templates Dashboard_ is displayed.
+
+. For the template that you want to use, click image:screenshot_horizontal_more_button.gif[More icon] and *Run Template*.
++
+image:screenshot_template_run_from_dashboard4.png[A screenshot showing how to run a template from the Templates Dashboard.]
++
+The _Run Template_ page appears and immediately runs the search that was defined in the template to find the volumes that match the criteria.
+
+. View the list of returned volumes in the _Volume Results_ area.
++
+image:screenshot_template_find_search_results.png[A screenshot showing how the volumes that were returned from the Find Resource search criteria.]
+
+. If the results are what you expected, select the checkbox for each volume that you want to have Cloud Backup enabled using the criteria from the _Enable Cloud Backup on Volume_ part of the template and click *Run Template*.
++
+If the results are not what you expected, click image:screenshot_edit_icon.gif[edit pencil icon] next to _Search Criteria_ and refine the search further.
+
+.Results
+
+The template will run and it will enable Cloud Backup on each volume that you checked from the search criteria.
+
+Any error will be called out in the _Running your Template_ page, and you can resolve the issues if needed.
