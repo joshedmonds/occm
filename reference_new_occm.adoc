@@ -19,6 +19,34 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.15 update (6 Feb 2022)
+
+This update includes enhancements to several features and services.
+
+=== Cloud Volumes ONTAP
+
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
+
+This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
+
+link:task_managing_licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
+
+=== Cloud Sync
+
+* We changed how you interact with data brokers by emphasizing data broker _groups_.
++
+For example, when you create a new sync relationship, you select the data broker _group_ to use with the relationship, rather than a specific data broker.
++
+image:screenshot-sync-select-data-broker-group.png[A screenshot of the Sync Relationship wizard that shows the data broker group selection.]
++
+In the *Manage Data Brokers* tab, we also show the number of sync relationships that a data broker group is managing.
++
+image:screenshot-sync-group-relationships.png["A screenshot of the Manage Data Brokers page that shows a data broker group and details about that group, including the number of relationships that it's managing."]
+
+* You can now download a PDF of a report.
++
+link:task_sync_managing_reports.html[Learn about reports].
+
 == Cloud Manager 3.9.15 (30 Jan 2022)
 
 This update includes enhancements to several features and services.

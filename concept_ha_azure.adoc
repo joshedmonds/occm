@@ -66,14 +66,3 @@ Storage takeover, resync, and giveback are all automatic by default. No user act
 == Storage configurations
 
 You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
-
-== HA limitations
-
-The following limitations affect Cloud Volumes ONTAP HA pairs in Azure:
-
-* HA pairs are supported with Cloud Volumes ONTAP Standard, Premium, and BYOL. Explore is not supported.
-* HA pairs are not supported in some regions.
-+
-https://cloud.netapp.com/cloud-volumes-global-regions[See the list of supported Azure regions^].
-
-link:task_deploying_otc_azure.html[Learn how to deploy an HA system in Azure].

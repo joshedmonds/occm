@@ -23,13 +23,13 @@ The following questions relate to getting started with Cloud Sync.
 
 Cloud Sync uses the NetApp data broker software to sync data from a source to a target (this is called a _sync relationship_).
 
-The data broker controls the sync relationships between your sources and targets. After you set up a sync relationship, Cloud Sync analyzes your source system and breaks it up into multiple replication streams to push to your selected target data.
+A data broker group controls the sync relationships between your sources and targets. After you set up a sync relationship, Cloud Sync analyzes your source system and breaks it up into multiple replication streams to push to your selected target data.
 
 After the initial copy, the service syncs any changed data based on the schedule that you set.
 
 === How does the 14-day free trial work?
 
-The 14-day free trial starts when you sign up for the Cloud Sync service. You're not subject to NetApp charges for Cloud Sync relationships you create for 14 days. However, all resource charges for any data broker that you deploy still applies.
+The 14-day free trial starts when you sign up for the Cloud Sync service. You're not subject to NetApp charges for Cloud Sync relationships you create for 14 days. However, all resource charges for any data brokers that you deploy still applies.
 
 === How much does Cloud Sync cost?
 
@@ -59,13 +59,17 @@ There are two ways to pay for sync relationships after your 14-day free trial en
 
 === Can I use Cloud Sync outside the cloud?
 
-Yes, you can use Cloud Sync in a non-cloud architecture. The source and target can reside on-premises and so can the data broker.
+Yes, you can use Cloud Sync in a non-cloud architecture. The source and target can reside on-premises and so can the data broker software.
 
 Note the following key points about using Cloud Sync outside of the cloud:
 
 * For on-premises synchronization, a private Amazon S3 bucket is available through NetApp StorageGRID.
-* The data broker does need an internet connection to communicate with the Cloud Sync service.
+* A data broker group needs an internet connection to communicate with the Cloud Sync service.
 * If you don't purchase a license directly from NetApp, you will need an AWS or Azure account for the PAYGO Cloud Sync service billing.
+
+== What's a data broker group?
+
+Each data broker belongs to a data broker group. Grouping data brokers together helps improve the performance of sync relationships.
 
 === How do I access Cloud Sync?
 
@@ -118,9 +122,9 @@ The following questions relate to networking requirements for Cloud Sync.
 
 === What are the networking requirements for Cloud Sync?
 
-The Cloud Sync environment requires that the data broker is connected with the source and the target through the selected protocol (NFS, SMB, EFS) or object storage API (Amazon S3, Azure Blob, IBM Cloud Object Storage).
+The Cloud Sync environment requires that a data broker group is connected with the source and the target through the selected protocol or object storage API (Amazon S3, Azure Blob, IBM Cloud Object Storage).
 
-In addition, the data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories.
+In addition, a data broker group needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories.
 
 For more details, link:reference_sync_networking.html[review networking requirements].
 
@@ -148,15 +152,15 @@ The default schedule is set for daily synchronization. After the initial synchro
 
 You can schedule a relationship to sync data as often as every 1 minute.
 
-=== Does the data broker retry when a file fails to sync? Or does it timeout?
+=== Does the data broker group retry when a file fails to sync? Or does it timeout?
 
-The data broker doesn't timeout when a single file fails to transfer. Instead, the data broker retries 3 times before skipping the file. The retry value is configurable in the settings for a sync relationship.
+A data broker group doesn't timeout when a single file fails to transfer. Instead, the data broker group retries 3 times before skipping the file. The retry value is configurable in the settings for a sync relationship.
 
 link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn how to change the settings for a sync relationship].
 
 === What if I have a very large dataset?
 
-If a single directory contains 600,000 files or more, mailto:ng-cloudsync-support@netapp.com[contact us] so that we can help you configure the data broker to handle the payload. We might need to add additional memory to the data broker machine.
+If a single directory contains 600,000 files or more, mailto:ng-cloudsync-support@netapp.com[contact us] so that we can help you configure the data broker group to handle the payload. We might need to add additional memory to the data broker group.
 
 Note that there's no limit to the total number of files in the mount point. The extra memory is required for large directories with 600,000 files or more, regardless of their level in the hierarchy (top directory or subdirectory).
 
@@ -168,7 +172,7 @@ The following questions related to security.
 
 Yes. All Cloud Sync service networking connectivity is done using https://aws.amazon.com/sqs/[Amazon Simple Queue Service (SQS)^].
 
-All communication between the data broker and Amazon S3, Azure Blob, Google Cloud Storage, and IBM Cloud Object Storage is done through the HTTPS protocol.
+All communication between the data broker group and Amazon S3, Azure Blob, Google Cloud Storage, and IBM Cloud Object Storage is done through the HTTPS protocol.
 
 If you're using Cloud Sync with on-premises (source or destination) systems, here's a few recommended connectivity options:
 
@@ -178,7 +182,7 @@ If you're using Cloud Sync with on-premises (source or destination) systems, her
 
 * For extra secure data transfer with S3 buckets, Azure Blob storage, or Google Cloud Storage, an Amazon Private S3 Endpoint, Azure Virtual Network service endpoints, or Private Google Access may be established.
 
-Any of these methods establishes a secure connection between your on-premises NAS servers and a Cloud Sync data broker.
+Any of these methods establishes a secure connection between your on-premises NAS servers and a Cloud Sync data broker group.
 
 === Is data encrypted by Cloud Sync?
 
@@ -235,7 +239,7 @@ The following questions relate to Cloud Sync performance.
 
 === What does the progress indicator for a sync relationship represent?
 
-The sync relationship shows the throughput of the data broker's network adapter. If you accelerated sync performance by using multiple data brokers, then the throughput is the sum of all traffic. This throughput refreshes every 20 seconds.
+The sync relationship shows the throughput of the data broker group's network adapter. If you accelerated sync performance by using multiple data brokers, then the throughput is the sum of all traffic. This throughput refreshes every 20 seconds.
 
 === I'm experiencing performance issues. Can we limit the number of concurrent transfers?
 
@@ -257,15 +261,15 @@ When you sync data to or from a cloud volume, you might experience failures and 
 
 Change the Service level to Premium or Extreme to enhance the sync performance.
 
-=== How many data brokers are required?
+=== How many data brokers are required in a group?
 
-When you create a new relationship, you start with a single data broker (unless you selected an existing data broker that belongs to an accelerated sync relationship). In many cases, a single data broker can meet the performance requirements for a sync relationship. If it doesn't, you can accelerate sync performance by adding additional data brokers. But you should first check other factors that can impact sync performance.
+When you create a new relationship, you start with a single data broker in a group (unless you selected an existing data broker that belongs to an accelerated sync relationship). In many cases, a single data broker can meet the performance requirements for a sync relationship. If it doesn't, you can accelerate sync performance by adding additional data brokers to the group. But you should first check other factors that can impact sync performance.
 
-Multiple factors can impact data transfer performance. The overall sync performance might be impacted due to network bandwidth, latency, and network topology, as well as the data broker VM specs and storage system performance. For example, a single data broker in a sync relationship can reach 100 MB/s, while disk throughput on the target might only allow 64 MB/s. As a result, the data broker keeps trying to copy the data, but the target can't meet the performance of the data broker.
+Multiple factors can impact data transfer performance. The overall sync performance might be impacted due to network bandwidth, latency, and network topology, as well as the data broker VM specs and storage system performance. For example, a single data broker in a group can reach 100 MB/s, while disk throughput on the target might only allow 64 MB/s. As a result, the data broker group keeps trying to copy the data, but the target can't meet the performance of the data broker group.
 
 So be sure to check the performance of your networking and the disk throughput on the target.
 
-Then you can consider accelerating sync performance by adding an additional data broker to share the load of that relationship. link:task_sync_managing_relationships.html#accelerating-sync-performance[Learn how to accelerate sync performance].
+Then you can consider accelerating sync performance by adding an additional data brokers to a group to share the load of that relationship. link:task_sync_managing_relationships.html#accelerating-sync-performance[Learn how to accelerate sync performance].
 
 == Deleting things
 
@@ -310,4 +314,4 @@ Sure. Here are the most important points:
 
 * The data broker uses AWS SQS as a reliable and secure communication channel and for control and monitoring. SQS also provides a persistency layer.
 
-* You can add additional data brokers to a relationship to increase transfer speed and add high availability. There is service resiliency if one data broker fails.
+* You can add additional data brokers to a group to increase transfer speed and add high availability. There is service resiliency if one data broker fails.

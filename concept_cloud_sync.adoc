@@ -23,13 +23,13 @@ video::oZNJtLvgNfQ[youtube, width=848, height=480]
 
 == How Cloud Sync works
 
-Cloud Sync is a software-as-a-service (SaaS) platform that consists of a data broker, a cloud-based interface available through Cloud Manager, and a source and target.
+Cloud Sync is a software-as-a-service (SaaS) platform that consists of a data broker group, a cloud-based interface available through Cloud Manager, and a source and target.
 
 The following image shows the relationship between Cloud Sync components:
 
 image:diagram_cloud_sync_overview.gif[Conceptual image that shows data flowing from a source to a target. The data broker software acts as a mediator and polls the Cloud Sync service for tasks.]
 
-The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can run the data broker in AWS, Azure, Google Cloud Platform, or on your premises. The data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories. link:reference_sync_networking.html[View the list of endpoints].
+The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can run the data broker in AWS, Azure, Google Cloud Platform, or on your premises. A data broker group, which consists of one or more data brokers, needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories. link:reference_sync_networking.html[View the list of endpoints].
 
 After the initial copy, the service syncs any changed data based on the schedule that you set.
 
@@ -60,7 +60,7 @@ link:reference_sync_requirements.html[Review the supported sync relationships].
 
 There are two types of costs associated with using Cloud Sync: resource charges and service charges.
 
-Resource charges:: Resource charges are related to the compute and storage costs for running the data broker in the cloud.
+Resource charges:: Resource charges are related to the compute and storage costs for running one or more data brokers in the cloud.
 
 Service charges:: There are two ways to pay for sync relationships after your 14-day free trial ends. The first option is to subscribe from AWS or Azure, which enables you to pay hourly or annually. The second option is to purchase licenses directly from NetApp. Read the following sections for more details.
 
@@ -114,6 +114,5 @@ The credentials are locally encrypted on the data broker machine using HashiCorp
 * Cloud Sync is not supported in China.
 
 * In addition to China, the Cloud Sync data broker is not supported in the following regions:
-** AWS GovCloud (US)
 ** Azure US Gov
 ** Azure US DoD

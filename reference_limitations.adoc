@@ -39,9 +39,9 @@ If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud p
 
 Pay-as-you-go subscriptions are not available for the following NetApp cloud services:
 
-*	Cloud Volumes ONTAP Explore, Standard, or Premium
-*	Cloud Tiering Service
-*	Cloud Backup Service
+*	Cloud Volumes ONTAP
+*	Cloud Tiering
+*	Cloud Backup
 *	Cloud Data Sense
 
 == Only one HA pair in an Azure resource group

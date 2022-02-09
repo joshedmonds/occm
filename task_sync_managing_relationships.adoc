@@ -22,13 +22,11 @@ Rather than wait for the next scheduled sync, you can press a button to immediat
 
 .Steps
 
-. From the *Sync Dashboard*, hover over the sync relationship and click the action menu.
-+
-image:screenshot_relationship_menu.gif[A screenshot that shows the action menu that appears when you hover your mouse over a sync relationship.]
+. From the *Dashboard*, navigate to the sync relationship and click image:icon-sync-action.png[A screenshot of the button that enables you to take actions on a sync relationship]
 
 . Click *Sync Now* and then click *Sync* to confirm.
-+
-image:screenshot_dashboard_actions.gif[This screenshot shows the actions that you can perform on a sync relationship.]
+//+
+//image:screenshot_dashboard_actions.gif[This screenshot shows the actions that you can perform on a sync relationship.]
 
 .Result
 
@@ -36,35 +34,35 @@ Cloud Sync starts the data sync process for the relationship.
 
 == Accelerating sync performance
 
-Accelerate the performance of a sync relationship by adding an additional data broker to the relationship. The additional data broker must be a _new_ data broker.
+Accelerate the performance of a sync relationship by adding an additional data broker to the group that manages the relationship. The additional data broker must be a _new_ data broker.
 
 .How this works
 
-If the existing data brokers in the relationship are used in other sync relationships, then Cloud Sync automatically adds the new data broker to those relationships, as well.
+If the data broker group manages other sync relationships, then the new data broker that you add to the group also accelerates the performance of those sync relationships.
 
 For example, let's say you have three relationships:
 
-* Relationship 1 uses data broker A
-* Relationship 2 uses data broker B
-* Relationship 3 uses data broker A
+* Relationship 1 is managed by data broker group A
+* Relationship 2 is managed by data broker group B
+* Relationship 3 is managed by data broker group A
 
-You want to accelerate the performance of relationship 1 so you add a new data broker to that relationship (data broker C). Because data broker A is also used in relationship 3, the new data broker is automatically added to relationship 3, as well.
+You want to accelerate the performance of relationship 1 so you add a new data broker to data broker group A. Because group A also manages sync relationship 3, the sync performance for relationship is automatically accelerated as well.
 
 .Steps
 
 . Ensure that at least one of the existing data brokers in the relationship are online.
 
-. Hover over the sync relationship and click the action menu.
+. From the *Dashboard*, navigate to the sync relationship and click image:icon-sync-action.png[A screenshot of the button that enables you to take actions on a sync relationship]
 
 . Click *Accelerate*.
-+
-image:screenshot_accelerate.gif[A screenshot of Cloud Sync that shows the action menu for a sync relationship. Accelerate is highlighted with the mouse pointer.]
+//+
+//image:screenshot_accelerate.gif[A screenshot of Cloud Sync that shows the action menu for a sync relationship. Accelerate is highlighted with the mouse pointer.]
 
 . Follow the prompts to create a new data broker.
 
 .Result
 
-Cloud Sync adds the new data broker to the sync relationships. The performance of the next data sync should be accelerated.
+Cloud Sync adds the new data broker to the group. The performance of the next data sync should be accelerated.
 
 == Updating credentials
 
@@ -92,13 +90,13 @@ Cloud Sync updates the credentials on the data broker. It can take up 10 minutes
 
 Modify settings that define how source files and folders are synced and maintained in the target location.
 
-. Hover over the sync relationship and click the action menu.
+. From the *Dashboard*, navigate to the sync relationship and click image:icon-sync-action.png[A screenshot of the button that enables you to take actions on a sync relationship]
 
 . Click *Settings*.
 
 . Modify any of the settings.
 +
-image:screenshot_sync_settings.gif[A screenshot that shows the settings for a sync relationship.]
+image:screenshot_sync_settings.png[A screenshot that shows the settings for a sync relationship.]
 +
 [[deleteonsource]] Here's a brief description of each setting:
 +
@@ -147,6 +145,8 @@ Date Modified:: Choose all files regardless of their last modified date, files m
 
 Date Created:: When an SMB server is the source, this setting enables you to sync files that were created after a specific date, before a specific date, or between a specific time range.
 
+ACL - Access Control List:: Copy ACLs from an SMB server by enabling a setting when you create a relationship or after you create a relationship.
+
 . Click *Save Settings*.
 
 .Result
@@ -155,11 +155,11 @@ Cloud Sync modifies the sync relationship with the new settings.
 
 == Deleting relationships
 
-You can delete a sync relationship, if you no longer need to sync data between the source and target. This action does not delete the data broker instance and it does not delete data from the target.
+You can delete a sync relationship, if you no longer need to sync data between the source and target. This action doesn't delete the data broker group (or the individual data broker instances) and it does not delete data from the target.
 
 .Steps
 
-. Hover over the sync relationship and click the action menu.
+. From the *Dashboard*, navigate to the sync relationship and click image:icon-sync-action.png[A screenshot of the button that enables you to take actions on a sync relationship]
 
 . Click *Delete* and then click *Delete* again to confirm.
 
