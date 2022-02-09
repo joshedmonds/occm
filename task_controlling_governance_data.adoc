@@ -73,7 +73,7 @@ The _Open Permissions_ area shows the percentage for each type of permissions th
 
 You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Investigation page so that you can investigate further.
 
-TIP: Files in OneDrive accounts and in databases are not represented in this chart.
+TIP: Files in OneDrive accounts, SharePoint accounts, and in databases are not represented in this chart.
 
 === Age of Data and Size of Data graphs
 
