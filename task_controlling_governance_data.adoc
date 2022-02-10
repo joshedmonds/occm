@@ -104,4 +104,4 @@ See link:task_controlling_private_data.html#viewing-files-by-file-types[Viewing 
 
 If you have subscribed to Azure Information Protection (AIP), you can classify and protect documents and files by applying labels to content. Reviewing the most used AIP labels that are assigned to files enables you to see which labels are most used in your files.
 
-See link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[AIP Labels^] for more information.
+See link:task-org-private-data.html#categorizing-your-data-using-aip-labels[AIP Labels^] for more information.
