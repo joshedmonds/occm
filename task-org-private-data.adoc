@@ -15,12 +15,32 @@ summary: Cloud Data Sense provides many ways for you to manage and organize your
 [.lead]
 Cloud Data Sense provides many ways for you to manage and organize your private data. This makes it easier to see the data that is most important to you.
 
+* If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
+* You can add Tags to files that you want to mark for organization or for some type of follow-up.
+* You can assign a Cloud Manager user to a specific file, or to multiple files, so that person can be responsible for managing the file.
 * Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.
 * You can send email alerts to Cloud Manager users when certain critical Policies return results.
-* You can add Tags to files that you want to mark for organization or for some type of follow-up.
-* If you are subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^] to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.
 
 NOTE: The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
+
+== Should I use tags or labels?
+
+Below is a comparison of Data Sense tagging and Azure Information Protection labeling.
+
+[cols=2*,options="header",cols="50,50"]
+|===
+
+| Tags
+| Labels
+
+| File tags are an integrated part of Data Sense. | Requires that you have subscribed to Azure Information Protection (AIP).
+| The tag is only kept in the Data Sense database - it is not written to the file.
+It does not change the file, or the file accessed or modified times. | The label is part of the file and when the label changes, the file changes. This change also changes the file accessed and modified times.
+| You can have multiple tags on a single file. |	You can have one label on a single file.
+| The tag can be used for internal Data Sense action, such as copy, move, delete, run a policy, etc. | Other systems that can read the file can see the label - which can be used for additional automation.
+| Only a single API call is used to see if a file has a tag.  |
+
+|===
 
 == Categorizing your data using AIP labels
 
@@ -315,9 +335,9 @@ image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to sa
 
 . Name the Policy and select other actions that can be performed by the Policy:
 .. Enter a unique name and description.
-.. Optionally, check the box to automatically delete files that match the Policy parameters. Learn more about <<Deleting source files automatically using Policies,deleting source files using a policy>>.
-.. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent. Learn more about <<Sending email alerts when non-compliant data is found,sending email alerts based on policy results>>.
-.. Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Only if you have already integrated AIP labels. Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
+.. Optionally, check the box to automatically delete files that match the Policy parameters. Learn more about link:task_managing_highlights.html#deleting-source-files[deleting source files using a policy].
+.. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent. Learn more about link:task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found[sending email alerts based on policy results].
+.. Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Only if you have already integrated AIP labels. Learn more about link:task-org-private-data.html#categorizing-your-data-using-aip-labels[AIP labels].)
 .. Click *Create Policy*.
 +
 image:screenshot_compliance_save_highlight.png[A screenshot that shows how to configure the Policy and save it.]
@@ -326,7 +346,7 @@ image:screenshot_compliance_save_highlight.png[A screenshot that shows how to co
 
 The new Policy appears in the Policies tab.
 
-== Sending email alerts when non-compliant data is found
+=== Sending email alerts when non-compliant data is found
 
 Cloud Data Sense can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.
 

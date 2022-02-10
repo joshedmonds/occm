@@ -483,6 +483,8 @@ sidebar:
           url: /task_controlling_governance_data.html
         - title: View compliance details about your data
           url: /task_controlling_private_data.html
+        - title: Organize your private data
+          url: /task-org-private-data.html
         - title: Manage your private data
           url: /task_managing_highlights.html
         - title: Add custom personal data identifiers
