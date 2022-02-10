@@ -113,7 +113,7 @@ In the Data Investigation results pane you can click image:button_down_caret.png
 
 image:screenshot_compliance_file_details.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
 
-In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, whether there are duplicates of this file, and assigned AIP label (if you have link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Data Sense^]). This information is useful if you're planning to link:task_managing_highlights.html#creating-custom-policies[create Policies] because you can see all the information that you can use to filter your data.
+In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, whether there are duplicates of this file, and assigned AIP label (if you have link:task-org-private-data.html#categorizing-your-data-using-aip-labels[integrated AIP in Cloud Data Sense^]). This information is useful if you're planning to link:task-org-private-data.html#creating-custom-policies[create Policies] because you can see all the information that you can use to filter your data.
 
 Note that not all information is available for all data sources - just what is appropriate for that data source. For example, volume name, permissions, and AIP labels are not relevant for database files.
 
@@ -123,11 +123,11 @@ When viewing the details for a single file there are a few actions you can take 
 
 * You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files] for details.
 
-* You can assign a certain Status to the file. See link:task_managing_highlights.html#applying-status-tags-to-manage-your-scanned-files[Applying Status tags] for details.
+* You can assign a certain Status to the file. See link:task-org-private-data.html#applying-status-tags-to-manage-your-scanned-files[Applying Status tags] for details.
 
-* You can assign the file to a Cloud Manager user to be responsible for any follow-up actions that need to be done on the file. See link:task_managing_highlights.html#assigning-users-to-manage-certain-files[Assigning users to a file] for details.
+* You can assign the file to a Cloud Manager user to be responsible for any follow-up actions that need to be done on the file. See link:task-org-private-data.html#assigning-users-to-manage-certain-files[Assigning users to a file] for details.
 
-* If you have integrated AIP labels with Cloud Data Sense, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_highlights.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
+* If you have integrated AIP labels with Cloud Data Sense, you can assign a label to this file, or change to a different label if one already exists. See link:task-org-private-data.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
 == Viewing permissions for files
 
@@ -137,7 +137,7 @@ image:screenshot_compliance_permissions.png[A screenshot showing detailed file p
 
 This button is available only for files in CIFS shares.
 
-Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. link:task-add-active-directory-datasense.html[See how to do this]. 
+Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. link:task-add-active-directory-datasense.html[See how to do this].
 
 == Checking for duplicate files in your storage systems
 
@@ -189,7 +189,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Open Permissions
 ** File Owner
 ** Label
-** Working Environment Type (note that OneDrive is categorized under "Cloud Apps")
+** Working Environment Type (note that OneDrive and SharePoint are categorized under "Cloud Apps")
 ** Working Environment name
 ** Storage Repository (for example, a volume or a schema)
 ** File Path
@@ -208,7 +208,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 ** Tags
 ** Assigned To
 
-* The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
+* The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task-org-private-data.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
 
 == What’s included in each file list report (CSV file)
 

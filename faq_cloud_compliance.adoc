@@ -18,7 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Data Sense?
 
-Cloud Data Sense is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Amazon FSx for ONTAP, Cloud Volumes ONTAP systems (hosted in AWS, Azure, or GCP), Amazon S3 buckets, on-prem ONTAP systems, non-NetApp file shares, generic S3 object storage, databases, and OneDrive accounts.
+Cloud Data Sense is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Amazon FSx for ONTAP, Cloud Volumes ONTAP systems (hosted in AWS, Azure, or GCP), Amazon S3 buckets, on-prem ONTAP systems, non-NetApp file shares, generic S3 object storage, databases, OneDrive accounts, and SharePoint accounts.
 
 Cloud Data Sense provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
@@ -44,7 +44,7 @@ Cloud Data Sense supports scanning of unstructured data over NFS and CIFS protoc
 
 Data Sense can also scan data stored on Amazon S3 buckets and in generic S3 object storage.
 
-Additionally, Data Sense can scan databases that are located anywhere, and user files from OneDrive accounts.
+Additionally, Data Sense can scan databases that are located anywhere, and user files from OneDrive and SharePoint accounts.
 
 link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
 
@@ -131,7 +131,7 @@ NOTE: Activating Cloud Data Sense results in an immediate initial scan. Scan res
 
 == How do I disable Cloud Data Sense?
 
-You can disable Cloud Data Sense from scanning an individual working environment, database, file share group, or OneDrive account from the Data Sense Configuration page.
+You can disable Cloud Data Sense from scanning an individual working environment, database, file share group, OneDrive account, or SharePoint account from the Data Sense Configuration page.
 
 link:task_managing_compliance.html[Learn more^].
 
@@ -153,7 +153,7 @@ link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Data Sense send notifications to my organization?
 
-Yes. In conjunction with the Policies feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a Policy returns results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^].
+Yes. In conjunction with the Policies feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a Policy returns results so you can get notifications to protect your data. Learn more about link:task-org-private-data.html#controlling-your-data-using-policies[Policies^].
 
 You can also download status reports from the Governance page and Investigation page that you can share internally in your organization.
 
@@ -169,7 +169,7 @@ link:task_managing_data_fusion.html#creating-custom-personal-data-identifiers-fr
 
 Yes. You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. You can view the labels that are already assigned to files, add labels to files, and change existing labels.
 
-link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[Learn more^].
+link:task-org-private-data.html#categorizing-your-data-using-aip-labels[Learn more^].
 
 == Can I limit Cloud Data Sense information to specific users?
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, sharepoint, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
 summary: Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources and working environments to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 ---
 
@@ -24,9 +24,9 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Identify Personal Identifiable Information (PII)
 * Identify a wide scope of sensitive information as required by GDPR, CCPA, PCI, and HIPAA privacy regulations
 * Respond to Data Subject Access Requests (DSAR)
-* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
+* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task-org-private-data.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
-* Add custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own the change to the files
+* Add custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own updates to the files
 * Copy, move, and delete files
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
@@ -42,19 +42,25 @@ This is useful if you are planning to migrate data from on-premises locations to
 
 Cloud Data Sense can scan data from the following types of working environments and data sources:
 
+*Working environments:*
+
 * Cloud Volumes ONTAP (deployed in AWS, Azure, or GCP)
 * On-premises ONTAP clusters
 * Azure NetApp Files
 * Amazon FSx for ONTAP
 * Amazon S3
+
+*Data sources:*
+
 * Non-NetApp file shares
 * Object storage (that uses S3 protocol)
 * Databases
 * OneDrive accounts
+* SharePoint accounts
 
 Data Sense supports NFS versions 3.x, 4.0, and 4.1, and CIFS versions 1.x, 2.0, 2.1, and 3.0.
 
-NOTE: A Beta feature released in January 2021 allows you to run compliance scans on the backup files from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup^]). This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
+NOTE: A Beta feature released in 2021 allows you to run compliance scans on the backup files (created using link:concept_backup_to_cloud.html[Cloud Backup^]) from your on-prem ONTAP volumes. This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
 
 == Cost
 
@@ -108,7 +114,7 @@ TIP: The instance should remain running at all times because Cloud Data Sense co
 
 You can deploy Data Sense on a system with fewer CPUs and less RAM, but there are some limitations when using these less powerful systems.
 
-[cols="18,26,56",width=92%,options="header"]
+[cols="18,26,56",width=95%,options="header"]
 |===
 | System size
 | Specs
@@ -133,7 +139,7 @@ At a high-level, Cloud Data Sense works like this:
 
 == How scans work
 
-After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive user data you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
+After you enable Cloud Data Sense and select the volumes, buckets, database schemas, or OneDrive or SharePoint user data you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
 
 Data Sense connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 
@@ -141,7 +147,7 @@ image:diagram_cloud_compliance_scan.png["A diagram that shows a Cloud Manager in
 
 After the initial scan, Data Sense continuously scans your data to detect incremental changes (this is why it's important to keep the instance running).
 
-You can enable and disable scans at the volume level, at the bucket level, at the database schema level, and at the OneDrive user level.
+You can enable and disable scans at the volume level, at the bucket level, at the database schema level, at the OneDrive user level, and at the SharePoint site level.
 
 === What's the difference between Mapping and Classification scans
 
@@ -164,7 +170,7 @@ The table below shows some of the differences:
 | Ability to run a link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] | Yes | Yes
 | Data Investigation page to view file details | Yes | No
 | Search for names within files | Yes | No
-| Create link:task_managing_highlights.html#controlling-your-data-using-policies[policies] that provide custom search results | Yes | No
+| Create link:task-org-private-data.html#controlling-your-data-using-policies[policies] that provide custom search results | Yes | No
 | Categorize data using AIP labels and Status tags | Yes | No
 | Copy, delete, and move source files | Yes | No
 | Ability to run other reports | Yes | No

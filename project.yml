@@ -104,8 +104,6 @@ sidebar:
                 url: /concept_licensing.html
               - title: Management of node-based BYOL
                 url: /concept_license_management.html
-              - title: Evaluating
-                url: /concept_evaluating.html
               - title: Security
                 url: /concept_security.html
               - title: Performance
@@ -477,6 +475,8 @@ sidebar:
                   url: /task_scanning_databases.html
                 - title: OneDrive accounts
                   url: /task_scanning_onedrive.html
+                - title: SharePoint accounts
+                  url: /task-scanning-sharepoint.html
                 - title: File shares
                   url: /task_scanning_file_shares.html
                 - title: Object storage
@@ -489,6 +489,8 @@ sidebar:
           url: /task_controlling_governance_data.html
         - title: View compliance details about your data
           url: /task_controlling_private_data.html
+        - title: Organize your private data
+          url: /task-org-private-data.html
         - title: Manage your private data
           url: /task_managing_highlights.html
         - title: Add custom personal data identifiers
@@ -503,6 +505,12 @@ sidebar:
           url: /task_managing_compliance.html
         - title: FAQ
           url: /faq_cloud_compliance.html
+    - title: Secure your data from ransomware and internal attacks
+      entries:
+        - title: Learn about Ransomware Protection
+          url: /concept-ransomware-protection.html
+        - title: Manage cyber security recommendations for your data
+          url: /task-analyze-ransomware-data.html
     - title: Tier on-premises data to the cloud
       entries:
         - title: Learn about Cloud Tiering
@@ -615,8 +623,6 @@ sidebar:
               url: /reference_user_roles.html
             - title: Permissions
               url: /reference_permissions.html
-            - title: AWS Marketplace pages
-              url: /reference_aws_marketplace.html
     - title: Automate with the REST API
       entries:
         - title: Cloud Manager API documentation
