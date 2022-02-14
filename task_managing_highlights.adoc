@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_highlights.html
 keywords: compliance, privacy, filter data, delete files, move files, copy files, clone files, sync files, data sense
-summary: Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your dats, while other functionality allows you to make changes to the data.
+summary: Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your data, while other functionality allows you to make changes to the data.
 ---
 
 = Managing your private data
@@ -13,7 +13,7 @@ summary: Cloud Data Sense provides many ways for you to manage your private data
 :imagesdir: ./media/
 
 [.lead]
-Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your dats, while other functionality allows you to make changes to the data.
+Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your data, while other functionality allows you to make changes to the data.
 
 * You can copy files to a destination NFS share if you want to make a copy of certain data and move it to a different NFS location.
 * You can clone an ONTAP volume to a new volume, while including only selected files from the source volume in the new cloned volume. This is useful for situations where you’re migrating data and you want to exclude certain files from the original volume.
