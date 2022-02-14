@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-install-connector-onprem-no-internet.html
 keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
-summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan them with Cloud Data Sense.
+summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan the data with Cloud Data Sense.
 ---
 
 = Install the Connector on-prem without internet access
@@ -13,7 +13,9 @@ summary: You can install the Connector on an on-premises Linux host that doesn't
 :imagesdir: ./media/
 
 [.lead]
-You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan them with Cloud Data Sense.
+You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan the data with Cloud Data Sense.
+//
+// You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
 
 These installation instructions are specifically for the use case described above. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
@@ -110,6 +112,7 @@ The Connector is now installed and you can start using the Cloud Manager feature
 
 * link:task_discovering_ontap.html[Discover on-prem ONTAP clusters]
 * link:task_replicating_data.html[Replicate data between on-prem ONTAP clusters]
-* link:task-deploy-compliance-dark-site.html[Scan the data using Cloud Data Sense]
+// * link:task_backup_onprem_private_cloud.html[Back up volume data to StorageGRID using Cloud Backup]
+* link:task-deploy-compliance-dark-site.html[Scan volume data using Cloud Data Sense]
 
 When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].

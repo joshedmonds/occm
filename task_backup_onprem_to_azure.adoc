@@ -57,7 +57,7 @@ Select the IPspace in the ONTAP cluster where the volumes reside. You can also c
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Define the backup policy
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Define the default backup policy
 
 [role="quick-margin-para"]
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to hourly, daily, weekly, or monthly backups, or select one of the system-defined policies that provide more options. You can also change the number of backup copies you want to retain.
@@ -71,20 +71,12 @@ image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backu
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Select the volumes that you want to back up
 
 [role="quick-margin-para"]
-Identify which volumes you want to back up from the cluster.
+Identify which volumes you want to back up using the default backup policy in the Select Volumes page. If you want to assign different backup policies to certain volumes, you can create additional policies and apply them to volumes later.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
 Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] Restore your data, as needed
-
-[role="quick-margin-para"]
-Choose to restore an entire backup to a new volume, or to restore individual files from the backup to an existing volume. You can restore data to a Cloud Volumes ONTAP system in Azure, or to an on-premises ONTAP system.
-
-[role="quick-margin-para"]
-See link:task_restore_backups.html[Restoring volume data from backup files^] for details.
 
 == Requirements
 
@@ -106,7 +98,7 @@ ONTAP requirements::
 * ONTAP 9.7P5 and later.
 * A SnapMirror license (included as part of the Premium Bundle or Data Protection Bundle).
 +
-*Note:* The "Hybrid Cloud Bundle" is not required when using the Cloud Backup service.
+*Note:* The "Hybrid Cloud Bundle" is not required when using Cloud Backup.
 +
 See how to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[manage your cluster licenses^].
 *	Time and time zone are set correctly.
@@ -156,7 +148,7 @@ You can create backups from on-premises systems to Azure Blob in all regions htt
 
 === License requirements
 
-Before your 30-day free trial of the Cloud Backup service expires, you need to subscribe to a pay-as-you-go (PAYGO) Cloud Manager Marketplace offering from Azure, or purchase and activate a Cloud Backup BYOL license from NetApp. These licenses are for the account and can be used across multiple systems.
+Before your 30-day free trial of Cloud Backup expires, you need to subscribe to a pay-as-you-go (PAYGO) Cloud Manager Marketplace offering from Azure, or purchase and activate a Cloud Backup BYOL license from NetApp. These licenses are for the account and can be used across multiple systems.
 
 * For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^] Cloud Manager Marketplace offering to continue using Cloud Backup. Billing for Cloud Backup is done through this subscription.
  * For Cloud Backup BYOL licensing, you don't need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
@@ -219,14 +211,14 @@ image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud pr
 +
 image:screenshot_backup_onprem_azure_networking.png[A screenshot that shows the networking details when backing up volumes from an ONTAP system to Azure Blob storage.]
 
-. Enter the backup policy details and click *Next*.
+. Enter the default backup policy details and click *Next*.
 
-.. Define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+.. Define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster[See the list of existing policies you can choose^].
 .. When using ONTAP 9.10.1 and greater, you can choose to tier backups to Azure Archive storage after a certain number of days for further cost optimization. link:reference-azure-backup-tiers.html[Learn more about using archival tiers].
 +
 image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
-. Select the volumes that you want to back up.
+. Select the volumes that you want to back up using the default backup policy in the Select Volumes page. If you want to assign different backup policies to certain volumes, you can create additional policies and apply them to those volumes later.
 
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
@@ -234,20 +226,23 @@ image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backu
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
++
+If you want all volumes added in the future to have backup enabled, just leave the checkbox for "Automatically back up future volumes..." checked. If you disable this setting, you'll need to manually enable backups for future volumes.
+
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
 +
 You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Data Sense scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Data Sense instance^]).
 +
 image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Data Sense on your backed up volumes.]
 
-. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Data Sense.)
+. Click *Go to Data Sense* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Data Sense.)
 
 * If an instance of Cloud Data Sense is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-data-sense-in-your-working-environments[how to choose the volumes^].
 +
 image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
 * If Cloud Data Sense has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
 +
-image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Data Sense.]
+image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Data Sense.]
 +
 After you have deployed Compliance you can choose the volumes you want to scan as described above.
 
@@ -257,8 +252,9 @@ Cloud Backup backs up your volumes from the on-premises ONTAP system, and option
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^].
+You can also link:task_restore_backups.html[restore entire volumes or individual files from a backup file^] to a Cloud Volumes ONTAP system in Azure, or to an on-premises ONTAP system.
 
-You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Data Sense that can help you understand data context and identify sensitive data in your organization.
+You can link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Data Sense that can help you understand data context and identify sensitive data in your organization.
 
 NOTE: The scan results are not available immediately because Cloud Backup has to finish creating the backups before Cloud Data Sense can start compliance scans.
