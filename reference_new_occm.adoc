@@ -19,6 +19,20 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.15 update (14 Feb 2022)
+
+=== Cloud Backup enhancements
+
+* Now you can assign backup policies for individual volumes in a single cluster.
++
+In the past you could assign only a single backup policy to all volumes in a cluster. Now you can create multiple backup policies for a single cluster and apply different policies to different volumes. link:task_managing_backups.html#changing-the-policy-assigned-to-existing-volumes[See how to create new backup policies for a cluster and assign them to selected volumes].
+
+* A new option enables you to automatically apply a default backup policy to newly created volumes.
++
+In the past, new volumes created in a working environment after Cloud Backup was activated required that you manually apply a backup policy. Now, regardless of if the volume was created in Cloud Manager, System Manager, the CLI, or by using APIs, Cloud Backup will discover the volume and apply the backup policy you have chosen as the default policy.
++
+This option is available when enabling backup in a new working environment, or from the _Manage Volumes_ page for existing working environments.
+
 == Cloud Manager 3.9.15 update (9 Feb 2022)
 
 This update includes enhancements to several features and services.
