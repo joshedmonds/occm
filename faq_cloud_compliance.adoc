@@ -153,7 +153,7 @@ link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Data Sense send notifications to my organization?
 
-Yes. In conjunction with the Policies feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a Policy returns results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^].
+Yes. In conjunction with the Policies feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a Policy returns results so you can get notifications to protect your data. Learn more about link:task-org-private-data.html#controlling-your-data-using-policies[Policies^].
 
 You can also download status reports from the Governance page and Investigation page that you can share internally in your organization.
 
@@ -169,7 +169,7 @@ link:task_managing_data_fusion.html#creating-custom-personal-data-identifiers-fr
 
 Yes. You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. You can view the labels that are already assigned to files, add labels to files, and change existing labels.
 
-link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[Learn more^].
+link:task-org-private-data.html#categorizing-your-data-using-aip-labels[Learn more^].
 
 == Can I limit Cloud Data Sense information to specific users?
 

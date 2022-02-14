@@ -24,7 +24,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 * Identify Personal Identifiable Information (PII)
 * Identify a wide scope of sensitive information as required by GDPR, CCPA, PCI, and HIPAA privacy regulations
 * Respond to Data Subject Access Requests (DSAR)
-* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task_managing_highlights.html#controlling-your-data-using-policies[Policies^])
+* Notify Cloud Manager users through email when files contain certain PII (you define this criteria using link:task-org-private-data.html#controlling-your-data-using-policies[Policies^])
 * View and modify link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP) labels^] in your files
 * Add custom tags to files (for example, "needs to be moved") and assign a Cloud Manager user so that person can own updates to the files
 * Copy, move, and delete files
@@ -170,7 +170,7 @@ The table below shows some of the differences:
 | Ability to run a link:task_generating_compliance_reports.html#data-mapping-report[Data Mapping Report] | Yes | Yes
 | Data Investigation page to view file details | Yes | No
 | Search for names within files | Yes | No
-| Create link:task_managing_highlights.html#controlling-your-data-using-policies[policies] that provide custom search results | Yes | No
+| Create link:task-org-private-data.html#controlling-your-data-using-policies[policies] that provide custom search results | Yes | No
 | Categorize data using AIP labels and Status tags | Yes | No
 | Copy, delete, and move source files | Yes | No
 | Ability to run other reports | Yes | No
