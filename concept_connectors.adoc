@@ -17,9 +17,9 @@ In most cases, an Account Admin will need to deploy a _Connector_ in your cloud 
 
 == When a Connector is required
 
-A Connector is required to use any of the following features within Cloud Manager:
+A Connector is required to use any of the following services within Cloud Manager:
 
-* Amazon FSx for ONTAP advanced management features
+* Amazon FSx for ONTAP management features
 * Amazon S3 bucket discovery
 * Cloud Backup
 * Cloud Data Sense
@@ -30,7 +30,15 @@ A Connector is required to use any of the following features within Cloud Manage
 * Monitoring
 * On-premises ONTAP clusters
 
-A Connector is *_not_* required for Azure NetApp Files, Cloud Volumes Service, Cloud Sync, or Active IQ Digital Advisor.
+A Connector is *_not_* required for the following services:
+
+* Active IQ Digital Advisor
+* Amazon FSx for ONTAP working environment creation
++
+A Connector is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
+* Azure NetApp Files
+* Cloud Volumes Service for Google Cloud
+* Cloud Sync
 
 NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
 
