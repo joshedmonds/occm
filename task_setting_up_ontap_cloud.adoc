@@ -37,7 +37,7 @@ image:screenshot_ntp_server_api.gif[A screenshot of the Swagger interface that s
 
 If the Cloud Manager Account Admin added a proxy server to Cloud Manager before you launched your instance, Cloud Volumes ONTAP is configured to use that proxy server for AutoSupport messages.
 
-The only required configuration step is to ensure that Cloud Volumes ONTAP has outbound internet connectivity. For details, refer to the networking requirements for your cloud provider.
+The only required configuration step is to ensure that Cloud Volumes ONTAP has outbound internet connectivity through a NAT instance or your environment's proxy services. For details, refer to the networking requirements for your cloud provider.
 
 * link:reference_networking_aws.html[AWS networking requirements]
 * link:reference_networking_azure.html[Azure networking requirement]
