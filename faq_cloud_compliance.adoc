@@ -147,8 +147,6 @@ The compliance scan doesn't heat up the cold data--it stays cold and tiered to o
 
 Yes. As long as you have discovered the on-prem ONTAP cluster as a working environment in Cloud Manager, you can scan any of the volume data.
 
-Alternatively, you can run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backup files from your on-prem systems using link:task_backup_from_onprem.html[Cloud Backup^], you can run compliance scans on those backup files.
-
 link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Data Sense send notifications to my organization?

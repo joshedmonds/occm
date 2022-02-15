@@ -22,8 +22,6 @@ A few notes before you read any further:
 
 * The Cloud Data Sense bring-your-own-license (BYOL) is a _floating_ license that you can use across all the working environments and data sources in the workspace that you plan to scan. You'll see an active subscription in the Digital Wallet.
 
-* There is no charge for scanning backup files created from your on-prem ONTAP volumes (created using link:concept_backup_to_cloud.html[Cloud Backup]). This data doesn't count against the capacity purchased in your license.
-
 link:concept_cloud_compliance.html#cost[Learn more about the licensing and costs related to Cloud Data Sense].
 
 == Use a Cloud Data Sense PAYGO subscription
@@ -33,8 +31,6 @@ Pay-as-you-go subscriptions from your cloud provider's marketplace enable you to
 You can subscribe at any time and you will not be charged until the amount of data exceeds 1 TB. You can always see the total amount of data that is being scanned from the Data Sense Dashboard. And the _Subscribe Now_ button makes it easy to subscribe when you are ready.
 
 image:screenshot_compliance_subscribe.png[A screenshot showing how much data is being scanned and the Subscribe button to subscribe to the service.]
-
-*Note:* If you are prompted by Cloud Data Sense to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See <<Change to the new Cloud Manager plan in Azure,how to change to the new NetApp Cloud Manager plan in Azure>>.
 
 .Steps
 
@@ -70,33 +66,6 @@ The following video shows how to associate a https://console.cloud.google.com/ma
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
-=== Change to the new Cloud Manager plan in Azure
-
-Cloud Data Sense (Cloud Compliance) was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Data Sense.
-
-You need to follow these steps to change to the new *NetApp Cloud Manager* subscription before you can start using Cloud Data Sense.
-
-NOTE: If your existing Subscription was issued with a special private offer, you need to contact NetApp so that we can issue a new special private offer with Data Sense included.
-
-.Steps
-
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
-
-. Find the credentials for the Azure Managed Service Identity that you want to change the subscription for and hover over the credentials and click *Associate Subscription*.
-+
-The details for your current Marketplace Subscription are displayed.
-
-. Log in to the link:https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fsaasresources[Azure portal^] and select *Software as a Service (SaaS)*.
-
-. Select the subscription for which you want to change the plan and click *Change Plan*.
-+
-image:screenshot_compliance_azure_subscription.png[A screenshot showing the list of all your Azure subscriptions and the details for the subscription you want to change.]
-
-. In the Change Plan page, select the *NetApp Cloud Manager* plan and click the *Change Plan* button.
-image:screenshot_compliance_azure_change_plan.png[A screenshot of changing to the new plan that supports Cloud Data Sense.]
-
-. Return to Cloud Manager, select the subscription, and hover over the “i” above subscription in the Credentials card to verify your subscription has changed.
-
 == Use a Cloud Data Sense BYOL license
 
 Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *Cloud Data Sense* license is a _floating_ license where the total capacity is shared among *all* of your working environments and data sources, making initial licensing and renewal easy.
@@ -113,8 +82,8 @@ You use the Digital Wallet page in Cloud Manager to manage Cloud Data Sense BYOL
 === Obtain your Cloud Data Sense license file
 
 After you have purchased your Cloud Data Sense license, you activate the license in Cloud Manager by entering the Cloud Data Sense serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
-//
-// If you've deployed Cloud Data Sense on a host in an on-premises site that doesn’t have internet access, you'll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for dark site installations.
+
+If you've deployed Cloud Data Sense on a host in an on-premises site that doesn’t have internet access, you'll need to obtain the license file from an internet-connected system. Activating the license using the serial number and NSS account is not available for dark site installations.
 
 .Steps
 
