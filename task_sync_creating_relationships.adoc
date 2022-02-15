@@ -137,7 +137,7 @@ If you enable this option, you also need to change a parameter in the local.json
 }
 }
 
-Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never deletes files from the target location.
+Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never delete files from the target location.
 
 File Types:: Define the file types to include in each sync: files, directories, and symbolic links.
 
