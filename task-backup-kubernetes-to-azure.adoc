@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-backup-kubernetes-to-azure.html
 keywords: backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, azure, azure blob, back up volumes, Cloud Backup, cloud backup service, kubernetes
-summary: Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Azure Blob storage.
+summary: Complete a few steps to get started backing up data from your persistent volumes on AKS Kubernetes clusters to Azure Blob storage.
 ---
 
 = Backing up Kubernetes persistent volume data to Azure Blob storage
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started backing up data from your Kubernete
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Azure Blob storage.
+Complete a few steps to get started backing up data from your persistent volumes on AKS Kubernetes clusters to Azure Blob storage.
 
 == Quick start
 
@@ -50,14 +50,6 @@ image:screenshot_backup_policy_k8s_azure.png[A screenshot that shows the Cloud B
 
 [role="quick-margin-para"]
 Identify which volumes you want to back up in the Select Volumes page. The backup files are stored in a Blob container using the same Azure subscription and Region as the Cloud Volumes ONTAP system.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Restore your data, as needed
-
-[role="quick-margin-para"]
-Restore an entire backup as a new volume on the same or different Kubernetes cluster in Azure (in the same region).
-
-[role="quick-margin-para"]
-See link:task_restore_backups.html[Restoring a volume from backup files^] for details.
 
 == Requirements
 
@@ -170,7 +162,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 . Enter the backup policy details and click *Next*.
 
 +
-You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+You can define the backup schedule and choose the number of backups to retain.
 +
 image:screenshot_backup_policy_k8s_azure.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
@@ -192,5 +184,6 @@ The Kubernetes Dashboard is displayed so you can monitor the state of the backup
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html#restoring-volumes-from-a-kubernetes-backup-file[restore entire volumes from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^].
+You can also link:task_restore_backups.html#restoring-volumes-from-a-kubernetes-backup-file[restore entire volumes from a backup file^] as a new volume on the same or different Kubernetes cluster in Azure (in the same region).
 // or individual files
