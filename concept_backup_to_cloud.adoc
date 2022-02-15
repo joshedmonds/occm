@@ -65,6 +65,8 @@ NetApp StorageGRID
 | Amazon S3
 | Kubernetes cluster in Azure
 | Azure Blob
+| Kubernetes cluster in Google
+| Google Cloud Storage
 
 |===
 
@@ -88,13 +90,14 @@ On-premises ONTAP system
 | Azure Blob | Kubernetes | Kubernetes cluster in Azure |
 | Google Cloud Storage | ONTAP | Cloud Volumes ONTAP in Google
 On-premises ONTAP system |
+| Google Cloud Storage | Kubernetes | Kubernetes cluster in Google
 | NetApp StorageGRID | ONTAP | On-premises ONTAP system |
 
 |===
 //
 // === Support for sites with no internet connectivity
 //
-// Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.15) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+// Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.16) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
 
 == Cost
 

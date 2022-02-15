@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_onprem_private_cloud.html
-keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, cloud backup service, StorageGRID
+keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to object storage in your NetApp StorageGRID systems.
 ---
 

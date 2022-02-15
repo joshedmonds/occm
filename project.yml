@@ -348,6 +348,8 @@ sidebar:
               url: /task_backup_kubernetes_to_s3.html
             - title: Back up to Azure Blob
               url: /task-backup-kubernetes-to-azure.html
+            - title: Back up to Google Cloud
+              url: /task-backup-kubernetes-to-gcp.html
         - title: Set up licensing
           url: /task_licensing_cloud_backup.html
         - title: Manage backups
