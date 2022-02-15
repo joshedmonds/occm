@@ -90,14 +90,14 @@ On-premises ONTAP system
 | Azure Blob | Kubernetes | Kubernetes cluster in Azure |
 | Google Cloud Storage | ONTAP | Cloud Volumes ONTAP in Google
 On-premises ONTAP system |
-| Google Cloud Storage | Kubernetes | Kubernetes cluster in Google
+| Google Cloud Storage | Kubernetes | Kubernetes cluster in Google |
 | NetApp StorageGRID | ONTAP | On-premises ONTAP system |
 
 |===
-//
-// === Support for sites with no internet connectivity
-//
-// Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.16) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+
+=== Support for sites with no internet connectivity
+
+Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.16) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
 
 == Cost
 
@@ -313,8 +313,7 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.
 
-* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
-// The Connector can be installed in a site with or without internet access.
+* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises. The Connector can be installed in a site with or without internet access.
 
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
