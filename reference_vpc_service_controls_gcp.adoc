@@ -47,6 +47,8 @@ Policies allow exceptions to the VPC Service Controls rule sets. For more inform
 
 To set the policies that Cloud Manager requires, navigate to your VPC Service Controls Perimeter within your organization and add the following policies. The fields should match the options given in the VPC Service Controls policy page. Also note that *all* rules are required and the *OR* parameters should be used in the rule set.
 
+TIP: Ingress rules 1 and 2 are for deploying the Cloud Manager Connector instance from Cloud Manager SaaS. These are not required for manual deployments. Ingress rule 3 and Egress rule 4 are used for all Cloud Volumes ONTAP deployment and maintenance operations and must be in place for full functionality.
+
 === Ingress rules
 
 .Rule 1
@@ -98,6 +100,7 @@ OR
 	From:
 		Identities:
 			[Service Project Number]@cloudservices.gserviceaccount.com
+			[Connector Service Account]@[Project ID].iam.gserviceaccount.com
 	To:
 		Projects =
 			14190056516
