@@ -75,7 +75,7 @@ With an hourly pay-as-you-go subscription, you're charged hourly based on the nu
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ[View pay-as-you-go pricing in AWS^]
 
 Annual subscription::
-An annual subscription provides a license for 20 sync relationships that you pay for up front. If you go above 20 sync relationships and you've subscribed through Azure, you pay for the additional relationships by the hour.
+An annual subscription provides a license for 20 sync relationships that you pay for up front. If you go above 20 sync relationships and you've subscribed through AWS, you pay for the additional relationships by the hour.
 +
 https://aws.amazon.com/marketplace/pp/B06XX5V3M2[View annual pricing in AWS^]
 
