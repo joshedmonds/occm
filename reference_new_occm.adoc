@@ -37,6 +37,10 @@ This option is available when enabling backup in a new working environment, or f
 +
 The Job Monitor can be very helpful when you have initiated an operation against multiple volumes, like changing the backup policy, or deleting backups, so you can see when the operation has completed on all volumes. link:task-monitor-backup-jobs.html[See how to use the Job Monitor].
 
+== Cloud Manager 3.9.15 build 2 (10 Feb 2022)
+
+We updated the URL for AWS Marketplace listings.
+
 == Cloud Manager 3.9.15 update (9 Feb 2022)
 
 This update includes enhancements to several features and services.
