@@ -103,7 +103,7 @@ You can find your Cloud Manager Account ID by selecting the *Account* drop-down 
 
 === Add Cloud Data Sense BYOL licenses to your account
 
-After you purchase a Cloud Data Sense license for your Cloud Manager account, you need to add the license to Cloud Manager to use the Cloud Data Sense service.
+After you purchase a Cloud Data Sense license for your Cloud Manager account, you need to add the license to Cloud Manager to use the Data Sense service.
 
 .Steps
 
@@ -116,7 +116,7 @@ After you purchase a Cloud Data Sense license for your Cloud Manager account, yo
 * If you have the Data Sense license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
 If your NetApp Support Site account isn't available from the drop-down list, link:task_adding_nss_accounts.html[add the NSS account to Cloud Manager^].
-* If you have the Data Sense license file, select the *Upload License File* option and follow the prompts to attach the file.
+* If you have the Data Sense license file (required when installed in a dark site), select the *Upload License File* option and follow the prompts to attach the file.
 +
 image:screenshot_services_license_add.png[A screenshot that shows the page to add the Cloud Data Sense BYOL license.]
 
