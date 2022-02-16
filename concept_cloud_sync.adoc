@@ -68,14 +68,14 @@ Service charges:: There are two ways to pay for sync relationships after your 14
 
 Subscribing to the Cloud Sync service from AWS or Azure enables you to pay at an hourly rate, or to pay annually. link:task_sync_licensing.html[You can subscribe through either AWS or Azure], depending on where you want to be billed.
 
-Hourly subscriptions::
-With an hourly pay-as-you-go subscription, the Cloud Sync service charges hourly based on the number of sync relationships that you create.
+Hourly subscription::
+With an hourly pay-as-you-go subscription, you're charged hourly based on the number of sync relationships that you create.
 +
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice[View pricing in Azure^]
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ[View pay-as-you-go pricing in AWS^]
 
-Annual subscriptions::
-An annual subscription provides a license for 20 sync relationships that you pay for up front. If you go above 20 sync relationships and you've subscribed through Azure, you pay for the additional relationships by the hour.
+Annual subscription::
+An annual subscription provides a license for 20 sync relationships that you pay for up front. If you go above 20 sync relationships and you've subscribed through AWS, you pay for the additional relationships by the hour.
 +
 https://aws.amazon.com/marketplace/pp/B06XX5V3M2[View annual pricing in AWS^]
 
