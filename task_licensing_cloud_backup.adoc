@@ -98,7 +98,7 @@ After you purchase a Cloud Backup license for your NetApp account, you need to a
 * If you have the backup license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
 If your NetApp Support Site account isn't available from the drop-down list, link:task_adding_nss_accounts.html[add the NSS account to Cloud Manager].
-* If you have the backup license file, select the *Upload License File* option and follow the prompts to attach the file.
+* If you have the backup license file (required when installed in a dark site), select the *Upload License File* option and follow the prompts to attach the file.
 +
 image:screenshot_services_license_add2.png[A screenshot that shows the page to add the Cloud Backup BYOL license.]
 
@@ -122,7 +122,7 @@ After you pay for the license and it is registered with the NetApp Support Site,
 
 . If Cloud Manager can't automatically update the license (for example, when installed in a dark site), then you’ll need to manually upload the license file.
 .. You can <<Obtain your Cloud Backup license file,obtain the license file from the NetApp Support Site>>.
-.. On the Digital Wallet page in _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
+.. On the Digital Wallet page _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
 +
 image:screenshot_services_license_update1.png[A screenshot of selecting the Update License button for a particular service.]
 .. In the _Update License_ page, upload the license file and click *Update License*.
