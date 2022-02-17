@@ -96,12 +96,20 @@ You can hover over each section to see the percentage and total number of files 
 
 Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
-TIP: Files in OneDrive accounts, SharePoint accounts, and in databases are not represented in this chart.
+TIP: Files in databases are not represented in this chart.
 
 == Data listed by encrypted files
 
 The _Encrypted Files_ area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
 
 image:screenshot_ransomware_encrypt_files.png[A screenshot of the encrypted file chart on the Ransomware Protection dashboard.]
+
+Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.
+
+== Status of hardening for ONTAP systems
+
+The _Encrypted Files_ area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
+
+image:screenshot_ransomware_harden_ontap.png[A screenshot of the status for ONTAP hardening on the Ransomware Protection dashboard.]
 
 Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.
