@@ -13,6 +13,58 @@ summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, th
 :imagesdir: ./media/
 
 [.lead]
+
+
+Choose Connector to add a new AWS account to an existing Connector. This enables you to deploy and manage Cloud Volumes ONTAP in other AWS accounts from the same Connector. Choose Cloud Manager to add new AWS credentials to Cloud Manager. This enables you to create a new Connector or to use the credentials with a cloud service like FSx for ONTAP.
+
+Add credentials to enable the Connector to manage resources in other AWS accounts. You can either provide AWS access keys or provide the ARN of an IAM role in a trusted account.
+
+
+Cloud Manager
+
+Provide the ARN of an IAM role that gives Cloud Manager the permissions needed to create and manage FSx for ONTAP or to create a new Connector.
+
+Assume Role
+
+Provide the ARN of an IAM role that gives Cloud Manager the permissions needed to create and manage FSx for ONTAP or to create a new Connector.
+
+Learn how to create the role
+1
+Go to the IAM console.
+2
+Under Access Management, click Roles > Create Role.
+3
+Select Another AWS account and enter the Cloud Manager account ID: 733004784675
+4
+On the Attach permissions policies page, create a policy using the required permissions, and then complete the remaining steps.
+5
+Copy the Role ARN and paste it on this screen.
+
+
+Connector
+
+Assume role or AWS keys
+
+Assume Role
+Enable the Connector to manage additional AWS accounts by providing an IAM role in another account that the Connector can assume.
+
+Learn how to create the role
+1
+Go to the IAM console.
+2
+Under Access Management, click Roles > Create Role.
+3
+Select Another AWS account and enter the ID of the account where the Connector instance resides.
+4
+On the Attach permissions policies page, create a policy using the required permissions, and then complete the remaining steps.
+5
+Copy the Role ARN and paste it on this screen.
+
+AWS Keys
+An access key and secret key for an AWS account in which Cloud Manager can launch Cloud Volumes ONTAP systems.
+
+
+
 When you create a Cloud Volumes ONTAP system, you need to select the AWS credentials and subscription to use with that system. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 
 == Granting permissions
@@ -62,14 +114,12 @@ You can set up a trust relationship between the source AWS account in which you 
 
 .Steps
 
-. Go to the target account where you want to deploy Cloud Volumes ONTAP and create an IAM role by selecting *Another AWS account*.
+. Go to the target account where you want to deploy Cloud Volumes ONTAP and create an IAM role by selecting *AWS account*.
 +
 Be sure to do the following:
 
-* Enter the ID of the account where the Connector instance resides.
+* Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
 * Attach the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
-+
-image:screenshot_iam_create_role.gif[A screenshot that shows the Create role page in the AWS IAM Console. Under Select type of trusted entity, Another AWS account is selected.]
 
 . Go to the source account where the Connector instance resides and select the IAM role that is attached to the instance.
 .. Click *Attach policies* and then click *Create policy*.
