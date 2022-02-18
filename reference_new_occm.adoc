@@ -19,6 +19,12 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.16 (27 Feb 2022)
+
+=== Connector enhancements
+
+* When you create a new Connector, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
+
 == Cloud Manager 3.9.15 update (14 Feb 2022)
 
 === Cloud Backup enhancements
