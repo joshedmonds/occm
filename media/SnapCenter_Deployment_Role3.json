@@ -1,0 +1,22 @@
+{
+    "properties": {
+        "roleName": "SnapCenter_Deployment_Role_3",
+        "description": "Role for route table management, to be assigned at the scope of route table which is assgined to SnapCenter subnet for Firewall configuration",
+        "assignableScopes": [
+            "/subscriptions/<Subscription_ID>"
+        ],
+        "permissions": [
+            {
+                "actions": [
+					"Microsoft.Authorization/roleDefinitions/write",
+					"Microsoft.Authorization/roleDefinitions/delete",
+					"Microsoft.Authorization/roleAssignments/write",
+					"Microsoft.Authorization/roleAssignments/delete"
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
