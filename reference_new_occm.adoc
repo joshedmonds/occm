@@ -21,6 +21,12 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.16 (27 Feb 2022)
 
+=== Log in with NetApp credentials
+
+When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
+
+NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
+
 === Connector enhancements
 
 * When you create a new Connector, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
