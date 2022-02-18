@@ -24,8 +24,8 @@ If you need more storage after you launch your initial Cloud Volumes ONTAP syste
 Cloud Manager provides several ways to create a new volume:
 
 * Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <<Create a volume,Learn more>>.
+* Create a volume on a data aggregate of your choice. <<Create a volume,Learn more>>.
 * Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<Create a volume from a template,Learn more>>.
-* Create a volume on a data aggregate of your choice. <<Create a volume on a specific aggregate,Learn more>>.
 * Create a volume on the second node in an HA configuration. <<Create a volume on the second node in an HA configuration,Learn more>>.
 
 === Before you get started
@@ -40,7 +40,7 @@ A few notes about volume provisioning:
 
 === Create a volume
 
-If you need more storage after you launch a Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+The most common way to create a volume is to specify the type of volume that you need and then Cloud Manager handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.
 
 .Steps
 
@@ -55,7 +55,7 @@ Choosing a specific aggregate is recommended only if you have a good understandi
 
 .Any aggregate
 --
-Click *Add Volume* > *New volume*.
+In the Volumes tab, click *Add Volume* > *New volume*.
 
 --
 
