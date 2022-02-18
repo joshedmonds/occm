@@ -40,13 +40,34 @@ A few notes about volume provisioning:
 
 === Create a volume
 
-Click *Create volume*, specify your storage needs, and let Cloud Manager handle the disk allocation for you.
+If you need more storage after you launch a Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
 
 .Steps
 
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
 
-. Click *Add Volume* > *New volume*.
+. Create a new volume by letting Cloud Manager handle the disk allocation for you, or choose a specific aggregate for the volume.
++
+Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.
++
+[role="tabbed-block"]
+====
+
+.Any aggregate
+--
+Click *Add Volume* > *New volume*.
+
+--
+
+.Specific aggregate
+--
+.. Click the menu icon, and then click *Advanced > Advanced allocation*.
+.. Click the menu for an aggregate.
+.. Click *Create volume*.
+
+--
+
+====
 
 . Follow the steps in the wizard to create the volume.
 
@@ -193,66 +214,6 @@ Cloud Volumes ONTAP provisions the volume and displays a page so that you can se
 image:screenshot_template_creating_resource_cvo.png[A screenshot showing the progress of creating your new volume from the template.]
 
 Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
-
-=== Create a volume on a specific aggregate
-
-If you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system, you can choose a specific aggregate for a new volume.
-
-.Steps
-
-. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision FlexVol volumes.
-
-. Select the option to create a volume on a specific aggregate:
-+
-.. Click the menu icon, and then click *Advanced > Advanced allocation*.
-.. Click the menu for an aggregate.
-.. Click *Create volume*.
-
-. Enter details for the new volume, and then click *Continue*.
-+
-Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
-+
-include::_include/create_volume.adoc[]
-
-. If you chose the CIFS protocol and the CIFS server has not been set up, specify details for the server in the Create a CIFS Server dialog box, and then click *Save and continue*:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-| Field
-| Description
-
-| DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
-
-The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
-
-| Active Directory Domain to join |	The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
-
-| Credentials authorized to join the domain |	The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
-
-| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
-
-| Organizational Unit
-a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
-
-* To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
-
-* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
-https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
-
-| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
-
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
-|===
-
-. On the Usage Profile, Disk Type, and Tiering Policy page, edit the volume tiering policy, if needed.
-+
-For help with tiering policies, refer to link:concept_data_tiering.html[Data tiering overview].
-
-. Click *Go*.
-
-.Result
-
-Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
 
 === Create a volume on the second node in an HA configuration
 
