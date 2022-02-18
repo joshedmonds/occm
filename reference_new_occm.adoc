@@ -21,6 +21,10 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.16 (27 Feb 2022)
 
+=== Cloud Volumes ONTAP
+
+The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
+
 === Log in with NetApp credentials
 
 When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
