@@ -22,7 +22,7 @@ You can add AWS credentials to an existing Connector or directly to Cloud Manage
 Existing Connector::
 Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector.
 +
-Learn how to add AWS credentials to a Connector.
+<<Add credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
 
 Directly to Cloud Manager::
 Adding new AWS credentials to Cloud Manager enables you to do the following:
@@ -31,7 +31,7 @@ Adding new AWS credentials to Cloud Manager enables you to do the following:
 * Enable a cloud service like FSx for ONTAP
 
 +
-Learn how to add AWS credentials to Cloud Manager.
+<<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
 
 == How to rotate credentials
 
@@ -41,7 +41,7 @@ With the first two options, Cloud Manager uses the AWS Security Token Service to
 
 If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.
 
-== Add AWS credentials to an existing Connector
+== Add credentials to a Connector
 
 Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide AWS access keys or the ARN of an IAM role in a trusted account.
 
@@ -53,8 +53,8 @@ NOTE: When you deployed a Connector from Cloud Manager, Cloud Manager automatica
 
 *Choices*
 
-* <<Granting permissions by providing AWS keys>>
-* <<Granting permissions by assuming IAM roles in other accounts>>
+* <<Grant permissions by assuming IAM roles in other accounts>>
+* <<Grant permissions by providing AWS keys>>
 
 ==== Grant permissions by assuming IAM roles in other accounts
 
@@ -123,7 +123,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 
 The account now has the required permissions. <<Add the credentials to a Connector,You can now add the credentials to Cloud Manager>>.
 
-=== Add the credentials to a Connector
+=== Add the credentials
 
 After you provide an AWS account with the required permissions, you can add the credentials for that account to an existing Connector. This enables you to launch Cloud Volumes ONTAP systems in that account using the same Connector.
 
@@ -157,7 +157,7 @@ You can now switch to a different set of credentials from the Details and Creden
 
 image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
-== Add AWS credentials to Cloud Manager
+== Add credentials to Cloud Manager
 
 Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create and manage FSx for ONTAP or to create a new Connector.
 
@@ -183,7 +183,7 @@ Be sure to do the following:
 
 The IAM role now has the required permissions. <<Adding AWS credentials to Cloud Manager,You can now add it to Cloud Manager>>.
 
-=== Add the credentials to Cloud Manager
+=== Add the credentials
 
 After you provide the IAM role with the required permissions, add the credentials to Cloud Manager.
 
@@ -209,7 +209,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 You can now use the credentials when creating an FSx for ONTAP working environment or when creating a new Connector.
 
-== Associate an AWS subscription to credentials
+== Associate an AWS subscription
 
 After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.
 
