@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-analyze-ransomware-data.html
-keywords: personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity
+keywords: personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity, permissions
 summary: Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in each area to find more details and possible remediations.
 ---
 
@@ -61,7 +61,7 @@ These are the currently tracked alerts and suggested remediations.
 
 == Top data repositories by data sensitivity
 
-The _Top Data Repositories by Sensitivity Level_ area lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:
+The _Top Data Repositories by Sensitivity Level_ panel lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:
 
 * Non-Sensitive data
 * Personal data
@@ -75,7 +75,7 @@ Click each area to view the filtered results in the Data Sense Investigation pag
 
 == Domain Administrator Group control
 
-The _Domain Administrator Group control_ area shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have link:task-add-active-directory-datasense.html[integrated a global Active Directory] into Cloud Data Sense for this panel to be active.
+The _Domain Administrator Group control_ panel shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have link:task-add-active-directory-datasense.html[integrated a global Active Directory] into Cloud Data Sense for this panel to be active.
 
 image:screenshot_ransomware_domain_admin.png[A screenshot of the users who have been added as domain admins on the Ransomware Protection dashboard.]
 
@@ -83,7 +83,7 @@ The default administrative admin groups include “Administrators”, “Domain 
 
 == Data listed by types of open permissions
 
-The _Open Permissions_ area shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:
+The _Open permissions_ panel shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:
 
 * No Open Access
 * Open to Organization
@@ -100,7 +100,7 @@ TIP: Files in databases are not represented in this chart.
 
 == Data listed by encrypted files
 
-The _Encrypted Files_ area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
+The _Encrypted files_ panel shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
 
 image:screenshot_ransomware_encrypt_files.png[A screenshot of the encrypted file chart on the Ransomware Protection dashboard.]
 
@@ -108,8 +108,23 @@ Click a line for one of the data sources to view the filtered results in the Dat
 
 == Status of hardening for ONTAP systems
 
-The _Encrypted Files_ area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
+The _Harden your ONTAP environment_ panel provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[NetApp Security Hardening Guide for ONTAP Systems].
+
+You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion.
 
 image:screenshot_ransomware_harden_ontap.png[A screenshot of the status for ONTAP hardening on the Ransomware Protection dashboard.]
 
+The settings that being tracked include:
+
+* How current is the installed ONTAP version on each node
+* Is the on-box anti-ransomware capability activated
+* Are the NAS auditing capabilities activated
+* Is the snapshot capability activated on the data volumes, and what percentage of volumes have Snapshot copies
+
 Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.
+
+== Status of permissions on your critical business data
+
+The _Business critical data permissions analysis_ panel shows the permissions status of data that is critical for your business. That way you can quickly assess if you are protecting your business critical data well.
+
+image:screenshot_ransomware_critical_permissions.png[A screenshot of the permissions status for the data you are managing on the Ransomware Protection dashboard.]
