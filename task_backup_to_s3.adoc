@@ -34,7 +34,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 * Existing systems: Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
 +
-image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Enable button which is available after you select a working environment.]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enter the provider details
 

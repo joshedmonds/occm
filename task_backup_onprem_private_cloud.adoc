@@ -38,7 +38,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Restore Enable button which is available after you select an on-prem working environment."]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enter the StorageGRID details
 
@@ -170,9 +170,9 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 
 .Steps
 
-. From the Canvas, select the on-premises working environment and click *Enable* next to the Backup service in the right-panel.
+. From the Canvas, select the on-premises working environment and click *Enable* next to the Backup & Restore service in the right-panel.
 +
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup Enable button which is available after you select an on-prem working environment.]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 . Select *StorageGRID* as the provider, click *Next*, and then enter the provider details:
 
