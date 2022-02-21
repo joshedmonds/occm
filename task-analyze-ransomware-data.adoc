@@ -57,6 +57,10 @@ These are the currently tracked alerts and suggested remediations.
 | Some data in your data sources isn't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns and find optimization opportunities.
 | Click the link to launch Data Sense and enable scanning and mapping for the items that are not being scanned.
 
+| Your ONTAP system is not hardened
+| Certain settings in your ONTAP system are not set in accordance with recommendations from the https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[NetApp Security Hardening Guide for ONTAP Systems].
+| Click the link and you are redirected to the <<Status of ONTAP systems hardening,Harden your ONTAP environment panel>> below so you can investigate which issue is causing the alert and how best to fix the issue.
+
 |===
 
 == Top data repositories by data sensitivity
@@ -106,25 +110,60 @@ image:screenshot_ransomware_encrypt_files.png[A screenshot of the encrypted file
 
 Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
-== Status of hardening for ONTAP systems
+== Status of ONTAP systems hardening
 
-The _Harden your ONTAP environment_ panel provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[NetApp Security Hardening Guide for ONTAP Systems].
+The _Harden your ONTAP environment_ panel provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[NetApp Security Hardening Guide for ONTAP Systems] and to the https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html[ONTAP anti-ransomware feature] that proactively detects and warns about abnormal activity.
 
 You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion.
 
 image:screenshot_ransomware_harden_ontap.png[A screenshot of the status for ONTAP hardening on the Ransomware Protection dashboard.]
 
-The settings that being tracked include:
+The settings that are being tracked include:
 
-* How current is the installed ONTAP version on each node
-* Is the on-box anti-ransomware capability activated
-* Are the NAS auditing capabilities activated
-* Is the snapshot capability activated on the data volumes, and what percentage of volumes have Snapshot copies
+[cols=3*,options="header",cols="33,33,33",width="100%"]
 
-Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.
+|===
+| Hardening Objective
+| Description
+| Remediation
+
+| On-box Anti-ransomware
+| The percentage of volumes that have on-box anti-ransomware activated. Valid for on-prem ONTAP systems only.
+A green status icon indicates > 85% of volumes are enabled. Yellow indicates 40-85% are enabled. Red indicates < 40% are enabled.
+| https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html#system-manager-procedure[See how to enable anti-ransomware on your volumes] using System Manager.
+
+| NAS Auditing
+| The number of storage VMs that have file system auditing enabled.
+A green status icon indicates > 85% of SVMs have NAS file system auditing enabled. Yellow indicates 40-85% are enabled. Red indicates < 40% are enabled.
+| https://docs.netapp.com/us-en/ontap/nas-audit/auditing-events-concept.html[See how to enable NAS auditing on SVMs] using the CLI.
+
+| ONTAP Version
+| The version of ONTAP software installed on your clusters.
+A green status icon indicates that the version is current. A yellow icon indicates that the cluster is behind by 1 or 2 patch versions or 1 minor version for on-prem systems, or behind by 1 major version for others. A red icon indicates that the cluster is behind by 3 patch versions, or 2 minor versions, or 1 major version for on-prem systems, or behind by 2 major versions for others.
+| https://docs.netapp.com/us-en/ontap/setup-upgrade/index.html[See the best way to upgrade your on-prem clusters] or link:task_updating_ontap_cloud.html[your Cloud Volumes ONTAP systems].
+
+| Snapshots
+| Is the snapshot capability activated on data volumes, and what percentage of volumes have Snapshot copies.
+A green status icon indicates > 85% of volumes have snapshots enabled. Yellow indicates 40-85% are enabled. Red indicates < 40% are enabled.
+| https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html[See how to enable snapshots on your on-prem clusters] or link:task_managing_storage.html#managing-existing-volumes[on your Cloud Volumes ONTAP systems].
+
+|===
+
+For clusters that have low numbers for certain categories, you can click the System Manager button at the end of each row to correct the issue. You can also click the Cloud Backup button to activate backups for the volumes, or the Data Sense button to scan the volumes on the clusters to investigate compliance and governance conformance.
 
 == Status of permissions on your critical business data
 
-The _Business critical data permissions analysis_ panel shows the permissions status of data that is critical for your business. That way you can quickly assess if you are protecting your business critical data well.
+The _Business critical data permissions analysis_ panel shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business critical data.
 
 image:screenshot_ransomware_critical_permissions.png[A screenshot of the permissions status for the data you are managing on the Ransomware Protection dashboard.]
+
+Initially this panel has no data because the data gets populated only after you select the Data Sense _Policies_ that you have created to view your most critical business data. See how to link:task-org-private-data.html#creating-custom-policies[create your policies using Data Sense].
+
+After you have added up to 2 policies to this panel, the graph shows a permission analysis of all the data that meets the criteria from your policy. It lists the number of items that are:
+
+* Open to public permissions – the items which Data Sense considers as open to public
+* Open to organization permissions – the items which Data Sense considers as open to organization
+* No open permissions – the items which Data Sense considers as no open permissions
+* Unknown permissions– the items which Data Sense considers as unknown permissions
+
+Hover over each bar in the charts to view the number of results in each category. Click a bar and the Data Sense Investigation page is displayed so you can investigate further about which items have open permissions and whether you should make any adjustments to file permissions.
