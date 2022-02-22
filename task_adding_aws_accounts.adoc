@@ -43,20 +43,20 @@ If you provide Cloud Manager with AWS access keys, you should rotate the keys by
 
 == Add credentials to a Connector
 
-Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide AWS access keys or the ARN of an IAM role in a trusted account.
+Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in a trusted account or provide AWS access keys.
 
 === Grant permissions
 
-Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
+Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with the ARN of a role in a trusted account or AWS keys.
 
 NOTE: When you deployed a Connector from Cloud Manager, Cloud Manager automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_aws.html[Learn about AWS credentials and permissions].
 
 *Choices*
 
-* <<Grant permissions by assuming IAM roles in other accounts>>
+* <<Grant permissions by assuming an IAM role in another account>>
 * <<Grant permissions by providing AWS keys>>
 
-==== Grant permissions by assuming IAM roles in other accounts
+==== Grant permissions by assuming an IAM role in another account
 
 You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
 
@@ -76,7 +76,7 @@ Be sure to do the following:
 
 .. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager later on.
 
-. Enable the Connector to assume the IAM role:
+. Enable the Connector instance to assume the IAM role:
 
 .. Go to the IAM console in the source account where the Connector instance resides.
 
@@ -100,7 +100,7 @@ Be sure to do the following:
 
 .Result
 
-The account now has the required permissions. <<Add the credentials to a Connector,You can now add the credentials to Cloud Manager>>.
+The account now has the required permissions. <<add-the-credentials,You can now add the credentials to Cloud Manager>>.
 
 ==== Grant permissions by providing AWS keys
 
@@ -121,7 +121,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 
 .Result
 
-The account now has the required permissions. <<Add the credentials to a Connector,You can now add the credentials to Cloud Manager>>.
+The account now has the required permissions. <<add-the-credentials-2,You can now add the credentials to Cloud Manager>>.
 
 === Add the credentials
 
@@ -163,7 +163,7 @@ Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gi
 
 === Set up the IAM role
 
-Create an IAM role that Cloud Manager assume in order to create and manage FSx for ONTAP or to create a new Connector.
+Create an IAM role that Cloud Manager can assume in order to create a new Connector, or to create an FSx for ONTAP working environment.
 
 .Steps
 
@@ -220,7 +220,7 @@ There are two scenarios in which you might associate an AWS Marketplace subscrip
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how to create a Connector].
 
 .Steps
 
