@@ -19,16 +19,16 @@ Add and manage AWS credentials so that Cloud Manager has the permissions that it
 
 You can add AWS credentials to an existing Connector or directly to Cloud Manager:
 
-Existing Connector::
-Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector.
+* Add AWS credentials to an existing Connector
 +
-<<Add credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
+Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <<Add credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
 
-Directly to Cloud Manager::
+* Add AWS credentials directly to Cloud Manager
++
 Adding new AWS credentials to Cloud Manager enables you to do the following:
 +
-* Create a new Connector using the credentials
-* Enable a cloud service like FSx for ONTAP
+** Create a new Connector using the credentials
+** Enable a cloud service like FSx for ONTAP
 
 +
 <<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
