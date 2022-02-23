@@ -13,19 +13,23 @@ summary: In order to create or manage your Amazon FSx for ONTAP working environm
 :imagesdir: ./media/
 
 [.lead]
-To create or manage an Amazon FSx for ONTAP working environment, you need an AWS access key and secret key for an IAM user with FSx for ONTAP permissions. These permissions are different from the permissions required to create a Connector in AWS.
+To create or manage an Amazon FSx for ONTAP working environment, you need to add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment.
 
-To grant FSx for ONTAP permissions to a user, you need to create a new IAM policy or edit an exiting policy. You can then attach the policy to a user or user group.
+=== Set up the IAM role
 
-//NOTE: You can create a new IAM user with FSx for ONTAP permissions or edit an IAM user group to include the additional FSx for ONTAP permissions. We recommend the latter to avoid having to use multiple keys for your Connector and for FSx for ONTAP access.
-
-== Create a new policy
-You can create a new IAM policy for FSx for ONTAP.
+Set up an IAM role that enables the Cloud Manager SaaS to assume the role.
 
 .Steps
 
-. From the AWS IAM console, Click *Create Policy*.
-. Using the JSON editor, paste the following policy:
+. Go to the IAM console in the target account.
+
+. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
++
+Be sure to do the following:
+
+* Under *Trusted entity type*, select *AWS account*.
+* Select *Another AWS account* and enter the ID of the Cloud Manager SaaS: 733004784675
+* Create a policy that includes the following permissions:
 +
 [source,json]
 {
@@ -47,43 +51,103 @@ You can create a new IAM policy for FSx for ONTAP.
     ]
 }
 
-. Open the Visual Editor tab to confirm the correct configuration. Click *Next: Tags*.
-+
-image:screenshot_fsx_console_policy_confirm.png[Screenshot of FSx policy confirmation in console Visual Editor]
+. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager in the next step.
 
-. Optionally, add any tags to help you organize your policies. Click *Next: Review*.
-. Confirm your policy configuration and click *Create Policy*.
-. Type a name and description for your policy and click *Create Policy*.
+.Result
 
-For more details on creating an IAM policy, see https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^].
+The IAM role now has the required permissions. <<add-the-credentials-2,You can now add it to Cloud Manager>>.
 
-== Edit an existing policy
-If you have an existing IAM policy, you can edit it to add permissions for FSx for ONTAP.
+=== Add the credentials
+
+After you provide the IAM role with the required permissions, add the role ARN to Cloud Manager.
+
+.Before you get started
+
+If you just created the IAM role, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to Cloud Manager.
 
 .Steps
-. From the AWS IAM console, select the policy you want to edit.
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
-image:screenshot_fsx_console_policy_edit.png[Screenshot of selecting a policy to edit from AWS console]
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Edit the policy to include the following actions for FSx for ONTAP:
-+
-[source,json]
-            "Action": [
-                "fsx:*",
-                "ec2:Describe*",
-                "ec2:CreateTags",
-                "kms:Describe*",
-                "kms:List*",
-                "iam:CreateServiceLinkedRole"
+. Click *Add Credentials* and follow the steps in the wizard.
 
-== Attach the policy
+.. *Credentials Location*: Select *Amazon Web Services > Cloud Manager*.
 
-After creating or editing a policy to enable FSx for ONTAP, attach it to an IAM user group or directly to a specific IAM user.
+.. *Define Credentials*: Provide the ARN (Amazon Resource Name) of the IAM role.
 
-For detailed instructions on creating and managing AWS users and groups, see:
+.. *Review*: Confirm the details about the new credentials and click *Add*.
 
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html[AWS Documentation: Creating an IAM user in your AWS account^]
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html[AWS Documentation: Creating IAM user groups^]
+.Result
+
+You can now use the credentials when creating an FSx for ONTAP working environment.
+//
+// == Create a new policy
+// You can create a new IAM policy for FSx for ONTAP.
+//
+// .Steps
+//
+// . From the AWS IAM console, Click *Create Policy*.
+// . Using the JSON editor, paste the following policy:
+// +
+// [source,json]
+// {
+//     "Version": "2012-10-17",
+//     "Statement": [
+//         {
+//             "Sid": "VisualEditor0",
+//             "Effect": "Allow",
+//             "Action": [
+//                 "fsx:*",
+//                 "ec2:Describe*",
+//                 "ec2:CreateTags",
+//                 "kms:Describe*",
+//                 "kms:List*",
+//                 "iam:CreateServiceLinkedRole"
+//             ],
+//             "Resource": "*"
+//         }
+//     ]
+// }
+//
+// . Open the Visual Editor tab to confirm the correct configuration. Click *Next: Tags*.
+// +
+// image:screenshot_fsx_console_policy_confirm.png[Screenshot of FSx policy confirmation in console Visual Editor]
+//
+// . Optionally, add any tags to help you organize your policies. Click *Next: Review*.
+// . Confirm your policy configuration and click *Create Policy*.
+// . Type a name and description for your policy and click *Create Policy*.
+//
+// For more details on creating an IAM policy, see https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^].
+//
+// == Edit an existing policy
+// If you have an existing IAM policy, you can edit it to add permissions for FSx for ONTAP.
+//
+// .Steps
+// . From the AWS IAM console, select the policy you want to edit.
+// +
+// image:screenshot_fsx_console_policy_edit.png[Screenshot of selecting a policy to edit from AWS console]
+//
+// . Edit the policy to include the following actions for FSx for ONTAP:
+// +
+// [source,json]
+//             "Action": [
+//                 "fsx:*",
+//                 "ec2:Describe*",
+//                 "ec2:CreateTags",
+//                 "kms:Describe*",
+//                 "kms:List*",
+//                 "iam:CreateServiceLinkedRole"
+//
+// == Attach the policy
+//
+// After creating or editing a policy to enable FSx for ONTAP, attach it to an IAM user group or directly to a specific IAM user.
+//
+// For detailed instructions on creating and managing AWS users and groups, see:
+//
+// * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html[AWS Documentation: Creating an IAM user in your AWS account^]
+// * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html[AWS Documentation: Creating IAM user groups^]
 
 
 == Related links
