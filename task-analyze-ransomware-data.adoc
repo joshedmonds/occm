@@ -100,8 +100,6 @@ You can hover over each section to see the percentage and total number of files 
 
 Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
-TIP: Files in databases are not represented in this chart.
-
 == Data listed by encrypted files
 
 The _Encrypted files_ panel shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
