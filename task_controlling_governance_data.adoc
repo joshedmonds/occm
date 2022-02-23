@@ -73,8 +73,6 @@ The _Open Permissions_ area shows the percentage for each type of permissions th
 
 You can hover over each section to see the total number of files in each category. Click each area to view the filtered results in the Investigation page so that you can investigate further.
 
-TIP: Files in databases are not represented in this chart.
-
 === Age of Data and Size of Data graphs
 
 You may want to investigate the items in the _Age_ and _Size_ graphs to see if there is any data you should delete or tier to less expensive object storage.
