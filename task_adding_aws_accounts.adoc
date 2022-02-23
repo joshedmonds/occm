@@ -25,13 +25,7 @@ Adding new AWS credentials to an existing Connector enables you to deploy Cloud 
 
 * Add AWS credentials directly to Cloud Manager
 +
-Adding new AWS credentials to Cloud Manager enables you to do the following:
-+
-** Create a new Connector using the credentials
-** Enable a cloud service like FSx for ONTAP
-
-+
-<<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
+Adding new AWS credentials to Cloud Manager enable you to create an FSx for ONTAP working environment. <<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
 
 == How to rotate credentials
 
@@ -159,11 +153,11 @@ image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting betwe
 
 == Add credentials to Cloud Manager
 
-Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create and manage FSx for ONTAP or to create a new Connector.
+Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment.
 
 === Set up the IAM role
 
-Create an IAM role that Cloud Manager can assume in order to create a new Connector, or to create an FSx for ONTAP working environment.
+Set up an IAM role that enables the Cloud Manager SaaS to assume the role.
 
 .Steps
 
@@ -175,7 +169,27 @@ Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
 * Select *Another AWS account* and enter the ID of the Cloud Manager SaaS: 733004784675
-* Create a policy using... (this needs to be clarified)
+* Create a policy that includes the following permissions:
++
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "fsx:*",
+                "ec2:Describe*",
+                "ec2:CreateTags",
+                "kms:Describe*",
+                "kms:List*",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 
 . Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager in the next step.
 
@@ -185,7 +199,7 @@ The IAM role now has the required permissions. <<add-the-credentials-2,You can n
 
 === Add the credentials
 
-After you provide the IAM role with the required permissions, add the credentials to Cloud Manager.
+After you provide the IAM role with the required permissions, add the role ARN to Cloud Manager.
 
 .Before you get started
 
@@ -207,7 +221,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-You can now use the credentials when creating an FSx for ONTAP working environment or when creating a new Connector.
+You can now use the credentials when creating an FSx for ONTAP working environment.
 
 == Associate an AWS subscription
 
