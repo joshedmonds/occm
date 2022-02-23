@@ -21,19 +21,27 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.16 (27 Feb 2022)
 
-=== Cloud Volumes ONTAP
+This update includes enhancements to several features and services.
+
+=== Cloud Volumes ONTAP enhancement
 
 The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
 
-=== Log in with NetApp credentials
+=== Connector enhancement
 
-When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
+When you create a new Connector, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
 
-NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
+=== Credentials enhancement
 
-=== Connector enhancements
+We refined how you add AWS credentials to Cloud Manager. You can now add the credentials to an existing Connector or to the Cloud Manager SaaS:
 
-* When you create a new Connector, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
+* Add AWS credentials to an existing Connector
++
+Adding AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. You can specify an IAM role for the Connector to assume or provide AWS access keys.
+
+* Add AWS credentials directly to Cloud Manager
++
+Adding the ARN of an IAM role to Cloud Manager enables Cloud Manager to assume that role when creating an FSx for ONTAP working environment.
 
 == Cloud Manager 3.9.15 update (14 Feb 2022)
 
