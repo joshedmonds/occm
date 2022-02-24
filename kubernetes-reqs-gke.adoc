@@ -23,7 +23,7 @@ Astra Trident::
 The Kubernetes cluster must have NetApp Astra Trident deployed. Install one of the four most recent versions of Astra Trident using Helm. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#deploy-the-trident-operator-by-using-helm[Go to the Astra Trident docs for installation steps using Helm^].
 
 Cloud Volumes ONTAP::
-Cloud Volumes ONTAP must discoverable in Cloud Manager under the same account as the Connector. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+Cloud Volumes ONTAP must be discoverable in Cloud Manager under the same account as the Connector. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
 
 Cloud Manager Connector::
 A Connector must be running in Google with the required permissions. <<Prepare a Connector,Learn more below>>.
