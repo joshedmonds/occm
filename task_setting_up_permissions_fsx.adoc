@@ -15,7 +15,7 @@ summary: In order to create or manage your Amazon FSx for ONTAP working environm
 [.lead]
 To create or manage an Amazon FSx for ONTAP working environment, you need to add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment.
 
-=== Set up the IAM role
+== Set up the IAM role
 
 Set up an IAM role that enables the Cloud Manager SaaS to assume the role.
 
@@ -55,9 +55,9 @@ Be sure to do the following:
 
 .Result
 
-The IAM role now has the required permissions. <<add-the-credentials-2,You can now add it to Cloud Manager>>.
+The IAM role now has the required permissions. 
 
-=== Add the credentials
+== Add the credentials
 
 After you provide the IAM role with the required permissions, add the role ARN to Cloud Manager.
 
