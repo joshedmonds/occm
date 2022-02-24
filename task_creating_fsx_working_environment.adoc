@@ -39,7 +39,7 @@ image:screenshot_add_fsx_working_env.png[A screenshot of adding a working enviro
 
 .. If there is an existing IAM role in your account with the correct AWS permissions for FSx for ONTAP, select it from the dropdown.
 +
-image:screenshot-fsx-assume-role-present.png[A screenshot showing dropdown for AWS roles]
+  image:screenshot-fsx-assume-role-present.png[A screenshot showing dropdown for AWS roles]
 
 .. If there is no IAM role in your account, click *Credentials Page* and follow the steps in the wizard to add an ARN for an AWS IAM role with FSx for ONTAP credentials. See link:task_setting_up_permissions_fsx.html[adding AWS credentials to Cloud Manager] for details.
 +

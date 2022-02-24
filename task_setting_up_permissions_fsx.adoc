@@ -55,7 +55,7 @@ Be sure to do the following:
 
 .Result
 
-The IAM role now has the required permissions. 
+The IAM role now has the required permissions.
 
 == Add the credentials
 
@@ -153,6 +153,4 @@ You can now use the credentials when creating an FSx for ONTAP working environme
 == Related links
 
 * link:concept_accounts_aws.html[AWS credentials and permissions]
-* link:task_creating_connectors_aws.html[Create a Connecter in AWS]
 * link:task_adding_aws_accounts.html[Managing AWS credentials for Cloud Manager]
-* link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]
