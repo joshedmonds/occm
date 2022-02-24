@@ -16,7 +16,7 @@ Cloud Manager can discover the ONTAP clusters in your on-premises environment, i
 
 In addition to being able to provision storage on those systems, adding these systems to Cloud Manager also makes it easy to view hardware and software contract status information in the Digital Wallet, and configure critical cloud-based services for those clusters. This includes replicating data to the cloud, backing up data to the cloud, tiering cold data to the cloud, and running compliance scans on that data.
 
-.What you'll need
+== Requirements
 
 * A Connector installed in a cloud provider or on your premises.
 +
@@ -72,6 +72,22 @@ Your ONTAP clusters that have a valid support contract are displayed with a stat
 
 NOTE: If your support contract expires, the systems are removed from the Discovery page. However, you can continue to manage these systems in their working environment. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^].
 
+== Viewing cluster license and contract details
+
+You can use the _Digital Wallet_ to view cluster license details and hardware and software contract status.
+
+.Steps
+
+. In the *Digital Wallet*, click the *On-Premises ONTAP* tab.
++
+The Software Contract and Hardware Contract expiration dates appear on the line for each cluster.
+
+. If the contract is close to the expiration date, or has expired, you can click the chat icon in the lower-right of Cloud Manager to request an extension to the contract.
+
+. For the cluster that you want to know the license details, click image:button_down_caret.png[down-caret] to expand the cluster information.
++
+image:screenshot_digital_wallet_license_info.png[A screenshot of expanding the cluster details so you can view the cluster license information.]
+
 == Discovering on-prem clusters from Cloud Manager
 
 You can discover on-prem ONTAP clusters in Cloud Manager from the _Digital Wallet_, the _Discovery_ service, or from the _Canvas_. Once discovered, they are available as a working environment in Cloud Manager so that you can manage the cluster.
@@ -88,15 +104,13 @@ image:screenshot_digital_wallet_clusters.png[A screenshot of the On-Premises ONT
 
 . Click *Discover* for the cluster that you want to manage through Cloud Manager.
 
-. On the _Choose a Location_ page *On-Premises ONTAP* is pre-selected, so just click *Continue*.
-
-. On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
+. On the _Discover ONTAP Cluster_ page, enter the password for the admin user account and click *Discover*.
 +
 image:screenshot_discover_ontap_wallet.png[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password.]
 +
 Note that the cluster management IP address is populated based on information from the Digital Wallet.
-
-. On the _Details & Credentials_ page the cluster name is added as the Working Environment Name, so just click *Go*.
++
+The status for the cluster turns to *Discovered* in the _On-Premises ONTAP_ page.
 
 .Result
 
