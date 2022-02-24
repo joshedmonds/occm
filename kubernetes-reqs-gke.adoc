@@ -23,7 +23,7 @@ Astra Trident::
 The Kubernetes cluster must have NetApp Astra Trident deployed. Install one of the four most recent versions of Astra Trident using Helm. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#deploy-the-trident-operator-by-using-helm[Go to the Astra Trident docs for installation steps using Helm^].
 
 Cloud Volumes ONTAP::
-Cloud Volumes ONTAP must be set up as backend storage for the cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+Cloud Volumes ONTAP must discoverable in Cloud Manager under the same account. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
 
 Cloud Manager Connector::
 A Connector must be running in Google with the required permissions. <<Prepare a Connector,Learn more below>>.
@@ -32,7 +32,7 @@ Network connectivity::
 Network connectivity is required between the Kubernetes cluster and the Connector and between the Kubernetes cluster and Cloud Volumes ONTAP. <<Review networking requirements,Learn more below>>.
 
 RBAC authorization::
-Cloud Manager supports RBAC-enabled clusters with and without Active Directory. The Cloud Manager Connector role must be authorized on each Azure cluster. <<Set up RBAC authorization,Learn more below>>.
+Cloud Manager supports RBAC-enabled clusters with and without Active Directory. The Cloud Manager Connector role must be authorized on each GKE cluster. <<Set up RBAC authorization,Learn more below>>.
 
 == Prepare a Connector
 
@@ -51,35 +51,21 @@ If you want to discover a managed GKE cluster, you might need to modify the cust
 
 .Steps
 
-. Identify the role assigned to the Connector virtual machine:
+. In link:https://console.cloud.google.com[Cloud Console], go to the *Roles* page.
 
-.. In the Azure portal, open the Virtual machines service.
+. Using the drop-down list at the top of the page, select the project or organization that contains the role that you want to edit.
 
-.. Select the Connector virtual machine.
+. Click a custom role.
 
-.. Under Settings, select *Identity*.
+. Click *Edit Role* to update the role's permissions.
 
-.. Click *Azure role assignments*.
-
-.. Make note of the custom role assigned to the Connector virtual machine.
-
-. Update the custom role:
-
-.. In the Azure portal, open your Azure subscription.
-
-.. Click *Access control (IAM) > Roles*.
-
-.. Click the ellipsis (...) for the custom role and then click *Edit*.
-
-.. Click JSON and add the following permissions:
+. Click Add Permissions to add the following new permissions to the role.
 +
 [source,json]
-"Microsoft.ContainerService/managedClusters/listClusterUserCredential/action"
-"Microsoft.ContainerService/managedClusters/read"
-+
-//https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json[View the full JSON format for the policy^].
+container.clusters.get
+container.clusters.list
 
-.. Click *Review + update* and then click *Update*.
+. Click *Update* to save the edited role.
 
 == Review networking requirements
 
@@ -88,15 +74,11 @@ You need to provide network connectivity between the Kubernetes cluster and the 
 * Each Kubernetes cluster must have an inbound connection from the Connector
 * The Connector must have an outbound connection to each Kubernetes cluster over port 443
 
-The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VNet as the Kubernetes cluster. Otherwise, you need to set up a peering connection between the different VNets.
+The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the Kubernetes cluster. Otherwise, you need to set up a peering connection between the different VPC.
 
-Here's an example that shows each component in the same VNet.
+Here's an example that shows each component in the same VPC.
 
-image:diagram-kubernetes-azure.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
-
-And here's another example that shows a Kubernetes cluster running in a different VNet. In this example, peering provides a connection between the VNet for the Kubernetes cluster and the VNet for the Connector and Cloud Volumes ONTAP.
-
-image:diagram-kubernetes-azure-with-peering.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in a separate VPC.]
+image:diagram-kubernetes-google-cloud.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
 
 == Set up RBAC authorization
 
@@ -105,20 +87,25 @@ RBAC validation occurs only on Kubernetes clusters with Active Directory (AD) en
 You need authorize the Connector role on each Kubernetes cluster so the Connector can discover and manage a cluster.
 
 .Before you begin
-Your RBAC ``subjects: name:`` configuration varies slightly based on your Kubernetes cluster type.
+To configure ``subjects: name:`` in the YAML file, you need to know the Cloud Manager Unique ID.
 
-* If you are deploying a *managed AKS cluster*, you need the Object ID for the system-assigned managed identity for the Connector. This ID is available in Azure management portal.
+You can find the unique ID one of two ways:
 
+* Using the command:
 +
-image:screenshot-k8s-aks-obj-id.png[A screenshot of the system-assigned object ID window on the Azure management portal.]
+[source,JSON]
+gcloud iam service-accounts list
+gcloud iam service-accounts describe <service-account-email>
 
-* If you are deploying a *self-managed Kubernetes cluster*, you need the username of any authorized user.
+* In the Service Account Details on the link:https://console.cloud.google.com[Cloud Console]
++
+image:screenshot-gke-unique-id.png[A screenshot of the service account details in Cloud Console.]
 
 .Steps
 
 . Create a cluster role and role binding.
 
-.. Create a YAML file that includes the following text. Replace the ``subjects: kind:`` variable with your username and ``subjects: user:`` with either the Object ID for the system-assigned managed identity or username of any authorized user as described above.
+.. Create a YAML file that includes the following text. Replace the ``subjects: kind:`` variable with your username and ``subjects: user:`` with the unique ID for the authorized service account.
 +
 [source,yaml]
 apiVersion: rbac.authorization.k8s.io/v1
@@ -159,7 +146,7 @@ metadata:
     name: k8s-access-binding
 subjects:
     - kind: User
-      name: Object (principal) ID (for AKS) or username (for self-managed)
+      name: "uniqueID"
       apiGroup: rbac.authorization.k8s.io
 roleRef:
     kind: ClusterRole
