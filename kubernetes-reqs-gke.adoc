@@ -13,7 +13,7 @@ summary: You can add and manage managed Google Kubernetes Engine clusters (GKE) 
 :imagesdir: ./media/
 
 [.lead]
-You can add and manage managed Google Kubernetes Engine clusters (GKE) and self-managed Kubernetes clusters in Google using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
+You can add and manage managed Google Kubernetes Engine (GKE) clusters and self-managed Kubernetes clusters in Google using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
 
 This topic uses _Kubernetes cluster_ where configuration is the same for GKE and self-managed Kubernetes clusters. The cluster type is specified where configuration differs.
 
@@ -45,13 +45,13 @@ Follow the steps in one of the links below.
 * link:task_creating_connectors_gcp.html[Create a Connector from Cloud Manager] (recommended)
 * link:task_installing_linux.html[Install the Connector on an existing Linux host]
 
-=== Add the required permissions to an existing Connector (to discover a managed AKS cluster)
+=== Add the required permissions to an existing Connector (to discover a managed GKE cluster)
 
 If you want to discover a managed GKE cluster, you might need to modify the custom role for the Connector to provide the permissions.
 
 .Steps
 
-. In link:https://console.cloud.google.com[Cloud Console], go to the *Roles* page.
+. In link:https://console.cloud.google.com[Cloud Console^], go to the *Roles* page.
 
 . Using the drop-down list at the top of the page, select the project or organization that contains the role that you want to edit.
 
@@ -59,7 +59,7 @@ If you want to discover a managed GKE cluster, you might need to modify the cust
 
 . Click *Edit Role* to update the role's permissions.
 
-. Click Add Permissions to add the following new permissions to the role.
+. Click *Add Permissions* to add the following new permissions to the role.
 +
 [source,json]
 container.clusters.get
@@ -97,7 +97,7 @@ You can find the unique ID one of two ways:
 gcloud iam service-accounts list
 gcloud iam service-accounts describe <service-account-email>
 
-* In the Service Account Details on the link:https://console.cloud.google.com[Cloud Console]
+* In the Service Account Details on the link:https://console.cloud.google.com[Cloud Console^].
 +
 image:screenshot-gke-unique-id.png[A screenshot of the service account details in Cloud Console.]
 

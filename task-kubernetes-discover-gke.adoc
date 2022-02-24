@@ -5,7 +5,7 @@ keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, import kub
 summary: Add an Kubernetes cluster to Cloud Manager so that you can start backing up persistent volumes to Google.
 ---
 
-= Add an Azure Kubernetes cluster to Cloud Manager
+= Add a Google Kubernetes cluster to Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
