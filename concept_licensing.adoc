@@ -42,7 +42,7 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * No license or contract is needed.
 * Support from NetApp is not included.
 * You're limited to 500 GiB of provisioned capacity per Cloud Volumes ONTAP system.
-* You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account.
+* You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
 * If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
@@ -76,13 +76,20 @@ Professional package::
 
 The Essentials and Professional packages are available with the following consumption models:
 
-* A license (BYOL) purchased from NetApp
-* An annual contract from your cloud provider's marketplace (AWS and Google Cloud only)
-* An hourly subscription (PAYGO) from your cloud provider's marketplace
+* A license (BYOL) purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
++
+The license is not restricted to a single cloud provider.
+* An annual contract from your cloud provider's marketplace (AWS and Google Cloud only).
+* An hourly subscription (PAYGO) from your cloud provider's marketplace.
 
 Note the following:
 
-* If you purchase a license from NetApp, you also need to subscribe to the PAYGO offering from your cloud provider's marketplace. If you exceed your licensed capacity, you'll be charged for overages at the hourly rate in the marketplace.
+* If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace.
++
+Your license is always charged first, but you'll be charged from the hourly rate in the marketplace in these cases:
+
+** If you exceed your licensed capacity
+** If the term of your license expires
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
 
@@ -118,7 +125,7 @@ Conversions to another licensing option isn't supported. If you want to transiti
 
 === Notes about charging
 
-* If you exceed your BYOL capacity, you'll be charged for overages at the hourly rate based on your marketplace subscription.
+* If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
 
 * For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
 

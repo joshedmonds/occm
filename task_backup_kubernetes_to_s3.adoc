@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_backup_kubernetes_to_s3.html
 keywords: backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, aws, aws s3, amazon s3, s3 bucket, back up volumes, Cloud Backup, cloud backup service, kubernetes
-summary: Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Amazon S3.
+summary: Complete a few steps to get started backing up data from your persistent volumes on EKS Kubernetes clusters to Amazon S3 storage.
 ---
 
 = Backing up Kubernetes persistent volume data to Amazon S3
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started backing up data from your Kubernete
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from your Kubernetes cluster persistent volumes to Amazon S3.
+Complete a few steps to get started backing up data from your persistent volumes on EKS Kubernetes clusters to Amazon S3 storage.
 
 == Quick start
 
@@ -60,14 +60,6 @@ image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Bac
 [role="quick-margin-para"]
 Identify which volumes you want to back up in the Select Volumes page. An S3 bucket is created automatically in the same AWS account and Region as the Cloud Volumes ONTAP system, and the backup files are stored there.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Restore your data, as needed
-
-[role="quick-margin-para"]
-Restore an entire backup as a new volume on the same or different Kubernetes cluster in AWS (in the same region).
-
-[role="quick-margin-para"]
-See link:task_restore_backups.html[Restoring a volume from backup files^] for details.
-
 == Requirements
 
 Read the following requirements to make sure that you have a supported configuration before you start backing up Kubernetes persistent volumes to S3.
@@ -77,8 +69,6 @@ The following image shows each component and the connections that you need to pr
 image:diagram_cloud_backup_k8s_cvo_aws.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
 
 Note that the VPC Endpoint is optional.
-//
-// When the Cloud Restore instance is deployed in the cloud, it is located in the same subnet as the Connector.
 
 Kubernetes cluster requirements::
 * You have discovered the Kubernetes cluster as a Cloud Manager working environment. link:task-kubernetes-discover-aws.html[See how to discover the Kubernetes cluster].
@@ -139,7 +129,7 @@ For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in t
 +
 For an annual contract that enables you to back up both Cloud Volumes ONTAP data and on-premises ONTAP data, you need to subscribe from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials].
 +
-For an annual contract that enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service, you must set up the annual contract when you create a Cloud Volumes ONTAP working environment. This option doesn't enable you to back up on-prem data.
+For an annual contract that enables you to bundle Cloud Volumes ONTAP and Cloud Backup, you must set up the annual contract when you create a Cloud Volumes ONTAP working environment. This option doesn't enable you to back up on-prem data.
 +
 For Cloud Backup BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 +
@@ -232,7 +222,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup 
 . Enter the backup policy details and click *Next*.
 
 +
-You can define the backup schedule and choose the number of backups to retain. link:concept_backup_to_cloud.html#the-schedule-is-hourly-daily-weekly-monthly-or-a-combination[See the list of existing policies you can choose^].
+You can define the backup schedule and choose the number of backups to retain.
 +
 image:screenshot_backup_policy_k8s_aws.png[A screenshot that shows the Cloud Backup settings where you can choose your schedule and backup retention.]
 
@@ -254,5 +244,6 @@ The Kubernetes Dashboard is displayed so you can monitor the state of the backup
 
 .What's next?
 
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html#restoring-volumes-from-a-kubernetes-backup-file[restore entire volumes from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^].
+You can also link:task_restore_backups.html#restoring-volumes-from-a-kubernetes-backup-file[restore entire volumes from a backup file^] as a new volume on the same or different Kubernetes cluster in AWS (in the same region).
 // or individual files

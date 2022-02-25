@@ -29,9 +29,9 @@ You can view a list of all the backup and restore operations and their current s
 
 . Click the *Backup & Restore* tab.
 
-. Click the *Job Monitor* tab.
+. Click the *Job Monitoring* tab.
 +
-image:screenshot_backup_job_monitor.png[A screenshot showing backup and restore jobs in the Job Monitor dashboard.]
+image:screenshot_backup_job_monitor.png[A screenshot showing backup and restore jobs in the Job Monitoring dashboard.]
 
 You can click the name of a job to view details corresponding to that operation.
 

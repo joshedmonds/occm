@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_highlights.html
 keywords: compliance, privacy, filter data, delete files, move files, copy files, clone files, sync files, data sense
-summary: Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your dats, while other functionality allows you to make changes to the data.
+summary: Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your data, while other functionality allows you to make changes to the data.
 ---
 
 = Managing your private data
@@ -13,7 +13,7 @@ summary: Cloud Data Sense provides many ways for you to manage your private data
 :imagesdir: ./media/
 
 [.lead]
-Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your dats, while other functionality allows you to make changes to the data.
+Cloud Data Sense provides many ways for you to manage your private data. Some functionality makes it easier to prepare for migrating your data, while other functionality allows you to make changes to the data.
 
 * You can copy files to a destination NFS share if you want to make a copy of certain data and move it to a different NFS location.
 * You can clone an ONTAP volume to a new volume, while including only selected files from the source volume in the new cloned volume. This is useful for situations where you’re migrating data and you want to exclude certain files from the original volume.
@@ -128,7 +128,7 @@ You can copy source files that Data Sense is scanning from any supported unstruc
 
 This is useful for situations where you're migrating data from one source system to another. This action uses the link:concept_cloud_sync.html[NetApp Cloud Sync] functionality to copy and sync data from a source to a target.
 
-TIP: You can't copy and sync files that reside in databases, OneDrive accounts, SharePoint accounts, or in volume backups.
+TIP: You can't copy and sync files that reside in databases, OneDrive accounts, or SharePoint accounts.
 
 .Requirements
 
@@ -147,14 +147,9 @@ image:screenshot_compliance_filter_1_repo.png[A screenshot of creating a filter 
 +
 Apply any other filters so that you're seeing only the files that you want to copy and sync to the destination system.
 
-. In the Investigation results pane, select the files that you want to copy and sync and click *Copy*.
+. In the Investigation results pane, select all files on all pages by checking the box in the title row (image:button_select_all_files.png[]), then in the pop-up message image:screenshot_select_all_items.png[] click *Select all items in list (xxx items)*, and then click *Copy*.
 +
-image:screenshot_compliance_copy_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
-
-+
-* To select individual files, check the box for each file (image:button_backup_1_volume.png[]).
-* To select all files on the current page, check the box in the title row (image:button_select_all_files.png[]).
-* To select all files on all pages, check the box in the title row (image:button_select_all_files.png[]), and then in the pop-up message image:screenshot_select_all_items.png[], click *Select all items in list (xxx items)*.
+image:screenshot_compliance_sync_multi_files.png["A screenshot showing how to select the files to copy, and the Copy button, from the Data Investigation page."]
 
 . In the _Copy Files_ dialog, select the *Sync* tab.
 +
@@ -170,7 +165,7 @@ You are prompted to define the sync relationship. The Source system is pre-popul
 
 .Result
 
-The files are copied to the target system and they'll be synchronized based on the schedule.
+The files are copied to the target system and they'll be synchronized based on the schedule you define. If you select a one-time sync then the files are copied and synchronized one time only. If you choose a periodic sync, then the files are synchronized based on the schedule. Note that if the source system adds new files that match the query you created using filters, those _new_ files will be copied to the destination and synchronized in the future. 
 
 Note that some of the usual Cloud Sync operations are disabled when it is invoked from Data Sense:
 
