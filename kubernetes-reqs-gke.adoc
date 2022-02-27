@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: kubernetes-reqs-gke.html
-keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, google, gke, kubernetes support
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, google, google cloud, gke, kubernetes support
 summary: You can add and manage managed Google Kubernetes Engine clusters (GKE) and self-managed Kubernetes clusters in Google using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
 ---
 
-= Requirements for Kubernetes clusters in Google
+= Requirements for Kubernetes clusters in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -23,7 +23,7 @@ Astra Trident::
 The Kubernetes cluster must have NetApp Astra Trident deployed. Install one of the four most recent versions of Astra Trident using Helm. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#deploy-the-trident-operator-by-using-helm[Go to the Astra Trident docs for installation steps using Helm^].
 
 Cloud Volumes ONTAP::
-Cloud Volumes ONTAP must be discoverable in Cloud Manager under the same account as the Connector. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+Cloud Volumes ONTAP must be in Cloud Manager under the same tenancy account, workspace, and Connector as the Kubernetes cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
 
 Cloud Manager Connector::
 A Connector must be running in Google with the required permissions. <<Prepare a Connector,Learn more below>>.

@@ -296,7 +296,7 @@ sidebar:
               url: /kubernetes-reqs-aks.html
             - title: Add a cluster
               url: /task-kubernetes-discover-azure.html
-        - title: Get started with Kubernetes clusters in GKE
+        - title: Get started with Kubernetes clusters in Google Cloud
           entries:
             - title: Requirements
               url: /kubernetes-reqs-gke.html
