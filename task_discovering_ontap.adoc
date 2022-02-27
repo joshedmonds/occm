@@ -72,9 +72,9 @@ Your ONTAP clusters that have a valid support contract are displayed with a stat
 
 NOTE: If your support contract expires, the systems are removed from the Discovery page. However, you can continue to manage these systems in their working environment. See how to link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html[renew your support contract from Active IQ Digital Advisor^].
 
-== Viewing cluster license and contract details
+== Viewing cluster information and contract details
 
-You can use the _Digital Wallet_ to view cluster license details and hardware and software contract status.
+You can use the _Digital Wallet_ to view cluster details and hardware and software contract status.
 
 .Steps
 
@@ -84,7 +84,7 @@ The Software Contract and Hardware Contract expiration dates appear on the line 
 
 . If the contract is close to the expiration date, or has expired, you can click the chat icon in the lower-right of Cloud Manager to request an extension to the contract.
 
-. For the cluster that you want to know the license details, click image:button_down_caret.png[down-caret] to expand the cluster information.
+. For clusters that you want to know additional details, click image:button_down_caret.png[down-caret] to expand the cluster information.
 +
 image:screenshot_digital_wallet_license_info.png[A screenshot of expanding the cluster details so you can view the cluster license information.]
 
