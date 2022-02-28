@@ -37,7 +37,7 @@ If you provide Cloud Manager with AWS access keys, you should rotate the keys by
 
 == Add credentials to a Connector
 
-Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in a trusted account or provide AWS access keys.
+Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
 
 === Grant permissions
 
@@ -56,11 +56,9 @@ You can set up a trust relationship between the source AWS account in which you 
 
 .Steps
 
-. Create the IAM role in the target account:
+. Go to the IAM console in the target account where you want to deploy Cloud Volumes ONTAP.
 
-.. Go to the IAM console in the target account where you want to deploy Cloud Volumes ONTAP.
-
-.. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
+. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
 +
 Be sure to do the following:
 
@@ -68,29 +66,7 @@ Be sure to do the following:
 * Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
 * Create a policy using the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
 
-.. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager later on.
-
-. Enable the Connector instance to assume the IAM role:
-
-.. Go to the IAM console in the source account where the Connector instance resides.
-
-.. Select the IAM role that is attached to the Connector instance.
-
-.. Click *Add permissions > Attach policies* and then click *Create Policy*.
-
-.. Create a policy that includes the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
-+
-*Example*
-+
-[source,json]
-{
- "Version": "2012-10-17",
- "Statement": {
-   "Effect": "Allow",
-   "Action": "sts:AssumeRole",
-   "Resource": "arn:aws:iam::ACCOUNT-B-ID:role/ACCOUNT-B-ROLENAME"
-}
-}
+. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager later on.
 
 .Result
 
