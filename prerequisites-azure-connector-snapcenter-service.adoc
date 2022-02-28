@@ -78,6 +78,8 @@ NOTE: If you are using Azure firewall, you can perform these steps using a scrip
 \https://login.microsoftonline.com
 | Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in the Azure US Gov regions.
 
+| \https://api.services.cloud.netpp.com	| Allows API requests to NetApp Cloud Central.
+
 | \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
 |
