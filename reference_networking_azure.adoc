@@ -99,7 +99,8 @@ The Connector requires outbound internet access to manage resources and processe
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
 | \https://cloudmanagerinfraprod.azurecr.io
-*.blob.core.windows.net
+
+\https://*.blob.core.windows.net
 | To upgrade the Connector and its Docker components.
 
 |===
@@ -292,6 +293,8 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | 464 | TCP | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
 | 464 | UDP | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos key administration
 | 749 | TCP | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (RPCSEC_GSS)
+.2+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
+| HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
 | DHCP | 68 | UDP | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | 67 | UDP | Node management LIF | DHCP | DHCP server
 | DNS | 53 | UDP | Node management LIF and data LIF (NFS, CIFS) | DNS | DNS
