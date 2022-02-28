@@ -35,17 +35,25 @@ You can now add and manage managed Google Kubernetes Engine (GKE) clusters and s
 
 link:kubernetes-reqs-gke.html[Learn how to get started with Kubernetes clusters in Google Cloud].
 
-=== Connector enhancement
-
-When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
-
-link:task_creating_connectors_gcp.html[Learn how to create a Connector in Google Cloud].
-
 === Amazon FSx for ONTAP enhancement
 
 When you create an FSx for ONTAP working environment, you now must provide the ARN of an IAM role that Cloud Manager can assume to create an FSx for ONTAP working environment. You previously needed to provide AWS access keys.
 
 link:task_setting_up_permissions_fsx.html[Learn how to set up permissions for FSx for ONTAP].
+
+=== Cloud Sync enhancements
+
+* You now sort the dashboard by sync relationship name.
++
+image:screenshot-sync-sort.html[A screenshot that shows the Sort by name option that is available from the dashboard.]
+
+* In the previous release, we introduced Cloud Sync integration with Cloud Data Sense. In this update, we enhanced the integration by making it easier to create the sync relationship. After you initiate a data sync from Cloud Data Sense, all of the source information is contained in a single step and only requires you to enter a few key details.
+
+=== Connector enhancement
+
+When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
+
+link:task_creating_connectors_gcp.html[Learn how to create a Connector in Google Cloud].
 
 == Cloud Manager 3.9.15 update (14 Feb 2022)
 
