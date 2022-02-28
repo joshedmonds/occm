@@ -1,0 +1,159 @@
+---
+sidebar: sidebar
+permalink: kubernetes-reqs-gke.html
+keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, google, google cloud, gke, kubernetes support
+summary: You can add and manage managed Google Kubernetes Engine clusters (GKE) and self-managed Kubernetes clusters in Google using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
+---
+
+= Requirements for Kubernetes clusters in Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can add and manage managed Google Kubernetes Engine (GKE) clusters and self-managed Kubernetes clusters in Google using Cloud Manager. Before you can add the clusters to Cloud Manager, ensure the following requirements are met.
+
+This topic uses _Kubernetes cluster_ where configuration is the same for GKE and self-managed Kubernetes clusters. The cluster type is specified where configuration differs.
+
+== Requirements
+
+Astra Trident::
+The Kubernetes cluster must have NetApp Astra Trident deployed. Install one of the four most recent versions of Astra Trident using Helm. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#deploy-the-trident-operator-by-using-helm[Go to the Astra Trident docs for installation steps using Helm^].
+
+Cloud Volumes ONTAP::
+Cloud Volumes ONTAP must be in Cloud Manager under the same tenancy account, workspace, and Connector as the Kubernetes cluster. https://docs.netapp.com/us-en/trident/trident-use/backends.html[Go to the Astra Trident docs for configuration steps^].
+
+Cloud Manager Connector::
+A Connector must be running in Google with the required permissions. <<Prepare a Connector,Learn more below>>.
+
+Network connectivity::
+Network connectivity is required between the Kubernetes cluster and the Connector and between the Kubernetes cluster and Cloud Volumes ONTAP. <<Review networking requirements,Learn more below>>.
+
+RBAC authorization::
+Cloud Manager supports RBAC-enabled clusters with and without Active Directory. The Cloud Manager Connector role must be authorized on each GKE cluster. <<Set up RBAC authorization,Learn more below>>.
+
+== Prepare a Connector
+
+A Cloud Manager Connector in Google is required to discover and manage Kubernetes clusters. You'll need to create a new Connector or use an existing Connector that has the required permissions.
+
+=== Create a new Connector
+
+Follow the steps in one of the links below.
+
+* link:task_creating_connectors_gcp.html[Create a Connector from Cloud Manager] (recommended)
+* link:task_installing_linux.html[Install the Connector on an existing Linux host]
+
+=== Add the required permissions to an existing Connector (to discover a managed GKE cluster)
+
+If you want to discover a managed GKE cluster, you might need to modify the custom role for the Connector to provide the permissions.
+
+.Steps
+
+. In link:https://console.cloud.google.com[Cloud Console^], go to the *Roles* page.
+
+. Using the drop-down list at the top of the page, select the project or organization that contains the role that you want to edit.
+
+. Click a custom role.
+
+. Click *Edit Role* to update the role's permissions.
+
+. Click *Add Permissions* to add the following new permissions to the role.
++
+[source,json]
+container.clusters.get
+container.clusters.list
+
+. Click *Update* to save the edited role.
+
+== Review networking requirements
+
+You need to provide network connectivity between the Kubernetes cluster and the Connector and between the Kubernetes cluster and the Cloud Volumes ONTAP system that provides backend storage to the cluster.
+
+* Each Kubernetes cluster must have an inbound connection from the Connector
+* The Connector must have an outbound connection to each Kubernetes cluster over port 443
+
+The simplest way to provide this connectivity is to deploy the Connector and Cloud Volumes ONTAP in the same VPC as the Kubernetes cluster. Otherwise, you need to set up a peering connection between the different VPC.
+
+Here's an example that shows each component in the same VPC.
+
+image:diagram-kubernetes-google-cloud.png[An architectural diagram of an AKS Kubernetes cluster and its connection to a Connecter and Cloud Volumes ONTAP in the same VPC.]
+
+== Set up RBAC authorization
+
+RBAC validation occurs only on Kubernetes clusters with Active Directory (AD) enabled. Kubernetes clusters without AD will pass validation automatically.
+
+You need authorize the Connector role on each Kubernetes cluster so the Connector can discover and manage a cluster.
+
+.Before you begin
+To configure ``subjects: name:`` in the YAML file, you need to know the Cloud Manager Unique ID.
+
+You can find the unique ID one of two ways:
+
+* Using the command:
++
+[source,JSON]
+gcloud iam service-accounts list
+gcloud iam service-accounts describe <service-account-email>
+
+* In the Service Account Details on the link:https://console.cloud.google.com[Cloud Console^].
++
+image:screenshot-gke-unique-id.png[A screenshot of the service account details in Cloud Console.]
+
+.Steps
+
+. Create a cluster role and role binding.
+
+.. Create a YAML file that includes the following text. Replace the ``subjects: kind:`` variable with your username and ``subjects: user:`` with the unique ID for the authorized service account.
++
+[source,yaml]
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+    name: cloudmanager-access-clusterrole
+rules:
+    - apiGroups:
+          - ''
+      resources:
+          - secrets
+          - namespaces
+          - persistentvolumeclaims
+          - persistentvolumes
+      verbs:
+          - get
+          - list
+          - create
+    - apiGroups:
+          - storage.k8s.io
+      resources:
+          - storageclasses
+      verbs:
+          - get
+          - list
+    - apiGroups:
+          - trident.netapp.io
+      resources:
+          - tridentbackends
+          - tridentorchestrators
+      verbs:
+          - get
+          - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+    name: k8s-access-binding
+subjects:
+    - kind: User
+      name: "uniqueID"
+      apiGroup: rbac.authorization.k8s.io
+roleRef:
+    kind: ClusterRole
+    name: cloudmanager-access-clusterrole
+    apiGroup: rbac.authorization.k8s.io
+
+.. Apply the configuration to a cluster.
++
+[source,kubectl]
+kubectl apply -f <file-name>
