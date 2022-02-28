@@ -45,9 +45,11 @@ link:task_setting_up_permissions_fsx.html[Learn how to set up permissions for FS
 
 * You now sort the dashboard by sync relationship name.
 +
-image:screenshot-sync-sort.html[A screenshot that shows the Sort by name option that is available from the dashboard.]
+image:screenshot-sync-sort.png[A screenshot that shows the Sort by name option that is available from the dashboard.]
 
 * In the previous release, we introduced Cloud Sync integration with Cloud Data Sense. In this update, we enhanced the integration by making it easier to create the sync relationship. After you initiate a data sync from Cloud Data Sense, all of the source information is contained in a single step and only requires you to enter a few key details.
++
+image:screenshot-sync-data-sense.png[A screenshot that shows the Data Sense Integration page that appears after starting a new sync directly from Cloud Data Sense.]
 
 === Connector enhancement
 
