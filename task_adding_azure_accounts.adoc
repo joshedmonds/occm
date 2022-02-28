@@ -264,7 +264,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 . Click *Add Credentials* and follow the steps in the wizard.
 
-.. *Credentials Type*: Select *Microsoft Azure*.
+.. *Credentials Location*: Select *Microsoft Azure > Connector*.
 
 .. *Define Credentials*: Enter information about the Azure Active Directory service principal that grants the required permissions:
 +

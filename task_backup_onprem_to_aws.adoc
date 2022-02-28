@@ -210,6 +210,7 @@ When you are using Amazon S3, you must configure permissions for the Connector t
 "s3:GetBucketLocation",
 "s3:GetObject",
 "s3:PutObject",
+"s3:PutBucketencryption",
 "s3:DeleteObject"
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^] for details.
