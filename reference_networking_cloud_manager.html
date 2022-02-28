@@ -1213,6 +1213,32 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
 
 
           
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2984,7 +3017,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
@@ -3710,30 +3743,37 @@ The source IP address is the Connector host.
 <div class="sect2">
 <h3 id="ports-for-the-on-prem-connector">Ports for the on-prem Connector</h3>
 <div class="paragraph">
-<p>The Connector uses the following ports when installed manually on an on-premises Linux host:</p>
+<p>The Connector uses the following <em>inbound</em> ports when installed manually on an on-premises Linux host.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>80 for HTTP access</p>
-</li>
-<li>
-<p>443 for HTTPS access</p>
-</li>
-<li>
-<p>3306 for the Cloud Manager database</p>
-</li>
-<li>
-<p>8080 for the Cloud Manager API proxy</p>
-</li>
-<li>
-<p>8666 for the Service Manager API</p>
-</li>
-<li>
-<p>8777 for the Health-Checker Container Service API</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>These inbound rules apply to both deployment models for the on-prem Connector: installed with internet access or without internet access.</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Protocol</th>
+<th class="tableblock halign-left valign-top">Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

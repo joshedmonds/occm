@@ -1213,6 +1213,32 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
 
 
           
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2984,7 +3017,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
@@ -3039,6 +3072,69 @@ Looking for a previous release?<br>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-manager-3-9-16-27-feb-2022">Cloud Manager 3.9.16 (27 Feb 2022)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This update includes enhancements to several features and services.</p>
+</div>
+<div class="sect2">
+<h3 id="cloud-volumes-ontap-enhancement">Cloud Volumes ONTAP enhancement</h3>
+<div class="paragraph">
+<p>The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the <strong>Advanced allocation</strong> option.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_provisioning_storage.html">Learn how to create volumes on a specific aggregate</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kubernetes-enhancement">Kubernetes enhancement</h3>
+<div class="paragraph">
+<p>You can now add and manage managed Google Kubernetes Engine (GKE) clusters and self-managed Kubernetes clusters in Google Cloud using Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<p><a href="kubernetes-reqs-gke.html">Learn how to get started with Kubernetes clusters in Google Cloud</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="amazon-fsx-for-ontap-enhancement">Amazon FSx for ONTAP enhancement</h3>
+<div class="paragraph">
+<p>When you create an FSx for ONTAP working environment, you now must provide the ARN of an IAM role that Cloud Manager can assume to create an FSx for ONTAP working environment. You previously needed to provide AWS access keys.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_setting_up_permissions_fsx.html">Learn how to set up permissions for FSx for ONTAP</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-sync-enhancements">Cloud Sync enhancements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You now sort the dashboard by sync relationship name.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-sync-sort.png" alt="A screenshot that shows the Sort by name option that is available from the dashboard."></span></p>
+</div>
+</li>
+<li>
+<p>In the previous release, we introduced Cloud Sync integration with Cloud Data Sense. In this update, we enhanced the integration by making it easier to create the sync relationship. After you initiate a data sync from Cloud Data Sense, all of the source information is contained in a single step and only requires you to enter a few key details.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-sync-data-sense.png" alt="A screenshot that shows the Data Sense Integration page that appears after starting a new sync directly from Cloud Data Sense."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="connector-enhancement">Connector enhancement</h3>
+<div class="paragraph">
+<p>When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn&#8217;t display any policies that didn&#8217;t have a target tag.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_creating_connectors_gcp.html">Learn how to create a Connector in Google Cloud</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3408,7 +3504,7 @@ Looking for a previous release?<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-2">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3591,7 +3687,7 @@ Looking for a previous release?<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-2">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-3">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3843,7 +3939,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-3">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-4">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3940,7 +4036,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-4">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-5">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4089,7 +4185,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-volumes-ontap-enhancement">Cloud Volumes ONTAP enhancement</h3>
+<h3 id="cloud-volumes-ontap-enhancement-2">Cloud Volumes ONTAP enhancement</h3>
 <div class="paragraph">
 <p>Data is automatically encrypted on Cloud Volumes ONTAP in Azure using <a href="https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/" target="_blank" rel="noopener">Azure Storage Service Encryption</a> with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:</p>
 </div>
@@ -4121,7 +4217,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-5">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-6">Cloud Sync enhancements</h3>
 <div class="paragraph">
 <p>You can now sync data to or from an Amazon FSx for ONTAP file system.</p>
 </div>
@@ -4280,7 +4376,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-6">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-7">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4357,7 +4453,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="connector-enhancement">Connector enhancement</h3>
+<h3 id="connector-enhancement-2">Connector enhancement</h3>
 <div class="paragraph">
 <p>The Connector is now supported on a host that&#8217;s running Red Hat Enterprise Linux 7.9.</p>
 </div>
@@ -4578,7 +4674,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-7">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-8">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4609,7 +4705,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="connector-enhancement-2">Connector enhancement</h3>
+<h3 id="connector-enhancement-3">Connector enhancement</h3>
 <div class="paragraph">
 <p>We redesigned the <strong>Add Connector</strong> wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more.</p>
 </div>
@@ -5030,7 +5126,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-8">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-9">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5097,7 +5193,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-9">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-10">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5171,7 +5267,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="connector-enhancement-3">Connector enhancement</h3>
+<h3 id="connector-enhancement-4">Connector enhancement</h3>
 <div class="paragraph">
 <p>If you configured a proxy server, you can now enable an option to send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.</p>
 </div>
@@ -5336,7 +5432,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-10">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-11">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5519,7 +5615,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-11">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-12">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5901,7 +5997,7 @@ The maximum system capacity with disks alone remains at 256 TB due to GCP limits
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-sync-enhancements-12">Cloud Sync enhancements</h3>
+<h3 id="cloud-sync-enhancements-13">Cloud Sync enhancements</h3>
 <div class="ulist">
 <ul>
 <li>

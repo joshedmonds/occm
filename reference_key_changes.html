@@ -1213,6 +1213,32 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
 
 
           
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2984,7 +3017,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
@@ -3265,6 +3298,18 @@
 </div>
 <div class="sect2">
 <h3 id="gcp">GCP</h3>
+<div class="sect3">
+<h4 id="new-permissions-to-discover-gke-clusters">New permissions to discover GKE clusters</h4>
+<div class="paragraph">
+<p>The following permissions are now required to discover Kubernetes clusters running in Google Kubernetes Engine:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">- container.clusters.get
+- container.clusters.list</code></pre>
+</div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="new-permissions-to-deploy-cloud-data-sense-in-google-cloud">New permissions to deploy Cloud Data Sense in Google Cloud</h4>
 <div class="paragraph">

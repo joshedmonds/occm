@@ -1213,6 +1213,32 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
 
 
           
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2984,7 +3017,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
@@ -3045,10 +3078,10 @@ All disks and aggregates must be created and deleted directly from Cloud Manager
 <p>Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <a href="#create-a-volume">Learn more</a>.</p>
 </li>
 <li>
-<p>Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <a href="#create-a-volume-from-a-template">Learn more</a>.</p>
+<p>Create a volume on a data aggregate of your choice. <a href="#create-a-volume">Learn more</a>.</p>
 </li>
 <li>
-<p>Create a volume on a data aggregate of your choice. <a href="#create-a-volume-on-a-specific-aggregate">Learn more</a>.</p>
+<p>Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <a href="#create-a-volume-from-a-template">Learn more</a>.</p>
 </li>
 <li>
 <p>Create a volume on the second node in an HA configuration. <a href="#create-a-volume-on-the-second-node-in-an-ha-configuration">Learn more</a>.</p>
@@ -3077,7 +3110,7 @@ All disks and aggregates must be created and deleted directly from Cloud Manager
 <div class="sect2">
 <h3 id="create-a-volume">Create a volume</h3>
 <div class="paragraph">
-<p>Click <strong>Create volume</strong>, specify your storage needs, and let Cloud Manager handle the disk allocation for you.</p>
+<p>The most common way to create a volume is to specify the type of volume that you need and then Cloud Manager handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3086,7 +3119,40 @@ All disks and aggregates must be created and deleted directly from Cloud Manager
 <p>On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.</p>
 </li>
 <li>
-<p>Click <strong>Add Volume</strong> &gt; <strong>New volume</strong>.</p>
+<p>Create a new volume by letting Cloud Manager handle the disk allocation for you, or choose a specific aggregate for the volume.</p>
+<div class="paragraph">
+<p>Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Any aggregate</div>
+<div class="content">
+<div class="paragraph">
+<p>In the Volumes tab, click <strong>Add Volume</strong> &gt; <strong>New volume</strong>.</p>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Specific aggregate</div>
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the menu icon, and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
+</li>
+<li>
+<p>Click the menu for an aggregate.</p>
+</li>
+<li>
+<p>Click <strong>Create volume</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </li>
 <li>
 <p>Follow the steps in the wizard to create the volume.</p>
@@ -3366,159 +3432,6 @@ You can click the checkbox <strong>Show read-only parameters</strong> to show al
 </div>
 <div class="paragraph">
 <p>Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="create-a-volume-on-a-specific-aggregate">Create a volume on a specific aggregate</h3>
-<div class="paragraph">
-<p>If you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system, you can choose a specific aggregate for a new volume.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision FlexVol volumes.</p>
-</li>
-<li>
-<p>Select the option to create a volume on a specific aggregate:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click the menu icon, and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
-</li>
-<li>
-<p>Click the menu for an aggregate.</p>
-</li>
-<li>
-<p>Click <strong>Create volume</strong>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Enter details for the new volume, and then click <strong>Continue</strong>.</p>
-<div class="paragraph">
-<p>Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user&#8217;s domain using the format domain\username.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot Policy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced options (for NFS only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an NFS version for the volume: either NFSv3 or NFSv4.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator group and IQN (for iSCSI only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.<br>
-<br>
-Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.<br>
-<br>
-iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
-<br>
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task_provisioning_storage.html#connecting-a-lun-to-a-host">use the IQN to connect to the LUN from your hosts</a>.</p></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>If you chose the CIFS protocol and the CIFS server has not been set up, specify details for the server in the Create a CIFS Server dialog box, and then click <strong>Save and continue</strong>:</p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
-<br>
-The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credentials authorized to join the domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS server NetBIOS name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A CIFS server name that is unique in the AD domain.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Organizational Unit</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter <strong>OU=Computers,OU=corp</strong> in this field.</p>
-</li>
-<li>
-<p>To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter <strong>OU=AADDC Computers</strong> or <strong>OU=AADDC Users</strong> in this field.<br>
-<a href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou" target="_blank" rel="noopener">Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NTP Server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">Cloud Manager automation docs</a> for details.</p></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>On the Usage Profile, Disk Type, and Tiering Policy page, edit the volume tiering policy, if needed.</p>
-<div class="paragraph">
-<p>For help with tiering policies, refer to <a href="concept_data_tiering.html">Data tiering overview</a>.</p>
-</div>
-</li>
-<li>
-<p>Click <strong>Go</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<div class="title">Result</div>
-<p>Cloud Manager creates the volume on the Cloud Volumes ONTAP system.</p>
 </div>
 </div>
 <div class="sect2">

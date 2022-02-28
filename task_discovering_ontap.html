@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Discovering ONTAP clusters</title>
+  <title>Discovering on-premises ONTAP clusters</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Discovering ONTAP clusters" />
+  <meta property="og:title" content="Discovering on-premises ONTAP clusters" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/occm/task_discovering_ontap.html" />
 	<meta property="og:description" content="Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-pre..." />
@@ -21,7 +21,7 @@
   <meta http-equiv="nss-product" content="OnCommand Cloud Manager"/>
   
   <meta name="description" content="Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-pre...">
-  <meta name="keywords" content=" ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster, active iq">
+  <meta name="keywords" content=" ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster, active iq, digital wallet">
   
   
 
@@ -1197,6 +1197,32 @@
           >
             <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
             Get started with Kubernetes clusters in Azure
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
           </a>
           
 
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2968,7 +3001,7 @@
           <a href="/us-en/occm/">Cloud&nbsp;Manager</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Discovering ONTAP clusters
+          Discovering on-premises ONTAP clusters
         </li>
       </ul>
     </div>
@@ -2977,31 +3010,31 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Discovering ONTAP clusters</h1>
+  <h1 class="n-doc__component-detail-heading">Discovering on-premises ONTAP clusters</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" href="https://github.com/netapp-tonacki">
     <img  class="avatar avatar-small"
           alt="netapp-tonacki"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3017,10 +3050,14 @@
 <p>Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Adding on-prem clusters to the Cloud Manager Canvas enables you to manage these clusters using the same tools as your Cloud Volumes ONTAP and other cloud storage solutions.</p>
 </div>
 <div class="paragraph">
-<p>In addition to being able to provision storage on those systems, adding these systems to Cloud Manager also makes it easy to configure critical cloud-based services for those clusters. This includes replicating data to the cloud, backing up data to the cloud, tiering cold data to the cloud, and running compliance scans on that data.</p>
+<p>In addition to being able to provision storage on those systems, adding these systems to Cloud Manager also makes it easy to view hardware and software contract status information in the Digital Wallet, and configure critical cloud-based services for those clusters. This includes replicating data to the cloud, backing up data to the cloud, tiering cold data to the cloud, and running compliance scans on that data.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements">Requirements</h2>
+<div class="sectionbody">
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
 <ul>
 <li>
 <p>A Connector installed in a cloud provider or on your premises.</p>
@@ -3071,10 +3108,53 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="checking-for-on-premises-clusters-that-have-not-been-added-to-cloud-manager">Checking for on-premises clusters that have not been added to Cloud Manager</h2>
+<h2 id="viewing-discovered-and-undiscovered-on-prem-clusters">Viewing discovered and undiscovered on-prem clusters</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use the Discovery service in Cloud Manager to discover, view, and manage your on-prem ONTAP clusters that are under a support contract.</p>
+<p>You can use the <em>Digital Wallet</em> or the <em>Discovery</em> service in Cloud Manager to view, discover, and manage your on-prem ONTAP clusters that are under a support contract.</p>
+</div>
+<div class="paragraph">
+<p>To view on-prem clusters and license details from the <em>Digital Wallet</em>:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From Cloud Manager, select the <strong>Digital Wallet</strong> service.</p>
+</li>
+<li>
+<p>Click the <strong>On-Premises ONTAP</strong> tab.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_digital_wallet_onprem_main.png" alt="A screenshot of the Digital Wallet page for on-premises ONTAP clusters."></span></p>
+</div>
+<div class="paragraph">
+<p>Your ONTAP clusters are displayed with a status of whether they have been discovered in Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<p>If you are prompted to enter your NetApp Support Site (NSS) account credentials first, enter them in the Support Dashboard. After you have added the account, the clusters that are included in that account are displayed.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To view on-prem clusters and license details from the <em>Discovery service</em>:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From Cloud Manager, select the <strong>Discovery</strong> service.</p>
+</li>
+<li>
+<p>Select the Active IQ login associated with your NSS account, if necessary.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_aiq_main_page.png" alt="A screenshot of the main Discovery page for on-premises ONTAP clusters."></span></p>
+</div>
+<div class="paragraph">
+<p>Your ONTAP clusters that have a valid support contract are displayed with a status of whether they have been discovered in Cloud Manager.</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3088,33 +3168,88 @@ If your support contract expires, the systems are removed from the Discovery pag
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="viewing-cluster-information-and-contract-details">Viewing cluster information and contract details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the <em>Digital Wallet</em> to view cluster details and hardware and software contract status.</p>
+</div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From Cloud Manager, click the <strong>Discovery</strong> tab.</p>
-</li>
-<li>
-<p>Select the Active IQ login associated with your NSS account if necessary.</p>
+<p>In the <strong>Digital Wallet</strong>, click the <strong>On-Premises ONTAP</strong> tab.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_main_page.png" alt="A screenshot of the main Discovery page in Cloud Manager."></span></p>
-</div>
-<div class="paragraph">
-<p>Your ONTAP clusters that have a valid support contract are displayed with a status of whether they have been discovered in Cloud Manager.</p>
+<p>The Software Contract and Hardware Contract expiration dates appear on the line for each cluster.</p>
 </div>
 </li>
 <li>
-<p>If you want to manage the clusters that are listed as "Undiscovered" using Cloud Manager, click <strong>Discover</strong> and follow the prompts to add them.</p>
+<p>If the contract is close to the expiration date, or has expired, you can click the chat icon in the lower-right of Cloud Manager to request an extension to the contract.</p>
+</li>
+<li>
+<p>For clusters that you want to know additional details, click <span class="image"><img src="./media/button_down_caret.png" alt="down-caret"></span> to expand the cluster information.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_digital_wallet_license_info.png" alt="A screenshot of expanding the cluster details so you can view the cluster license information."></span></p>
+</div>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="discovering-clusters-from-the-discovery-page">Discovering clusters from the Discovery page</h2>
+<h2 id="discovering-on-prem-clusters-from-cloud-manager">Discovering on-prem clusters from Cloud Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can discover your ONTAP clusters and add them to a working environment from the Discovery page.</p>
+<p>You can discover on-prem ONTAP clusters in Cloud Manager from the <em>Digital Wallet</em>, the <em>Discovery</em> service, or from the <em>Canvas</em>. Once discovered, they are available as a working environment in Cloud Manager so that you can manage the cluster.</p>
+</div>
+<div class="sect2">
+<h3 id="discovering-clusters-from-the-digital-wallet">Discovering clusters from the Digital Wallet</h3>
+<div class="paragraph">
+<p>You can discover your ONTAP clusters from the Digital Wallet and add them as a working environment.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the <strong>Digital Wallet</strong>, click the <strong>On-Premises ONTAP</strong> tab.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_digital_wallet_clusters.png" alt="A screenshot of the On-Premises ONTAP page showing all clusters found in your NSS account."></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Discover</strong> for the cluster that you want to manage through Cloud Manager.</p>
+</li>
+<li>
+<p>On the <em>Discover ONTAP Cluster</em> page, enter the password for the admin user account and click <strong>Discover</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_discover_ontap_wallet.png" alt="A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address" width="user name and password."></span></p>
+</div>
+<div class="paragraph">
+<p>Note that the cluster management IP address is populated based on information from the Digital Wallet.</p>
+</div>
+<div class="paragraph">
+<p>The status for the cluster turns to <strong>Discovered</strong> in the <em>On-Premises ONTAP</em> page.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>Cloud Manager discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_onprem_cluster.png" alt="A screenshot of an on-prem ONTAP cluster in the Canvas."></span></p>
+</div>
+<div class="paragraph">
+<p>You can enable services for this cluster in the right panel to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, or run compliance scans on the volumes. You can also create new volumes or launch System Manager to perform advanced tasks.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="discovering-clusters-from-the-discovery-page">Discovering clusters from the Discovery page</h3>
+<div class="paragraph">
+<p>You can discover your ONTAP clusters from the Discovery page and add them as a working environment.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3150,18 +3285,13 @@ If your support contract expires, the systems are removed from the Discovery pag
 <p>Cloud Manager discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_onprem_cluster.png" alt="A screenshot of an on-prem ONTAP cluster in the Canvas."></span></p>
-</div>
-<div class="paragraph">
 <p>You can enable services for this cluster in the right panel to replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, or run compliance scans on the volumes. You can also create new volumes or launch System Manager to perform advanced tasks.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="discovering-clusters-from-the-canvas-page">Discovering clusters from the Canvas page</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="discovering-clusters-from-the-canvas-page">Discovering clusters from the Canvas page</h3>
 <div class="paragraph">
-<p>You can discover your ONTAP clusters and add them to a working environment from the Canvas page. These steps can be used in cases where the cluster is not listed in the Discovery page because it currently has no support contract.</p>
+<p>You can discover your ONTAP clusters and add them as a working environment from the Canvas page. These steps can be used in cases where the cluster is not listed in the Digital Wallet or Discovery page because it currently has no support contract.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3195,6 +3325,7 @@ If your support contract expires, the systems are removed from the Discovery pag
 </div>
 </div>
 </div>
+</div>
 
     </article>
     <!-- Page Container -->
@@ -3205,7 +3336,7 @@ If your support contract expires, the systems are removed from the Discovery pag
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Discovering ONTAP clusters](https://docs.netapp.com/us-en/occm/task_discovering_ontap.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Discovering on-premises ONTAP clusters](https://docs.netapp.com/us-en/occm/task_discovering_ontap.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/task_discovering_ontap.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/occm/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>

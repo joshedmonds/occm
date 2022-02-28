@@ -1213,6 +1213,32 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
 
 
           
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2984,7 +3017,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
@@ -3023,7 +3056,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>An AWS access key and secret key for an IAM user with the <a href="task_setting_up_permissions_fsx.html">required FSx for ONTAP permissions</a>.</p>
+<p>The ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment. See <a href="task_setting_up_permissions_fsx.html">adding AWS credentials to Cloud Manager</a> for details.</p>
 </li>
 <li>
 <p>The region and VPN information for where you will create the FSx for ONTAP instance.</p>
@@ -3043,7 +3076,23 @@
 </div>
 </li>
 <li>
-<p>You can select existing FSx for ONTAP credentials or create new credentials using your AWS access key and secret key. Click to verify your IAM user policy adheres to <a href="task_setting_up_permissions_fsx.html">FSx for ONTAP requirements</a>.</p>
+<p>Authenticate FSx for ONTAP in Cloud Manager.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If there is an existing IAM role in your account with the correct AWS permissions for FSx for ONTAP, select it from the dropdown.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-fsx-assume-role-present.png" alt="A screenshot showing dropdown for AWS roles"></span></p>
+</div>
+</li>
+<li>
+<p>If there is no IAM role in your account, click <strong>Credentials Page</strong> and follow the steps in the wizard to add an ARN for an AWS IAM role with FSx for ONTAP credentials. See <a href="task_setting_up_permissions_fsx.html">adding AWS credentials to Cloud Manager</a> for details.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-fsx-assume-role-not-present.png" alt="A screenshot of the steps to add the ARN for an AWS IAM role with FSx for ONTAP permission."></span></p>
+</div>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p>Provide information about your FSx for ONTAP instance:</p>

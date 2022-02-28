@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Managing AWS credentials and subscriptions for Cloud Manager</title>
+  <title>Manage AWS credentials and subscriptions for Cloud Manager</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Managing AWS credentials and subscriptions for Cloud Manager" />
+  <meta property="og:title" content="Manage AWS credentials and subscriptions for Cloud Manager" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/occm/task_adding_aws_accounts.html" />
 	<meta property="og:description" content="If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the det..." />
@@ -1188,6 +1188,32 @@
           >
             <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
             Get started with Kubernetes clusters in Azure
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/occm/pdfs/sidebar/Get_started_with_Kubernetes_clusters_in_Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/occm/images/pdf.png" width="16" height="16"/>
+            Get started with Kubernetes clusters in Google Cloud
           </a>
           
 
@@ -2567,6 +2593,13 @@
         Requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-azure.html">
         Add a cluster
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Kubernetes clusters in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/occm/kubernetes-reqs-gke.html">
+        Requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-discover-gke.html">
+        Add a cluster
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-kubernetes-enable-services.html">
         Enable NetApp's cloud data services
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -2968,7 +3001,7 @@
           <a href="/us-en/occm/">Cloud&nbsp;Manager</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Managing AWS credentials and subscriptions for Cloud Manager
+          Manage AWS credentials and subscriptions for Cloud Manager
         </li>
       </ul>
     </div>
@@ -2977,14 +3010,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Managing AWS credentials and subscriptions for Cloud Manager</h1>
+  <h1 class="n-doc__component-detail-heading">Manage AWS credentials and subscriptions for Cloud Manager</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 08:54:37 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 22:13:33 +0000">02/28/2022</time>
     
   
 
@@ -3006,15 +3039,58 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>When you create a Cloud Volumes ONTAP system, you need to select the AWS credentials and subscription to use with that system. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.</p>
+<p>Add and manage AWS credentials so that Cloud Manager has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="granting-permissions">Granting permissions</h2>
+<h2 id="overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you add AWS credentials to Cloud Manager, you need to provide the required permissions to that account. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.</p>
+<p>You can add AWS credentials to an existing Connector or directly to Cloud Manager:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add AWS credentials to an existing Connector</p>
+<div class="paragraph">
+<p>Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <a href="#add-credentials-to-a-connector">Learn how to add AWS credentials to a Connector</a>.</p>
+</div>
+</li>
+<li>
+<p>Add AWS credentials directly to Cloud Manager</p>
+<div class="paragraph">
+<p>Adding new AWS credentials to Cloud Manager enable you to create an FSx for ONTAP working environment. <a href="#add-credentials-to-cloud-manager">Learn how to add AWS credentials to Cloud Manager</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-rotate-credentials">How to rotate credentials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys. <a href="concept_accounts_aws.html">Learn more about AWS credentials and permissions</a>.</p>
+</div>
+<div class="paragraph">
+<p>With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice because it&#8217;s automatic and it&#8217;s secure.</p>
+</div>
+<div class="paragraph">
+<p>If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="add-credentials-to-a-connector">Add credentials to a Connector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.</p>
+</div>
+<div class="sect2">
+<h3 id="grant-permissions">Grant permissions</h3>
+<div class="paragraph">
+<p>Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with the ARN of a role in a trusted account or AWS keys.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3034,29 +3110,55 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#granting-permissions-by-providing-aws-keys">Granting permissions by providing AWS keys</a></p>
+<p><a href="#grant-permissions-by-assuming-an-iam-role-in-another-account">Grant permissions by assuming an IAM role in another account</a></p>
 </li>
 <li>
-<p><a href="#granting-permissions-by-assuming-iam-roles-in-other-accounts">Granting permissions by assuming IAM roles in other accounts</a></p>
+<p><a href="#grant-permissions-by-providing-aws-keys">Grant permissions by providing AWS keys</a></p>
 </li>
 </ul>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">How can I securely rotate my AWS credentials?</div>
+<div class="sect3">
+<h4 id="grant-permissions-by-assuming-an-iam-role-in-another-account">Grant permissions by assuming an IAM role in another account</h4>
 <div class="paragraph">
-<p>Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys. <a href="concept_accounts_aws.html">Learn more about AWS credentials and permissions</a>.</p>
+<p>You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Go to the IAM console in the target account where you want to deploy Cloud Volumes ONTAP.</p>
+</li>
+<li>
+<p>Under Access Management, click <strong>Roles &gt; Create Role</strong> and follow the steps to create the role.</p>
+<div class="paragraph">
+<p>Be sure to do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Under <strong>Trusted entity type</strong>, select <strong>AWS account</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Another AWS account</strong> and enter the ID of the account where the Connector instance resides.</p>
+</li>
+<li>
+<p>Create a policy using the Cloud Manager IAM policy, which is available from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager later on.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice, it&#8217;s automatic and it&#8217;s secure.</p>
-</div>
-<div class="paragraph">
-<p>If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.</p>
+<div class="title">Result</div>
+<p>The account now has the required permissions. <a href="#add-the-credentials">You can now add the credentials to a Connector</a>.</p>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="granting-permissions-by-providing-aws-keys">Granting permissions by providing AWS keys</h3>
+<div class="sect3">
+<h4 id="grant-permissions-by-providing-aws-keys">Grant permissions by providing AWS keys</h4>
 <div class="paragraph">
 <p>If you want to provide Cloud Manager with AWS keys for an IAM user, then you need to grant the required permissions to that user. The Cloud Manager IAM policy defines the AWS actions and resources that Cloud Manager is allowed to use.</p>
 </div>
@@ -3089,78 +3191,14 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>The account now has the required permissions. <a href="#adding-aws-credentials-to-cloud-manager">You can now add it to Cloud Manager</a>.</p>
+<p>The account now has the required permissions. <a href="#add-the-credentials">You can now add the credentials to a Connector</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="granting-permissions-by-assuming-iam-roles-in-other-accounts">Granting permissions by assuming IAM roles in other accounts</h3>
+<h3 id="add-the-credentials">Add the credentials</h3>
 <div class="paragraph">
-<p>You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Go to the target account where you want to deploy Cloud Volumes ONTAP and create an IAM role by selecting <strong>Another AWS account</strong>.</p>
-<div class="paragraph">
-<p>Be sure to do the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Enter the ID of the account where the Connector instance resides.</p>
-</li>
-<li>
-<p>Attach the Cloud Manager IAM policy, which is available from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_iam_create_role.gif" alt="A screenshot that shows the Create role page in the AWS IAM Console. Under Select type of trusted entity" width="Another AWS account is selected."></span></p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Go to the source account where the Connector instance resides and select the IAM role that is attached to the instance.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click <strong>Attach policies</strong> and then click <strong>Create policy</strong>.</p>
-</li>
-<li>
-<p>Create a policy that includes the "sts:AssumeRole" action and the ARN of the role that you created in the target account.</p>
-<div class="paragraph">
-<p><strong>Example</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
- "Version": "2012-10-17",
- "Statement": {
-   "Effect": "Allow",
-   "Action": "sts:AssumeRole",
-   "Resource": "arn:aws:iam::ACCOUNT-B-ID:role/ACCOUNT-B-ROLENAME"
-}
-}</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<div class="title">Result</div>
-<p>The account now has the required permissions. <a href="#adding-aws-credentials-to-cloud-manager">You can now add it to Cloud Manager</a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="adding-aws-credentials-to-cloud-manager">Adding AWS credentials to Cloud Manager</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>After you provide an AWS account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.</p>
+<p>After you provide an AWS account with the required permissions, you can add the credentials for that account to an existing Connector. This enables you to launch Cloud Volumes ONTAP systems in that account using the same Connector.</p>
 </div>
 <div class="paragraph">
 <div class="title">Before you get started</div>
@@ -3169,6 +3207,9 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
+<li>
+<p>Ensure that the correct Connector is currently selected in Cloud Manager.</p>
+</li>
 <li>
 <p>In the upper right of the Cloud Manager console, click the Settings icon, and select <strong>Credentials</strong>.</p>
 <div class="paragraph">
@@ -3180,10 +3221,10 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><strong>Credentials Type</strong>: Select <strong>Amazon Web Services</strong>.</p>
+<p><strong>Credentials Location</strong>: Select <strong>Amazon Web Services &gt; Connector</strong>.</p>
 </li>
 <li>
-<p><strong>Define Credentials</strong>: Provide AWS keys or the ARN (Amazon Resource Name) of a trusted IAM role.</p>
+<p><strong>Define Credentials</strong>: Provide the ARN (Amazon Resource Name) of a trusted IAM role, or enter an AWS access key and secret key.</p>
 </li>
 <li>
 <p><strong>Marketplace Subscription</strong>: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.</p>
@@ -3208,8 +3249,120 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="associating-an-aws-subscription-to-credentials">Associating an AWS subscription to credentials</h2>
+<h2 id="add-credentials-to-cloud-manager">Add credentials to Cloud Manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="set-up-the-iam-role">Set up the IAM role</h3>
+<div class="paragraph">
+<p>Set up an IAM role that enables the Cloud Manager SaaS to assume the role.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Go to the IAM console in the target account.</p>
+</li>
+<li>
+<p>Under Access Management, click <strong>Roles &gt; Create Role</strong> and follow the steps to create the role.</p>
+<div class="paragraph">
+<p>Be sure to do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Under <strong>Trusted entity type</strong>, select <strong>AWS account</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Another AWS account</strong> and enter the ID of the Cloud Manager SaaS: 733004784675</p>
+</li>
+<li>
+<p>Create a policy that includes the following permissions:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "fsx:*",
+                "ec2:Describe*",
+                "ec2:CreateTags",
+                "kms:Describe*",
+                "kms:List*",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager in the next step.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>The IAM role now has the required permissions. <a href="#add-the-credentials-2">You can now add it to Cloud Manager</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-the-credentials-2">Add the credentials</h3>
+<div class="paragraph">
+<p>After you provide the IAM role with the required permissions, add the role ARN to Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you get started</div>
+<p>If you just created the IAM role, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to Cloud Manager.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the upper right of the Cloud Manager console, click the Settings icon, and select <strong>Credentials</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_settings_icon.gif" alt="A screenshot that shows the Settings icon in the upper right of the Cloud Manager console."></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Add Credentials</strong> and follow the steps in the wizard.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Credentials Location</strong>: Select <strong>Amazon Web Services &gt; Cloud Manager</strong>.</p>
+</li>
+<li>
+<p><strong>Define Credentials</strong>: Provide the ARN (Amazon Resource Name) of the IAM role.</p>
+</li>
+<li>
+<p><strong>Review</strong>: Confirm the details about the new credentials and click <strong>Add</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>You can now use the credentials when creating an FSx for ONTAP working environment.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="associate-an-aws-subscription">Associate an AWS subscription</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.</p>
@@ -3229,7 +3382,7 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 </div>
 <div class="paragraph">
 <div class="title">What you&#8217;ll need</div>
-<p>You need to create a Connector before you can change Cloud Manager settings. <a href="concept_connectors.html#how-to-create-a-connector">Learn how</a>.</p>
+<p>You need to create a Connector before you can change Cloud Manager settings. <a href="concept_connectors.html#how-to-create-a-connector">Learn how to create a Connector</a>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3258,7 +3411,7 @@ Your browser does not support the video tag.
 </div>
 </div>
 <div class="sect1">
-<h2 id="editing-credentials">Editing credentials</h2>
+<h2 id="edit-credentials">Edit credentials</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Edit your AWS credentials in Cloud Manager by changing the account type (AWS keys or assume role), by editing the name, or by updating the credentials themselves (the keys or the role ARN).</p>
@@ -3335,7 +3488,7 @@ You can&#8217;t delete the credentials for an instance profile that is associate
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Managing AWS credentials and subscriptions for Cloud Manager](https://docs.netapp.com/us-en/occm/task_adding_aws_accounts.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Manage AWS credentials and subscriptions for Cloud Manager](https://docs.netapp.com/us-en/occm/task_adding_aws_accounts.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/task_adding_aws_accounts.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/occm/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>
