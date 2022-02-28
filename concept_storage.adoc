@@ -73,7 +73,9 @@ HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
 
 *Related links*
 
-* https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure documentation: Introduction to Microsoft Azure Storage^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure documentation: Azure managed disk types^]
+
+* https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview[Microsoft Azure documentation: Overview of Azure page blobs^]
 
 * link:task_planning_your_config_azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
