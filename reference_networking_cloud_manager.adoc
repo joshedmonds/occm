@@ -290,12 +290,3 @@ These inbound rules apply to both deployment models for the on-prem Connector: i
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
 
 |===
-
-When you install the Connector using the online installer, the following ports are used on the host for internal components:
-
-* 3306 for the Cloud Manager database
-* 8080 for the Cloud Manager API proxy
-* 8666 for the Service Manager API
-* 8777 for the Health-Checker Container Service API
-
-These ports are not used for inbound or outbound communication.
