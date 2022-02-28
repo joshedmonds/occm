@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-kubernetes-discover-gke.html
 keywords: kubernetes, k8s, discover kubernetes cluster, discover k8s, import kubernetes cluster, google, google cloud, gke, kubernetes support
-summary: Add an Kubernetes cluster to Cloud Manager so that you can start backing up persistent volumes to Google Cloud.
+summary: You can discover or import Kubernetes clusters to Cloud Manager so that you can back up persistent volumes to Google Cloud.
 ---
 
 = Add a Google Cloud Kubernetes cluster to Cloud Manager
