@@ -54,6 +54,8 @@ Data Sense can be link:task_deploy_cloud_compliance.html[deployed in the cloud^]
 
 Upgrades to Data Sense software is automated as long as the instance has internet connectivity.
 
+Data Sense can also be link:task-deploy-compliance-dark-site.html[deployed in an on-premises location that has no internet access^]. However, you'll need to provide internet access to a few select endpoints to scan OneDrive files. link:task-deploy-compliance-dark-site.html#sharepoint-and-onedrive-special-requirements[See the list of required endpoints here].
+
 == Adding the OneDrive account
 
 Add the OneDrive account where the user files reside.
