@@ -27,7 +27,7 @@ You need:
 
 * An active link:task_creating_connectors_aws.html[Connector in AWS].
 
-* If you want to use SMB, you must have set up DNS and Active Directory.
+* If you want to use SMB, you must have set up DNS and Active Directory. For more information on DNS and Active Directory network configuration, see link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html[AWS: Prerequisites for using a self-managed Microsoft AD^].
 
 .Steps
 
