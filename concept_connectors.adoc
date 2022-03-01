@@ -106,6 +106,8 @@ If you create the Connector yourself from the AWS Marketplace, the Azure Marketp
 * https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
 * link:reference_permissions.html[Learn how Cloud Manager uses cloud provider permissions]
 
+TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. link:task_adding_aws_accounts.html[Learn how to manage AWS credentials and subscriptions].
+
 == Number of working environments per Connector
 
 A Connector can manage multiple working environments in Cloud Manager. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.

@@ -275,11 +275,18 @@ NOTE: The source IP address is the Connector host.
 
 === Ports for the on-prem Connector
 
-The Connector uses the following ports when installed manually on an on-premises Linux host:
+The Connector uses the following _inbound_ ports when installed manually on an on-premises Linux host.
 
-* 80 for HTTP access
-* 443 for HTTPS access
-* 3306 for the Cloud Manager database
-* 8080 for the Cloud Manager API proxy
-* 8666 for the Service Manager API
-* 8777 for the Health-Checker Container Service API
+These inbound rules apply to both deployment models for the on-prem Connector: installed with internet access or without internet access.
+
+[cols="10,10,80",width=100%,options="header"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+
+|===
