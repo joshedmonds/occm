@@ -126,12 +126,18 @@ link:task_replicating_data.html[Click here for more details].
 
 == Backing up data
 
-You can back up data from your on-premises ONTAP system to low-cost object storage in the cloud by using the Cloud Manager Cloud Backup service. This service provides backup and restore capabilities for protection and long-term archive of your cloud data.
+You can back up data from your on-premises ONTAP system to low-cost object storage in the cloud by using Cloud Backup. This service provides backup and restore capabilities for protection and long-term archive of your on-prem and cloud data.
 
 link:concept_backup_to_cloud.html[Click here for more details].
 
+== Scan, map, and classify your data
+
+Cloud Data Sense can scan your corporate on-premises clusters to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
+
+link:concept_cloud_compliance.html[Click here for more details].
+
 == Tiering data to the cloud
 
-Extend your data center to the cloud by automatically tiering inactive data from ONTAP clusters to object storage.
+Extend your data center to the cloud by automatically tiering inactive data from ONTAP clusters to object storage using Cloud Tiering.
 
 link:concept_cloud_tiering.html[Click here for more details].
