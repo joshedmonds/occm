@@ -238,6 +238,8 @@ sidebar:
               url: /task_getting_started_fsx.html
             - title: Set up permissions for FSx for ONTAP
               url: /task_setting_up_permissions_fsx.html
+            - title: Security group rules for FSx for ONTAP
+              url: /reference_security_groups_fsx.html
             - title: Create and manage a working environment
               url: /task_creating_fsx_working_environment.html
             - title: Create and manage volumes
@@ -296,6 +298,12 @@ sidebar:
               url: /kubernetes-reqs-aks.html
             - title: Add a cluster
               url: /task-kubernetes-discover-azure.html
+        - title: Get started with Kubernetes clusters in Google Cloud
+          entries:
+            - title: Requirements
+              url: /kubernetes-reqs-gke.html
+            - title: Add a cluster
+              url: /task-kubernetes-discover-gke.html
         - title: Enable NetApp's cloud data services
           url: /task-kubernetes-enable-services.html
     - title: Replicate ONTAP data

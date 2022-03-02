@@ -662,4 +662,10 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 
 | To enable Cloud Data Sense.
 
+|
+- container.clusters.get
+- container.clusters.list
+
+| To discover Kubernetes clusters running in Google Kubernetes Engine.
+
 |===
