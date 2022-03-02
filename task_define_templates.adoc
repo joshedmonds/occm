@@ -395,15 +395,15 @@ See <<What to do after you have created the template,what you should tell your u
 
 === Create a template for a Cloud Volumes ONTAP working environment
 
-You can create a Cloud Volumes ONTAP working environment using templates.
+You can create a single-node or HA Cloud Volumes ONTAP working environment using templates.
 
 [NOTE]
 ====
-* This support is provided only for AWS environments at this time, and only for single-node clusters.
+* This support is provided only for AWS environments at this time.
 * This template doesn't create the first volume in the working environment. You must add a "Create Volume in Cloud Volumes ONTAP" action in the template to create the volume.
 ====
 
-See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launch a single-node Cloud Volumes ONTAP system in AWS^] for the prerequisites that must be in place, and for details about all the parameters you need to complete in this template.
+See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launch a single-node Cloud Volumes ONTAP system in AWS^] or a link:task_deploying_otc_aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws[Cloud Volumes ONTAP HA pair in AWS] for the prerequisites that must be in place, and for details about all the parameters you need to complete in this template.
 
 .Steps
 
@@ -419,7 +419,7 @@ The _Add New Action_ page is displayed.
 +
 image:screenshot_create_template_cvo_env_aws.png[A screenshot showing how to select the primary action from the Add New Action page.]
 
-. Select *Create Working Environment in AWS (single node)* as the type of resource you want to create, and click *Apply*.
+. Select *Create Working Environment in AWS (single node)* or *Create Working Environment in AWS (high availability)* as the type of resource you want to create, and click *Apply*.
 +
 The _Create Working Environment in AWS (single node)_ page is displayed.
 +
