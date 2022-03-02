@@ -24,7 +24,7 @@ TIP: The Ransomware Protection service is currently a Beta offering.
 
 Ransomware Protection currently provides several features that can help you with your cyberstorage protection efforts. Additional features will be added in the future. Current features identify when:
 
-* Volumes in your working environments aren't being protected by making periodic Snapshot copies.
+// * Volumes in your working environments aren't being protected by making periodic Snapshot copies.
 * Volumes in your working environments aren't being protected by creating backups to the cloud using link:concept_backup_to_cloud.html[Cloud Backup].
 * Data in your working environments and data sources aren't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns, and find optimization opportunities.
 * An abnormal increase in the percentage of encrypted files in a working environment or data source has occurred.
@@ -32,13 +32,13 @@ Ransomware Protection currently provides several features that can help you with
 This can be an indicator that a ransomware attack has commenced on your network.
 * Sensitive data is found in files and the access permissions level is too high in a working environment or data source.
 * Users have been added to your Active Directory Domain Administrator Groups.
-* The ONTAP software version on your clusters is old and should be updated to provide the best protection and security features.
-* NAS file system auditing is not enabled on your ONTAP systems.
-+
-Enabling CIFS auditing generates auditing events for your system admins that track information such as folder permission changes, failed attempts to read or write files, and when files have been created, modified, or deleted.
-* On-box anti-ransomware features are not enabled on your ONTAP systems.
-+
-The ONTAP anti-ransomware features proactively detect and warn about abnormal activity that might indicate a ransomware attack.
+// * The ONTAP software version on your clusters is old and should be updated to provide the best protection and security features.
+// * NAS file system auditing is not enabled on your ONTAP systems.
+// +
+// Enabling CIFS auditing generates auditing events for your system admins that track information such as folder permission changes, failed attempts to read or write files, and when files have been created, modified, or deleted.
+// * On-box anti-ransomware features are not enabled on your ONTAP systems.
+// +
+// The ONTAP anti-ransomware features proactively detect and warn about abnormal activity that might indicate a ransomware attack.
 
 link:task-analyze-ransomware-data.html[See how to view these potential issues in the Ransomware Protection dashboard.]
 
