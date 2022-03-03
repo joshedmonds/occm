@@ -3021,7 +3021,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-01 17:25:01 +0000">03/01/2022</time>
+    <time datetime="2022-03-03 13:13:41 +0000">03/03/2022</time>
     
   
 
@@ -3048,7 +3048,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="switching-between-connectors">Switching between Connectors</h2>
+<h2 id="switch-between-connectors">Switch between Connectors</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you have multiple Connectors, you can switch between them to see the Working Environments that are associated with a specific Connector.</p>
@@ -3073,7 +3073,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="accessing-the-local-ui">Accessing the local UI</h2>
+<h2 id="access-the-local-ui">Access the local UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:</p>
@@ -3114,7 +3114,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="downloading-or-sending-an-autosupport-message">Downloading or sending an AutoSupport message</h2>
+<h2 id="download-or-send-an-autosupport-message">Download or send an AutoSupport message</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you&#8217;re having problems, NetApp personnel might ask you to send an AutoSupport message to NetApp support for troubleshooting purposes.</p>
@@ -3155,7 +3155,34 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="editing-a-connectors-uris">Editing a Connector&#8217;s URIs</h2>
+<h2 id="apply-security-updates">Apply security updates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Update the operating system on the Connector to ensure that it&#8217;s patched with the latest security updates.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Access the CLI shell on the Connector host.</p>
+</li>
+<li>
+<p>Run the following commands with elevated privileges:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">sudo -s
+service service-manager stop
+yum -y update –security
+service service-manager start</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="edit-a-connectors-uris">Edit a Connector&#8217;s URIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Add and remove the URIs for a Connector.</p>
@@ -3180,7 +3207,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="fixing-download-failures-when-using-a-google-cloud-nat-gateway">Fixing download failures when using a Google Cloud NAT gateway</h2>
+<h2 id="fix-download-failures-when-using-a-google-cloud-nat-gateway">Fix download failures when using a Google Cloud NAT gateway</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.</p>
@@ -3212,52 +3239,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="removing-connectors-from-cloud-manager">Removing Connectors from Cloud Manager</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If a Connector is inactive, you can remove it from the list of Connectors in Cloud Manager. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.</p>
-</div>
-<div class="paragraph">
-<p>Note the following about removing a Connector:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>This action doesn&#8217;t delete the virtual machine.</p>
-</li>
-<li>
-<p>This action can&#8217;t be reverted&#8212;&#8203;once you remove a Connector from Cloud Manager, you can&#8217;t add it back to Cloud Manager.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Click the <strong>Connector</strong> drop-down from the Cloud Manager header.</p>
-</li>
-<li>
-<p>Click <strong>Manage Connectors</strong>.</p>
-</li>
-<li>
-<p>Click the action menu for an inactive Connector and click <strong>Remove Connector</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_connector_remove.gif" alt="A screenshot of the Connector widget where you can remove an inactive Connector."></span></p>
-</div>
-</li>
-<li>
-<p>Enter the name of the Connector to confirm and then click Remove.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<div class="title">Result</div>
-<p>Cloud Manager removes the Connector from its records.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="upgrading-the-connector-on-prem-without-internet-access">Upgrading the Connector on-prem without internet access</h2>
+<h2 id="upgrade-the-connector-on-prem-without-internet-access">Upgrade the Connector on-prem without internet access</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you <a href="task-install-connector-onprem-no-internet.html">installed the Connector on an on-premises host that doesn&#8217;t have internet access</a>, you can upgrade the Connector when a newer version is available from the NetApp Support Site.</p>
@@ -3306,13 +3288,58 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="uninstalling-the-connector-software">Uninstalling the Connector software</h2>
+<h2 id="remove-connectors-from-cloud-manager">Remove Connectors from Cloud Manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If a Connector is inactive, you can remove it from the list of Connectors in Cloud Manager. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.</p>
+</div>
+<div class="paragraph">
+<p>Note the following about removing a Connector:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This action doesn&#8217;t delete the virtual machine.</p>
+</li>
+<li>
+<p>This action can&#8217;t be reverted&#8212;&#8203;once you remove a Connector from Cloud Manager, you can&#8217;t add it back to Cloud Manager.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click the <strong>Connector</strong> drop-down from the Cloud Manager header.</p>
+</li>
+<li>
+<p>Click <strong>Manage Connectors</strong>.</p>
+</li>
+<li>
+<p>Click the action menu for an inactive Connector and click <strong>Remove Connector</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_connector_remove.gif" alt="A screenshot of the Connector widget where you can remove an inactive Connector."></span></p>
+</div>
+</li>
+<li>
+<p>Enter the name of the Connector to confirm and then click Remove.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>Cloud Manager removes the Connector from its records.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="uninstall-the-connector-software">Uninstall the Connector software</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Uninstall the Connector software to troubleshoot issues or to permanently remove the software from the host. The steps that you need to use depends on whether you installed the Connector on a host that has internet access or a host in a restricted network that doesn&#8217;t have internet access.</p>
 </div>
 <div class="sect2">
-<h3 id="uninstalling-the-connector-from-a-host-that-has-internet-access">Uninstalling the Connector from a host that has internet access</h3>
+<h3 id="uninstall-from-a-host-with-internet-access">Uninstall from a host with internet access</h3>
 <div class="paragraph">
 <p>The online Connector includes an uninstallation script that you can use to uninstall the software.</p>
 </div>
@@ -3332,7 +3359,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="uninstalling-the-connector-from-a-host-that-doesnt-have-internet-access">Uninstalling the Connector from a host that doesn&#8217;t have internet access</h3>
+<h3 id="uninstall-from-a-host-without-internet-access">Uninstall from a host without internet access</h3>
 <div class="paragraph">
 <p>Use these commands if you downloaded the Connector software from the NetApp Support Site and installed it in a restricted network that doesn&#8217;t have internet access.</p>
 </div>
