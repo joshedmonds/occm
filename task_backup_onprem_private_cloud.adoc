@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_onprem_private_cloud.html
-keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, cloud backup service, StorageGRID
+keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to object storage in your NetApp StorageGRID systems.
 ---
 
@@ -35,10 +35,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on the system
 
 [role="quick-margin-para"]
-Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
+Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment."]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enter the StorageGRID details
 
@@ -71,9 +71,9 @@ Read the following requirements to make sure you have a supported configuration 
 The following image shows each component when backing up an on-prem ONTAP system to StorageGRID and the connections that you need to prepare between them:
 
 image:diagram_cloud_backup_onprem_storagegrid.png[A diagram showing how Cloud Backup communicates with the volumes on the source systems and the destination storage where the backup files are located.]
-//
-//When the Connector and on-premises ONTAP system are installed in an on-prem location without internet access, the StorageGRID system must be located in the same on-prem data center.
 
+// When the Connector and on-premises ONTAP system are installed in an on-prem location without internet access, the StorageGRID system must be located in the same on-prem data center.
+//
 Note that the Cloud Restore instance is not shown in this diagram because single-file restore is not currently supported when using StorageGRID.
 
 === Preparing your ONTAP clusters
@@ -104,7 +104,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 When you set up Cloud Backup, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 * The nodes' intercluster LIFs are able to access the object store.
-//  (not required when the Connector is installed in a "dark" site).
+// (not required when the Connector is installed in a "dark" site).
 *	DNS servers have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
 * Note that if you use are using a different IPspace than the Default, then you might need to create a static route to get access to the object storage.
 * Update firewall rules, if necessary, to allow Cloud Backup service connections from ONTAP to object storage through the port you specified (typically port 443) and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
@@ -142,8 +142,8 @@ When backing up data to StorageGRID, a Connector must be available on your premi
 // * link:task-install-connector-onprem-no-internet.html[Installing the Connector on a Linux host without internet access]
 * link:task_managing_connectors.html[Switching between Connectors]
 
-// NOTE: Cloud Backup functionality is built into the Cloud Manager Connector (starting with version 3.9.15). When installed in a site with no internet connectivity, you'll need to update the Connector software periodically to get access to new features. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each Cloud Backup release, and then you can follow the steps to link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[upgrade the Connector software] when you want to use new features.
-//
+// NOTE: Cloud Backup functionality is built into the Cloud Manager Connector. When installed in a site with no internet connectivity, you'll need to update the Connector software periodically to get access to new features. Check the link:reference_new_occm.html[Cloud Manager What's New] to see the new features in each Cloud Backup release, and then you can follow the steps to link:task_managing_connectors.html#upgrading-the-connector-on-prem-without-internet-access[upgrade the Connector software] when you want to use new features.
+
 === Preparing networking for the Connector
 
 Ensure that the Connector has the required networking connections.
@@ -154,7 +154,7 @@ Ensure that the Connector has the required networking connections.
 
 * An HTTPS connection over port 443 to StorageGRID
 * An HTTPS connection over port 443 to your ONTAP clusters
-* An outbound internet connection to Cloud Backup service over port 443 (HTTPS)
+* An outbound internet connection over port 443 to Cloud Backup
 // (not required when the Connector is installed in a "dark" site)
 
 === License requirements
@@ -173,15 +173,15 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 
 .Steps
 
-. From the Canvas, select the on-premises working environment and click *Enable* next to the Backup service in the right-panel.
+. From the Canvas, select the on-premises working environment and click *Enable* next to the Backup & Restore service in the right-panel.
 +
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup Enable button which is available after you select an on-prem working environment.]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 . Select *StorageGRID* as the provider, click *Next*, and then enter the provider details:
 
 .. The FQDN of the StorageGRID server and the port that ONTAP should use for HTTPS communication with StorageGRID; for example: `s3.eng.company.com:8082`
 .. The Access Key and the Secret Key used to access the bucket to store backups.
-.. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access. 
 // (not required when the Connector is installed in a "dark" site).
 +
 Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.
@@ -205,7 +205,7 @@ See link:concept_backup_to_cloud.html#customizable-backup-schedule-and-retention
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
 +
-If you want all volumes added in the future to have backup enabled, just leave the checkbox for "Automatically back up future volumes..." checked. If you disable this setting, you'll need to manually enable backups for future volumes.
+If you want all volumes added in the future to this cluster to have backup enabled, just leave the checkbox for "Automatically back up future volumes..." checked. If you disable this setting, you'll need to manually enable backups for future volumes.
 
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of each selected volume.
 
