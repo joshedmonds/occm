@@ -40,8 +40,8 @@ A template is a chain of "actions" that have some pre-defined values. You can bu
 * Create a Cloud Volumes ONTAP volume (on AWS, Azure, or GCP)
 * Create an Azure NetApp Files volume
 * Create an on-premises ONTAP volume
-* Create a Cloud Volumes ONTAP working environment (single node system on AWS)
-* Find an existing resources that meet certain criteria (so you can apply a "services" action on exiting resources)
+* Create a Cloud Volumes ONTAP working environment (single node or HA system on AWS)
+* Find existing resources that meet certain criteria (so you can apply a "services" action on exiting resources)
 
 *Services actions:*
 

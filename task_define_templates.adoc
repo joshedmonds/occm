@@ -395,15 +395,15 @@ See <<What to do after you have created the template,what you should tell your u
 
 === Create a template for a Cloud Volumes ONTAP working environment
 
-You can create a Cloud Volumes ONTAP working environment using templates.
+You can create a single-node or high-availability Cloud Volumes ONTAP working environment using templates.
 
 [NOTE]
 ====
-* This support is provided only for AWS environments at this time, and only for single-node clusters.
+* This support is provided only for AWS environments at this time.
 * This template doesn't create the first volume in the working environment. You must add a "Create Volume in Cloud Volumes ONTAP" action in the template to create the volume.
 ====
 
-See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launch a single-node Cloud Volumes ONTAP system in AWS^] for the prerequisites that must be in place, and for details about all the parameters you need to complete in this template.
+See link:task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws[how to launch a single-node Cloud Volumes ONTAP system in AWS^] or a link:task_deploying_otc_aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws[Cloud Volumes ONTAP HA pair in AWS] for the prerequisites that must be in place, and for details about all the parameters you'll need to define in this template.
 
 .Steps
 
@@ -419,9 +419,9 @@ The _Add New Action_ page is displayed.
 +
 image:screenshot_create_template_cvo_env_aws.png[A screenshot showing how to select the primary action from the Add New Action page.]
 
-. Select *Create Working Environment in AWS (single node)* as the type of resource you want to create, and click *Apply*.
+. Select *Create Working Environment in AWS (single node)* or *Create Working Environment in AWS (high availability)* as the type of resource you want to create, and click *Apply*.
 +
-The _Create Working Environment in AWS (single node)_ page is displayed.
+For this example, the _Create Working Environment in AWS (single node)_ page is displayed.
 +
 image:screenshot_create_template_cvo_env_aws1.png[A screenshot showing a blank Cloud Volumes ONTAP working environment template that you need to fill in.]
 
@@ -492,13 +492,13 @@ See <<What to do after you have created the template,what you should tell your u
 
 == Examples of finding existing resources and enabling services using templates
 
-Using the _Find Existing Resources_ action you can find existing resources and enable a cloud service on those resources. This action provides a variety of filters so you can narrow your search to just the resources you are interested in.
+Using the _Find Existing Resources_ action you can find specific working environments or find existing volumes and enable a cloud service on those volumes. This action provides a variety of filters so you can narrow your search to just the resources you are interested in.
 
 NOTE: At this time you can find volumes within Cloud Volumes ONTAP, on-premises ONTAP, and Azure NetApp Files systems only. And you can enable only Cloud Backup on Cloud Volumes ONTAP and on-premises ONTAP volumes. Additional resources and services will be available at a later time.
 
 === Find existing volumes and activate Cloud Backup
 
-The current functionality enables you to find volumes on Cloud Volumes ONTAP and on-premises ONTAP working environments that do not currently have Cloud Backup enabled. When you enable Cloud Backup on specific volumes, this action also sets the backup policy you configure as the default policy for that working environment. So all future volumes on those working environments can use the same backup policy.
+The current _Find Existing Resources_ action functionality enables you to find volumes on Cloud Volumes ONTAP and on-premises ONTAP working environments that do not currently have Cloud Backup enabled. When you enable Cloud Backup on specific volumes, this action also sets the backup policy you configure as the default policy for that working environment. So all future volumes on those working environments can use the same backup policy.
 
 .Steps
 
@@ -560,6 +560,50 @@ image:screenshot_template_add_backup_action.png[A screenshot showing the steps t
 . Now you can define the Backup criteria as described in <<Add Backup functionality to a volume,Adding Backup functionality to a volume>> so that the template applies the correct backup policy to the volumes you select from the _Find Existing Resources_ action.
 
 . Click *Apply* to save the customization you made to the Backup action, and then click *Save Template* when you are done.
+
+.Result
+
+The template is created and you are returned to the Template Dashboard where your new template appears.
+
+See <<What to do after you have created the template,what you should tell your users about templates>>.
+
+=== Find existing working environments
+
+Using the _Find Existing Resources_ action you can find the working environment, and then use other template actions, such as creating a volume, to easily perform actions on the existing working environment.
+
+.Steps
+
+. Select the *AppTemplate* service, click the *Templates* tab, and click *Add New Template*.
++
+The _Select_a Template_ page is displayed.
++
+image:screenshot_create_template_primary_action_blank.png[A screenshot showing how to select the primary action that will be performed using this template.]
+
+. Select *Blank template* and click *Get Started*.
++
+The _Add New Action_ page is displayed.
++
+image:screenshot_create_template_find_resource_action.png[A screenshot showing how to select the Find Existing Resources action from the Add New Action page.]
+
+. Select *Find Existing Resources* as the type of action you want to define, and click *Apply*.
++
+The _Find Existing Resources Action Definition_ page is displayed.
++
+image:screenshot_define_find_work_env.png[A screenshot showing a blank find existing resources template that you need to fill in.]
+
+. *Action Name*: Enter a customized action name instead of the default value. For example, "Find work environments that include Dallas".
+
+. *Resource Type:* Select the type of resource you want to find. In this case you would select *Working Environments*.
++
+This is the only required entry for this action. You could click *Continue* now and you'll receive a list of all working environments in your environment.
++
+Instead, it is recommended that you fill out a few filters to reduce the number of results (in this case, working environments).
+
+. After defining a few filters in the _Details_ area, you can select a specific working environment.
+
+. Click *Continue* to save your settings, and then click *Done*.
+
+. Enter the template name in the top left, and then click *Save Template*
 
 .Result
 

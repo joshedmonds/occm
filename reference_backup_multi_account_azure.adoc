@@ -15,7 +15,7 @@ summary: Cloud Backup enables you to create backup files in an Azure account tha
 [.lead]
 Cloud Backup enables you to create backup files in an Azure account that is different than where your source Cloud Volumes ONTAP volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.
 
-These steps are required only when you are link:task_backup_to_s3.html[backing up Cloud Volumes ONTAP data to Azure Blob storage].
+These steps are required only when you are link:task_backup_to_azure.html[backing up Cloud Volumes ONTAP data to Azure Blob storage].
 
 Follow the steps below to set up your configuration in this manner.
 
