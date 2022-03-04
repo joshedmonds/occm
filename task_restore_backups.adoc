@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_restore_backups.html
-keywords: restoring, restore, restore volumes, restore files, Cloud Backup, cloud backup service, single file restore
+keywords: restoring, restore, restore volumes, restore files, cloud backup, single file restore, volume restore
 summary: Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore individual files from a saved backup file.
 ---
 
@@ -56,6 +56,7 @@ For backups of Kubernetes volumes, you can restore a volume from a backup file t
 | | *Volume Restore* | *File Restore*
 | Amazon S3 | Kubernetes cluster in AWS |
 | Azure Blob | Kubernetes cluster in Azure |
+| Google Cloud Storage | Kubernetes cluster in GCP |
 
 |===
 

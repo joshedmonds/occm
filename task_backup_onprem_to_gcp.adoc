@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_onprem_to_gcp.html
-keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, cloud backup service, backup and compliance
+keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to Google Cloud Storage.
 ---
 
@@ -16,8 +16,6 @@ summary: Complete a few steps to get started backing up data from your on-premis
 Complete a few steps to get started backing up data from your on-premises ONTAP systems to Google Cloud Storage.
 
 TIP: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
-
-A Beta feature released in January 2021 allows you to run compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Data Sense for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Data Sense^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -37,10 +35,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on the system
 
 [role="quick-margin-para"]
-Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
+Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment."]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Select the cloud provider and enter the provider details
 
@@ -59,11 +57,6 @@ image:screenshot_backup_policy_gcp.png[A screenshot that shows the Cloud Backup 
 
 [role="quick-margin-para"]
 Identify which volumes you want to back up using the default backup policy in the Select Volumes page. If you want to assign different backup policies to certain volumes, you can create additional policies and apply them to volumes later.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Activate Compliance scans on the backed up volumes (optional)
-
-[role="quick-margin-para"]
-Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
 
 == Requirements
 
@@ -168,9 +161,9 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 
 .Steps
 
-. From the Canvas, select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel.
+. From the Canvas, select the working environment and click *Enable* next to the Backup & Restore service in the right-panel.
 +
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Enable button which is available after you select an on-prem working environment.]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 . Select Google Cloud as your provider and click *Next*.
 
