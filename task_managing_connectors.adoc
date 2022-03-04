@@ -15,7 +15,7 @@ summary: After you create one or more Connectors, you can manage them by switchi
 [.lead]
 After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and more.
 
-== Switching between Connectors
+== Switch between Connectors
 
 If you have multiple Connectors, you can switch between them to see the Working Environments that are associated with a specific Connector.
 
@@ -29,7 +29,7 @@ image:screenshot_connector_switch.gif[A screenshot that shows the Connector icon
 +
 Cloud Manager refreshes and shows the Working Environments associated with the selected Connector.
 
-== Accessing the local UI
+== Access the local UI
 
 While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
 
@@ -49,7 +49,7 @@ image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector ic
 +
 The Cloud Manager interface running on the Connector loads in a new browser tab.
 
-== Downloading or sending an AutoSupport message
+== Download or send an AutoSupport message
 
 If you're having problems, NetApp personnel might ask you to send an AutoSupport message to NetApp support for troubleshooting purposes.
 
@@ -71,7 +71,23 @@ image:screenshot-help-support.png[A screenshot of the Help menu where Support is
 +
 image:screenshot-connector-autosupport.png[]
 
-== Editing a Connector's URIs
+== Apply security updates
+
+Update the operating system on the Connector to ensure that it's patched with the latest security updates.
+
+.Steps
+
+. Access the CLI shell on the Connector host.
+
+. Run the following commands with elevated privileges:
++
+[source,cli]
+sudo -s
+service service-manager stop
+yum -y update –security
+service service-manager start
+
+== Edit a Connector's URIs
 
 Add and remove the URIs for a Connector.
 
@@ -85,7 +101,7 @@ Add and remove the URIs for a Connector.
 
 . Add and remove URIs and then click *Apply*.
 
-== Fixing download failures when using a Google Cloud NAT gateway
+== Fix download failures when using a Google Cloud NAT gateway
 
 The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.
 
@@ -104,32 +120,7 @@ Note that 32 is an example value. The value that you should use depends on your 
 
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
 
-== Removing Connectors from Cloud Manager
-
-If a Connector is inactive, you can remove it from the list of Connectors in Cloud Manager. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.
-
-Note the following about removing a Connector:
-
-* This action doesn't delete the virtual machine.
-* This action can't be reverted--once you remove a Connector from Cloud Manager, you can't add it back to Cloud Manager.
-
-.Steps
-
-. Click the *Connector* drop-down from the Cloud Manager header.
-
-. Click *Manage Connectors*.
-
-. Click the action menu for an inactive Connector and click *Remove Connector*.
-+
-image:screenshot_connector_remove.gif[A screenshot of the Connector widget where you can remove an inactive Connector.]
-
-. Enter the name of the Connector to confirm and then click Remove.
-
-.Result
-
-Cloud Manager removes the Connector from its records.
-
-== Upgrading the Connector on-prem without internet access
+== Upgrade the Connector on-prem without internet access
 
 If you link:task-install-connector-onprem-no-internet.html[installed the Connector on an on-premises host that doesn't have internet access], you can upgrade the Connector when a newer version is available from the NetApp Support Site.
 
@@ -158,11 +149,36 @@ sudo /path/cloud-manager-connector-offline-v3.9.14
 The Connector automatically updates its software to the latest version, as long as it has link:reference_networking_cloud_manager.html[outbound internet access] to obtain the software update.
 ****
 
-== Uninstalling the Connector software
+== Remove Connectors from Cloud Manager
+
+If a Connector is inactive, you can remove it from the list of Connectors in Cloud Manager. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.
+
+Note the following about removing a Connector:
+
+* This action doesn't delete the virtual machine.
+* This action can't be reverted--once you remove a Connector from Cloud Manager, you can't add it back to Cloud Manager.
+
+.Steps
+
+. Click the *Connector* drop-down from the Cloud Manager header.
+
+. Click *Manage Connectors*.
+
+. Click the action menu for an inactive Connector and click *Remove Connector*.
++
+image:screenshot_connector_remove.gif[A screenshot of the Connector widget where you can remove an inactive Connector.]
+
+. Enter the name of the Connector to confirm and then click Remove.
+
+.Result
+
+Cloud Manager removes the Connector from its records.
+
+== Uninstall the Connector software
 
 Uninstall the Connector software to troubleshoot issues or to permanently remove the software from the host. The steps that you need to use depends on whether you installed the Connector on a host that has internet access or a host in a restricted network that doesn't have internet access.
 
-=== Uninstalling the Connector from a host that has internet access
+=== Uninstall from a host with internet access
 
 The online Connector includes an uninstallation script that you can use to uninstall the software.
 
@@ -174,7 +190,7 @@ The online Connector includes an uninstallation script that you can use to unins
 +
 _silent_ runs the script without prompting you for confirmation.
 
-=== Uninstalling the Connector from a host that doesn't have internet access
+=== Uninstall from a host without internet access
 
 Use these commands if you downloaded the Connector software from the NetApp Support Site and installed it in a restricted network that doesn't have internet access.
 
