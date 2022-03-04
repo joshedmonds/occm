@@ -114,7 +114,7 @@ Note that when you run the template from the dashboard that you need to select t
 
 You can create a new working environment from the _Templates Dashboard_ if your company has created a template for this functionality.
 
-If you have any questions about the details required to create the working environment, see link:task_deploying_otc_aws.htmls[Launching Cloud Volumes ONTAP in AWS^].
+If you have any questions about the details required to create the working environment, see link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
 .Steps
 

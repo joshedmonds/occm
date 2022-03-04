@@ -29,6 +29,14 @@ If your GKE cluster has NetApp Astra Trident installed, and it is using Cloud Vo
 
 * The capability to use Cloud Data Sense to scan your backup files has been removed in this release.
 
+=== Application Template enhancements
+
+* Now you can build a Template to find specific working environments.
++
+Using the "Find Existing Resources" action you can identify the working environment, and then use other template actions, such as creating a volume, to easily perform actions on existing working environments.
+
+* The existing support for creating a Cloud Volumes ONTAP working environment in AWS has been expanded to include creating a high-availability system in addition to a single-node system. link:task_define_templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment[See how to create a template for a Cloud Volumes ONTAP working environment].
+
 == Cloud Manager 3.9.16 (27 Feb 2022)
 
 This update includes enhancements to several features and services.
