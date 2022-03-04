@@ -21,7 +21,7 @@
   <meta http-equiv="nss-product" content="OnCommand Cloud Manager"/>
   
   <meta name="description" content="Complete a few steps to get started backing up data from your persistent volumes on EKS Kubernetes clusters to Amazon S3 storage.">
-  <meta name="keywords" content=" backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, aws, aws s3, amazon s3, s3 bucket, back up volumes, Cloud Backup, cloud backup service, kubernetes">
+  <meta name="keywords" content=" backing up, back up, backup, back up kubernetes volumes, persistent volumes, PV, persistence volume claim, PVC, aws, aws s3, amazon s3, s3 bucket, back up volumes, cloud backup, eks, kubernetes">
   
   
 
@@ -1404,6 +1404,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -2662,6 +2664,8 @@
         Back up to Amazon S3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-azure.html">
         Back up to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-gcp.html">
+        Back up to Google Cloud
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_licensing_cloud_backup.html">
         Set up licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_managing_backups.html">
@@ -3021,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-03 13:13:41 +0000">03/03/2022</time>
+    <time datetime="2022-03-04 14:33:38 +0000">03/04/2022</time>
     
   
 
@@ -3160,7 +3164,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 100Mi
+      storage: 1000Mi
   storageClassName: silver</code></pre>
 </div>
 </div>

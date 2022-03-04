@@ -21,7 +21,7 @@
   <meta http-equiv="nss-product" content="OnCommand Cloud Manager"/>
   
   <meta name="description" content="Complete a few steps to get started backing up data from your on-premises ONTAP systems to object storage in your NetApp StorageGRID systems.">
-  <meta name="keywords" content=" backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, cloud backup service, StorageGRID">
+  <meta name="keywords" content=" backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID">
   
   
 
@@ -1404,6 +1404,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -2662,6 +2664,8 @@
         Back up to Amazon S3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-azure.html">
         Back up to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-gcp.html">
+        Back up to Google Cloud
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_licensing_cloud_backup.html">
         Set up licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_managing_backups.html">
@@ -3021,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-03 13:13:41 +0000">03/03/2022</time>
+    <time datetime="2022-03-04 14:33:38 +0000">03/04/2022</time>
     
   
 
@@ -3092,10 +3096,10 @@
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Two"></span> Enable Cloud Backup on the system</div>
-<p>Select the working environment and click <strong>Enable</strong> next to the Backup &amp; Compliance service in the right-panel, and then follow the setup wizard.</p>
+<p>Select the working environment and click <strong>Enable</strong> next to the Backup &amp; Restore service in the right-panel, and then follow the setup wizard.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p><span class="image"><img src="./media/screenshot_backup_from_onprem_activate.png" alt="A screenshot that shows the Backup &amp; Compliance Enable button which is available after you select an on-prem working environment."></span></p>
+<p><span class="image"><img src="./media/screenshot_backup_cvo_enable.png" alt="A screenshot that shows the Backup &amp; Restore Enable button which is available after you select a working environment."></span></p>
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Three"></span> Enter the StorageGRID details</div>
@@ -3280,7 +3284,7 @@
 <p>An HTTPS connection over port 443 to your ONTAP clusters</p>
 </li>
 <li>
-<p>An outbound internet connection to Cloud Backup service over port 443 (HTTPS)</p>
+<p>An outbound internet connection over port 443 to Cloud Backup</p>
 </li>
 </ul>
 </div>
@@ -3324,9 +3328,9 @@ PAYGO licensing is not supported when backing up files to StorageGRID.
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the Canvas, select the on-premises working environment and click <strong>Enable</strong> next to the Backup service in the right-panel.</p>
+<p>From the Canvas, select the on-premises working environment and click <strong>Enable</strong> next to the Backup &amp; Restore service in the right-panel.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_backup_from_onprem_activate.png" alt="A screenshot that shows the Backup Enable button which is available after you select an on-prem working environment."></span></p>
+<p><span class="image"><img src="./media/screenshot_backup_cvo_enable.png" alt="A screenshot that shows the Backup &amp; Restore Enable button which is available after you select a working environment."></span></p>
 </div>
 </li>
 <li>
@@ -3340,7 +3344,7 @@ PAYGO licensing is not supported when backing up files to StorageGRID.
 <p>The Access Key and the Secret Key used to access the bucket to store backups.</p>
 </li>
 <li>
-<p>The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access</p>
+<p>The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.</p>
 <div class="paragraph">
 <p>Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.</p>
 </div>
@@ -3379,7 +3383,7 @@ PAYGO licensing is not supported when backing up files to StorageGRID.
 </ul>
 </div>
 <div class="paragraph">
-<p>If you want all volumes added in the future to have backup enabled, just leave the checkbox for "Automatically back up future volumes&#8230;&#8203;" checked. If you disable this setting, you&#8217;ll need to manually enable backups for future volumes.</p>
+<p>If you want all volumes added in the future to this cluster to have backup enabled, just leave the checkbox for "Automatically back up future volumes&#8230;&#8203;" checked. If you disable this setting, you&#8217;ll need to manually enable backups for future volumes.</p>
 </div>
 </li>
 <li>

@@ -1404,6 +1404,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -2662,6 +2664,8 @@
         Back up to Amazon S3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-azure.html">
         Back up to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-gcp.html">
+        Back up to Google Cloud
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_licensing_cloud_backup.html">
         Set up licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_managing_backups.html">
@@ -3021,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-03 13:13:41 +0000">03/03/2022</time>
+    <time datetime="2022-03-04 14:33:38 +0000">03/04/2022</time>
     
   
 
@@ -3039,14 +3043,6 @@
           alt="netapp-tonacki"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/38222299?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/juliantap">
-    <img  class="avatar avatar-small"
-          alt="juliantap"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/83591660?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3076,6 +3072,27 @@ Looking for a previous release?<br>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-manager-3-9-16-update-03-mar-2022">Cloud Manager 3.9.16 update (03 Mar 2022)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="cloud-backup-enhancements">Cloud Backup enhancements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Now you can back up persistent volumes from your Google GKE Kubernetes clusters to Google Cloud storage.</p>
+<div class="paragraph">
+<p>If your GKE cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. <a href="task-backup-kubernetes-to-gcp.html">Go here for details</a>.</p>
+</div>
+</li>
+<li>
+<p>The capability to use Cloud Data Sense to scan your backup files has been removed in this release.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -3140,13 +3157,26 @@ Looking for a previous release?<br>
 <p><a href="task_creating_connectors_gcp.html">Learn how to create a Connector in Google Cloud</a>.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="digital-wallet-enhancement">Digital Wallet enhancement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A new "On-Premises ONTAP" tab is available so you can view an inventory of your on-prem ONTAP clusters along with their hardware and service contracts expiration dates. Additional details about the clusters are also available.</p>
+<div class="paragraph">
+<p><a href="task_discovering_ontap.html#viewing-cluster-information-and-contract-details">See how to view this important on-prem cluster information</a>. You&#8217;ll need to have a NetApp Support Site account (NSS) for the clusters, and the NSS credentials will need to be attached to your Cloud Manager account.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="cloud-manager-3-9-15-update-14-feb-2022">Cloud Manager 3.9.15 update (14 Feb 2022)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="cloud-backup-enhancements">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-2">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3461,7 +3491,7 @@ Looking for a previous release?<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="digital-wallet-enhancement">Digital Wallet enhancement</h3>
+<h3 id="digital-wallet-enhancement-2">Digital Wallet enhancement</h3>
 <div class="paragraph">
 <p>If you change the capacity or term for any of your licenses, the license terms now automatically update in the Digital Wallet. You don&#8217;t need to manually update the license yourself.</p>
 </div>
@@ -3470,7 +3500,7 @@ Looking for a previous release?<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-2">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-3">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3753,7 +3783,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-3">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-4">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3848,7 +3878,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 <h2 id="cloud-manager-3-9-12-update-5-nov-2021">Cloud Manager 3.9.12 update (5 Nov 2021)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-4">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-5">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4020,7 +4050,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-5">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-6">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4271,7 +4301,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-6">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-7">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4367,7 +4397,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 <p>This update includes enhancements to several features and services.</p>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-7">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-8">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4622,7 +4652,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-8">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-9">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4737,7 +4767,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="digital-wallet-enhancement-2">Digital Wallet enhancement</h3>
+<h3 id="digital-wallet-enhancement-3">Digital Wallet enhancement</h3>
 <div class="paragraph">
 <p>The Digital Wallet page is now located in its own tab under the Resources section. <a href="task_managing_licenses.html">Learn how to manage licenses from your Digital Wallet</a>.</p>
 </div>
@@ -4805,7 +4835,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-9">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-10">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5001,7 +5031,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 <p>This update includes enhancements to several features and services.</p>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-10">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-11">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5713,7 +5743,7 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-11">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-12">Cloud Backup enhancements</h3>
 <div class="paragraph">
 <p>You can restore individual files to additional destination working environments:</p>
 </div>
@@ -5907,7 +5937,7 @@ The maximum system capacity with disks alone remains at 256 TB due to GCP limits
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-backup-enhancements-12">Cloud Backup enhancements</h3>
+<h3 id="cloud-backup-enhancements-13">Cloud Backup enhancements</h3>
 <div class="ulist">
 <ul>
 <li>

@@ -1404,6 +1404,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -2662,6 +2664,8 @@
         Back up to Amazon S3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-azure.html">
         Back up to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-gcp.html">
+        Back up to Google Cloud
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_licensing_cloud_backup.html">
         Set up licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_managing_backups.html">
@@ -3021,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-03 13:13:41 +0000">03/03/2022</time>
+    <time datetime="2022-03-04 14:33:38 +0000">03/04/2022</time>
     
   
 
@@ -3039,14 +3043,6 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/felix-melligan">
-    <img  class="avatar avatar-small"
-          alt="felix-melligan"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/51798057?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3172,6 +3168,10 @@ NetApp StorageGRID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes cluster in Azure</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes cluster in Google</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud Storage</p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -3230,6 +3230,12 @@ On-premises ONTAP system</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google<br>
 On-premises ONTAP system</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes cluster in Google</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -3417,7 +3423,7 @@ On-premises ONTAP system</p></td>
 </ul>
 </div>
 <div class="paragraph">
-<p>Once you renew your BYOL subscription, Cloud Manager automatically updates the license. If Cloud Manager can&#8217;t access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see <a href="task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license">how to update a Cloud Backup license</a>.</p>
+<p>Once you renew your BYOL subscription, Cloud Manager automatically updates the license. If Cloud Manager can&#8217;t access the license file over the secure internet connection (for example, when installed in a dark site), you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see <a href="task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license">how to update a Cloud Backup license</a>.</p>
 </div>
 <div class="paragraph">
 <p>Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backup activity that occurred while the license was expired.</p>
@@ -3663,12 +3669,6 @@ The retention period for backups of data protection volumes is the same as defin
 <div class="ulist">
 <ul>
 <li>
-<p>When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.</p>
-</li>
-<li>
-<p>When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.</p>
-</li>
-<li>
 <p>The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.</p>
 </li>
 <li>
@@ -3729,9 +3729,6 @@ The retention period for backups of data protection volumes is the same as defin
 </li>
 <li>
 <p>File level restore is not supported when using the same account with different Cloud Managers in different subnets.</p>
-</li>
-<li>
-<p>File level restore is not supported from backup files that reside in archival storage.</p>
 </li>
 </ul>
 </div>

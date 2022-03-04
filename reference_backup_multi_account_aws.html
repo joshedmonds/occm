@@ -9,7 +9,7 @@
   <meta property="og:title" content="Configure backup for multi-account access in AWS" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/occm/reference_backup_multi_account_aws.html" />
-	<meta property="og:description" content="Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside, and that is different than the acc..." />
+	<meta property="og:description" content="Cloud Backup enables you to create backup files in an AWS account that is different than where your source Cloud Volumes ONTAP volumes reside, and that is di..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/occm/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
@@ -20,7 +20,7 @@
   
   <meta http-equiv="nss-product" content="OnCommand Cloud Manager"/>
   
-  <meta name="description" content="Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside, and that is different than the acc...">
+  <meta name="description" content="Cloud Backup enables you to create backup files in an AWS account that is different than where your source Cloud Volumes ONTAP volumes reside, and that is di...">
   <meta name="keywords" content=" aws, amazon, s3, multiple accounts, multiple regions, backup">
   
   
@@ -1395,6 +1395,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -2662,6 +2664,8 @@
         Back up to Amazon S3
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-azure.html">
         Back up to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task-backup-kubernetes-to-gcp.html">
+        Back up to Google Cloud
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_licensing_cloud_backup.html">
         Set up licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/occm/task_managing_backups.html">
@@ -3021,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-03 13:13:41 +0000">03/03/2022</time>
+    <time datetime="2022-03-04 14:33:38 +0000">03/04/2022</time>
     
   
 
@@ -3043,10 +3047,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.</p>
+<p>Cloud Backup enables you to create backup files in an AWS account that is different than where your source Cloud Volumes ONTAP volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.</p>
 </div>
 <div class="paragraph">
-<p>Just follow the steps below to set up your configuration in this manner.</p>
+<p>These steps are required only when you are <a href="task_backup_to_s3.html">backing up Cloud Volumes ONTAP data to Amazon S3</a>.</p>
+</div>
+<div class="paragraph">
+<p>Follow the steps below to set up your configuration in this manner.</p>
 </div>
 </div>
 </div>
