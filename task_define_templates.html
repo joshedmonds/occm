@@ -3025,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-04 14:33:38 +0000">03/04/2022</time>
+    <time datetime="2022-03-04 21:21:10 +0000">03/04/2022</time>
     
   
 
@@ -3676,7 +3676,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 <div class="sect2">
 <h3 id="create-a-template-for-a-cloud-volumes-ontap-working-environment">Create a template for a Cloud Volumes ONTAP working environment</h3>
 <div class="paragraph">
-<p>You can create a Cloud Volumes ONTAP working environment using templates.</p>
+<p>You can create a single-node or high-availability Cloud Volumes ONTAP working environment using templates.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3688,7 +3688,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 <div class="ulist">
 <ul>
 <li>
-<p>This support is provided only for AWS environments at this time, and only for single-node clusters.</p>
+<p>This support is provided only for AWS environments at this time.</p>
 </li>
 <li>
 <p>This template doesn&#8217;t create the first volume in the working environment. You must add a "Create Volume in Cloud Volumes ONTAP" action in the template to create the volume.</p>
@@ -3700,7 +3700,7 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 </table>
 </div>
 <div class="paragraph">
-<p>See <a href="task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws" target="_blank" rel="noopener">how to launch a single-node Cloud Volumes ONTAP system in AWS</a> for the prerequisites that must be in place, and for details about all the parameters you need to complete in this template.</p>
+<p>See <a href="task_deploying_otc_aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws" target="_blank" rel="noopener">how to launch a single-node Cloud Volumes ONTAP system in AWS</a> or a <a href="task_deploying_otc_aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws">Cloud Volumes ONTAP HA pair in AWS</a> for the prerequisites that must be in place, and for details about all the parameters you&#8217;ll need to define in this template.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3724,9 +3724,9 @@ For example, you could specify that "db" be a required prefix, suffix, or contai
 </div>
 </li>
 <li>
-<p>Select <strong>Create Working Environment in AWS (single node)</strong> as the type of resource you want to create, and click <strong>Apply</strong>.</p>
+<p>Select <strong>Create Working Environment in AWS (single node)</strong> or <strong>Create Working Environment in AWS (high availability)</strong> as the type of resource you want to create, and click <strong>Apply</strong>.</p>
 <div class="paragraph">
-<p>The <em>Create Working Environment in AWS (single node)</em> page is displayed.</p>
+<p>For this example, the <em>Create Working Environment in AWS (single node)</em> page is displayed.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_create_template_cvo_env_aws1.png" alt="A screenshot showing a blank Cloud Volumes ONTAP working environment template that you need to fill in."></span></p>
@@ -3841,7 +3841,7 @@ For information about tags, refer to <a href="https://docs.aws.amazon.com/AWSEC2
 <h2 id="examples-of-finding-existing-resources-and-enabling-services-using-templates">Examples of finding existing resources and enabling services using templates</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using the <em>Find Existing Resources</em> action you can find existing resources and enable a cloud service on those resources. This action provides a variety of filters so you can narrow your search to just the resources you are interested in.</p>
+<p>Using the <em>Find Existing Resources</em> action you can find specific working environments or find existing volumes and enable a cloud service on those volumes. This action provides a variety of filters so you can narrow your search to just the resources you are interested in.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3858,7 +3858,7 @@ At this time you can find volumes within Cloud Volumes ONTAP, on-premises ONTAP,
 <div class="sect2">
 <h3 id="find-existing-volumes-and-activate-cloud-backup">Find existing volumes and activate Cloud Backup</h3>
 <div class="paragraph">
-<p>The current functionality enables you to find volumes on Cloud Volumes ONTAP and on-premises ONTAP working environments that do not currently have Cloud Backup enabled. When you enable Cloud Backup on specific volumes, this action also sets the backup policy you configure as the default policy for that working environment. So all future volumes on those working environments can use the same backup policy.</p>
+<p>The current <em>Find Existing Resources</em> action functionality enables you to find volumes on Cloud Volumes ONTAP and on-premises ONTAP working environments that do not currently have Cloud Backup enabled. When you enable Cloud Backup on specific volumes, this action also sets the backup policy you configure as the default policy for that working environment. So all future volumes on those working environments can use the same backup policy.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3956,6 +3956,72 @@ At this time you can find volumes within Cloud Volumes ONTAP, on-premises ONTAP,
 </li>
 <li>
 <p>Click <strong>Apply</strong> to save the customization you made to the Backup action, and then click <strong>Save Template</strong> when you are done.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>The template is created and you are returned to the Template Dashboard where your new template appears.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#what-to-do-after-you-have-created-the-template">what you should tell your users about templates</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-existing-working-environments">Find existing working environments</h3>
+<div class="paragraph">
+<p>Using the <em>Find Existing Resources</em> action you can find the working environment, and then use other template actions, such as creating a volume, to easily perform actions on the existing working environment.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Select the <strong>AppTemplate</strong> service, click the <strong>Templates</strong> tab, and click <strong>Add New Template</strong>.</p>
+<div class="paragraph">
+<p>The <em>Select_a Template</em> page is displayed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_blank.png" alt="A screenshot showing how to select the primary action that will be performed using this template."></span></p>
+</div>
+</li>
+<li>
+<p>Select <strong>Blank template</strong> and click <strong>Get Started</strong>.</p>
+<div class="paragraph">
+<p>The <em>Add New Action</em> page is displayed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_find_resource_action.png" alt="A screenshot showing how to select the Find Existing Resources action from the Add New Action page."></span></p>
+</div>
+</li>
+<li>
+<p>Select <strong>Find Existing Resources</strong> as the type of action you want to define, and click <strong>Apply</strong>.</p>
+<div class="paragraph">
+<p>The <em>Find Existing Resources Action Definition</em> page is displayed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_define_find_work_env.png" alt="A screenshot showing a blank find existing resources template that you need to fill in."></span></p>
+</div>
+</li>
+<li>
+<p><strong>Action Name</strong>: Enter a customized action name instead of the default value. For example, "Find work environments that include Dallas".</p>
+</li>
+<li>
+<p><strong>Resource Type:</strong> Select the type of resource you want to find. In this case you would select <strong>Working Environments</strong>.</p>
+<div class="paragraph">
+<p>This is the only required entry for this action. You could click <strong>Continue</strong> now and you&#8217;ll receive a list of all working environments in your environment.</p>
+</div>
+<div class="paragraph">
+<p>Instead, it is recommended that you fill out a few filters to reduce the number of results (in this case, working environments).</p>
+</div>
+</li>
+<li>
+<p>After defining a few filters in the <em>Details</em> area, you can select a specific working environment.</p>
+</li>
+<li>
+<p>Click <strong>Continue</strong> to save your settings, and then click <strong>Done</strong>.</p>
+</li>
+<li>
+<p>Enter the template name in the top left, and then click <strong>Save Template</strong></p>
 </li>
 </ol>
 </div>
