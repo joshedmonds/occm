@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_to_azure.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, Cloud Backup, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, cloud backup
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Azure Blob storage.
 ---
 

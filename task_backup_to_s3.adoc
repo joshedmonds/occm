@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_to_s3.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, Cloud Backup, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, cloud backup
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Amazon S3.
 ---
 
@@ -34,7 +34,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 * Existing systems: Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
 +
-image:screenshot_backup_cvo_enable.png[A screenshot that shows the Cloud Backup Enable button which is available after you select a working environment.]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enter the provider details
 

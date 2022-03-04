@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_onprem_to_azure.html
-keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, cloud backup service, backup and compliance
+keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP systems to Azure Blob storage.
 ---
 
@@ -16,8 +16,6 @@ summary: Complete a few steps to get started backing up data from your on-premis
 Complete a few steps to get started backing up data from your on-premises ONTAP systems to Azure Blob storage.
 
 TIP: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
-
-A Beta feature released in January 2021 allows you to run compliance scans on the backed up volumes from your on-premises systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Data Sense for your on-premises volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Data Sense^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -36,10 +34,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on the system
 
 [role="quick-margin-para"]
-Select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
+Select the working environment and click *Enable* next to the Backup & Restore service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_from_onprem_activate.png["A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment."]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Select the cloud provider and enter the provider details
 
@@ -72,11 +70,6 @@ image:screenshot_backup_policy_azure.png[A screenshot that shows the Cloud Backu
 
 [role="quick-margin-para"]
 Identify which volumes you want to back up using the default backup policy in the Select Volumes page. If you want to assign different backup policies to certain volumes, you can create additional policies and apply them to volumes later.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Activate Compliance scans on the backed up volumes (optional)
-
-[role="quick-margin-para"]
-Choose whether you want to have Cloud Data Sense scan the volumes that are backed up in the cloud.
 
 == Requirements
 
@@ -190,9 +183,9 @@ Enable Cloud Backup at any time directly from the on-premises working environmen
 
 .Steps
 
-. From the Canvas, select the working environment and click *Enable* next to the Backup & Compliance service in the right-panel.
+. From the Canvas, select the working environment and click *Enable* next to the Backup & Restore service in the right-panel.
 +
-image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Enable button which is available after you select an on-prem working environment.]
+image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Restore Enable button which is available after you select a working environment.]
 
 . Select Microsoft Azure as your provider and click *Next*.
 
@@ -230,31 +223,12 @@ image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes
 If you want all volumes added in the future to have backup enabled, just leave the checkbox for "Automatically back up future volumes..." checked. If you disable this setting, you'll need to manually enable backups for future volumes.
 
 . Click *Activate Backup* and Cloud Backup starts taking the initial backups of your volumes.
-+
-You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Data Sense scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Data Sense instance^]).
-+
-image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Data Sense on your backed up volumes.]
-
-. Click *Go to Data Sense* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Data Sense.)
-
-* If an instance of Cloud Data Sense is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-data-sense-in-your-working-environments[how to choose the volumes^].
-+
-image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
-* If Cloud Data Sense has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
-+
-image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Data Sense.]
-+
-After you have deployed Compliance you can choose the volumes you want to scan as described above.
 
 .Result
 
-Cloud Backup backs up your volumes from the on-premises ONTAP system, and optionally, Cloud Data Sense runs compliance scans on the backed up volumes.
+Cloud Backup starts taking the initial backups of each selected volume and the Volume Backup Dashboard is displayed so you can monitor the state of the backups.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^].
 You can also link:task_restore_backups.html[restore entire volumes or individual files from a backup file^] to a Cloud Volumes ONTAP system in Azure, or to an on-premises ONTAP system.
-
-You can link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Data Sense that can help you understand data context and identify sensitive data in your organization.
-
-NOTE: The scan results are not available immediately because Cloud Backup has to finish creating the backups before Cloud Data Sense can start compliance scans.
