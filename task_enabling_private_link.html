@@ -3025,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 17:32:25 +0000">03/07/2022</time>
+    <time datetime="2022-03-07 19:33:12 +0000">03/07/2022</time>
     
   
 
@@ -3080,7 +3080,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="providing-cloud-manager-with-details-about-your-azure-private-dns">Providing Cloud Manager with details about your Azure Private DNS</h2>
+<h2 id="provide-cloud-manager-with-details-about-your-azure-private-dns">Provide Cloud Manager with details about your Azure Private DNS</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you use <a href="https://docs.microsoft.com/en-us/azure/dns/private-dns-overview" target="_blank" rel="noopener">Azure Private DNS</a>, then you need to modify a configuration file on each Connector. Otherwise, Cloud Manager can&#8217;t enable the Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts.</p>
@@ -3123,7 +3123,37 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="disabling-azure-private-link-connections">Disabling Azure Private Link connections</h2>
+<h2 id="enable-rollback-on-failures">Enable rollback on failures</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If Cloud Manager fails to create an Azure Private Link as part of specific actions, it completes the action without the Azure Private Link connection. This can happen when creating a new working environment (single node or HA pair), or when the following actions occur on an HA pair: creating a new aggregate, adding disks to an existing aggregate, or creating a new storage account when going above 32 TiB.</p>
+</div>
+<div class="paragraph">
+<p>You can change this default behavior by enabling rollback if Cloud Manager fails to create the Azure Private Link. This can help to ensure that you&#8217;re fully compliant with your company&#8217;s security regulations.</p>
+</div>
+<div class="paragraph">
+<p>If you enable rollback, Cloud Manager stops the action and rolls back all resources that were created as part of the action.</p>
+</div>
+<div class="paragraph">
+<p>Enabling rollback is supported through the API only.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Step</div>
+<ol class="arabic">
+<li>
+<p>Use the <code>PUT /occm/config</code> API call with the following request body:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{ "rollbackOnAzurePrivateLinkFailure": true }</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="disable-azure-private-link-connections">Disable Azure Private Link connections</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.</p>

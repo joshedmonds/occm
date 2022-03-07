@@ -3025,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 17:32:25 +0000">03/07/2022</time>
+    <time datetime="2022-03-07 19:33:12 +0000">03/07/2022</time>
     
   
 
@@ -3084,6 +3084,15 @@
 <h3 id="recommendations-when-using-high-write-speed">Recommendations when using high write speed</h3>
 <div class="paragraph">
 <p>If you enable high write speed, you should ensure write protection at the application layer, or that the applications can tolerate data loss, if it occurs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="high-write-speed-with-an-ha-pair-in-aws">High write speed with an HA pair in AWS</h3>
+<div class="paragraph">
+<p>If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-ha.html">Learn more about HA pairs in AWS</a>.</p>
 </div>
 </div>
 <div class="sect2">
