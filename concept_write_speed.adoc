@@ -41,7 +41,7 @@ If you enable high write speed, you should ensure write protection at the applic
 
 If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.
 
-link:concept-ha.html[Learn more about HA pairs in AWS].
+link:concept_ha.html[Learn more about HA pairs in AWS].
 
 === Configurations that support high write speed
 
