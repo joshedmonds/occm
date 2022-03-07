@@ -3025,7 +3025,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 17:14:52 +0000">03/07/2022</time>
+    <time datetime="2022-03-07 17:32:25 +0000">03/07/2022</time>
     
   
 
@@ -3534,207 +3534,13 @@ The source is the interface (IP address) on the FSx for ONTAP system.
 </div>
 </div>
 <div class="sect1">
-<h2 id="rules-for-the-ha-mediator-external-security-group">Rules for the HA mediator external security group</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The predefined external security group for the FSx for ONTAP HA mediator includes the following inbound and outbound rules.</p>
-</div>
-<div class="sect2">
-<h3 id="inbound-rules-2">Inbound rules</h3>
-<div class="paragraph">
-<p>The source for inbound rules is 0.0.0.0/0.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH connections to the HA mediator</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RESTful API access from the Connector</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="outbound-rules-2">Outbound rules</h3>
-<div class="paragraph">
-<p>The predefined security group for the HA mediator opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
-</div>
-<div class="sect3">
-<h4 id="basic-outbound-rules-2">Basic outbound rules</h4>
-<div class="paragraph">
-<p>The predefined security group for the HA mediator includes the following outbound rules.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="advanced-outbound-rules-2">Advanced outbound rules</h4>
-<div class="paragraph">
-<p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the HA mediator.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 44.4445%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Destination</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connector IP address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Download upgrades for the mediator</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS API services</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assist with storage failover</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS API services</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assist with storage failover</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Rather than open ports 443 and 53, you can create an interface VPC endpoint from the target subnet to the AWS EC2 service.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rules-for-the-ha-mediator-internal-security-group">Rules for the HA mediator internal security group</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. Cloud Manager always creates this security group. You do not have the option to use your own.</p>
-</div>
-<div class="sect2">
-<h3 id="inbound-rules-3">Inbound rules</h3>
-<div class="paragraph">
-<p>The predefined security group includes the following inbound rules.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All traffic</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Communication between the HA mediator and HA nodes</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="outbound-rules-3">Outbound rules</h3>
-<div class="paragraph">
-<p>The predefined security group includes the following outbound rules.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All traffic</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Communication between the HA mediator and HA nodes</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="rules-for-the-connector">Rules for the Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The security group for the Connector requires both inbound and outbound rules.</p>
 </div>
 <div class="sect2">
-<h3 id="inbound-rules-4">Inbound rules</h3>
+<h3 id="inbound-rules-2">Inbound rules</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -3773,12 +3579,12 @@ Rather than open ports 443 and 53, you can create an interface VPC endpoint from
 </table>
 </div>
 <div class="sect2">
-<h3 id="outbound-rules-4">Outbound rules</h3>
+<h3 id="outbound-rules-2">Outbound rules</h3>
 <div class="paragraph">
 <p>The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
 </div>
 <div class="sect3">
-<h4 id="basic-outbound-rules-3">Basic outbound rules</h4>
+<h4 id="basic-outbound-rules-2">Basic outbound rules</h4>
 <div class="paragraph">
 <p>The predefined security group for the Connector includes the following outbound rules.</p>
 </div>
@@ -3810,7 +3616,7 @@ Rather than open ports 443 and 53, you can create an interface VPC endpoint from
 </table>
 </div>
 <div class="sect3">
-<h4 id="advanced-outbound-rules-3">Advanced outbound rules</h4>
+<h4 id="advanced-outbound-rules-2">Advanced outbound rules</h4>
 <div class="paragraph">
 <p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.</p>
 </div>
