@@ -138,7 +138,7 @@ Ensure that the Connector has the required networking connections.
 
 === Supported regions
 
-You can create backups from on-premises systems to Amazon S3 in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^]. You specify the region where the backups will be stored when you set up the service.
+You can create backups from on-premises systems to Amazon S3 in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^]; including AWS GovCloud regions. You specify the region where the backups will be stored when you set up the service.
 
 === License requirements
 
