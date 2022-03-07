@@ -64,14 +64,13 @@ This means that only privileged users who can access the end-user internal VPC/V
 
 It also means that the following services aren't available from Cloud Manager:
 
-* Cloud Data Sense
 * Kubernetes
 * Cloud Tiering
 * Global File Cache
 
 The SaaS platform is required to use these services.
 
-NOTE: The Monitoring service is supported and available in Government regions.
+NOTE: Cloud Backup, Cloud Data Sense, and the Monitoring service are supported and available in Government regions.
 
 == Cloud Manager doesn't support downgrades of Cloud Volumes ONTAP
 
