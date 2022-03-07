@@ -59,7 +59,7 @@ A reboot isn't required.
 
 == Enable rollback on failures
 
-If Cloud Manager fails to create an Azure Private Link as part of specific actions, it completes the action without the Azure Private Link connection. This can happen when creating a new working environment, creating a new aggregate, adding capacity to an existing aggregate, or creating a new storage account when going above 32 TiB.
+If Cloud Manager fails to create an Azure Private Link as part of specific actions, it completes the action without the Azure Private Link connection. This can happen when creating a new working environment (single node or HA pair), or when the following actions occur on an HA pair: creating a new aggregate, adding disks to an existing aggregate, or creating a new storage account when going above 32 TiB.
 
 You can change this default behavior by enabling rollback if Cloud Manager fails to create the Azure Private Link. This can help to ensure that you're fully compliant with your company's security regulations.
 
