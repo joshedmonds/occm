@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-install-connector-onprem-no-internet.html
 keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
-summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan the data with Cloud Data Sense.
+summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan them with Cloud Data Sense.
 ---
 
 = Install the Connector on-prem without internet access
@@ -13,8 +13,7 @@ summary: You can install the Connector on an on-premises Linux host that doesn't
 :imagesdir: ./media/
 
 [.lead]
-You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan the data with Cloud Data Sense.
-//
+You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, and scan them with Cloud Data Sense.
 // You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
 
 These installation instructions are specifically for the use case described above. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].

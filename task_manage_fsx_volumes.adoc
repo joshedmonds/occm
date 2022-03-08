@@ -17,7 +17,7 @@ After you set up your working environment, you can create and manage FSx for ONT
 
 == Create volumes
 
-You can create and manage NFS and CIFS volumes from your FSx for ONTAP working enviornment in Cloud Manager. NFS and CIFS volumes created using ONTAP CLI will also be visible in your FSx for ONTAP working environment.
+You can create and manage NFS and CIFS volumes from your FSx for ONTAP working environment in Cloud Manager. NFS and CIFS volumes created using ONTAP CLI will also be visible in your FSx for ONTAP working environment.
 
 You can create iSCSI volumes using ONTAP CLI, ONTAP API, or Cloud Manager API and manage them using Cloud Manager in your FSx for ONTAP working environment.
 

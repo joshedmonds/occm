@@ -19,6 +19,24 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.16 update (03 Mar 2022)
+
+=== Cloud Backup enhancements
+
+* Now you can back up persistent volumes from your Google GKE Kubernetes clusters to Google Cloud storage.
++
+If your GKE cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. link:task-backup-kubernetes-to-gcp.html[Go here for details].
+
+* The capability to use Cloud Data Sense to scan your backup files has been removed in this release.
+
+=== Application Template enhancements
+
+* Now you can build a Template to find specific working environments.
++
+Using the "Find Existing Resources" action you can identify the working environment, and then use other template actions, such as creating a volume, to easily perform actions on existing working environments.
+
+* The existing support for creating a Cloud Volumes ONTAP working environment in AWS has been expanded to include creating a high-availability system in addition to a single-node system. link:task_define_templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment[See how to create a template for a Cloud Volumes ONTAP working environment].
+
 == Cloud Manager 3.9.16 (27 Feb 2022)
 
 This update includes enhancements to several features and services.
@@ -56,6 +74,12 @@ image:screenshot-sync-data-sense.png[A screenshot that shows the Data Sense Inte
 When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
 
 link:task_creating_connectors_gcp.html[Learn how to create a Connector in Google Cloud].
+
+=== Digital Wallet enhancement
+
+* A new "On-Premises ONTAP" tab is available so you can view an inventory of your on-prem ONTAP clusters along with their hardware and service contracts expiration dates. Additional details about the clusters are also available.
++
+link:task_discovering_ontap.html#viewing-cluster-information-and-contract-details[See how to view this important on-prem cluster information]. You'll need to have a NetApp Support Site account (NSS) for the clusters, and the NSS credentials will need to be attached to your Cloud Manager account.
 
 == Cloud Manager 3.9.15 update (14 Feb 2022)
 
