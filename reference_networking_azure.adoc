@@ -30,10 +30,6 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 
 link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
 
-=== Security groups
-
-You don't need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.
-
 === IP addresses
 
 Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:
@@ -80,6 +76,10 @@ For instructions, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vp
 A Cloud Volumes ONTAP HA pair includes an HA interconnect, which allows each node to continually check whether its partner is functioning and to mirror log data for the other’s nonvolatile memory. The HA interconnect uses TCP port 10006 for communication.
 
 By default, communication between the HA interconnect LIFs is open and there are no security group rules for this port. But if you create a firewall between the HA interconnect LIFs, then you need to ensure that TCP traffic is open for port 10006 so that the HA pair can operate properly.
+
+=== Security groups
+
+You don't need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.
 
 === Security group rules
 
