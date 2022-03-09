@@ -2995,19 +2995,11 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 22:13:02 +0000">03/08/2022</time>
+    <time datetime="2022-03-09 22:05:11 +0000">03/09/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -3022,7 +3014,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="cloud-volumes-ontap-networking">Cloud Volumes ONTAP networking</h2>
+<h2 id="requirements-for-cloud-volumes-ontap">Requirements for Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following networking requirements must be met in Azure.</p>
@@ -3047,12 +3039,6 @@
 </div>
 <div class="paragraph">
 <p><a href="task_setting_up_ontap_cloud.html">Learn how to configure AutoSupport</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="security-groups">Security groups</h3>
-<div class="paragraph">
-<p>You don&#8217;t need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3131,82 +3117,31 @@ A LIF is an IP address associated with a physical port. An SVM management LIF is
 <p>For instructions, refer to <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal" target="_blank" rel="noopener">Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal</a>.</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="requirements-for-the-connector">Requirements for the Connector</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to <a href="task_configuring_proxy.html">Configuring the Connector to use a proxy server</a>.
-</td>
-</tr>
-</table>
-</div>
 <div class="sect2">
-<h3 id="connections-to-target-networks">Connections to target networks</h3>
+<h3 id="port-for-the-ha-interconnect">Port for the HA interconnect</h3>
 <div class="paragraph">
-<p>A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.</p>
+<p>A Cloud Volumes ONTAP HA pair includes an HA interconnect, which allows each node to continually check whether its partner is functioning and to mirror log data for the other’s nonvolatile memory. The HA interconnect uses TCP port 10006 for communication.</p>
 </div>
 <div class="paragraph">
-<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.</p>
+<p>By default, communication between the HA interconnect LIFs is open and there are no security group rules for this port. But if you create a firewall between the HA interconnect LIFs, then you need to ensure that TCP traffic is open for port 10006 so that the HA pair can operate properly.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="outbound-internet-access-2">Outbound internet access</h3>
+<h3 id="security-groups">Security groups</h3>
 <div class="paragraph">
-<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Endpoints</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within Cloud Manager.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
-<br>
-https://*.blob.core.windows.net</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
-</tr>
-</tbody>
-</table>
+<p>You don&#8217;t need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="security-group-rules-for-cloud-volumes-ontap">Security group rules for Cloud Volumes ONTAP</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="security-group-rules">Security group rules</h3>
 <div class="paragraph">
 <p>Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.</p>
 </div>
 <div class="paragraph">
 <p>The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.</p>
 </div>
-<div class="sect2">
-<h3 id="inbound-rules-for-single-node-systems">Inbound rules for single node systems</h3>
+<div class="sect3">
+<h4 id="inbound-rules-for-single-node-systems">Inbound rules for single node systems</h4>
 <div class="paragraph">
 <p>The rules listed below allow traffic, unless the description notes that it blocks specific inbound traffic.</p>
 </div>
@@ -3421,8 +3356,8 @@ Any protocol</p></td>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="inbound-rules-for-ha-systems">Inbound rules for HA systems</h3>
+<div class="sect3">
+<h4 id="inbound-rules-for-ha-systems">Inbound rules for HA systems</h4>
 <div class="paragraph">
 <p>The rules listed below allow traffic, unless the description notes that it blocks specific inbound traffic.</p>
 </div>
@@ -3521,13 +3456,13 @@ Any protocol</p></td>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="outbound-rules">Outbound rules</h3>
+<div class="sect3">
+<h4 id="outbound-rules">Outbound rules</h4>
 <div class="paragraph">
 <p>The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
 </div>
-<div class="sect3">
-<h4 id="basic-outbound-rules">Basic outbound rules</h4>
+<div class="sect4">
+<h5 id="basic-outbound-rules">Basic outbound rules</h5>
 <div class="paragraph">
 <p>The predefined security group for Cloud Volumes ONTAP includes the following outbound rules.</p>
 </div>
@@ -3558,8 +3493,8 @@ Any protocol</p></td>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="advanced-outbound-rules">Advanced outbound rules</h4>
+<div class="sect4">
+<h5 id="advanced-outbound-rules">Advanced outbound rules</h5>
 <div class="paragraph">
 <p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP.</p>
 </div>
@@ -3835,14 +3770,75 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="security-group-rules-for-the-connector">Security group rules for the Connector</h2>
+<h2 id="requirements-for-the-connector">Requirements for the Connector</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/occm/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to <a href="task_configuring_proxy.html">Configuring the Connector to use a proxy server</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="connections-to-target-networks">Connections to target networks</h3>
+<div class="paragraph">
+<p>A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="outbound-internet-access-2">Outbound internet access</h3>
+<div class="paragraph">
+<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Endpoints</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within Cloud Manager.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
+<br>
+https://*.blob.core.windows.net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="security-group-rules-2">Security group rules</h3>
 <div class="paragraph">
 <p>The security group for the Connector requires both inbound and outbound rules.</p>
 </div>
-<div class="sect2">
-<h3 id="inbound-rules">Inbound rules</h3>
+<div class="sect3">
+<h4 id="inbound-rules">Inbound rules</h4>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
 <col>
@@ -3875,13 +3871,13 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="outbound-rules-2">Outbound rules</h3>
+<div class="sect3">
+<h4 id="outbound-rules-2">Outbound rules</h4>
 <div class="paragraph">
 <p>The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
 </div>
-<div class="sect3">
-<h4 id="basic-outbound-rules-2">Basic outbound rules</h4>
+<div class="sect4">
+<h5 id="basic-outbound-rules-2">Basic outbound rules</h5>
 <div class="paragraph">
 <p>The predefined security group for the Connector includes the following outbound rules.</p>
 </div>
@@ -3912,8 +3908,8 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="advanced-outbound-rules-2">Advanced outbound rules</h4>
+<div class="sect4">
+<h5 id="advanced-outbound-rules-2">Advanced outbound rules</h5>
 <div class="paragraph">
 <p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.</p>
 </div>
@@ -4018,6 +4014,7 @@ The source IP address is the Connector host.
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>

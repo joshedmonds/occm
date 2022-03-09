@@ -2995,19 +2995,11 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 22:13:02 +0000">03/08/2022</time>
+    <time datetime="2022-03-09 22:05:11 +0000">03/09/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -3129,6 +3121,41 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="connect-to-the-linux-vm">Connect to the Linux VM</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you need to connect to the Linux VM that the Connector runs on, you can do so by using the connectivity options available from your cloud provider.</p>
+</div>
+<div class="sect2">
+<h3 id="aws">AWS</h3>
+<div class="paragraph">
+<p>When you created the Connector instance in AWS, you provided an AWS access key and secret key. You can use this key pair to SSH to the instance.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html" target="_blank" rel="noopener">AWS Docs: Connect to your Linux instance</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure">Azure</h3>
+<div class="paragraph">
+<p>When you created the Connector VM in Azure, you chose to authenticate with a password or SSH public key. Use the authentication method that you chose to connect to the VM.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys#ssh-into-your-vm" target="_blank" rel="noopener">Azure Docs: SSH into your VM</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud">Google Cloud</h3>
+<div class="paragraph">
+<p>You can&#8217;t specify an authentication method when you create a Connector in Google Cloud. However, you can connect to the Linux VM instance using the Google Cloud Console or Google Cloud CLI (gcloud).</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.google.com/compute/docs/instances/connecting-to-instance" target="_blank" rel="noopener">Google Cloud Docs: Connect to Linux VMs</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apply-security-updates">Apply security updates</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -3146,7 +3173,7 @@
 <div class="content">
 <pre class="highlight"><code class="language-cli" data-lang="cli">sudo -s
 service service-manager stop
-yum -y update –security
+yum -y update –-security
 service service-manager start</code></pre>
 </div>
 </div>
