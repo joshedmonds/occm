@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta http-equiv="nss-product" content="OnCommand Cloud Manager"/><meta name="description" content="Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources and working environments to map ...">
-  <meta name="keywords" content=" artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, sharepoint, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense"><!-- Icons -->
+  <meta name="keywords" content=" artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, sharepoint, on-prem ontap, file shares, object storage, aip labels, governance, data sense"><!-- Icons -->
   <link rel="icon" href="/us-en/occm/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -2995,11 +2995,27 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-09 22:05:11 +0000">03/09/2022</time>
+    <time datetime="2022-03-10 14:15:42 +0000">03/10/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/juliantap">
+    <img  class="avatar avatar-small"
+          alt="juliantap"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/83591660?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -3053,7 +3069,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Identify the stale data, non-business data, duplicate files, and very large files in your systems.</p>
+<p>Identify the stale data, non-business data, duplicate files, files with open permissions, and very large files in your systems.</p>
 <div class="paragraph">
 <p>You can use this information to decide whether you want to move, delete, or tier some files to less expensive object storage.</p>
 </div>
@@ -3121,18 +3137,6 @@
 <div class="paragraph">
 <p>Data Sense supports NFS versions 3.x, 4.0, and 4.1, and CIFS versions 1.x, 2.0, 2.1, and 3.0.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/note.svg" alt="Note">
-</td>
-<td class="content">
-A Beta feature released in 2021 allows you to run compliance scans on the backup files (created using <a href="concept_backup_to_cloud.html" target="_blank" rel="noopener">Cloud Backup</a>) from your on-prem ONTAP volumes. This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3144,9 +3148,6 @@ A Beta feature released in 2021 allows you to run compliance scans on the backup
 <p>The cost to use Cloud Data Sense depends on the amount of data that you&#8217;re scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See <a href="https://cloud.netapp.com/netapp-cloud-data-sense" target="_blank" rel="noopener">pricing</a> for details.</p>
 <div class="paragraph">
 <p><a href="task_licensing_datasense.html" target="_blank" rel="noopener">Learn how to license Cloud Data Sense</a>.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note:</strong> When scanning backup files created from your on-prem ONTAP systems, the scanned data does not count against the capacity purchased in your PAYGO subscription or BYOL license.</p>
 </div>
 </li>
 <li>
@@ -3458,9 +3459,6 @@ The instance should remain running at all times because Cloud Data Sense continu
 </div>
 <div class="paragraph">
 <p>When using Cloud Manager in SaaS mode, the connection to Cloud Manager is served over HTTPS, and the private data sent between your browser and the Data Sense instance are secured with end-to-end encryption, which means NetApp and third parties can’t read it.</p>
-</div>
-<div class="paragraph">
-<p>If you need to use the local user interface instead of the SaaS user interface for any reason, you can still <a href="task_managing_connectors.html#accessing-the-local-ui" target="_blank" rel="noopener">access the local UI</a>.</p>
 </div>
 <div class="paragraph">
 <p>Outbound rules are completely open. Internet access is needed to install and upgrade the Data Sense software and to send usage metrics.</p>

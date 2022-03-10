@@ -2995,11 +2995,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-09 22:05:11 +0000">03/09/2022</time>
+    <time datetime="2022-03-10 14:15:42 +0000">03/10/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -3022,9 +3030,6 @@
 <li>
 <p>The Cloud Data Sense bring-your-own-license (BYOL) is a <em>floating</em> license that you can use across all the working environments and data sources in the workspace that you plan to scan. You&#8217;ll see an active subscription in the Digital Wallet.</p>
 </li>
-<li>
-<p>There is no charge for scanning backup files created from your on-prem ONTAP volumes (created using <a href="concept_backup_to_cloud.html">Cloud Backup</a>). This data doesn&#8217;t count against the capacity purchased in your license.</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -3043,9 +3048,6 @@
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_compliance_subscribe.png" alt="A screenshot showing how much data is being scanned and the Subscribe button to subscribe to the service."></span></p>
-</div>
-<div class="paragraph">
-<p><strong>Note:</strong> If you are prompted by Cloud Data Sense to subscribe, but you already have an Azure subscription, you’re probably using the old <strong>Cloud Manager</strong> subscription and you need to change to the new <strong>NetApp Cloud Manager</strong> subscription. See <a href="#change-to-the-new-cloud-manager-plan-in-azure">how to change to the new NetApp Cloud Manager plan in Azure</a>.</p>
 </div>
 <div class="paragraph">
 <div class="title">Steps</div>
@@ -3112,57 +3114,6 @@ Your browser does not support the video tag.
 </li>
 </ol>
 </div>
-<div class="sect2">
-<h3 id="change-to-the-new-cloud-manager-plan-in-azure">Change to the new Cloud Manager plan in Azure</h3>
-<div class="paragraph">
-<p>Cloud Data Sense (Cloud Compliance) was added to the Azure Marketplace subscription named <strong>NetApp Cloud Manager</strong> as of October 2020. If you already have the original Azure <strong>Cloud Manager</strong> subscription it will not allow you to use Cloud Data Sense.</p>
-</div>
-<div class="paragraph">
-<p>You need to follow these steps to change to the new <strong>NetApp Cloud Manager</strong> subscription before you can start using Cloud Data Sense.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If your existing Subscription was issued with a special private offer, you need to contact NetApp so that we can issue a new special private offer with Data Sense included.
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>In the upper right of the Cloud Manager console, click the Settings icon, and select <strong>Credentials</strong>.</p>
-</li>
-<li>
-<p>Find the credentials for the Azure Managed Service Identity that you want to change the subscription for and hover over the credentials and click <strong>Associate Subscription</strong>.</p>
-<div class="paragraph">
-<p>The details for your current Marketplace Subscription are displayed.</p>
-</div>
-</li>
-<li>
-<p>Log in to the <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fsaasresources" target="_blank" rel="noopener">Azure portal</a> and select <strong>Software as a Service (SaaS)</strong>.</p>
-</li>
-<li>
-<p>Select the subscription for which you want to change the plan and click <strong>Change Plan</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_compliance_azure_subscription.png" alt="A screenshot showing the list of all your Azure subscriptions and the details for the subscription you want to change."></span></p>
-</div>
-</li>
-<li>
-<p>In the Change Plan page, select the <strong>NetApp Cloud Manager</strong> plan and click the <strong>Change Plan</strong> button.<br>
-<span class="image"><img src="./media/screenshot_compliance_azure_change_plan.png" alt="A screenshot of changing to the new plan that supports Cloud Data Sense."></span></p>
-</li>
-<li>
-<p>Return to Cloud Manager, select the subscription, and hover over the “i” above subscription in the Credentials card to verify your subscription has changed.</p>
-</li>
-</ol>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3225,7 +3176,7 @@ If your existing Subscription was issued with a special private offer, you need 
 <div class="sect2">
 <h3 id="add-cloud-data-sense-byol-licenses-to-your-account">Add Cloud Data Sense BYOL licenses to your account</h3>
 <div class="paragraph">
-<p>After you purchase a Cloud Data Sense license for your Cloud Manager account, you need to add the license to Cloud Manager to use the Cloud Data Sense service.</p>
+<p>After you purchase a Cloud Data Sense license for your Cloud Manager account, you need to add the license to Cloud Manager to use the Data Sense service.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3288,8 +3239,12 @@ If your existing Subscription was issued with a special private offer, you need 
 <p>After you pay for the license and it is registered with the NetApp Support Site, Cloud Manager automatically updates the license in the Digital Wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.</p>
 </div>
 </li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>If Cloud Manager can&#8217;t automatically update the license (for example, when installed in a dark site), then you’ll need to manually upload the license file.</p>
+<p>If Cloud Manager can&#8217;t automatically update the license, then you’ll need to manually upload the license file.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>

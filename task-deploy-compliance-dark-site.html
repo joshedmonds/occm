@@ -2995,11 +2995,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-09 22:05:11 +0000">03/09/2022</time>
+    <time datetime="2022-03-10 14:15:42 +0000">03/10/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -3039,7 +3047,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, SharePoint accounts, or AWS S3 accounts.</p>
+<p>There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, AWS S3, or OneDrive and SharePoint accounts.</p>
 </div>
 </div>
 </div>
@@ -3100,7 +3108,7 @@
 <h2 id="prepare-the-linux-host-system">Prepare the Linux host system</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on.</p>
+<p>Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on. The host must be a dedicated host&#8201;&#8212;&#8201;Data Sense is not supported on a host that is shared with other applications.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3291,10 +3299,10 @@
 <code>sudo ./install.sh -a &lt;account_id&gt; -c &lt;agent_id&gt; -t &lt;token&gt; --darksite</code></p>
 </li>
 <li>
-<p>Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.</p>
+<p>Enter the IP address of the Data Sense host machine so it can be accessed by the Connector instance.</p>
 </li>
 <li>
-<p>Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.</p>
+<p>Enter the IP address of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.</p>
 </li>
 <li>
 <p>Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.</p>
@@ -3321,13 +3329,13 @@
 <p><em>token</em> = jwt user token</p>
 </li>
 <li>
-<p><em>ds_host</em> = IP address or host name of the Data Sense Linux system.</p>
+<p><em>ds_host</em> = IP address of the Data Sense Linux system.</p>
 </li>
 <li>
-<p><em>cm_host</em> = IP address or host name of the Cloud Manager Connector system.</p>
+<p><em>cm_host</em> = IP address of the Cloud Manager Connector system.</p>
 </li>
 <li>
-<p><em>proxy_host</em> = IP or host name of the proxy server if the host is behind a proxy server.</p>
+<p><em>proxy_host</em> = IP address of the proxy server, if the host is behind a proxy server.</p>
 </li>
 <li>
 <p><em>proxy_port</em> = Port to connect to the proxy server (default 80).</p>

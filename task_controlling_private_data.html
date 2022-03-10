@@ -2995,11 +2995,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-09 22:05:11 +0000">03/09/2022</time>
+    <time datetime="2022-03-10 14:15:42 +0000">03/10/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -3221,7 +3229,7 @@ English, German, and Spanish are supported for categories. Support for more lang
 <p>You can delete the file. See <a href="task_managing_highlights.html#deleting-source-files">Deleting source files</a> for details.</p>
 </li>
 <li>
-<p>You can assign a certain Status to the file. See <a href="task-org-private-data.html#applying-status-tags-to-manage-your-scanned-files">Applying Status tags</a> for details.</p>
+<p>You can assign a certain Status to the file. See <a href="task-org-private-data.html#applying-tags-to-manage-your-scanned-files">Applying tags</a> for details.</p>
 </li>
 <li>
 <p>You can assign the file to a Cloud Manager user to be responsible for any follow-up actions that need to be done on the file. See <a href="task-org-private-data.html#assigning-users-to-manage-certain-files">Assigning users to a file</a> for details.</p>
@@ -3237,13 +3245,13 @@ English, German, and Spanish are supported for categories. Support for more lang
 <h2 id="viewing-permissions-for-files">Viewing permissions for files</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To view a list of all users or groups who have access to a file, and the types of permissions they have, click <strong>View all Permissions</strong>.</p>
+<p>To view a list of all users or groups who have access to a file, and the types of permissions they have, click <strong>View all Permissions</strong>. This button is available only for files in CIFS shares, SharePoint, and OneDrive.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_compliance_permissions.png" alt="A screenshot showing detailed file permissions."></span></p>
 </div>
 <div class="paragraph">
-<p>This button is available only for files in CIFS shares.</p>
+<p>You can click the name of a user or a group and the Investigation page is displayed with the name of that user or group in the “User / Group Permissions” filter so you can see all the files that the user or group has access to.</p>
 </div>
 <div class="paragraph">
 <p>Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. <a href="task-add-active-directory-datasense.html">See how to do this</a>.</p>
@@ -3335,79 +3343,116 @@ You can use the "file hash" value provided in this page and enter it directly in
 </li>
 <li>
 <p>The left-pane filters enable you to refine the results by selecting from the following attributes:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Policies</p>
-</li>
-<li>
-<p>Open Permissions</p>
-</li>
-<li>
-<p>File Owner</p>
-</li>
-<li>
-<p>Label</p>
-</li>
-<li>
-<p>Working Environment Type (note that OneDrive and SharePoint are categorized under "Cloud Apps")</p>
-</li>
-<li>
-<p>Working Environment name</p>
-</li>
-<li>
-<p>Storage Repository (for example, a volume or a schema)</p>
-</li>
-<li>
-<p>File Path</p>
-</li>
-<li>
-<p>Category</p>
-</li>
-<li>
-<p>Sensitivity Level</p>
-</li>
-<li>
-<p>Personal Data</p>
-</li>
-<li>
-<p>Sensitive Personal Data</p>
-</li>
-<li>
-<p>Data Subject</p>
-</li>
-<li>
-<p>File Type</p>
-</li>
-<li>
-<p>File Size</p>
-</li>
-<li>
-<p>Created Time</p>
-</li>
-<li>
-<p>Last Modified</p>
-</li>
-<li>
-<p>Last Accessed (For the <a href="reference_private_data_categories.html#types-of-files">types of files that we scan for content</a> this is the last time Data Sense scanned the file.)</p>
-</li>
-<li>
-<p>Duplicates</p>
-</li>
-<li>
-<p>File Hash</p>
-</li>
-<li>
-<p>Tags</p>
-</li>
-<li>
-<p>Assigned To</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>The <em>Policies</em> filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go <a href="task-org-private-data.html#controlling-your-data-using-policies" target="_blank" rel="noopener">here</a> to view the list of predefined Policies and to see how you can create your own custom Policies.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Filter</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a policy or policies. Go <a href="task-org-private-data.html#controlling-your-data-using-policies" target="_blank" rel="noopener">here</a> to view the list of existing policies and to create your own policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open Permissions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type of permissions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User / Group Permissions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a user name or group name, or partial name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File Owner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the file owner name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select AIP labels</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Environment Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type of working environment. Note that OneDrive and SharePoint are categorized under "Cloud Apps".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Environment name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select specific working environments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Repository</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the storage repository, for example, a volume or a schema</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File Path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a partial or full path</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the <a href="reference_private_data_categories.html#types-of-categories">types of categories</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitivity Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the sensitivity level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personal Data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the <a href="reference_private_data_categories.html#types-of-personal-data">types of personal data</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitive Personal Data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the <a href="reference_private_data_categories.html#types-of-sensitive-personal-data">types of sensitive personal data</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a data subject’s full name or known identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the <a href="reference_private_data_categories.html#types-of-files">types of files</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the file size range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a range when the file was created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discovered Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a range when Data Sense discovered the file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last Modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a range when the file was last modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last Accessed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a range when the file was last accessed. For the types of files that Data Sense scans, this is the last time Data Sense scanned the file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the file is duplicated in the repositories</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File Hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the file&#8217;s hash to find a specific file, even if the name is different</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the tag or tags</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assigned To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the name of the person to which the file is assigned</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
 </div>
@@ -3434,16 +3479,13 @@ You can use the "file hash" value provided in this page and enter it directly in
 <p>Location type</p>
 </li>
 <li>
-<p>Working environment type</p>
-</li>
-<li>
 <p>Working environment name</p>
 </li>
 <li>
-<p>Storage repository (for example, a volume)</p>
+<p>Storage repository (for example, a volume, bucket, shares)</p>
 </li>
 <li>
-<p>Protocol type</p>
+<p>Working environment type</p>
 </li>
 <li>
 <p>File path</p>
@@ -3456,9 +3498,6 @@ You can use the "file hash" value provided in this page and enter it directly in
 </li>
 <li>
 <p>Created time</p>
-</li>
-<li>
-<p>Discovered time (when Data Sense first discovered the file)</p>
 </li>
 <li>
 <p>Last modified</p>
@@ -3496,9 +3535,6 @@ You can use the "file hash" value provided in this page and enter it directly in
 </li>
 <li>
 <p>Location type</p>
-</li>
-<li>
-<p>Working environment type</p>
 </li>
 <li>
 <p>Working environment name</p>
