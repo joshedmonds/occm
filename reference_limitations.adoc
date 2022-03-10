@@ -78,7 +78,11 @@ Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous vers
 
 == Shared Linux hosts are not supported
 
-The Connector isn't supported on a host that is shared with other applications. The host must be a dedicated host.
+The Connector isn't supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.
+
+== 3rd-party agents and extensions
+
+3rd-party agents or VM extensions are not supported on the Connector VM.
 
 == Cloud Manager doesn't support FlexGroup volumes
 

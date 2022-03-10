@@ -71,6 +71,28 @@ image:screenshot-help-support.png[A screenshot of the Help menu where Support is
 +
 image:screenshot-connector-autosupport.png[]
 
+== Connect to the Linux VM
+
+If you need to connect to the Linux VM that the Connector runs on, you can do so by using the connectivity options available from your cloud provider.
+
+=== AWS
+
+When you created the Connector instance in AWS, you provided an AWS access key and secret key. You can use this key pair to SSH to the instance.
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html[AWS Docs: Connect to your Linux instance^]
+
+=== Azure
+
+When you created the Connector VM in Azure, you chose to authenticate with a password or SSH public key. Use the authentication method that you chose to connect to the VM.
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys#ssh-into-your-vm[Azure Docs: SSH into your VM^]
+
+=== Google Cloud
+
+You can't specify an authentication method when you create a Connector in Google Cloud. However, you can connect to the Linux VM instance using the Google Cloud Console or Google Cloud CLI (gcloud).
+
+https://cloud.google.com/compute/docs/instances/connecting-to-instance[Google Cloud Docs: Connect to Linux VMs^]
+
 == Apply security updates
 
 Update the operating system on the Connector to ensure that it's patched with the latest security updates.
@@ -84,7 +106,7 @@ Update the operating system on the Connector to ensure that it's patched with th
 [source,cli]
 sudo -s
 service service-manager stop
-yum -y update –security
+yum -y update –-security
 service service-manager start
 
 == Edit a Connector's URIs
