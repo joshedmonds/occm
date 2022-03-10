@@ -26,9 +26,9 @@ When installed in this manner (sometimes called an "offline" or "dark" site), Da
 * Non-NetApp NFS or CIFS file shares
 * Object Storage that uses the Simple Storage Service (S3) protocol
 
-For special situations where you need a very secure Cloud Manager installation, but you also want to scan OneDrive accounts or SharePoint accounts, you can use the Data Sense offline installer and provide internet access to a few select endpoints. See <<SharePoint and OneDrive special requirements,SharePoint and OneDrive special requirements>> for details.
-
-There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, or AWS S3 accounts.
+// For special situations where you need a very secure Cloud Manager installation, but you also want to scan OneDrive accounts or SharePoint accounts, you can use the Data Sense offline installer and provide internet access to a few select endpoints. See <<SharePoint and OneDrive special requirements,SharePoint and OneDrive special requirements>> for details.
+//
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, AWS S3, or OneDrive and SharePoint accounts.
 
 == Limitations
 
@@ -102,29 +102,29 @@ Make sure port 8080 is open so you can see the installation progress in Cloud Ma
 * Ensure web browser connectivity to Cloud Data Sense. After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
-
-== SharePoint and OneDrive special requirements
-
-When Cloud Manager and Data Sense are deployed in a site with no internet access, you can scan files in SharePoint and OneDrive accounts by providing internet access to a few select endpoints.
-
-[cols="50,50",options="header"]
-|===
-| Endpoints
-| Purpose
-
-|
-\login.microsoft.com
-\graph.microsoft.com
-
-| Communication with Microsoft servers to log in to the selected online service.
-
-| \https://cloudmanager.cloud.netapp.com
-
-| Communication with the Cloud Manager service, which includes NetApp accounts.
-
-|===
-
-Access to _cloudmanager.cloud.netapp.com_ is required only during the initial connections to these external services.
+// 
+// == SharePoint and OneDrive special requirements
+//
+// When Cloud Manager and Data Sense are deployed in a site with no internet access, you can scan files in SharePoint and OneDrive accounts by providing internet access to a few select endpoints.
+//
+// [cols="50,50",options="header"]
+// |===
+// | Endpoints
+// | Purpose
+//
+// |
+// \login.microsoft.com
+// \graph.microsoft.com
+//
+// | Communication with Microsoft servers to log in to the selected online service.
+//
+// | \https://cloudmanager.cloud.netapp.com
+//
+// | Communication with the Cloud Manager service, which includes NetApp accounts.
+//
+// |===
+//
+// Access to _cloudmanager.cloud.netapp.com_ is required only during the initial connections to these external services.
 
 == Deploy Data Sense
 
