@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/occm/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/occm/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/occm/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/occm/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/occm/js/na-search.js'></script><script src='/us-en/occm/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/occm/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/occm/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/occm/js/version-dropdown.js'></script>
-  <script src='/us-en/occm/js/product-family.js'></script>
   <script src='/us-en/occm/js/FileSaver.min.js'></script>
   <script src='/us-en/occm/js/jszip-utils.min.js'></script>
   <script src='/us-en/occm/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Before you begin to deploy Global File Cache Edge instances](https://docs.netapp.com/us-en/occm/download_gfc_resources.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/download_gfc_resources.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/occm/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -2968,19 +2986,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/occm/">Cloud&nbsp;Manager</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Before you begin to deploy Global File Cache Edge instances
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2995,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 14:15:42 +0000">03/10/2022</time>
+    <time datetime="2022-03-15 18:12:30 +0000">03/15/2022</time>
     
   
 
@@ -3012,7 +3027,6 @@
 
 
 </p>
-
 
 <div id="preamble">
 <div class="sectionbody">
@@ -3472,25 +3486,6 @@ Adding antivirus to an Edge appliance can introduce a 10–20% impact on user pe
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Before you begin to deploy Global File Cache Edge instances](https://docs.netapp.com/us-en/occm/download_gfc_resources.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/download_gfc_resources.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/occm/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>

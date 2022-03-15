@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta http-equiv="nss-product" content="OnCommand Cloud Manager"/><meta name="description" content="Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in ...">
-  <meta name="keywords" content=" personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity"><!-- Icons -->
+  <meta name="keywords" content=" personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity, permissions"><!-- Icons -->
   <link rel="icon" href="/us-en/occm/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/occm/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/occm/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/occm/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/occm/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/occm/js/na-search.js'></script><script src='/us-en/occm/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/occm/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/occm/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/occm/js/version-dropdown.js'></script>
-  <script src='/us-en/occm/js/product-family.js'></script>
   <script src='/us-en/occm/js/FileSaver.min.js'></script>
   <script src='/us-en/occm/js/jszip-utils.min.js'></script>
   <script src='/us-en/occm/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Managing cyber security recommendations for your data sources](https://docs.netapp.com/us-en/occm/task-analyze-ransomware-data.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/task-analyze-ransomware-data.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/occm/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -2968,19 +2986,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/occm/">Cloud&nbsp;Manager</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Managing cyber security recommendations for your data sources
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2995,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 14:15:42 +0000">03/10/2022</time>
+    <time datetime="2022-03-15 18:12:30 +0000">03/15/2022</time>
     
   
 
@@ -3012,7 +3027,6 @@
 
 
 </p>
-
 
 <div id="preamble">
 <div class="sectionbody">
@@ -3097,7 +3111,7 @@
 <h2 id="top-data-repositories-by-data-sensitivity">Top data repositories by data sensitivity</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <em>Top Data Repositories by Sensitivity Level</em> area lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:</p>
+<p>The <em>Top Data Repositories by Sensitivity Level</em> panel lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3127,7 +3141,7 @@
 <h2 id="domain-administrator-group-control">Domain Administrator Group control</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <em>Domain Administrator Group control</em> area shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have <a href="task-add-active-directory-datasense.html">integrated a global Active Directory</a> into Cloud Data Sense for this panel to be active.</p>
+<p>The <em>Domain Administrator Group control</em> panel shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have <a href="task-add-active-directory-datasense.html">integrated a global Active Directory</a> into Cloud Data Sense for this panel to be active.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_ransomware_domain_admin.png" alt="A screenshot of the users who have been added as domain admins on the Ransomware Protection dashboard."></span></p>
@@ -3141,7 +3155,7 @@
 <h2 id="data-listed-by-types-of-open-permissions">Data listed by types of open permissions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <em>Open Permissions</em> area shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:</p>
+<p>The <em>Open permissions</em> panel shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3168,25 +3182,13 @@
 <div class="paragraph">
 <p>Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-Files in OneDrive accounts, SharePoint accounts, and in databases are not represented in this chart.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="data-listed-by-encrypted-files">Data listed by encrypted files</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <em>Encrypted Files</em> area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.</p>
+<p>The <em>Encrypted files</em> panel shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_ransomware_encrypt_files.png" alt="A screenshot of the encrypted file chart on the Ransomware Protection dashboard."></span></p>
@@ -3196,30 +3198,47 @@ Files in OneDrive accounts, SharePoint accounts, and in databases are not repres
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="status-of-permissions-on-your-critical-business-data">Status of permissions on your critical business data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <em>Business critical data permissions analysis</em> panel shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business critical data.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_ransomware_critical_permissions.png" alt="A screenshot of the permissions status for the data you are managing on the Ransomware Protection dashboard."></span></p>
+</div>
+<div class="paragraph">
+<p>Initially this panel has no data because the data gets populated only after you select the Data Sense <em>Policies</em> that you have created to view your most critical business data. See how to <a href="task-org-private-data.html#creating-custom-policies">create your policies using Data Sense</a>.</p>
+</div>
+<div class="paragraph">
+<p>After you have added up to 2 policies to this panel, the graph shows a permission analysis of all the data that meets the criteria from your policy. It lists the number of items that are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open to public permissions – the items which Data Sense considers as open to public</p>
+</li>
+<li>
+<p>Open to organization permissions – the items which Data Sense considers as open to organization</p>
+</li>
+<li>
+<p>No open permissions – the items which Data Sense considers as no open permissions</p>
+</li>
+<li>
+<p>Unknown permissions– the items which Data Sense considers as unknown permissions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hover over each bar in the charts to view the number of results in each category. Click a bar and the Data Sense Investigation page is displayed so you can investigate further about which items have open permissions and whether you should make any adjustments to file permissions.</p>
+</div>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Managing cyber security recommendations for your data sources](https://docs.netapp.com/us-en/occm/task-analyze-ransomware-data.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/task-analyze-ransomware-data.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/occm/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/occm/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
