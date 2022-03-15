@@ -65,6 +65,8 @@ NetApp StorageGRID
 | Amazon S3
 | Kubernetes cluster in Azure
 | Azure Blob
+| Kubernetes cluster in Google
+| Google Cloud Storage
 
 |===
 
@@ -88,13 +90,14 @@ On-premises ONTAP system
 | Azure Blob | Kubernetes | Kubernetes cluster in Azure |
 | Google Cloud Storage | ONTAP | Cloud Volumes ONTAP in Google
 On-premises ONTAP system |
+| Google Cloud Storage | Kubernetes | Kubernetes cluster in Google |
 | NetApp StorageGRID | ONTAP | On-premises ONTAP system |
 
 |===
-//
+
 // === Support for sites with no internet connectivity
 //
-// Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.15) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
+// Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.16) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.
 
 == Cost
 
@@ -193,7 +196,7 @@ Two things can happen when your license expires:
 * If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged for the capacity that your backups are using.
 * If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to see the warnings.
 
-Once you renew your BYOL subscription, Cloud Manager automatically updates the license. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license[how to update a Cloud Backup license].
+Once you renew your BYOL subscription, Cloud Manager automatically updates the license. If Cloud Manager can't access the license file over the secure internet connection (for example, when installed in a dark site), you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_licensing_cloud_backup.html#update-a-cloud-backup-byol-license[how to update a Cloud Backup license].
 
 Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop seeing the warnings and will be charged for backup activity that occurred while the license was expired.
 
@@ -308,11 +311,6 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 == Limitations
 
-* When making backups from on-premises ONTAP systems to public cloud storage, the Connector must be deployed in the same cloud provider.
-
-* When making backups from on-premises ONTAP systems to StorageGRID (private cloud), the Connector must be deployed on premises.
-// The Connector can be installed in a site with or without internet access.
-
 * The ability to tier older backup files to archival storage requires that the cluster is running ONTAP 9.10.1 or greater (supported currently with AWS and Azure). Restoring volumes from backup files that reside in archival storage also requires that the destination cluster is running ONTAP 9.10.1+.
 
 * When creating or editing a backup policy when no volumes are assigned to the policy, the number of retained backups can be a maximum of 1018. As a workaround you can reduce the number of backups to create the policy. Then you can edit the policy to create up to 4000 backups after you assign volumes to the policy.
@@ -344,4 +342,4 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * File level restore is not supported when using the same account with different Cloud Managers in different subnets.
 
-*	File level restore is not supported from backup files that reside in archival storage.
+// *	File level restore is not supported when the Connector is installed on a site without internet access (dark site).

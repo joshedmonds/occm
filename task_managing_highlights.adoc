@@ -41,7 +41,7 @@ This is useful for situations where you're migrating data from one source system
 
 You can copy source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense, you just need to know the name of the NFS share where all selected files will be copied in the format `<host_name>:/<share_path>`.
 
-TIP: You can't copy files that reside in databases or in volume backups.
+TIP: You can't copy files that reside in databases.
 
 .Requirements
 
@@ -165,7 +165,7 @@ You are prompted to define the sync relationship. The Source system is pre-popul
 
 .Result
 
-The files are copied to the target system and they'll be synchronized based on the schedule you define. If you select a one-time sync then the files are copied and synchronized one time only. If you choose a periodic sync, then the files are synchronized based on the schedule. Note that if the source system adds new files that match the query you created using filters, those _new_ files will be copied to the destination and synchronized in the future. 
+The files are copied to the target system and they'll be synchronized based on the schedule you define. If you select a one-time sync then the files are copied and synchronized one time only. If you choose a periodic sync, then the files are synchronized based on the schedule. Note that if the source system adds new files that match the query you created using filters, those _new_ files will be copied to the destination and synchronized in the future.
 
 Note that some of the usual Cloud Sync operations are disabled when it is invoked from Data Sense:
 
@@ -176,7 +176,7 @@ Note that some of the usual Cloud Sync operations are disabled when it is invoke
 
 You can move source files that Data Sense is scanning to any NFS share. The NFS share doesn't need to be integrated with Data Sense (see link:task_scanning_file_shares.html[Scanning file shares]).
 
-TIP: You can't move files that reside in databases or files that reside in volume backups.
+TIP: You can't move files that reside in databases.
 
 .Requirements
 
@@ -211,7 +211,7 @@ You can permanently remove source files that seem insecure or too risky to leave
 
 You can delete files manually from the Investigation pane, or automatically using Policies.
 
-TIP: You can't delete files that reside in databases or files that reside in volume backups.
+TIP: You can't delete files that reside in databases.
 
 Deleting files requires the following permissions:
 

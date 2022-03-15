@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_to_azure.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, Cloud Backup, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, cloud backup
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Azure Blob storage.
 ---
 
@@ -80,7 +80,7 @@ For Cloud Backup BYOL licensing, you need the serial number from NetApp that ena
 And you need to have a Microsoft Azure subscription for the storage space where your backups will be located.
 
 Supported Azure regions::
-Cloud Backup is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+Cloud Backup is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^]; including Azure Government regions.
 
 Required setup for creating backups in a different Azure subscription::
 By default, backups are created using the same subscription as the one used for your Cloud Volumes ONTAP system. If you want to use a different Azure subscription for your backups, you must link:reference_backup_multi_account_azure.html[log in to the Azure portal and link the two subscriptions].

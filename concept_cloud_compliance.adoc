@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, sharepoint, on-prem ontap, file shares, object storage, backup files, aip labels, governance, data sense
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, amazon fsx for ontap, fsx, cloud volumes ontap, Amazon S3, database, onedrive, sharepoint, on-prem ontap, file shares, object storage, aip labels, governance, data sense
 summary: Cloud Data Sense is a data governance service for Cloud Manager that scans your corporate on-premises and cloud data sources and working environments to map and classify data, and to identify private information. This can help reduce your security and compliance risk, decrease storage costs, and assist with your data migration projects.
 ---
 
@@ -31,7 +31,7 @@ Cloud Data Sense provides several tools that can help you with your compliance e
 
 Cloud Data Sense also provides tools that can help with your governance efforts. You can use Cloud Data Sense to:
 
-* Identify the stale data, non-business data, duplicate files, and very large files in your systems.
+* Identify the stale data, non-business data, duplicate files, files with open permissions, and very large files in your systems.
 +
 You can use this information to decide whether you want to move, delete, or tier some files to less expensive object storage.
 * View the size of data and whether any of the data contains sensitive information prior to moving it.
@@ -60,15 +60,11 @@ Cloud Data Sense can scan data from the following types of working environments 
 
 Data Sense supports NFS versions 3.x, 4.0, and 4.1, and CIFS versions 1.x, 2.0, 2.1, and 3.0.
 
-NOTE: A Beta feature released in 2021 allows you to run compliance scans on the backup files (created using link:concept_backup_to_cloud.html[Cloud Backup^]) from your on-prem ONTAP volumes. This gives you the option to have Cloud Data Sense scan your on-prem ONTAP volumes directly, or scan the backup files made from those volumes.
-
 == Cost
 
 * The cost to use Cloud Data Sense depends on the amount of data that you're scanning. The first 1 TB of data that Data Sense scans in a Cloud Manager workspace is free. This includes all data from all working environments and data sources. A subscription to the AWS, Azure, or GCP Marketplace, or a BYOL license from NetApp, is required to continue scanning data after that point. See https://cloud.netapp.com/netapp-cloud-data-sense[pricing^] for details.
 +
 link:task_licensing_datasense.html[Learn how to license Cloud Data Sense^].
-+
-*Note:* When scanning backup files created from your on-prem ONTAP systems, the scanned data does not count against the capacity purchased in your PAYGO subscription or BYOL license.
 
 * Installing Cloud Data Sense in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See <<The Cloud Data Sense instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Data Sense on an on-premises system.
 
@@ -198,8 +194,6 @@ Cloud Data Sense uses AI to extract natural persons’ names from documents. lin
 Cloud Manager deploys the Cloud Data Sense instance with a security group that enables inbound HTTP connections from the Connector instance.
 
 When using Cloud Manager in SaaS mode, the connection to Cloud Manager is served over HTTPS, and the private data sent between your browser and the Data Sense instance are secured with end-to-end encryption, which means NetApp and third parties can’t read it.
-
-If you need to use the local user interface instead of the SaaS user interface for any reason, you can still link:task_managing_connectors.html#accessing-the-local-ui[access the local UI^].
 
 Outbound rules are completely open. Internet access is needed to install and upgrade the Data Sense software and to send usage metrics.
 

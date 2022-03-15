@@ -26,7 +26,9 @@ When installed in this manner (sometimes called an "offline" or "dark" site), Da
 * Non-NetApp NFS or CIFS file shares
 * Object Storage that uses the Simple Storage Service (S3) protocol
 
-There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, OneDrive accounts, SharePoint accounts, or AWS S3 accounts.
+// For special situations where you need a very secure Cloud Manager installation, but you also want to scan OneDrive accounts or SharePoint accounts, you can use the Data Sense offline installer and provide internet access to a few select endpoints. See <<SharePoint and OneDrive special requirements,SharePoint and OneDrive special requirements>> for details.
+//
+There is no support currently for scanning Cloud Volumes ONTAP, Azure NetApp Files, FSx for ONTAP, AWS S3, or OneDrive and SharePoint accounts.
 
 == Limitations
 
@@ -67,7 +69,7 @@ If you don't already have a Cloud Manager Connector installed at your offline on
 
 == Prepare the Linux host system
 
-Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on.
+Data Sense software must run on a host that meets specific operating system requirements, RAM requirements, software requirements, and so on. The host must be a dedicated host -- Data Sense is not supported on a host that is shared with other applications.
 
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
@@ -100,6 +102,29 @@ Make sure port 8080 is open so you can see the installation progress in Cloud Ma
 * Ensure web browser connectivity to Cloud Data Sense. After Cloud Data Sense is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Data Sense instance.
 +
 The Data Sense instance uses a private IP address to ensure that the indexed data isn't accessible to others. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a host that's inside the same network as the Data Sense instance.
+// 
+// == SharePoint and OneDrive special requirements
+//
+// When Cloud Manager and Data Sense are deployed in a site with no internet access, you can scan files in SharePoint and OneDrive accounts by providing internet access to a few select endpoints.
+//
+// [cols="50,50",options="header"]
+// |===
+// | Endpoints
+// | Purpose
+//
+// |
+// \login.microsoft.com
+// \graph.microsoft.com
+//
+// | Communication with Microsoft servers to log in to the selected online service.
+//
+// | \https://cloudmanager.cloud.netapp.com
+//
+// | Communication with the Cloud Manager service, which includes NetApp accounts.
+//
+// |===
+//
+// Access to _cloudmanager.cloud.netapp.com_ is required only during the initial connections to these external services.
 
 == Deploy Data Sense
 
@@ -161,8 +186,8 @@ tar -xzf cc_onprem_installer_1.7.2.tar.gz
 |
 a. Paste the information you copied from step 7:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --darksite`
-b. Enter the IP address or host name of the Data Sense host machine so it can be accessed by the Connector instance.
-c. Enter the IP address or host name of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
+b. Enter the IP address of the Data Sense host machine so it can be accessed by the Connector instance.
+c. Enter the IP address of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
 d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
 | Alternatively, you can create the whole command in advance and enter it in the first prompt:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password> --darksite`
@@ -174,9 +199,9 @@ Variable values:
 * _account_id_ = NetApp Account ID
 * _agent_id_ = Connector ID
 * _token_ = jwt user token
-* _ds_host_ = IP address or host name of the Data Sense Linux system.
-* _cm_host_ = IP address or host name of the Cloud Manager Connector system.
-* _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
+* _ds_host_ = IP address of the Data Sense Linux system.
+* _cm_host_ = IP address of the Cloud Manager Connector system.
+* _proxy_host_ = IP address of the proxy server, if the host is behind a proxy server.
 * _proxy_port_ = Port to connect to the proxy server (default 80).
 * _proxy_scheme_ = Connection scheme: https or http (default http).
 * _proxy_user_ = Authenticated user to connect to the proxy server, if basic authentication is required.

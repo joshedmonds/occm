@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_backup_multi_account_aws.html
 keywords: aws, amazon, s3, multiple accounts, multiple regions, backup
-summary: Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside, and that is different than the account where the Cloud Manager Connector resides.
+summary: Cloud Backup enables you to create backup files in an AWS account that is different than where your source Cloud Volumes ONTAP volumes reside, and that is different than the account where the Cloud Manager Connector resides.
 ---
 
 = Configure backup for multi-account access in AWS
@@ -13,9 +13,11 @@ summary: Cloud Backup enables you to create backup files in an AWS account that 
 :imagesdir: ./media/
 
 [.lead]
-Cloud Backup enables you to create backup files in an AWS account that is different than where your source volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.
+Cloud Backup enables you to create backup files in an AWS account that is different than where your source Cloud Volumes ONTAP volumes reside. And both of those accounts can be different than the account where the Cloud Manager Connector resides.
 
-Just follow the steps below to set up your configuration in this manner.
+These steps are required only when you are link:task_backup_to_s3.html[backing up Cloud Volumes ONTAP data to Amazon S3].
+
+Follow the steps below to set up your configuration in this manner.
 
 == Set up VPC peering between accounts
 

@@ -123,7 +123,7 @@ When viewing the details for a single file there are a few actions you can take 
 
 * You can delete the file. See link:task_managing_highlights.html#deleting-source-files[Deleting source files] for details.
 
-* You can assign a certain Status to the file. See link:task-org-private-data.html#applying-status-tags-to-manage-your-scanned-files[Applying Status tags] for details.
+* You can assign a certain Status to the file. See link:task-org-private-data.html#applying-tags-to-manage-your-scanned-files[Applying tags] for details.
 
 * You can assign the file to a Cloud Manager user to be responsible for any follow-up actions that need to be done on the file. See link:task-org-private-data.html#assigning-users-to-manage-certain-files[Assigning users to a file] for details.
 
@@ -131,11 +131,11 @@ When viewing the details for a single file there are a few actions you can take 
 
 == Viewing permissions for files
 
-To view a list of all users or groups who have access to a file, and the types of permissions they have, click *View all Permissions*.
+To view a list of all users or groups who have access to a file, and the types of permissions they have, click *View all Permissions*. This button is available only for files in CIFS shares, SharePoint, and OneDrive.
 
 image:screenshot_compliance_permissions.png[A screenshot showing detailed file permissions.]
 
-This button is available only for files in CIFS shares.
+You can click the name of a user or a group and the Investigation page is displayed with the name of that user or group in the “User / Group Permissions” filter so you can see all the files that the user or group has access to.
 
 Note that if you see SIDs (Security IDentifiers) instead of user and group names, you should integrate your Active Directory into Data Sense. link:task-add-active-directory-datasense.html[See how to do this].
 
@@ -184,31 +184,39 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 * The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
 
 * The left-pane filters enable you to refine the results by selecting from the following attributes:
++
+[cols=2*,options="header",cols="35,65"]
+|===
 
-** Policies
-** Open Permissions
-** File Owner
-** Label
-** Working Environment Type (note that OneDrive and SharePoint are categorized under "Cloud Apps")
-** Working Environment name
-** Storage Repository (for example, a volume or a schema)
-** File Path
-** Category
-** Sensitivity Level
-** Personal Data
-** Sensitive Personal Data
-** Data Subject
-** File Type
-** File Size
-** Created Time
-** Last Modified
-** Last Accessed (For the link:reference_private_data_categories.html#types-of-files[types of files that we scan for content] this is the last time Data Sense scanned the file.)
-** Duplicates
-** File Hash
-** Tags
-** Assigned To
+| Filter
+| Details
 
-* The _Policies_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task-org-private-data.html#controlling-your-data-using-policies[here^] to view the list of predefined Policies and to see how you can create your own custom Policies.
+| Policies | Select a policy or policies. Go link:task-org-private-data.html#controlling-your-data-using-policies[here^] to view the list of existing policies and to create your own policies.
+| Open Permissions | Select the type of permissions
+| User / Group Permissions | Enter a user name or group name, or partial name
+| File Owner | Enter the file owner name
+| Label |	Select AIP labels
+| Working Environment Type | Select the type of working environment. Note that OneDrive and SharePoint are categorized under "Cloud Apps".
+| Working Environment name | Select specific working environments
+| Storage Repository | Select the storage repository, for example, a volume or a schema
+| File Path | Enter a partial or full path
+| Category | Select the link:reference_private_data_categories.html#types-of-categories[types of categories]
+| Sensitivity Level | Select the sensitivity level
+| Personal Data | Select the link:reference_private_data_categories.html#types-of-personal-data[types of personal data]
+| Sensitive Personal Data | Select the link:reference_private_data_categories.html#types-of-sensitive-personal-data[types of sensitive personal data]
+| Data Subject | Enter a data subject’s full name or known identifier
+| File Type | Select the link:reference_private_data_categories.html#types-of-files[types of files]
+| File Size | Select the file size range
+| Created Time | Select a range when the file was created
+| Discovered Time | Select a range when Data Sense discovered the file
+| Last Modified | Select a range when the file was last modified
+| Last Accessed | Select a range when the file was last accessed. For the types of files that Data Sense scans, this is the last time Data Sense scanned the file.
+| Duplicates | Select whether the file is duplicated in the repositories
+| File Hash | Enter the file's hash to find a specific file, even if the name is different
+| Tags | Select the tag or tags
+| Assigned To | Select the name of the person to which the file is assigned
+
+|===
 
 == What’s included in each file list report (CSV file)
 
@@ -220,15 +228,13 @@ The *Unstructured Data Report* includes the following information:
 
 * File name
 * Location type
-* Working environment type
 * Working environment name
-* Storage repository (for example, a volume)
-* Protocol type
+* Storage repository (for example, a volume, bucket, shares)
+* Working environment type
 * File path
 * File type
 * File size
 * Created time
-* Discovered time (when Data Sense first discovered the file)
 * Last modified
 * Last accessed
 * File owner
@@ -243,7 +249,6 @@ The *Structured Data Report* includes the following information:
 
 * DB Table name
 * Location type
-* Working environment type
 * Working environment name
 * Storage repository (for example, a schema)
 * Column count

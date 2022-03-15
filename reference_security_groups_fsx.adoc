@@ -131,99 +131,99 @@ NOTE: The source is the interface (IP address) on the FSx for ONTAP system.
 
 |===
 
-== Rules for the HA mediator external security group
-
-The predefined external security group for the FSx for ONTAP HA mediator includes the following inbound and outbound rules.
-
-=== Inbound rules
-
-The source for inbound rules is 0.0.0.0/0.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| SSH |	22 | SSH connections to the HA mediator
-| TCP |	3000 | RESTful API access from the Connector
-
-|===
-
-=== Outbound rules
-
-The predefined security group for the HA mediator opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
-
-==== Basic outbound rules
-
-The predefined security group for the HA mediator includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All TCP |	All |	All outbound traffic
-| All UDP |	All |	All outbound traffic
-
-|===
-
-==== Advanced outbound rules
-
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the HA mediator.
-
-[cols="10,10,30,40",width=70%,options="header"]
-|===
-
-| Protocol
-| Port
-| Destination
-| Purpose
-
-| HTTP | 80 | Connector IP address | Download upgrades for the mediator
-| HTTPS | 443 | AWS API services | Assist with storage failover
-| UDP | 53 | AWS API services | Assist with storage failover
-
-|===
-
-NOTE: Rather than open ports 443 and 53, you can create an interface VPC endpoint from the target subnet to the AWS EC2 service.
-
-== Rules for the HA mediator internal security group
-
-The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. Cloud Manager always creates this security group. You do not have the option to use your own.
-
-=== Inbound rules
-
-The predefined security group includes the following inbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All traffic | All | Communication between the HA mediator and HA nodes
-
-|===
-
-=== Outbound rules
-
-The predefined security group includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All traffic |	All |	Communication between the HA mediator and HA nodes
-
-|===
+// == Rules for the HA mediator external security group
+//
+// The predefined external security group for the FSx for ONTAP HA mediator includes the following inbound and outbound rules.
+//
+// === Inbound rules
+//
+// The source for inbound rules is 0.0.0.0/0.
+//
+// [cols=3*,options="header",width=70%,cols="20,20,60"]
+// |===
+//
+// | Protocol
+// | Port
+// | Purpose
+//
+// | SSH |	22 | SSH connections to the HA mediator
+// | TCP |	3000 | RESTful API access from the Connector
+//
+// |===
+//
+// === Outbound rules
+//
+// The predefined security group for the HA mediator opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
+//
+// ==== Basic outbound rules
+//
+// The predefined security group for the HA mediator includes the following outbound rules.
+//
+// [cols=3*,options="header",width=70%,cols="20,20,60"]
+// |===
+//
+// | Protocol
+// | Port
+// | Purpose
+//
+// | All TCP |	All |	All outbound traffic
+// | All UDP |	All |	All outbound traffic
+//
+// |===
+//
+// ==== Advanced outbound rules
+//
+// If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the HA mediator.
+//
+// [cols="10,10,30,40",width=70%,options="header"]
+// |===
+//
+// | Protocol
+// | Port
+// | Destination
+// | Purpose
+//
+// | HTTP | 80 | Connector IP address | Download upgrades for the mediator
+// | HTTPS | 443 | AWS API services | Assist with storage failover
+// | UDP | 53 | AWS API services | Assist with storage failover
+//
+// |===
+//
+// NOTE: Rather than open ports 443 and 53, you can create an interface VPC endpoint from the target subnet to the AWS EC2 service.
+//
+// == Rules for the HA mediator internal security group
+//
+// The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. Cloud Manager always creates this security group. You do not have the option to use your own.
+//
+// === Inbound rules
+//
+// The predefined security group includes the following inbound rules.
+//
+// [cols=3*,options="header",width=70%,cols="20,20,60"]
+// |===
+//
+// | Protocol
+// | Port
+// | Purpose
+//
+// | All traffic | All | Communication between the HA mediator and HA nodes
+//
+// |===
+//
+// === Outbound rules
+//
+// The predefined security group includes the following outbound rules.
+//
+// [cols=3*,options="header",width=70%,cols="20,20,60"]
+// |===
+//
+// | Protocol
+// | Port
+// | Purpose
+//
+// | All traffic |	All |	Communication between the HA mediator and HA nodes
+//
+// |===
 
 == Rules for the Connector
 

@@ -109,7 +109,7 @@ You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud
 +
 A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
 
-* *HA pair*: 15 or 16 private IP addresses
+* *HA pair*: 14 or 15 private IP addresses
 +
 ** 7 or 8 private IP addresses for VPC-0
 +

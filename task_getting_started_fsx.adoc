@@ -22,7 +22,7 @@ You can get started with FSx for ONTAP in just a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create an FSx for ONTAP working environment
 
 [role="quick-margin-para"]
-You must create an Amazon FSx for ONTAP working environment before adding volumes. You will need an AWS access key and secret key for an link:task_setting_up_permissions_fsx.html[IAM user with FSx for ONTAP permissions].
+You must create an Amazon FSx for ONTAP working environment before adding volumes. You will need to link:task_setting_up_permissions_fsx.html[set up an IAM role that enables the Cloud Manager SaaS to assume the role].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Create a Connector
 

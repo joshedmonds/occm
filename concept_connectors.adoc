@@ -60,6 +60,14 @@ If you deploy the Connector in Azure, it should be deployed in the same Azure re
 
 If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
+== Shared Linux hosts are not supported
+
+The Connector isn't supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.
+
+== 3rd-party agents and extensions
+
+3rd-party agents or VM extensions are not supported on the Connector VM.
+
 == Connectors should remain running
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
