@@ -19,6 +19,22 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.16 update (15 Mar 2022)
+
+=== Cloud Data Sense enhancements
+
+* A new Filter called "User / Group Permissions" has been added so you can list the files that a specific user or a group has read and/or write permissions to. You can specify a user name or group name - or partial name. This functionality is available for volumes on Cloud Volumes ONTAP, on-prem ONTAP, Azure NetApp Files, Amazon FSx for ONTAP, and File Shares.
+
+* Data Sense can read the permissions that exist for files that are being scanned in OneDrive accounts and SharePoint accounts now. This information appears in the Investigation pane details for files and in the Open Permissions area in the Governance Dashboard.
+
+* The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued starting with this release.
+
+=== Ransomware Protection enhancements
+
+* A new panel "Business critical data permissions analysis" shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business-critical data. link:task-analyze-ransomware-data.html#status-of-permissions-on-your-critical-business-data[Go here for details].
+
+* The Open Permissions area in the Ransomware Protection Dashboard now includes the permissions that exist for files that are being scanned in OneDrive accounts and SharePoint accounts.
+
 == Cloud Manager 3.9.16 update (03 Mar 2022)
 
 === Cloud Backup enhancements
@@ -27,7 +43,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 +
 If your GKE cluster has NetApp Astra Trident installed, and it is using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. link:task-backup-kubernetes-to-gcp.html[Go here for details].
 
-* The capability to use Cloud Data Sense to scan your backup files has been removed in this release.
+* The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued starting with this release.
 
 === Application Template enhancements
 

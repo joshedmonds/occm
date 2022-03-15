@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-analyze-ransomware-data.html
-keywords: personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity
+keywords: personal data, personal information, sensitive, personal sensitive data, governance, data sense, ransomware, ransomware protection, cyberstorage, cyber attack, cybersecurity, permissions
 summary: Use the Ransomware Protection dashboard to view an overview of the cyber resilience of all your working environments and data sources. You can drill down in each area to find more details and possible remediations.
 ---
 
@@ -56,12 +56,16 @@ These are the currently tracked alerts and suggested remediations.
 | One or more repositories (volumes, buckets, etc.) in your data sources are not being scanned by Data Sense
 | Some data in your data sources isn't being scanned using link:concept_cloud_compliance.html[Cloud Data Sense] to identify compliance and privacy concerns and find optimization opportunities.
 | Click the link to launch Data Sense and enable scanning and mapping for the items that are not being scanned.
+//
+// | Your ONTAP system is not hardened
+// | Certain settings in your ONTAP system are not set in accordance with recommendations from the https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[NetApp Security Hardening Guide for ONTAP Systems].
+// | Click the link and you are redirected to the <<Status of ONTAP systems hardening,Harden your ONTAP environment panel>> below so you can investigate which issue is causing the alert and how best to fix the issue.
 
 |===
 
 == Top data repositories by data sensitivity
 
-The _Top Data Repositories by Sensitivity Level_ area lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:
+The _Top Data Repositories by Sensitivity Level_ panel lists up to the top four data repositories (working environments and data sources) that contain the most sensitive items. The bar chart for each working environment is divided into:
 
 * Non-Sensitive data
 * Personal data
@@ -75,7 +79,7 @@ Click each area to view the filtered results in the Data Sense Investigation pag
 
 == Domain Administrator Group control
 
-The _Domain Administrator Group control_ area shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have link:task-add-active-directory-datasense.html[integrated a global Active Directory] into Cloud Data Sense for this panel to be active.
+The _Domain Administrator Group control_ panel shows the most recent five users who have been added into your domain administrator groups so that you can see if all the users should be allowed in those groups. You must have link:task-add-active-directory-datasense.html[integrated a global Active Directory] into Cloud Data Sense for this panel to be active.
 
 image:screenshot_ransomware_domain_admin.png[A screenshot of the users who have been added as domain admins on the Ransomware Protection dashboard.]
 
@@ -83,7 +87,7 @@ The default administrative admin groups include “Administrators”, “Domain 
 
 == Data listed by types of open permissions
 
-The _Open Permissions_ area shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:
+The _Open permissions_ panel shows the percentage for each type of permission that exist for all files that are being scanned. The chart is provided from Data Sense and it shows the following types of permissions:
 
 * No Open Access
 * Open to Organization
@@ -96,12 +100,68 @@ You can hover over each section to see the percentage and total number of files 
 
 Click each area to view the filtered results in the Data Sense Investigation page so that you can investigate further.
 
-TIP: Files in OneDrive accounts, SharePoint accounts, and in databases are not represented in this chart.
-
 == Data listed by encrypted files
 
-The _Encrypted Files_ area shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
+The _Encrypted files_ panel shows the top 4 data sources with the highest percentage of files that are encrypted, over time. These are typically items that have been password protected. It does this by comparing the encryption rates over the past 7 days to see which data sources have a greater than 20% increase. An increase of this amount could mean that ransomware is already attacked your system.
 
 image:screenshot_ransomware_encrypt_files.png[A screenshot of the encrypted file chart on the Ransomware Protection dashboard.]
 
 Click a line for one of the data sources to view the filtered results in the Data Sense Investigation page so that you can investigate further.
+
+// == Status of ONTAP systems hardening
+//
+// The _Harden your ONTAP environment_ panel provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[NetApp Security Hardening Guide for ONTAP Systems] and to the https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html[ONTAP anti-ransomware feature] that proactively detects and warns about abnormal activity.
+//
+// You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion.
+//
+// image:screenshot_ransomware_harden_ontap.png[A screenshot of the status for ONTAP hardening on the Ransomware Protection dashboard.]
+//
+// The settings that are being tracked include:
+//
+// [cols=3*,options="header",cols="33,33,33",width="100%"]
+//
+// |===
+// | Hardening Objective
+// | Description
+// | Remediation
+//
+// | On-box Anti-ransomware
+// | The percentage of volumes that have on-box anti-ransomware activated. Valid for on-prem ONTAP systems only.
+// A green status icon indicates > 85% of volumes are enabled. Yellow indicates 40-85% are enabled. Red indicates < 40% are enabled.
+// | https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html#system-manager-procedure[See how to enable anti-ransomware on your volumes] using System Manager.
+//
+// | NAS Auditing
+// | The number of storage VMs that have file system auditing enabled.
+// A green status icon indicates > 85% of SVMs have NAS file system auditing enabled. Yellow indicates 40-85% are enabled. Red indicates < 40% are enabled.
+// | https://docs.netapp.com/us-en/ontap/nas-audit/auditing-events-concept.html[See how to enable NAS auditing on SVMs] using the CLI.
+//
+// | ONTAP Version
+// | The version of ONTAP software installed on your clusters.
+// A green status icon indicates that the version is current. A yellow icon indicates that the cluster is behind by 1 or 2 patch versions or 1 minor version for on-prem systems, or behind by 1 major version for others. A red icon indicates that the cluster is behind by 3 patch versions, or 2 minor versions, or 1 major version for on-prem systems, or behind by 2 major versions for others.
+// | https://docs.netapp.com/us-en/ontap/setup-upgrade/index.html[See the best way to upgrade your on-prem clusters] or link:task_updating_ontap_cloud.html[your Cloud Volumes ONTAP systems].
+//
+// | Snapshots
+// | Is the snapshot capability activated on data volumes, and what percentage of volumes have Snapshot copies.
+// A green status icon indicates > 85% of volumes have snapshots enabled. Yellow indicates 40-85% are enabled. Red indicates < 40% are enabled.
+// | https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html[See how to enable snapshots on your on-prem clusters] or link:task_managing_storage.html#managing-existing-volumes[on your Cloud Volumes ONTAP systems].
+//
+// |===
+//
+// For clusters that have low numbers for certain categories, you can click the System Manager button at the end of each row to correct the issue. You can also click the Cloud Backup button to activate backups for the volumes, or the Data Sense button to scan the volumes on the clusters to investigate compliance and governance conformance.
+
+== Status of permissions on your critical business data
+
+The _Business critical data permissions analysis_ panel shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business critical data.
+
+image:screenshot_ransomware_critical_permissions.png[A screenshot of the permissions status for the data you are managing on the Ransomware Protection dashboard.]
+
+Initially this panel has no data because the data gets populated only after you select the Data Sense _Policies_ that you have created to view your most critical business data. See how to link:task-org-private-data.html#creating-custom-policies[create your policies using Data Sense].
+
+After you have added up to 2 policies to this panel, the graph shows a permission analysis of all the data that meets the criteria from your policy. It lists the number of items that are:
+
+* Open to public permissions – the items which Data Sense considers as open to public
+* Open to organization permissions – the items which Data Sense considers as open to organization
+* No open permissions – the items which Data Sense considers as no open permissions
+* Unknown permissions– the items which Data Sense considers as unknown permissions
+
+Hover over each bar in the charts to view the number of results in each category. Click a bar and the Data Sense Investigation page is displayed so you can investigate further about which items have open permissions and whether you should make any adjustments to file permissions.
