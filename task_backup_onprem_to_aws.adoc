@@ -132,7 +132,7 @@ Ensure that the Connector has the required networking connections.
 
 * An outbound internet connection to the Cloud Backup service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to your S3 object storage
-* An HTTPS connection over port 443 to your ONTAP clusters
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 . Enable a VPC Endpoint to S3. This is needed if you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC and you want communication between the Connector and S3 to stay in your AWS internal network.
 

@@ -31,12 +31,13 @@ Note that you can add to the list of personal data that is found in your files i
 | Identifier
 | Proximity validation?
 
-.4+| General | Email address | No
+.5+| General | Email address | No
 | Credit card number | No
 | IBAN number (International Bank Account Number) | No
 | IP address | No
+| Password | Yes
 
-.37+| National Identifiers | Austrian SSN | Yes
+.38+| National Identifiers | Austrian SSN | Yes
 | Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
 | British Passport | Yes
@@ -51,6 +52,7 @@ Note that you can add to the list of personal data that is found in your files i
 | Finnish ID (HETU) | Yes
 | French Driver's License | Yes
 | French ID | Yes
+| French INSEE | Yes
 | French Social Security Number | Yes
 | French Tax Identification Number (SPI) | Yes
 | German Tax Identification Number (Steuerliche Identifikationsnummer) | Yes
