@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, permissions, csv file, highlights, policies
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, password, sex, criminal, compliance, privacy, filter data, permissions, csv file, highlights, policies
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Data Sense found in your data.
 ---
 
@@ -27,7 +27,7 @@ You can also filter the results from the Data Investigation page and download a 
 
 == Viewing files that contain personal data
 
-Cloud Data Sense automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more. link:reference_private_data_categories.html#types-of-personal-data[See the full list^].
+Cloud Data Sense automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, passwords, and more. link:reference_private_data_categories.html#types-of-personal-data[See the full list^].
 
 Additionally, if you have added a database server to be scanned, the _Data Fusion_ feature allows you to scan your files to identify whether unique identifiers from your databases are found in those files or other databases. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
 

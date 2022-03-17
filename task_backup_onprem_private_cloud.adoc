@@ -153,7 +153,7 @@ Ensure that the Connector has the required networking connections.
 . Ensure that the network where the Connector is installed enables the following connections:
 
 * An HTTPS connection over port 443 to StorageGRID
-* An HTTPS connection over port 443 to your ONTAP clusters
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 * An outbound internet connection over port 443 to Cloud Backup
 // (not required when the Connector is installed in a "dark" site)
 
@@ -181,7 +181,7 @@ image:screenshot_backup_cvo_enable.png[A screenshot that shows the Backup & Rest
 
 .. The FQDN of the StorageGRID server and the port that ONTAP should use for HTTPS communication with StorageGRID; for example: `s3.eng.company.com:8082`
 .. The Access Key and the Secret Key used to access the bucket to store backups.
-.. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access. 
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside. The intercluster LIFs for this IPspace must have outbound internet access.
 // (not required when the Connector is installed in a "dark" site).
 +
 Selecting the correct IPspace ensures that Cloud Backup can set up a connection from ONTAP to your StorageGRID object storage.
