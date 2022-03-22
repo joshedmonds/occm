@@ -95,6 +95,8 @@ On-premises ONTAP system |
 
 |===
 
+Note that references to "on-premises ONTAP systems" includes FAS, AFF, and ONTAP Select systems.
+
 // === Support for sites with no internet connectivity
 //
 // Cloud Backup can be used in a site with no internet connectivity (also known as an "offline" or "dark" site) to back up volume data from local on-premises ONTAP systems to local NetApp StorageGRID systems. In this case, you'll need to deploy the Cloud Manager Connector (minimum version 3.9.16) in the dark site. See link:task_backup_onprem_private_cloud.html[Backing up on-premises ONTAP data to StorageGRID] for details.

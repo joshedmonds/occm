@@ -49,7 +49,7 @@ A template is a chain of "actions" that have some pre-defined values. You can bu
 * Activate link:concept_cloud_compliance.html[Cloud Data Sense] on volumes
 * Activate link:concept_replication.html[Replication] on volumes (not applicable for Azure NetApp Files)
 
-For example, you can create a template that creates a Cloud Volumes ONTAP volume. Or that that creates a Cloud Volumes ONTAP volume and then enables Cloud Backup on that volume. Or that that creates a Cloud Volumes ONTAP volume, and then enables Cloud Backup _and_ Cloud Data Sense on that volume.
+For example, you can create a template that creates a Cloud Volumes ONTAP volume. Or that creates a Cloud Volumes ONTAP volume and then enables Cloud Backup on that volume. Or that that creates a Cloud Volumes ONTAP volume, and then enables Cloud Backup _and_ Cloud Data Sense on that volume.
 
 More actions will be added over time by NetApp.
 
