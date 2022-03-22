@@ -19,11 +19,15 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Volumes ONTAP update (21 Mar 2022)
+== Cloud Volumes ONTAP updates (22 Mar 2022)
 
-WORM storage is currently in an introductory special rate and will be free of charge until April 1st, 2022. After that time, you may choose to continue using this feature, at which point you will incur additional charges.
-
+* WORM storage is currently in an introductory special rate and will be free of charge until April 1st, 2022. After that time, you may choose to continue using this feature, at which point you will incur additional charges.
++
 link:concept_worm.html[Learn more about WORM storage].
+
+* The Essentials package and Professional package are now available in the Microsoft Azure Marketplace.
++
+link:concept_licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
 
 == Cloud Manager 3.9.16 update (15 Mar 2022)
 
