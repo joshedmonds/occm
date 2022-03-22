@@ -3010,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 18:51:13 +0000">02/04/2022</time>
+    <time datetime="2022-03-22 19:17:23 +0000">03/22/2022</time>
     
   
 
@@ -3188,32 +3188,22 @@ Your browser does not support the video tag.
 <div class="sect2">
 <h3 id="new-cloud-tiering-byol-licensing-starting-august-21-2021">New Cloud Tiering BYOL licensing starting August 21, 2021</h3>
 <div class="paragraph">
-<p>The new <strong>Cloud Tiering</strong> license was introduced on August 21, 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. The <strong>FabricPool</strong> license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for configurations that aren&#8217;t supported within Cloud Manager.</p>
+<p>The new <strong>Cloud Tiering</strong> license was introduced in August 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, S3-compatible object storage, and StorageGRID.</p>
 </div>
 <div class="paragraph">
-<p>If you have one of these configurations, you&#8217;ll continue to use a FabricPool license on each cluster (managed using System Manager or the CLI):</p>
+<p>The <strong>FabricPool</strong> license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites"). If you have a dark site deployment, you&#8217;ll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>ONTAP installations in the GovCloud or in Dark Sites</p>
-</li>
-<li>
-<p>ONTAP clusters in a MetroCluster configuration</p>
-</li>
-<li>
-<p>ONTAP clusters using FabricPool Mirror functionality</p>
-</li>
-<li>
-<p>ONTAP clusters that are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage</p>
-<div class="paragraph">
-<p>Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, and S3-compatible object storage.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/occm/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>If you are currently using FabricPool licensing, you&#8217;re not affected until your FabricPool license reaches its expiration date or maximum capacity. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.</p>
@@ -3221,10 +3211,10 @@ Your browser does not support the video tag.
 <div class="ulist">
 <ul>
 <li>
-<p>If you&#8217;re using a configuration that is supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they&#8217;ll appear in the Digital Wallet. When those initial licenses expire, you&#8217;ll need to update the Cloud Tiering licenses.</p>
+<p>If you&#8217;re using a configuration that&#8217;s supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they&#8217;ll appear in the Digital Wallet. When those initial licenses expire, you&#8217;ll need to update the Cloud Tiering licenses.</p>
 </li>
 <li>
-<p>If you&#8217;re using a configuration that is not supported in Cloud Manager, then you&#8217;ll continue using a FabricPool license. <a href="https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html" target="_blank" rel="noopener">See how to license tiering using System Manager</a>.</p>
+<p>If you&#8217;re using a configuration that&#8217;s not supported in Cloud Manager, then you&#8217;ll continue using a FabricPool license. <a href="https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html" target="_blank" rel="noopener">See how to license tiering using System Manager</a>.</p>
 </li>
 </ul>
 </div>
