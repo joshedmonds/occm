@@ -43,6 +43,8 @@ On-premises ONTAP system |
 
 |===
 
+Note that references to "on-premises ONTAP systems" includes FAS, AFF, and ONTAP Select systems.
+
 *Note:* If the backup file resides in archival storage, only volume restore is supported. File restore is not currently supported from archival storage.
 
 For backups of Kubernetes volumes, you can restore a volume from a backup file to the following working environments:
