@@ -3010,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-18 17:00:11 +0000">03/18/2022</time>
+    <time datetime="2022-03-21 16:14:22 +0000">03/21/2022</time>
     
   
 
@@ -3048,9 +3048,6 @@
 </li>
 <li>
 <p>A mediator instance that provides a communication channel between the nodes to assist in storage takeover and giveback processes.</p>
-<div class="paragraph">
-<p>The mediator runs the Linux operating system on a f1-micro instance and uses two standard persistent disks that are 10 GB each.</p>
-</div>
 </li>
 <li>
 <p>One zone or three zones (recommended).</p>
@@ -3077,6 +3074,52 @@
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram_gcp_ha.png" alt="diagram gcp ha"></span></p>
+</div>
+<div class="sect2">
+<h3 id="mediator">Mediator</h3>
+<div class="paragraph">
+<p>Here are some key details about the mediator instance in Google Cloud:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Instance type</dt>
+<dd>
+<p>f1-micro</p>
+</dd>
+<dt class="hdlist1">Disks</dt>
+<dd>
+<p>Two standard persistent disks that are 10 GiB each.</p>
+</dd>
+<dt class="hdlist1">Operating system</dt>
+<dd>
+<p>Debian 11</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/occm/images/note.svg" alt="Note">
+</td>
+<td class="content">
+For Cloud Volumes ONTAP 9.10.0 and earlier, Debian 10 was installed on the mediator.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">Upgrades</dt>
+<dd>
+<p>When you upgrade Cloud Volumes ONTAP, Cloud Manager also updates the mediator instance as needed.</p>
+</dd>
+<dt class="hdlist1">Access to the instance</dt>
+<dd>
+<p>For Debian, the default cloud user is <code>admin</code>. Google Cloud creates and adds a certificates for the <code>admin</code> user when SSH access is requested through the Google Cloud console or gcloud command line. You can specify <code>sudo</code> to gain root privileges.</p>
+</dd>
+<dt class="hdlist1">Third-party agents</dt>
+<dd>
+<p>Third-party agents or VM extensions are not supported on the mediator instance.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 </div>

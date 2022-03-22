@@ -3010,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-18 17:00:11 +0000">03/18/2022</time>
+    <time datetime="2022-03-22 17:03:13 +0000">03/22/2022</time>
     
   
 
@@ -3090,7 +3090,7 @@
 <p>You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.</p>
 </li>
 <li>
-<p>If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.</p>
+<p>If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package (capacity-based licensing).</p>
 <div class="paragraph">
 <p>Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).</p>
 </div>
@@ -3258,12 +3258,6 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="license-conversions">License conversions</h3>
-<div class="paragraph">
-<p>Conversions to another licensing option isn&#8217;t supported. If you want to transition to capacity-based licensing, you can deploy a new Cloud Volumes ONTAP system that uses capacity-based charging and then replicate the data to that new system.</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="notes-about-charging">Notes about charging</h3>
 <div class="ulist">
 <ul>
@@ -3399,8 +3393,16 @@
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="license-conversions">License conversions</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Conversions to another licensing option isn&#8217;t supported. If you want to transition to capacity-based licensing, you can purchase a license, deploy a new Cloud Volumes ONTAP system, and then replicate the data to that new system.</p>
+<p>Converting an existing Cloud Volumes ONTAP system to another licensing method isn&#8217;t supported. The three current licensing methods are capacity-based licensing, Keystone Flex Subscriptions, and node-based licensing. For example, you can&#8217;t convert a system from node-based licensing to capacity-based licensing (and vice versa).</p>
+</div>
+<div class="paragraph">
+<p>If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.</p>
 </div>
 </div>
 </div>

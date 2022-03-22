@@ -3010,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-18 17:00:11 +0000">03/18/2022</time>
+    <time datetime="2022-03-21 16:14:22 +0000">03/21/2022</time>
     
   
 
@@ -3036,7 +3036,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="overview">Overview</h2>
+<h2 id="ha-components">HA components</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In AWS, Cloud Volumes ONTAP HA configurations include the following components:</p>
@@ -3051,6 +3051,24 @@
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="mediator">Mediator</h3>
+<div class="paragraph">
+<p>Here are some key details about the mediator instance in AWS:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Instance type</dt>
+<dd>
+<p>t2-micro</p>
+</dd>
+<dt class="hdlist1">Disks</dt>
+<dd>
+<p>One EBS magnetic disk that is approximately 8 GiB.</p>
+</dd>
+<dt class="hdlist1">Operating system</dt>
+<dd>
+<p>Debian 11</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3058,13 +3076,32 @@
 <img src="/us-en/occm/images/note.svg" alt="Note">
 </td>
 <td class="content">
-The mediator instance runs the Linux operating system on a t2.micro instance and uses one EBS magnetic disk that is approximately 8 GiB.
+For Cloud Volumes ONTAP 9.10.0 and earlier, Debian 10 was installed on the mediator.
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="storage-takeover-and-giveback">Storage takeover and giveback</h3>
+</dd>
+<dt class="hdlist1">Upgrades</dt>
+<dd>
+<p>When you upgrade Cloud Volumes ONTAP, Cloud Manager also updates the mediator instance as needed.</p>
+</dd>
+<dt class="hdlist1">Access to the instance</dt>
+<dd>
+<p>When you create a Cloud Volumes ONTAP HA pair from Cloud Manager, you&#8217;re prompted to provide a key pair for the mediator instance. You can use that key pair for SSH access using the <code>admin</code> user.</p>
+</dd>
+<dt class="hdlist1">Third-party agents</dt>
+<dd>
+<p>Third-party agents or VM extensions are not supported on the mediator instance.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="storage-takeover-and-giveback">Storage takeover and giveback</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If a node goes down, the other node can serve data for its partner to provide continued data service. Clients can access the same data from the partner node because the data was synchronously mirrored to the partner.</p>
 </div>
@@ -3075,8 +3112,10 @@ The mediator instance runs the Linux operating system on a t2.micro instance and
 <p>Storage takeover, resync, and giveback are all automatic by default. No user action is required.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="rpo-and-rto">RPO and RTO</h3>
+</div>
+<div class="sect1">
+<h2 id="rpo-and-rto">RPO and RTO</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>An HA configuration maintains high availability of your data as follows:</p>
 </div>
@@ -3093,22 +3132,20 @@ In the event of an outage, data should be available in 60 seconds or less.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="ha-deployment-models">HA deployment models</h3>
+</div>
+<div class="sect1">
+<h2 id="ha-deployment-models">HA deployment models</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>You can ensure the high availability of your data by deploying an HA configuration across multiple Availability Zones (AZs) or in a single AZ. You should review more details about each configuration to choose which best fits your needs.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="multiple-availability-zones">Multiple Availability Zones</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="multiple-availability-zones">Multiple Availability Zones</h3>
 <div class="paragraph">
 <p>Deploying an HA configuration in multiple Availability Zones (AZs) ensures high availability of your data if a failure occurs with an AZ or an instance that runs a Cloud Volumes ONTAP node. You should understand how NAS IP addresses impact data access and storage failover.</p>
 </div>
-<div class="sect2">
-<h3 id="nfs-and-cifs-data-access">NFS and CIFS data access</h3>
+<div class="sect3">
+<h4 id="nfs-and-cifs-data-access">NFS and CIFS data access</h4>
 <div class="paragraph">
 <p>When an HA configuration is spread across multiple Availability Zones, <em>floating IP addresses</em> enable NAS client access. The floating IP addresses, which must be outside of the CIDR blocks for all VPCs in the region, can migrate between nodes when failures occur. They aren&#8217;t natively accessible to clients that are outside of the VPC, unless you <a href="task_setting_up_transit_gateway.html">set up an AWS transit gateway</a>.</p>
 </div>
@@ -3122,14 +3159,14 @@ In the event of an outage, data should be available in 60 seconds or less.</p>
 <p>For details, see <a href="reference_networking_aws.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs">AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="iscsi-data-access">iSCSI data access</h3>
+<div class="sect3">
+<h4 id="iscsi-data-access">iSCSI data access</h4>
 <div class="paragraph">
 <p>Cross-VPC data communication is not an issue since iSCSI does not use floating IP addresses.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="takeover-and-giveback-for-iscsi">Takeover and giveback for iSCSI</h3>
+<div class="sect3">
+<h4 id="takeover-and-giveback-for-iscsi">Takeover and giveback for iSCSI</h4>
 <div class="paragraph">
 <p>For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.</p>
 </div>
@@ -3146,8 +3183,8 @@ For information about which specific host configurations support ALUA, see the <
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="takeover-and-giveback-for-nas">Takeover and giveback for NAS</h3>
+<div class="sect3">
+<h4 id="takeover-and-giveback-for-nas">Takeover and giveback for NAS</h4>
 <div class="paragraph">
 <p>When takeover occurs in a NAS configuration using floating IPs, the node&#8217;s floating IP address that clients use to access data moves to the other node. The following image depicts storage takeover in a NAS configuration using floating IPs. If node 2 goes down, the floating IP address for node 2 moves to node 1.</p>
 </div>
@@ -3165,10 +3202,8 @@ For information about which specific host configurations support ALUA, see the <
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cloud-volumes-ontap-ha-in-a-single-availability-zone">Cloud Volumes ONTAP HA in a single Availability Zone</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="single-availability-zone">Single Availability Zone</h3>
 <div class="paragraph">
 <p>Deploying an HA configuration in a single Availability Zone (AZ) can ensure high availability of your data if an instance that runs a Cloud Volumes ONTAP node fails. All data is natively accessible from outside of the VPC.</p>
 </div>
@@ -3184,8 +3219,8 @@ Cloud Manager creates an <a href="https://docs.aws.amazon.com/AWSEC2/latest/User
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="data-access">Data access</h3>
+<div class="sect3">
+<h4 id="data-access">Data access</h4>
 <div class="paragraph">
 <p>Because this configuration is in a single AZ, it does not require floating IP addresses. You can use the same IP address for data access from within the VPC and from outside the VPC.</p>
 </div>
@@ -3196,8 +3231,8 @@ Cloud Manager creates an <a href="https://docs.aws.amazon.com/AWSEC2/latest/User
 <p><span class="image"><img src="./media/diagram_single_az.png" alt="Conceptual image that shows an ONTAP HA configuration in a single Availability Zone that allows data access from outside of the VPC."></span></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="takeover-and-giveback">Takeover and giveback</h3>
+<div class="sect3">
+<h4 id="takeover-and-giveback">Takeover and giveback</h4>
 <div class="paragraph">
 <p>For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.</p>
 </div>
@@ -3215,6 +3250,7 @@ For information about which specific host configurations support ALUA, see the <
 </div>
 <div class="paragraph">
 <p>For NAS configurations, the data IP addresses can migrate between HA nodes if failures occur. This ensures client access to storage.</p>
+</div>
 </div>
 </div>
 </div>
