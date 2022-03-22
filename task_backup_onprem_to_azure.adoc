@@ -15,6 +15,8 @@ summary: Complete a few steps to get started backing up data from your on-premis
 [.lead]
 Complete a few steps to get started backing up data from your on-premises ONTAP systems to Azure Blob storage.
 
+Note that "on-premises ONTAP systems" includes FAS, AFF, and ONTAP Select systems.
+
 TIP: In most cases you'll use Cloud Manager for all backup and restore operations. However, starting with ONTAP 9.9.1 you can initiate volume backup operations of your on-premises ONTAP clusters using ONTAP System Manager. https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html[See how to use System Manager to back up your volumes to the cloud using Cloud Backup.^]
 
 == Quick start
