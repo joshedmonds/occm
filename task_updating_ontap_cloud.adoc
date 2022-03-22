@@ -29,9 +29,9 @@ Cloud Volumes ONTAP must be registered with NetApp support in order to upgrade t
 
 TIP: A system that isn't registered for support will still receive the software update notifications that appear in Cloud Manager when a new version is available. But you will need to register the system before you can upgrade the software.
 
-== A note about downgrades
+== Reverting or downgrading
 
-Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
+Reverting or downgrading Cloud Volumes ONTAP to a previous release is not supported.
 
 == Preparing to upgrade Cloud Volumes ONTAP software
 

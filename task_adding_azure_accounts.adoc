@@ -303,10 +303,6 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 .Steps
 
-. Select an existing subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
-+
-video::video_subscribing_aws.mp4[width=848, height=480]
-
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
 . Click the action menu for a set of credentials and then select *Associate Subscription*.

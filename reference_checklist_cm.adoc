@@ -64,7 +64,7 @@ AWS services (amazonaws.com):
 | Required to deploy a Connector from Cloud Manager in Google Cloud.
 
 | \https://signin.b2c.netapp.com
-| Required to update NSS credentials or to add new NSS credentials to Cloud Manager.
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to Cloud Manager.
 
 |
 \https://netapp-cloud-account.auth0.com

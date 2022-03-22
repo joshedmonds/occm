@@ -24,3 +24,7 @@ TIP: You can use single sign-on to log in using credentials from your corporate 
 . Log in using your NetApp Cloud Central credentials.
 +
 image:screenshot_login.gif[The log in screen for Cloud Central.]
+
+.Result
+
+You're now logged in and can start using Cloud Manager to manage your hybrid multi-cloud infrastructure.
