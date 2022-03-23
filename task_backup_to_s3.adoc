@@ -24,7 +24,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * You're running Cloud Volumes ONTAP 9.6 or later in AWS.
 * You have a valid cloud provider subscription for the storage space where your backups will be located.
-* You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering], an https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS annual contract], or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated] a Cloud Backup BYOL license from NetApp.
+* You have subscribed to the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[Cloud Manager Marketplace Backup offering], an https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS annual contract], or you have purchased link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[and activated] a Cloud Backup BYOL license from NetApp.
 * The IAM role that provides the Cloud Manager Connector with permissions includes S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Enable Cloud Backup on your new or existing system
@@ -74,7 +74,7 @@ Supported ONTAP versions::
 Cloud Volumes ONTAP 9.6 and later.
 
 License requirements::
-For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
+For Cloud Backup PAYGO licensing, a Cloud Manager subscription is available in the AWS Marketplace that enables deployments of Cloud Volumes ONTAP and Cloud Backup. You need to https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[subscribe to this Cloud Manager subscription^] before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
 +
 For an annual contract that enables you to back up both Cloud Volumes ONTAP data and on-premises ONTAP data, you need to subscribe from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^] and then link:task_adding_aws_accounts.html#associating-an-aws-subscription-to-credentials[associate the subscription with your AWS credentials].
 +
