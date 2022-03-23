@@ -54,7 +54,7 @@ image:screenshot_add_subscription.gif["A screenshot of the menu in the Credentia
 
 . Select an existing subscription and click *Associate*, or click *Add Subscription* and follow the steps.
 +
-The following video shows how to associate an https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^] subscription to an AWS subscription:
+The following video shows how to associate an https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^] subscription to an AWS subscription:
 +
 video::video_subscribing_aws.mp4[width=848, height=480]
 +

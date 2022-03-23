@@ -146,7 +146,7 @@ You can create backups from on-premises systems to Amazon S3 in all regions http
 
 Before your 30-day free trial of Cloud Backup expires, you need to subscribe to a pay-as-you-go (PAYGO) Cloud Manager Marketplace offering from AWS, or purchase and activate a Cloud Backup BYOL license from NetApp. These licenses are for the account and can be used across multiple systems.
 
-* For Cloud Backup PAYGO licensing, you'll need a subscription to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^] Cloud Manager Marketplace offering to continue using Cloud Backup. Billing for Cloud Backup is done through this subscription.
+* For Cloud Backup PAYGO licensing, you'll need a subscription to the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS^] Cloud Manager Marketplace offering to continue using Cloud Backup. Billing for Cloud Backup is done through this subscription.
 * For Cloud Backup BYOL licensing, you don't need a subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. link:task_licensing_cloud_backup.html#use-cloud-backup-byol-licenses[Learn how to manage your BYOL licenses].
 
 You need to have an AWS subscription for the object storage space where your backups will be located.

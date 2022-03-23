@@ -27,7 +27,7 @@ link:concept_backup_to_cloud.html#licensing[Learn more about the licensing and c
 
 For pay-as-you-go you'll pay your cloud provider for object storage costs and for NetApp backup licensing costs. Use these links to subscribe to Cloud Backup from your cloud provider marketplace:
 
-* AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 * Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
 

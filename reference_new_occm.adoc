@@ -1577,7 +1577,7 @@ A new *Storage Operations* section in Spot enables you to navigate directly to C
 
 === Cloud Volumes ONTAP AMI change
 
-Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
+Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
 
 === Cloud Backup enhancements
 
