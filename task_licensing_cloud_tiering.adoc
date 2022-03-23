@@ -40,7 +40,7 @@ Subscribe to Cloud Tiering from the AWS Marketplace to set up a pay-as-you-go su
 
 . Click *Subscribe* under AWS Marketplace and then click *Continue*.
 
-. Subscribe from the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^], and then log back in to Cloud Central to complete the registration.
+. Subscribe from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^], and then log back in to Cloud Central to complete the registration.
 +
 The following video shows the process:
 +
