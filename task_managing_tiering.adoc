@@ -36,7 +36,7 @@ image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to sel
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
+image:screenshot_tiering_modify_volumes.gif["A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button."]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
@@ -151,6 +151,10 @@ You might want to see how much data is in the cloud tier and how much data is on
 Here's an example:
 +
 image:screenshot_tiering_cluster_info.png["A screenshot that shows the cluster report, which details total used capacity, cluster used capacity, cluster information, and object storage information."]
+
+You can also https://docs.netapp.com/us-en/active-iq/task_monitor_and_tier_inactive_data_with_FabricPool_Advisor.html[view tiering information for a cluster from Active IQ Digital Advisor^] if you're familiar with this NetApp product. Just select *FabricPool Advisor* from the left navigation pane.
+
+image:screenshot_tiering_aiq_fabricpool_info.png["A screenshot that shows FabricPool information for a cluster using the FabricPool Advisor from Active IQ Digital Advisor."]
 
 == Fixing operational health
 
