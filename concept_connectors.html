@@ -3010,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-09 21:15:07 +0000">03/09/2022</time>
+    <time datetime="2022-03-25 22:16:03 +0000">03/25/2022</time>
     
   
 
@@ -3054,6 +3054,11 @@
 <div class="sect1">
 <h2 id="when-a-connector-is-required">When a Connector is required</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>A Connector is required to use many of the features and services in Cloud Manager.</p>
+</div>
+<div class="sect2">
+<h3 id="services">Services</h3>
 <div class="paragraph">
 <p>A Connector is required to use any of the following services within Cloud Manager:</p>
 </div>
@@ -3102,11 +3107,14 @@
 <li>
 <p>Amazon FSx for ONTAP working environment creation</p>
 <div class="paragraph">
-<p>A Connector is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.</p>
+<p>While a Connector isn&#8217;t required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.</p>
 </div>
 </li>
 <li>
 <p>Azure NetApp Files</p>
+<div class="paragraph">
+<p>While a Connector isn&#8217;t required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.</p>
+</div>
 </li>
 <li>
 <p>Cloud Volumes Service for Google Cloud</p>
@@ -3116,17 +3124,15 @@
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/note.svg" alt="Note">
-</td>
-<td class="content">
-While a Connector isn&#8217;t required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
-</td>
-</tr>
-</table>
+</div>
+<div class="sect2">
+<h3 id="digital-wallet">Digital Wallet</h3>
+<div class="paragraph">
+<p>In almost all cases, you can add a license to the Digital Wallet without a Connector.</p>
+</div>
+<div class="paragraph">
+<p>The only time that a Connector is required to add a license to the Digital Wallet is for Cloud Volumes ONTAP <em>node-based</em> licenses. A Connector is required in this case because the data is taken from the licenses installed on Cloud Volumes ONTAP systems.</p>
+</div>
 </div>
 </div>
 </div>

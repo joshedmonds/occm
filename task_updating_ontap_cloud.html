@@ -9,15 +9,15 @@
   <meta property="og:title" content="Upgrading Cloud Volumes ONTAP software" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/occm/task_updating_ontap_cloud.html" />
-	<meta property="og:description" content="Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems..." />
+	<meta property="og:description" content="You must complete all Cloud Volumes ONTAP upgrades directly from Cloud Manager. You should prepare Cloud Volumes ONTAP systems before you upgrade the software." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/occm/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta http-equiv="nss-product" content="OnCommand Cloud Manager"/><meta name="description" content="Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems...">
-  <meta name="keywords" content=" update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta http-equiv="nss-product" content="OnCommand Cloud Manager"/><meta name="description" content="You must complete all Cloud Volumes ONTAP upgrades directly from Cloud Manager. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.">
+  <meta name="keywords" content=" update, updating, upgrading, upgrade, software, downgrade, downgrading, HTTP, mediator, revert, reverting, downgrading"><!-- Icons -->
   <link rel="icon" href="/us-en/occm/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -3010,7 +3010,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-22 16:04:38 +0000">03/22/2022</time>
+    <time datetime="2022-03-25 22:16:29 +0000">03/25/2022</time>
     
   
 
@@ -3039,24 +3039,24 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.</p>
+<p>You must complete all Cloud Volumes ONTAP upgrades directly from Cloud Manager. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements">Requirements</h2>
+<h2 id="upgrade-notes">Upgrade notes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You should be aware of the following requirements before you start the Cloud Volumes ONTAP upgrade process.</p>
 </div>
 <div class="sect2">
-<h3 id="software-upgrades-must-be-completed-by-cloud-manager">Software upgrades must be completed by Cloud Manager</h3>
+<h3 id="software-upgrades-from-cloud-manager-only">Software upgrades from Cloud Manager only</h3>
 <div class="paragraph">
 <p>Upgrades of Cloud Volumes ONTAP must be completed from Cloud Manager. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-volumes-ontap-must-be-registered-with-netapp-support">Cloud Volumes ONTAP must be registered with NetApp Support</h3>
+<h3 id="support-registration">Support registration</h3>
 <div class="paragraph">
 <p>Cloud Volumes ONTAP must be registered with NetApp support in order to upgrade the software using any of the methods described on this page. This applies to both PAYGO and BYOL. You&#8217;ll need to <a href="task_registering.html">manually register PAYGO systems</a>, while BYOL systems are registered by default.</p>
 </div>
@@ -3071,6 +3071,12 @@ A system that isn&#8217;t registered for support will still receive the software
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upgrades-of-the-ha-mediator">Upgrades of the HA mediator</h3>
+<div class="paragraph">
+<p>For HA systems in AWS or Google Cloud, Cloud Manager also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.</p>
 </div>
 </div>
 </div>
@@ -3214,59 +3220,25 @@ Even though Cloud Backup uses an implementation of SnapMirror to create backup f
 <h2 id="upgrading-cloud-volumes-ontap">Upgrading Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Cloud Manager notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <a href="#upgrading-from-cloud-manager-notifications">Upgrading from Cloud Manager notifications</a>.</p>
+</div>
+<div class="paragraph">
+<p>Another way to perform software upgrades by using an image on an external URL. This option is helpful if Cloud Manager can&#8217;t access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <a href="#Upgrading by using an HTTP or FTP server">[Upgrading by using an HTTP or FTP server]</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="upgrading-from-cloud-manager-notifications">Upgrading from Cloud Manager notifications</h3>
+<div class="paragraph">
 <p>Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_cot_upgrade.gif" alt="Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment."></span></p>
 </div>
 <div class="paragraph">
-<p>You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <a href="#upgrading-from-cloud-manager-notifications">Upgrading from Cloud Manager notifications</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/occm/images/note.svg" alt="Note">
-</td>
-<td class="content">
-For HA systems in AWS or Google Cloud, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Cloud Manager also provides the following advanced options for upgrading Cloud Volumes ONTAP software with both PAYGO and BYOL:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Software upgrades using an image on an external URL</p>
-<div class="paragraph">
-<p>This option is helpful if Cloud Manager can&#8217;t access the S3 bucket to upgrade the software or if you were provided with a patch.</p>
-</div>
-<div class="paragraph">
-<p>For details, see <a href="#upgrading-by-using-an-http-or-ftp-server">Upgrading by using an HTTP or FTP server</a>.</p>
-</div>
-</li>
-<li>
-<p>Software upgrades using the alternate image on the system</p>
-<div class="paragraph">
-<p>You can use this option to upgrade by making the alternate software image the default image. This option is not available for HA pairs.</p>
-</div>
-<div class="paragraph">
-<p>For details, see <a href="#upgrading-by-using-a-local-image">Upgrading by using a local image</a>.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="upgrading-from-cloud-manager-notifications">Upgrading from Cloud Manager notifications</h3>
-<div class="paragraph">
-<p>Cloud Manager notifies you when a new version of Cloud Volumes ONTAP is available. Click the notification to start the upgrade process.</p>
+<p>You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system.</p>
 </div>
 <div class="paragraph">
 <div class="title">Before you begin</div>
-<p>Cloud Manager operations such as volume or aggregate creation must not be in progress for the Cloud Volumes ONTAP system.</p>
+<p>Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -3307,21 +3279,25 @@ For HA systems in AWS or Google Cloud, Cloud Manager might upgrade the HA mediat
 </div>
 </div>
 <div class="sect2">
-<h3 id="upgrading-by-using-an-http-or-ftp-server">Upgrading by using an HTTP or FTP server</h3>
+<h3 id="upgrading-from-an-image-available-at-a-url">Upgrading from an image available at a URL</h3>
 <div class="paragraph">
-<p>You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can&#8217;t access the S3 bucket to upgrade the software.</p>
+<p>You can place the Cloud Volumes ONTAP software image on the Connector or on an HTTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can&#8217;t access the S3 bucket to upgrade the software.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Set up an HTTP server or FTP server that can host the Cloud Volumes ONTAP software image.</p>
+<p>Optional: Set up an HTTP server that can host the Cloud Volumes ONTAP software image.</p>
+<div class="paragraph">
+<p>If you have a VPN connection to the virtual network, you can place the Cloud Volumes ONTAP software image on an HTTP server in your own network. Otherwise, you must place the file on an HTTP server in the cloud.</p>
+</div>
 </li>
 <li>
-<p>If you have a VPN connection to the virtual network, you can place the Cloud Volumes ONTAP software image on an HTTP server or FTP server in your own network. Otherwise, you must place the file on an HTTP server or FTP server in the cloud.</p>
-</li>
-<li>
-<p>If you use your own security group for Cloud Volumes ONTAP, ensure that the outbound rules allow HTTP or FTP connections so Cloud Volumes ONTAP can access the software image.</p>
+<p>If you use your own security group for Cloud Volumes ONTAP, ensure that the outbound rules allow HTTP connections so Cloud Volumes ONTAP can access the software image.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3329,7 +3305,7 @@ For HA systems in AWS or Google Cloud, Cloud Manager might upgrade the HA mediat
 <img src="/us-en/occm/images/note.svg" alt="Note">
 </td>
 <td class="content">
-The predefined Cloud Volumes ONTAP security group allows outbound HTTP and FTP connections by default.
+The predefined Cloud Volumes ONTAP security group allows outbound HTTP connections by default.
 </td>
 </tr>
 </table>
@@ -3339,41 +3315,25 @@ The predefined Cloud Volumes ONTAP security group allows outbound HTTP and FTP c
 <p>Obtain the software image from <a href="https://mysupport.netapp.com/products/p/cloud_ontap.html" target="_blank" rel="noopener">the NetApp Support Site</a>.</p>
 </li>
 <li>
-<p>Copy the software image to the directory on the HTTP or FTP server from which the file will be served.</p>
+<p>Copy the software image to a directory on the Connector or on an HTTP server from which the file will be served.</p>
+<div class="paragraph">
+<p>For example, you can copy the software image to the following path on the Connector:</p>
+</div>
+<div class="paragraph">
+<p><code>/opt/application/netapp/cloudmanager/docker_occm/data/ontap/images/</code></p>
+</div>
 </li>
 <li>
 <p>From the working environment in Cloud Manager, click the menu icon, and then click <strong>Advanced &gt; Update Cloud Volumes ONTAP</strong>.</p>
 </li>
 <li>
-<p>On the update software page, choose <strong>Select an image available from a URL</strong>, enter the URL, and then click <strong>Change Image</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Proceed</strong> to confirm.</p>
-</li>
-</ol>
+<p>On the update software page, enter the URL, and then click <strong>Change Image</strong>.</p>
+<div class="paragraph">
+<p>If you copied the software image to the Connector in the path shown above, you would enter the following URL:</p>
 </div>
 <div class="paragraph">
-<div class="title">Result</div>
-<p>Cloud Manager starts the software update. You can perform actions on the working environment once the software update is complete.</p>
+<p>http://&lt;Connector-private-IP-address&gt;/ontap/images/&lt;image-file-name&gt;</p>
 </div>
-<div class="paragraph">
-<div class="title">After you finish</div>
-<p>If you suspended SnapMirror transfers, use System Manager to resume the transfers.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="upgrading-by-using-a-local-image">Upgrading by using a local image</h3>
-<div class="paragraph">
-<p>Each Cloud Volumes ONTAP system can hold two software images: the current image that is running, and an alternate image that you can boot. Cloud Manager can change the alternate image to be the default image.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>From the working environment, click the menu icon, and then click <strong>Advanced &gt; Update Cloud Volumes ONTAP</strong>.</p>
-</li>
-<li>
-<p>On the update software page, select the alternate image, and then click <strong>Change Image</strong>.</p>
 </li>
 <li>
 <p>Click <strong>Proceed</strong> to confirm.</p>
