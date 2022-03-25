@@ -17,6 +17,10 @@ In most cases, an Account Admin will need to deploy a _Connector_ in your cloud 
 
 == When a Connector is required
 
+A Connector is required to use many of the features and services in Cloud Manager.
+
+=== Services
+
 A Connector is required to use any of the following services within Cloud Manager:
 
 * Amazon FSx for ONTAP management features
@@ -35,12 +39,18 @@ A Connector is *_not_* required for the following services:
 * Active IQ Digital Advisor
 * Amazon FSx for ONTAP working environment creation
 +
-A Connector is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
+While a Connector isn't required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
 * Azure NetApp Files
++
+While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
 * Cloud Volumes Service for Google Cloud
 * Cloud Sync
 
-NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
+=== Digital Wallet
+
+In almost all cases, you can add a license to the Digital Wallet without a Connector.
+
+The only time that a Connector is required to add a license to the Digital Wallet is for Cloud Volumes ONTAP _node-based_ licenses. A Connector is required in this case because the data is taken from the licenses installed on Cloud Volumes ONTAP systems.
 
 == Supported locations
 
