@@ -203,9 +203,9 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 . Unzip the installer file on the host machine, for example:
 +
 [source,cli]
-tar -xzf cc_onprem_installer_1.7.2.tar.gz
+tar -xzf cc_onprem_installer_1.10.0.tar.gz
 
-. When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
+. When prompted by the installer, you can enter the required values in a series of prompts, or you can provide the required parameters as command line arguments to the installer:
 
 +
 [cols="50a,50",options="header"]
@@ -219,8 +219,8 @@ a. Paste the information you copied from step 6:
 b. Enter the IP address of the Data Sense host machine so it can be accessed by the Connector instance.
 c. Enter the IP address of the Cloud Manager Connector host machine so it can be accessed by the Data Sense instance.
 d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Data Sense will automatically use the proxy used by Cloud Manager.
-| Alternatively, you can create the whole command in advance and enter it in the first prompt:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+| Alternatively, you can create the whole command in advance, providing the necessary host and proxy parameters:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --manager-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password> --cacert-folder-path <ca_cert_dir>`
 |===
 
 +
@@ -236,6 +236,7 @@ Variable values:
 * _proxy_scheme_ = Connection scheme: https or http (default http).
 * _proxy_user_ = Authenticated user to connect to the proxy server, if basic authentication is required.
 * _proxy_password_ = Password for the user name that you specified.
+* _ca_cert_dir_ = Path on the Data Sense Linux system containing additional TLS CA certificate bundles. Only required if proxy is performing TLS interception.
 
 .Result
 
@@ -287,7 +288,7 @@ Follow these steps when installing Data Sense software on multiple on-premises h
 In addition to the variables available for a single-host installation, a new option *-n <node_ip>* is used to specify the IP addresses of the scanner nodes. Multiple scanner node IPs are separated by a comma.
 +
 For example, this command adds 3 scanner nodes:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --cm-host <cm_host> *-n <node_ip1>,<node_ip2>,<node_ip3>* --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <ds_host> --manager-host <cm_host> *-n <node_ip1>,<node_ip2>,<node_ip3>* --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
 
 . Before the manager node installation completes, a dialog displays the installation command needed for the scanner nodes. Copy the command and save it in a text file. For example:
 +
